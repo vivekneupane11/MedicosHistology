@@ -1,7 +1,9 @@
 import React from 'react';
-import {StyleSheet, Text,View,Image,TouchableOpacity,ScrollView} from 'react-native';
+import {StyleSheet, Text,View,Image,TouchableOpacity,ScrollView,Dimensions} from 'react-native';
 import InputTextField from "../components/InputTextField";
 
+
+const {width} = Dimensions.get('window');
  const LoginScreen = ({navigation})=>{
     return (
         <ScrollView style={styles.container}>
@@ -42,14 +44,14 @@ import InputTextField from "../components/InputTextField";
                         >
                             Login
                         </Text>
-                                </TouchableOpacity>
+                         </TouchableOpacity>
 
                         
                     </View>
                     {/* OR TEXT */}
-                    <View  style={{ flex:1,position:'relative',paddingVertical:40}}>
-           <View style={{ flex:1, borderColor:'#666380', borderBottomWidth: 1,marginTop:8,marginHorizontal:50}} />
-                    <Text style={[styles.text,{backgroundColor:'#3F3D56',marginHorizontal:130,color:'#fff',position: "absolute", left: 0, right: 0, alignItems: "center",fontSize:16,textAlign:'center',marginVertical:35,}]}>OR</Text>
+                    <View  style={{ flex:1,position:'relative',paddingVertical:(width)/20}}>
+                    <View style={{ flex:1, borderColor:'#666380', borderBottomWidth: 1,marginHorizontal:50}} />
+                    <Text style={[styles.text,{backgroundColor:'#3F3D56',marginHorizontal:130,color:'#fff',position: "absolute", left: 0, right: 0, alignItems: "center",fontSize:16,textAlign:'center',marginVertical:9,}]}>OR</Text>
                  </View>
                     <View style={{flexDirection:'row',justifyContent:'center',alignItems:'flex-start',marginTop:15}}>
                     <TouchableOpacity>

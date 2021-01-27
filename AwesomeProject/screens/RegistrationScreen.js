@@ -1,13 +1,14 @@
 import React from 'react';
-import {StyleSheet, Text,View,Image,TouchableOpacity,ScrollView} from 'react-native';
+import {StyleSheet, Text,View,Image,TouchableOpacity,ScrollView,Dimensions} from 'react-native';
 import InputTextField from "../components/InputTextField";
 
+const {width} = Dimensions.get('window');
  const RegistartionScreen = ({navigation})=>{
     return (
         <ScrollView style={styles.container}>
             <View>
          
-                <View style={{marginTop:40,marginBottom:30,alignItems:'center',justifyContent:'center'}}>
+                <View style={{marginTop:(width)/12,marginBottom:(width)/30,alignItems:'center',justifyContent:'center'}}>
                 <View style={styles.imageContainer}>
              
                    <Image style={styles.logoimage} source={require('../assets/logos/medicoslogo.png')} />
@@ -80,7 +81,7 @@ import InputTextField from "../components/InputTextField";
                                 fontSize: 14,
                                 color: "#ABB4BD",
                                 textAlign: "center",
-                                marginTop: 2,
+                        
                                 fontWeight:"bold",
                             }
                         ]}
@@ -148,7 +149,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#3F3D56",
         fontSize: 16,
         borderRadius: 28,
-        paddingVertical: 15,
+        paddingVertical: 12,
         marginHorizontal:80,
         marginTop: 32,
         alignItems: "center",

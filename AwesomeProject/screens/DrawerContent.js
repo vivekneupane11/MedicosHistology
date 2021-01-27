@@ -53,9 +53,9 @@ const DrawerContent =(props)=>{
               
         
 
-            <TouchableOpacity style={{marginTop:(H) /4.5}}>
+            <TouchableOpacity style={{marginTop:(H) /6}}>
             <View style={[styles.drawerLinks,styles.drawerLinkBottom]}>
-                <Icon style={{paddingVertical:2,paddingHorizontal:6}} name="bookmark-empty" size={18} color={colors.gray} />
+                <Icon style={{paddingVertical:1,paddingHorizontal:6}} name="bookmark-empty" size={18} color={colors.gray} />
                  <Text style={styles.drawerLink}>Home</Text>
                 </View>
             </TouchableOpacity>
