@@ -37,7 +37,7 @@ const ContentScreen = () => {
                     </View>
                 </View>
                 {/* Header tab */}
-           {/* / </View> */} 
+            {/* / </View> */}
             {/* Header */}
             <View
                 style={styles.container}>
@@ -75,7 +75,7 @@ const ContentScreen = () => {
                                 })
                             }
                         </View>
-                        // Content container
+                            // Content container
                         )
                     })
                 }
