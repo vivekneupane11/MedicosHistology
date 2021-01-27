@@ -1,16 +1,17 @@
 import React from 'react';
-import { Image, StyleSheet, View, Text, ScrollView } from 'react-native';
+import { Image, StyleSheet, View, Text, ScrollView,Dimensions } from 'react-native';
 import { createIconSetFromFontello } from 'react-native-vector-icons';
 import fontelloConfig from '../src/config.json';
 const Icon = createIconSetFromFontello(fontelloConfig);
 import { colors } from '../constants/theme';
-
+const width = Dimensions.get('window').width;
+const height = Dimensions.get('window').height;
 const SearchScreen = () => {
     return (
-        <ScrollView style={{ backgroundColor: '#F1F1F1' }}>
+        <ScrollView style={{ backgroundColor: '#F1F1F1',flex:1 ,height:"auto"}} contentContainerStyle={{flexGrow:1}}>
             <View style={styles.header}>
                 <View style={styles.search}>
-                <Icon style={{paddingVertical:2}} name="search" size={24} color={colors.gray} />
+                <Icon style={{padding:4}} name="search" size={24} color={colors.gray} />
                     <Text style={styles.searchText}>Search Histology</Text>
                 </View>
                 {/* Search bar end */}
@@ -48,11 +49,11 @@ const SearchScreen = () => {
                     />
                     <View style={styles.similarContent}>
                         <Text style={styles.similarContentTitle}>Epiglottis</Text>
-                        <Text style={styles.similarContentText}>The epiglottis is a leaf-shaped flap of cartilage located behind the tongue, at the top of the larynx, or voice box.</Text>
+                        <Text style={styles.similarContentText}>The epiglottis is a leaf-shaped flap of cartilage located behind the tongue, at the top of the </Text>
                     </View>
                 </View>
-                {/* card container */}
-                <View style={styles.similarContentBox}>
+               
+       <View style={styles.similarContentBox}>
                     <Image
                         source={require('../assets/images/heart.png')}
                         style={
@@ -65,11 +66,10 @@ const SearchScreen = () => {
                     />
                     <View style={styles.similarContent}>
                         <Text style={styles.similarContentTitle}>Epiglottis</Text>
-                        <Text style={styles.similarContentText}>The epiglottis is a leaf-shaped flap of cartilage located behind the tongue, at the top of the larynx, or voice box.</Text>
+                        <Text style={styles.similarContentText}>The epiglottis is a leaf-shaped flap of cartilage located behind the tongue, at the top of the </Text>
                     </View>
                 </View>
-                {/* card container */}
-                <View style={styles.similarContentBox}>
+       <View style={styles.similarContentBox}>
                     <Image
                         source={require('../assets/images/heart.png')}
                         style={
@@ -82,7 +82,41 @@ const SearchScreen = () => {
                     />
                     <View style={styles.similarContent}>
                         <Text style={styles.similarContentTitle}>Epiglottis</Text>
-                        <Text style={styles.similarContentText}>The epiglottis is a leaf-shaped flap of cartilage located behind the tongue, at the top of the larynx, or voice box.</Text>
+                        <Text style={styles.similarContentText}>The epiglottis is a leaf-shaped flap of cartilage located behind the tongue, at the top of the </Text>
+                    </View>
+                </View>
+                {/* card container */}
+       <View style={styles.similarContentBox}>
+                    <Image
+                        source={require('../assets/images/heart.png')}
+                        style={
+                            {
+                                height: 85,
+                                width: 82,
+                                borderRadius: 5
+                            }
+                        }
+                    />
+                    <View style={styles.similarContent}>
+                        <Text style={styles.similarContentTitle}>Epiglottis</Text>
+                        <Text style={styles.similarContentText}>The epiglottis is a leaf-shaped flap of cartilage located behind the tongue, at the top of the </Text>
+                    </View>
+                </View>
+                {/* card container */}
+       <View style={styles.similarContentBox}>
+                    <Image
+                        source={require('../assets/images/heart.png')}
+                        style={
+                            {
+                                height: 85,
+                                width: 82,
+                                borderRadius: 5
+                            }
+                        }
+                    />
+                    <View style={styles.similarContent}>
+                        <Text style={styles.similarContentTitle}>Epiglottis</Text>
+                        <Text style={styles.similarContentText}>The epiglottis is a leaf-shaped flap of cartilage located behind the tongue, at the top of the </Text>
                     </View>
                 </View>
                 {/* card container */}
@@ -95,26 +129,27 @@ const SearchScreen = () => {
 const styles = StyleSheet.create(
     {
         wrapper: {
-            backgroundColor: 'blue',
+            // backgroundColor: 'blue',
             justifyContent: 'space-between'
         },
         header: {
-            height: 205,
+            height: (width)/3,
             backgroundColor: '#3F3D56',
-            borderBottomLeftRadius: 18.5,
-            borderBottomRightRadius: 18.5,
-            paddingTop: 35,
+            borderBottomLeftRadius: 30.5,
+            borderBottomRightRadius: 30.5,
+            paddingTop: 20,
             alignItems: 'center',
-            marginBottom: 100
+            marginBottom: 90
         },
         search: {
             alignItems: 'center',
-            padding: 10,
+            paddingVertical: 4,
+            paddingHorizontal: 10,
             flexDirection: 'row',
             backgroundColor: '#F0F0F0',
-            height: 53,
-            width: 350,
+            width:'90%',
             borderRadius: 25,
+           marginHorizontal:20
         },
         searchText: {
             color: '#D0A8A8',
@@ -129,42 +164,50 @@ const styles = StyleSheet.create(
                 height: 5,
             },
             shadowOpacity: 0.34,
-            shadowRadius: 6.27, elevation: 10,
-            paddingHorizontal: 15,
-            paddingVertical: 19,
+            shadowRadius: 6.27,
+             elevation: 10,
+            // paddingHorizontal: 15,
+            // paddingVertical: 19,
             flexDirection: 'row',
-            marginTop: 50,
-            height: 125,
-            width: 355,
+            justifyContent:"space-around",
+            alignItems:'center',
+            padding:7,
+            marginTop: 25,
+            // height: 125,
+            // width: 355,
             backgroundColor: '#F1F1F1',
             borderRadius: 11,
         },
         searchContent: {
-            marginHorizontal: 15,
-            width: 229,
+            width:"65%",
+            padding:10
+
         },
         searchContentTitle: {
             color: 'black',
-            fontSize: 18,
+            fontSize: 16,
+            paddingVertical:2,
+            fontWeight:'bold',
             fontFamily: 'Roboto-Bold',
         },
         searchContentText: {
             flex: 1,
             color: 'gray',
+            paddingVertical:5,
             lineHeight: 17,
             textAlign: 'justify',
-            fontSize: 15,
+            fontSize: 14,
             fontFamily: 'LiberationSerif-Regular',
         },
         container: {
             alignItems: 'center',
         },
         similar: {
-            marginHorizontal: 12,
-            marginBottom: 16,
-            color: 'black',
-            fontSize: 20,
-            fontFamily: 'Roboto-Bold',
+            marginHorizontal: 15,
+            marginBottom: 5,
+            color: 'gray',
+            fontSize: 16,
+            // fontFamily: 'Roboto-Bold',
         },
         similarContentBox: {
             shadowColor: "#000",
@@ -174,34 +217,40 @@ const styles = StyleSheet.create(
             },
             shadowOpacity: 0.34,
             shadowRadius: 6.27, elevation: 10,
-            paddingHorizontal: 15,
-            paddingVertical: 19,
+  
             flexDirection: 'row',
-            marginTop: 9,
-            marginBottom: 25,
-            height: 125,
-            width: 355,
+            justifyContent:'flex-start',
+            alignItems:'center',
+          
             backgroundColor: '#F1F1F1',
             borderRadius: 11,
+            width:'85%',
+            padding:5,
+            marginVertical:7
         },
         similarContent: {
-            marginHorizontal: 15,
-            width: 229,
-
+            fontSize:14,
+            width:'70%',
+            paddingHorizontal:9,
+            paddingVertical:7,
+            justifyContent:'center'
         },
         similarContentTitle: {
             color: 'black',
-            fontSize: 18,
+            fontSize: 16,
+            fontWeight:'bold',
             fontFamily: 'Roboto-Bold',
-            elevation: 10
+            elevation: 10,
+            paddingBottom:1
         },
         similarContentText: {
             flex: 1,
             color: 'gray',
-            lineHeight: 17,
+            lineHeight: 15,
             textAlign: 'justify',
-            fontSize: 15,
+            fontSize: 14,
             fontFamily: 'LiberationSerif-Regular',
+            padding:4
         },
     }
 )
