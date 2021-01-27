@@ -43,7 +43,7 @@ export default function BackgroundHeader({navigation}) {
                <Text style={{color:colors.gray,fontSize:10}}>Notes</Text>
                 </View>
                 </TouchableOpacity>
-               <TouchableOpacity>  
+               <TouchableOpacity onPress={()=>{navigation.navigate('Search')}}>  
                    <View style={styles.headertabiconGroup}>
                 <Icon style={{paddingVertical:2}} name="search" size={24} color={colors.gray} />
                <Text style={{color:colors.gray,fontSize:10}}>Search</Text>

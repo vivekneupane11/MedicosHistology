@@ -95,7 +95,7 @@ elevation: 10,}]}>
             <Text style={{paddingHorizontal:12,color:colors.gray,fontSize:12,fontWeight:'bold'}} >View All</Text>
             </TouchableOpacity>
         </View>
-     
+      
         <FlatList
           data={mocks.hotels}
           horizontal
@@ -107,7 +107,7 @@ elevation: 10,}]}>
           }}
           renderItem={({item}) =>{
             return(
-              <TouchableOpacity>
+              <TouchableOpacity onPress={()=>{navigation.navigate('Content')}}>
                 <TopHotelCard hotel={item} />
               </TouchableOpacity>
             );

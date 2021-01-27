@@ -7,6 +7,8 @@ import OnboardingScreen from './screens/OnboardingScreen';
 import LoginScreen from './screens/LoginScreen';
 import RegistrationScreen from './screens/RegistrationScreen';
 import HomeScreen from './screens/HomeScreen';
+import ContentScreen from './screens/ContenScreen';
+import SearchScreen from './screens/SearchScreen';
 import SettingScreen from './screens/SettingScreen';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -21,6 +23,8 @@ const HomeStackScreen = ()=>{
        <HomeStack.Screen name="Register" component={RegistrationScreen} />  
        <HomeStack.Screen name="Home" component={HomeScreen} /> */}
        <HomeStack.Screen name="Setting" component={SettingScreen} />
+       <HomeStack.Screen name="Content" component={ContentScreen} />
+       <HomeStack.Screen name="Search" component={SearchScreen} />
                </HomeStack.Navigator>
     );
 }
