@@ -110,6 +110,7 @@ const styles = StyleSheet.create({
         borderRadius: 15
     },
     list: {
+        alignItems:'center',
         justifyContent: 'space-between',
         borderBottomWidth: 0.3,
         paddingVertical:14,
@@ -118,6 +119,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     endlist:{
+        alignItems:'center',
         justifyContent: 'space-between',
         paddingVertical:14,
         marginHorizontal: 20,
