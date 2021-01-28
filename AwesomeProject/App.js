@@ -10,39 +10,43 @@ import HomeScreen from './screens/HomeScreen';
 import ContentScreen from './screens/ContenScreen';
 import SearchScreen from './screens/SearchScreen';
 import SettingScreen from './screens/SettingScreen';
+import BookmarkScreen from './screens/BookmarkScreen';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import DrawerContent from './screens/DrawerContent';
-import BookmarkScreen from './screens/BookmarkScreen';
+import {AuthProvider, AuthContext }  from './src/AuthProvider'
 const HomeStack = createStackNavigator();
+import LoadingPage from './screens/LoadingPage';
 
 const HomeStackScreen = () => {
     return (
-        <HomeStack.Navigator headerMode="none">
-<<<<<<< HEAD
-            {/* <HomeStack.Screen name="Onboarding" component={OnboardingScreen} />
-            <HomeStack.Screen name="Login" component={LoginScreen} />
-            <HomeStack.Screen name="Register" component={RegistrationScreen} />
-            <HomeStack.Screen name="Home" component={HomeScreen} />
-            <HomeStack.Screen name="Setting" component={SettingScreen} />
-            <HomeStack.Screen name="Content" component={ContentScreen} /> 
-            <HomeStack.Screen name="Search" component={SearchScreen} /> */}
-      
-            <HomeStack.Screen name="Bookmark" component={BookmarkScreen} />
-        </HomeStack.Navigator>
-=======
-        <HomeStack.Screen name="Onboarding" component={OnboardingScreen} /> 
-       <HomeStack.Screen name="Login" component={LoginScreen} /> 
-       <HomeStack.Screen name="Register" component={RegistrationScreen} />  
-       <HomeStack.Screen name="Home" component={HomeScreen} />
-       <HomeStack.Screen name="Setting" component={SettingScreen} />
+        <HomeStack.Navigator >
+        <HomeStack.Screen name="Onboarding" component={OnboardingScreen} options={{ header: () => null }} />  
+        <HomeStack.Screen name="Login" component={LoginScreen} options={{ header: () => null }} /> 
+       <HomeStack.Screen name="Register" component={RegistrationScreen} options={{ header: () => null }} />  
+       <HomeStack.Screen name="Home" component={HomeScreen}   options={{ header: () => null }} />
+       <HomeStack.Screen name="Setting" component={SettingScreen} options={{ header: () => null }} />
        <HomeStack.Screen name="Content" component={ContentScreen} />
-       <HomeStack.Screen name="Search" component={SearchScreen} />
+       <HomeStack.Screen name="Search" component={SearchScreen}  />
+       <HomeStack.Screen name="Bookmarks" component ={BookmarkScreen}/>
                </HomeStack.Navigator>
->>>>>>> ae015287df709c713ead590ce7efd2a9b78870fb
     );
 }
-
+const Stack = createStackNavigator();
+// const AuthStackScreen = ()=>{
+//     return (
+//         <AuthProvider>
+//         <Stack.Navigator initialRouteName='Login'>
+//           <Stack.Screen
+//             name='Login'
+//             component={LoginScreen}
+//             options={{ header: () => null }}
+//           />
+//           <Stack.Screen name='Register' component={RegistrationScreen} />
+//         </Stack.Navigator>
+//         </AuthProvider>
+//       );
+// }
 
 const Drawer = createDrawerNavigator();
 
@@ -69,6 +73,7 @@ const App = () => {
 
 
             <Drawer.Navigator drawerContent={props => <DrawerContent {...props} />} >
+              
                 <Drawer.Screen name="HomeDrawer" component={HomeStackScreen} />
 
             </Drawer.Navigator>
