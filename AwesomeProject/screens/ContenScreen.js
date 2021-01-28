@@ -50,7 +50,7 @@ const ContentScreen = () => {
                                 result.introduction.map((introduction, k) => {
                                     return <View>
                                         <Text style={styles.contentTitleText}>{introduction.title}</Text>
-                                        <Text style={styles.contentText1}>{introduction.content}</Text>
+                                        <Text style={[styles.contentText1, styles.contentParagraphTypography]}>{introduction.content}</Text>
                                         {
                                             result.description.map((description, k) => {
                                                 return <View>
@@ -58,10 +58,10 @@ const ContentScreen = () => {
                                                     {
                                                         description.content.map((content, k) => {
                                                             return <View>
-                                                                <Unorderedlist bulletUnicode={0x2023} style={styles.unorderedList}>
-                                                                    <Text style={styles.listTitleText}>{content.subTitle}</Text>
+                                                                <Unorderedlist bulletUnicode={0x2023} style={styles.unorderedlist}>
+                                                                    <Text style={styles.subTitle}>{content.subTitle}</Text>
                                                                 </Unorderedlist>
-                                                                <Text style={styles.contentText2}>{content.content}</Text>
+                                                                <Text style={[styles.contentText2, styles.contentParagraphTypography]}>{content.content}</Text>
 
                                                             </View>
                                                         })
@@ -82,49 +82,74 @@ const ContentScreen = () => {
                 <View style={styles.suggestionBox}>
                     <Text style={styles.suggestionTitle}>Similar arctile</Text>
                     <View style={styles.articleList}>
-                        <View style={styles.image}>
+                        <View style={styles.imageContainer}>
                             <Image
                                 source={require('../assets/images/1.jpeg')}
-                                style={{ height: '100%', width: '100%' }}
+                                style={styles.imageStyle}
                             />
                         </View>
                         <View style={styles.articleContainer}>
                             <Text style={styles.listTitleText}>Epiglottis</Text>
-                            <Text style={styles.articleContent}>The epiglottis is a leaf-shaped flap of cartilage located behind the tongue, at the top of the larynx, or voice box.</Text>
-                        </View>
-                    </View>
-                    {/* Card of article details */}
-                    <View style={styles.articleList}>
-                        <View style={styles.image}>
-                            <Image
-                                source={require('../assets/images/1.jpeg')}
-                                style={{ height: '100%', width: '100%' }}
-                                resizeMode='cover'
-                            />
-                        </View>
-                        <View style={styles.articleContainer}>
-                            <Text style={styles.listTitleText}>Epiglottis</Text>
-                            <Text style={styles.articleContent}>The epiglottis is a leaf-shaped flap of cartilage located behind the tongue, at the top of the larynx, or voice box.</Text>
+                            <Text style={[styles.cardContentParagraphTypography, styles.articleContent]}>The epiglottis is a leaf-shaped flap of cartilage located behind the tongue, at the top of the larynx, or voice box.</Text>
                         </View>
                     </View>
                     {/* Card of article details */}
 
                     <View style={styles.articleList}>
-                        <View style={styles.image}>
+                        <View style={styles.imageContainer}>
                             <Image
                                 source={require('../assets/images/1.jpeg')}
-                                style={{ height: '100%', width: '100%', borderRadius: 5 }}
-                                resizeMode='cover'
+                                style={styles.imageStyle}
                             />
                         </View>
                         <View style={styles.articleContainer}>
                             <Text style={styles.listTitleText}>Epiglottis</Text>
-                            <Text style={styles.articleContent}>The epiglottis is a leaf-shaped flap of cartilage located behind the tongue, at the top of the larynx, or voice box.</Text>
+                            <Text style={[styles.cardContentParagraphTypography, styles.articleContent]}>The epiglottis is a leaf-shaped flap of cartilage located behind the tongue, at the top of the larynx, or voice box.</Text>
                         </View>
                     </View>
                     {/* Card of article details */}
 
+                    <View style={styles.articleList}>
+                        <View style={styles.imageContainer}>
+                            <Image
+                                source={require('../assets/images/1.jpeg')}
+                                style={styles.imageStyle}
+                            />
+                        </View>
+                        <View style={styles.articleContainer}>
+                            <Text style={styles.listTitleText}>Epiglottis</Text>
+                            <Text style={[styles.cardContentParagraphTypography, styles.articleContent]}>The epiglottis is a leaf-shaped flap of cartilage located behind the tongue, at the top of the larynx, or voice box.</Text>
+                        </View>
+                    </View>
+                    {/* Card of article details */}
 
+                    <View style={styles.articleList}>
+                        <View style={styles.imageContainer}>
+                            <Image
+                                source={require('../assets/images/1.jpeg')}
+                                style={styles.imageStyle}
+                            />
+                        </View>
+                        <View style={styles.articleContainer}>
+                            <Text style={styles.listTitleText}>Epiglottis</Text>
+                            <Text style={[styles.cardContentParagraphTypography, styles.articleContent]}>The epiglottis is a leaf-shaped flap of cartilage located behind the tongue, at the top of the larynx, or voice box.</Text>
+                        </View>
+                    </View>
+                    {/* Card of article details */}
+
+                    <View style={styles.articleList}>
+                        <View style={styles.imageContainer}>
+                            <Image
+                                source={require('../assets/images/1.jpeg')}
+                                style={styles.imageStyle}
+                            />
+                        </View>
+                        <View style={styles.articleContainer}>
+                            <Text style={styles.listTitleText}>Epiglottis</Text>
+                            <Text style={[styles.cardContentParagraphTypography, styles.articleContent]}>The epiglottis is a leaf-shaped flap of cartilage located behind the tongue, at the top of the larynx, or voice box.</Text>
+                        </View>
+                    </View>
+                    {/* Card of article details */}
                 </View>
                 {/* Similar topics container */}
             </View>
@@ -140,34 +165,31 @@ const styles = StyleSheet.create({
     //     fontSize: 25,
     //     color: 'white'
     // },
-    // contentTitleText: {
-    //     marginTop: 25,
-    //     marginBottom: 10,
-    //     textAlign: 'center',
-    //     marginHorizontal: 8,
-    //     fontFamily: 'PTSerif-Bold',
-    //     fontSize: 35,
-    //     color: '#156B9A'
-    // },
+    contentTitleText: {
+        marginTop: 25,
+        marginBottom: 10,
+        textAlign: 'center',
+        marginHorizontal: 8,
+        fontFamily: 'PTSerif-Bold',
+        fontSize: 35,
+        color: '#156B9A'
+    },
     contentSubTitleText: {
         paddingBottom: 5,
         borderBottomWidth: StyleSheet.hairlineWidth,
         marginBottom: 10,
         marginHorizontal: 12,
         fontFamily: 'Roboto-Bold',
-        fontWeight: 'normal',
-        fontSize: 25,
+        fontSize: 21,
         color: 'black'
     },
-    listTitleText: {
+    subTitle: {
         color: 'black',
         fontFamily: 'Roboto-Bold',
-        fontSize: 21,
-    },
-    unorderedList: {
         fontSize: 18,
-        marginLeft: 21
+        fontWeight: 'bold'
     },
+
     // headerWave: {
     //     backgroundColor: '#156B9A',
     //     height: 80,
@@ -185,15 +207,6 @@ const styles = StyleSheet.create({
     // headerIconGroup: {
     //     flexDirection: 'row'
     // },
-
-    pagingText: {
-        color: 'grey',
-        margin: 3
-    },
-    pagingActiveText: {
-        color: 'blue',
-        fontSize: 19
-    },
     container: {
         width: '100%'
     },
@@ -203,60 +216,82 @@ const styles = StyleSheet.create({
     contentText1: {
         marginBottom: 19,
         marginTop: 5,
-        lineHeight: 24,
-        textAlign: 'justify',
-        fontSize: 22,
-        fontFamily: 'LiberationSerif-Regular',
         marginHorizontal: 25
     },
     contentText2: {
         marginBottom: 19,
         marginTop: 5,
-        lineHeight: 24,
-        textAlign: 'justify',
-        fontSize: 22,
-        fontFamily: 'LiberationSerif-Regular',
         marginHorizontal: 35
+    },
+    unorderedlist: {
+        marginLeft: 14,
+        fontSize: 18
     },
     suggestionTitle: {
         marginBottom: 9,
         marginHorizontal: 12,
-        fontFamily: 'LiberationSerif-Bold',
-        fontSize: 31,
-        color: '#156B9A'
+        fontFamily: 'Roboto-Bold',
+        fontSize: 21,
+        color: 'gray',
     },
     articleList: {
-        paddingVertical: 10,
-        justifyContent: 'space-around',
+        // flex:1,
+        justifyContent: 'space-between',
+        padding: 10,
         flexDirection: 'row',
-        marginVertical: 5,
         height: 90,
         borderRadius: 5,
         backgroundColor: 'white',
         elevation: 3,
-        marginHorizontal: 25
+        marginHorizontal: 25,
+        marginVertical: 7
+
     },
-    image: {
+    imageContainer: {
+        width: '20%',
         borderRadius: 8,
-        height: 70,
-        width: 70
+        // height: 70,
+        // width: 70
+    },
+    imageStyle: {
+        height: '100%',
+        width: '100%',
+        borderRadius: 5
     },
     articleContainer: {
-        width: 250
-    }
-    ,
+        // paddingLeft: 19,
+        width: '76%'
+    },
+    listTitleText: {
+        flex: 0.7,
+        color: 'black',
+        fontFamily: 'Roboto-Bold',
+        fontSize: 17,
+    },
     articleContent: {
+        flex: 1,
         paddingRight: 19,
         paddingVertical: 5,
-        color: 'gray',
-        lineHeight: 17,
-        textAlign: 'justify',
-        fontSize: 17,
-        fontFamily: 'LiberationSerif-Regular',
+
     },
     suggestionBox: {
         paddingVertical: 21,
-        marginTop: 14
+        marginTop: 14,
+        justifyContent: 'space-evenly'
+    },
+    contentParagraphTypography: {
+        lineHeight: 22,
+        textAlign: 'justify',
+        fontSize: 17,
+        fontFamily: 'LiberationSerif-Regular',
+
+    },
+    cardContentParagraphTypography: {
+        color: 'gray',
+        lineHeight: 17,
+        textAlign: 'justify',
+        fontSize: 14,
+        fontFamily: 'LiberationSerif-Regular',
     }
 })
 

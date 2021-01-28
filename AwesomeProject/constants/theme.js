@@ -6,7 +6,13 @@ const colors = {
     black: "#323643",
     white: "#FFFFFF",
     gray: "#9DA3B4",
-    gray2: "#C5CCD6"
+    gray2: "#C5CCD6",
+    lightWhite:"#F1F1F1",
+    lightGray:"#F0F0F0",
+    lightShadeRed:"#D0A8A8",
+    dodgerBlue:"#1CAFFF",
+    shadeBlueMagneta:"#666380",
+    turquoise:"#ABB4BD"
   };
   
   const sizes = {

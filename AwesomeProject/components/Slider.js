@@ -14,7 +14,8 @@ const images = [
 const Slider = () => {
     const [active, setActive] = useState(0);
     var change = ({ nativeEvent }) => {
-        const slide = Math.ceil(nativeEvent.contentOffset.x / nativeEvent.layoutMeasurement.width);
+        const slide = Math.floor(nativeEvent.contentOffset.x / nativeEvent.layoutMeasurement.width);
+        {console.log(slide)}
         if (slide !== active) {
             setActive(slide);
         }
@@ -65,12 +66,10 @@ const styles = StyleSheet.create(
             alignSelf: 'center',
         },
         pagingActiveText:{
-            color:'#f1f1f1',
-         
-            marginHorizontal:4
+            color:'#3F3D56',
         },
         pagingText:{
-            color:'#000000'
+            color:'#156B9A'
         }
     }
 )
