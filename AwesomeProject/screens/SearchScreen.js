@@ -10,7 +10,7 @@ const SearchScreen = () => {
         <ScrollView style={{ backgroundColor: '#F1F1F1' }}>
             <View style={styles.header}>
                 <View style={styles.search}>
-                <Icon style={{paddingVertical:2}} name="search" size={24} color={colors.gray} />
+                    <Icon style={{ paddingVertical: 2 }} name="search" size={24} color={colors.gray} />
                     <Text style={styles.searchText}>Search Histology</Text>
                 </View>
                 {/* Search bar end */}
@@ -119,7 +119,7 @@ const styles = StyleSheet.create(
         searchText: {
             color: '#D0A8A8',
             fontSize: 18,
-   
+
             marginHorizontal: 10
         },
         searchContentBox: {
