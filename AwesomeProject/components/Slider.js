@@ -19,7 +19,7 @@ const Slider = () => {
             setActive(slide);
         }
     }
-    return <ScrollView
+    return <View><ScrollView
         pagingEnabled
         horizontal
         style={styles.sliderScrollView}
@@ -36,32 +36,41 @@ const Slider = () => {
             }
             )
         }
-        <View style={styles.indicator}>
-            {
-                images.map((i, k) => {
-                    return <Text key={k} style={k == active ? styles.pagingActiveText : styles.pagingText}>⬤</Text>
-                })
-            }
-        </View>
+  
         {/* Paging indicator */}
+     
     </ScrollView>
-
+   <View style={styles.indicator}>
+   {
+       images.map((i, k) => {
+           return <Text key={k} style={k == active ? styles.pagingActiveText : styles.pagingText}>⬤</Text>
+       })
+   }
+</View>
+</View>
 }
 
 const styles = StyleSheet.create(
     {
         sliderScrollView: {
-            marginTop: 29,
+
             alignSelf: 'center',
             height: 255,
             width: '100%',
-            backgroundColor: 'blue'
         },
         indicator: {
             flexDirection: 'row',
             position: 'relative',
             bottom: 0,
-            alignSelf: 'center'
+            alignSelf: 'center',
+        },
+        pagingActiveText:{
+            color:'#f1f1f1',
+         
+            marginHorizontal:4
+        },
+        pagingText:{
+            color:'#000000'
         }
     }
 )

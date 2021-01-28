@@ -19,6 +19,7 @@ const HomeStack = createStackNavigator();
 const HomeStackScreen = () => {
     return (
         <HomeStack.Navigator headerMode="none">
+<<<<<<< HEAD
             {/* <HomeStack.Screen name="Onboarding" component={OnboardingScreen} />
             <HomeStack.Screen name="Login" component={LoginScreen} />
             <HomeStack.Screen name="Register" component={RegistrationScreen} />
@@ -29,6 +30,16 @@ const HomeStackScreen = () => {
       
             <HomeStack.Screen name="Bookmark" component={BookmarkScreen} />
         </HomeStack.Navigator>
+=======
+        <HomeStack.Screen name="Onboarding" component={OnboardingScreen} /> 
+       <HomeStack.Screen name="Login" component={LoginScreen} /> 
+       <HomeStack.Screen name="Register" component={RegistrationScreen} />  
+       <HomeStack.Screen name="Home" component={HomeScreen} />
+       <HomeStack.Screen name="Setting" component={SettingScreen} />
+       <HomeStack.Screen name="Content" component={ContentScreen} />
+       <HomeStack.Screen name="Search" component={SearchScreen} />
+               </HomeStack.Navigator>
+>>>>>>> ae015287df709c713ead590ce7efd2a9b78870fb
     );
 }
 

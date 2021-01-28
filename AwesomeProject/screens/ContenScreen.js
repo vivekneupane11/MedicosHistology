@@ -134,21 +134,21 @@ const ContentScreen = () => {
 }
 
 const styles = StyleSheet.create({
-    titleText: {
-        fontFamily: 'Arial',
-        fontWeight: 'bold',
-        fontSize: 25,
-        color: 'white'
-    },
-    contentTitleText: {
-        marginTop: 25,
-        marginBottom: 10,
-        textAlign: 'center',
-        marginHorizontal: 8,
-        fontFamily: 'PTSerif-Bold',
-        fontSize: 35,
-        color: '#156B9A'
-    },
+    // titleText: {
+    //     fontFamily: 'Arial',
+    //     fontWeight: 'bold',
+    //     fontSize: 25,
+    //     color: 'white'
+    // },
+    // contentTitleText: {
+    //     marginTop: 25,
+    //     marginBottom: 10,
+    //     textAlign: 'center',
+    //     marginHorizontal: 8,
+    //     fontFamily: 'PTSerif-Bold',
+    //     fontSize: 35,
+    //     color: '#156B9A'
+    // },
     contentSubTitleText: {
         paddingBottom: 5,
         borderBottomWidth: StyleSheet.hairlineWidth,
@@ -168,23 +168,23 @@ const styles = StyleSheet.create({
         fontSize: 18,
         marginLeft: 21
     },
-    headerWave: {
-        backgroundColor: '#156B9A',
-        height: 80,
-        width: '100%',
-        borderBottomLeftRadius: 15,
-        elevation: 25
-    },
-    headerIconTab: {
-        paddingHorizontal: 5,
-        height: 50,
-        width: '100%',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-    },
-    headerIconGroup: {
-        flexDirection: 'row'
-    },
+    // headerWave: {
+    //     backgroundColor: '#156B9A',
+    //     height: 80,
+    //     width: '100%',
+    //     borderBottomLeftRadius: 15,
+    //     elevation: 25
+    // },
+    // headerIconTab: {
+    //     paddingHorizontal: 5,
+    //     height: 50,
+    //     width: '100%',
+    //     flexDirection: 'row',
+    //     justifyContent: 'space-between',
+    // },
+    // headerIconGroup: {
+    //     flexDirection: 'row'
+    // },
 
     pagingText: {
         color: 'grey',
