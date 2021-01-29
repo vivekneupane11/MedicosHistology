@@ -14,6 +14,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import DrawerContent from './screens/DrawerContent';
 import BookmarkScreen from './screens/BookmarkScreen';
+import NoteScreen from './screens/NoteScreen';
 const HomeStack = createStackNavigator();
 
 const HomeStackScreen = () => {
@@ -24,9 +25,10 @@ const HomeStackScreen = () => {
             <HomeStack.Screen name="Register" component={RegistrationScreen} /> */}
             <HomeStack.Screen name="Home" component={HomeScreen} />
             {/* <HomeStack.Screen name="Setting" component={SettingScreen} />
-            <HomeStack.Screen name="Content" component={ContentScreen} />
+            <HomeStack.Screen name="Content" component={ContentScreen} /> */}
             <HomeStack.Screen name="Search" component={SearchScreen} />
-            <HomeStack.Screen name="Bookmarks" component={BookmarkScreen} /> */}
+            <HomeStack.Screen name="Bookmarks" component={BookmarkScreen} />
+            <HomeStack.Screen name="Notes" component={NoteScreen}/>
 
         </HomeStack.Navigator>
     );
