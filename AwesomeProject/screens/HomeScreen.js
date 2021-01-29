@@ -232,7 +232,7 @@ elevation: 10,}]}>
         <TouchableOpacity>
           <View style={styles.premiumContent}>
             <View style={styles.toppremiumIcons}>
-            <Icon style={{paddingHorizontal:7}} name="bookmark-empty" size={24} color="#ABB4BD" />
+            <Icon style={{paddingHorizontal:7}} name="award" size={32} color='white' />
               </View>
               <View style={styles.premiumImage}>
             <Image resizeMode='cover' style={[styles.topHotelCardImage]} source= {require("../assets/logos/test.png")} />
@@ -246,7 +246,7 @@ elevation: 10,}]}>
           <TouchableOpacity>
           <View style={styles.premiumContent}>
             <View style={styles.toppremiumIcons}>
-            <Icon style={{paddingHorizontal:7}} name="bookmark-empty" size={24} color="#ABB4BD" />
+            <Icon style={{paddingHorizontal:7}} name="award" size={32} color='white' />
               </View>
             <View style={styles.premiumImage}>
             <Image resizeMode='cover' style={[styles.topHotelCardImage]} source= {require("../assets/logos/test.png")} />

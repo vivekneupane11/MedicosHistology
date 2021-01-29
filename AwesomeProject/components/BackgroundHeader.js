@@ -25,13 +25,13 @@ export default function BackgroundHeader({navigation}) {
               </View>
           <View style={styles.headerTabs}>
               <View style={styles.headertabiconContainer}>
-               <TouchableOpacity>  
+               <TouchableOpacity onPress={()=>navigation.navigate('Home')}>  
                    <View style={styles.headertabiconGroup}>
                 <Icon style={{paddingVertical:2}} name="home-outline" size={24} color={colors.gray} />
                <Text style={{color:colors.gray,fontSize:10}}>Home</Text>
                 </View>
                 </TouchableOpacity>
-               <TouchableOpacity onPress={()=>navigation.navigate('Bookmark')}> 
+               <TouchableOpacity onPress={()=>navigation.navigate('Bookmarks')}> 
                     <View style={styles.headertabiconGroup}>
                 <Icon style={{paddingVertical:2}} name="bookmark-empty" size={24} color={colors.gray} />
                <Text style={{color:colors.gray,fontSize:10}}>Bookmark</Text>
