@@ -22,41 +22,53 @@ const DrawerContent =(props)=>{
           
             <TouchableOpacity onPress={()=>props.navigation.navigate('Login')}>
             <View style={styles.drawerLinks}>
-                <Icon style={{paddingVertical:2,paddingHorizontal:6 ,fontWeight:'bold'}} name="bookmark-empty" size={18} color={colors.gray} />
+                <Icon style={{paddingVertical:2,paddingHorizontal:6 ,fontWeight:'bold'}} name="home-outline" size={18} color={colors.gray} />
                  <Text style={styles.drawerLink}>Home</Text>
                 </View>
             </TouchableOpacity>
             <TouchableOpacity>
             <View style={styles.drawerLinks}>
                 <Icon style={{paddingVertical:2,paddingHorizontal:6}} name="bookmark-empty" size={18} color={colors.gray} />
-                 <Text style={styles.drawerLink}>Home</Text>
+                 <Text style={styles.drawerLink}>Bookmarks</Text>
                 </View>
             </TouchableOpacity>
             <TouchableOpacity>
             <View style={styles.drawerLinks}>
-                <Icon style={{paddingVertical:2,paddingHorizontal:6}} name="bookmark-empty" size={18} color={colors.gray} />
-                 <Text style={styles.drawerLink}>Home</Text>
+                <Icon style={{paddingVertical:2,paddingHorizontal:6}} name="sticky-note-o" size={18} color={colors.gray} />
+                 <Text style={styles.drawerLink}>Notes</Text>
                 </View>
             </TouchableOpacity>
             <TouchableOpacity>
             <View style={styles.drawerLinks}>
-                <Icon style={{paddingVertical:2,paddingHorizontal:6}} name="bookmark-empty" size={18} color={colors.gray} />
-                 <Text style={styles.drawerLink}>Home</Text>
+                <Icon style={{paddingVertical:2,paddingHorizontal:6}} name="info-circled-alt" size={18} color={colors.gray} />
+                 <Text style={styles.drawerLink}>Invite More friends</Text>
                 </View>
             </TouchableOpacity>
             <TouchableOpacity>
             <View style={styles.drawerLinks}>
-                <Icon style={{paddingVertical:2,paddingHorizontal:6}} name="bookmark-empty" size={18} color={colors.gray} />
-                 <Text style={styles.drawerLink}>Home</Text>
+                <Icon style={{paddingVertical:2,paddingHorizontal:6}} name="star-empty" size={18} color={colors.gray} />
+                 <Text style={styles.drawerLink}>Rate App</Text>
+                </View>
+            </TouchableOpacity>
+            <TouchableOpacity>
+            <View style={styles.drawerLinks}>
+                <Icon style={{paddingVertical:2,paddingHorizontal:6}} name="globe" size={18} color={colors.gray} />
+                 <Text style={styles.drawerLink}>Join Our Community</Text>
+                </View>
+            </TouchableOpacity>
+            <TouchableOpacity>
+            <View style={styles.drawerLinks}>
+                <Icon style={{paddingVertical:2,paddingHorizontal:6}} name="award" size={22} color={colors.gray} />
+                 <Text style={styles.drawerLink}>Premium Contents</Text>
                 </View>
             </TouchableOpacity>
               
         
 
-            <TouchableOpacity style={{marginTop:(H) /6}}>
+            <TouchableOpacity style={{marginTop:5}}>
             <View style={[styles.drawerLinks,styles.drawerLinkBottom]}>
-                <Icon style={{paddingVertical:1,paddingHorizontal:6}} name="bookmark-empty" size={18} color={colors.gray} />
-                 <Text style={styles.drawerLink}>Home</Text>
+                <Icon style={{paddingVertical:1,paddingHorizontal:6}} name="logout" size={18} color={colors.gray} />
+                 <Text style={styles.drawerLink}>Sign Out</Text>
                 </View>
             </TouchableOpacity>
          
@@ -90,7 +102,7 @@ const styles = StyleSheet.create({
     
     },
     drawerLinkBottom:{
-        borderWidth:1
+        borderBottomWidth:1
     },
     drawerLink:{
         fontSize:14,

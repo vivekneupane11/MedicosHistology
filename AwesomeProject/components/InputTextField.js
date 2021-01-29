@@ -9,7 +9,7 @@ const InputTextField = (props)=>  {
             <View style={props.style}>
                 {/* <Text style={styles.inputTitle}>{props.title}</Text> */}
                 <View style={{flexDirection:'row',alignItems:'center'}}>
-                <Icon style={{paddingHorizontal:7}} name="user" size={18} color="#ABB4BD" />
+                <Icon style={{paddingHorizontal:7}} name={props.iconname} size={18} color="#ABB4BD" />
                 <TextInput 
                 placeholderTextColor={'#ABB4BD'}
                     placeholder={props.placeholderText}
@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
         fontSize: 14,
         fontWeight:'bold',
         fontFamily: "Avenir Next",
+        width:'90%'
    
     }
 });

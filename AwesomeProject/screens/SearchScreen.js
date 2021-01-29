@@ -7,13 +7,26 @@ import { colors } from '../constants/theme';
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 import InputTextField from "../components/InputTextField";
-const SearchScreen = () => {
+const SearchScreen = ({navigation}) => {
+    React.useLayoutEffect(()=>{
+        navigation.setOptions(
+            {
+                headerTitle:(props)=>(
+                    <Text {...props} style={{color:'white',fontSize:18,fontWeight:'bold',backgroundColor:colors.primary}}>Search</Text>
+                ),
+                headerStyle:{
+                    backgroundColor:colors.primary,
+                },
+                headerTintColor:'#fff'
+            }
+        );
+    },[navigation])
     return (
         <ScrollView style={styles.wrapper} contentContainerStyle={{ flexGrow: 1 }}>
             <View style={styles.header}>
                 <View style={styles.search}>
                     {/* <Icon style={{padding:4}} name="search" size={24} color={colors.gray} /> */}
-                    <InputTextField style={styles.inputTitle} placeholderText="Search Histology" />
+                    <InputTextField iconname="search" style={[styles.inputTitle,{height:40}]} placeholderText="Search Histology" />
                 </View>
                 {/* Search bar end */}
                 <View style={[styles.searchContentBox, styles.shadow, styles.f_r_sa_c]}>

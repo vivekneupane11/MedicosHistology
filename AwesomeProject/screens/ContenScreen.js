@@ -1,17 +1,39 @@
 import React, { useState } from 'react';
 import { View, Text, Image, ImageBackground, ScrollView, Dimensions, StyleSheet } from 'react-native';
+import { color } from 'react-native-reanimated';
 import Unorderedlist from 'react-native-unordered-list';
 import Slider from '../components/Slider';
-// import fontelloConfig from '../src/config.json';
-// import {colors} from '../constants/theme';
-// const Icon = createIconSetFromFontello(fontelloConfig);
+import { colors } from '../constants/theme';
+import fontelloConfig from '../src/config.json';
+import { createIconSetFromFontello } from 'react-native-vector-icons';
+
+const Icon = createIconSetFromFontello(fontelloConfig);
 
 const width = Dimensions.get('screen').width;
 const height = width / 1.61;
 const data = require('./data.json');
 
 
-const ContentScreen = () => {
+const ContentScreen = ({navigation}) => {
+    React.useLayoutEffect(()=>{
+        navigation.setOptions(
+            {
+                headerTitle:(props)=>(
+                    <View style={{justifyContent:"space-between",flexDirection:'row',alignItems:'center'}}>
+                    <Text {...props} style={{color:'white',fontSize:18,backgroundColor:colors.primary}}>Epithelial Tissue</Text>
+                    <View style={{flexDirection:'row'}}>
+                    <Icon style={{marginHorizontal:0}} name="edit" size={25} color="#fff" />
+                    <Icon style={{marginHorizontal:20}} name="bookmark-empty" size={24} color="#fff" />
+                        </View>
+                    </View>
+                ),
+                headerStyle:{
+                    backgroundColor:colors.primary
+                },
+                headerTintColor:'#fff'
+            }
+        );
+    },[navigation])
     return (
         <ScrollView style={{
             backgroundColor: 'lightgrey',

@@ -28,9 +28,7 @@ const LoginScreen = ({ navigation }) => {
 
                     <Text style={[styles.text, styles.link, styles.forgetText]}>Forget Password ?</Text>
                     <TouchableOpacity style={[styles.submitContainer, styles.shadow,styles.f_c_c_c]}>
-                        <Text
-                            style={[styles.text, styles.buttonText]}
-                        >
+                        <Text style={[styles.text, styles.buttonText]}>
                             Login
                         </Text>
                     </TouchableOpacity>
