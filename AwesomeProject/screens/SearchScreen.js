@@ -11,11 +11,7 @@ const SearchScreen = () => {
         <ScrollView style={{ backgroundColor: '#F1F1F1',flex:1 ,height:"auto"}} contentContainerStyle={{flexGrow:1}}>
             <View style={styles.header}>
                 <View style={styles.search}>
-<<<<<<< HEAD
-                    <Icon style={{ paddingVertical: 2 }} name="search" size={24} color={colors.gray} />
-=======
                 <Icon style={{padding:4}} name="search" size={24} color={colors.gray} />
->>>>>>> ae015287df709c713ead590ce7efd2a9b78870fb
                     <Text style={styles.searchText}>Search Histology</Text>
                 </View>
                 {/* Search bar end */}
