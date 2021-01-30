@@ -4,62 +4,78 @@ import BottomTab from '../components/BottomTab';
 import { createIconSetFromFontello } from 'react-native-vector-icons';
 import fontelloConfig from '../src/config.json';
 const Icon = createIconSetFromFontello(fontelloConfig);
-import {
-  Dimensions,
-  View,
-  Image,
-  StyleSheet,
-  ScrollView,
-  TouchableOpacity, FlatList
-} from "react-native";
+import data from './data';
 
-import { Card, Badge, Button, Block, Text } from "../components";
-import { theme, mocks } from "../constants";
+import {
+    Dimensions,
+  View,
+    Image,
+    StyleSheet,
+    ScrollView,
+    TouchableOpacity,FlatList
+  } from "react-native";
+  
+  import { Card, Badge, Button, Block, Text } from "../components";
+  import { theme, mocks } from "../constants";
 import { colors } from '../constants/theme';
 
 
 
 const { width } = Dimensions.get("window");
-const HomeScreen = ({ navigation }) => {
-  const TopHotelCard = ({ hotel }) => {
-    return (
-      <View style={[styles.topHotelCard,styles.shadow]}>
-        <View
-          style={{
-            position: 'absolute',
-            top: 5,
-            right: 5,
-            zIndex: 1,
-            flexDirection: 'row',
-          }}>
-          <Icon style={styles.bookmark} name="bookmark-empty" size={24} color="#ABB4BD" />
+const HomeScreen = ({navigation})=>{
+    const TopHotelCard = ({title,subtitle,imgSrc}) => {
 
-        </View>
-        <Image resizeMode='cover' style={[styles.topHotelCardImage]} source={hotel.image} />
-        <View style={{ paddingHorizontal: 10 }}>
-          <Text style={{ fontSize: 13, fontWeight: 'bold' }}>{hotel.name}</Text>
-          <Text style={{ fontSize: 9, fontWeight: 'bold', color: colors.gray }}>
-            {hotel.location}
-          </Text>
-        </View>
-      </View>)
-  }
+    
+        return (
+          <View style={styles.topHotelCard}>
+            <View
+              style={{
+                position: 'absolute',
+                top: 5,
+                right: 5,
+                zIndex: 1,
+                flexDirection: 'row',
+              }}>
+               <Icon style={{paddingHorizontal:7}} name="bookmark-empty" size={24} color="#ABB4BD" />
+             
+            </View>
+            <Image resizeMode='cover' style={[styles.topHotelCardImage]} source={imgSrc} />
+            <View style={{ paddingHorizontal: 10}}>
+         
+              <Text style={{fontSize: 13, fontWeight: 'bold'}}>{title}</Text>
+              <Text style={{fontSize: 9, fontWeight: 'bold',color:colors.gray}}>
+                {subtitle}
+              </Text>
+            </View>
+          </View>)}
 
 
-  return (
-    <ScrollView style={styles.container}>
-      <BackgroundHeader navigation={navigation} />
-      {/* 
+return(
+    <ScrollView style={{backgroundColor:'#f1f1f1'}}>
+        <BackgroundHeader navigation={navigation}/>
+{/* 
 
 <BottomTab/> */}
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        style={styles.contentContainer}
-      >
-        <Block flex={false} row space="between" style={[styles.categories, styles.blockContainer]}>
-          {mocks.categories.map(category => (
-            <TouchableOpacity
+ <ScrollView
+          showsVerticalScrollIndicator={false}
+          style={{ paddingVertical: theme.sizes.base}}
+        >
+          <Block flex={false} row space="between" style={[styles.categories,{paddingVertical:15}]}>
+            {mocks.categories.map(category => (
+              <TouchableOpacity
+              
+                key={category.name}
+                onPress={() => navigation.navigate("Explore", { category })}
+              >
+                <Card center middle shadow style={[styles.category,{backgroundColor:'#f0f0f0',  shadowColor: "#000",
+shadowOffset: {
+	width: 0,
+	height: 5,
+},
+shadowOpacity: 0.34,
+shadowRadius: 6.27,
 
+<<<<<<< HEAD
               key={category.name}
               onPress={() => navigation.navigate("Explore", { category })}
             >
@@ -78,44 +94,123 @@ const HomeScreen = ({ navigation }) => {
                   {category.count}
                 </Text>
               </Card>
+=======
+elevation: 10,}]}>
+                  <Badge
+                    margin={[0, 0, 15]}
+                    size={50}
+                    color="rgba(41,216,143,0.20)"
+                  >
+                    <Image source={category.image} />
+                  </Badge>
+                  <Text height={20} style={{fontWeight:'900'}}>
+                    {category.name}
+                  </Text>
+                  <Text gray caption>
+                    {category.count} 
+                  </Text>
+                </Card>
+              </TouchableOpacity>
+            ))}
+          </Block>
+         
+          <View style={styles.contentflatListHeader}>
+        <Text style={{paddingHorizontal:12,fontWeight:'bold',fontSize:18}} >HyperClombic Misopology</Text>
+        <TouchableOpacity>  
+            <Text style={{paddingHorizontal:12,color:colors.gray,fontSize:12,fontWeight:'bold'}} >View All</Text>
+>>>>>>> 3c2d9bf1954a94c706fb27bb5e9fd26ca45665a6
             </TouchableOpacity>
-          ))}
-        </Block>
+        </View>
+      
+        <FlatList
+          data={data}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{
+            paddingLeft: 20,
+            marginTop: 10,
+            paddingBottom: 40,
+          }}
+          keyExtractor={(item)=>{
+            return item.id.toString();
+          }}
+          renderItem={({item}) =>{
+      
 
-        <View style={[styles.contentflatListHeader,styles.f_r_sb_c]}>
-          <Text style={styles.contentflatListHeaderTitle} >HyperClombic Misopology</Text>
-          <TouchableOpacity>
-            <Text style={styles.contentflatListHeaderViewAll} >View All</Text>
-          </TouchableOpacity>
-        </View>
+            return(
+            
+              <TouchableOpacity key={item.id} onPress={()=>{navigation.navigate('Content',{data:item})}}>
+                <TopHotelCard title={item.title} subtitle={item.subtitle} imgSrc={item.image} />
+              </TouchableOpacity>
+            );
+          }     } />
 
-        <FlatList
-          data={mocks.hotels}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={{
-            paddingLeft: 20,
-            marginTop: 10,
-            paddingBottom: 40,
-          }}
-          renderItem={({ item }) => {
-            return (
-              <TouchableOpacity onPress={() => { navigation.navigate('Content') }}>
-                <TopHotelCard hotel={item} />
-              </TouchableOpacity>
-            );
-          }} />
+          
 
+<View style={styles.contentflatListHeader}>
+        <Text style={{paddingHorizontal:12,fontWeight:'bold',fontSize:18}} >Epithelial Tissue</Text>
+        <TouchableOpacity>  
+            <Text style={{paddingHorizontal:12,color:colors.gray,fontSize:12,fontWeight:'bold'}} >View All</Text>
+            </TouchableOpacity>
+        </View>
+              <FlatList
+          data={data}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{
+            paddingLeft: 20,
+            marginTop: 10,
+            paddingBottom: 40,
+          }}
+          keyExtractor={(item)=>{
+            return item.id;
+          }}
+          renderItem={({item}) =>{
+      
 
+            return(
+            
+              <TouchableOpacity key={item.id} onPress={()=>{navigation.navigate('Content')}}>
+                <TopHotelCard title={item.title} subtitle={item.subtitle} imgSrc={item.image} />
+              </TouchableOpacity>
+            );
+          }     } />
+          <View style={styles.contentflatListHeader}>
+        <Text style={{paddingHorizontal:12,fontWeight:'bold',fontSize:18}} >Epithelial Tissue</Text>
+        <TouchableOpacity>  
+            <Text style={{paddingHorizontal:12,color:colors.gray,fontSize:12,fontWeight:'bold'}} >View All</Text>
+            </TouchableOpacity>
+        </View>
+              <FlatList
+          data={data}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{
+            paddingLeft: 20,
+            marginTop: 10,
+            paddingBottom: 40,
+          }}
+          keyExtractor={(item)=>{
+            return item.id;
+          }}
+          renderItem={({item}) =>{
+      
 
-        <View style={[styles.contentflatListHeader,styles.f_r_sb_c]}>
-          <Text style={styles.contentflatListHeaderTitle} >Epithelial Tissue</Text>
-          <TouchableOpacity>
-            <Text style={styles.contentflatListHeaderViewAll} >View All</Text>
-          </TouchableOpacity>
+            return(
+            
+              <TouchableOpacity key={item.id} onPress={()=>{navigation.navigate('Content')}}>
+                <TopHotelCard title={item.title} subtitle={item.subtitle} imgSrc={item.image} />
+              </TouchableOpacity>
+            );
+          }     } />
+          <View style={styles.contentflatListHeader}>
+        <Text style={{paddingHorizontal:12,fontWeight:'bold',fontSize:18}} >Epithelial Tissue</Text>
+        <TouchableOpacity>  
+            <Text style={{paddingHorizontal:12,color:colors.gray,fontSize:12,fontWeight:'bold'}} >View All</Text>
+            </TouchableOpacity>
         </View>
-        <FlatList
-          data={mocks.hotels}
+              <FlatList
+          data={data}
           horizontal
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={{
@@ -123,21 +218,27 @@ const HomeScreen = ({ navigation }) => {
             marginTop: 10,
             paddingBottom: 40,
           }}
-          renderItem={({ item }) => {
-            return (
-              <TouchableOpacity>
-                <TopHotelCard hotel={item} />
+          keyExtractor={(item)=>{
+            return item.id;
+          }}
+          renderItem={({item}) =>{
+      
+
+            return(
+            
+              <TouchableOpacity key={item.id} onPress={()=>{navigation.navigate('Content',{data:item.id})}}>
+                <TopHotelCard title={item.title} subtitle={item.subtitle} imgSrc={item.image} />
               </TouchableOpacity>
             );
-          }} />
-        <View style={[styles.contentflatListHeader,styles.f_r_sb_c]}>
-          <Text style={styles.contentflatListHeaderTitle} >Epithelial Tissue</Text>
-          <TouchableOpacity>
-            <Text style={styles.contentflatListHeaderViewAll} >View All</Text>
-          </TouchableOpacity>
+          }     } />
+          <View style={styles.contentflatListHeader}>
+        <Text style={{paddingHorizontal:12,fontWeight:'bold',fontSize:18}} >Epithelial Tissue</Text>
+        <TouchableOpacity>  
+            <Text style={{paddingHorizontal:12,color:colors.gray,fontSize:12,fontWeight:'bold'}} >View All</Text>
+            </TouchableOpacity>
         </View>
-        <FlatList
-          data={mocks.hotels}
+              <FlatList
+          data={data}
           horizontal
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={{
@@ -145,21 +246,27 @@ const HomeScreen = ({ navigation }) => {
             marginTop: 10,
             paddingBottom: 40,
           }}
-          renderItem={({ item }) => {
-            return (
-              <TouchableOpacity>
-                <TopHotelCard hotel={item} />
+          keyExtractor={(item)=>{
+            return item.id;
+          }}
+          renderItem={({item}) =>{
+      
+
+            return(
+            
+              <TouchableOpacity key={item.id} onPress={()=>{navigation.navigate('Content')}}>
+                <TopHotelCard title={item.title} subtitle={item.subtitle} imgSrc={item.image} />
               </TouchableOpacity>
             );
-          }} />
-        <View style={[styles.contentflatListHeader,styles.f_r_sb_c]}>
-          <Text style={styles.contentflatListHeaderTitle} >Epithelial Tissue</Text>
-          <TouchableOpacity>
-            <Text style={styles.contentflatListHeaderViewAll} >View All</Text>
-          </TouchableOpacity>
+          }     } />
+          <View style={styles.contentflatListHeader}>
+        <Text style={{paddingHorizontal:12,fontWeight:'bold',fontSize:18}} >Epithelial Tissue</Text>
+        <TouchableOpacity>  
+            <Text style={{paddingHorizontal:12,color:colors.gray,fontSize:12,fontWeight:'bold'}} >View All</Text>
+            </TouchableOpacity>
         </View>
-        <FlatList
-          data={mocks.hotels}
+              <FlatList
+          data={data}
           horizontal
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={{
@@ -167,99 +274,62 @@ const HomeScreen = ({ navigation }) => {
             marginTop: 10,
             paddingBottom: 40,
           }}
-          renderItem={({ item }) => {
-            return (
-              <TouchableOpacity>
-                <TopHotelCard hotel={item} />
-              </TouchableOpacity>
-            );
-          }} />
-        <View style={[styles.contentflatListHeader,styles.f_r_sb_c]}>
-          <Text style={styles.contentflatListHeaderTitle} >Epithelial Tissue</Text>
-          <TouchableOpacity>
-            <Text style={styles.contentflatListHeaderViewAll} >View All</Text>
-          </TouchableOpacity>
-        </View>
-        <FlatList
-          data={mocks.hotels}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={{
-            paddingLeft: 20,
-            marginTop: 10,
-            paddingBottom: 40,
+          keyExtractor={(item)=>{
+            return item.id;
           }}
-          renderItem={({ item }) => {
-            return (
-              <TouchableOpacity>
-                <TopHotelCard hotel={item} />
+          renderItem={({item}) =>{
+      
+
+            return(
+            
+              <TouchableOpacity key={item.id} onPress={()=>{navigation.navigate('Content')}}>
+                <TopHotelCard title={item.title} subtitle={item.subtitle} imgSrc={item.image} />
               </TouchableOpacity>
             );
-          }} />
-        <View style={[styles.contentflatListHeader,styles.f_r_sb_c]}>
-          <Text style={styles.contentflatListHeaderTitle} >Epithelial Tissue</Text>
-          <TouchableOpacity>
-            <Text style={styles.contentflatListHeaderViewAll} >View All</Text>
-          </TouchableOpacity>
-        </View>
-        <FlatList
-          data={mocks.hotels}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={{
-            paddingLeft: 20,
-            marginTop: 10,
-            paddingBottom: 40,
-          }}
-          renderItem={({ item }) => {
-            return (
-              <TouchableOpacity>
-                <TopHotelCard hotel={item} />
-              </TouchableOpacity>
-            );
-          }} />
-      </ScrollView>
-      <View style={styles.premiumContainer}>
-        <Text style={styles.contentflatListHeaderTitle} >Premium Contents</Text>
-        <View style={styles.premiumWrapper}>
-          <TouchableOpacity>
-            <View style={[styles.premiumContent,styles.shadow,styles]}>
-              <View style={styles.toppremiumIcons}>
-                <Icon style={styles.bookmark} name="bookmark-empty" size={24} color="#ABB4BD" />
+          }     } />
+        </ScrollView>
+        <View style={styles.premiumContainer}>
+        <Text style={{paddingHorizontal:12,fontWeight:'bold',fontSize:18}} >Premium Contents</Text>
+      <View style={styles.premiumWrapper}>
+        <TouchableOpacity>
+          <View style={styles.premiumContent}>
+            <View style={styles.toppremiumIcons}>
+            <Icon style={{paddingHorizontal:7}} name="award" size={32} color='white' />
               </View>
               <View style={styles.premiumImage}>
-                <Image resizeMode='cover' style={[styles.topHotelCardImage]} source={require("../assets/logos/test.png")} />
+            <Image resizeMode='cover' style={[styles.topHotelCardImage]} source= {require("../assets/logos/test.png")} />
               </View>
-              <View style={[styles.premiumFooter,styles.f_r_sb_c]}>
-                <Text style={styles.premiumText}>Premium Content</Text>
-                <Text style={styles.cost}> $2 </Text>
+              <View style={styles.premiumFooter}>
+              <Text style={{fontSize:14,fontWeight:'bold'}}>Premium Content</Text>
+              <Text style={{color:colors.secondary,fontWeight:'bold',fontSize:18}}> $2 </Text>
               </View>
             </View>
           </TouchableOpacity>
           <TouchableOpacity>
-            <View style={[styles.premiumContent,styles.shadow]}>
-              <View style={styles.toppremiumIcons}>
-                <Icon style={styles.bookmark} name="bookmark-empty" size={24} color="#ABB4BD" />
+          <View style={styles.premiumContent}>
+            <View style={styles.toppremiumIcons}>
+            <Icon style={{paddingHorizontal:7}} name="award" size={32} color='white' />
               </View>
-              <View style={styles.premiumImage}>
-                <Image resizeMode='cover' style={[styles.topHotelCardImage]} source={require("../assets/logos/test.png")} />
+            <View style={styles.premiumImage}>
+            <Image resizeMode='cover' style={[styles.topHotelCardImage]} source= {require("../assets/logos/test.png")} />
               </View>
-              <View style={[styles.premiumFooter,styles.f_r_sb_c]}>
-                <Text style={styles.premiumText}>Premium Content</Text>
-                <Text style={styles.cost}> $2 </Text>
+              <View style={styles.premiumFooter}>
+              <Text style={{fontSize:14,fontWeight:'bold'}}>Premium Content</Text>
+              <Text style={{color:colors.secondary,fontWeight:'bold',fontSize:18}}> $2 </Text>
               </View>
             </View>
           </TouchableOpacity>
+          </View>
         </View>
-      </View>
-    </ScrollView>
-  )
+        </ScrollView>
+)
 }
 
 export default HomeScreen;
 
 
 const styles = StyleSheet.create({
+<<<<<<< HEAD
   container: {
     backgroundColor: colors.lightWhite
   },
@@ -381,28 +451,123 @@ const styles = StyleSheet.create({
     shadowOffset: {
       width: 0,
       height: 5,
+=======
+    header: {
+      paddingHorizontal: theme.sizes.base * 2
+>>>>>>> 3c2d9bf1954a94c706fb27bb5e9fd26ca45665a6
     },
-    shadowOpacity: 0.34,
-    shadowRadius: 6.27,
+    avatar: {
+      height: theme.sizes.base * 2.2,
+      width: theme.sizes.base * 2.2
+    },
+    topHotelCard: {
+        height: 150,
+        width: 150,
+        backgroundColor: '#f1f1f1',
+        // elevation: 10,
+        shadowColor: "#000",
+shadowOffset: {
+	width: 0,
+	height: 5,
+},
+shadowOpacity: 0.34,
+shadowRadius: 6.27,
 
-    elevation: 10,
-  },
-  bookmark: {
-    paddingHorizontal: 7
-  },
-  premiumText: {
-    fontSize: 14,
-    fontWeight: 'bold'
-  },
-  cost: {
-    color: colors.secondary,
-    fontWeight: 'bold',
-    fontSize: 18
-  },
-  f_r_sb_c:{
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  }
-
-});
+elevation: 10,
+        marginTop:10,
+        marginHorizontal: 10,
+        borderRadius: 10,
+      },
+      topHotelCardImage: {
+     marginTop:10,
+        height: 90,
+        width: '100%',
+        resizeMode:'contain',
+        justifyContent:'center',
+        alignItems:'center'
+      },
+    tabs: {
+      borderBottomColor: theme.colors.gray2,
+      borderBottomWidth: StyleSheet.hairlineWidth,
+      marginVertical: theme.sizes.base,
+      marginHorizontal: theme.sizes.base * 2
+    },
+    tab: {
+      marginRight: theme.sizes.base * 2,
+      paddingBottom: theme.sizes.base
+    },
+    active: {
+      borderBottomColor: theme.colors.secondary,
+      borderBottomWidth: 3
+    },
+    categories: {
+      flexWrap: "wrap",
+      paddingHorizontal: theme.sizes.base * 2,
+      marginBottom: theme.sizes.base 
+    },
+    category: {
+      // this should be dynamic based on screen width
+      minWidth: (width - theme.sizes.padding * 2.4 - theme.sizes.base) / 2,
+      maxWidth: (width - theme.sizes.padding * 2.4 - theme.sizes.base) / 2,
+      maxHeight: (width - theme.sizes.padding * 2.4 - theme.sizes.base) / 2
+    },
+    contentflatListHeader:{
+      flexDirection:'row',
+      justifyContent:'space-between',
+      alignItems:'center',
+      paddingHorizontal:10
+    },
+    premiumContainer:{
+      paddingHorizontal:5,
+    
+    },
+    premiumWrapper:{
+      paddingVertical:15,
+      flexDirection:'row',
+      justifyContent:'space-around',
+      alignItems:"center",
+      flex:1
+    
+    },
+    premiumContent:{
+      width:(width)/2.2,
+      borderRadius: 10,
+      shadowColor: "#000",
+      shadowOffset: {
+        width: 0,
+        height: 5,
+      },
+      shadowOpacity: 0.34,
+      shadowRadius: 6.27,
+      
+      elevation: 10,
+      backgroundColor:colors.primary,
+      flexDirection:'column',
+      justifyContent:'flex-start',
+      alignItems:'flex-start'
+      
+    },
+    toppremiumIcons:{
+      position:'absolute',
+      top:5,
+      right:5,
+      flexDirection:"row",
+      zIndex:1
+    },
+    premiumImage:{
+      paddingVertical:20,
+      width:'100%',
+      height:(width)/2.7
+    },
+    premiumFooter:{
+      backgroundColor:'#fff',
+      paddingHorizontal:10,
+      paddingVertical:15,
+  width:'100%',
+  borderBottomLeftRadius:10,
+  borderBottomRightRadius:10,
+  flexDirection:'row',
+  justifyContent:'space-between',
+  alignItems:'center'
+    }
+  });

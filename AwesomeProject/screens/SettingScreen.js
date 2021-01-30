@@ -21,12 +21,12 @@ const SettingScreen = ({ navigation }) => {
                         {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
                     </View>
                     <View style={[styles.list,styles.f_r_sb_c]}>
-                        <Icon style={{flex:1.5}} name="sticky-note-o" size={18} color="#ABB4BD" />
+                        <Icon style={{flex:1.5}} name="bell" size={18} color="#ABB4BD" />
                         <Text style={{ flex: 9 }}>Push Notification</Text>
                         {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
                     </View>
                     <View style={[styles.list,styles.f_r_sb_c]}>
-                        <Icon style={{flex:1.5}} name="cog" size={18} color="#ABB4BD" />
+                        <Icon style={{flex:1.5}} name="font" size={18} color="#ABB4BD" />
                         <Text style={{ flex: 9 }}>Font Size</Text>
                         {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
                     </View>
@@ -36,7 +36,12 @@ const SettingScreen = ({ navigation }) => {
                         {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
                     </View>
                     <View style={[styles.endlist,styles.f_r_sb_c]}>
-                        <Icon style={{flex:1.5}} name="params" size={18} color="#ABB4BD" />
+                        <Icon style={{flex:1.5}} name="language" size={18} color="#ABB4BD" />
+                        <Text style={{ flex: 9 }}>Language</Text>
+                        {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
+                    </View>
+                    <View style={[styles.endlist,styles.f_r_sb_c]}>
+                        <Icon style={{flex:1.5}} name="fog-sun" size={18} color="#ABB4BD" />
                         <Text style={{ flex: 9 }}>Dark Mode</Text>
                         {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
                     </View>
@@ -44,40 +49,40 @@ const SettingScreen = ({ navigation }) => {
                 {/* First Section */}
                 <View style={[styles.settingsSection,    styles.shadow]}>
                     <View style={[styles.list,styles.f_r_sb_c]}>
-                        <Icon style={{flex:1.5}} name="user" size={18} color="#ABB4BD" />
+                        <Icon style={{flex:1.5}} name="globe" size={20} color="#ABB4BD" />
                         <Text style={{ flex: 9 }}>Join Our Community</Text>
                         {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
                     </View>
                     <View style={[styles.list,styles.f_r_sb_c]}>
-                        <Icon style={{flex:1.5}} name="sticky-note-o" size={18} color="#ABB4BD" />
+                        <Icon style={{flex:1.5}} name="docs" size={18} color="#ABB4BD" />
                         <Text style={{ flex: 9 }}>Privacy Policy</Text>
                         {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
                     </View>
                     <View style={[styles.list,styles.f_r_sb_c]}>
-                        <Icon style={{flex:1.5}} name="user" size={18} color="#ABB4BD" />
+                        <Icon style={{flex:1.5}} name="book-open" size={18} color="#ABB4BD" />
                         <Text style={{ flex: 9 }}>Terms of Services</Text>
                         {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
                     </View>
                     <View style={[styles.list,styles.f_r_sb_c]}>
-                        <Icon style={{flex:1.5}} name="search" size={18} color="#ABB4BD" />
+                        <Icon style={{flex:1.5}} name="export" size={18} color="#ABB4BD" />
                         <Text style={{ flex: 9 }}>Invite More Friends</Text>
                         {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
                     </View>
                     <View style={[styles.list,styles.f_r_sb_c]}>
-                        <Icon style={{flex:1.5}} name="home-outline" size={18} color="#ABB4BD" />
+                        <Icon style={{flex:1.5}} name="info-circled-alt" size={18} color="#ABB4BD" />
                         <Text style={{ flex: 9 }}>About Us</Text>
-                        <Icon name="sticky-note-o" size={18} color="#ABB4BD" />
+                        <Icon name="right-open-big" size={18} color="#ABB4BD" />
                     </View>
                     <View style={[styles.endlist,styles.f_r_sb_c]}>
-                        <Icon style={{flex:1.5}} name="bookmark-empty" size={18} color="#ABB4BD" />
+                        <Icon style={{flex:1.5}} name="star-empty" size={18} color="#ABB4BD" />
                         <Text style={{ flex: 9 }}>Rate Us</Text>
-                        <Icon name="sticky-note-o" size={18} color="#ABB4BD" />
+                        <Icon name="right-open-big" size={18} color="#ABB4BD" />
                     </View>
                 </View>
                 {/* Second Section */}
                 <View style={[styles.settingsSection,styles.shadow]}>
                     <View style={[styles.endlist,styles.f_r_sb_c]}>
-                        <Icon style={{flex:1.5}} name="cog" size={18} color="#ABB4BD" />
+                        <Icon style={{flex:1.5}} name="logout" size={20} color="#ABB4BD" />
                         <Text style={{ flex: 9 }}>Log Out</Text>
                         {/* <Icon name="cog" size={18} color="#ABB4BD" /> */}
                     </View>

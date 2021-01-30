@@ -1,158 +1,98 @@
-import React, { useState } from 'react';
-import { View, Text, Image, ImageBackground, ScrollView, Dimensions, StyleSheet } from 'react-native';
+import React, { useState ,useEffect} from 'react';
+import { View, Text, Image, ImageBackground, ScrollView, Dimensions, StyleSheet, Alert, TouchableOpacity } from 'react-native';
+import { color } from 'react-native-reanimated';
 import Unorderedlist from 'react-native-unordered-list';
 import Slider from '../components/Slider';
-// import fontelloConfig from '../src/config.json';
-// import {colors} from '../constants/theme';
-// const Icon = createIconSetFromFontello(fontelloConfig);
+import { colors } from '../constants/theme';
+import fontelloConfig from '../src/config.json';
+import { createIconSetFromFontello } from 'react-native-vector-icons';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+const Icon = createIconSetFromFontello(fontelloConfig);
 
 const width = Dimensions.get('screen').width;
 const height = width / 1.61;
-const data = require('./data.json');
 
 
-const ContentScreen = () => {
+
+const ContentScreen = ({navigation,route}) => {
+    const [BookmarkData,setBookmarkData] = useState(JSON.stringify([]));
+    const saveBookmark=({id})=>{
+    setBookmarkData( JSON.parse(BookmarkData).push(id));
+        AsyncStorage.setItem('Bookmark-id', JSON.stringify(BookmarkData) );
+        console.log("Bookmark added");
+    }
+    
+    useEffect(()=>{
+        AsyncStorage.getItem('Bookmark-id').then(value=>{
+          value = (value === null)? BookmarkData:value;
+          setBookmarkData(value);
+              console.log('Bookmarks' + BookmarkData)  ;
+          });
+    },[BookmarkData]);
+  const {data} = route.params;
+  console.info('**********************************************************************'+data.subtitle)
+    React.useLayoutEffect(()=>{
+        navigation.setOptions(
+            {
+                headerTitle:(props)=>(
+                    <View style={{justifyContent:"space-between",flexDirection:'row',alignItems:'center'}}>
+                    <Text {...props} style={{color:'white',fontSize:18,backgroundColor:colors.primary}}>Epithelial Tissue</Text>
+                    <View style={{flexDirection:'row'}}>
+                    <Icon style={{marginHorizontal:0}} name="edit" size={25} color="#fff" />
+                  <TouchableOpacity onPress={()=>saveBookmark({id:data.id})}> 
+                   <Icon style={{marginHorizontal:20}}  name="bookmark-empty" size={24} color="#fff" />
+                   </TouchableOpacity>
+                        </View>
+                    </View>
+                ),
+                headerStyle:{
+                    backgroundColor:colors.primary
+                },
+                headerTintColor:'#fff'
+            }
+        );
+    },[navigation])
     return (
         <ScrollView style={{
             backgroundColor: 'lightgrey',
         }}>
-            {/* <View
-                style={styles.headerWave}
-            >
-                <View style={styles.headerIconTab}>
-                    <Image
-                        source={require('../assets/icons/back.png')}
-                        style={{ height: 40, width: 50, marginTop: 19 }}
-                    />
-                    <Text style={styles.titleText}>Lorem Ipsum Lorem Ipsum</Text>
-                    <View style={styles.headerIconGroup}>
-                        <Image
-                            source={require('../assets/icons/pen.png')}
-                            style={{ height: 35, width: 35, marginTop: 5 }}
-                        />
-                        <Image
-                            source={require('../assets/icons/bookmark.png')}
-                            style={{ height: 40, width: 40 }}
-                        />
-                    </View>
-                </View>
-                {/* Header tab */}
-            {/* / </View> */}
-            {/* Header */}
+         
             <View
                 style={styles.container}>
                 <Slider />
-                {/* Slider */}
-                {
-                    data.map((result, k) => {
-                        return (<View style={styles.contentContainer}>
-                            {
-                                result.introduction.map((introduction, k) => {
-                                    return <View>
-                                        <Text style={styles.contentTitleText}>{introduction.title}</Text>
-                                        <Text style={[styles.contentText1, styles.contentParagraphTypography]}>{introduction.content}</Text>
-                                        {
-                                            result.description.map((description, k) => {
-                                                return <View>
-                                                    <Text style={styles.contentSubTitleText}>{description.title}</Text>
-                                                    {
-                                                        description.content.map((content, k) => {
-                                                            return <View>
+             
+                
+                   
+                     <View style={styles.contentContainer}>
+                   
+                                    <View>
+                                        <Text style={styles.contentTitleText}>{data.title}</Text>
+                                        <Text style={[styles.contentText1, styles.contentParagraphTypography]}>{data.introduction.content}</Text>
+                                   
+                                            <View>
+                                                    <Text style={styles.contentSubTitleText}>{data.subtitle}</Text>
+                                           
+                                                    
+                                                           <View>
                                                                 <Unorderedlist bulletUnicode={0x2023} style={styles.unorderedlist}>
-                                                                    <Text style={styles.subTitle}>{content.subTitle}</Text>
+                                                                    <Text style={styles.subTitle}>{data.subtitle}</Text>
                                                                 </Unorderedlist>
-                                                                <Text style={[styles.contentText2, styles.contentParagraphTypography]}>{content.content}</Text>
+                                                                <Text style={[styles.contentText2, styles.contentParagraphTypography]}>{data.description.content[0].content}</Text>
 
                                                             </View>
-                                                        })
-                                                    }
+                                                      
                                                 </View>
-                                                // Container containing description portion
-                                            })
-                                        }
+                                  
+
                                     </View>
-                                    // Container for the introduction portion
-                                })
-                            }
+                                    {/* // Container for the introduction portion */}
+                                
+                            
                         </View>
-                            // Content container
-                        )
-                    })
-                }
-                <View style={styles.suggestionBox}>
-                    <Text style={styles.suggestionTitle}>Similar arctile</Text>
-                    <View style={styles.articleList}>
-                        <View style={styles.imageContainer}>
-                            <Image
-                                source={require('../assets/images/1.jpeg')}
-                                style={styles.imageStyle}
-                            />
-                        </View>
-                        <View style={styles.articleContainer}>
-                            <Text style={styles.listTitleText}>Epiglottis</Text>
-                            <Text style={[styles.cardContentParagraphTypography, styles.articleContent]}>The epiglottis is a leaf-shaped flap of cartilage located behind the tongue, at the top of the larynx, or voice box.</Text>
-                        </View>
-                    </View>
-                    {/* Card of article details */}
-
-                    <View style={styles.articleList}>
-                        <View style={styles.imageContainer}>
-                            <Image
-                                source={require('../assets/images/1.jpeg')}
-                                style={styles.imageStyle}
-                            />
-                        </View>
-                        <View style={styles.articleContainer}>
-                            <Text style={styles.listTitleText}>Epiglottis</Text>
-                            <Text style={[styles.cardContentParagraphTypography, styles.articleContent]}>The epiglottis is a leaf-shaped flap of cartilage located behind the tongue, at the top of the larynx, or voice box.</Text>
-                        </View>
-                    </View>
-                    {/* Card of article details */}
-
-                    <View style={styles.articleList}>
-                        <View style={styles.imageContainer}>
-                            <Image
-                                source={require('../assets/images/1.jpeg')}
-                                style={styles.imageStyle}
-                            />
-                        </View>
-                        <View style={styles.articleContainer}>
-                            <Text style={styles.listTitleText}>Epiglottis</Text>
-                            <Text style={[styles.cardContentParagraphTypography, styles.articleContent]}>The epiglottis is a leaf-shaped flap of cartilage located behind the tongue, at the top of the larynx, or voice box.</Text>
-                        </View>
-                    </View>
-                    {/* Card of article details */}
-
-                    <View style={styles.articleList}>
-                        <View style={styles.imageContainer}>
-                            <Image
-                                source={require('../assets/images/1.jpeg')}
-                                style={styles.imageStyle}
-                            />
-                        </View>
-                        <View style={styles.articleContainer}>
-                            <Text style={styles.listTitleText}>Epiglottis</Text>
-                            <Text style={[styles.cardContentParagraphTypography, styles.articleContent]}>The epiglottis is a leaf-shaped flap of cartilage located behind the tongue, at the top of the larynx, or voice box.</Text>
-                        </View>
-                    </View>
-                    {/* Card of article details */}
-
-                    <View style={styles.articleList}>
-                        <View style={styles.imageContainer}>
-                            <Image
-                                source={require('../assets/images/1.jpeg')}
-                                style={styles.imageStyle}
-                            />
-                        </View>
-                        <View style={styles.articleContainer}>
-                            <Text style={styles.listTitleText}>Epiglottis</Text>
-                            <Text style={[styles.cardContentParagraphTypography, styles.articleContent]}>The epiglottis is a leaf-shaped flap of cartilage located behind the tongue, at the top of the larynx, or voice box.</Text>
-                        </View>
-                    </View>
-                    {/* Card of article details */}
+                        
+                    
+          
                 </View>
-                {/* Similar topics container */}
-            </View>
             {/* Container */}
         </ScrollView>
     )
