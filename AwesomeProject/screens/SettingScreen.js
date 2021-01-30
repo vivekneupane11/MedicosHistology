@@ -42,7 +42,7 @@ const SettingScreen = ({ navigation }) => {
                     </View>
                 </View>
                 {/* First Section */}
-                <View style={styles.settingsSection}>
+                <View style={[styles.settingsSection,    styles.shadow]}>
                     <View style={[styles.list,styles.f_r_sb_c]}>
                         <Icon style={{flex:1.5}} name="user" size={18} color="#ABB4BD" />
                         <Text style={{ flex: 9 }}>Join Our Community</Text>
@@ -68,15 +68,15 @@ const SettingScreen = ({ navigation }) => {
                         <Text style={{ flex: 9 }}>About Us</Text>
                         <Icon name="sticky-note-o" size={18} color="#ABB4BD" />
                     </View>
-                    <View style={styles.endlist}>
+                    <View style={[styles.endlist,styles.f_r_sb_c]}>
                         <Icon style={{flex:1.5}} name="bookmark-empty" size={18} color="#ABB4BD" />
                         <Text style={{ flex: 9 }}>Rate Us</Text>
                         <Icon name="sticky-note-o" size={18} color="#ABB4BD" />
                     </View>
                 </View>
                 {/* Second Section */}
-                <View style={styles.settingsSection}>
-                    <View style={styles.endlist}>
+                <View style={[styles.settingsSection,styles.shadow]}>
+                    <View style={[styles.endlist,styles.f_r_sb_c]}>
                         <Icon style={{flex:1.5}} name="cog" size={18} color="#ABB4BD" />
                         <Text style={{ flex: 9 }}>Log Out</Text>
                         {/* <Icon name="cog" size={18} color="#ABB4BD" /> */}

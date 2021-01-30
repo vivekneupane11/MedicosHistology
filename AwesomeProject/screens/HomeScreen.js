@@ -74,7 +74,7 @@ const HomeScreen = ({ navigation }) => {
                 <Text height={20} style={styles.categoryName}>
                   {category.name}
                 </Text>
-                <Text gray caption>
+                <Text gray caption style={{fontWeight:'bold'}}>
                   {category.count}
                 </Text>
               </Card>
@@ -319,7 +319,7 @@ const styles = StyleSheet.create({
     maxHeight: (width - theme.sizes.padding * 2.4 - theme.sizes.base) / 2
   },
   categoryName: {
-    fontWeight: '900'
+    fontWeight: 'bold'
   },
   contentflatListHeader: {
     paddingHorizontal: 10,
