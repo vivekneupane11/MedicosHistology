@@ -54,11 +54,11 @@ const SettingScreen = ({ navigation }) => {
                         {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
                     </View>
                     <View style={[styles.list,styles.f_r_sb_c]}>
-                        <Icon style={{flex:1.5}} name="docs" size={18} color="#ABB4BD" />
+                        <Icon onPress={()=>navigation.navigate('PrivacyPolicy') } style={{flex:1.5}} name="docs" size={18} color="#ABB4BD" />
                         <Text style={{ flex: 9 }}>Privacy Policy</Text>
                         {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
                     </View>
-                    <View style={[styles.list,styles.f_r_sb_c]}>
+                    <View  style={[styles.list,styles.f_r_sb_c]}>
                         <Icon onPress={()=>navigation.navigate('TermsAndConditions') }  style={{flex:1.5}} name="book-open" size={18} color="#ABB4BD" />
                         <Text style={{ flex: 9 }}>Terms of Services</Text>
                         {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
@@ -69,7 +69,7 @@ const SettingScreen = ({ navigation }) => {
                         {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
                     </View>
                     <View style={[styles.list,styles.f_r_sb_c]}>
-                        <Icon style={{flex:1.5}} name="info-circled-alt" size={18} color="#ABB4BD" />
+                        <Icon onPress={()=>navigation.navigate('AboutUs') } style={{flex:1.5}} name="info-circled-alt" size={18} color="#ABB4BD" />
                         <Text style={{ flex: 9 }}>About Us</Text>
                         <Icon name="right-open-big" size={18} color="#ABB4BD" />
                     </View>

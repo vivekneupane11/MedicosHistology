@@ -14,22 +14,22 @@ const height = width / 1.61;
 
 
 const AboutUsScreen = ({ navigation }) => {
-    React.useLayoutEffect(() => {
-        navigation.setOptions(
-            {
-                headerTitle: (props) => (
-                    <View style={{ justifyContent: "space-between", flexDirection: 'row', alignItems: 'center' }}>
-                        <Text {...props} style={{ color: 'white', fontSize: 18, backgroundColor: colors.primary }}>About Us</Text>
+    // React.useLayoutEffect(() => {
+    //     navigation.setOptions(
+    //         {
+    //             headerTitle: (props) => (
+    //                 <View style={{ justifyContent: "space-between", flexDirection: 'row', alignItems: 'center' }}>
+    //                     <Text {...props} style={{ color: 'white', fontSize: 18, backgroundColor: colors.primary }}>About Us</Text>
 
-                    </View>
-                ),
-                headerStyle: {
-                    backgroundColor: colors.primary
-                },
-                headerTintColor: '#fff'
-            }
-        );
-    }, [navigation])
+    //                 </View>
+    //             ),
+    //             headerStyle: {
+    //                 backgroundColor: colors.primary
+    //             },
+    //             headerTintColor: '#fff'
+    //         }
+    //     );
+    // }, [navigation])
     return (
         <ScrollView>
             <View style={styles.wrapper}>

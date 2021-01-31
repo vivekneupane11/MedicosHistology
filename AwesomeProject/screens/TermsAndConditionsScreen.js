@@ -14,26 +14,26 @@ const height = width / 1.61;
 
 
 const TermsAndConditionsScreen = ({ navigation }) => {
-    React.useLayoutEffect(() => {
-        navigation.setOptions(
-            {
+    // React.useLayoutEffect(() => {
+    //     navigation.setOptions(
+    //         {
            
-                headerTitle: (props) => (
+    //             headerTitle: (props) => (
 
-                    <View style={{ justifyContent: "space-between", flexDirection: 'row', alignItems: 'center' }}>
-                        <Text {...props} style={{ color: 'white', fontSize: 18, backgroundColor: colors.primary }}> Terms And Conditions</Text>
-                        <View style={{ flexDirection: 'row' }}>
+    //                 <View style={{ justifyContent: "space-between", flexDirection: 'row', alignItems: 'center' }}>
+    //                     <Text {...props} style={{ color: 'white', fontSize: 18, backgroundColor: colors.primary }}> Terms And Conditions</Text>
+    //                     <View style={{ flexDirection: 'row' }}>
                            
-                        </View>
-                    </View>
-                ),
-                headerStyle: {
-                    backgroundColor: colors.primary
-                },
-                headerTintColor: '#fff'
-            }
-        );
-    }, [navigation])
+    //                     </View>
+    //                 </View>
+    //             ),
+    //             headerStyle: {
+    //                 backgroundColor: colors.primary
+    //             },
+    //             headerTintColor: '#fff'
+    //         }
+    //     );
+    // }, [navigation])
     return (
         <ScrollView>
             <View style={styles.wrapper}>
