@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ScrollView, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, Dimensions, Alert } from 'react-native';
 import BackgroundHeader from '../components/BackgroundHeader';
 import { createIconSetFromFontello } from 'react-native-vector-icons';
 import fontelloConfig from '../src/config.json';
@@ -59,7 +59,7 @@ const SettingScreen = ({ navigation }) => {
                         {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
                     </View>
                     <View style={[styles.list,styles.f_r_sb_c]}>
-                        <Icon style={{flex:1.5}} name="book-open" size={18} color="#ABB4BD" />
+                        <Icon onPress={()=>navigation.navigate('TermsAndConditions') }  style={{flex:1.5}} name="book-open" size={18} color="#ABB4BD" />
                         <Text style={{ flex: 9 }}>Terms of Services</Text>
                         {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
                     </View>
