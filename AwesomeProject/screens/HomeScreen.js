@@ -4,6 +4,8 @@ import BottomTab from '../components/BottomTab';
 import { createIconSetFromFontello } from 'react-native-vector-icons';
 import fontelloConfig from '../src/config.json';
 const Icon = createIconSetFromFontello(fontelloConfig);
+import data from './data';
+
 import {
   Dimensions,
   View,
@@ -20,30 +22,32 @@ import { colors } from '../constants/theme';
 
 
 const { width } = Dimensions.get("window");
-const HomeScreen = ({ navigation }) => {
-  const TopHotelCard = ({ hotel }) => {
-    return (
-      <View style={styles.topHotelCard}>
-        <View
-          style={{
-            position: 'absolute',
-            top: 5,
-            right: 5,
-            zIndex: 1,
-            flexDirection: 'row',
-          }}>
-          <Icon style={{ paddingHorizontal: 7 }} name="bookmark-empty" size={24} color="#ABB4BD" />
+const HomeScreen = ({navigation})=>{
+    const TopHotelCard = ({title,subtitle,imgSrc}) => {
 
-        </View>
-        <Image resizeMode='cover' style={[styles.topHotelCardImage]} source={hotel.image} />
-        <View style={{ paddingHorizontal: 10 }}>
-          <Text style={{ fontSize: 12, fontWeight: 'bold' }}>{hotel.name}</Text>
-          <Text style={{ fontSize: 9, fontWeight: 'bold', color: colors.gray }}>
-            {hotel.location}
-          </Text>
-        </View>
-      </View>)
-  }
+    
+        return (
+          <View style={styles.topHotelCard}>
+            <View
+              style={{
+                position: 'absolute',
+                top: 5,
+                right: 5,
+                zIndex: 1,
+                flexDirection: 'row',
+              }}>
+               <Icon style={{paddingHorizontal:7}} name="bookmark-empty" size={24} color="#ABB4BD" />
+             
+            </View>
+            <Image resizeMode='cover' style={[styles.topHotelCardImage]} source={imgSrc} />
+            <View style={{ paddingHorizontal: 10}}>
+         
+              <Text style={{fontSize: 13, fontWeight: 'bold'}}>{title}</Text>
+              <Text style={{fontSize: 9, fontWeight: 'bold',color:colors.gray}}>
+                {subtitle}
+              </Text>
+            </View>
+          </View>)}
 
 
   return (
@@ -100,7 +104,7 @@ const HomeScreen = ({ navigation }) => {
         </View>
 
         <FlatList
-          data={mocks.hotels}
+          data={data}
           horizontal
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={{
@@ -108,10 +112,16 @@ const HomeScreen = ({ navigation }) => {
             marginTop: 10,
             paddingBottom: 40,
           }}
-          renderItem={({ item }) => {
-            return (
-              <TouchableOpacity onPress={() => { navigation.navigate('Content') }}>
-                <TopHotelCard hotel={item} />
+          keyExtractor={(item)=>{
+            return item.id.toString();
+          }}
+          renderItem={({item}) =>{
+      
+
+            return(
+            
+              <TouchableOpacity key={item.id} onPress={()=>{navigation.navigate('Content',{data:item})}}>
+                <TopHotelCard title={item.title} subtitle={item.subtitle} imgSrc={item.image} />
               </TouchableOpacity>
             );
           }} />
@@ -124,8 +134,8 @@ const HomeScreen = ({ navigation }) => {
             <Text style={{ paddingHorizontal: 12, color: colors.gray, fontSize: 12, fontWeight: 'bold' }} >View All</Text>
           </TouchableOpacity>
         </View>
-        <FlatList
-          data={mocks.hotels}
+              <FlatList
+          data={data}
           horizontal
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={{
@@ -133,10 +143,16 @@ const HomeScreen = ({ navigation }) => {
             marginTop: 10,
             paddingBottom: 40,
           }}
-          renderItem={({ item }) => {
-            return (
-              <TouchableOpacity>
-                <TopHotelCard hotel={item} />
+          keyExtractor={(item)=>{
+            return item.id;
+          }}
+          renderItem={({item}) =>{
+      
+
+            return(
+            
+              <TouchableOpacity key={item.id} onPress={()=>{navigation.navigate('Content')}}>
+                <TopHotelCard title={item.title} subtitle={item.subtitle} imgSrc={item.image} />
               </TouchableOpacity>
             );
           }} />
@@ -146,8 +162,8 @@ const HomeScreen = ({ navigation }) => {
             <Text style={{ paddingHorizontal: 12, color: colors.gray, fontSize: 12, fontWeight: 'bold' }} >View All</Text>
           </TouchableOpacity>
         </View>
-        <FlatList
-          data={mocks.hotels}
+              <FlatList
+          data={data}
           horizontal
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={{
@@ -155,10 +171,16 @@ const HomeScreen = ({ navigation }) => {
             marginTop: 10,
             paddingBottom: 40,
           }}
-          renderItem={({ item }) => {
-            return (
-              <TouchableOpacity>
-                <TopHotelCard hotel={item} />
+          keyExtractor={(item)=>{
+            return item.id;
+          }}
+          renderItem={({item}) =>{
+      
+
+            return(
+            
+              <TouchableOpacity key={item.id} onPress={()=>{navigation.navigate('Content')}}>
+                <TopHotelCard title={item.title} subtitle={item.subtitle} imgSrc={item.image} />
               </TouchableOpacity>
             );
           }} />
@@ -168,8 +190,8 @@ const HomeScreen = ({ navigation }) => {
             <Text style={{ paddingHorizontal: 12, color: colors.gray, fontSize: 12, fontWeight: 'bold' }} >View All</Text>
           </TouchableOpacity>
         </View>
-        <FlatList
-          data={mocks.hotels}
+              <FlatList
+          data={data}
           horizontal
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={{
@@ -177,10 +199,16 @@ const HomeScreen = ({ navigation }) => {
             marginTop: 10,
             paddingBottom: 40,
           }}
-          renderItem={({ item }) => {
-            return (
-              <TouchableOpacity>
-                <TopHotelCard hotel={item} />
+          keyExtractor={(item)=>{
+            return item.id;
+          }}
+          renderItem={({item}) =>{
+      
+
+            return(
+            
+              <TouchableOpacity key={item.id} onPress={()=>{navigation.navigate('Content',{data:item.id})}}>
+                <TopHotelCard title={item.title} subtitle={item.subtitle} imgSrc={item.image} />
               </TouchableOpacity>
             );
           }} />
@@ -190,8 +218,8 @@ const HomeScreen = ({ navigation }) => {
             <Text style={{ paddingHorizontal: 12, color: colors.gray, fontSize: 12, fontWeight: 'bold' }} >View All</Text>
           </TouchableOpacity>
         </View>
-        <FlatList
-          data={mocks.hotels}
+              <FlatList
+          data={data}
           horizontal
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={{
@@ -199,10 +227,16 @@ const HomeScreen = ({ navigation }) => {
             marginTop: 10,
             paddingBottom: 40,
           }}
-          renderItem={({ item }) => {
-            return (
-              <TouchableOpacity>
-                <TopHotelCard hotel={item} />
+          keyExtractor={(item)=>{
+            return item.id;
+          }}
+          renderItem={({item}) =>{
+      
+
+            return(
+            
+              <TouchableOpacity key={item.id} onPress={()=>{navigation.navigate('Content')}}>
+                <TopHotelCard title={item.title} subtitle={item.subtitle} imgSrc={item.image} />
               </TouchableOpacity>
             );
           }} />
@@ -212,8 +246,8 @@ const HomeScreen = ({ navigation }) => {
             <Text style={{ paddingHorizontal: 12, color: colors.gray, fontSize: 12, fontWeight: 'bold' }} >View All</Text>
           </TouchableOpacity>
         </View>
-        <FlatList
-          data={mocks.hotels}
+              <FlatList
+          data={data}
           horizontal
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={{
@@ -221,10 +255,16 @@ const HomeScreen = ({ navigation }) => {
             marginTop: 10,
             paddingBottom: 40,
           }}
-          renderItem={({ item }) => {
-            return (
-              <TouchableOpacity>
-                <TopHotelCard hotel={item} />
+          keyExtractor={(item)=>{
+            return item.id;
+          }}
+          renderItem={({item}) =>{
+      
+
+            return(
+            
+              <TouchableOpacity key={item.id} onPress={()=>{navigation.navigate('Content')}}>
+                <TopHotelCard title={item.title} subtitle={item.subtitle} imgSrc={item.image} />
               </TouchableOpacity>
             );
           }} />

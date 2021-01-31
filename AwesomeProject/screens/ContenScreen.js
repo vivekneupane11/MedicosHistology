@@ -1,179 +1,108 @@
-import React, { useState } from 'react';
-import { View, Text, Image, ImageBackground, ScrollView, Dimensions, StyleSheet } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, Image, ImageBackground, ScrollView, Dimensions, StyleSheet, Alert, TouchableOpacity, Modal, TextInput } from 'react-native';
 import { color } from 'react-native-reanimated';
 import Unorderedlist from 'react-native-unordered-list';
 import Slider from '../components/Slider';
 import { colors } from '../constants/theme';
 import fontelloConfig from '../src/config.json';
 import { createIconSetFromFontello } from 'react-native-vector-icons';
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
 const Icon = createIconSetFromFontello(fontelloConfig);
 
 const width = Dimensions.get('screen').width;
 const height = width / 1.61;
-const data = require('./data.json');
 
 
-const ContentScreen = ({navigation}) => {
-    React.useLayoutEffect(()=>{
+
+const ContentScreen = ({ navigation, route }) => {
+    const [modal, setModal] = useState(false);
+    const [noteTitle, setNoteTitle] = useState('Title');
+    const [noteContent, setNoteContent] = useState('Notes');
+    const [BookmarkData, setBookmarkData] = useState(JSON.stringify([]));
+    const saveBookmark = ({ id }) => {
+        setBookmarkData(JSON.parse(BookmarkData).push(id));
+        AsyncStorage.setItem('Bookmark-id', JSON.stringify(BookmarkData));
+        console.log("Bookmark added");
+    }
+
+    useEffect(() => {
+        AsyncStorage.getItem('Bookmark-id').then(value => {
+            value = (value === null) ? BookmarkData : value;
+            setBookmarkData(value);
+            console.log('Bookmarks' + BookmarkData);
+        });
+    }, [BookmarkData]);
+    const { data } = route.params;
+    console.info('**********************************************************************' + data.subtitle)
+    React.useLayoutEffect(() => {
         navigation.setOptions(
             {
-                headerTitle:(props)=>(
-                    <View style={{justifyContent:"space-between",flexDirection:'row',alignItems:'center'}}>
-                    <Text {...props} style={{color:'white',fontSize:18,backgroundColor:colors.primary}}>Epithelial Tissue</Text>
-                    <View style={{flexDirection:'row'}}>
-                    <Icon style={{marginHorizontal:0}} name="edit" size={25} color="#fff" />
-                    <Icon style={{marginHorizontal:20}} name="bookmark-empty" size={24} color="#fff" />
+                headerTitle: (props) => (
+                    <View style={{ justifyContent: "space-between", flexDirection: 'row', alignItems: 'center' }}>
+                        <Text {...props} style={{ color: 'white', fontSize: 18, backgroundColor: colors.primary }}>Epithelial Tissue</Text>
+                        <View style={{ flexDirection: 'row' }}>
+                            <TouchableOpacity onPress={()=>{setModal(true)}}>
+                                <Icon style={{ marginHorizontal: 0 }} name="edit" size={25} color="#fff" />
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={() => saveBookmark({ id: data.id })}>
+                                <Icon style={{ marginHorizontal: 20 }} name="bookmark-empty" size={24} color="#fff" />
+                            </TouchableOpacity>
                         </View>
                     </View>
                 ),
-                headerStyle:{
-                    backgroundColor:colors.primary
+                headerStyle: {
+                    backgroundColor: colors.primary
                 },
-                headerTintColor:'#fff'
+                headerTintColor: '#fff'
             }
         );
-    },[navigation])
+    }, [navigation])
     return (
+
         <ScrollView style={{
             backgroundColor: 'lightgrey',
         }}>
-            {/* <View
-                style={styles.headerWave}
-            >
-                <View style={styles.headerIconTab}>
-                    <Image
-                        source={require('../assets/icons/back.png')}
-                        style={{ height: 40, width: 50, marginTop: 19 }}
-                    />
-                    <Text style={styles.titleText}>Lorem Ipsum Lorem Ipsum</Text>
-                    <View style={styles.headerIconGroup}>
-                        <Image
-                            source={require('../assets/icons/pen.png')}
-                            style={{ height: 35, width: 35, marginTop: 5 }}
-                        />
-                        <Image
-                            source={require('../assets/icons/bookmark.png')}
-                            style={{ height: 40, width: 40 }}
-                        />
+            <Modal visible={modal} transparent={true} animationType="slide">
+                <View style={[styles.modalContainer]}>
+                    <View style={styles.modalWrapper}>
+                        <TextInput style={styles.modalTitle} onChangeText={text => setNoteTitle(text)} value={noteTitle}></TextInput>
+                        <View style={styles.modalContentContainer}>
+                            <TextInput multiline style={styles.contentParagraphTypography} onChangeText={text => setNoteContent(text)} value={noteContent}></TextInput>
+                        </View>
+                        <View style={styles.modalFooter}>
+                            <TouchableOpacity onPress={() => { setModal(false) }} style={[styles.closeButton, styles.f_c_c_c]} >
+                                <Icon style={styles.modalCloseIcon} name="cancel-circled2" size={18} />
+
+                                <Text style={[styles.closeButtonText]}>Close</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={[styles.saveButton, styles.f_c_c_c]}>
+                                <Icon style={styles.modalSaveIcon} name="cancel-circled2" size={18} />
+                                <Text style={[styles.saveButtonText]}>Save</Text>
+                            </TouchableOpacity>
+                        </View>
                     </View>
                 </View>
-                {/* Header tab */}
-            {/* / </View> */}
-            {/* Header */}
+            </Modal>
+
             <View
                 style={styles.container}>
                 <Slider />
-                {/* Slider */}
-                {
-                    data.map((result, k) => {
-                        return (<View style={styles.contentContainer}>
-                            {
-                                result.introduction.map((introduction, k) => {
-                                    return <View>
-                                        <Text style={styles.contentTitleText}>{introduction.title}</Text>
-                                        <Text style={[styles.contentText1, styles.contentParagraphTypography]}>{introduction.content}</Text>
-                                        {
-                                            result.description.map((description, k) => {
-                                                return <View>
-                                                    <Text style={styles.contentSubTitleText}>{description.title}</Text>
-                                                    {
-                                                        description.content.map((content, k) => {
-                                                            return <View>
-                                                                <Unorderedlist bulletUnicode={0x2023} style={styles.unorderedlist}>
-                                                                    <Text style={styles.subTitle}>{content.subTitle}</Text>
-                                                                </Unorderedlist>
-                                                                <Text style={[styles.contentText2, styles.contentParagraphTypography]}>{content.content}</Text>
-
-                                                            </View>
-                                                        })
-                                                    }
-                                                </View>
-                                                // Container containing description portion
-                                            })
-                                        }
-                                    </View>
-                                    // Container for the introduction portion
-                                })
-                            }
-                        </View>
-                            // Content container
-                        )
-                    })
-                }
-                <View style={styles.suggestionBox}>
-                    <Text style={styles.suggestionTitle}>Similar arctile</Text>
-                    <View style={styles.articleList}>
-                        <View style={styles.imageContainer}>
-                            <Image
-                                source={require('../assets/images/1.jpeg')}
-                                style={styles.imageStyle}
-                            />
-                        </View>
-                        <View style={styles.articleContainer}>
-                            <Text style={styles.listTitleText}>Epiglottis</Text>
-                            <Text style={[styles.cardContentParagraphTypography, styles.articleContent]}>The epiglottis is a leaf-shaped flap of cartilage located behind the tongue, at the top of the larynx, or voice box.</Text>
+                <View style={styles.contentContainer}>
+                    <View>
+                        <Text style={styles.contentTitleText}>{data.title}</Text>
+                        <Text style={[styles.contentText1, styles.contentParagraphTypography]}>{data.introduction.content}</Text>
+                        <View>
+                            <Text style={styles.contentSubTitleText}>{data.subtitle}</Text>
+                            <View>
+                                <Unorderedlist bulletUnicode={0x2023} style={styles.unorderedlist}>
+                                    <Text style={styles.subTitle}>{data.subtitle}</Text>
+                                </Unorderedlist>
+                                <Text style={[styles.contentText2, styles.contentParagraphTypography]}>{data.description.content[0].content}</Text>
+                            </View>
                         </View>
                     </View>
-                    {/* Card of article details */}
-
-                    <View style={styles.articleList}>
-                        <View style={styles.imageContainer}>
-                            <Image
-                                source={require('../assets/images/1.jpeg')}
-                                style={styles.imageStyle}
-                            />
-                        </View>
-                        <View style={styles.articleContainer}>
-                            <Text style={styles.listTitleText}>Epiglottis</Text>
-                            <Text style={[styles.cardContentParagraphTypography, styles.articleContent]}>The epiglottis is a leaf-shaped flap of cartilage located behind the tongue, at the top of the larynx, or voice box.</Text>
-                        </View>
-                    </View>
-                    {/* Card of article details */}
-
-                    <View style={styles.articleList}>
-                        <View style={styles.imageContainer}>
-                            <Image
-                                source={require('../assets/images/1.jpeg')}
-                                style={styles.imageStyle}
-                            />
-                        </View>
-                        <View style={styles.articleContainer}>
-                            <Text style={styles.listTitleText}>Epiglottis</Text>
-                            <Text style={[styles.cardContentParagraphTypography, styles.articleContent]}>The epiglottis is a leaf-shaped flap of cartilage located behind the tongue, at the top of the larynx, or voice box.</Text>
-                        </View>
-                    </View>
-                    {/* Card of article details */}
-
-                    <View style={styles.articleList}>
-                        <View style={styles.imageContainer}>
-                            <Image
-                                source={require('../assets/images/1.jpeg')}
-                                style={styles.imageStyle}
-                            />
-                        </View>
-                        <View style={styles.articleContainer}>
-                            <Text style={styles.listTitleText}>Epiglottis</Text>
-                            <Text style={[styles.cardContentParagraphTypography, styles.articleContent]}>The epiglottis is a leaf-shaped flap of cartilage located behind the tongue, at the top of the larynx, or voice box.</Text>
-                        </View>
-                    </View>
-                    {/* Card of article details */}
-
-                    <View style={styles.articleList}>
-                        <View style={styles.imageContainer}>
-                            <Image
-                                source={require('../assets/images/1.jpeg')}
-                                style={styles.imageStyle}
-                            />
-                        </View>
-                        <View style={styles.articleContainer}>
-                            <Text style={styles.listTitleText}>Epiglottis</Text>
-                            <Text style={[styles.cardContentParagraphTypography, styles.articleContent]}>The epiglottis is a leaf-shaped flap of cartilage located behind the tongue, at the top of the larynx, or voice box.</Text>
-                        </View>
-                    </View>
-                    {/* Card of article details */}
+                    {/* // Container for the introduction portion */}
                 </View>
-                {/* Similar topics container */}
             </View>
             {/* Container */}
         </ScrollView>
@@ -314,7 +243,82 @@ const styles = StyleSheet.create({
         textAlign: 'justify',
         fontSize: 14,
         fontFamily: 'LiberationSerif-Regular',
-    }
+    },
+    modalContentContainer: {
+        paddingHorizontal: 15,
+        paddingVertical: 25,
+        flex: 1,
+        width: '100%',
+        // backgroundColor: 'yellow'
+    },
+    modalFooter: {
+        width: '100%',
+        flexDirection: 'row',
+        backgroundColor: colors.lightWhite,
+    },
+    modalContainer: {
+        paddingVertical: 100,
+        backgroundColor: '#000000aa',
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    modalWrapper: {
+        flex: 1,
+        width: '85%',
+        backgroundColor: 'white',
+        borderRadius: 10,
+        overflow: 'hidden'
+
+    },
+    closeButtonText: {
+        // flex:0.2,
+        color: "red",
+        fontSize: 16,
+    },
+    saveButtonText: {
+        color: colors.secondary,
+        fontSize: 16,
+    },
+    modalCloseIcon: {
+        flex: 0.24,
+        color: 'red',
+    },
+    modalSaveIcon: {
+        flex: 0.24,
+        color: colors.secondary,
+    },
+    closeButton: {
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
+        flex: 1,
+        fontSize: 16,
+        borderColor: 'green',
+        borderRightWidth: StyleSheet.hairlineWidth,
+        borderTopWidth: StyleSheet.hairlineWidth,
+    },
+    saveButton: {
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
+        paddingVertical: 15,
+        flex: 1,
+        // backgroundColor: colors.primary,
+        fontSize: 16,
+        borderColor: 'green',
+        borderTopWidth: StyleSheet.hairlineWidth
+    },
+    modalTitle: {
+        marginHorizontal: 25,
+        paddingVertical: 12,
+        textAlign: 'center',
+        color: colors.secondary,
+        fontSize: 25,
+        fontWeight: 'bold',
+        fontFamily: 'Roboto-Bold',
+        borderBottomWidth: StyleSheet.hairlineWidth
+    },
 })
 
 export default ContentScreen;

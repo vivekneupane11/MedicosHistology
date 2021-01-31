@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { View, Text, ScrollView, StyleSheet, Dimensions, Image, Modal, Alert } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, Dimensions, Image, Modal, Alert, Button, TouchableOpacity } from 'react-native';
 import BackgroundHeader from '../components/BackgroundHeader';
 import { createIconSetFromFontello } from 'react-native-vector-icons';
 import fontelloConfig from '../src/config.json';
 const Icon = createIconSetFromFontello(fontelloConfig);
 import { colors } from "../constants/theme";
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { TextInput } from 'react-native-gesture-handler';
+// import { TouchableOpacity } from 'react-native-gesture-handler';
 const notes = require("./notes.json");
 const { width } = Dimensions.get("window");
 
@@ -13,6 +14,8 @@ const { width } = Dimensions.get("window");
 const NoteScreen = ({ navigation }) => {
     const [item, setItem] = useState(0);
     const [modal, setModal] = useState(false);
+    const [noteTitle, setNoteTitle] = useState('Title');
+    const [noteContent, setNoteContent] = useState('Notes');
 
     const deleteNote = (index) => {
         console.log('hello');
@@ -22,16 +25,22 @@ const NoteScreen = ({ navigation }) => {
     return (
         <ScrollView>
             <BackgroundHeader navigation={navigation} />
-            <Modal visible={modal} transparent={true}>
-                <View style={{ backgroundColor: '#000000aa', flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                    <View style={{ height: '80%', width: '75%', backgroundColor: 'white' }}>
-                        <Text style={styles.cardContentTitle}>Notes</Text>
-                        <View style={styles.footer}>
-                            <TouchableOpacity onPress={()=>console.log('close')} style={[styles.submitContainer, styles.shadow, styles.f_c_c_c]} >
-                                <Text style={[styles.text, styles.buttonText]}>Close</Text>
+            <Modal visible={modal} transparent={true} animationType="slide">
+                <View style={[styles.modalContainer]}>
+                    <View style={styles.modalWrapper}>
+                        <TextInput style={styles.modalTitle} onChangeText={text => setNoteTitle(text)} value={noteTitle}></TextInput>
+                        <View style={styles.modalContentContainer}>
+                            <TextInput multiline style={styles.contentParagraphTypography} onChangeText={text => setNoteContent(text)} value={noteContent}></TextInput>
+                        </View>
+                        <View style={styles.modalFooter}>
+                            <TouchableOpacity onPress={() => { setModal(false) }} style={[styles.closeButton, styles.f_c_c_c]} >
+                                <Icon style={styles.modalCloseIcon} name="cancel-circled2" size={18} />
+
+                                <Text style={[styles.closeButtonText]}>Close</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity style={[styles.submitContainer, styles.shadow, styles.f_c_c_c]}>
-                                <Text style={[styles.text, styles.buttonText]}>Save</Text>
+                            <TouchableOpacity style={[styles.saveButton, styles.f_c_c_c]}>
+                                <Icon style={styles.modalSaveIcon} name="cancel-circled2" size={18} />
+                                <Text style={[styles.saveButtonText]}>Save</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
@@ -54,11 +63,13 @@ const NoteScreen = ({ navigation }) => {
                                 <Text style={styles.cardContentText}>{note.note}</Text>
                             </View>
                             <View style={styles.note}>
-                                <TouchableOpacity onPress={() => { setModal(true) }}>
+                                <TouchableOpacity onPress={() => {
+                                    setModal(true);
+                                }}>
                                     <Icon name="sticky-note-o" size={21} color="#ABB4BD" />
                                 </TouchableOpacity>
                                 <TouchableOpacity>
-                                    <Icon style={styles.closeButton} name="cancel-circled2" size={21} color="#ABB4BD" />
+                                    <Icon style={styles.closeIcon} name="cancel-circled2" size={21} color="#ABB4BD" />
                                 </TouchableOpacity>
                             </View>
 
@@ -103,6 +114,17 @@ const styles = StyleSheet.create({
         color: 'black',
         fontSize: 18,
         fontFamily: 'Roboto-Bold',
+
+    },
+    modalTitle: {
+        marginHorizontal: 25,
+        paddingVertical: 12,
+        textAlign: 'center',
+        color: colors.secondary,
+        fontSize: 25,
+        fontWeight: 'bold',
+        fontFamily: 'Roboto-Bold',
+        borderBottomWidth: StyleSheet.hairlineWidth
     },
     cardContentText: {
         marginRight: 23,
@@ -129,34 +151,84 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.34,
         shadowRadius: 6.27,
-        elevation: 2,
+        elevation: 1,
     },
-    closeButton: {
+    closeIcon: {
         marginLeft: 5
     },
-    submitContainer: {
-        backgroundColor: colors.secondary,
+    modalCloseIcon: {
+        flex: 0.24,
+        color: 'red',
+    },
+    modalSaveIcon: {
+        flex: 0.24,
+        color: colors.secondary,
+    },
+    closeButton: {
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
+        flex: 1,
         fontSize: 16,
-        borderRadius: 5,
+        borderColor: 'green',
+        borderRightWidth: StyleSheet.hairlineWidth,
+        borderTopWidth: StyleSheet.hairlineWidth,
+    },
+    saveButton: {
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
         paddingVertical: 15,
-        paddingHorizontal:15,
-        marginHorizontal:10,
-        marginTop: 32,
-        color: "white",
+        flex: 1,
+        // backgroundColor: colors.primary,
+        fontSize: 16,
+        borderColor: 'green',
+        borderTopWidth: StyleSheet.hairlineWidth
     },
     f_c_c_c: {
         alignItems: 'center',
         justifyContent: 'center',
     },
-    buttonText: {
-        color: "white",
-        fontWeight: "700",
+    closeButtonText: {
+        // flex:0.2,
+        color: "red",
         fontSize: 16,
     },
-    footer:{
-        width:'100%',
-        backgroundColor:'yellow',
-        flexDirection:'row',
-        justifyContent:'flex-end'
-    }
+    saveButtonText: {
+        color: colors.secondary,
+        fontSize: 16,
+    },
+    modalContentContainer: {
+        paddingHorizontal: 15,
+        paddingVertical: 25,
+        flex: 1,
+        width: '100%',
+        // backgroundColor: 'yellow'
+    },
+    modalFooter: {
+        width: '100%',
+        flexDirection: 'row',
+        backgroundColor: colors.lightWhite,
+    },
+    modalContainer: {
+        paddingVertical: 100,
+        backgroundColor: '#000000aa',
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    modalWrapper: {
+        flex: 1,
+        width: '85%',
+        backgroundColor: 'white',
+        borderRadius: 10,
+        overflow: 'hidden'
+
+    },
+    contentParagraphTypography: {
+        lineHeight: 22,
+        textAlign: 'justify',
+        fontSize: 15,
+        fontFamily: 'LiberationSerif-Regular',
+    },
 })

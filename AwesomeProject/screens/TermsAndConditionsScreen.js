@@ -11,17 +11,20 @@ const Icon = createIconSetFromFontello(fontelloConfig);
 
 const width = Dimensions.get('screen').width;
 const height = width / 1.61;
-const data = require('./data.json');
 
 
 const TermsAndConditionsScreen = ({ navigation }) => {
     React.useLayoutEffect(() => {
         navigation.setOptions(
             {
+           
                 headerTitle: (props) => (
-                    <View style={{ justifyContent: "space-between", flexDirection: 'row', alignItems: 'center' }}>
-                        <Text {...props} style={{ color: 'white', fontSize: 18, backgroundColor: colors.primary }}>Terms And Conditions</Text>
 
+                    <View style={{ justifyContent: "space-between", flexDirection: 'row', alignItems: 'center' }}>
+                        <Text {...props} style={{ color: 'white', fontSize: 18, backgroundColor: colors.primary }}> Terms And Conditions</Text>
+                        <View style={{ flexDirection: 'row' }}>
+                           
+                        </View>
                     </View>
                 ),
                 headerStyle: {
@@ -245,7 +248,8 @@ const styles = StyleSheet.create({
     },
     contentTitleText: {
         marginBottom: 10,
-        marginHorizontal: 10,
+        marginHorizontal:10,
+        marginTop: 20,
         fontFamily: 'PTSerif-Bold',
         fontSize: 24,
         color: '#156B9A'
