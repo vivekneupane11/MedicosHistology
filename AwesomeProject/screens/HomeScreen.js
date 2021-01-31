@@ -134,7 +134,7 @@ const HomeScreen = ({navigation})=>{
             <Text style={{ paddingHorizontal: 12, color: colors.gray, fontSize: 12, fontWeight: 'bold' }} >View All</Text>
           </TouchableOpacity>
         </View>
-              <FlatList
+                   <FlatList
           data={data}
           horizontal
           showsHorizontalScrollIndicator={false}
@@ -144,14 +144,42 @@ const HomeScreen = ({navigation})=>{
             paddingBottom: 40,
           }}
           keyExtractor={(item)=>{
-            return item.id;
+            return item.id.toString();
           }}
           renderItem={({item}) =>{
       
 
             return(
             
-              <TouchableOpacity key={item.id} onPress={()=>{navigation.navigate('Content')}}>
+              <TouchableOpacity key={item.id} onPress={()=>{navigation.navigate('Content',{data:item})}}>
+                <TopHotelCard title={item.title} subtitle={item.subtitle} imgSrc={item.image} />
+              </TouchableOpacity>
+            );
+          }} />
+        <View style={styles.contentflatListHeader}>
+          <Text style={{ paddingHorizontal: 12, fontWeight: 'bold', fontSize: 18 }} >Epithelial Tissue</Text>
+          <TouchableOpacity>
+            <Text style={{ paddingHorizontal: 12, color: colors.gray, fontSize: 12, fontWeight: 'bold' }} >View All</Text>
+          </TouchableOpacity>
+        </View>
+                   <FlatList
+          data={data}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{
+            paddingLeft: 20,
+            marginTop: 10,
+            paddingBottom: 40,
+          }}
+          keyExtractor={(item)=>{
+            return item.id.toString();
+          }}
+          renderItem={({item}) =>{
+      
+
+            return(
+            
+              <TouchableOpacity key={item.id} onPress={()=>{navigation.navigate('Content',{data:item})}}>
                 <TopHotelCard title={item.title} subtitle={item.subtitle} imgSrc={item.image} />
               </TouchableOpacity>
             );
@@ -172,35 +200,7 @@ const HomeScreen = ({navigation})=>{
             paddingBottom: 40,
           }}
           keyExtractor={(item)=>{
-            return item.id;
-          }}
-          renderItem={({item}) =>{
-      
-
-            return(
-            
-              <TouchableOpacity key={item.id} onPress={()=>{navigation.navigate('Content')}}>
-                <TopHotelCard title={item.title} subtitle={item.subtitle} imgSrc={item.image} />
-              </TouchableOpacity>
-            );
-          }} />
-        <View style={styles.contentflatListHeader}>
-          <Text style={{ paddingHorizontal: 12, fontWeight: 'bold', fontSize: 18 }} >Epithelial Tissue</Text>
-          <TouchableOpacity>
-            <Text style={{ paddingHorizontal: 12, color: colors.gray, fontSize: 12, fontWeight: 'bold' }} >View All</Text>
-          </TouchableOpacity>
-        </View>
-              <FlatList
-          data={data}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={{
-            paddingLeft: 20,
-            marginTop: 10,
-            paddingBottom: 40,
-          }}
-          keyExtractor={(item)=>{
-            return item.id;
+            return item.id.toString();
           }}
           renderItem={({item}) =>{
       
@@ -218,7 +218,7 @@ const HomeScreen = ({navigation})=>{
             <Text style={{ paddingHorizontal: 12, color: colors.gray, fontSize: 12, fontWeight: 'bold' }} >View All</Text>
           </TouchableOpacity>
         </View>
-              <FlatList
+                   <FlatList
           data={data}
           horizontal
           showsHorizontalScrollIndicator={false}
@@ -228,14 +228,14 @@ const HomeScreen = ({navigation})=>{
             paddingBottom: 40,
           }}
           keyExtractor={(item)=>{
-            return item.id;
+            return item.id.toString();
           }}
           renderItem={({item}) =>{
       
 
             return(
             
-              <TouchableOpacity key={item.id} onPress={()=>{navigation.navigate('Content')}}>
+              <TouchableOpacity key={item.id} onPress={()=>{navigation.navigate('Content',{data:item})}}>
                 <TopHotelCard title={item.title} subtitle={item.subtitle} imgSrc={item.image} />
               </TouchableOpacity>
             );
@@ -246,7 +246,7 @@ const HomeScreen = ({navigation})=>{
             <Text style={{ paddingHorizontal: 12, color: colors.gray, fontSize: 12, fontWeight: 'bold' }} >View All</Text>
           </TouchableOpacity>
         </View>
-              <FlatList
+                   <FlatList
           data={data}
           horizontal
           showsHorizontalScrollIndicator={false}
@@ -256,14 +256,14 @@ const HomeScreen = ({navigation})=>{
             paddingBottom: 40,
           }}
           keyExtractor={(item)=>{
-            return item.id;
+            return item.id.toString();
           }}
           renderItem={({item}) =>{
       
 
             return(
             
-              <TouchableOpacity key={item.id} onPress={()=>{navigation.navigate('Content')}}>
+              <TouchableOpacity key={item.id} onPress={()=>{navigation.navigate('Content',{data:item})}}>
                 <TopHotelCard title={item.title} subtitle={item.subtitle} imgSrc={item.image} />
               </TouchableOpacity>
             );

@@ -19,8 +19,9 @@ const LoginScreen = ({ navigation }) => {
                 </View>
                 <View style={styles.formContainer}>
 
-                    <InputTextField placeholderText="Email Address" />
+                    <InputTextField iconname="user" placeholderText="Email Address" />
                     <InputTextField
+                    iconname="lock"
                         style={styles.passwordField}
                         placeholderText="Password"
                         isSecure={true}

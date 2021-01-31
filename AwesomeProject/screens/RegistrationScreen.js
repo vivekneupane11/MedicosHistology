@@ -18,19 +18,21 @@ const RegistartionScreen = ({ navigation }) => {
                 </View>
                 <View style={styles.formContainer}>
 
-                    <InputTextField style={[styles.inputTitle, styles.formField]} placeholderText="Full Name" />
-                    <InputTextField style={[styles.inputTitle, styles.formField]} placeholderText="Gender" />
-                    <InputTextField style={[styles.inputTitle, styles.formField]} placeholderText="Choose Language" />
-                    <InputTextField style={[styles.inputTitle, styles.formField]} placeholderText="Email Address" />
+                    <InputTextField iconname="user" style={[styles.inputTitle, styles.formField]} placeholderText="Full Name" />
+                    <InputTextField iconname="user" style={[styles.inputTitle, styles.formField]} placeholderText="Gender" />
+                    <InputTextField iconname="language" style={[styles.inputTitle, styles.formField]} placeholderText="Choose Language" />
+                    <InputTextField iconname="user" style={[styles.inputTitle, styles.formField]} placeholderText="Email Address" />
                     <InputTextField
                         style={styles.formField}
                         placeholderText="Password"
                         isSecure={true}
+                        iconname="lock"
                     />
                     <InputTextField
                         style={styles.formField}
                         placeholderText="Confirm Password"
                         isSecure={true}
+                        iconname="lock"
                     />
                     <TouchableOpacity onPress={() => navigation.navigate('Home')} style={[styles.submitContainer, styles.f_c_c_c, styles.shadow]}>
                         <Text

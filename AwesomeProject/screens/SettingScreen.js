@@ -47,7 +47,7 @@ const SettingScreen = ({ navigation }) => {
                     </View>
                 </View>
                 {/* First Section */}
-                <View style={[styles.settingsSection,styles.shadow]}>
+                <View style={[styles.settingsSection,    styles.shadow]}>
                     <View style={[styles.list,styles.f_r_sb_c]}>
                         <Icon style={{flex:1.5}} name="globe" size={20} color="#ABB4BD" />
                         <Text style={{ flex: 9 }}>Join Our Community</Text>
