@@ -75,26 +75,6 @@ shadowOffset: {
 shadowOpacity: 0.34,
 shadowRadius: 6.27,
 
-<<<<<<< HEAD
-              key={category.name}
-              onPress={() => navigation.navigate("Explore", { category })}
-            >
-              <Card center middle shadow style={[styles.category, styles.shadow]}>
-                <Badge
-                  margin={[0, 0, 15]}
-                  size={50}
-                  color="rgba(41,216,143,0.20)"
-                >
-                  <Image source={category.image} />
-                </Badge>
-                <Text height={20} style={styles.categoryName}>
-                  {category.name}
-                </Text>
-                <Text gray caption style={{fontWeight:'bold'}}>
-                  {category.count}
-                </Text>
-              </Card>
-=======
 elevation: 10,}]}>
                   <Badge
                     margin={[0, 0, 15]}
@@ -118,7 +98,6 @@ elevation: 10,}]}>
         <Text style={{paddingHorizontal:12,fontWeight:'bold',fontSize:18}} >HyperClombic Misopology</Text>
         <TouchableOpacity>  
             <Text style={{paddingHorizontal:12,color:colors.gray,fontSize:12,fontWeight:'bold'}} >View All</Text>
->>>>>>> 3c2d9bf1954a94c706fb27bb5e9fd26ca45665a6
             </TouchableOpacity>
         </View>
       
@@ -153,7 +132,7 @@ elevation: 10,}]}>
             <Text style={{paddingHorizontal:12,color:colors.gray,fontSize:12,fontWeight:'bold'}} >View All</Text>
             </TouchableOpacity>
         </View>
-              <FlatList
+                   <FlatList
           data={data}
           horizontal
           showsHorizontalScrollIndicator={false}
@@ -163,14 +142,42 @@ elevation: 10,}]}>
             paddingBottom: 40,
           }}
           keyExtractor={(item)=>{
-            return item.id;
+            return item.id.toString();
           }}
           renderItem={({item}) =>{
       
 
             return(
             
-              <TouchableOpacity key={item.id} onPress={()=>{navigation.navigate('Content')}}>
+              <TouchableOpacity key={item.id} onPress={()=>{navigation.navigate('Content',{data:item})}}>
+                <TopHotelCard title={item.title} subtitle={item.subtitle} imgSrc={item.image} />
+              </TouchableOpacity>
+            );
+          }     } />
+          <View style={styles.contentflatListHeader}>
+        <Text style={{paddingHorizontal:12,fontWeight:'bold',fontSize:18}} >Epithelial Tissue</Text>
+        <TouchableOpacity>  
+            <Text style={{paddingHorizontal:12,color:colors.gray,fontSize:12,fontWeight:'bold'}} >View All</Text>
+            </TouchableOpacity>
+        </View>
+                   <FlatList
+          data={data}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{
+            paddingLeft: 20,
+            marginTop: 10,
+            paddingBottom: 40,
+          }}
+          keyExtractor={(item)=>{
+            return item.id.toString();
+          }}
+          renderItem={({item}) =>{
+      
+
+            return(
+            
+              <TouchableOpacity key={item.id} onPress={()=>{navigation.navigate('Content',{data:item})}}>
                 <TopHotelCard title={item.title} subtitle={item.subtitle} imgSrc={item.image} />
               </TouchableOpacity>
             );
@@ -191,35 +198,7 @@ elevation: 10,}]}>
             paddingBottom: 40,
           }}
           keyExtractor={(item)=>{
-            return item.id;
-          }}
-          renderItem={({item}) =>{
-      
-
-            return(
-            
-              <TouchableOpacity key={item.id} onPress={()=>{navigation.navigate('Content')}}>
-                <TopHotelCard title={item.title} subtitle={item.subtitle} imgSrc={item.image} />
-              </TouchableOpacity>
-            );
-          }     } />
-          <View style={styles.contentflatListHeader}>
-        <Text style={{paddingHorizontal:12,fontWeight:'bold',fontSize:18}} >Epithelial Tissue</Text>
-        <TouchableOpacity>  
-            <Text style={{paddingHorizontal:12,color:colors.gray,fontSize:12,fontWeight:'bold'}} >View All</Text>
-            </TouchableOpacity>
-        </View>
-              <FlatList
-          data={data}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={{
-            paddingLeft: 20,
-            marginTop: 10,
-            paddingBottom: 40,
-          }}
-          keyExtractor={(item)=>{
-            return item.id;
+            return item.id.toString();
           }}
           renderItem={({item}) =>{
       
@@ -237,7 +216,7 @@ elevation: 10,}]}>
             <Text style={{paddingHorizontal:12,color:colors.gray,fontSize:12,fontWeight:'bold'}} >View All</Text>
             </TouchableOpacity>
         </View>
-              <FlatList
+                   <FlatList
           data={data}
           horizontal
           showsHorizontalScrollIndicator={false}
@@ -247,14 +226,14 @@ elevation: 10,}]}>
             paddingBottom: 40,
           }}
           keyExtractor={(item)=>{
-            return item.id;
+            return item.id.toString();
           }}
           renderItem={({item}) =>{
       
 
             return(
             
-              <TouchableOpacity key={item.id} onPress={()=>{navigation.navigate('Content')}}>
+              <TouchableOpacity key={item.id} onPress={()=>{navigation.navigate('Content',{data:item})}}>
                 <TopHotelCard title={item.title} subtitle={item.subtitle} imgSrc={item.image} />
               </TouchableOpacity>
             );
@@ -265,7 +244,7 @@ elevation: 10,}]}>
             <Text style={{paddingHorizontal:12,color:colors.gray,fontSize:12,fontWeight:'bold'}} >View All</Text>
             </TouchableOpacity>
         </View>
-              <FlatList
+                   <FlatList
           data={data}
           horizontal
           showsHorizontalScrollIndicator={false}
@@ -275,14 +254,14 @@ elevation: 10,}]}>
             paddingBottom: 40,
           }}
           keyExtractor={(item)=>{
-            return item.id;
+            return item.id.toString();
           }}
           renderItem={({item}) =>{
       
 
             return(
             
-              <TouchableOpacity key={item.id} onPress={()=>{navigation.navigate('Content')}}>
+              <TouchableOpacity key={item.id} onPress={()=>{navigation.navigate('Content',{data:item})}}>
                 <TopHotelCard title={item.title} subtitle={item.subtitle} imgSrc={item.image} />
               </TouchableOpacity>
             );
@@ -329,132 +308,8 @@ export default HomeScreen;
 
 
 const styles = StyleSheet.create({
-<<<<<<< HEAD
-  container: {
-    backgroundColor: colors.lightWhite
-  },
-  contentContainer: {
-    paddingVertical: theme.sizes.base,
-  },
-  blockContainer: {
-    paddingVertical: 15,
-  },
-  header: {
-    paddingHorizontal: theme.sizes.base * 2
-  },
-  avatar: {
-    height: theme.sizes.base * 2.2,
-    width: theme.sizes.base * 2.2
-  },
-  topHotelCard: {
-    height: 150,
-    width: 150,
-    backgroundColor: colors.lightWhite,
-    marginTop: 10,
-    marginHorizontal: 10,
-    borderRadius: 10,
-  },
-  topHotelCardImage: {
-    marginTop: 10,
-    height: 90,
-    width: '100%',
-    resizeMode: 'contain',
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  tabs: {
-    borderBottomColor: theme.colors.gray2,
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    marginVertical: theme.sizes.base,
-    marginHorizontal: theme.sizes.base * 2
-  },
-  tab: {
-    marginRight: theme.sizes.base * 2,
-    paddingBottom: theme.sizes.base
-  },
-  active: {
-    borderBottomColor: theme.colors.secondary,
-    borderBottomWidth: 3
-  },
-  categories: {
-    flexWrap: "wrap",
-    paddingHorizontal: theme.sizes.base * 2,
-    marginBottom: theme.sizes.base
-  },
-  category: {
-    backgroundColor: colors.lightGray,
-    // this should be dynamic based on screen width
-    minWidth: (width - theme.sizes.padding * 2.4 - theme.sizes.base) / 2,
-    maxWidth: (width - theme.sizes.padding * 2.4 - theme.sizes.base) / 2,
-    maxHeight: (width - theme.sizes.padding * 2.4 - theme.sizes.base) / 2
-  },
-  categoryName: {
-    fontWeight: 'bold'
-  },
-  contentflatListHeader: {
-    paddingHorizontal: 10,
-  },
-  contentflatListHeaderTitle: {
-    paddingHorizontal: 12,
-    fontWeight: 'bold',
-    fontSize: 18
-  },
-  contentflatListHeaderViewAll: {
-    paddingHorizontal: 12,
-    color: colors.gray,
-    fontSize: 12,
-    fontWeight: 'bold'
-  },
-  premiumContainer: {
-    paddingHorizontal: 5,
-
-  },
-  premiumWrapper: {
-    paddingVertical: 15,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: "center",
-    flex: 1
-
-  },
-  premiumContent: {
-    width: (width) / 2.2,
-    borderRadius: 10,
-    backgroundColor: colors.primary,
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start'
-
-  },
-  toppremiumIcons: {
-    position: 'absolute',
-    top: 5,
-    right: 5,
-    flexDirection: "row",
-    zIndex: 1
-  },
-  premiumImage: {
-    paddingVertical: 20,
-    width: '100%',
-    height: (width) / 2.7
-  },
-  premiumFooter: {
-    backgroundColor: 'white',
-    paddingHorizontal: 10,
-    paddingVertical: 15,
-    width: '100%',
-    borderBottomLeftRadius: 10,
-    borderBottomRightRadius: 10,
-  },
-  shadow: {
-    shadowColor: "black",
-    shadowOffset: {
-      width: 0,
-      height: 5,
-=======
     header: {
       paddingHorizontal: theme.sizes.base * 2
->>>>>>> 3c2d9bf1954a94c706fb27bb5e9fd26ca45665a6
     },
     avatar: {
       height: theme.sizes.base * 2.2,
