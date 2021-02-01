@@ -7,6 +7,7 @@ import { colors } from '../constants/theme';
 import fontelloConfig from '../src/config.json';
 import { createIconSetFromFontello } from 'react-native-vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { heightPercentageToDP, widthPercentageToDP } from '../src/utils/responsive';
 const Icon = createIconSetFromFontello(fontelloConfig);
 
 const width = Dimensions.get('screen').width;
@@ -121,17 +122,17 @@ console.log("Error saving bookmark",err)
                    
                                     <View>
                                         <Text style={styles.contentTitleText}>{data.title}</Text>
-                                        <Text style={[styles.contentText1, styles.contentParagraphTypography]}>{data.introduction.content}</Text>
+                                        <Text style={[styles.contentBox, styles.contentParagraphTypography]}>{data.introduction.content}</Text>
                                    
                                             <View>
                                                     <Text style={styles.contentSubTitleText}>{data.subtitle}</Text>
                                            
                                                     
-                                                           <View>
+                                                           <View style={styles.contentBox}>
                                                                 <Unorderedlist bulletUnicode={0x2023} style={styles.unorderedlist}>
                                                                     <Text style={styles.subTitle}>{data.subtitle}</Text>
                                                                 </Unorderedlist>
-                                                                <Text style={[styles.contentText2, styles.contentParagraphTypography]}>{data.description.content[0].content}</Text>
+                                                                <Text style={[styles.contentBox, styles.contentParagraphTypography]}>{data.description.content[0].content}</Text>
 
                                                             </View>
                                                       
@@ -160,43 +161,50 @@ const styles = StyleSheet.create({
   //     color: 'white'
   // },
   contentTitleText: {
-    marginTop: 25,
-    marginBottom: 10,
+    // marginTop: 25,
+    // marginBottom: 10,
     textAlign: 'center',
-    marginHorizontal: 8,
+    // marginHorizontal: 8,
     fontFamily: 'PTSerif-Bold',
-    fontSize: 35,
-    color: '#156B9A',
+    // fontSize: 35,
+    color: colors.secondary,
+    marginTop:heightPercentageToDP(3),
+    marginBottom:heightPercentageToDP(1.3),
+    marginHorizontal:widthPercentageToDP(0.8),
+    fontSize:widthPercentageToDP(8.5)
   },
   contentSubTitleText: {
-    paddingBottom: 5,
+    // paddingBottom: 5,
     borderBottomWidth: StyleSheet.hairlineWidth,
-    marginBottom: 10,
-    marginHorizontal: 12,
+    // marginBottom: 10,
+    // marginHorizontal: 12,
     fontFamily: 'Roboto-Bold',
-    fontSize: 21,
+    // fontSize: 21,
     color: 'black',
+    paddingTop:heightPercentageToDP(3.5),
+    marginBottom:heightPercentageToDP(1),
+    marginHorizontal:widthPercentageToDP(3.5),
+    // fontSize: widthPercentageToDP(3.9),
+    fontSize: widthPercentageToDP(5.1),
+
+
   },
   subTitle: {
     color: 'black',
     fontFamily: 'Roboto-Bold',
-    fontSize: 18,
+    // fontSize: 18,
     fontWeight: 'bold',
+    fontSize: widthPercentageToDP(4.3),
   },
 
-    cardContentParagraphTypography: {
-        color: 'gray',
-        lineHeight: 17,
-        textAlign: 'justify',
-        fontSize: 14,
-        fontFamily: 'LiberationSerif-Regular',
-    },
     modalContentContainer: {
         paddingHorizontal: 15,
         paddingVertical: 25,
         flex: 1,
         width: '100%',
-        // backgroundColor: 'yellow'
+        // backgroundColor: 'yellow',
+        // paddingHorizontal:widthPercentageToDP(1.5),
+        // paddingVertical:heightPercentageToDP(2.5)
     },
     modalFooter: {
         width: '100%',
@@ -265,6 +273,22 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontFamily: 'Roboto-Bold',
         borderBottomWidth: StyleSheet.hairlineWidth
+    },
+    contentParagraphTypography: {
+        // lineHeight: 22,
+        textAlign: 'justify',
+        // fontSize: 17,
+        fontFamily: 'LiberationSerif-Regular',
+        lineHeight:heightPercentageToDP(2.9),
+        fontSize: widthPercentageToDP(4),
+
+
+    },
+    contentBox: {
+        // paddingHorizontal: 25,
+        // paddingVertical: 5,
+        paddingHorizontal:widthPercentageToDP(5.8),
+        paddingVertical:heightPercentageToDP(0.5)
     },
 })
 

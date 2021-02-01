@@ -25,18 +25,18 @@ const HomeStack = createStackNavigator();
 const HomeStackScreen = () => {
     return (
         <HomeStack.Navigator >
-            <HomeStack.Screen name="Onboarding" component={OnboardingScreen} options={{headerShown:false}} /> 
-            <HomeStack.Screen name="Login" component={LoginScreen} options={{headerShown:false}}  />
-            <HomeStack.Screen name="Register" component={RegistrationScreen} options={{headerShown:false}} /> 
+            {/* <HomeStack.Screen name="Onboarding" component={OnboardingScreen} options={{headerShown:false}} />  */}
+            {/* <HomeStack.Screen name="Login" component={LoginScreen} options={{headerShown:false}}  /> */}
+            {/* <HomeStack.Screen name="Register" component={RegistrationScreen} options={{headerShown:false}} />  */}
             <HomeStack.Screen name="Home" component={HomeScreen} options={{headerShown:false}}  />
-            <HomeStack.Screen name="Setting" component={SettingScreen} options={{headerShown:false}} />
-            {/* <HomeStack.Screen name="Content" component={ContentScreen} /> */}
-            <HomeStack.Screen name="Search" component={SearchScreen} />
+            {/* <HomeStack.Screen name="Setting" component={SettingScreen} options={{headerShown:false}} /> */}
+            <HomeStack.Screen name="Content" component={ContentScreen} />
+            {/* <HomeStack.Screen name="Search" component={SearchScreen} />
             <HomeStack.Screen name="Notes" component={NoteScreen} options={{headerShown:false}}/>
             <HomeStack.Screen name="Bookmarks" component={BookmarkScreen} options={{headerShown:false}} />
             <HomeStack.Screen name="TermsAndConditions" component={TermsAndConditionsScreen}/>
             <HomeStack.Screen name="Privacy Policy" component={PrivacyPolicyScreen}/>
-            <HomeStack.Screen name="About Us" component={AboutUsScreen}/>
+            <HomeStack.Screen name="About Us" component={AboutUsScreen}/> */}
 
         </HomeStack.Navigator>
     );
