@@ -167,6 +167,18 @@
       "css": "lock",
       "code": 59413,
       "src": "typicons"
+    },
+    {
+      "uid": "56b0141d7bbb0717fc6246ea145bc0bd",
+      "css": "ok-circled2",
+      "code": 59414,
+      "src": "elusive"
+    },
+    {
+      "uid": "f04a5d24e9e659145b966739c4fde82a",
+      "css": "bookmark",
+      "code": 59415,
+      "src": "fontawesome"
     }
   ]
 }
