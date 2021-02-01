@@ -47,6 +47,8 @@ await     JSON.parse(asyncData).bookmark.length
     if(newArray.length == verifiednewArray.length){
         let length = verifiednewArray.length ;
         verifiednewArray[length]= id;
+       
+    }else{
         setisBookmark(!isBookmark);
     }
 
@@ -63,25 +65,27 @@ console.log("Error saving bookmark",err)
  }
 
         useEffect(()=>{
-            let isBookmarkValue;
+    
             AsyncStorage.getItem('BookmarkID').then(value=>{
                 console.log("here"+value);
                 let asyncData = (value == null) ? JSON.stringify({bookmark:[0]}) :value;
                 
                  setBookmark(asyncData);
-                let AsyncBookmarkData =  JSON.parse(value).bookmark;
+                let AsyncBookmarkData =  JSON.parse(asyncData).bookmark;
                 AsyncBookmarkData.map(item=>{
    
                         if(item == data.id){
-                         isBookmarkValue = true;
-                            console.log("is bookmark");
+                            // console.log(item,data.id);
+                            setisBookmark(true);
+                            return;
+               
                         
-                        }else{
-                           isBookmarkValue = false;
                         }
                     });
-             setisBookmark(isBookmarkValue);
+            
             });
+
+            console.log("Is bookmark",isBookmark)
         },[Bookmark])
   
 

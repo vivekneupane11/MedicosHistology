@@ -8,19 +8,7 @@ const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 import InputTextField from "../components/InputTextField";
 const SearchScreen = ({navigation}) => {
-    React.useLayoutEffect(()=>{
-        navigation.setOptions(
-            {
-                headerTitle:(props)=>(
-                    <Text {...props} style={{color:'white',fontSize:18,fontWeight:'bold',backgroundColor:colors.primary}}>Search</Text>
-                ),
-                headerStyle:{
-                    backgroundColor:colors.primary,
-                },
-                headerTintColor:'#fff'
-            }
-        );
-    },[navigation])
+
     return (
         <ScrollView style={styles.wrapper} contentContainerStyle={{ flexGrow: 1 }}>
             <View style={styles.header}>

@@ -14,22 +14,22 @@ const height = width / 1.61;
 
 
 const PrivacyPolicyScreen = ({ navigation }) => {
-    React.useLayoutEffect(() => {
-        navigation.setOptions(
-            {
-                headerTitle: (props) => (
-                    <View style={{ justifyContent: "space-between", flexDirection: 'row', alignItems: 'center' }}>
-                        <Text {...props} style={{ color: 'white', fontSize: 18, backgroundColor: colors.primary }}>Privacy Policy</Text>
+    // React.useLayoutEffect(() => {
+    //     navigation.setOptions(
+    //         {
+    //             headerTitle: (props) => (
+    //                 <View style={{ justifyContent: "space-between", flexDirection: 'row', alignItems: 'center' }}>
+    //                     <Text {...props} style={{ color: 'white', fontSize: 18, backgroundColor: colors.primary }}>Privacy Policy</Text>
 
-                    </View>
-                ),
-                headerStyle: {
-                    backgroundColor: colors.primary
-                },
-                headerTintColor: '#fff'
-            }
-        );
-    }, [navigation])
+    //                 </View>
+    //             ),
+    //             headerStyle: {
+    //                 backgroundColor: colors.primary
+    //             },
+    //             headerTintColor: '#fff'
+    //         }
+    //     );
+    // }, [navigation])
     return (
         <ScrollView>
             <View style={styles.wrapper}>
