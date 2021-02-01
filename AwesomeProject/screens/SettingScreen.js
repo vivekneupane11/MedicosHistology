@@ -13,6 +13,7 @@ import fontelloConfig from '../src/config.json';
 const Icon = createIconSetFromFontello(fontelloConfig);
 import {colors} from '../constants/theme';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import { heightPercentageToDP, widthPercentageToDP } from '../src/utils/responsive';
 
 const {width} = Dimensions.get('window');
 const SettingScreen = ({navigation}) => {
@@ -138,21 +139,30 @@ const styles = StyleSheet.create({
     backgroundColor: colors.lightWhite,
   },
   settingsSection: {
-    marginVertical: width / 30,
-    marginHorizontal: width / 17 - 5,
+    // marginVertical: width / 30,
+    // marginHorizontal: width / 17 - 5,
     backgroundColor: colors.lightWhite,
-    padding: 10,
+    // paddingVertical: 10,
+    // paddingHorizontal:10,
     borderRadius: 15,
+    marginVertical:heightPercentageToDP(1.7),
+    marginHorizontal:widthPercentageToDP(4.8),
+    paddingHorizontal:widthPercentageToDP(2.7),
+    paddingVertical:heightPercentageToDP(1.2)
   },
   list: {
     borderBottomWidth: 0.3,
-    paddingVertical: 14,
+    // paddingVertical: 14,
     borderColor: 'lightgray',
-    marginHorizontal: 20,
+    // marginHorizontal: 20,
+    paddingVertical:heightPercentageToDP(1.7),
+    marginHorizontal:widthPercentageToDP(4.8),
   },
   endlist: {
-    paddingVertical: 14,
-    marginHorizontal: 20,
+    // paddingVertical: 14,
+    // marginHorizontal: 20,
+    paddingVertical:heightPercentageToDP(1.7),
+    marginHorizontal:widthPercentageToDP(4.8),
   },
   shadow: {
     shadowColor: '#000',

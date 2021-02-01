@@ -6,6 +6,7 @@ import Slider from '../components/Slider';
 import { colors } from '../constants/theme';
 import fontelloConfig from '../src/config.json';
 import { createIconSetFromFontello } from 'react-native-vector-icons';
+import { heightPercentageToDP, widthPercentageToDP } from '../src/utils/responsive';
 
 const Icon = createIconSetFromFontello(fontelloConfig);
 
@@ -236,30 +237,35 @@ const styles = StyleSheet.create({
         backgroundColor: colors.lightWhite
     },
     contentBox: {
-        paddingHorizontal: 25,
-        paddingVertical: 5
-    },
-    contentParagraphTypography: {
-        lineHeight: 22,
+        // paddingHorizontal: 25,
+        // paddingVertical: 5,
+        paddingHorizontal: widthPercentageToDP(5.8),
+        paddingVertical: heightPercentageToDP(0.5)
+      },
+      contentParagraphTypography: {
+        // lineHeight: 22,
         textAlign: 'justify',
-        fontSize: 17,
+        // fontSize: 17,
         fontFamily: 'LiberationSerif-Regular',
-
-    },
+        lineHeight: heightPercentageToDP(2.9),
+        fontSize: widthPercentageToDP(4), 
+      },
     contentTitleText: {
-        marginBottom: 10,
-        marginHorizontal:10,
-        marginTop: 20,
+        // marginBottom: 10,
+        // marginHorizontal:10,
+        // marginTop: 20,
         fontFamily: 'PTSerif-Bold',
         fontSize: 24,
-        color: '#156B9A'
-    },
-    listContentBox: {
-
+        color: colors.secondary,
+        marginBottom: heightPercentageToDP(1.3),
+        marginTop: heightPercentageToDP(2.5),
+        marginHorizontal: widthPercentageToDP(2.5),
     },
     unorderedlist: {
-        marginLeft: 14,
-        fontSize: 18
+        // marginLeft: 14,
+        // fontSize: 18,
+        fontSize: widthPercentageToDP(4.3),
+        marginLeft:widthPercentageToDP(3.4)
     },
 
 })

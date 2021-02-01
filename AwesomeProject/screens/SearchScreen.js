@@ -6,6 +6,10 @@ const Icon = createIconSetFromFontello(fontelloConfig);
 import { colors } from '../constants/theme';
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
+import {
+    widthPercentageToDP,
+    heightPercentageToDP,
+  } from '../src/utils/responsive';
 import InputTextField from "../components/InputTextField";
 const SearchScreen = ({navigation}) => {
 
@@ -107,103 +111,118 @@ const styles = StyleSheet.create(
             height: "auto",
         },
         header: {
-            height: (width) / 3,
+            // height: (width) / 3,
             backgroundColor: colors.primary,
             borderBottomLeftRadius: 30.5,
             borderBottomRightRadius: 30.5,
-            paddingTop: 20,
+            // paddingTop: 20,
             alignItems: 'center',
-            marginBottom: 90
+            // marginBottom: 90,
+            height:heightPercentageToDP(16.5),
+            paddingTop:heightPercentageToDP(2.4),
+            marginBottom:heightPercentageToDP(10.9)
         },
         search: {
             alignItems: 'center',
-            paddingVertical: 4,
-            paddingHorizontal: 10,
+            // paddingVertical: 4,
+            // paddingHorizontal: 10,
             flexDirection: 'row',
             backgroundColor: colors.lightGray,
-            width: '90%',
+            // width: '90%',
             borderRadius: 25,
-            marginHorizontal: 20
-        },
-        searchText: {
-            color: colors.lightShadeRed,
-            fontSize: 18,
+            // marginHorizontal: 20,
+            paddingVertical:heightPercentageToDP(0.6),
+            paddingHorizontal:widthPercentageToDP(3.5),
+            // marginHorizontal:widthPercentageToDP(2.4),
+            width:widthPercentageToDP(90)
 
-            marginHorizontal: 10
         },
         searchContentBox: {
-
-            // paddingHorizontal: 15,
-            // paddingVertical: 19,
-            padding: 7,
-            marginTop: 25,
-            // height: 125,
-            // width: 355,
+            // paddingHorizontal: 7,
+            // paddingVertical:7,
+            // marginTop: 25,
             backgroundColor: colors.lightWhite,
             borderRadius: 11,
+            paddingVertical:heightPercentageToDP(0.8),
+            paddingHorizontal:widthPercentageToDP(1.6),
+            marginTop:heightPercentageToDP(3)
         },
         imageStyle: {
-            height: 85,
-            width: 82,
-            borderRadius: 5
+            // height: 85,
+            // width: 82,
+            borderRadius: 5,
+            height:heightPercentageToDP(10.2),
+            width:widthPercentageToDP(20)
         },
         searchContent: {
-            width: "65%",
-            paddingHorizontal: 10
+            // width: "65%",
+            // paddingHorizontal: 10,
+            width:widthPercentageToDP(63),
+            paddingHorizontal:widthPercentageToDP(2.5)
 
         },
         searchContentTitle: {
             flex: 0.6,
             color: 'black',
-            fontSize: 16,
+            // fontSize: 16,
             fontWeight: 'bold',
             fontFamily: 'Roboto-Bold',
+            fontSize: widthPercentageToDP(3.9),
         },
         searchContentText: {
             flex: 1,
             color: 'gray',
-            lineHeight: 14,
+            // lineHeight: 14,
             textAlign: 'justify',
-            fontSize: 14,
+            // fontSize: 14,
             fontFamily: 'LiberationSerif-Regular',
+            fontSize: widthPercentageToDP(3.4),
+            lineHeight: heightPercentageToDP(1.65),
         },
         container: {
             alignItems: 'center',
         },
         similar: {
-            marginHorizontal: 15,
+            // marginHorizontal: 15,
             color: 'gray',
-            fontSize: 16,
+            // fontSize: 16,
             // fontFamily: 'Roboto-Bold',
+            fontSize: widthPercentageToDP(3.9),
+            marginHorizontal:widthPercentageToDP(3.5)
         },
         similarContentBox: {
-            // paddingHorizontal: 15,
-            // paddingVertical: 19,
-            padding: 7,
-            marginTop: 25,
-            // height: 125,
-            // width: 355,
+            // paddingHorizontal: 7,
+            // paddingVertical: 7,
             backgroundColor: colors.lightWhite,
             borderRadius: 11,
+            paddingVertical:heightPercentageToDP(0.8),
+            paddingHorizontal:widthPercentageToDP(1.6),
+            marginTop:heightPercentageToDP(3)
         },
         similarContent: {
             width: "65%",
-            paddingHorizontal: 10
+            paddingHorizontal: 10,
+            width:widthPercentageToDP(63),
+            paddingHorizontal:widthPercentageToDP(2.5)
         },
         similarContentTitle: {
             flex: 1,
             color: 'black',
-            fontSize: 16,
+            // fontSize: 16,
             fontWeight: 'bold',
             fontFamily: 'Roboto-Bold',
+            fontSize: widthPercentageToDP(3.9),
+
         },
         similarContentText: {
             flex: 1,
             color: 'gray',
-            lineHeight: 14,
+            // lineHeight: 14,
             textAlign: 'justify',
-            fontSize: 14,
+            // fontSize: 14,
             fontFamily: 'LiberationSerif-Regular',
+            fontSize: widthPercentageToDP(3.4),
+            lineHeight: heightPercentageToDP(1.65),
         },
         shadow: {
             shadowColor: "#000",
