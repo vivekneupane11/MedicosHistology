@@ -6,6 +6,8 @@ import Slider from '../components/Slider';
 import { colors } from '../constants/theme';
 import fontelloConfig from '../src/config.json';
 import { createIconSetFromFontello } from 'react-native-vector-icons';
+import { heightPercentageToDP, widthPercentageToDP } from '../src/utils/responsive';
+
 
 const Icon = createIconSetFromFontello(fontelloConfig);
 
@@ -90,32 +92,25 @@ const styles = StyleSheet.create({
         backgroundColor: colors.lightWhite
     },
     contentBox: {
-        paddingHorizontal: 25,
-        paddingVertical: 5
-    },
-    contentParagraphTypography: {
-        lineHeight: 22,
+        // paddingHorizontal: 25,
+        // paddingVertical: 5,
+        paddingHorizontal: widthPercentageToDP(5.8),
+        paddingVertical: heightPercentageToDP(0.5)
+      },
+      contentParagraphTypography: {
+        // lineHeight: 22,
         textAlign: 'justify',
-        fontSize: 17,
+        // fontSize: 17,
         fontFamily: 'LiberationSerif-Regular',
-
+        lineHeight: heightPercentageToDP(2.9),
+        fontSize: widthPercentageToDP(4), 
+      },
+      unorderedlist: {
+        // marginLeft: 14,
+        // fontSize: 18,
+        fontSize: widthPercentageToDP(4.3),
+        marginLeft:widthPercentageToDP(3.4)
     },
-    contentTitleText: {
-        marginTop: 25,
-        marginBottom: 10,
-        marginHorizontal: 10,
-        fontFamily: 'PTSerif-Bold',
-        fontSize: 24,
-        color: '#156B9A'
-    },
-    listContentBox: {
-
-    },
-    unorderedlist: {
-        marginLeft: 14,
-        fontSize: 18
-    },
-
 })
 
 export default PrivacyPolicyScreen;

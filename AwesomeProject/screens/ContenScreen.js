@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import {
   View,
   Text,
@@ -12,22 +12,23 @@ import {
   Modal,
   TextInput,
 } from 'react-native';
-import {color} from 'react-native-reanimated';
+import { color } from 'react-native-reanimated';
 import Unorderedlist from 'react-native-unordered-list';
 import Slider from '../components/Slider';
-import {colors} from '../constants/theme';
+import { colors } from '../constants/theme';
 import fontelloConfig from '../src/config.json';
-import {createIconSetFromFontello} from 'react-native-vector-icons';
+import { createIconSetFromFontello } from 'react-native-vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 const Icon = createIconSetFromFontello(fontelloConfig);
+import { heightPercentageToDP, widthPercentageToDP } from '../src/utils/responsive';
 
 const width = Dimensions.get('screen').width;
 const height = width / 1.61;
 
-const ContentScreen = ({navigation, route}) => {
+const ContentScreen = ({ navigation, route }) => {
   const [Bookmark, setBookmark] = useState([]);
   const [isBookmark, setisBookmark] = useState(false);
-  const {data} = route.params;
+  const { data } = route.params;
 
   // const getBookmarkData = async ()=>{
   //     try{
@@ -41,12 +42,12 @@ const ContentScreen = ({navigation, route}) => {
   //     console.log('Error getting Bookmark',err);
   // }
   //  }
-  const saveBookmarkData = async ({id}) => {
+  const saveBookmarkData = async ({ id }) => {
     try {
       // AsyncStorage.setItem(Bookmark,);
       let asyncData = await AsyncStorage.getItem('BookmarkID');
       asyncData =
-        asyncData == null ? JSON.stringify({bookmark: [0]}) : asyncData;
+        asyncData == null ? JSON.stringify({ bookmark: [0] }) : asyncData;
       await JSON.parse(asyncData).bookmark.length;
 
       let newArray = await JSON.parse(asyncData).bookmark;
@@ -60,7 +61,7 @@ const ContentScreen = ({navigation, route}) => {
         setisBookmark(!isBookmark);
       }
 
-      let stringifieddata = await JSON.stringify({bookmark: verifiednewArray});
+      let stringifieddata = await JSON.stringify({ bookmark: verifiednewArray });
       AsyncStorage.setItem('BookmarkID', stringifieddata);
       console.log('STRIGIFIED', stringifieddata);
       setBookmark(stringifieddata);
@@ -72,7 +73,7 @@ const ContentScreen = ({navigation, route}) => {
   useEffect(() => {
     AsyncStorage.getItem('BookmarkID').then((value) => {
       console.log('here' + value);
-      let asyncData = value == null ? JSON.stringify({bookmark: [0]}) : value;
+      let asyncData = value == null ? JSON.stringify({ bookmark: [0] }) : value;
 
       setBookmark(asyncData);
       let AsyncBookmarkData = JSON.parse(asyncData).bookmark;
@@ -106,29 +107,29 @@ const ContentScreen = ({navigation, route}) => {
             }}>
             Epithelial Tissue
           </Text>
-          <View style={{flexDirection: 'row'}}>
+          <View style={{ flexDirection: 'row' }}>
             <Icon
-              style={{marginHorizontal: 0}}
+              style={{ marginHorizontal: 0 }}
               name="edit"
               size={25}
               color="#fff"
             />
-            <TouchableOpacity onPress={() => saveBookmarkData({id: data.id})}>
+            <TouchableOpacity onPress={() => saveBookmarkData({ id: data.id })}>
               {isBookmark ? (
                 <Icon
-                  style={{marginHorizontal: 20}}
+                  style={{ marginHorizontal: 20 }}
                   name="bookmark"
                   size={24}
                   color="#fff"
                 />
               ) : (
-                <Icon
-                  style={{marginHorizontal: 20}}
-                  name="bookmark-empty"
-                  size={24}
-                  color="#fff"
-                />
-              )}
+                  <Icon
+                    style={{ marginHorizontal: 20 }}
+                    name="bookmark-empty"
+                    size={24}
+                    color="#fff"
+                  />
+                )}
             </TouchableOpacity>
           </View>
         </View>
@@ -151,14 +152,14 @@ const ContentScreen = ({navigation, route}) => {
           <View>
             <Text style={styles.contentTitleText}>{data.title}</Text>
             <Text
-              style={[styles.contentText1, styles.contentParagraphTypography]}>
+              style={[styles.contentBox, styles.contentParagraphTypography]}>
               {data.introduction.content}
             </Text>
 
             <View>
               <Text style={styles.contentSubTitleText}>{data.subtitle}</Text>
 
-              <View>
+              <View style={styles.contentBox}>
                 <Unorderedlist
                   bulletUnicode={0x2023}
                   style={styles.unorderedlist}>
@@ -166,7 +167,7 @@ const ContentScreen = ({navigation, route}) => {
                 </Unorderedlist>
                 <Text
                   style={[
-                    styles.contentText2,
+                    styles.contentBox,
                     styles.contentParagraphTypography,
                   ]}>
                   {data.description.content[0].content}
@@ -190,43 +191,50 @@ const styles = StyleSheet.create({
   //     color: 'white'
   // },
   contentTitleText: {
-    marginTop: 25,
-    marginBottom: 10,
+    // marginTop: 25,
+    // marginBottom: 10,
     textAlign: 'center',
-    marginHorizontal: 8,
+    // marginHorizontal: 8,
     fontFamily: 'PTSerif-Bold',
-    fontSize: 35,
-    color: '#156B9A',
+    // fontSize: 35,
+    color: colors.secondary,
+    marginTop: heightPercentageToDP(3),
+    marginBottom: heightPercentageToDP(1.3),
+    marginHorizontal: widthPercentageToDP(0.8),
+    fontSize: widthPercentageToDP(8.5)
   },
   contentSubTitleText: {
-    paddingBottom: 5,
+    // paddingBottom: 5,
     borderBottomWidth: StyleSheet.hairlineWidth,
-    marginBottom: 10,
-    marginHorizontal: 12,
+    // marginBottom: 10,
+    // marginHorizontal: 12,
     fontFamily: 'Roboto-Bold',
-    fontSize: 21,
+    // fontSize: 21,
     color: 'black',
+    paddingTop: heightPercentageToDP(3.5),
+    marginBottom: heightPercentageToDP(1),
+    marginHorizontal: widthPercentageToDP(3.5),
+    // fontSize: widthPercentageToDP(3.9),
+    fontSize: widthPercentageToDP(5.1),
+
+
   },
   subTitle: {
     color: 'black',
     fontFamily: 'Roboto-Bold',
-    fontSize: 18,
+    // fontSize: 18,
     fontWeight: 'bold',
+    fontSize: widthPercentageToDP(4.3),
   },
 
-  cardContentParagraphTypography: {
-    color: 'gray',
-    lineHeight: 17,
-    textAlign: 'justify',
-    fontSize: 14,
-    fontFamily: 'LiberationSerif-Regular',
-  },
   modalContentContainer: {
     paddingHorizontal: 15,
     paddingVertical: 25,
     flex: 1,
     width: '100%',
-    // backgroundColor: 'yellow'
+    // backgroundColor: 'yellow',
+    // paddingHorizontal:widthPercentageToDP(1.5),
+    // paddingVertical:heightPercentageToDP(2.5)
   },
   modalFooter: {
     width: '100%',
@@ -234,27 +242,31 @@ const styles = StyleSheet.create({
     backgroundColor: colors.lightWhite,
   },
   modalContainer: {
-    paddingVertical: 100,
+    // paddingVertical: 100,
     backgroundColor: '#000000aa',
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    paddingVertical: heightPercentageToDP(12)
   },
   modalWrapper: {
     flex: 1,
-    width: '85%',
+    // width: '85%',
     backgroundColor: 'white',
     borderRadius: 10,
     overflow: 'hidden',
+    width: widthPercentageToDP(85)
   },
   closeButtonText: {
     // flex:0.2,
-    color: 'red',
-    fontSize: 16,
+    color: "red",
+    // fontSize: 16,
+    fontSize: widthPercentageToDP(4),
   },
   saveButtonText: {
     color: colors.secondary,
-    fontSize: 16,
+    // fontSize: 16,
+    fontSize: widthPercentageToDP(4),
   },
   modalCloseIcon: {
     flex: 0.24,
@@ -269,7 +281,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
     alignItems: 'center',
     flex: 1,
-    fontSize: 16,
     borderColor: 'green',
     borderRightWidth: StyleSheet.hairlineWidth,
     borderTopWidth: StyleSheet.hairlineWidth,
@@ -278,22 +289,41 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     alignItems: 'center',
-    paddingVertical: 15,
+    // paddingVertical: 15,
     flex: 1,
     // backgroundColor: colors.primary,
-    fontSize: 16,
     borderColor: 'green',
     borderTopWidth: StyleSheet.hairlineWidth,
+    paddingVertical: heightPercentageToDP(1.8)
   },
   modalTitle: {
-    marginHorizontal: 25,
-    paddingVertical: 12,
+    // marginHorizontal: 25,
+    // paddingVertical: 12,
     textAlign: 'center',
     color: colors.secondary,
-    fontSize: 25,
+    // fontSize: 25,
     fontWeight: 'bold',
     fontFamily: 'Roboto-Bold',
     borderBottomWidth: StyleSheet.hairlineWidth,
+    marginHorizontal: widthPercentageToDP(6.5),
+    paddingVertical: heightPercentageToDP(1.4),
+    fontSize: widthPercentageToDP(6),
+  },
+  contentParagraphTypography: {
+    // lineHeight: 22,
+    textAlign: 'justify',
+    // fontSize: 17,
+    fontFamily: 'LiberationSerif-Regular',
+    lineHeight: heightPercentageToDP(2.9),
+    fontSize: widthPercentageToDP(4),
+
+
+  },
+  contentBox: {
+    // paddingHorizontal: 25,
+    // paddingVertical: 5,
+    paddingHorizontal: widthPercentageToDP(5.8),
+    paddingVertical: heightPercentageToDP(0.5)
   },
 });
 

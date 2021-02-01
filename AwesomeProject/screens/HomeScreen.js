@@ -22,9 +22,12 @@ import {colors} from '../constants/theme';
 
 const {width} = Dimensions.get('window');
 const HomeScreen = ({navigation}) => {
-  const TopHotelCard = ({title, subtitle, imgSrc}) => {
+  const TopHotelCard = ({title, subtitle, imgSrc,item}) => {
+  
     return (
-      <TouchableOpacity style={styles.topHotelCard}>
+      <TouchableOpacity style={styles.topHotelCard}  onPress={() => {
+        navigation.navigate('Content', {data: item});
+      }}>
         <View
           style={{
             position: 'absolute',
@@ -142,17 +145,14 @@ const HomeScreen = ({navigation}) => {
           }}
           renderItem={({item}) => {
             return (
-              <TouchableOpacity
-                key={item.id}
-                onPress={() => {
-                  navigation.navigate('Content', {data: item});
-                }}>
+              
                 <TopHotelCard
+                item={item}
                   title={item.title}
                   subtitle={item.subtitle}
                   imgSrc={item.image}
                 />
-              </TouchableOpacity>
+             
             );
           }}
         />
@@ -174,6 +174,7 @@ const HomeScreen = ({navigation}) => {
             </Text>
           </TouchableOpacity>
         </View>
+       
         <FlatList
           data={data}
           horizontal
@@ -188,17 +189,14 @@ const HomeScreen = ({navigation}) => {
           }}
           renderItem={({item}) => {
             return (
-              <TouchableOpacity
-                key={item.id}
-                onPress={() => {
-                  navigation.navigate('Content', {data: item});
-                }}>
+              
                 <TopHotelCard
+                item={item}
                   title={item.title}
                   subtitle={item.subtitle}
                   imgSrc={item.image}
                 />
-              </TouchableOpacity>
+             
             );
           }}
         />
@@ -219,6 +217,7 @@ const HomeScreen = ({navigation}) => {
             </Text>
           </TouchableOpacity>
         </View>
+       
         <FlatList
           data={data}
           horizontal
@@ -233,17 +232,14 @@ const HomeScreen = ({navigation}) => {
           }}
           renderItem={({item}) => {
             return (
-              <TouchableOpacity
-                key={item.id}
-                onPress={() => {
-                  navigation.navigate('Content', {data: item});
-                }}>
+              
                 <TopHotelCard
+                item={item}
                   title={item.title}
                   subtitle={item.subtitle}
                   imgSrc={item.image}
                 />
-              </TouchableOpacity>
+             
             );
           }}
         />
@@ -264,6 +260,7 @@ const HomeScreen = ({navigation}) => {
             </Text>
           </TouchableOpacity>
         </View>
+       
         <FlatList
           data={data}
           horizontal
@@ -278,17 +275,14 @@ const HomeScreen = ({navigation}) => {
           }}
           renderItem={({item}) => {
             return (
-              <TouchableOpacity
-                key={item.id}
-                onPress={() => {
-                  navigation.navigate('Content', {data: item.id});
-                }}>
+              
                 <TopHotelCard
+                item={item}
                   title={item.title}
                   subtitle={item.subtitle}
                   imgSrc={item.image}
                 />
-              </TouchableOpacity>
+             
             );
           }}
         />
@@ -309,6 +303,7 @@ const HomeScreen = ({navigation}) => {
             </Text>
           </TouchableOpacity>
         </View>
+       
         <FlatList
           data={data}
           horizontal
@@ -323,17 +318,14 @@ const HomeScreen = ({navigation}) => {
           }}
           renderItem={({item}) => {
             return (
-              <TouchableOpacity
-                key={item.id}
-                onPress={() => {
-                  navigation.navigate('Content', {data: item});
-                }}>
+              
                 <TopHotelCard
+                item={item}
                   title={item.title}
                   subtitle={item.subtitle}
                   imgSrc={item.image}
                 />
-              </TouchableOpacity>
+             
             );
           }}
         />
@@ -354,6 +346,7 @@ const HomeScreen = ({navigation}) => {
             </Text>
           </TouchableOpacity>
         </View>
+       
         <FlatList
           data={data}
           horizontal
@@ -368,17 +361,14 @@ const HomeScreen = ({navigation}) => {
           }}
           renderItem={({item}) => {
             return (
-              <TouchableOpacity
-                key={item.id}
-                onPress={() => {
-                  navigation.navigate('Content', {data: item});
-                }}>
+              
                 <TopHotelCard
+                item={item}
                   title={item.title}
                   subtitle={item.subtitle}
                   imgSrc={item.image}
                 />
-              </TouchableOpacity>
+             
             );
           }}
         />
