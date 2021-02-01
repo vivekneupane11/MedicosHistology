@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, View, Text, TextInput } from "react-native";
 import { createIconSetFromFontello } from 'react-native-vector-icons';
+import {widthPercentageToDP,heightPercentageToDP} from '../src/utils/responsive';
 import fontelloConfig from '../src/config.json';
 const Icon = createIconSetFromFontello(fontelloConfig);
 const InputTextField = (props)=>  {
@@ -9,7 +10,7 @@ const InputTextField = (props)=>  {
             <View style={props.style}>
                 {/* <Text style={styles.inputTitle}>{props.title}</Text> */}
                 <View style={{flexDirection:'row',alignItems:'center'}}>
-                <Icon style={{paddingHorizontal:7}} name={props.iconname} size={18} color="#ABB4BD" />
+                <Icon style={{paddingHorizontal:7}} name={props.iconname} size={widthPercentageToDP(4.5)} color="#ABB4BD" />
                 <TextInput 
                 placeholderTextColor={'#ABB4BD'}
                     placeholder={props.placeholderText}
@@ -24,17 +25,17 @@ const InputTextField = (props)=>  {
 }
 
 const styles = StyleSheet.create({
-    inputTitle: {
-        color: "#ABB4BD",
-        fontSize: 15
-    },
+    // inputTitle: {
+    //     color: "#ABB4BD",
+    //     fontSize: 15
+    // },
     input: {
-        paddingVertical: 10,
+        paddingVertical: heightPercentageToDP(1) ,
         color: "#fff",
-        fontSize: 14,
+        fontSize: widthPercentageToDP(3.5),
         fontWeight:'bold',
         fontFamily: "Avenir Next",
-        width:'90%'
+        width:widthPercentageToDP(40)
    
     }
 });

@@ -21,22 +21,22 @@ const SettingScreen = ({navigation}) => {
       <BackgroundHeader navigation={navigation} />
       <View style={styles.settingsContainer}>
         <View style={[styles.settingsSection, styles.shadow]}>
-          <View style={[styles.list, styles.f_r_sb_c]}>
+          <TouchableOpacity style={[styles.list, styles.f_r_sb_c]}>
             <Icon style={{flex: 1.5}} name="user" size={18} color="#ABB4BD" />
             <Text style={{flex: 9}}>Account</Text>
             {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
-          </View>
-          <View style={[styles.list, styles.f_r_sb_c]}>
+          </TouchableOpacity>
+          <TouchableOpacity style={[styles.list, styles.f_r_sb_c]}>
             <Icon style={{flex: 1.5}} name="bell" size={18} color="#ABB4BD" />
             <Text style={{flex: 9}}>Push Notification</Text>
             {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
-          </View>
-          <View style={[styles.list, styles.f_r_sb_c]}>
+          </TouchableOpacity>
+          <TouchableOpacity style={[styles.list, styles.f_r_sb_c]}>
             <Icon style={{flex: 1.5}} name="font" size={18} color="#ABB4BD" />
             <Text style={{flex: 9}}>Font Size</Text>
             {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
-          </View>
-          <View style={[styles.list, styles.f_r_sb_c]}>
+          </TouchableOpacity>
+          <TouchableOpacity style={[styles.list, styles.f_r_sb_c]}>
             <Icon
               style={{flex: 1.5}}
               name="sticky-note-o"
@@ -45,8 +45,8 @@ const SettingScreen = ({navigation}) => {
             />
             <Text style={{flex: 9}}>Notes</Text>
             {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
-          </View>
-          <View style={[styles.endlist, styles.f_r_sb_c]}>
+          </TouchableOpacity>
+          <TouchableOpacity style={[styles.endlist, styles.f_r_sb_c]}>
             <Icon
               style={{flex: 1.5}}
               name="language"
@@ -55,8 +55,8 @@ const SettingScreen = ({navigation}) => {
             />
             <Text style={{flex: 9}}>Language</Text>
             {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
-          </View>
-          <View style={[styles.endlist, styles.f_r_sb_c]}>
+          </TouchableOpacity>
+          <TouchableOpacity style={[styles.endlist, styles.f_r_sb_c]}>
             <Icon
               style={{flex: 1.5}}
               name="fog-sun"
@@ -65,26 +65,23 @@ const SettingScreen = ({navigation}) => {
             />
             <Text style={{flex: 9}}>Dark Mode</Text>
             {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
-          </View>
+          </TouchableOpacity>
         </View>
         {/* First Section */}
         <View style={[styles.settingsSection, styles.shadow]}>
-          <View style={[styles.list, styles.f_r_sb_c]}>
+          <TouchableOpacity style={[styles.list, styles.f_r_sb_c]}>
             <Icon style={{flex: 1.5}} name="globe" size={20} color="#ABB4BD" />
             <Text style={{flex: 9}}>Join Our Community</Text>
             {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
-          </View>
-          <TouchableOpacity
-            onPress={() => navigation.navigate('PrivacyPolicy')}
-            style={[styles.list, styles.f_r_sb_c]}>
+          </TouchableOpacity>
+          <TouchableOpacity style={[styles.list, styles.f_r_sb_c]}>
             <Icon style={{flex: 1.5}} name="docs" size={18} color="#ABB4BD" />
             <Text style={{flex: 9}}>Privacy Policy</Text>
             {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
           </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => navigation.navigate('TermsAndConditions')}
-            style={[styles.list, styles.f_r_sb_c]}>
+          <TouchableOpacity style={[styles.list, styles.f_r_sb_c]}>
             <Icon
+              onPress={() => navigation.navigate('TermsAndConditions')}
               style={{flex: 1.5}}
               name="book-open"
               size={18}
@@ -93,14 +90,12 @@ const SettingScreen = ({navigation}) => {
             <Text style={{flex: 9}}>Terms of Services</Text>
             {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
           </TouchableOpacity>
-          <View style={[styles.list, styles.f_r_sb_c]}>
+          <TouchableOpacity style={[styles.list, styles.f_r_sb_c]}>
             <Icon style={{flex: 1.5}} name="export" size={18} color="#ABB4BD" />
             <Text style={{flex: 9}}>Invite More Friends</Text>
             {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
-          </View>
-          <TouchableOpacity
-            onPress={() => navigation.navigate('AboutUs')}
-            style={[styles.list, styles.f_r_sb_c]}>
+          </TouchableOpacity>
+          <TouchableOpacity style={[styles.list, styles.f_r_sb_c]}>
             <Icon
               style={{flex: 1.5}}
               name="info-circled-alt"
@@ -110,7 +105,7 @@ const SettingScreen = ({navigation}) => {
             <Text style={{flex: 9}}>About Us</Text>
             <Icon name="right-open-big" size={18} color="#ABB4BD" />
           </TouchableOpacity>
-          <View style={[styles.endlist, styles.f_r_sb_c]}>
+          <TouchableOpacity style={[styles.endlist, styles.f_r_sb_c]}>
             <Icon
               style={{flex: 1.5}}
               name="star-empty"
@@ -119,15 +114,15 @@ const SettingScreen = ({navigation}) => {
             />
             <Text style={{flex: 9}}>Rate Us</Text>
             <Icon name="right-open-big" size={18} color="#ABB4BD" />
-          </View>
+          </TouchableOpacity>
         </View>
         {/* Second Section */}
         <View style={[styles.settingsSection, styles.shadow]}>
-          <View style={[styles.endlist, styles.f_r_sb_c]}>
+          <TouchableOpacity style={[styles.endlist, styles.f_r_sb_c]}>
             <Icon style={{flex: 1.5}} name="logout" size={20} color="#ABB4BD" />
             <Text style={{flex: 9}}>Log Out</Text>
             {/* <Icon name="cog" size={18} color="#ABB4BD" /> */}
-          </View>
+          </TouchableOpacity>
         </View>
         {/* Third Section */}
       </View>
