@@ -42,19 +42,19 @@ const HomeStackScreen = () => {
         name="Register"
         component={RegistrationScreen}
         options={{ headerShown: false }}
-      /> */}
-      {/* <HomeStack.Screen
+      />  */}
+      <HomeStack.Screen
         name="Home"
         component={HomeScreen}
         options={{ headerShown: false }}
-      /> */}
-      {/* <HomeStack.Screen
+      /> 
+     <HomeStack.Screen
         name="Setting"
         component={SettingScreen}
         options={{ headerShown: false }}
-      /> */}
-      {/* <HomeStack.Screen name="Content" component={ContentScreen} /> */}
-      {/* <HomeStack.Screen
+      /> 
+       <HomeStack.Screen name="Content" component={ContentScreen} /> 
+       <HomeStack.Screen
         name="Search"
         component={SearchScreen}
         options={({ navigation }) => ({
@@ -75,7 +75,7 @@ const HomeStackScreen = () => {
           },
           headerTintColor: '#fff',
         })}
-      /> */}
+      />
       <HomeStack.Screen
         name="Notes"
         component={NoteScreen}
@@ -86,7 +86,7 @@ const HomeStackScreen = () => {
         component={BookmarkScreen}
         options={{ headerShown: false }}
       />
-      {/* <HomeStack.Screen
+    <HomeStack.Screen
         name="TermsAndConditions"
         component={TermsAndConditionsScreen}
         options={({ navigation }) => ({
@@ -107,8 +107,8 @@ const HomeStackScreen = () => {
           },
           headerTintColor: '#fff',
         })}
-      /> */}
-      {/* <HomeStack.Screen
+      /> 
+       <HomeStack.Screen
         name="PrivacyPolicy"
         component={PrivacyPolicyScreen}
         options={({ navigation }) => ({
@@ -129,8 +129,8 @@ const HomeStackScreen = () => {
           },
           headerTintColor: '#fff',
         })}
-      /> */}
-      {/* <HomeStack.Screen
+      /> 
+       <HomeStack.Screen
         name="AboutUs"
         component={AboutUsScreen}
         options={({ navigation }) => ({
@@ -151,7 +151,7 @@ const HomeStackScreen = () => {
           },
           headerTintColor: '#fff',
         })}
-      /> */}
+      />
     </HomeStack.Navigator>
   );
 };

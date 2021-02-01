@@ -46,9 +46,13 @@ const ContentScreen = ({ navigation, route }) => {
     try {
       // AsyncStorage.setItem(Bookmark,);
       let asyncData = await AsyncStorage.getItem('BookmarkID');
-      asyncData =
-        asyncData == null ? JSON.stringify({ bookmark: [0] }) : asyncData;
-      await JSON.parse(asyncData).bookmark.length;
+      console.log("asyncdata",asyncData);
+      asyncData =  asyncData == null ? await JSON.stringify({ bookmark: [0] }) : asyncData;
+ 
+      if(asyncData.length){
+        AsyncStorage.setItem('BookmarkID', JSON.stringify({ bookmark: [id] })  );
+        setBookmark( JSON.stringify({ bookmark: [id] }));
+      }
 
       let newArray = await JSON.parse(asyncData).bookmark;
       let verifiednewArray = newArray.filter((item) => {
@@ -71,12 +75,14 @@ const ContentScreen = ({ navigation, route }) => {
   };
 
   useEffect(() => {
+
     AsyncStorage.getItem('BookmarkID').then((value) => {
       console.log('here' + value);
       let asyncData = value == null ? JSON.stringify({ bookmark: [0] }) : value;
 
       setBookmark(asyncData);
       let AsyncBookmarkData = JSON.parse(asyncData).bookmark;
+      if(!AsyncBookmarkData) return;
       AsyncBookmarkData.map((item) => {
         if (item == data.id) {
           // console.log(item,data.id);
