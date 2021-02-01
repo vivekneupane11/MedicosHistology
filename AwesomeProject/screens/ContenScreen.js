@@ -88,7 +88,7 @@ const ContentScreen = ({navigation, route}) => {
     console.log('Is bookmark', isBookmark);
   }, [Bookmark]);
 
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     navigation.setOptions({
       headerTitle: (props) => (
         <View
