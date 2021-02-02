@@ -19,7 +19,7 @@ const {width} = Dimensions.get('window');
 const SettingScreen = ({navigation}) => {
   return (
     <ScrollView>
-      <BackgroundHeader navigation={navigation} />
+     
       <View style={styles.settingsContainer}>
         <View style={[styles.settingsSection, styles.shadow]}>
           <TouchableOpacity style={[styles.list, styles.f_r_sb_c]}>

@@ -5,7 +5,7 @@ import {createIconSetFromFontello} from 'react-native-vector-icons';
 import fontelloConfig from '../src/config.json';
 const Icon = createIconSetFromFontello(fontelloConfig);
 import data from './data';
-
+import {useTheme} from '../src/utils/ThemeManager';
 import {
   Dimensions,
   View,
@@ -22,6 +22,8 @@ import {colors} from '../constants/theme';
 
 const {width} = Dimensions.get('window');
 const HomeScreen = ({navigation}) => {
+
+    const { mode, theme : themeforDarkMode , toggle } = useTheme();
   const TopHotelCard = ({title, subtitle, imgSrc,item}) => {
   
     return (
@@ -59,8 +61,36 @@ const HomeScreen = ({navigation}) => {
   };
 
   return (
-    <ScrollView style={{backgroundColor: '#f1f1f1'}}>
-      <BackgroundHeader navigation={navigation} />
+    <ScrollView>
+      {/* <BackgroundHeader navigation={navigation} /> */}
+
+      {/* <View>
+        <Text style={{ color: themeforDarkMode.primaryText }}>
+           Current themeforDarkMode: {mode}
+        </Text>
+        <Text
+          style={{ color: themeforDarkMode.primaryText,backgroundColor:themeforDarkMode.primaryText }}
+          onPress={() => toggle()}
+         >
+           Toggle Theme
+         </Text>
+      </View>
+
+
+      <View>
+        <Text  >
+           Current Theme: {mode}
+        </Text>
+        <Text
+          style={{ backgroundColor:"red" }}
+          onPress={() => toggle()}
+         >
+           Toggle Theme
+         </Text>
+      </View> */}
+
+
+
       {/* 
 
 <BottomTab/> */}

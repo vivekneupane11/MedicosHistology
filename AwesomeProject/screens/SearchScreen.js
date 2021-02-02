@@ -12,7 +12,33 @@ import {
   } from '../src/utils/responsive';
 import InputTextField from "../components/InputTextField";
 const SearchScreen = ({navigation}) => {
-
+    // React.useLayoutEffect(() => {
+    //     navigation.setOptions({
+    //       headerTitle: (props) => (
+    //         <View
+    //           style={{
+    //             justifyContent: 'space-between',
+    //             flexDirection: 'row',
+    //             alignItems: 'center',
+    //           }}>
+    //           <Text
+    //             {...props}
+    //             style={{
+    //               color: 'white',
+    //               fontSize: 18,
+    //               backgroundColor: colors.primary,
+    //             }}>
+    //             Epithelial Tissue
+    //           </Text>
+             
+    //         </View>
+    //       ),
+    //       headerStyle: {
+    //         backgroundColor: colors.primary,
+    //       },
+    //       headerTintColor: '#fff',
+    //     });
+    //   }, [navigation]);
     return (
         <ScrollView style={styles.wrapper} contentContainerStyle={{ flexGrow: 1 }}>
             <View style={styles.header}>

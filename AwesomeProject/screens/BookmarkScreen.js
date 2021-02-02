@@ -8,6 +8,7 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
+import {useTheme} from '../src/utils/ThemeManager';
 import BackgroundHeader from '../components/BackgroundHeader';
 import {createIconSetFromFontello} from 'react-native-vector-icons';
 import fontelloConfig from '../src/config.json';
@@ -18,8 +19,12 @@ import {
 const Icon = createIconSetFromFontello(fontelloConfig);
 const {width} = Dimensions.get('window');
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useIsFocused } from "@react-navigation/native";
 import data from './data';
 const BookmarkScreen = ({navigation}) => {
+  const isFocused = useIsFocused();
+
+  const { mode, theme : themeforDarkMode , toggle } = useTheme();
   const [isBookmakEmpty, setisBookmarkEmpty] = useState(false);
   const [changeBookmark, setBookmarkChange] = useState(false);
   const [BookmarkData, setBookmarkData] = useState([]);
@@ -74,19 +79,24 @@ const BookmarkScreen = ({navigation}) => {
     }
   };
   const checkBookmarkStatus = async () => {
+ 
     try {
       let bookmarkData = await AsyncStorage.getItem('BookmarkID');
-      console.log('s', bookmarkData);
-      bookmarkData = bookmarkData
+
+      
+      let checker = await JSON.parse(bookmarkData).bookmark.length;
+      console.log("1",bookmarkData,checker);
+      bookmarkData = ( checker >= 2)
         ? bookmarkData
         : await JSON.stringify({bookmark: [0]});
-      console.log(bookmarkData);
+      console.log("sss",bookmarkData);
       let finalData = await JSON.parse(bookmarkData).bookmark;
       console.log('final', finalData);
       let parsedBookmarkData =
         typeof finalData === 'undefined' ? [0] : finalData;
       console.log('l', parsedBookmarkData);
       if (finalData.length < 2) {
+        console.log("is here");
         setisBookmarkEmpty(true);
         console.log('here', finalData.length);
       }
@@ -97,6 +107,11 @@ const BookmarkScreen = ({navigation}) => {
       });
       console.log('shere', dataBookmark);
       setBookmarkData(dataBookmark);
+     
+      if(dataBookmark.length > 0){
+        console.log("finalss",dataBookmark.length);
+        setisBookmarkEmpty(false);
+      }
     } catch (err) {
       // AsyncStorage.setItem(Bookmark,);
       //   let asyncData = await AsyncStorage.getItem('BookmarkID');
@@ -135,13 +150,41 @@ const BookmarkScreen = ({navigation}) => {
 
   useEffect(() => {
     checkBookmarkStatus();
-    console.log(BookmarkData);
-  }, [isBookmakEmpty]);
+
+
+  }, [isBookmakEmpty,isFocused]);
   return (
     <ScrollView
       style={{flexDirection: 'column'}}
       contentContainerStyle={{justifyContent: 'flex-start'}}>
-      <BackgroundHeader navigation={navigation} />
+
+
+      {/* <BackgroundHeader navigation={navigation} /> */}
+
+      <View>
+        <Text style={{ color: themeforDarkMode.primaryText }}>
+           Current themeforDarkMode: {mode}
+        </Text>
+        <Text
+          style={{ color: themeforDarkMode.primaryText,backgroundColor:themeforDarkMode.primaryText }}
+          onPress={() => toggle()}
+         >
+           Toggle Theme
+         </Text>
+      </View>
+
+
+      <View>
+        <Text  >
+           Current Theme: {mode}
+        </Text>
+        <Text
+          style={{ backgroundColor:"red" }}
+          onPress={() => toggle()}
+         >
+           Toggle Theme
+         </Text>
+      </View>
       {isBookmakEmpty ? (
         <TouchableOpacity>
           <Text>No Bookmark Set Currently</Text>

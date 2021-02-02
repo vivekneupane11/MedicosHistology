@@ -26,7 +26,7 @@ const NoteScreen = ({ navigation }) => {
     }
     return (
         <ScrollView>
-            <BackgroundHeader navigation={navigation} />
+     
             <Modal visible={modal} transparent={true} animationType="slide">
                 <View style={[styles.modalContainer]}>
                     <View style={styles.modalWrapper}>
