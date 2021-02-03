@@ -1,8 +1,12 @@
 import 'react-native-gesture-handler';
-import React, { useState, useEffect } from 'react';
-import { StatusBar, View, Text } from 'react-native';
-import { NavigationContainer , DefaultTheme,DarkTheme } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import React, {useState, useEffect} from 'react';
+import {StatusBar, View, Text} from 'react-native';
+import {
+  NavigationContainer,
+  DefaultTheme,
+  DarkTheme,
+} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
 import OnboardingScreen from './screens/OnboardingScreen';
 import LoginScreen from './screens/LoginScreen';
 import RegistrationScreen from './screens/RegistrationScreen';
@@ -11,109 +15,96 @@ import ContentScreen from './screens/ContenScreen';
 import SearchScreen from './screens/SearchScreen';
 import SettingScreen from './screens/SettingScreen';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import {createDrawerNavigator} from '@react-navigation/drawer';
 import DrawerContent from './screens/DrawerContent';
 import BookmarkScreen from './screens/BookmarkScreen';
 import NoteScreen from './screens/NoteScreen';
 import TermsAndConditionsScreen from './screens/TermsAndConditionsScreen';
 import PrivacyPolicyScreen from './screens/PrivacyPolicyScreen';
 import AboutUsScreen from './screens/AboutUsScreen';
-import { colors } from './constants/theme';
-import { AppearanceProvider, useColorScheme } from 'react-native-appearance';
-import { enableScreens } from 'react-native-screens';
+import {colors} from './constants/theme';
+import {AppearanceProvider, useColorScheme} from 'react-native-appearance';
+import {enableScreens} from 'react-native-screens';
 import {ThemeManager} from './src/utils/ThemeManager';
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import BackgroundHeader from './components/BackgroundHeader';
 enableScreens();
-
-
 
 const Tab = createMaterialTopTabNavigator();
 const AppStack = createStackNavigator();
 // const SearchStack = createStackNavigator();
 
-const AppStackScreen = ()=>{
-  return(
+const AppStackScreen = () => {
+  return (
     <AppStack.Navigator>
-    {/* MyTabs is rendered here so that content and search screen doesnot show the tabs */}
+      {/* MyTabs is rendered here so that content and search screen doesnot show the tabs */}
 
-         <AppStack.Screen  options={{ headerShown: false }} name="Home" component={MyTabs} /> 
-    <AppStack.Screen name="Content" component={ContentScreen} /> 
-    <AppStack.Screen   name="Search"   options={{ 
-headerTitle: (props) => (
-          <View
-            style={{
-              justifyContent: 'space-between',
-              flexDirection: 'row',
-              alignItems: 'center',
-            }}>
-            <Text
-              {...props}
+      <AppStack.Screen
+        options={{headerShown: false}}
+        name="Home"
+        component={MyTabs}
+      />
+      <AppStack.Screen name="Content" component={ContentScreen} />
+      <AppStack.Screen
+        name="Search"
+        options={{
+          headerTitle: (props) => (
+            <View
               style={{
-                color: 'white',
-                fontSize: 18,
-                backgroundColor: colors.primary,
+                justifyContent: 'space-between',
+                flexDirection: 'row',
+                alignItems: 'center',
               }}>
-              Search 
-            </Text>
-           
-          </View>
-        ),
-        headerStyle: {
-          backgroundColor: colors.primary,
-        },
-        headerTintColor: '#fff',
-
-     }} component={SearchScreen} /> 
-    
-      </AppStack.Navigator>
-  )
-}
+              <Text
+                {...props}
+                style={{
+                  color: 'white',
+                  fontSize: 18,
+                  backgroundColor: colors.primary,
+                }}>
+                Search
+              </Text>
+            </View>
+          ),
+          headerStyle: {
+            backgroundColor: colors.primary,
+          },
+          headerTintColor: '#fff',
+        }}
+        component={SearchScreen}
+      />
+    </AppStack.Navigator>
+  );
+};
 // const SearchStackScreen = ()=>{
 //   return(
 //     <SearchStack.Navigator>
-//          <SearchStack.Screen   name="Search" component={SearchScreen} /> 
+//          <SearchStack.Screen   name="Search" component={SearchScreen} />
 //       </SearchStack.Navigator>
 //   )
 // }
-
 
 function MyTabs() {
   return (
     <Tab.Navigator
       initialRouteName="Home"
-      tabBar={props => <BackgroundHeader {...props} />}
+      tabBar={(props) => <BackgroundHeader {...props} />}
       tabBarOptions={{
         activeTintColor: '#e91e63',
-        labelStyle: { fontSize: 12 },
-        style: { backgroundColor: 'powderblue' },
-        
-      }}
-    >
-      <Tab.Screen
-        name="Home"
-        component={HomeScreen}
-      />
-      <Tab.Screen
-        name="Bookmarks"
-        component={BookmarkScreen}
-      />
+        labelStyle: {fontSize: 12},
+        style: {backgroundColor: 'powderblue'},
+      }}>
+      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Bookmarks" component={BookmarkScreen} />
       {/* <Tab.Screen
         name="Search"
         component={SearchScreen}
       /> */}
-          <Tab.Screen
-        name="Notes"
-        component={NoteScreen}
-      />
-          <Tab.Screen
-        name="Setting"
-        component={SettingScreen}
-      />
+      <Tab.Screen name="Notes" component={NoteScreen} />
+      <Tab.Screen name="Setting" component={SettingScreen} />
     </Tab.Navigator>
   );
 }
-
 
 // const HomeStack = createStackNavigator();
 // const HomeStackScreen = () => {
@@ -138,13 +129,13 @@ function MyTabs() {
 //         name="Home"
 //         component={HomeScreen}
 //         options={{ headerShown: false }}
-//       /> 
+//       />
 //      <HomeStack.Screen
 //         name="Setting"
 //         component={SettingScreen}
 //         options={{ headerShown: false }}
-//       /> 
-//        <HomeStack.Screen name="Content" component={ContentScreen} /> 
+//       />
+//        <HomeStack.Screen name="Content" component={ContentScreen} />
 //        <HomeStack.Screen
 //         name="Search"
 //         component={SearchScreen}
@@ -198,7 +189,7 @@ function MyTabs() {
 //           },
 //           headerTintColor: '#fff',
 //         })}
-//       /> 
+//       />
 //        <HomeStack.Screen
 //         name="PrivacyPolicy"
 //         component={PrivacyPolicyScreen}
@@ -220,7 +211,7 @@ function MyTabs() {
 //           },
 //           headerTintColor: '#fff',
 //         })}
-//       /> 
+//       />
 //        <HomeStack.Screen
 //         name="AboutUs"
 //         component={AboutUsScreen}
@@ -270,14 +261,13 @@ const App = () => {
   return (
     <AppearanceProvider>
       <ThemeManager>
-    <NavigationContainer >
-      <Drawer.Navigator drawerContent={(props) => <DrawerContent {...props} />}> 
-        <Drawer.Screen name="HomeDrawerH" component={ AppStackScreen} /> 
-      </Drawer.Navigator> 
-     
-
-    </NavigationContainer>
-    </ThemeManager>
+        <NavigationContainer>
+          <Drawer.Navigator
+            drawerContent={(props) => <DrawerContent {...props} />}>
+            <Drawer.Screen name="HomeDrawerH" component={AppStackScreen} />
+          </Drawer.Navigator>
+        </NavigationContainer>
+      </ThemeManager>
     </AppearanceProvider>
   );
   // }
