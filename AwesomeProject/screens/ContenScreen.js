@@ -42,7 +42,7 @@ const ContentScreen = ({navigation, route}) => {
   //      return stringBookmarkData;
   //     }
   // catch(err){
-  //     console.log('Error getting Bookmark',err);
+//  //     console.log('Error getting Bookmark',err);
   // }
   //  }
   const saveBookmarkData = async ({id}) => {
@@ -60,9 +60,9 @@ const ContentScreen = ({navigation, route}) => {
         let parsedNewArray = parsedBookmarkData.filter((item) => {
           return item != id;
         });
-        console.log(parsedNewArray.length, parsedBookmarkData.length);
+//        console.log(parsedNewArray.length, parsedBookmarkData.length);
         if (parsedBookmarkData.length == parsedNewArray.length) {
-          console.log('aa', parsedBookmarkData);
+//          console.log('aa', parsedBookmarkData);
           let length = parsedNewArray.length;
           parsedNewArray[length] = id;
           await AsyncStorage.setItem(
@@ -70,7 +70,7 @@ const ContentScreen = ({navigation, route}) => {
             JSON.stringify({bookmark: parsedNewArray}),
           );
           setisBookmark(true);
-          console.log(Bookmark);
+//          console.log(Bookmark);
         } else {
           await AsyncStorage.setItem(
             'BookmarkID',
@@ -80,7 +80,7 @@ const ContentScreen = ({navigation, route}) => {
         }
       }
     } catch (err) {
-      console.log('Error saving bookmark data', err);
+//      console.log('Error saving bookmark data', err);
     }
   };
   //   try {
@@ -89,15 +89,15 @@ const ContentScreen = ({navigation, route}) => {
 
   //     asyncData =
   //       asyncData == null ? await JSON.stringify({bookmark: [0]}) : asyncData;
-  //     console.log('asyncdata', JSON.parse(asyncData));
+//  //     console.log('asyncdata', JSON.parse(asyncData));
   //     // if(asyncData.length){
   //     //   AsyncStorage.setItem('BookmarkID', JSON.stringify({ bookmark: [id] })  );
   //     //   setBookmark( JSON.stringify({ bookmark: [id] }));
   //     // }
 
-  //     console.log('aaaaaaaaaaaaaaaaaaaaaaaa', asyncData);
+//  //     console.log('aaaaaaaaaaaaaaaaaaaaaaaa', asyncData);
   //     let newArray = await JSON.parse(asyncData);
-  //     console.log('new', newArray);
+//  //     console.log('new', newArray);
 
   //     let verifiednewArray = newArray.filter((item) => {
   //       return item != id;
@@ -111,10 +111,10 @@ const ContentScreen = ({navigation, route}) => {
 
   //     let stringifieddata = await JSON.stringify({bookmark: verifiednewArray});
   //     AsyncStorage.setItem('BookmarkID', stringifieddata);
-  //     console.log('STRIGIFIED', stringifieddata);
+//  //     console.log('STRIGIFIED', stringifieddata);
   //     setBookmark(stringifieddata);
   //   } catch (err) {
-  //     console.log('Error saving bookmark', err);
+//  //     console.log('Error saving bookmark', err);
   //   }
   // };
   const getBookmarkDatas = async () => {
@@ -138,21 +138,21 @@ const ContentScreen = ({navigation, route}) => {
     getBookmarkDatas();
 
     // AsyncStorage.getItem('BookmarkID').then((value) => {
-    //   console.log('here' + value);
+//    //   console.log('here' + value);
     //   let asyncData = value == null ? JSON.stringify({bookmark: [0]}) : value;
     //   setBookmark(asyncData);
     //   let AsyncBookmarkData = JSON.parse(asyncData).bookmark;
     //   if (!AsyncBookmarkData) return;
     //   AsyncBookmarkData.map((item) => {
     //     if (item == data.id) {
-    //       // console.log(item,data.id);
+//    //       // console.log(item,data.id);
     //       setisBookmark(true);
     //       return;
     //     }
     //   });
     // });
-    // console.log('Is bookmark', isBookmark);
-    console.log(Bookmark);
+//    // console.log('Is bookmark', isBookmark);
+//    console.log(Bookmark);
   }, [isBookmark, Bookmark]);
 
   React.useLayoutEffect(() => {

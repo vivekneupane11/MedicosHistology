@@ -12,7 +12,8 @@ const colors = {
     lightShadeRed:"#D0A8A8",
     dodgerBlue:"#1CAFFF",
     shadeBlueMagneta:"#666380",
-    turquoise:"#ABB4BD"
+    turquoise:"#ABB4BD",
+    red:'red'
   };
   
   const sizes = {

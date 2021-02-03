@@ -25,7 +25,9 @@ import AboutUsScreen from './screens/AboutUsScreen';
 import {colors} from './constants/theme';
 import {AppearanceProvider, useColorScheme} from 'react-native-appearance';
 import {enableScreens} from 'react-native-screens';
-import {ThemeManager} from './src/utils/ThemeManager';
+import {ThemeManager} from './src/utils/DarkTheme/ThemeManager';
+import {LanguageManager} from './src/utils/Language/LanguageManager';
+import {FontsizeManager} from './src/utils/FontSize/FontSizeManager';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import BackgroundHeader from './components/BackgroundHeader';
 enableScreens();
@@ -259,16 +261,20 @@ const App = () => {
   // }
   // else if(isFirstLaunch==true){
   return (
-    <AppearanceProvider>
-      <ThemeManager>
-        <NavigationContainer>
-          <Drawer.Navigator
-            drawerContent={(props) => <DrawerContent {...props} />}>
-            <Drawer.Screen name="HomeDrawerH" component={AppStackScreen} />
-          </Drawer.Navigator>
-        </NavigationContainer>
-      </ThemeManager>
-    </AppearanceProvider>
+    // <AppearanceProvider>
+    <ThemeManager>
+      <LanguageManager>
+        <FontsizeManager>
+          <NavigationContainer>
+            <Drawer.Navigator
+              drawerContent={(props) => <DrawerContent {...props} />}>
+              <Drawer.Screen name="HomeDrawerH" component={AppStackScreen} />
+            </Drawer.Navigator>
+          </NavigationContainer>
+        </FontsizeManager>
+      </LanguageManager>
+    </ThemeManager>
+    //  </AppearanceProvider>
   );
   // }
   // else{
