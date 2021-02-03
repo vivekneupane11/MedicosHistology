@@ -5,7 +5,7 @@ import {createIconSetFromFontello} from 'react-native-vector-icons';
 import fontelloConfig from '../src/config.json';
 const Icon = createIconSetFromFontello(fontelloConfig);
 import data from './data';
-import {useTheme} from '../src/utils/ThemeManager';
+import {useTheme} from '../src/utils/DarkTheme/ThemeManager';
 import {
   Dimensions,
   View,

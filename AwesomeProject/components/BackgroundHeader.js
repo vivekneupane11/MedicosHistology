@@ -4,61 +4,68 @@ import { Dimensions } from 'react-native';
 import { createIconSetFromFontello } from 'react-native-vector-icons';
 import fontelloConfig from '../src/config.json';
 import {colors} from '../constants/theme';
+import language from '../resources/language/index';
 const Icon = createIconSetFromFontello(fontelloConfig);
-import language from '../resources/language';
 const W = Dimensions.get('window').width;
 const H = Dimensions.get('window').height;
+import {useLanguage} from '../src/utils/Language/LanguageManager';
 export default function BackgroundHeader({navigation,...props}) {
+    const {languageMode,languageData, toogleLanguage} = useLanguage();
+console.log("here",languageData.home,languageMode,toogleLanguage);
 
     return (
         <SafeAreaView>
         <View >
           <View  style={styles.headercontainer}>
   <TouchableOpacity onPress={()=>{navigation.openDrawer()}}>
-       <Icon style={{paddingHorizontal:15}}  name="menu-1" size={28} color={colors.white} />
+       <Icon style={{paddingHorizontal:15}}  name="menu-1" size={28} color={colors.gray} />
    </TouchableOpacity>
               <Text style={styles.headerText}>
                   Medicos Histology
               </Text>
-              <TouchableOpacity>
-              <Icon style={{paddingHorizontal:15}} name="bookmark-empty" size={24} color={colors.white} />
+
+ {/* <TouchableOpacity >  
+                   <View style={styles.headertabiconGroup}>
+                <Icon style={{paddingVertical:2}} name="search" size={24} color={colors.gray} />
+               <Text style={{color:colors.gray,fontSize:10}}>{languageData.search}</Text>
+                </View>
+                </TouchableOpacity> */}
+
+              <TouchableOpacity onPress={()=>{navigation.navigate('Search')}}>
+              <Icon style={{paddingHorizontal:15}}  name="search"  size={24} color={colors.gray} />
               </TouchableOpacity>
               </View>
-          <View style={styles.headerTabs}>
+        <View style={styles.headerTabs}>
               <View style={styles.headertabiconContainer}>
                <TouchableOpacity onPress={()=>navigation.navigate('Home')}>  
                    <View style={styles.headertabiconGroup}>
                 <Icon style={{paddingVertical:2}} name="home-outline" size={24} color={colors.gray} />
-               <Text style={{color:colors.gray,fontSize:10}}>{language.home.ara}</Text>
+               <Text style={{color:colors.gray,fontSize:10}}>{languageData.home}</Text>
                 </View>
                 </TouchableOpacity>
-               <TouchableOpacity onPress={()=>navigation.navigate('Bookmarks')}> 
+                 <TouchableOpacity onPress={()=>navigation.navigate('Bookmarks')}> 
                     <View style={styles.headertabiconGroup}>
                 <Icon style={{paddingVertical:2}} name="bookmark-empty" size={24} color={colors.gray} />
-               <Text style={{color:colors.gray,fontSize:10}}>{language.bookmarks.ara}</Text>
+               <Text style={{color:colors.gray,fontSize:10}}>{languageData.bookmarks}</Text>
                 </View>
                 </TouchableOpacity>
                <TouchableOpacity onPress={()=>{navigation.navigate('Notes')}}> 
                     <View style={styles.headertabiconGroup}>
                 <Icon style={{paddingVertical:2}} name="sticky-note-o" size={24} color={colors.gray} />
-               <Text style={{color:colors.gray,fontSize:10}}>{language.notes.ara}</Text>
+               <Text style={{color:colors.gray,fontSize:10}}>{languageData.notes}</Text>
                 </View>
                 </TouchableOpacity>
-               <TouchableOpacity onPress={()=>{navigation.navigate('Search')}}>  
-                   <View style={styles.headertabiconGroup}>
-                <Icon style={{paddingVertical:2}} name="search" size={24} color={colors.gray} />
-               <Text style={{color:colors.gray,fontSize:10}}>{language.search.ara}</Text>
-                </View>
-                </TouchableOpacity>
+              
                <TouchableOpacity onPress={()=>navigation.navigate('Setting')}>
                      <View style={styles.headertabiconGroup}>
                 <Icon style={{paddingVertical:2}} name="cog" size={24} color={colors.gray} />
-               <Text style={{color:colors.gray,fontSize:10}}>{language.settings.ara}</Text>
+               <Text style={{color:colors.gray,fontSize:10}}>{languageData.settings}</Text>
                 </View>
                 </TouchableOpacity>
 
               </View>
-                 </View>
+                 </View> 
+
         </View>
         </SafeAreaView>
     )
