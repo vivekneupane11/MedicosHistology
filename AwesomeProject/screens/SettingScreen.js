@@ -30,21 +30,29 @@ const SettingScreen = ({navigation}) => {
   const {fontsizeMode, fontsizeData, tooglefontsize} = usefontsize();
   const {mode, theme: themeforDarkMode, toggle} = useTheme();
 
+  console.log(
+    '******************************************************',
+    languageMode,
+    fontsizeMode,
+    mode,
+  );
+
   console.log(fontsizeMode, fontsizeData, tooglefontsize);
 
   //My Custom Hooks Ends Here
 
   //State for font and language picker
   const [language, setlanguage] = useState({
-    language: 'eng',
+    language: languageMode,
   });
 
   const [fontsize, setfontsize] = useState({
-    fontsize: 'M',
+    fontsize: fontsizeMode,
   });
   console.log('asasasasasasas', fontsize);
   //End state  for font and language picker
-  const [isDarkMode, setisDarkMode] = useState(false);
+  let isdark = mode == 'light' ? false : true;
+  const [isDarkMode, setisDarkMode] = useState(isdark);
   const toogleDarkMode = () => {
     setisDarkMode((previousState) => !previousState);
     toggle();
@@ -112,7 +120,7 @@ const SettingScreen = ({navigation}) => {
                 width: 90,
                 color: themeforDarkMode.secondaryText,
               }}
-              dropdownIconColor={{'red'}}
+              // dropdownIconColor={{'red'}}
               onValueChange={(itemValue, itemIndex) => {
                 console.log('ssss', itemValue);
                 tooglefontsize(itemValue);
