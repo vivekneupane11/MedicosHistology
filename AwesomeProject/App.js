@@ -6,7 +6,11 @@ import {
   DefaultTheme,
   DarkTheme,
 } from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import {
+  createStackNavigator,
+  TransitionPresets,
+  CardStyleInterpolators,
+} from '@react-navigation/stack';
 import OnboardingScreen from './screens/OnboardingScreen';
 import LoginScreen from './screens/LoginScreen';
 import RegistrationScreen from './screens/RegistrationScreen';
@@ -25,7 +29,7 @@ import AboutUsScreen from './screens/AboutUsScreen';
 import {colors} from './constants/theme';
 import {AppearanceProvider, useColorScheme} from 'react-native-appearance';
 import {enableScreens} from 'react-native-screens';
-import {ThemeManager} from './src/utils/DarkTheme/ThemeManager';
+import {useTheme, ThemeManager} from './src/utils/DarkTheme/ThemeManager';
 import {LanguageManager} from './src/utils/Language/LanguageManager';
 import {FontsizeManager} from './src/utils/FontSize/FontSizeManager';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
@@ -37,6 +41,7 @@ const AppStack = createStackNavigator();
 // const SearchStack = createStackNavigator();
 
 const AppStackScreen = () => {
+  const {mode, theme: themeforDarkMode, toggle} = useTheme();
   return (
     <AppStack.Navigator>
       {/* MyTabs is rendered here so that content and search screen doesnot show the tabs */}
@@ -46,7 +51,13 @@ const AppStackScreen = () => {
         name="Home"
         component={MyTabs}
       />
-      <AppStack.Screen name="Content" component={ContentScreen} />
+      <AppStack.Screen
+        options={{
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+        }}
+        name="Content"
+        component={ContentScreen}
+      />
       <AppStack.Screen
         name="Search"
         options={{
@@ -62,14 +73,14 @@ const AppStackScreen = () => {
                 style={{
                   color: 'white',
                   fontSize: 18,
-                  backgroundColor: colors.primary,
                 }}>
                 Search
               </Text>
             </View>
           ),
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
           headerStyle: {
-            backgroundColor: colors.primary,
+            backgroundColor: themeforDarkMode.primaryHeader,
           },
           headerTintColor: '#fff',
         }}

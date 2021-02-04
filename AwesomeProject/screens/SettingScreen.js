@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -15,95 +15,115 @@ import fontelloConfig from '../src/config.json';
 const Icon = createIconSetFromFontello(fontelloConfig);
 import {colors} from '../constants/theme';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-import { heightPercentageToDP, widthPercentageToDP } from '../src/utils/responsive';
+import {
+  heightPercentageToDP,
+  widthPercentageToDP,
+} from '../src/utils/responsive';
 import {useLanguage} from '../src/utils/Language/LanguageManager';
 import {usefontsize} from '../src/utils/FontSize/FontSizeManager';
 const {width} = Dimensions.get('window');
 import {Picker} from '@react-native-picker/picker';
 const SettingScreen = ({navigation}) => {
- 
-//  My Custom Hooks
- 
-  const {languageMode,languageData, toogleLanguage} = useLanguage();
-  const {  fontsizeMode ,fontsizeData, tooglefontsize} = usefontsize();
-  const { mode, theme : themeforDarkMode , toggle } = useTheme();
-   
-console.log(fontsizeMode,fontsizeData,tooglefontsize);
+  //  My Custom Hooks
+
+  const {languageMode, languageData, toogleLanguage} = useLanguage();
+  const {fontsizeMode, fontsizeData, tooglefontsize} = usefontsize();
+  const {mode, theme: themeforDarkMode, toggle} = useTheme();
+
+  console.log(fontsizeMode, fontsizeData, tooglefontsize);
 
   //My Custom Hooks Ends Here
-  
+
   //State for font and language picker
-  const [language,setlanguage] = useState({
-    language:'eng'
+  const [language, setlanguage] = useState({
+    language: 'eng',
   });
-    
-  const [fontsize,setfontsize] = useState({
-    fontsize:'M'
+
+  const [fontsize, setfontsize] = useState({
+    fontsize: 'M',
   });
-console.log("asasasasasasas",fontsize);
+  console.log('asasasasasasas', fontsize);
   //End state  for font and language picker
   const [isDarkMode, setisDarkMode] = useState(false);
   const toogleDarkMode = () => {
-    setisDarkMode(previousState => !previousState);
+    setisDarkMode((previousState) => !previousState);
     toggle();
-  } 
+  };
   const [isPushNotification, setisPushNotification] = useState(false);
- 
-  const tooglePushNotification = () => setisPushNotification(previousState => !previousState);
+
+  const tooglePushNotification = () =>
+    setisPushNotification((previousState) => !previousState);
   return (
     <ScrollView>
-       <View style={{ backgroundColor: themeforDarkMode.primaryBackground}}>
-        <Text style={{ color: themeforDarkMode.primaryText }}>
-           Current themeforDarkMode: {mode}
-           Current themeforDarkMode: {mode}
-           Current themeforDarkMode: {mode}
-           Current themeforDarkMode: {mode}
-           Current themeforDarkMode: {mode}
-           Current themeforDarkMode: {mode}
+      {/* <View style={{backgroundColor: themeforDarkMode.primaryBackground}}>
+        <Text style={{color: themeforDarkMode.secondaryText}}>
+          Current themeforDarkMode: {mode}
+          Current themeforDarkMode: {mode}
+          Current themeforDarkMode: {mode}
+          Current themeforDarkMode: {mode}
+          Current themeforDarkMode: {mode}
+          Current themeforDarkMode: {mode}
         </Text>
-      </View>
+      </View> */}
 
-      <View style={styles.settingsContainer}>
-        <View style={[styles.settingsSection, styles.shadow]}>
+      <View
+        style={[
+          styles.settingsContainer,
+          {backgroundColor: themeforDarkMode.secondaryHeader},
+        ]}>
+        <View
+          style={[
+            styles.settingsSection,
+            styles.shadow,
+            {backgroundColor: themeforDarkMode.secondaryHeader},
+          ]}>
           <TouchableOpacity style={[styles.list, styles.f_r_sb_c]}>
             <Icon style={{flex: 1.5}} name="user" size={18} color="#ABB4BD" />
-            <Text style={{flex: 9}}>{languageData.accounts}</Text>
+            <Text style={{flex: 9, color: themeforDarkMode.secondaryText}}>
+              {languageData.accounts}
+            </Text>
             {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
           </TouchableOpacity>
           <View style={[styles.list, styles.f_r_sb_c]}>
             <Icon style={{flex: 1.5}} name="bell" size={18} color="#ABB4BD" />
-            <Text style={{flex: 7}}>{languageData.pushnotification}</Text>
+            <Text style={{flex: 7, color: themeforDarkMode.secondaryText}}>
+              {languageData.pushnotification}
+            </Text>
             {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
             <Switch
-        trackColor={{ false: "#767577", true: colors.secondary }}
-        thumbColor={isPushNotification ? colors.secondary : "#f4f3f4"}
-        ios_backgroundColor="#3e3e3e"
-        onValueChange={tooglePushNotification}
-        value={isPushNotification}
-      />
+              trackColor={{false: '#767577', true: colors.primary}}
+              thumbColor={isPushNotification ? colors.white : '#f4f3f4'}
+              ios_backgroundColor="#3e3e3e"
+              onValueChange={tooglePushNotification}
+              value={isPushNotification}
+            />
           </View>
-          <TouchableOpacity style={[styles.list, styles.f_r_sb_c]}>
+          <View style={[styles.list, styles.f_r_sb_c]}>
             <Icon style={{flex: 1.5}} name="font" size={18} color="#ABB4BD" />
-            <Text style={{flex: 6}}>{languageData.fontsize}</Text>
+            <Text style={{flex: 6, color: themeforDarkMode.secondaryText}}>
+              {languageData.fontsize}
+            </Text>
 
-            <Picker  style={{flex: 6}}
-  selectedValue={fontsize.fontsize}
-  style={{height: 50, width: 90}}
-  onValueChange={(itemValue, itemIndex) =>{
-    console.log("ssss",itemValue);
-     tooglefontsize(itemValue)
-    setfontsize({fontsize: itemValue})
- 
-  }
-
-  }>
-  <Picker.Item label="12" value="S" />
-  <Picker.Item label="14" value="M" />
-  <Picker.Item label="18" value="L" />
-
-</Picker>
+            <Picker
+              style={{flex: 6}}
+              selectedValue={fontsize.fontsize}
+              style={{
+                height: 23,
+                width: 90,
+                color: themeforDarkMode.secondaryText,
+              }}
+              dropdownIconColor={{'red'}}
+              onValueChange={(itemValue, itemIndex) => {
+                console.log('ssss', itemValue);
+                tooglefontsize(itemValue);
+                setfontsize({fontsize: itemValue});
+              }}>
+              <Picker.Item label="12" value="S" />
+              <Picker.Item label="14" value="M" />
+              <Picker.Item label="18" value="L" />
+            </Picker>
             {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
-          </TouchableOpacity>
+          </View>
           <TouchableOpacity style={[styles.list, styles.f_r_sb_c]}>
             <Icon
               style={{flex: 1.5}}
@@ -111,37 +131,45 @@ console.log("asasasasasasas",fontsize);
               size={18}
               color="#ABB4BD"
             />
-            <Text style={{flex: 9}}>{languageData.notes}</Text>
+            <Text style={{flex: 9, color: themeforDarkMode.secondaryText}}>
+              {languageData.notes}
+            </Text>
             {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.endlist, styles.f_r_sb_c]}>
+          <View style={[styles.endlist, styles.f_r_sb_c]}>
             <Icon
               style={{flex: 1.5}}
               name="language"
               size={18}
               color="#ABB4BD"
             />
-            <Text style={{flex: 5 }}>{languageData.language}</Text>
+            <Text style={{flex: 5, color: themeforDarkMode.secondaryText}}>
+              {languageData.language}
+            </Text>
 
-            <Picker  style={{flex: 6}}
-  selectedValue={language.language}
-  style={{height: 50, width: 130}}
-  onValueChange={(itemValue, itemIndex) =>{
-    console.log("ssss",itemValue);
-     toogleLanguage(itemValue)
-    setlanguage({language: itemValue})
- 
-  }
-
-  }>
-  <Picker.Item label="English" value="eng" />
-  <Picker.Item label="हिन्दी" value="ind" />
-  <Picker.Item label="Española" value="spa" />
-  <Picker.Item label="عربى" value="ara" />
-  <Picker.Item label="русский" value="rus" />
-</Picker>
+            <Picker
+              style={{flex: 6}}
+              selectedValue={language.language}
+              style={{
+                height: 23,
+                color: themeforDarkMode.secondaryText,
+                width: 130,
+                justifyContent: 'flex-end',
+                alignItems: 'flex-end',
+              }}
+              onValueChange={(itemValue, itemIndex) => {
+                console.log('ssss', itemValue);
+                toogleLanguage(itemValue);
+                setlanguage({language: itemValue});
+              }}>
+              <Picker.Item label="English" value="eng" />
+              <Picker.Item label="हिन्दी" value="ind" />
+              <Picker.Item label="Española" value="spa" />
+              <Picker.Item label="عربى" value="ara" />
+              <Picker.Item label="русский" value="rus" />
+            </Picker>
             {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
-          </TouchableOpacity>
+          </View>
           <View style={[styles.endlist, styles.f_r_sb_c]}>
             <Icon
               style={{flex: 1.5}}
@@ -149,27 +177,38 @@ console.log("asasasasasasas",fontsize);
               size={18}
               color="#ABB4BD"
             />
-            <Text style={{flex: 9}}>{languageData.darkmode}</Text>
+            <Text style={{flex: 9, color: themeforDarkMode.secondaryText}}>
+              {languageData.darkmode}
+            </Text>
             <Switch
-             trackColor={{ false: "#767577", true: colors.secondary }}
-             thumbColor={isDarkMode ? colors.secondary : "#f4f3f4"}
-        ios_backgroundColor="#3e3e3e"
-        onValueChange={toogleDarkMode}
-        value={isDarkMode}
-      />
+              trackColor={{false: '#767577', true: colors.primary}}
+              thumbColor={isDarkMode ? colors.white : '#f4f3f4'}
+              ios_backgroundColor="#3e3e3e"
+              onValueChange={toogleDarkMode}
+              value={isDarkMode}
+            />
             {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
           </View>
         </View>
         {/* First Section */}
-        <View style={[styles.settingsSection, styles.shadow]}>
+        <View
+          style={[
+            styles.settingsSection,
+            styles.shadow,
+            {backgroundColor: themeforDarkMode.secondaryHeader},
+          ]}>
           <TouchableOpacity style={[styles.list, styles.f_r_sb_c]}>
             <Icon style={{flex: 1.5}} name="globe" size={20} color="#ABB4BD" />
-            <Text style={{flex: 9}}>{languageData.joinourcommunity}</Text>
+            <Text style={{flex: 9, color: themeforDarkMode.secondaryText}}>
+              {languageData.joinourcommunity}
+            </Text>
             {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
           </TouchableOpacity>
           <TouchableOpacity style={[styles.list, styles.f_r_sb_c]}>
             <Icon style={{flex: 1.5}} name="docs" size={18} color="#ABB4BD" />
-            <Text style={{flex: 9}}>{languageData.privacypolicy}</Text>
+            <Text style={{flex: 9, color: themeforDarkMode.secondaryText}}>
+              {languageData.privacypolicy}
+            </Text>
             {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
           </TouchableOpacity>
           <TouchableOpacity style={[styles.list, styles.f_r_sb_c]}>
@@ -180,12 +219,16 @@ console.log("asasasasasasas",fontsize);
               size={18}
               color="#ABB4BD"
             />
-            <Text style={{flex: 9}}>{languageData.termsofservices}</Text>
+            <Text style={{flex: 9, color: themeforDarkMode.secondaryText}}>
+              {languageData.termsofservices}
+            </Text>
             {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
           </TouchableOpacity>
           <TouchableOpacity style={[styles.list, styles.f_r_sb_c]}>
             <Icon style={{flex: 1.5}} name="export" size={18} color="#ABB4BD" />
-            <Text style={{flex: 9}}>{languageData.invitemorefriends}</Text>
+            <Text style={{flex: 9, color: themeforDarkMode.secondaryText}}>
+              {languageData.invitemorefriends}
+            </Text>
             {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
           </TouchableOpacity>
           <TouchableOpacity style={[styles.list, styles.f_r_sb_c]}>
@@ -195,7 +238,9 @@ console.log("asasasasasasas",fontsize);
               size={18}
               color="#ABB4BD"
             />
-            <Text style={{flex: 9}}>{languageData.aboutus}</Text>
+            <Text style={{flex: 9, color: themeforDarkMode.secondaryText}}>
+              {languageData.aboutus}
+            </Text>
             <Icon name="right-open-big" size={18} color="#ABB4BD" />
           </TouchableOpacity>
           <TouchableOpacity style={[styles.endlist, styles.f_r_sb_c]}>
@@ -205,15 +250,24 @@ console.log("asasasasasasas",fontsize);
               size={18}
               color="#ABB4BD"
             />
-            <Text style={{flex: 9}}>{languageData.rateus}</Text>
+            <Text style={{flex: 9, color: themeforDarkMode.secondaryText}}>
+              {languageData.rateus}
+            </Text>
             <Icon name="right-open-big" size={18} color="#ABB4BD" />
           </TouchableOpacity>
         </View>
         {/* Second Section */}
-        <View style={[styles.settingsSection, styles.shadow]}>
+        <View
+          style={[
+            styles.settingsSection,
+            styles.shadow,
+            {backgroundColor: themeforDarkMode.secondaryHeader},
+          ]}>
           <TouchableOpacity style={[styles.endlist, styles.f_r_sb_c]}>
             <Icon style={{flex: 1.5}} name="logout" size={20} color="#ABB4BD" />
-            <Text style={{flex: 9}}>{languageData.logout}</Text>
+            <Text style={{flex: 9, color: themeforDarkMode.secondaryText}}>
+              {languageData.logout}
+            </Text>
             {/* <Icon name="cog" size={18} color="#ABB4BD" /> */}
           </TouchableOpacity>
         </View>
@@ -228,33 +282,32 @@ export default SettingScreen;
 const styles = StyleSheet.create({
   settingsContainer: {
     flex: 1,
-    backgroundColor: colors.lightWhite,
   },
   settingsSection: {
     // marginVertical: width / 30,
     // marginHorizontal: width / 17 - 5,
-    backgroundColor: colors.lightWhite,
+
     // paddingVertical: 10,
     // paddingHorizontal:10,
     borderRadius: 15,
-    marginVertical:heightPercentageToDP(1.7),
-    marginHorizontal:widthPercentageToDP(4.8),
-    paddingHorizontal:widthPercentageToDP(2.7),
-    paddingVertical:heightPercentageToDP(1.2)
+    marginVertical: heightPercentageToDP(1.7),
+    marginHorizontal: widthPercentageToDP(4.8),
+    paddingHorizontal: widthPercentageToDP(2.7),
+    paddingVertical: heightPercentageToDP(1.2),
   },
   list: {
     borderBottomWidth: 0.3,
     // paddingVertical: 14,
     borderColor: 'lightgray',
     // marginHorizontal: 20,
-    paddingVertical:heightPercentageToDP(1.7),
-    marginHorizontal:widthPercentageToDP(4.8),
+    paddingVertical: heightPercentageToDP(1.7),
+    marginHorizontal: widthPercentageToDP(4.8),
   },
   endlist: {
     // paddingVertical: 14,
     // marginHorizontal: 20,
-    paddingVertical:heightPercentageToDP(1.7),
-    marginHorizontal:widthPercentageToDP(4.8),
+    paddingVertical: heightPercentageToDP(1.7),
+    marginHorizontal: widthPercentageToDP(4.8),
   },
   shadow: {
     shadowColor: '#000',

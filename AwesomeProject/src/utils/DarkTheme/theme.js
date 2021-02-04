@@ -1,28 +1,53 @@
-import { ThemeColors as ReactNavigationThemeColors } from '@react-navigation/native'
-
+import {ThemeColors as ReactNavigationThemeColors} from '@react-navigation/native';
 
 export const ThemeColors = {
-    primaryText: {
-       light: 'black',
-       dark: 'white',
-    
+  primaryText: {
+    light: 'black',
+    dark: 'white',
+  },
+  secondaryText: {
+    light: 'black',
+    dark: 'lightgray',
+  },
+  primaryBackground: {
+    light: '#F1F1F1',
+    dark: '#1c1c1c',
+  },
+  primaryHeader: {
+    light: '#3F3D56',
+    dark: '#1c1c1c',
+  },
+  drawertopBackground: {
+    dark: '#3F3D56',
+    light: '#1c1c1c',
+  },
+  secondaryHeader: {
+    light: '#F1F1F1',
+    dark: '#2C2C2C',
+  },
+  cardBox: {
+    dark: '#1c1c1c',
+    light: '#F1F1F1',
+  },
+  contentBackground: {
+    light: 'lightgrey',
+    dark: '#2C2C2C',
+  },
+  topCategoryText: {
+    light: '#000000',
+    dark: '#FFFFFF',
+  },
+  premiumContentBackground: {
+    light: '#3F3D56',
+    dark: '#2C2C2C',
+  },
+};
 
-    },
-    primaryBackground: {
-       light: 'white',
-       dark: 'black',
-    
-
-    },
- 
-
- };
-
- export const getTheme = (mode) => {
-    let Theme = {};
-    for (let key in ThemeColors) {
-       Theme[key] = ThemeColors[key][mode];
-    }
-    console.log("Theme",Theme);
-    return Theme;
- };
+export const getTheme = (mode) => {
+  let Theme = {};
+  for (let key in ThemeColors) {
+    Theme[key] = ThemeColors[key][mode];
+  }
+  console.log('Theme', Theme);
+  return Theme;
+};

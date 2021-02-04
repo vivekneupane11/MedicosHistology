@@ -19,12 +19,12 @@ import {
 const Icon = createIconSetFromFontello(fontelloConfig);
 const {width} = Dimensions.get('window');
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useIsFocused } from "@react-navigation/native";
+import {useIsFocused} from '@react-navigation/native';
 import data from './data';
 const BookmarkScreen = ({navigation}) => {
   const isFocused = useIsFocused();
 
-  const { mode, theme : themeforDarkMode , toggle } = useTheme();
+  const {mode, theme: themeforDarkMode, toggle} = useTheme();
   const [isBookmakEmpty, setisBookmarkEmpty] = useState(false);
   const [changeBookmark, setBookmarkChange] = useState(false);
   const [BookmarkData, setBookmarkData] = useState([]);
@@ -66,7 +66,7 @@ const BookmarkScreen = ({navigation}) => {
       //     setBookmarkData(newBookmarkData);
       //   } else {
       //     let stringifieddata = JSON.stringify(newBookmarkData);
-          console.log(stringifieddata);
+      console.log(stringifieddata);
       //     await AsyncStorage.setItem(
       //       'BookmarkID',
       //       JSON.stringify({bookmark: newBookmarkData}),
@@ -79,16 +79,13 @@ const BookmarkScreen = ({navigation}) => {
     }
   };
   const checkBookmarkStatus = async () => {
- 
     try {
       let bookmarkData = await AsyncStorage.getItem('BookmarkID');
 
-      
       let checker = await JSON.parse(bookmarkData).bookmark.length;
       // console.log("1",bookmarkData,checker);
-      bookmarkData = ( checker >= 2)
-        ? bookmarkData
-        : await JSON.stringify({bookmark: [0]});
+      bookmarkData =
+        checker >= 2 ? bookmarkData : await JSON.stringify({bookmark: [0]});
       // console.log("sss",bookmarkData);
       let finalData = await JSON.parse(bookmarkData).bookmark;
       // console.log('final', finalData);
@@ -107,8 +104,8 @@ const BookmarkScreen = ({navigation}) => {
       });
       // console.log('shere', dataBookmark);
       setBookmarkData(dataBookmark);
-     
-      if(dataBookmark.length > 0){
+
+      if (dataBookmark.length > 0) {
         // console.log("finalss",dataBookmark.length);
         setisBookmarkEmpty(false);
       }
@@ -125,11 +122,9 @@ const BookmarkScreen = ({navigation}) => {
       //         return item.id == data;
       //       });
       //     });
-
       //     setisBookmarkEmpty(false);
       //     setBookmarkData(dataBookmark);
       // await JSON.parse(asyncData).bookmark.length;
-
       // let newArray = await JSON.parse(asyncData).bookmark;
       // let verifiednewArray = newArray.filter((item) => {
       //   return item != id;
@@ -140,7 +135,6 @@ const BookmarkScreen = ({navigation}) => {
       // } else {
       //   setisBookmark(!isBookmark);
       // }
-
       // let stringifieddata = await JSON.stringify({ bookmark: verifiednewArray });
       // AsyncStorage.setItem('BookmarkID', stringifieddata);
       // setBookmark(stringifieddata);
@@ -150,41 +144,36 @@ const BookmarkScreen = ({navigation}) => {
 
   useEffect(() => {
     checkBookmarkStatus();
-
-
-  }, [isBookmakEmpty,isFocused]);
+  }, [isBookmakEmpty, isFocused]);
   return (
     <ScrollView
-      style={{flexDirection: 'column'}}
+      style={{
+        flexDirection: 'column',
+        backgroundColor: themeforDarkMode.secondaryHeader,
+      }}
       contentContainerStyle={{justifyContent: 'flex-start'}}>
-
-
       {/* <BackgroundHeader navigation={navigation} /> */}
 
-      <View>
-        <Text style={{ color: themeforDarkMode.primaryText }}>
-           Current themeforDarkMode: {mode}
+      {/* <View>
+        <Text style={{color: themeforDarkMode.secondaryText}}>
+          Current themeforDarkMode: {mode}
         </Text>
         <Text
-          style={{ color: themeforDarkMode.primaryText,backgroundColor:themeforDarkMode.primaryText }}
-          onPress={() => toggle()}
-         >
-           Toggle Theme
-         </Text>
-      </View>
-
-
-      <View>
-        <Text  >
-           Current Theme: {mode}
+          style={{
+            color: themeforDarkMode.secondaryText,
+            backgroundColor: themeforDarkMode.secondaryText,
+          }}
+          onPress={() => toggle()}>
+          Toggle Theme
         </Text>
-        <Text
-          style={{ backgroundColor:"red" }}
-          onPress={() => toggle()}
-         >
-           Toggle Theme
-         </Text>
-      </View>
+      </View> */}
+
+      {/* <View>
+        <Text>Current Theme: {mode}</Text>
+        <Text style={{backgroundColor: 'red'}} onPress={() => toggle()}>
+          Toggle Theme
+        </Text>
+      </View> */}
       {isBookmakEmpty ? (
         <TouchableOpacity>
           <Text>No Bookmark Set Currently</Text>
@@ -194,10 +183,15 @@ const BookmarkScreen = ({navigation}) => {
           {!isBookmakEmpty &&
             BookmarkData.map((item) => (
               <TouchableOpacity
-              onPress={() => {
-                navigation.navigate('Content', {data: item});}}
+                onPress={() => {
+                  navigation.navigate('Content', {data: item});
+                }}
                 key={item.id}
-                style={[styles.searchContentBox, styles.shadow]}>
+                style={[
+                  styles.searchContentBox,
+                  styles.shadow,
+                  {backgroundColor: themeforDarkMode.cardBox},
+                ]}>
                 <View style={styles.image}>
                   <Image
                     resizeMode="contain"
@@ -206,7 +200,13 @@ const BookmarkScreen = ({navigation}) => {
                   />
                 </View>
                 <View style={styles.searchContent}>
-                  <Text style={styles.searchContentTitle}>{item.title}</Text>
+                  <Text
+                    style={[
+                      styles.searchContentTitle,
+                      {color: themeforDarkMode.secondaryText},
+                    ]}>
+                    {item.title}
+                  </Text>
                   <Text style={styles.searchContentText} numberOfLines={2}>
                     {item.introduction.content}{' '}
                   </Text>
