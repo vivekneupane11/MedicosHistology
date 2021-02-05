@@ -17,6 +17,7 @@ const BookmarkScreen = ({ navigation }) => {
                         <Image
                             source={require('../assets/images/cuboidal.png')}
                             style={styles.imageStyle}
+                            resizeMode='contain'
                         />
                     </View>
                     <View style={styles.searchContent}>
@@ -32,81 +33,7 @@ const BookmarkScreen = ({ navigation }) => {
                         <Image
                             source={require('../assets/images/cuboidal.png')}
                             style={styles.imageStyle}
-                        />
-                    </View>
-                    <View style={styles.searchContent}>
-                        <Text style={styles.searchContentTitle}>Epiglottis</Text>
-                        <Text style={styles.searchContentText}>The epiglottis is a leaf-shaped flap of cartilage located behind </Text>
-                    </View>
-                    <View style={styles.bookmark}>
-                        <Icon name="bookmark-empty" size={24} color="#ABB4BD" />
-                    </View>
-                </View>
-                <View style={[styles.searchContentBox,styles.shadow]}>
-                    <View style={styles.image}>
-                        <Image
-                            source={require('../assets/images/cuboidal.png')}
-                            style={styles.imageStyle}
-                        />
-                    </View>
-                    <View style={styles.searchContent}>
-                        <Text style={styles.searchContentTitle}>Epiglottis</Text>
-                        <Text style={styles.searchContentText}>The epiglottis is a leaf-shaped flap of cartilage located behind </Text>
-                    </View>
-                    <View style={styles.bookmark}>
-                        <Icon name="bookmark-empty" size={24} color="#ABB4BD" />
-                    </View>
-                </View>
-                <View style={[styles.searchContentBox,styles.shadow]}>
-                    <View style={styles.image}>
-                        <Image
-                            source={require('../assets/images/cuboidal.png')}
-                            style={styles.imageStyle}
-                        />
-                    </View>
-                    <View style={styles.searchContent}>
-                        <Text style={styles.searchContentTitle}>Epiglottis</Text>
-                        <Text style={styles.searchContentText}>The epiglottis is a leaf-shaped flap of cartilage located behind </Text>
-                    </View>
-                    <View style={styles.bookmark}>
-                        <Icon name="bookmark-empty" size={24} color="#ABB4BD" />
-                    </View>
-                </View>
-                <View style={[styles.searchContentBox,styles.shadow]}>
-                    <View style={styles.image}>
-                        <Image
-                            source={require('../assets/images/cuboidal.png')}
-                            style={styles.imageStyle}
-                        />
-                    </View>
-                    <View style={styles.searchContent}>
-                        <Text style={styles.searchContentTitle}>Epiglottis</Text>
-                        <Text style={styles.searchContentText}>The epiglottis is a leaf-shaped flap of cartilage located behind </Text>
-                    </View>
-                    <View style={styles.bookmark}>
-                        <Icon name="bookmark-empty" size={24} color="#ABB4BD" />
-                    </View>
-                </View>
-                <View style={[styles.searchContentBox,styles.shadow]}>
-                    <View style={styles.image}>
-                        <Image
-                            source={require('../assets/images/cuboidal.png')}
-                            style={styles.imageStyle}
-                        />
-                    </View>
-                    <View style={styles.searchContent}>
-                        <Text style={styles.searchContentTitle}>Epiglottis</Text>
-                        <Text style={styles.searchContentText}>The epiglottis is a leaf-shaped flap of cartilage located behind </Text>
-                    </View>
-                    <View style={styles.bookmark}>
-                        <Icon name="bookmark-empty" size={24} color="#ABB4BD" />
-                    </View>
-                </View>
-                <View style={[styles.searchContentBox,styles.shadow]}>
-                    <View style={styles.image}>
-                        <Image
-                            source={require('../assets/images/cuboidal.png')}
-                            style={styles.imageStyle}
+                            resizeMode='contain'
                         />
                     </View>
                     <View style={styles.searchContent}>
@@ -118,6 +45,108 @@ const BookmarkScreen = ({ navigation }) => {
                     </View>
                 </View>
 
+                <View style={[styles.searchContentBox,styles.shadow]}>
+                    <View style={styles.image}>
+                        <Image
+                            source={require('../assets/images/cuboidal.png')}
+                            style={styles.imageStyle}
+                            resizeMode='contain'
+                        />
+                    </View>
+                    <View style={styles.searchContent}>
+                        <Text style={styles.searchContentTitle}>Epiglottis</Text>
+                        <Text style={styles.searchContentText}>The epiglottis is a leaf-shaped flap of cartilage located behind </Text>
+                    </View>
+                    <View style={styles.bookmark}>
+                        <Icon name="bookmark-empty" size={24} color="#ABB4BD" />
+                    </View>
+                </View>
+
+                <View style={[styles.searchContentBox,styles.shadow]}>
+                    <View style={styles.image}>
+                        <Image
+                            source={require('../assets/images/cuboidal.png')}
+                            style={styles.imageStyle}
+                            resizeMode='contain'
+                        />
+                    </View>
+                    <View style={styles.searchContent}>
+                        <Text style={styles.searchContentTitle}>Epiglottis</Text>
+                        <Text style={styles.searchContentText}>The epiglottis is a leaf-shaped flap of cartilage located behind </Text>
+                    </View>
+                    <View style={styles.bookmark}>
+                        <Icon name="bookmark-empty" size={24} color="#ABB4BD" />
+                    </View>
+                </View>
+
+                <View style={[styles.searchContentBox,styles.shadow]}>
+                    <View style={styles.image}>
+                        <Image
+                            source={require('../assets/images/cuboidal.png')}
+                            style={styles.imageStyle}
+                            resizeMode='contain'
+                        />
+                    </View>
+                    <View style={styles.searchContent}>
+                        <Text style={styles.searchContentTitle}>Epiglottis</Text>
+                        <Text style={styles.searchContentText}>The epiglottis is a leaf-shaped flap of cartilage located behind </Text>
+                    </View>
+                    <View style={styles.bookmark}>
+                        <Icon name="bookmark-empty" size={24} color="#ABB4BD" />
+                    </View>
+                </View>
+
+                <View style={[styles.searchContentBox,styles.shadow]}>
+                    <View style={styles.image}>
+                        <Image
+                            source={require('../assets/images/cuboidal.png')}
+                            style={styles.imageStyle}
+                            resizeMode='contain'
+                        />
+                    </View>
+                    <View style={styles.searchContent}>
+                        <Text style={styles.searchContentTitle}>Epiglottis</Text>
+                        <Text style={styles.searchContentText}>The epiglottis is a leaf-shaped flap of cartilage located behind </Text>
+                    </View>
+                    <View style={styles.bookmark}>
+                        <Icon name="bookmark-empty" size={24} color="#ABB4BD" />
+                    </View>
+                </View>
+
+                <View style={[styles.searchContentBox,styles.shadow]}>
+                    <View style={styles.image}>
+                        <Image
+                            source={require('../assets/images/cuboidal.png')}
+                            style={styles.imageStyle}
+                            resizeMode='contain'
+                        />
+                    </View>
+                    <View style={styles.searchContent}>
+                        <Text style={styles.searchContentTitle}>Epiglottis</Text>
+                        <Text style={styles.searchContentText}>The epiglottis is a leaf-shaped flap of cartilage located behind </Text>
+                    </View>
+                    <View style={styles.bookmark}>
+                        <Icon name="bookmark-empty" size={24} color="#ABB4BD" />
+                    </View>
+                </View>
+
+                <View style={[styles.searchContentBox,styles.shadow]}>
+                    <View style={styles.image}>
+                        <Image
+                            source={require('../assets/images/cuboidal.png')}
+                            style={styles.imageStyle}
+                            resizeMode='contain'
+                        />
+                    </View>
+                    <View style={styles.searchContent}>
+                        <Text style={styles.searchContentTitle}>Epiglottis</Text>
+                        <Text style={styles.searchContentText}>The epiglottis is a leaf-shaped flap of cartilage located behind </Text>
+                    </View>
+                    <View style={styles.bookmark}>
+                        <Icon name="bookmark-empty" size={24} color="#ABB4BD" />
+                    </View>
+                </View>
+                
 
             </View>
         </ScrollView>
@@ -141,7 +170,7 @@ const styles = StyleSheet.create({
         // height: 45,
         // width: 45,
         borderRadius: 5,
-        height:heightPercentageToDP(5.4),
+        height:heightPercentageToDP(5.8),
         width:widthPercentageToDP(11)
     },
     searchContentBox: {
@@ -194,6 +223,6 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.34,
         shadowRadius: 6.27, 
-        elevation: 10,
+        elevation: heightPercentageToDP(0.4),
     }
 });

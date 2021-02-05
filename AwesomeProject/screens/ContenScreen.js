@@ -28,6 +28,9 @@ const height = width / 1.61;
 const ContentScreen = ({ navigation, route }) => {
   const [Bookmark, setBookmark] = useState([]);
   const [isBookmark, setisBookmark] = useState(false);
+  const [modal, setModal] = useState(false);
+  const [noteTitle, setNoteTitle] = useState('Title');
+  const [noteContent, setNoteContent] = useState('Notes');
   const { data } = route.params;
 
   // const getBookmarkData = async ()=>{
@@ -108,12 +111,9 @@ const ContentScreen = ({ navigation, route }) => {
             Epithelial Tissue
           </Text>
           <View style={{ flexDirection: 'row' }}>
-            <Icon
-              style={{ marginHorizontal: 0 }}
-              name="edit"
-              size={25}
-              color="#fff"
-            />
+            <TouchableOpacity onPress={() => {setModal(true);}}>
+              <Icon name="edit" size={23} color="white" />
+            </TouchableOpacity>
             <TouchableOpacity onPress={() => saveBookmarkData({ id: data.id })}>
               {isBookmark ? (
                 <Icon
@@ -145,6 +145,27 @@ const ContentScreen = ({ navigation, route }) => {
       style={{
         backgroundColor: 'lightgrey',
       }}>
+      <Modal visible={modal} transparent={true} animationType="slide">
+        <View style={[styles.modalContainer]}>
+          <View style={styles.modalWrapper}>
+            <TextInput style={styles.modalTitle} onChangeText={text => setNoteTitle(text)} value={noteTitle}></TextInput>
+            <View style={styles.modalContentContainer}>
+              <TextInput multiline onChangeText={text => setNoteContent(text)} value={noteContent}></TextInput>
+            </View>
+            <View style={styles.modalFooter}>
+              <TouchableOpacity onPress={() => { setModal(false) }} style={[styles.closeButton, styles.f_c_c_c]} >
+                <Icon style={styles.modalCloseIcon} name="cancel-circled2" size={18} />
+
+                <Text style={[styles.closeButtonText]}>Close</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={[styles.saveButton, styles.f_c_c_c]}>
+                <Icon style={styles.modalSaveIcon} name="ok-circled2" size={18} />
+                <Text style={[styles.saveButtonText]}>Save</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal>
       <View style={styles.container}>
         <Slider />
 
@@ -258,27 +279,28 @@ const styles = StyleSheet.create({
     width: widthPercentageToDP(85)
   },
   closeButtonText: {
-    // flex:0.2,
+    // flex:0.5,
     color: "red",
     // fontSize: 16,
     fontSize: widthPercentageToDP(4),
   },
   saveButtonText: {
+    // flex:0.5,
     color: colors.secondary,
     // fontSize: 16,
     fontSize: widthPercentageToDP(4),
   },
   modalCloseIcon: {
-    flex: 0.24,
+    flex: 0.2,
     color: 'red',
   },
   modalSaveIcon: {
-    flex: 0.24,
+    flex: 0.2,
     color: colors.secondary,
   },
   closeButton: {
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    justifyContent: 'center',
     alignItems: 'center',
     flex: 1,
     borderColor: 'green',
@@ -287,7 +309,7 @@ const styles = StyleSheet.create({
   },
   saveButton: {
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    justifyContent: 'center',
     alignItems: 'center',
     // paddingVertical: 15,
     flex: 1,

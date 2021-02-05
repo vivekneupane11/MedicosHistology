@@ -32,10 +32,10 @@ const NoteScreen = ({ navigation }) => {
                     <View style={styles.modalWrapper}>
                         <TextInput style={styles.modalTitle} onChangeText={text => setNoteTitle(text)} value={noteTitle}></TextInput>
                         <View style={styles.modalContentContainer}>
-                            <TextInput multiline style={styles.contentParagraphTypography} onChangeText={text => setNoteContent(text)} value={noteContent}></TextInput>
+                            <TextInput multiline onChangeText={text => setNoteContent(text)} value={noteContent}></TextInput>
                         </View>
                         <View style={styles.modalFooter}>
-                            <TouchableOpacity onPress={() => { setModal(false) }} style={[styles.closeButton, styles.f_c_c_c]} >
+                            <TouchableOpacity onPress={() => {setModal(false) }} style={[styles.closeButton, styles.f_c_c_c]} >
                                 <Icon style={styles.modalCloseIcon} name="cancel-circled2" size={18} />
 
                                 <Text style={[styles.closeButtonText]}>Close</Text>
@@ -168,11 +168,11 @@ const styles = StyleSheet.create({
         marginLeft: widthPercentageToDP(1.2)
     },
     modalCloseIcon: {
-        flex: 0.24,
+        flex: 0.2,
         color: 'red',
     },
     modalSaveIcon: {
-        flex: 0.24,
+        flex: 0.2,
         color: colors.secondary,
     },
     closeButton: {

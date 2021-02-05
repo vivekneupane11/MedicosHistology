@@ -25,6 +25,7 @@ const SearchScreen = ({navigation}) => {
                     <Image
                         source={require('../assets/images/heart.png')}
                         style={styles.imageStyle}
+                        resizeMode='contain'
                     />
                     <View style={styles.searchContent}>
                         <Text style={styles.searchContentTitle}>Epiglottis</Text>
@@ -40,6 +41,21 @@ const SearchScreen = ({navigation}) => {
                     <Image
                         source={require('../assets/images/heart.png')}
                         style={styles.imageStyle}
+                        resizeMode='contain'
+                    />
+                    <View style={styles.similarContent}>
+                        <Text style={styles.similarContentTitle}>Epiglottis</Text>
+                        <Text style={styles.similarContentText}>The epiglottis is a leaf-shaped flap of cartilage located behind the tongue, at the top of the </Text>
+                    </View>
+                </View>
+                {/* Card */}
+
+
+                <View style={[styles.similarContentBox, styles.shadow, styles.f_r_sa_c]}>
+                    <Image
+                        source={require('../assets/images/heart.png')}
+                        style={styles.imageStyle}
+                        resizeMode='contain'
                     />
                     <View style={styles.similarContent}>
                         <Text style={styles.similarContentTitle}>Epiglottis</Text>
@@ -52,6 +68,7 @@ const SearchScreen = ({navigation}) => {
                     <Image
                         source={require('../assets/images/heart.png')}
                         style={styles.imageStyle}
+                        resizeMode='contain'
                     />
                     <View style={styles.similarContent}>
                         <Text style={styles.similarContentTitle}>Epiglottis</Text>
@@ -64,6 +81,7 @@ const SearchScreen = ({navigation}) => {
                     <Image
                         source={require('../assets/images/heart.png')}
                         style={styles.imageStyle}
+                        resizeMode='contain'
                     />
                     <View style={styles.similarContent}>
                         <Text style={styles.similarContentTitle}>Epiglottis</Text>
@@ -76,6 +94,7 @@ const SearchScreen = ({navigation}) => {
                     <Image
                         source={require('../assets/images/heart.png')}
                         style={styles.imageStyle}
+                        resizeMode='contain'
                     />
                     <View style={styles.similarContent}>
                         <Text style={styles.similarContentTitle}>Epiglottis</Text>
@@ -88,6 +107,7 @@ const SearchScreen = ({navigation}) => {
                     <Image
                         source={require('../assets/images/heart.png')}
                         style={styles.imageStyle}
+                        resizeMode='contain'
                     />
                     <View style={styles.similarContent}>
                         <Text style={styles.similarContentTitle}>Epiglottis</Text>
@@ -95,7 +115,7 @@ const SearchScreen = ({navigation}) => {
                     </View>
                 </View>
                 {/* Card */}
-
+               
 
             </View>
             {/* List Container */}
@@ -181,6 +201,7 @@ const styles = StyleSheet.create(
         },
         container: {
             alignItems: 'center',
+            paddingBottom:heightPercentageToDP(2)
         },
         similar: {
             // marginHorizontal: 15,
@@ -232,7 +253,7 @@ const styles = StyleSheet.create(
             },
             shadowOpacity: 0.34,
             shadowRadius: 6.27,
-            elevation: 10,
+            elevation: heightPercentageToDP(0.5),
         },
         f_r_sa_c: {
             flexDirection: 'row',

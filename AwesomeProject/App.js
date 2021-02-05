@@ -19,74 +19,99 @@ import TermsAndConditionsScreen from './screens/TermsAndConditionsScreen';
 import PrivacyPolicyScreen from './screens/PrivacyPolicyScreen';
 import AboutUsScreen from './screens/AboutUsScreen';
 import { colors } from './constants/theme';
+import { AppearanceProvider, useColorScheme } from 'react-native-appearance';
+import { DefaultTheme, DarkTheme } from '@react-navigation/native';
 
 import { enableScreens } from 'react-native-screens';
 
-enableScreens();
 
+enableScreens();
 const HomeStack = createStackNavigator();
-const HomeStackScreen = () => {
+
+
+const Drawer = createDrawerNavigator();
+
+const App = () => {
+  const scheme = useColorScheme();
+  // const [isFirstLaunch,setisFirstLaunch] = useState(null);
+  // useEffect(()=>{
+  //     AsyncStorage.getItem('isalreadylaunch').then(value=>{
+  //         if(value == null){
+  //             AsyncStorage.setItem('isalreadylaunch','true');
+  //             setisFirstLaunch(true);
+  //         }else{
+  //             setisFirstLaunch(false);
+  //         }
+  //     });
+  // });
+
+  // if(isFirstLaunch == null){
+  //     return null;
+  // }
+  // else if(isFirstLaunch==true){
   return (
-    <HomeStack.Navigator>
-      {/* <HomeStack.Screen
+    
+      <NavigationContainer theme={scheme == 'dark' ? DarkTheme : DefaultTheme}>
+        <HomeStack.Navigator>
+          {/* <HomeStack.Screen
         name="Onboarding"
         component={OnboardingScreen}
         options={{ headerShown: false }}
-      />
-      <HomeStack.Screen
-        name="Login"
-        component={LoginScreen}
-        options={{ headerShown: false }}
-      />
-      <HomeStack.Screen
-        name="Register"
-        component={RegistrationScreen}
-        options={{ headerShown: false }}
       /> */}
-      {/* <HomeStack.Screen
-        name="Home"
-        component={HomeScreen}
-        options={{ headerShown: false }}
-      /> */}
-      {/* <HomeStack.Screen
-        name="Setting"
-        component={SettingScreen}
-        options={{ headerShown: false }}
-      /> */}
-      {/* <HomeStack.Screen name="Content" component={ContentScreen} /> */}
-      {/* <HomeStack.Screen
-        name="Search"
-        component={SearchScreen}
-        options={({ navigation }) => ({
-          headerTitle: (props) => (
-            <Text
-              {...props}
-              style={{
-                color: 'white',
-                fontSize: 18,
-                fontWeight: 'bold',
+          <HomeStack.Screen
+            name="Login"
+            component={LoginScreen}
+            options={{ headerShown: false }}
+          />
+          <HomeStack.Screen
+            name="Register"
+            component={RegistrationScreen}
+            options={{ headerShown: false }}
+          />
+          <HomeStack.Screen
+            name="Home"
+            component={HomeScreen}
+            options={{ headerShown: false }}
+          />
+          <HomeStack.Screen
+            name="Setting"
+            component={SettingScreen}
+            options={{ headerShown: false }}
+          />
+          <HomeStack.Screen name="Content" component={ContentScreen} />
+          <HomeStack.Screen
+            name="Search"
+            component={SearchScreen}
+            options={({ navigation }) => ({
+              headerTitle: (props) => (
+                <Text
+                  {...props}
+                  style={{
+                    color: 'white',
+                    fontSize: 18,
+                    fontWeight: 'bold',
+                    backgroundColor: colors.primary,
+                  }}>
+                  Search
+                </Text>
+              ),
+              headerStyle: {
                 backgroundColor: colors.primary,
-              }}>
-              Search
-            </Text>
-          ),
-          headerStyle: {
-            backgroundColor: colors.primary,
-          },
-          headerTintColor: '#fff',
-        })}
-      /> */}
-      <HomeStack.Screen
-        name="Notes"
-        component={NoteScreen}
-        options={{ headerShown: false }}
-      />
-      <HomeStack.Screen
-        name="Bookmarks"
-        component={BookmarkScreen}
-        options={{ headerShown: false }}
-      />
-      {/* <HomeStack.Screen
+              },
+              headerTintColor: '#fff',
+            })}
+          />
+          <HomeStack.Screen
+            name="Notes"
+            component={NoteScreen}
+            options={{ headerShown: false }}
+          />
+          <HomeStack.Screen
+            name="Bookmarks"
+            component={BookmarkScreen}
+            options={{ headerShown: false }}
+          />
+          {/* <HomeStack.Screen
         name="TermsAndConditions"
         component={TermsAndConditionsScreen}
         options={({ navigation }) => ({
@@ -108,7 +133,7 @@ const HomeStackScreen = () => {
           headerTintColor: '#fff',
         })}
       /> */}
-      {/* <HomeStack.Screen
+          {/* <HomeStack.Screen
         name="PrivacyPolicy"
         component={PrivacyPolicyScreen}
         options={({ navigation }) => ({
@@ -130,7 +155,7 @@ const HomeStackScreen = () => {
           headerTintColor: '#fff',
         })}
       /> */}
-      {/* <HomeStack.Screen
+          {/* <HomeStack.Screen
         name="AboutUs"
         component={AboutUsScreen}
         options={({ navigation }) => ({
@@ -152,35 +177,8 @@ const HomeStackScreen = () => {
           headerTintColor: '#fff',
         })}
       /> */}
-    </HomeStack.Navigator>
-  );
-};
-
-const Drawer = createDrawerNavigator();
-
-const App = () => {
-  // const [isFirstLaunch,setisFirstLaunch] = useState(null);
-  // useEffect(()=>{
-  //     AsyncStorage.getItem('isalreadylaunch').then(value=>{
-  //         if(value == null){
-  //             AsyncStorage.setItem('isalreadylaunch','true');
-  //             setisFirstLaunch(true);
-  //         }else{
-  //             setisFirstLaunch(false);
-  //         }
-  //     });
-  // });
-
-  // if(isFirstLaunch == null){
-  //     return null;
-  // }
-  // else if(isFirstLaunch==true){
-  return (
-    <NavigationContainer>
-      <Drawer.Navigator drawerContent={(props) => <DrawerContent {...props} />}>
-        <Drawer.Screen name="HomeDrawer" component={HomeStackScreen} />
-      </Drawer.Navigator>
-    </NavigationContainer>
+        </HomeStack.Navigator>
+      </NavigationContainer>
   );
   // }
   // else{

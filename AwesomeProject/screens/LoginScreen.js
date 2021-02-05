@@ -30,7 +30,7 @@ const LoginScreen = ({ navigation }) => {
 
                     <Text style={[styles.text, styles.link, styles.forgetText]}>Forget Password ?</Text>
                     <TouchableOpacity style={[styles.submitContainer, styles.shadow, styles.f_c_c_c]}>
-                        <Text style={[styles.text, styles.buttonText]}>
+                        <Text style={[styles.buttonText]}>
                             Login
                         </Text>
                     </TouchableOpacity>
@@ -51,8 +51,7 @@ const LoginScreen = ({ navigation }) => {
                     </TouchableOpacity>
                     <TouchableOpacity>
                         <View style={styles.socialButton}>
-                            <Image style={styles.socialLogo} source={require('../assets/logos/onusegoogle.png')} />
-
+                            <Image style={styles.socialLogo} source={require('../assets/logos/onusegoogle.png')} resizeMode='contain'/>
                         </View>
                     </TouchableOpacity>
 
@@ -121,9 +120,9 @@ const styles = StyleSheet.create({
         height: heightPercentageToDP(30),
         width: widthPercentageToDP(61)
     },
-    text: {
-        color: colors.dodgerBlue
-    },
+    // text: {
+    //     color: colors.dodgerBlue
+    // },
     socialButton: {
         flexDirection: 'row',
         // paddingVertical: 2,
@@ -154,7 +153,7 @@ const styles = StyleSheet.create({
         // marginHorizontal: 80,
         // marginTop: 32,
         color: "white",
-        paddingVertical:heightPercentageToDP(1.45),
+        paddingVertical:heightPercentageToDP(2),
         marginHorizontal:widthPercentageToDP(19.5),
         marginTop:heightPercentageToDP(3.8)
     },
