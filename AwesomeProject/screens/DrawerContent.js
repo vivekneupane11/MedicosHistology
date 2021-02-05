@@ -30,46 +30,70 @@ const DrawerContent = (props) => {
             style={{
               paddingVertical: 2,
               paddingHorizontal: 6,
+              marginRight: 10,
+
               fontWeight: 'bold',
             }}
             name="home-outline"
             size={18}
             color={colors.gray}
           />
-          <Text style={styles.drawerLink}>{languageData.home}</Text>
+          <Text
+            style={[
+              styles.drawerLink,
+              {color: themeforDarkMode.secondaryText},
+            ]}>
+            {languageData.home}
+          </Text>
         </View>
       </TouchableOpacity>
       <TouchableOpacity>
         <View style={styles.drawerLinks}>
           <Icon
-            style={{paddingVertical: 2, paddingHorizontal: 6}}
+            style={{paddingVertical: 2, paddingHorizontal: 6, marginRight: 10}}
             name="bookmark-empty"
             size={18}
             color={colors.gray}
           />
-          <Text style={styles.drawerLink}>{languageData.bookmarks}</Text>
+          <Text
+            style={[
+              styles.drawerLink,
+              {color: themeforDarkMode.secondaryText},
+            ]}>
+            {languageData.bookmarks}
+          </Text>
         </View>
       </TouchableOpacity>
       <TouchableOpacity>
         <View style={styles.drawerLinks}>
           <Icon
-            style={{paddingVertical: 2, paddingHorizontal: 6}}
+            style={{paddingVertical: 2, paddingHorizontal: 6, marginRight: 10}}
             name="sticky-note-o"
             size={18}
             color={colors.gray}
           />
-          <Text style={styles.drawerLink}>{languageData.notes}</Text>
+          <Text
+            style={[
+              styles.drawerLink,
+              {color: themeforDarkMode.secondaryText},
+            ]}>
+            {languageData.notes}
+          </Text>
         </View>
       </TouchableOpacity>
       <TouchableOpacity>
         <View style={styles.drawerLinks}>
           <Icon
-            style={{paddingVertical: 2, paddingHorizontal: 6}}
+            style={{paddingVertical: 2, paddingHorizontal: 6, marginRight: 10}}
             name="info-circled-alt"
             size={18}
             color={colors.gray}
           />
-          <Text style={styles.drawerLink}>
+          <Text
+            style={[
+              styles.drawerLink,
+              {color: themeforDarkMode.secondaryText},
+            ]}>
             {languageData.invitemorefriends}
           </Text>
         </View>
@@ -77,46 +101,70 @@ const DrawerContent = (props) => {
       <TouchableOpacity>
         <View style={styles.drawerLinks}>
           <Icon
-            style={{paddingVertical: 2, paddingHorizontal: 6}}
+            style={{paddingVertical: 2, paddingHorizontal: 6, marginRight: 10}}
             name="star-empty"
             size={18}
             color={colors.gray}
           />
-          <Text style={styles.drawerLink}>{languageData.rateus}</Text>
+          <Text
+            style={[
+              styles.drawerLink,
+              {color: themeforDarkMode.secondaryText},
+            ]}>
+            {languageData.rateus}
+          </Text>
         </View>
       </TouchableOpacity>
       <TouchableOpacity>
         <View style={styles.drawerLinks}>
           <Icon
-            style={{paddingVertical: 2, paddingHorizontal: 6}}
+            style={{paddingVertical: 2, paddingHorizontal: 6, marginRight: 10}}
             name="globe"
             size={18}
             color={colors.gray}
           />
-          <Text style={styles.drawerLink}>{languageData.joinourcommunity}</Text>
+          <Text
+            style={[
+              styles.drawerLink,
+              {color: themeforDarkMode.secondaryText},
+            ]}>
+            {languageData.joinourcommunity}
+          </Text>
         </View>
       </TouchableOpacity>
       <TouchableOpacity>
         <View style={styles.drawerLinks}>
           <Icon
-            style={{paddingVertical: 2, paddingHorizontal: 6}}
+            style={{paddingVertical: 2, paddingHorizontal: 6, marginRight: 10}}
             name="award"
             size={22}
             color={colors.gray}
           />
-          <Text style={styles.drawerLink}>Premium Contents</Text>
+          <Text
+            style={[
+              styles.drawerLink,
+              {color: themeforDarkMode.secondaryText},
+            ]}>
+            Premium Contents
+          </Text>
         </View>
       </TouchableOpacity>
 
       <TouchableOpacity style={{marginTop: 5}}>
         <View style={[styles.drawerLinks, styles.drawerLinkBottom]}>
           <Icon
-            style={{paddingVertical: 1, paddingHorizontal: 6}}
+            style={{paddingVertical: 1, paddingHorizontal: 6, marginRight: 10}}
             name="logout"
             size={18}
             color={colors.gray}
           />
-          <Text style={styles.drawerLink}>Sign Out</Text>
+          <Text
+            style={[
+              styles.drawerLink,
+              {color: themeforDarkMode.secondaryText},
+            ]}>
+            Sign Out
+          </Text>
         </View>
       </TouchableOpacity>
     </View>

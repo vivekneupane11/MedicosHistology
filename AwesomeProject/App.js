@@ -272,20 +272,20 @@ const App = () => {
   // }
   // else if(isFirstLaunch==true){
   return (
-    // <AppearanceProvider>
-    <ThemeManager>
-      <LanguageManager>
-        <FontsizeManager>
-          <NavigationContainer>
-            <Drawer.Navigator
-              drawerContent={(props) => <DrawerContent {...props} />}>
-              <Drawer.Screen name="HomeDrawerH" component={AppStackScreen} />
-            </Drawer.Navigator>
-          </NavigationContainer>
-        </FontsizeManager>
-      </LanguageManager>
-    </ThemeManager>
-    //  </AppearanceProvider>
+    <AppearanceProvider>
+      <ThemeManager>
+        <LanguageManager>
+          <FontsizeManager>
+            <NavigationContainer>
+              <Drawer.Navigator
+                drawerContent={(props) => <DrawerContent {...props} />}>
+                <Drawer.Screen name="HomeDrawerH" component={AppStackScreen} />
+              </Drawer.Navigator>
+            </NavigationContainer>
+          </FontsizeManager>
+        </LanguageManager>
+      </ThemeManager>
+    </AppearanceProvider>
   );
   // }
   // else{
