@@ -27,6 +27,8 @@ import {
   widthPercentageToDP,
 } from '../src/utils/responsive';
 
+import {AllHistologyContent} from '../constants/mocks';
+
 const width = Dimensions.get('screen').width;
 const height = width / 1.61;
 
@@ -34,23 +36,36 @@ const ContentScreen = ({navigation, route}) => {
   const isFocused = useIsFocused();
   const [Bookmark, setBookmark] = useState(JSON.stringify({bookmark: [0]}));
   const [isBookmark, setisBookmark] = useState(false);
-  const {data} = route.params;
+  const {id , title,titleId} = route.params;
   const {mode, theme: themeforDarkMode, toggle} = useTheme();
-  // const getBookmarkData = async ()=>{
-  //     try{
+  const [contents , setContent] = useState([]);
+  const [isContent , setisContent] = useState(false);
 
-  //         let  bookmarkData = await AsyncStorage.getItem('BookmarkID');
-  //         bookmarkData = (bookmarkData == null)?[]: await JSON.parse(bookmarkData);
-  //          let stringBookmarkData = JSON.stringify(bookmarkData);
-  //      return stringBookmarkData;
-  //     }
-  // catch(err){
-  //  //     console.log('Error getting Bookmark',err);
-  // }
-  //  }
-  const saveBookmarkData = async ({id}) => {
+
+const extractContent = ()=>{
+  const specificContent =   AllHistologyContent.filter(item=>{
+ return item.id == titleId;
+    });
+
+
+   setContent(specificContent[0].subTopics[id-1])
+   setisContent(true);
+}
+
+
+
+useEffect(()=>{
+  extractContent();
+
+},[isContent]);
+
+
+
+  const saveBookmarkData = async ({id,titleId}) => {
     try {
+    
       let bookmarkData = await AsyncStorage.getItem('BookmarkID');
+    
       bookmarkData = bookmarkData
         ? bookmarkData
         : await JSON.stringify({bookmark: [0]});
@@ -58,16 +73,17 @@ const ContentScreen = ({navigation, route}) => {
 
       let parsedBookmarkData =
         typeof finalData === 'undefined' ? [0] : finalData;
-
+     
       if (parsedBookmarkData.length >= 1) {
         let parsedNewArray = parsedBookmarkData.filter((item) => {
-          return item != id;
+          return item != id && titleId != item.titleId;
         });
-        //        console.log(parsedNewArray.length, parsedBookmarkData.length);
-        if (parsedBookmarkData.length == parsedNewArray.length) {
+        console.log("hello");
+        if (parsedBookmarkData.length == parsedNewArray.length ) {
+     
           //          console.log('aa', parsedBookmarkData);
           let length = parsedNewArray.length;
-          parsedNewArray[length] = id;
+          parsedNewArray[length] = {id:id,titleId:titleId};
           await AsyncStorage.setItem(
             'BookmarkID',
             JSON.stringify({bookmark: parsedNewArray}),
@@ -75,53 +91,29 @@ const ContentScreen = ({navigation, route}) => {
           setisBookmark(true);
           //          console.log(Bookmark);
         } else {
+          console.log("***********************", parsedBookmarkData);
           await AsyncStorage.setItem(
             'BookmarkID',
             JSON.stringify({bookmark: parsedNewArray}),
           );
           setisBookmark(!isBookmark);
         }
+      }else {
+        console.log("***********************", parsedBookmarkData);
+        await AsyncStorage.setItem(
+          'BookmarkID',
+          JSON.stringify({bookmark: [0,{id:id,titleId:titleId}]}),
+        );
+        setisBookmark(!isBookmark);
       }
     } catch (err) {
-      //      console.log('Error saving bookmark data', err);
+            console.log('Error saving bookmark data', err);
     }
   };
-  //   try {
-  //     // AsyncStorage.setItem(Bookmark,);
-  //     let asyncData = await AsyncStorage.getItem('BookmarkID');
 
-  //     asyncData =
-  //       asyncData == null ? await JSON.stringify({bookmark: [0]}) : asyncData;
-  //  //     console.log('asyncdata', JSON.parse(asyncData));
-  //     // if(asyncData.length){
-  //     //   AsyncStorage.setItem('BookmarkID', JSON.stringify({ bookmark: [id] })  );
-  //     //   setBookmark( JSON.stringify({ bookmark: [id] }));
-  //     // }
-
-  //  //     console.log('aaaaaaaaaaaaaaaaaaaaaaaa', asyncData);
-  //     let newArray = await JSON.parse(asyncData);
-  //  //     console.log('new', newArray);
-
-  //     let verifiednewArray = newArray.filter((item) => {
-  //       return item != id;
-  //     });
-  //     if (newArray.length == verifiednewArray.length) {
-  //       let length = verifiednewArray.length;
-  //       verifiednewArray[length] = id;
-  //     } else {
-  //       setisBookmark(!isBookmark);
-  //     }
-
-  //     let stringifieddata = await JSON.stringify({bookmark: verifiednewArray});
-  //     AsyncStorage.setItem('BookmarkID', stringifieddata);
-  //  //     console.log('STRIGIFIED', stringifieddata);
-  //     setBookmark(stringifieddata);
-  //   } catch (err) {
-  //  //     console.log('Error saving bookmark', err);
-  //   }
-  // };
   const getBookmarkDatas = async () => {
     let bookmarkData = await AsyncStorage.getItem('BookmarkID');
+    console.log("What in Bookmark",bookmarkData);
     bookmarkData = bookmarkData
       ? bookmarkData
       : await JSON.stringify({bookmark: [0]});
@@ -130,8 +122,9 @@ const ContentScreen = ({navigation, route}) => {
       typeof parsedBookmarkData === 'undefined' ? [0] : parsedBookmarkData;
     if (parsedBookmarkData.length > 1) {
       parsedBookmarkData.map((item) => {
-        if (item == data.id) {
+        if (item.id == id && item.titleId == titleId) {
           setisBookmark(true);
+          console.log("What in bookmark State",Bookmark);
           return;
         }
       });
@@ -139,23 +132,7 @@ const ContentScreen = ({navigation, route}) => {
   };
   useEffect(() => {
     getBookmarkDatas();
-
-    // AsyncStorage.getItem('BookmarkID').then((value) => {
-    //    //   console.log('here' + value);
-    //   let asyncData = value == null ? JSON.stringify({bookmark: [0]}) : value;
-    //   setBookmark(asyncData);
-    //   let AsyncBookmarkData = JSON.parse(asyncData).bookmark;
-    //   if (!AsyncBookmarkData) return;
-    //   AsyncBookmarkData.map((item) => {
-    //     if (item == data.id) {
-    //    //       // console.log(item,data.id);
-    //       setisBookmark(true);
-    //       return;
-    //     }
-    //   });
-    // });
-    //    // console.log('Is bookmark', isBookmark);
-    //    console.log(Bookmark);
+  
   }, [isBookmark, Bookmark]);
 
   React.useLayoutEffect(() => {
@@ -183,7 +160,7 @@ const ContentScreen = ({navigation, route}) => {
               color="#fff"
             />
 
-            <TouchableOpacity onPress={() => saveBookmarkData({id: data.id})}>
+            <TouchableOpacity onPress={() => saveBookmarkData({id: id,titleId:titleId})}>
               {isBookmark ? (
                 <Icon
                   style={{marginHorizontal: 20}}
@@ -214,20 +191,25 @@ const ContentScreen = ({navigation, route}) => {
       style={{
         backgroundColor: themeforDarkMode.contentBackground,
       }}>
-      <View style={styles.container}>
+      {/* <View style={styles.container}>
         <Slider />
 
-        <View style={styles.contentContainer}>
+
+     
+
+    <View style={styles.contentContainer}>
           <View>
-            <Text style={styles.contentTitleText}>{data.title}</Text>
-            <Text
-              style={[
-                styles.contentBox,
-                styles.contentParagraphTypography,
-                {color: themeforDarkMode.primaryText},
-              ]}>
-              {data.introduction.content}
-            </Text>
+            <Text style={styles.contentTitleText}>{title}</Text>
+           {
+             contents.isIntroduction && <Text
+             style={[
+               styles.contentBox,
+               styles.contentParagraphTypography,
+               {color: themeforDarkMode.primaryText},
+             ]}>
+             {'data.introduction.content'}
+           </Text>
+           }
 
             <View>
               <Text
@@ -238,10 +220,49 @@ const ContentScreen = ({navigation, route}) => {
                     borderBottomColor: themeforDarkMode.primaryText,
                   },
                 ]}>
-                {data.subtitle}
-              </Text>
+                {title}
+              </Text> */}
+     
+     
+        {
+         
+         contents.content.subTopic.map(item=>{
+                  return(
+                    <View style={styles.contentBox}>
+                    <Text>{item.title}</Text>
 
-              <View style={styles.contentBox}>
+                   {!item.orderedList && item.unorderedlist &&
+                   <Unorderedlist
+                   bulletUnicode={0x2023}
+                   style={styles.unorderedlist}>
+                     {
+                       item.content.map(list=>{
+                        return(
+                          <Text
+                          style={[
+                            styles.subTitle,
+                            {color: themeforDarkMode.primaryText},
+                          ]}>
+                          {list}
+                        </Text>
+                        )
+                       })
+                     }
+                
+                 </Unorderedlist>
+                  
+                  } 
+                 
+                 </View>
+                  )
+                  
+              
+              }) 
+             
+            } 
+        
+
+              {/* <View style={styles.contentBox}>
                 <Unorderedlist
                   bulletUnicode={0x2023}
                   style={styles.unorderedlist}>
@@ -250,7 +271,7 @@ const ContentScreen = ({navigation, route}) => {
                       styles.subTitle,
                       {color: themeforDarkMode.primaryText},
                     ]}>
-                    {data.subtitle}
+                    {'data.subtitle'}
                   </Text>
                 </Unorderedlist>
                 <Text
@@ -259,15 +280,16 @@ const ContentScreen = ({navigation, route}) => {
                     styles.contentParagraphTypography,
                     {color: themeforDarkMode.primaryText},
                   ]}>
-                  {data.description.content[0].content}
+                  {'data.description.content[0].content'}
                 </Text>
               </View>
             </View>
-          </View>
-          {/* // Container for the introduction portion */}
-        </View>
-      </View>
-      {/* Container */}
+          </View>  
+            </View> 
+         
+    
+      </View> */}
+    
     </ScrollView>
   );
 };

@@ -31,11 +31,11 @@ const BookmarkScreen = ({navigation}) => {
   const removeBookmarkData = async ({id}) => {
     try {
       let bookmarkData = await AsyncStorage.getItem('BookmarkID');
-      // console.log('kk', JSON.parse(bookmarkData).bookmark);
+//      // console.log('kk', JSON.parse(bookmarkData).bookmark);
       if (JSON.parse(bookmarkData).bookmark.length < 2) {
         setisBookmarkEmpty(true);
       } else {
-        // console.log(typeof JSON.parse(bookmarkData).bookmark);
+//        // console.log(typeof JSON.parse(bookmarkData).bookmark);
         //   // AsyncStorage.setItem(Bookmark,);
         let newBookmarkData = JSON.parse(bookmarkData).bookmark.filter(
           (item) => item != id,
@@ -50,7 +50,7 @@ const BookmarkScreen = ({navigation}) => {
             return item.id == data;
           });
         });
-        // console.log('shere', dataBookmark);
+//        // console.log('shere', dataBookmark);
         if (dataBookmark.length < 1) {
           setisBookmarkEmpty(true);
         }
@@ -66,7 +66,7 @@ const BookmarkScreen = ({navigation}) => {
       //     setBookmarkData(newBookmarkData);
       //   } else {
       //     let stringifieddata = JSON.stringify(newBookmarkData);
-      console.log(stringifieddata);
+//      console.log(stringifieddata);
       //     await AsyncStorage.setItem(
       //       'BookmarkID',
       //       JSON.stringify({bookmark: newBookmarkData}),
@@ -75,7 +75,7 @@ const BookmarkScreen = ({navigation}) => {
       //     setBookmarkData(stringifieddata);
       //   }
     } catch (err) {
-      // console.log('Error Removing bookmark', err);
+//      // console.log('Error Removing bookmark', err);
     }
   };
   const checkBookmarkStatus = async () => {
@@ -83,32 +83,32 @@ const BookmarkScreen = ({navigation}) => {
       let bookmarkData = await AsyncStorage.getItem('BookmarkID');
 
       let checker = await JSON.parse(bookmarkData).bookmark.length;
-      // console.log("1",bookmarkData,checker);
+//      // console.log("1",bookmarkData,checker);
       bookmarkData =
         checker >= 2 ? bookmarkData : await JSON.stringify({bookmark: [0]});
-      // console.log("sss",bookmarkData);
+//      // console.log("sss",bookmarkData);
       let finalData = await JSON.parse(bookmarkData).bookmark;
-      // console.log('final', finalData);
+//      // console.log('final', finalData);
       let parsedBookmarkData =
         typeof finalData === 'undefined' ? [0] : finalData;
-      // console.log('l', parsedBookmarkData);
+//      // console.log('l', parsedBookmarkData);
       if (finalData.length < 2) {
-        // console.log("is here");
+//        // console.log("is here");
         setisBookmarkEmpty(true);
-        // console.log('here', finalData.length);
+//        // console.log('here', finalData.length);
       }
       let dataBookmark = data.filter((item) => {
         return parsedBookmarkData.some((data) => {
           return item.id == data;
         });
       });
-      // console.log('shere', dataBookmark);
+//      // console.log('shere', dataBookmark);
       setBookmarkData(dataBookmark);
 
-      if (dataBookmark.length > 0) {
-        // console.log("finalss",dataBookmark.length);
-        setisBookmarkEmpty(false);
-      }
+//       if (dataBookmark.length > 0) {
+// //        // console.log("finalss",dataBookmark.length);
+//         setisBookmarkEmpty(false);
+//       }
     } catch (err) {
       // AsyncStorage.setItem(Bookmark,);
       //   let asyncData = await AsyncStorage.getItem('BookmarkID');
@@ -138,11 +138,13 @@ const BookmarkScreen = ({navigation}) => {
       // let stringifieddata = await JSON.stringify({ bookmark: verifiednewArray });
       // AsyncStorage.setItem('BookmarkID', stringifieddata);
       // setBookmark(stringifieddata);
-      // console.log('BookmarkStatus', err);
+//      // console.log('BookmarkStatus', err);
     }
   };
 
   useEffect(() => {
+console.log(isBookmakEmpty);
+console.log(BookmarkData);
     checkBookmarkStatus();
   }, [isBookmakEmpty, isFocused]);
   return (
@@ -174,13 +176,13 @@ const BookmarkScreen = ({navigation}) => {
           Toggle Theme
         </Text>
       </View> */}
-      {isBookmakEmpty ? (
+      {!isBookmakEmpty ? (
         <TouchableOpacity>
-          <Text>No Bookmark Set Currently</Text>
+          <Text >No Bookmark Set Currently</Text>
         </TouchableOpacity>
       ) : (
         <View style={styles.container}>
-          {!isBookmakEmpty &&
+          { 
             BookmarkData.map((item) => (
               <TouchableOpacity
                 onPress={() => {
@@ -192,7 +194,8 @@ const BookmarkScreen = ({navigation}) => {
                   styles.shadow,
                   {backgroundColor: themeforDarkMode.cardBox},
                 ]}>
-                <View style={styles.image}>
+                  <Text style={{color:'red'}}>hissssssssssssssssssssssssss</Text>
+                {/* <View style={styles.image}>
                   <Image
                     resizeMode="contain"
                     source={require('../assets/images/cuboidal.png')}
@@ -215,7 +218,7 @@ const BookmarkScreen = ({navigation}) => {
                   onPress={() => removeBookmarkData({id: item.id})}
                   style={styles.bookmark}>
                   <Icon name="bookmark-empty" size={24} color="#ABB4BD" />
-                </TouchableOpacity>
+                </TouchableOpacity> */}
               </TouchableOpacity>
             ))}
         </View>
