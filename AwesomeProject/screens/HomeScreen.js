@@ -4,7 +4,7 @@ import BottomTab from '../components/BottomTab';
 import {createIconSetFromFontello} from 'react-native-vector-icons';
 import fontelloConfig from '../src/config.json';
 const Icon = createIconSetFromFontello(fontelloConfig);
-import data from './data';
+import {topics, topicImages} from '../constants/mocks';
 import {useTheme} from '../src/utils/DarkTheme/ThemeManager';
 import {
   Dimensions,
@@ -23,7 +23,10 @@ import {colors} from '../constants/theme';
 const {width} = Dimensions.get('window');
 const HomeScreen = ({navigation}) => {
   const {mode, theme: themeforDarkMode, toggle} = useTheme();
-  const TopHotelCard = ({title, subtitle, imgSrc, item}) => {
+  // console.log('///////////////////////', mode, themeforDarkMode);
+
+  const SubTopicsCard = ({title, img}) => {
+    console.log('here');
     return (
       <TouchableOpacity
         style={[
@@ -32,9 +35,10 @@ const HomeScreen = ({navigation}) => {
             backgroundColor: themeforDarkMode.secondaryHeader,
           },
         ]}
-        onPress={() => {
-          navigation.navigate('Content', {data: item});
-        }}>
+        // onPress={() => {
+        //   navigation.navigate('Content', {data: item});
+        // }}
+      >
         <View
           style={{
             position: 'absolute',
@@ -53,7 +57,7 @@ const HomeScreen = ({navigation}) => {
         <Image
           resizeMode="cover"
           style={[styles.topHotelCardImage]}
-          source={imgSrc}
+          source={img}
         />
         <View style={{paddingHorizontal: 10}}>
           <Text
@@ -63,9 +67,6 @@ const HomeScreen = ({navigation}) => {
               color: themeforDarkMode.secondaryText,
             }}>
             {title}
-          </Text>
-          <Text style={{fontSize: 9, fontWeight: 'bold', color: colors.gray}}>
-            {subtitle}
           </Text>
         </View>
       </TouchableOpacity>
@@ -159,99 +160,60 @@ const HomeScreen = ({navigation}) => {
           ))}
         </Block>
 
-        <View style={styles.contentflatListHeader}>
-          <Text
-            style={{
-              paddingHorizontal: 12,
-              fontWeight: 'bold',
-              fontSize: 18,
-              color: themeforDarkMode.secondaryText,
-            }}>
-            HyperClombic Misopology
-          </Text>
-          <TouchableOpacity>
-            <Text
-              style={{
-                paddingHorizontal: 12,
-                color: colors.gray,
-                fontSize: 12,
-                fontWeight: 'bold',
-              }}>
-              View All
-            </Text>
-          </TouchableOpacity>
-        </View>
-
-        <FlatList
-          data={data}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={{
-            paddingLeft: 20,
-            marginTop: 10,
-            paddingBottom: 40,
-          }}
-          keyExtractor={(item) => {
-            return item.id.toString();
-          }}
-          renderItem={({item}) => {
-            return (
-              <TopHotelCard
-                item={item}
-                title={item.title}
-                subtitle={item.subtitle}
-                imgSrc={item.image}
+        {topics.map((item, mainindex) => {
+          return (
+            <>
+              <View key={mainindex} style={styles.contentflatListHeader}>
+                <Text
+                  style={{
+                    paddingHorizontal: 12,
+                    fontWeight: 'bold',
+                    fontSize: 18,
+                    color: themeforDarkMode.secondaryText,
+                  }}>
+                  {item.title}
+                </Text>
+                <TouchableOpacity>
+                  <Text
+                    style={{
+                      paddingHorizontal: 12,
+                      color: colors.gray,
+                      fontSize: 12,
+                      fontWeight: 'bold',
+                    }}>
+                    View All
+                  </Text>
+                </TouchableOpacity>
+              </View>
+              <FlatList
+                data={item.subtopics}
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                contentContainerStyle={{
+                  paddingLeft: 20,
+                  marginTop: 10,
+                  paddingBottom: 40,
+                }}
+                keyExtractor={(items, index) => {
+                  return items + index;
+                }}
+                renderItem={({item}) => {
+                  console.log('vh', item);
+                  return (
+                    <SubTopicsCard
+                      key={item.id}
+                      title={item.title}
+                      img={item.imgPath}
+                    />
+                  );
+                }}
               />
-            );
-          }}
-        />
+            </>
+          );
+        })}
 
-        <View style={styles.contentflatListHeader}>
-          <Text
-            style={{
-              paddingHorizontal: 12,
-              fontWeight: 'bold',
-              fontSize: 18,
-              color: themeforDarkMode.secondaryText,
-            }}>
-            Epithelial Tissue
-          </Text>
-          <TouchableOpacity>
-            <Text
-              style={{
-                paddingHorizontal: 12,
-                color: colors.gray,
-                fontSize: 12,
-                fontWeight: 'bold',
-              }}>
-              View All
-            </Text>
-          </TouchableOpacity>
-        </View>
-
-        <FlatList
-          data={data}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={{
-            paddingLeft: 20,
-            marginTop: 10,
-            paddingBottom: 40,
-          }}
-          keyExtractor={(item) => {
-            return item.id.toString();
-          }}
-          renderItem={({item}) => {
-            return (
-              <TopHotelCard
-                item={item}
-                title={item.title}
-                subtitle={item.subtitle}
-                imgSrc={item.image}
-              />
-            );
-          }}
-        />
+        {/* 
+        
         <View style={styles.contentflatListHeader}>
           <Text
             style={{
@@ -436,6 +398,52 @@ const HomeScreen = ({navigation}) => {
             );
           }}
         />
+        <View style={styles.contentflatListHeader}>
+          <Text
+            style={{
+              paddingHorizontal: 12,
+              fontWeight: 'bold',
+              fontSize: 18,
+              color: themeforDarkMode.secondaryText,
+            }}>
+            Epithelial Tissue
+          </Text>
+          <TouchableOpacity>
+            <Text
+              style={{
+                paddingHorizontal: 12,
+                color: colors.gray,
+                fontSize: 12,
+                fontWeight: 'bold',
+              }}>
+              View All
+            </Text>
+          </TouchableOpacity>
+        </View>
+
+        <FlatList
+          data={data}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{
+            paddingLeft: 20,
+            marginTop: 10,
+            paddingBottom: 40,
+          }}
+          keyExtractor={(item) => {
+            return item.id.toString();
+          }}
+          renderItem={({item}) => {
+            return (
+              <TopHotelCard
+                item={item}
+                title={item.title}
+                subtitle={item.subtitle}
+                imgSrc={item.image}
+              />
+            );
+          }}
+        /> */}
       </ScrollView>
       <View style={styles.premiumContainer}>
         <Text
@@ -558,8 +566,8 @@ const styles = StyleSheet.create({
   },
   topHotelCard: {
     justifyContent: 'space-evenly',
-    height: 130,
-    width: 130,
+    height: 150,
+    width: 150,
     backgroundColor: '#f1f1f1',
     // elevation: 10,
     shadowColor: '#000',
@@ -577,7 +585,7 @@ const styles = StyleSheet.create({
   },
   topHotelCardImage: {
     marginTop: 5,
-    height: 50,
+    height: 70,
     width: '100%',
     resizeMode: 'contain',
     justifyContent: 'center',
