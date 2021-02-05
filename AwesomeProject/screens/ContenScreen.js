@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useLayoutEffect } from 'react';
+import React, {useState, useEffect, useLayoutEffect} from 'react';
 import {
   View,
   Text,
@@ -12,27 +12,30 @@ import {
   Modal,
   TextInput,
 } from 'react-native';
-import { color } from 'react-native-reanimated';
+import {color} from 'react-native-reanimated';
 import Unorderedlist from 'react-native-unordered-list';
 import Slider from '../components/Slider';
-import { colors } from '../constants/theme';
+import {colors} from '../constants/theme';
 import fontelloConfig from '../src/config.json';
-import { createIconSetFromFontello } from 'react-native-vector-icons';
+import {useIsFocused} from '@react-navigation/native';
+import {createIconSetFromFontello} from 'react-native-vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {useTheme} from '../src/utils/DarkTheme/ThemeManager';
 const Icon = createIconSetFromFontello(fontelloConfig);
-import { heightPercentageToDP, widthPercentageToDP } from '../src/utils/responsive';
+import {
+  heightPercentageToDP,
+  widthPercentageToDP,
+} from '../src/utils/responsive';
 
 const width = Dimensions.get('screen').width;
 const height = width / 1.61;
 
-const ContentScreen = ({ navigation, route }) => {
-  const [Bookmark, setBookmark] = useState([]);
+const ContentScreen = ({navigation, route}) => {
+  const isFocused = useIsFocused();
+  const [Bookmark, setBookmark] = useState(JSON.stringify({bookmark: [0]}));
   const [isBookmark, setisBookmark] = useState(false);
-  const [modal, setModal] = useState(false);
-  const [noteTitle, setNoteTitle] = useState('Title');
-  const [noteContent, setNoteContent] = useState('Notes');
-  const { data } = route.params;
-
+  const {data} = route.params;
+  const {mode, theme: themeforDarkMode, toggle} = useTheme();
   // const getBookmarkData = async ()=>{
   //     try{
 
@@ -42,55 +45,118 @@ const ContentScreen = ({ navigation, route }) => {
   //      return stringBookmarkData;
   //     }
   // catch(err){
-  //     console.log('Error getting Bookmark',err);
+  //  //     console.log('Error getting Bookmark',err);
   // }
   //  }
-  const saveBookmarkData = async ({ id }) => {
+  const saveBookmarkData = async ({id}) => {
     try {
-      // AsyncStorage.setItem(Bookmark,);
-      let asyncData = await AsyncStorage.getItem('BookmarkID');
-      asyncData =
-        asyncData == null ? JSON.stringify({ bookmark: [0] }) : asyncData;
-      await JSON.parse(asyncData).bookmark.length;
+      let bookmarkData = await AsyncStorage.getItem('BookmarkID');
+      bookmarkData = bookmarkData
+        ? bookmarkData
+        : await JSON.stringify({bookmark: [0]});
+      let finalData = await JSON.parse(bookmarkData).bookmark;
 
-      let newArray = await JSON.parse(asyncData).bookmark;
-      let verifiednewArray = newArray.filter((item) => {
-        return item != id;
-      });
-      if (newArray.length == verifiednewArray.length) {
-        let length = verifiednewArray.length;
-        verifiednewArray[length] = id;
-      } else {
-        setisBookmark(!isBookmark);
+      let parsedBookmarkData =
+        typeof finalData === 'undefined' ? [0] : finalData;
+
+      if (parsedBookmarkData.length >= 1) {
+        let parsedNewArray = parsedBookmarkData.filter((item) => {
+          return item != id;
+        });
+        //        console.log(parsedNewArray.length, parsedBookmarkData.length);
+        if (parsedBookmarkData.length == parsedNewArray.length) {
+          //          console.log('aa', parsedBookmarkData);
+          let length = parsedNewArray.length;
+          parsedNewArray[length] = id;
+          await AsyncStorage.setItem(
+            'BookmarkID',
+            JSON.stringify({bookmark: parsedNewArray}),
+          );
+          setisBookmark(true);
+          //          console.log(Bookmark);
+        } else {
+          await AsyncStorage.setItem(
+            'BookmarkID',
+            JSON.stringify({bookmark: parsedNewArray}),
+          );
+          setisBookmark(!isBookmark);
+        }
       }
-
-      let stringifieddata = await JSON.stringify({ bookmark: verifiednewArray });
-      AsyncStorage.setItem('BookmarkID', stringifieddata);
-      console.log('STRIGIFIED', stringifieddata);
-      setBookmark(stringifieddata);
     } catch (err) {
-      console.log('Error saving bookmark', err);
+      //      console.log('Error saving bookmark data', err);
     }
   };
+  //   try {
+  //     // AsyncStorage.setItem(Bookmark,);
+  //     let asyncData = await AsyncStorage.getItem('BookmarkID');
 
-  useEffect(() => {
-    AsyncStorage.getItem('BookmarkID').then((value) => {
-      console.log('here' + value);
-      let asyncData = value == null ? JSON.stringify({ bookmark: [0] }) : value;
+  //     asyncData =
+  //       asyncData == null ? await JSON.stringify({bookmark: [0]}) : asyncData;
+  //  //     console.log('asyncdata', JSON.parse(asyncData));
+  //     // if(asyncData.length){
+  //     //   AsyncStorage.setItem('BookmarkID', JSON.stringify({ bookmark: [id] })  );
+  //     //   setBookmark( JSON.stringify({ bookmark: [id] }));
+  //     // }
 
-      setBookmark(asyncData);
-      let AsyncBookmarkData = JSON.parse(asyncData).bookmark;
-      AsyncBookmarkData.map((item) => {
+  //  //     console.log('aaaaaaaaaaaaaaaaaaaaaaaa', asyncData);
+  //     let newArray = await JSON.parse(asyncData);
+  //  //     console.log('new', newArray);
+
+  //     let verifiednewArray = newArray.filter((item) => {
+  //       return item != id;
+  //     });
+  //     if (newArray.length == verifiednewArray.length) {
+  //       let length = verifiednewArray.length;
+  //       verifiednewArray[length] = id;
+  //     } else {
+  //       setisBookmark(!isBookmark);
+  //     }
+
+  //     let stringifieddata = await JSON.stringify({bookmark: verifiednewArray});
+  //     AsyncStorage.setItem('BookmarkID', stringifieddata);
+  //  //     console.log('STRIGIFIED', stringifieddata);
+  //     setBookmark(stringifieddata);
+  //   } catch (err) {
+  //  //     console.log('Error saving bookmark', err);
+  //   }
+  // };
+  const getBookmarkDatas = async () => {
+    let bookmarkData = await AsyncStorage.getItem('BookmarkID');
+    bookmarkData = bookmarkData
+      ? bookmarkData
+      : await JSON.stringify({bookmark: [0]});
+    let parsedBookmarkData = await JSON.parse(bookmarkData).bookmark;
+    parsedBookmarkData =
+      typeof parsedBookmarkData === 'undefined' ? [0] : parsedBookmarkData;
+    if (parsedBookmarkData.length > 1) {
+      parsedBookmarkData.map((item) => {
         if (item == data.id) {
-          // console.log(item,data.id);
           setisBookmark(true);
           return;
         }
       });
-    });
+    }
+  };
+  useEffect(() => {
+    getBookmarkDatas();
 
-    console.log('Is bookmark', isBookmark);
-  }, [Bookmark]);
+    // AsyncStorage.getItem('BookmarkID').then((value) => {
+    //    //   console.log('here' + value);
+    //   let asyncData = value == null ? JSON.stringify({bookmark: [0]}) : value;
+    //   setBookmark(asyncData);
+    //   let AsyncBookmarkData = JSON.parse(asyncData).bookmark;
+    //   if (!AsyncBookmarkData) return;
+    //   AsyncBookmarkData.map((item) => {
+    //     if (item == data.id) {
+    //    //       // console.log(item,data.id);
+    //       setisBookmark(true);
+    //       return;
+    //     }
+    //   });
+    // });
+    //    // console.log('Is bookmark', isBookmark);
+    //    console.log(Bookmark);
+  }, [isBookmark, Bookmark]);
 
   React.useLayoutEffect(() => {
     navigation.setOptions({
@@ -106,36 +172,39 @@ const ContentScreen = ({ navigation, route }) => {
             style={{
               color: 'white',
               fontSize: 18,
-              backgroundColor: colors.primary,
             }}>
             Epithelial Tissue
           </Text>
-          <View style={{ flexDirection: 'row' }}>
-            <TouchableOpacity onPress={() => {setModal(true);}}>
-              <Icon name="edit" size={23} color="white" />
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => saveBookmarkData({ id: data.id })}>
+          <View style={{flexDirection: 'row'}}>
+            <Icon
+              style={{marginHorizontal: 0}}
+              name="edit"
+              size={25}
+              color="#fff"
+            />
+
+            <TouchableOpacity onPress={() => saveBookmarkData({id: data.id})}>
               {isBookmark ? (
                 <Icon
-                  style={{ marginHorizontal: 20 }}
+                  style={{marginHorizontal: 20}}
                   name="bookmark"
                   size={24}
                   color="#fff"
                 />
               ) : (
-                  <Icon
-                    style={{ marginHorizontal: 20 }}
-                    name="bookmark-empty"
-                    size={24}
-                    color="#fff"
-                  />
-                )}
+                <Icon
+                  style={{marginHorizontal: 20}}
+                  name="bookmark-empty"
+                  size={24}
+                  color="#fff"
+                />
+              )}
             </TouchableOpacity>
           </View>
         </View>
       ),
       headerStyle: {
-        backgroundColor: colors.primary,
+        backgroundColor: themeforDarkMode.primaryHeader,
       },
       headerTintColor: '#fff',
     });
@@ -143,7 +212,7 @@ const ContentScreen = ({ navigation, route }) => {
   return (
     <ScrollView
       style={{
-        backgroundColor: 'lightgrey',
+        backgroundColor: themeforDarkMode.contentBackground,
       }}>
       <Modal visible={modal} transparent={true} animationType="slide">
         <View style={[styles.modalContainer]}>
@@ -173,23 +242,43 @@ const ContentScreen = ({ navigation, route }) => {
           <View>
             <Text style={styles.contentTitleText}>{data.title}</Text>
             <Text
-              style={[styles.contentBox, styles.contentParagraphTypography]}>
+              style={[
+                styles.contentBox,
+                styles.contentParagraphTypography,
+                {color: themeforDarkMode.primaryText},
+              ]}>
               {data.introduction.content}
             </Text>
 
             <View>
-              <Text style={styles.contentSubTitleText}>{data.subtitle}</Text>
+              <Text
+                style={[
+                  styles.contentSubTitleText,
+                  {
+                    color: themeforDarkMode.primaryText,
+                    borderBottomColor: themeforDarkMode.primaryText,
+                  },
+                ]}>
+                {data.subtitle}
+              </Text>
 
               <View style={styles.contentBox}>
                 <Unorderedlist
                   bulletUnicode={0x2023}
                   style={styles.unorderedlist}>
-                  <Text style={styles.subTitle}>{data.subtitle}</Text>
+                  <Text
+                    style={[
+                      styles.subTitle,
+                      {color: themeforDarkMode.primaryText},
+                    ]}>
+                    {data.subtitle}
+                  </Text>
                 </Unorderedlist>
                 <Text
                   style={[
                     styles.contentBox,
                     styles.contentParagraphTypography,
+                    {color: themeforDarkMode.primaryText},
                   ]}>
                   {data.description.content[0].content}
                 </Text>
@@ -222,7 +311,7 @@ const styles = StyleSheet.create({
     marginTop: heightPercentageToDP(3),
     marginBottom: heightPercentageToDP(1.3),
     marginHorizontal: widthPercentageToDP(0.8),
-    fontSize: widthPercentageToDP(8.5)
+    fontSize: widthPercentageToDP(8.5),
   },
   contentSubTitleText: {
     // paddingBottom: 5,
@@ -237,8 +326,6 @@ const styles = StyleSheet.create({
     marginHorizontal: widthPercentageToDP(3.5),
     // fontSize: widthPercentageToDP(3.9),
     fontSize: widthPercentageToDP(5.1),
-
-
   },
   subTitle: {
     color: 'black',
@@ -268,7 +355,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingVertical: heightPercentageToDP(12)
+    paddingVertical: heightPercentageToDP(12),
   },
   modalWrapper: {
     flex: 1,
@@ -276,11 +363,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderRadius: 10,
     overflow: 'hidden',
-    width: widthPercentageToDP(85)
+    width: widthPercentageToDP(85),
   },
   closeButtonText: {
-    // flex:0.5,
-    color: "red",
+    // flex:0.2,
+    color: 'red',
     // fontSize: 16,
     fontSize: widthPercentageToDP(4),
   },
@@ -316,7 +403,7 @@ const styles = StyleSheet.create({
     // backgroundColor: colors.primary,
     borderColor: 'green',
     borderTopWidth: StyleSheet.hairlineWidth,
-    paddingVertical: heightPercentageToDP(1.8)
+    paddingVertical: heightPercentageToDP(1.8),
   },
   modalTitle: {
     // marginHorizontal: 25,
@@ -338,14 +425,12 @@ const styles = StyleSheet.create({
     fontFamily: 'LiberationSerif-Regular',
     lineHeight: heightPercentageToDP(2.9),
     fontSize: widthPercentageToDP(4),
-
-
   },
   contentBox: {
     // paddingHorizontal: 25,
     // paddingVertical: 5,
     paddingHorizontal: widthPercentageToDP(5.8),
-    paddingVertical: heightPercentageToDP(0.5)
+    paddingVertical: heightPercentageToDP(0.5),
   },
 });
 

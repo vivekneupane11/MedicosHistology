@@ -4,8 +4,8 @@ import BottomTab from '../components/BottomTab';
 import {createIconSetFromFontello} from 'react-native-vector-icons';
 import fontelloConfig from '../src/config.json';
 const Icon = createIconSetFromFontello(fontelloConfig);
-import data from './data';
-
+import {topics, topicImages} from '../constants/mocks';
+import {useTheme} from '../src/utils/DarkTheme/ThemeManager';
 import {
   Dimensions,
   View,
@@ -22,12 +22,23 @@ import {colors} from '../constants/theme';
 
 const {width} = Dimensions.get('window');
 const HomeScreen = ({navigation}) => {
-  const TopHotelCard = ({title, subtitle, imgSrc,item}) => {
-  
+  const {mode, theme: themeforDarkMode, toggle} = useTheme();
+  // console.log('///////////////////////', mode, themeforDarkMode);
+
+  const SubTopicsCard = ({title, img}) => {
+    console.log('here');
     return (
-      <TouchableOpacity style={styles.topHotelCard}  onPress={() => {
-        navigation.navigate('Content', {data: item});
-      }}>
+      <TouchableOpacity
+        style={[
+          styles.topHotelCard,
+          {
+            backgroundColor: themeforDarkMode.secondaryHeader,
+          },
+        ]}
+        // onPress={() => {
+        //   navigation.navigate('Content', {data: item});
+        // }}
+      >
         <View
           style={{
             position: 'absolute',
@@ -46,12 +57,16 @@ const HomeScreen = ({navigation}) => {
         <Image
           resizeMode="cover"
           style={[styles.topHotelCardImage]}
-          source={imgSrc}
+          source={img}
         />
         <View style={{paddingHorizontal: 10}}>
-          <Text style={{fontSize: 13, fontWeight: 'bold'}}>{title}</Text>
-          <Text style={{fontSize: 9, fontWeight: 'bold', color: colors.gray}}>
-            {subtitle}
+          <Text
+            style={{
+              fontSize: 13,
+              fontWeight: 'bold',
+              color: themeforDarkMode.secondaryText,
+            }}>
+            {title}
           </Text>
         </View>
       </TouchableOpacity>
@@ -59,8 +74,34 @@ const HomeScreen = ({navigation}) => {
   };
 
   return (
-    <ScrollView style={{backgroundColor: '#f1f1f1'}}>
-      <BackgroundHeader navigation={navigation} />
+    <ScrollView style={{backgroundColor: themeforDarkMode.secondaryHeader}}>
+      {/* <BackgroundHeader navigation={navigation} /> */}
+
+      {/* <View>
+        <Text style={{ color: themeforDarkMode.secondaryText }}>
+           Current themeforDarkMode: {mode}
+        </Text>
+        <Text
+          style={{ color: themeforDarkMode.secondaryText,backgroundColor:themeforDarkMode.premiumContentBackgroundsecondaryText }}
+          onPress={() => toggle()}
+         >
+           Toggle Theme
+         </Text>
+      </View>
+
+
+      <View>
+        <Text  >
+           Current Theme: {mode}
+        </Text>
+        <Text
+          style={{ backgroundColor:"red" }}
+          onPress={() => toggle()}
+         >
+           Toggle Theme
+         </Text>
+      </View> */}
+
       {/* 
 
 <BottomTab/> */}
@@ -81,7 +122,7 @@ const HomeScreen = ({navigation}) => {
               style={[
                 styles.category,
                 {
-                  backgroundColor: '#f0f0f0',
+                  backgroundColor: themeforDarkMode.secondaryHeader,
                   shadowColor: '#000',
                   shadowOffset: {
                     width: 0,
@@ -95,14 +136,20 @@ const HomeScreen = ({navigation}) => {
               ]}>
               <TouchableOpacity
                 style={{justifyContent: 'center', alignItems: 'center'}}
-                onPress={() => navigation.navigate('Explore', {category})}>
+                
+                onPress={() => navigation.navigate('ATips')}>
                 <Badge
                   margin={[0, 0, 15]}
                   size={50}
                   color="rgba(41,216,143,0.20)">
                   <Image source={category.image} />
                 </Badge>
-                <Text height={20} style={{fontWeight: '900'}}>
+                <Text
+                  height={20}
+                  style={{
+                    fontWeight: '900',
+                    color: themeforDarkMode.topCategoryText,
+                  }}>
                   {category.name}
                 </Text>
                 <Text gray caption>
@@ -113,10 +160,69 @@ const HomeScreen = ({navigation}) => {
           ))}
         </Block>
 
+        {topics.map((item, mainindex) => {
+          return (
+            <>
+              <View key={mainindex} style={styles.contentflatListHeader}>
+                <Text
+                  style={{
+                    paddingHorizontal: 12,
+                    fontWeight: 'bold',
+                    fontSize: 18,
+                    color: themeforDarkMode.secondaryText,
+                  }}>
+                  {item.title}
+                </Text>
+                <TouchableOpacity>
+                  <Text
+                    style={{
+                      paddingHorizontal: 12,
+                      color: colors.gray,
+                      fontSize: 12,
+                      fontWeight: 'bold',
+                    }}>
+                    View All
+                  </Text>
+                </TouchableOpacity>
+              </View>
+              <FlatList
+                data={item.subtopics}
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                contentContainerStyle={{
+                  paddingLeft: 20,
+                  marginTop: 10,
+                  paddingBottom: 40,
+                }}
+                keyExtractor={(items, index) => {
+                  return items + index;
+                }}
+                renderItem={({item}) => {
+                  console.log('vh', item);
+                  return (
+                    <SubTopicsCard
+                      key={item.id}
+                      title={item.title}
+                      img={item.imgPath}
+                    />
+                  );
+                }}
+              />
+            </>
+          );
+        })}
+
+        {/* 
+        
         <View style={styles.contentflatListHeader}>
           <Text
-            style={{paddingHorizontal: 12, fontWeight: 'bold', fontSize: 18}}>
-            HyperClombic Misopology
+            style={{
+              paddingHorizontal: 12,
+              fontWeight: 'bold',
+              fontSize: 18,
+              color: themeforDarkMode.secondaryText,
+            }}>
+            Epithelial Tissue
           </Text>
           <TouchableOpacity>
             <Text
@@ -145,36 +251,38 @@ const HomeScreen = ({navigation}) => {
           }}
           renderItem={({item}) => {
             return (
-              
-                <TopHotelCard
+              <TopHotelCard
                 item={item}
-                  title={item.title}
-                  subtitle={item.subtitle}
-                  imgSrc={item.image}
-                />
-             
+                title={item.title}
+                subtitle={item.subtitle}
+                imgSrc={item.image}
+              />
             );
           }}
         />
+        <View style={styles.contentflatListHeader}>
+          <Text
+            style={{
+              paddingHorizontal: 12,
+              fontWeight: 'bold',
+              fontSize: 18,
+              color: themeforDarkMode.secondaryText,
+            }}>
+            Epithelial Tissue
+          </Text>
+          <TouchableOpacity>
+            <Text
+              style={{
+                paddingHorizontal: 12,
+                color: colors.gray,
+                fontSize: 12,
+                fontWeight: 'bold',
+              }}>
+              View All
+            </Text>
+          </TouchableOpacity>
+        </View>
 
-        <View style={styles.contentflatListHeader}>
-          <Text
-            style={{paddingHorizontal: 12, fontWeight: 'bold', fontSize: 18}}>
-            Epithelial Tissue
-          </Text>
-          <TouchableOpacity>
-            <Text
-              style={{
-                paddingHorizontal: 12,
-                color: colors.gray,
-                fontSize: 12,
-                fontWeight: 'bold',
-              }}>
-              View All
-            </Text>
-          </TouchableOpacity>
-        </View>
-       
         <FlatList
           data={data}
           horizontal
@@ -189,20 +297,23 @@ const HomeScreen = ({navigation}) => {
           }}
           renderItem={({item}) => {
             return (
-              
-                <TopHotelCard
+              <TopHotelCard
                 item={item}
-                  title={item.title}
-                  subtitle={item.subtitle}
-                  imgSrc={item.image}
-                />
-             
+                title={item.title}
+                subtitle={item.subtitle}
+                imgSrc={item.image}
+              />
             );
           }}
         />
         <View style={styles.contentflatListHeader}>
           <Text
-            style={{paddingHorizontal: 12, fontWeight: 'bold', fontSize: 18}}>
+            style={{
+              paddingHorizontal: 12,
+              fontWeight: 'bold',
+              fontSize: 18,
+              color: themeforDarkMode.secondaryText,
+            }}>
             Epithelial Tissue
           </Text>
           <TouchableOpacity>
@@ -217,7 +328,7 @@ const HomeScreen = ({navigation}) => {
             </Text>
           </TouchableOpacity>
         </View>
-       
+
         <FlatList
           data={data}
           horizontal
@@ -232,20 +343,23 @@ const HomeScreen = ({navigation}) => {
           }}
           renderItem={({item}) => {
             return (
-              
-                <TopHotelCard
+              <TopHotelCard
                 item={item}
-                  title={item.title}
-                  subtitle={item.subtitle}
-                  imgSrc={item.image}
-                />
-             
+                title={item.title}
+                subtitle={item.subtitle}
+                imgSrc={item.image}
+              />
             );
           }}
         />
         <View style={styles.contentflatListHeader}>
           <Text
-            style={{paddingHorizontal: 12, fontWeight: 'bold', fontSize: 18}}>
+            style={{
+              paddingHorizontal: 12,
+              fontWeight: 'bold',
+              fontSize: 18,
+              color: themeforDarkMode.secondaryText,
+            }}>
             Epithelial Tissue
           </Text>
           <TouchableOpacity>
@@ -260,7 +374,7 @@ const HomeScreen = ({navigation}) => {
             </Text>
           </TouchableOpacity>
         </View>
-       
+
         <FlatList
           data={data}
           horizontal
@@ -275,20 +389,23 @@ const HomeScreen = ({navigation}) => {
           }}
           renderItem={({item}) => {
             return (
-              
-                <TopHotelCard
+              <TopHotelCard
                 item={item}
-                  title={item.title}
-                  subtitle={item.subtitle}
-                  imgSrc={item.image}
-                />
-             
+                title={item.title}
+                subtitle={item.subtitle}
+                imgSrc={item.image}
+              />
             );
           }}
         />
         <View style={styles.contentflatListHeader}>
           <Text
-            style={{paddingHorizontal: 12, fontWeight: 'bold', fontSize: 18}}>
+            style={{
+              paddingHorizontal: 12,
+              fontWeight: 'bold',
+              fontSize: 18,
+              color: themeforDarkMode.secondaryText,
+            }}>
             Epithelial Tissue
           </Text>
           <TouchableOpacity>
@@ -303,7 +420,7 @@ const HomeScreen = ({navigation}) => {
             </Text>
           </TouchableOpacity>
         </View>
-       
+
         <FlatList
           data={data}
           horizontal
@@ -318,68 +435,33 @@ const HomeScreen = ({navigation}) => {
           }}
           renderItem={({item}) => {
             return (
-              
-                <TopHotelCard
+              <TopHotelCard
                 item={item}
-                  title={item.title}
-                  subtitle={item.subtitle}
-                  imgSrc={item.image}
-                />
-             
+                title={item.title}
+                subtitle={item.subtitle}
+                imgSrc={item.image}
+              />
             );
           }}
-        />
-        <View style={styles.contentflatListHeader}>
-          <Text
-            style={{paddingHorizontal: 12, fontWeight: 'bold', fontSize: 18}}>
-            Epithelial Tissue
-          </Text>
-          <TouchableOpacity>
-            <Text
-              style={{
-                paddingHorizontal: 12,
-                color: colors.gray,
-                fontSize: 12,
-                fontWeight: 'bold',
-              }}>
-              View All
-            </Text>
-          </TouchableOpacity>
-        </View>
-       
-        <FlatList
-          data={data}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={{
-            paddingLeft: 20,
-            marginTop: 10,
-            paddingBottom: 40,
-          }}
-          keyExtractor={(item) => {
-            return item.id.toString();
-          }}
-          renderItem={({item}) => {
-            return (
-              
-                <TopHotelCard
-                item={item}
-                  title={item.title}
-                  subtitle={item.subtitle}
-                  imgSrc={item.image}
-                />
-             
-            );
-          }}
-        />
+        /> */}
       </ScrollView>
       <View style={styles.premiumContainer}>
-        <Text style={{paddingHorizontal: 12, fontWeight: 'bold', fontSize: 18}}>
+        <Text
+          style={{
+            paddingHorizontal: 12,
+            fontWeight: 'bold',
+            fontSize: 18,
+            color: themeforDarkMode.secondaryText,
+          }}>
           Premium Contents
         </Text>
         <View style={styles.premiumWrapper}>
           <TouchableOpacity>
-            <View style={styles.premiumContent}>
+            <View
+              style={[
+                styles.premiumContent,
+                {backgroundColor: themeforDarkMode.premiumContentBackground},
+              ]}>
               <View style={styles.toppremiumIcons}>
                 <Icon
                   style={{paddingHorizontal: 7}}
@@ -395,8 +477,17 @@ const HomeScreen = ({navigation}) => {
                   source={require('../assets/logos/test.png')}
                 />
               </View>
-              <View style={styles.premiumFooter}>
-                <Text style={{fontSize: 14, fontWeight: 'bold'}}>
+              <View
+                style={[
+                  styles.premiumFooter,
+                  {backgroundColor: themeforDarkMode.primaryBackground},
+                ]}>
+                <Text
+                  style={{
+                    fontSize: 14,
+                    fontWeight: 'bold',
+                    color: themeforDarkMode.secondaryText,
+                  }}>
                   Premium Content
                 </Text>
                 <Text
@@ -412,7 +503,11 @@ const HomeScreen = ({navigation}) => {
             </View>
           </TouchableOpacity>
           <TouchableOpacity>
-            <View style={styles.premiumContent}>
+            <View
+              style={[
+                styles.premiumContent,
+                {backgroundColor: themeforDarkMode.premiumContentBackground},
+              ]}>
               <View style={styles.toppremiumIcons}>
                 <Icon
                   style={{paddingHorizontal: 7}}
@@ -428,8 +523,17 @@ const HomeScreen = ({navigation}) => {
                   source={require('../assets/logos/test.png')}
                 />
               </View>
-              <View style={styles.premiumFooter}>
-                <Text style={{fontSize: 14, fontWeight: 'bold'}}>
+              <View
+                style={[
+                  styles.premiumFooter,
+                  {backgroundColor: themeforDarkMode.primaryBackground},
+                ]}>
+                <Text
+                  style={{
+                    fontSize: 14,
+                    fontWeight: 'bold',
+                    color: themeforDarkMode.secondaryText,
+                  }}>
                   Premium Content
                 </Text>
                 <Text
@@ -462,8 +566,8 @@ const styles = StyleSheet.create({
   },
   topHotelCard: {
     justifyContent: 'space-evenly',
-    height: 130,
-    width: 130,
+    height: 150,
+    width: 150,
     backgroundColor: '#f1f1f1',
     // elevation: 10,
     shadowColor: '#000',
@@ -481,7 +585,7 @@ const styles = StyleSheet.create({
   },
   topHotelCardImage: {
     marginTop: 5,
-    height: 50,
+    height: 70,
     width: '100%',
     resizeMode: 'contain',
     justifyContent: 'center',
