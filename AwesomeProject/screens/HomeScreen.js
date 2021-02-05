@@ -135,7 +135,8 @@ const HomeScreen = ({navigation}) => {
               ]}>
               <TouchableOpacity
                 style={{justifyContent: 'center', alignItems: 'center'}}
-                onPress={() => navigation.navigate('Explore', {category})}>
+                
+                onPress={() => navigation.navigate('ATips')}>
                 <Badge
                   margin={[0, 0, 15]}
                   size={50}

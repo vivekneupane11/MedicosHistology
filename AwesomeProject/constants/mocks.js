@@ -26,19 +26,19 @@ const categoriesone = [
  
     {
       id: "seeds",
-      name: "Take a quiz",
+      name: "Introduction",
       tags: ["products", "shop"],
       count: 'Start Quiz',
             image: require("../assets/logos/google.png")    },
     {
       id: "flowers",
-      name: "Expert Tips",
+      name: "A+ Tips",
       tags: ["products", "inspirations"],
       count: 'Start Quiz',
             image: require("../assets/logos/google.png")
     },
     {
-      id: "sprayers",
+      id: "Staining",
       name: "Todays Special",
       tags: ["products", "shop"],
       count: 'Start Quiz',
@@ -46,7 +46,7 @@ const categoriesone = [
     },
     {
       id: "sprayers",
-      name: "Todays Speciggal",
+      name: "Basic Histology",
       tags: ["products", "shop"],
       count: 'Start Quiz',
             image: require("../assets/logos/google.png")

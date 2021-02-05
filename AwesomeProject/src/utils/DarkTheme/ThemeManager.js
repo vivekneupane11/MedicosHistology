@@ -4,11 +4,13 @@ import {getTheme} from './theme';
 
 // set default colour scheme from OS
 const osTheme = Appearance.getColorScheme();
-console.log(osTheme);
+console.log('lets check os theme',typeof osTheme);
+let ostheme = (osTheme == "no-preference") ? "light" : osTheme;
+ 
 // initiate context
 export const ManageThemeContext = React.createContext({
-  mode: osTheme,
-  theme: getTheme(osTheme),
+  mode: ostheme,
+  theme: getTheme(ostheme),
   toggle: () => {},
 });
 
@@ -18,7 +20,7 @@ export const useTheme = () => React.useContext(ManageThemeContext);
 // initiate context provider
 export class ThemeManager extends React.Component {
   state = {
-    mode: osTheme,
+    mode: ostheme,
   };
 
   componentDidUpdate() {
