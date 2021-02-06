@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
-import React, {useState, useEffect} from 'react';
-import {StatusBar, View, Text} from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { StatusBar, View, Text } from 'react-native';
 import {
   NavigationContainer,
   DefaultTheme,
@@ -19,21 +19,24 @@ import ContentScreen from './screens/ContenScreen';
 import SearchScreen from './screens/SearchScreen';
 import SettingScreen from './screens/SettingScreen';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {createDrawerNavigator} from '@react-navigation/drawer';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import DrawerContent from './screens/DrawerContent';
 import BookmarkScreen from './screens/BookmarkScreen';
 import NoteScreen from './screens/NoteScreen';
 import TermsAndConditionsScreen from './screens/TermsAndConditionsScreen';
 import PrivacyPolicyScreen from './screens/PrivacyPolicyScreen';
 import AboutUsScreen from './screens/AboutUsScreen';
-import {colors} from './constants/theme';
-import {AppearanceProvider, useColorScheme} from 'react-native-appearance';
-import {enableScreens} from 'react-native-screens';
-import {useTheme, ThemeManager} from './src/utils/DarkTheme/ThemeManager';
-import {LanguageManager} from './src/utils/Language/LanguageManager';
-import {FontsizeManager} from './src/utils/FontSize/FontSizeManager';
-import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
+import { colors } from './constants/theme';
+import { AppearanceProvider, useColorScheme } from 'react-native-appearance';
+import { enableScreens } from 'react-native-screens';
+import { useTheme, ThemeManager } from './src/utils/DarkTheme/ThemeManager';
+import { LanguageManager } from './src/utils/Language/LanguageManager';
+import { FontsizeManager } from './src/utils/FontSize/FontSizeManager';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import BackgroundHeader from './components/BackgroundHeader';
+import ATipsScreen from './screens/ATipsScreen';
+import SplashScreen from 'react-native-splash-screen'
+
 enableScreens();
 
 const Tab = createMaterialTopTabNavigator();
@@ -41,13 +44,15 @@ const AppStack = createStackNavigator();
 // const SearchStack = createStackNavigator();
 
 const AppStackScreen = () => {
-  const {mode, theme: themeforDarkMode, toggle} = useTheme();
+
+
+  const { mode, theme: themeforDarkMode, toggle } = useTheme();
   return (
     <AppStack.Navigator>
       {/* MyTabs is rendered here so that content and search screen doesnot show the tabs */}
 
       <AppStack.Screen
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
         name="Home"
         component={MyTabs}
       />
@@ -57,6 +62,13 @@ const AppStackScreen = () => {
         }}
         name="Content"
         component={ContentScreen}
+      />
+      <AppStack.Screen
+        options={{
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+        }}
+        name="ATips"
+        component={ATipsScreen}
       />
       <AppStack.Screen
         name="Search"
@@ -104,8 +116,8 @@ function MyTabs() {
       tabBar={(props) => <BackgroundHeader {...props} />}
       tabBarOptions={{
         activeTintColor: '#e91e63',
-        labelStyle: {fontSize: 12},
-        style: {backgroundColor: 'powderblue'},
+        labelStyle: { fontSize: 12 },
+        style: { backgroundColor: 'powderblue' },
       }}>
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Bookmarks" component={BookmarkScreen} />
@@ -254,6 +266,7 @@ function MyTabs() {
 const Drawer = createDrawerNavigator();
 
 const App = () => {
+  useEffect(() => SplashScreen.hide());
   const scheme = useColorScheme();
   // const [isFirstLaunch,setisFirstLaunch] = useState(null);
   // useEffect(()=>{
