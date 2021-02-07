@@ -139,6 +139,8 @@ const BookmarkScreen = ({navigation}) => {
       // AsyncStorage.setItem('BookmarkID', stringifieddata);
       // setBookmark(stringifieddata);
       //      // console.log('BookmarkStatus', err);
+    } catch (err) {
+      console.log('Error checking bookmark status', err);
     }
   };
 
@@ -220,7 +222,6 @@ const BookmarkScreen = ({navigation}) => {
           ))}
         </View>
       )}
-      =======
     </ScrollView>
   );
 };

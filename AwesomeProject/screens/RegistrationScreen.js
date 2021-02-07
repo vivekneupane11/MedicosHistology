@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext, useState} from 'react';
 import {
   StyleSheet,
   Text,
@@ -9,14 +9,18 @@ import {
   Dimensions,
 } from 'react-native';
 import InputTextField from '../components/InputTextField';
-import { colors } from '../constants/theme';
+import {colors} from '../constants/theme';
+import {AuthContext} from '../src/utils/Authentication/AuthProvider';
 import {
   widthPercentageToDP,
   heightPercentageToDP,
 } from '../src/utils/responsive';
 
-const { width } = Dimensions.get('window');
-const RegistartionScreen = ({ navigation }) => {
+const {width} = Dimensions.get('window');
+const RegistartionScreen = ({navigation}) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const {register} = useContext(AuthContext);
   return (
     <ScrollView style={styles.container}>
       <View>
@@ -38,6 +42,12 @@ const RegistartionScreen = ({ navigation }) => {
           <InputTextField
             iconname="user"
             style={[styles.inputTitle, styles.formField]}
+            placeholderText="Email address"
+            onChangeText={(email) => setEmail(email)}
+          />
+          <InputTextField
+            iconname="user"
+            style={[styles.inputTitle, styles.formField]}
             placeholderText="Gender"
           />
           <InputTextField
@@ -55,6 +65,7 @@ const RegistartionScreen = ({ navigation }) => {
             placeholderText="Password"
             isSecure={true}
             iconname="lock"
+            onChangeText={(password) => setPassword(password)}
           />
           <InputTextField
             style={styles.formField}
@@ -63,7 +74,7 @@ const RegistartionScreen = ({ navigation }) => {
             iconname="lock"
           />
           <TouchableOpacity
-            onPress={() => navigation.navigate('Home')}
+            onPress={() => register(email, password)}
             style={[styles.submitContainer, styles.f_c_c_c, styles.shadow]}>
             <Text style={[styles.text, styles.buttonText]}>Sign Up</Text>
           </TouchableOpacity>
@@ -90,7 +101,7 @@ const styles = StyleSheet.create({
     // marginTop: width / 12,
     // marginBottom: width / 30,
     marginTop: heightPercentageToDP(4.3),
-    marginBottom: heightPercentageToDP(1.6)
+    marginBottom: heightPercentageToDP(1.6),
   },
   imageContainer: {
     // marginVertical: 10,
@@ -100,8 +111,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     marginVertical: heightPercentageToDP(1.2),
     height: heightPercentageToDP(12),
-    width: widthPercentageToDP(25)
-
+    width: widthPercentageToDP(25),
   },
   headerText: {
     // marginTop: 10,
@@ -109,30 +119,30 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     color: 'white',
     marginTop: heightPercentageToDP(1),
-    fontSize: widthPercentageToDP(5.4)
+    fontSize: widthPercentageToDP(5.4),
   },
   formContainer: {
     // marginVertical: 25,
-    marginVertical: heightPercentageToDP(2.9)
+    marginVertical: heightPercentageToDP(2.9),
   },
   formField: {
     // marginTop: 6,
     // marginBottom: 6,
     marginTop: heightPercentageToDP(0.7),
-    marginBottom: heightPercentageToDP(0.7)
+    marginBottom: heightPercentageToDP(0.7),
   },
   logoimage: {
     // height: 250,
     // width: 250,
     resizeMode: 'contain',
     height: heightPercentageToDP(30),
-    width: widthPercentageToDP(61)
+    width: widthPercentageToDP(61),
   },
   text: {
     // fontSize: 14,
     fontWeight: '900',
     color: colors.dodgerBlue,
-    fontSize: widthPercentageToDP(3.3)
+    fontSize: widthPercentageToDP(3.3),
   },
   buttonText: {
     color: 'white',
@@ -152,8 +162,7 @@ const styles = StyleSheet.create({
     // marginTop: 30,
     fontWeight: 'bold',
     fontSize: widthPercentageToDP(3.3),
-    marginTop: heightPercentageToDP(0.5)
-
+    marginTop: heightPercentageToDP(0.5),
   },
   submitContainer: {
     backgroundColor: colors.primary,
@@ -162,9 +171,9 @@ const styles = StyleSheet.create({
     // marginHorizontal: 80,
     // marginTop: 32,
     color: 'white',
-    paddingVertical:heightPercentageToDP(1.45),
-    marginHorizontal:widthPercentageToDP(19.5),
-    marginTop:heightPercentageToDP(3.8)
+    paddingVertical: heightPercentageToDP(1.45),
+    marginHorizontal: widthPercentageToDP(19.5),
+    marginTop: heightPercentageToDP(3.8),
   },
   f_c_c_c: {
     alignItems: 'center',
@@ -172,7 +181,7 @@ const styles = StyleSheet.create({
   },
   shadow: {
     shadowColor: 'rgba(255, 22, 84, 0.24)',
-    shadowOffset: { width: 0, height: 9 },
+    shadowOffset: {width: 0, height: 9},
     shadowOpacity: 1,
     shadowRadius: 20,
     elevation: 5,

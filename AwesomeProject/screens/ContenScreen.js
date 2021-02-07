@@ -36,36 +36,38 @@ const ContentScreen = ({navigation, route}) => {
   const isFocused = useIsFocused();
   const [Bookmark, setBookmark] = useState(JSON.stringify({bookmark: [0]}));
   const [isBookmark, setisBookmark] = useState(false);
-  const {id , title,titleId} = route.params;
+  const {id, title, titleId} = route.params;
   const {mode, theme: themeforDarkMode, toggle} = useTheme();
-  const [contents , setContent] = useState([]);
-  const [isContent , setisContent] = useState(false);
+  const [contents, setContent] = useState([]);
+  const [isContent, setisContent] = useState(false);
 
-
-const extractContent = ()=>{
-  const specificContent =   AllHistologyContent.filter(item=>{
- return item.id == titleId;
+  const extractContent = () => {
+    let specificContent = AllHistologyContent.filter((item) => {
+      return item.id == titleId;
     });
+    if (specificContent) {
+      specificContent = specificContent.length ? specificContent : [];
 
+      setContent(specificContent[0]?.subTopics[id - 1]);
+      console.log('xxxxxxx', specificContent[0]);
+      console.log('xxxxxxx', contents);
+      setisContent(true);
+    }
 
-   setContent(specificContent[0].subTopics[id-1])
-   setisContent(true);
-}
+    // console.log(
+    //   'YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY',
+    //   contents.content,
+    // );
+  };
 
+  useEffect(() => {
+    extractContent();
+  }, []);
 
-
-useEffect(()=>{
-  extractContent();
-
-},[isContent]);
-
-
-
-  const saveBookmarkData = async ({id,titleId}) => {
+  const saveBookmarkData = async ({id, titleId}) => {
     try {
-    
       let bookmarkData = await AsyncStorage.getItem('BookmarkID');
-    
+
       bookmarkData = bookmarkData
         ? bookmarkData
         : await JSON.stringify({bookmark: [0]});
@@ -73,47 +75,46 @@ useEffect(()=>{
 
       let parsedBookmarkData =
         typeof finalData === 'undefined' ? [0] : finalData;
-     
+
       if (parsedBookmarkData.length >= 1) {
         let parsedNewArray = parsedBookmarkData.filter((item) => {
           return item != id && titleId != item.titleId;
         });
-        console.log("hello");
-        if (parsedBookmarkData.length == parsedNewArray.length ) {
-     
-          //          console.log('aa', parsedBookmarkData);
+        // console.log('hello');
+        if (parsedBookmarkData.length == parsedNewArray.length) {
+          console.log('aa', parsedBookmarkData);
           let length = parsedNewArray.length;
-          parsedNewArray[length] = {id:id,titleId:titleId};
+          parsedNewArray[length] = {id: id, titleId: titleId};
           await AsyncStorage.setItem(
             'BookmarkID',
             JSON.stringify({bookmark: parsedNewArray}),
           );
           setisBookmark(true);
-          //          console.log(Bookmark);
+          console.log(Bookmark);
         } else {
-          console.log("***********************", parsedBookmarkData);
+          // console.log('***********************', parsedBookmarkData);
           await AsyncStorage.setItem(
             'BookmarkID',
             JSON.stringify({bookmark: parsedNewArray}),
           );
           setisBookmark(!isBookmark);
         }
-      }else {
-        console.log("***********************", parsedBookmarkData);
+      } else {
+        // console.log('***********************', parsedBookmarkData);
         await AsyncStorage.setItem(
           'BookmarkID',
-          JSON.stringify({bookmark: [0,{id:id,titleId:titleId}]}),
+          JSON.stringify({bookmark: [0, {id: id, titleId: titleId}]}),
         );
         setisBookmark(!isBookmark);
       }
     } catch (err) {
-            console.log('Error saving bookmark data', err);
+      // console.log('Error saving bookmark data', err);
     }
   };
 
   const getBookmarkDatas = async () => {
     let bookmarkData = await AsyncStorage.getItem('BookmarkID');
-    console.log("What in Bookmark",bookmarkData);
+    // console.log('What in Bookmark', bookmarkData);
     bookmarkData = bookmarkData
       ? bookmarkData
       : await JSON.stringify({bookmark: [0]});
@@ -124,7 +125,7 @@ useEffect(()=>{
       parsedBookmarkData.map((item) => {
         if (item.id == id && item.titleId == titleId) {
           setisBookmark(true);
-          console.log("What in bookmark State",Bookmark);
+          // console.log('What in bookmark State', Bookmark);
           return;
         }
       });
@@ -132,7 +133,6 @@ useEffect(()=>{
   };
   useEffect(() => {
     getBookmarkDatas();
-  
   }, [isBookmark, Bookmark]);
 
   React.useLayoutEffect(() => {
@@ -160,7 +160,8 @@ useEffect(()=>{
               color="#fff"
             />
 
-            <TouchableOpacity onPress={() => saveBookmarkData({id: id,titleId:titleId})}>
+            <TouchableOpacity
+              onPress={() => saveBookmarkData({id: id, titleId: titleId})}>
               {isBookmark ? (
                 <Icon
                   style={{marginHorizontal: 20}}
@@ -191,26 +192,44 @@ useEffect(()=>{
       style={{
         backgroundColor: themeforDarkMode.contentBackground,
       }}>
-      {/* <View style={styles.container}>
+      <View style={styles.container}>
         <Slider />
 
-
-     
-
-    <View style={styles.contentContainer}>
+        <View style={styles.contentContainer}>
           <View>
+            {/* Tile is Here */}
             <Text style={styles.contentTitleText}>{title}</Text>
-           {
-             contents.isIntroduction && <Text
-             style={[
-               styles.contentBox,
-               styles.contentParagraphTypography,
-               {color: themeforDarkMode.primaryText},
-             ]}>
-             {'data.introduction.content'}
-           </Text>
-           }
 
+            {/* Introduction is Here */}
+            {contents?.isIntroduction && (
+              <Text
+                style={[
+                  styles.contentBox,
+                  styles.contentParagraphTypography,
+                  {color: themeforDarkMode.primaryText},
+                ]}>
+                {'data.introduction.content'}
+              </Text>
+            )}
+
+            <View>
+              {contents?.content?.subTopic.map((item) => {
+                return (
+                  <View>
+                    <Text>"Sub Title":{item.title} </Text>
+
+                    {typeof item.content == 'string' ? (
+                      <Text>{item.content}</Text>
+                    ) : (
+                      item.content.map((ele, i) => {
+                        return <Text key={i}>{ele}</Text>;
+                      })
+                    )}
+                  </View>
+                );
+              })}
+            </View>
+            {/*
             <View>
               <Text
                 style={[
@@ -222,47 +241,34 @@ useEffect(()=>{
                 ]}>
                 {title}
               </Text> */}
-     
-     
-        {
-         
-         contents.content.subTopic.map(item=>{
-                  return(
-                    <View style={styles.contentBox}>
-                    <Text>{item.title}</Text>
 
-                   {!item.orderedList && item.unorderedlist &&
-                   <Unorderedlist
-                   bulletUnicode={0x2023}
-                   style={styles.unorderedlist}>
-                     {
-                       item.content.map(list=>{
-                        return(
-                          <Text
-                          style={[
-                            styles.subTitle,
-                            {color: themeforDarkMode.primaryText},
-                          ]}>
-                          {list}
-                        </Text>
-                        )
-                       })
-                     }
-                
-                 </Unorderedlist>
-                  
-                  } 
-                 
-                 </View>
-                  )
-                  
-              
-              }) 
-             
-            } 
-        
+            {/* {contents.content.subTopic.map((item) => {
+        return (
+          <View style={styles.contentBox}>
+            <Text>{item.title}</Text>
 
-              {/* <View style={styles.contentBox}>
+            {!item.orderedList && item.unorderedlist && (
+              <Unorderedlist
+                bulletUnicode={0x2023}
+                style={styles.unorderedlist}>
+                {item.content.map((list) => {
+                  return (
+                    <Text
+                      style={[
+                        styles.subTitle,
+                        {color: themeforDarkMode.primaryText},
+                      ]}>
+                      {list}
+                    </Text>
+                  );
+                })}
+              </Unorderedlist>
+            )}
+          </View>
+        );
+      })} */}
+
+            {/* <View style={styles.contentBox}>
                 <Unorderedlist
                   bulletUnicode={0x2023}
                   style={styles.unorderedlist}>
@@ -283,13 +289,10 @@ useEffect(()=>{
                   {'data.description.content[0].content'}
                 </Text>
               </View>
-            </View>
-          </View>  
-            </View> 
-         
-    
-      </View> */}
-    
+            </View> */}
+          </View>
+        </View>
+      </View>
     </ScrollView>
   );
 };

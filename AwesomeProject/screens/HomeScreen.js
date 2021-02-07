@@ -23,15 +23,19 @@ import {colors} from '../constants/theme';
 const {width} = Dimensions.get('window');
 const HomeScreen = ({navigation}) => {
   const {mode, theme: themeforDarkMode, toggle} = useTheme();
-//  // console.log('///////////////////////', mode, themeforDarkMode);
+  ////  // console.log('///////////////////////', mode, themeforDarkMode);
 
-  const SubTopicsCard = ({title, titleId,img,id}) => {
-   console.log('*******************************************',title,"adasd",id);
+  const SubTopicsCard = ({title, titleId, img, id}) => {
+    //   console.log('*******************************************',title,"adasd",id);
     return (
       <TouchableOpacity
-      onPress={()=>{
-        navigation.navigate('Content',{id:id,title:title,titleId:titleId});
-      }}
+        onPress={() => {
+          navigation.navigate('Content', {
+            id: id,
+            title: title,
+            titleId: titleId,
+          });
+        }}
         style={[
           styles.topHotelCard,
           {
@@ -78,7 +82,6 @@ const HomeScreen = ({navigation}) => {
 
   return (
     <ScrollView style={{backgroundColor: themeforDarkMode.secondaryHeader}}>
-
       <ScrollView
         showsVerticalScrollIndicator={false}
         style={{paddingVertical: theme.sizes.base}}>
@@ -110,7 +113,6 @@ const HomeScreen = ({navigation}) => {
               ]}>
               <TouchableOpacity
                 style={{justifyContent: 'center', alignItems: 'center'}}
-                
                 onPress={() => navigation.navigate('ATips')}>
                 <Badge
                   margin={[0, 0, 15]}
@@ -135,7 +137,7 @@ const HomeScreen = ({navigation}) => {
         </Block>
 
         {topics.map((item, mainindex) => {
-         let titleId = item.id;
+          let titleId = item.id;
           return (
             <>
               <View key={mainindex} style={styles.contentflatListHeader}>
@@ -173,8 +175,8 @@ const HomeScreen = ({navigation}) => {
                   return items + index;
                 }}
                 renderItem={({item}) => {
-                  console.log('XXXXXXXXXXXXXXXXXXXXXXXXXX',item);
-//                  console.log('vh', item);
+                  //                  console.log('XXXXXXXXXXXXXXXXXXXXXXXXXX',item);
+                  ////                  console.log('vh', item);
                   return (
                     <SubTopicsCard
                       key={item.id}

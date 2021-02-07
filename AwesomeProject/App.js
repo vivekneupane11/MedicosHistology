@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
-import React, { useState, useEffect } from 'react';
-import { StatusBar, View, Text } from 'react-native';
+import React, {useState, useEffect, useContext} from 'react';
+import {StatusBar, View, Text} from 'react-native';
 import {
   NavigationContainer,
   DefaultTheme,
@@ -13,46 +13,67 @@ import {
 } from '@react-navigation/stack';
 import OnboardingScreen from './screens/OnboardingScreen';
 import LoginScreen from './screens/LoginScreen';
+import auth from '@react-native-firebase/auth';
 import RegistrationScreen from './screens/RegistrationScreen';
 import HomeScreen from './screens/HomeScreen';
 import ContentScreen from './screens/ContenScreen';
 import SearchScreen from './screens/SearchScreen';
 import SettingScreen from './screens/SettingScreen';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import {createDrawerNavigator} from '@react-navigation/drawer';
 import DrawerContent from './screens/DrawerContent';
 import BookmarkScreen from './screens/BookmarkScreen';
 import NoteScreen from './screens/NoteScreen';
 import TermsAndConditionsScreen from './screens/TermsAndConditionsScreen';
 import PrivacyPolicyScreen from './screens/PrivacyPolicyScreen';
 import AboutUsScreen from './screens/AboutUsScreen';
-import { colors } from './constants/theme';
-import { AppearanceProvider, useColorScheme } from 'react-native-appearance';
-import { enableScreens } from 'react-native-screens';
-import { useTheme, ThemeManager } from './src/utils/DarkTheme/ThemeManager';
-import { LanguageManager } from './src/utils/Language/LanguageManager';
-import { FontsizeManager } from './src/utils/FontSize/FontSizeManager';
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import {colors} from './constants/theme';
+import {AppearanceProvider, useColorScheme} from 'react-native-appearance';
+import {enableScreens} from 'react-native-screens';
+import {useTheme, ThemeManager} from './src/utils/DarkTheme/ThemeManager';
+import {LanguageManager} from './src/utils/Language/LanguageManager';
+import {FontsizeManager} from './src/utils/FontSize/FontSizeManager';
+import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import BackgroundHeader from './components/BackgroundHeader';
 import ATipsScreen from './screens/ATipsScreen';
-import SplashScreen from 'react-native-splash-screen'
-
+import SplashScreen from 'react-native-splash-screen';
+import {AuthContext} from './src/utils/Authentication/AuthProvider';
+import {AuthProvider} from './src/utils/Authentication/AuthProvider';
 enableScreens();
 
 const Tab = createMaterialTopTabNavigator();
 const AppStack = createStackNavigator();
+const AuthStack = createStackNavigator();
 // const SearchStack = createStackNavigator();
-
+const AuthStackScreen = () => {
+  return (
+    <AuthStack.Navigator>
+      <AuthStack.Screen
+        name="Onboarding"
+        component={OnboardingScreen}
+        options={{headerShown: false}}
+      />
+      <AuthStack.Screen
+        name="Login"
+        component={LoginScreen}
+        options={{headerShown: false}}
+      />
+      <AuthStack.Screen
+        name="Register"
+        component={RegistrationScreen}
+        options={{headerShown: false}}
+      />
+    </AuthStack.Navigator>
+  );
+};
 const AppStackScreen = () => {
-
-
-  const { mode, theme: themeforDarkMode, toggle } = useTheme();
+  const {mode, theme: themeforDarkMode, toggle} = useTheme();
   return (
     <AppStack.Navigator>
       {/* MyTabs is rendered here so that content and search screen doesnot show the tabs */}
 
       <AppStack.Screen
-        options={{ headerShown: false }}
+        options={{headerShown: false}}
         name="Home"
         component={MyTabs}
       />
@@ -98,6 +119,73 @@ const AppStackScreen = () => {
         }}
         component={SearchScreen}
       />
+
+      <AppStack.Screen
+        name="TermsAndConditions"
+        component={TermsAndConditionsScreen}
+        options={({navigation}) => ({
+          headerTitle: (props) => (
+            <Text
+              {...props}
+              style={{
+                color: 'white',
+                fontSize: 18,
+                fontWeight: 'bold',
+                backgroundColor: colors.primary,
+              }}>
+              Terms and Conditions
+            </Text>
+          ),
+          headerStyle: {
+            backgroundColor: colors.primary,
+          },
+          headerTintColor: '#fff',
+        })}
+      />
+      <AppStack.Screen
+        name="PrivacyPolicy"
+        component={PrivacyPolicyScreen}
+        options={({navigation}) => ({
+          headerTitle: (props) => (
+            <Text
+              {...props}
+              style={{
+                color: 'white',
+                fontSize: 18,
+                fontWeight: 'bold',
+                backgroundColor: colors.primary,
+              }}>
+              Privacy and Policy
+            </Text>
+          ),
+          headerStyle: {
+            backgroundColor: colors.primary,
+          },
+          headerTintColor: '#fff',
+        })}
+      />
+      <AppStack.Screen
+        name="AboutUs"
+        component={AboutUsScreen}
+        options={({navigation}) => ({
+          headerTitle: (props) => (
+            <Text
+              {...props}
+              style={{
+                color: 'white',
+                fontSize: 18,
+                fontWeight: 'bold',
+                backgroundColor: colors.primary,
+              }}>
+              About Us
+            </Text>
+          ),
+          headerStyle: {
+            backgroundColor: colors.primary,
+          },
+          headerTintColor: '#fff',
+        })}
+      />
     </AppStack.Navigator>
   );
 };
@@ -116,8 +204,8 @@ function MyTabs() {
       tabBar={(props) => <BackgroundHeader {...props} />}
       tabBarOptions={{
         activeTintColor: '#e91e63',
-        labelStyle: { fontSize: 12 },
-        style: { backgroundColor: 'powderblue' },
+        labelStyle: {fontSize: 12},
+        style: {backgroundColor: 'powderblue'},
       }}>
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Bookmarks" component={BookmarkScreen} />
@@ -262,10 +350,18 @@ function MyTabs() {
 //     </HomeStack.Navigator>
 //   );
 // };
+const AppRoutes = () => {
+  const {user, setUser} = useContext(AuthContext);
+  const [initializing, setInitializing] = useState(true);
+  const onAuthStateChanged = (user) => {
+    setUser(user);
+    if (initializing) setInitializing(false);
+  };
+  useEffect(() => {
+    const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
+    return subscriber; //unsubscribe on onmount
+  });
 
-const Drawer = createDrawerNavigator();
-
-const App = () => {
   useEffect(() => SplashScreen.hide());
   const scheme = useColorScheme();
   // const [isFirstLaunch,setisFirstLaunch] = useState(null);
@@ -284,21 +380,39 @@ const App = () => {
   //     return null;
   // }
   // else if(isFirstLaunch==true){
+
+  if (initializing) return null;
   return (
     <AppearanceProvider>
       <ThemeManager>
         <LanguageManager>
           <FontsizeManager>
             <NavigationContainer>
-              <Drawer.Navigator
-                drawerContent={(props) => <DrawerContent {...props} />}>
-                <Drawer.Screen name="HomeDrawerH" component={AppStackScreen} />
-              </Drawer.Navigator>
+              {user ? (
+                <Drawer.Navigator
+                  drawerContent={(props) => <DrawerContent {...props} />}>
+                  <Drawer.Screen
+                    name="HomeDrawerH"
+                    component={AppStackScreen}
+                  />
+                </Drawer.Navigator>
+              ) : (
+                <AuthStackScreen />
+              )}
             </NavigationContainer>
           </FontsizeManager>
         </LanguageManager>
       </ThemeManager>
     </AppearanceProvider>
+  );
+};
+const Drawer = createDrawerNavigator();
+
+const App = () => {
+  return (
+    <AuthProvider>
+      <AppRoutes />
+    </AuthProvider>
   );
   // }
   // else{
