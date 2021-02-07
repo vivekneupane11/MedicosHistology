@@ -63,6 +63,7 @@ const HomeScreen = ({navigation}) => {
         </View>
         <Image
           resizeMode="cover"
+          tintColor={mode == 'dark'?"#dde0eb":undefined}
           style={[styles.topHotelCardImage]}
           source={img}
         />

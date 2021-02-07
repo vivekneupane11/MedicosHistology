@@ -388,7 +388,7 @@ const AppRoutes = () => {
         <LanguageManager>
           <FontsizeManager>
             <NavigationContainer>
-              {user ? (
+              {/* {user ? ( */}
                 <Drawer.Navigator
                   drawerContent={(props) => <DrawerContent {...props} />}>
                   <Drawer.Screen
@@ -396,9 +396,9 @@ const AppRoutes = () => {
                     component={AppStackScreen}
                   />
                 </Drawer.Navigator>
-              ) : (
-                <AuthStackScreen />
-              )}
+              {/* ) : ( */}
+                {/* <AuthStackScreen /> */}
+              {/* )} */}
             </NavigationContainer>
           </FontsizeManager>
         </LanguageManager>

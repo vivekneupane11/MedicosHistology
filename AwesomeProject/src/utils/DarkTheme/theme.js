@@ -37,6 +37,7 @@ export const ThemeColors = {
     light: '#000000',
     dark: '#FFFFFF',
   },
+ 
   premiumContentBackground: {
     light: '#3F3D56',
     dark: '#2C2C2C',

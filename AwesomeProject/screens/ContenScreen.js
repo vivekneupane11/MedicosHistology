@@ -38,7 +38,7 @@ const ContentScreen = ({navigation, route}) => {
   const [isBookmark, setisBookmark] = useState(false);
   const {id, title, titleId} = route.params;
   const {mode, theme: themeforDarkMode, toggle} = useTheme();
-  const [contents, setContent] = useState([]);
+  const [contents, setContent] = useState({});
   const [isContent, setisContent] = useState(false);
 
   const extractContent = () => {
@@ -46,11 +46,13 @@ const ContentScreen = ({navigation, route}) => {
       return item.id == titleId;
     });
     if (specificContent) {
-      specificContent = specificContent.length ? specificContent : [];
+      specificContent = specificContent ? specificContent : [];
 
-      setContent(specificContent[0]?.subTopics[id - 1]);
+      setContent(item => specificContent[0]?.subTopics[id]);
+      console.log("iddddddddddddddddddddddd",id);
       console.log('xxxxxxx', specificContent[0]);
-      console.log('xxxxxxx', contents);
+      console.log('zzzz',specificContent[0]?.subTopics[id]);
+      console.log('yyyyy', contents);
       setisContent(true);
     }
 
@@ -62,7 +64,7 @@ const ContentScreen = ({navigation, route}) => {
 
   useEffect(() => {
     extractContent();
-  }, []);
+  }, [isContent]);
 
   const saveBookmarkData = async ({id, titleId}) => {
     try {
@@ -200,7 +202,7 @@ const ContentScreen = ({navigation, route}) => {
             {/* Tile is Here */}
             <Text style={styles.contentTitleText}>{title}</Text>
 
-            {/* Introduction is Here */}
+      {/* Introduction is Here  */}
             {contents?.isIntroduction && (
               <Text
                 style={[
@@ -209,7 +211,7 @@ const ContentScreen = ({navigation, route}) => {
                   {color: themeforDarkMode.primaryText},
                 ]}>
                 {'data.introduction.content'}
-              </Text>
+              </Text> 
             )}
 
             <View>
@@ -218,17 +220,17 @@ const ContentScreen = ({navigation, route}) => {
                   <View>
                     <Text>"Sub Title":{item.title} </Text>
 
-                    {typeof item.content == 'string' ? (
+                     {/* {typeof item?.content == 'string' ? (
                       <Text>{item.content}</Text>
                     ) : (
-                      item.content.map((ele, i) => {
+                      item?.content.map((ele, i) => {
                         return <Text key={i}>{ele}</Text>;
                       })
-                    )}
+                    )}  */}
                   </View>
                 );
               })}
-            </View>
+            </View>   
             {/*
             <View>
               <Text
