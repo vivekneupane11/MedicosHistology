@@ -1,3 +1,63 @@
+const introductionImages = [
+  {
+    image: require('../assets/logos/introduction/1.jpg'),
+  },
+  {
+    image: require('../assets/logos/introduction/2.jpg'),
+  },
+  {
+    image: require('../assets/logos/introduction/3.jpg'),
+  },
+  {
+    image: require('../assets/logos/introduction/4.jpg'),
+  },
+  {
+    image: require('../assets/logos/introduction/5.jpg'),
+  },
+  {
+    image: require('../assets/logos/introduction/6.jpg'),
+  },
+  {
+    image: require('../assets/logos/introduction/7.jpg'),
+  },
+  {
+    image: require('../assets/logos/introduction/8.jpg'),
+  },
+  {
+    image: require('../assets/logos/introduction/9.jpg'),
+  },
+  {
+    image: require('../assets/logos/introduction/10.jpg'),
+  },
+  {
+    image: require('../assets/logos/introduction/11.jpg'),
+  },
+  {
+    image: require('../assets/logos/introduction/12.jpg'),
+  },
+  {
+    image: require('../assets/logos/introduction/13.jpg'),
+  },
+  {
+    image: require('../assets/logos/introduction/14.jpg'),
+  },
+  {
+    image: require('../assets/logos/introduction/15.jpg'),
+  },
+  {
+    image: require('../assets/logos/introduction/16.jpg'),
+  },
+  {
+    image: require('../assets/logos/introduction/17.jpg'),
+  },
+  {
+    image: require('../assets/logos/introduction/18.jpg'),
+  },
+  {
+    image: require('../assets/logos/introduction/19.jpg'),
+  },
+]
+
 const categoriesone = [
   {
     id: 'plants',
@@ -22,36 +82,73 @@ const categoriesone = [
     image: require('../assets/logos/google.png'),
   },
 ];
-const categories = [
+
+const collections = [
   {
     id: 'seeds',
-    name: 'Take a quiz',
+    name: 'Introduction',
+    routeName: 'Introduction',
     tags: ['products', 'shop'],
     count: 'Start Quiz',
-    image: require('../assets/logos/google.png'),
+    image: require('../assets/logos/ospe.png'),
   },
   {
     id: 'flowers',
-    name: 'Expert Tips',
+    name: 'A+ Tips',
+    routeName: 'ATips',
     tags: ['products', 'inspirations'],
     count: 'Start Quiz',
-    image: require('../assets/logos/google.png'),
+    image: require('../assets/logos/atips.png'),
   },
   {
     id: 'sprayers',
-    name: 'Todays Special',
+    name: 'Staining',
+    routeName: 'Staining',
     tags: ['products', 'shop'],
     count: 'Start Quiz',
-    image: require('../assets/logos/google.png'),
+    image: require('../assets/logos/staining.png'),
   },
   {
     id: 'sprayers',
-    name: 'Todays Speciggal',
+    routeName: 'BasicHistology',
+    name: 'Basic Histology',
     tags: ['products', 'shop'],
     count: 'Start Quiz',
-    image: require('../assets/logos/google.png'),
+    image: require('../assets/logos/basic_histology.png'),
   },
 ];
+
+const categories = [
+  {
+    id: 'seeds',
+    name: 'Histology OSPE',
+    tags: ['products', 'shop'],
+    count: 'Start Quiz',
+    image: require('../assets/logos/ospe.png'),
+  },
+  {
+    id: 'flowers',
+    name: 'Histology MCQ',
+    tags: ['products', 'inspirations'],
+    count: 'Start Quiz',
+    image: require('../assets/logos/mcq.png'),
+  },
+  {
+    id: 'sprayers',
+    name: 'Collections',
+    tags: ['products', 'shop'],
+    count: 'Start Quiz',
+    image: require('../assets/logos/collection.png'),
+  },
+  {
+    id: 'sprayers',
+    name: 'Coming Soon....',
+    tags: ['products', 'shop'],
+    count: 'Start Quiz',
+    image: require('../assets/logos/coming-soon.png'),
+  },
+];
+
 
 const products = [
   {
@@ -585,4 +682,4 @@ let topics = [
   },
 ];
 
-export {categories, explore, products, profile, topics};
+export { categories, explore, products, profile, topics, collections ,introductionImages};

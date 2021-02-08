@@ -112,7 +112,7 @@ const HomeScreen = ({navigation}) => {
           flex={false}
           row
           space="between"
-          style={[styles.categories, {paddingVertical: 15}]}>
+          style={[styles.categories]}>
           {mocks.categories.map((category) => (
             <Card
               center
@@ -137,12 +137,12 @@ const HomeScreen = ({navigation}) => {
               <TouchableOpacity
                 style={{justifyContent: 'center', alignItems: 'center'}}
                 
-                onPress={() => navigation.navigate('ATips')}>
+                onPress={() => navigation.navigate('Collections')}>
                 <Badge
-                  margin={[0, 0, 15]}
+                  // margin={[0, 0, 15]}
                   size={50}
                   color="rgba(41,216,143,0.20)">
-                  <Image source={category.image} />
+                  <Image style={{height:60,width:60}} resizeMode='contain' source={category.image} />
                 </Badge>
                 <Text
                   height={20}
@@ -606,6 +606,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 3,
   },
   categories: {
+    paddingVertical: 15,
     flexWrap: 'wrap',
     paddingHorizontal: theme.sizes.base * 2,
     marginBottom: theme.sizes.base,
