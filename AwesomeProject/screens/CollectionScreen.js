@@ -52,6 +52,8 @@ const CollectionScreen = ({ navigation }) => {
                             <Text
                                 height={20}
                                 style={{
+                                    paddingTop:heightPercentageToDP(1),
+                                    fontSize:widthPercentageToDP(3.5),
                                     fontWeight: '900',
                                     color: themeforDarkMode.topCategoryText,
                                 }}>

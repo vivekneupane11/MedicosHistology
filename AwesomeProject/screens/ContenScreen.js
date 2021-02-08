@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useLayoutEffect} from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import {
   View,
   Text,
@@ -12,48 +12,67 @@ import {
   Modal,
   TextInput,
 } from 'react-native';
-import {color} from 'react-native-reanimated';
+import { color } from 'react-native-reanimated';
 import Unorderedlist from 'react-native-unordered-list';
 import Slider from '../components/Slider';
-import {colors} from '../constants/theme';
+import { colors } from '../constants/theme';
 import fontelloConfig from '../src/config.json';
-import {useIsFocused} from '@react-navigation/native';
-import {createIconSetFromFontello} from 'react-native-vector-icons';
+import { useIsFocused } from '@react-navigation/native';
+import { createIconSetFromFontello } from 'react-native-vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {useTheme} from '../src/utils/DarkTheme/ThemeManager';
+import { useTheme } from '../src/utils/DarkTheme/ThemeManager';
 const Icon = createIconSetFromFontello(fontelloConfig);
 import {
   heightPercentageToDP,
   widthPercentageToDP,
 } from '../src/utils/responsive';
 
+import { AllHistologyContent } from '../constants/mocks';
+
 const width = Dimensions.get('screen').width;
 const height = width / 1.61;
 
-const ContentScreen = ({navigation, route}) => {
+const ContentScreen = ({ navigation, route }) => {
   const isFocused = useIsFocused();
-  const [Bookmark, setBookmark] = useState(JSON.stringify({bookmark: [0]}));
+  const [Bookmark, setBookmark] = useState(JSON.stringify({ bookmark: [0] }));
   const [isBookmark, setisBookmark] = useState(false);
-  const {data} = route.params;
-  const {mode, theme: themeforDarkMode, toggle} = useTheme();
-  // const getBookmarkData = async ()=>{
-  //     try{
+  const { id, title, titleId } = route.params;
+  const { mode, theme: themeforDarkMode, toggle } = useTheme();
+  const [contents, setContent] = useState({});
+  const [isContent, setisContent] = useState(false);
 
-  //         let  bookmarkData = await AsyncStorage.getItem('BookmarkID');
-  //         bookmarkData = (bookmarkData == null)?[]: await JSON.parse(bookmarkData);
-  //          let stringBookmarkData = JSON.stringify(bookmarkData);
-  //      return stringBookmarkData;
-  //     }
-  // catch(err){
-  //  //     console.log('Error getting Bookmark',err);
-  // }
-  //  }
-  const saveBookmarkData = async ({id}) => {
+  const extractContent = () => {
+    let specificContent = AllHistologyContent.filter((item) => {
+      return item.id == titleId;
+    });
+    if (specificContent) {
+      specificContent = specificContent ? specificContent : [];
+
+      setContent(item => specificContent[0]?.subTopics[id]);
+      console.log("iddddddddddddddddddddddd", id);
+      console.log('xxxxxxx', specificContent[0]);
+      console.log('zzzz', specificContent[0]?.subTopics[id]);
+      console.log('yyyyy', contents);
+      setisContent(true);
+    }
+
+    // console.log(
+    //   'YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY',
+    //   contents.content,
+    // );
+  };
+
+  useEffect(() => {
+    extractContent();
+  }, [isContent]);
+
+  const saveBookmarkData = async ({ id, titleId }) => {
     try {
       let bookmarkData = await AsyncStorage.getItem('BookmarkID');
+
       bookmarkData = bookmarkData
         ? bookmarkData
-        : await JSON.stringify({bookmark: [0]});
+        : await JSON.stringify({ bookmark: [0] });
       let finalData = await JSON.parse(bookmarkData).bookmark;
 
       let parsedBookmarkData =
@@ -61,77 +80,54 @@ const ContentScreen = ({navigation, route}) => {
 
       if (parsedBookmarkData.length >= 1) {
         let parsedNewArray = parsedBookmarkData.filter((item) => {
-          return item != id;
+          return item != id && titleId != item.titleId;
         });
-        //        console.log(parsedNewArray.length, parsedBookmarkData.length);
+        // console.log('hello');
         if (parsedBookmarkData.length == parsedNewArray.length) {
-          //          console.log('aa', parsedBookmarkData);
+          console.log('aa', parsedBookmarkData);
           let length = parsedNewArray.length;
-          parsedNewArray[length] = id;
+          parsedNewArray[length] = { id: id, titleId: titleId };
           await AsyncStorage.setItem(
             'BookmarkID',
-            JSON.stringify({bookmark: parsedNewArray}),
+            JSON.stringify({ bookmark: parsedNewArray }),
           );
           setisBookmark(true);
-          //          console.log(Bookmark);
+          console.log(Bookmark);
         } else {
+          // console.log('***********************', parsedBookmarkData);
           await AsyncStorage.setItem(
             'BookmarkID',
-            JSON.stringify({bookmark: parsedNewArray}),
+            JSON.stringify({ bookmark: parsedNewArray }),
           );
           setisBookmark(!isBookmark);
         }
+      } else {
+        // console.log('***********************', parsedBookmarkData);
+        await AsyncStorage.setItem(
+          'BookmarkID',
+          JSON.stringify({ bookmark: [0, { id: id, titleId: titleId }] }),
+        );
+        setisBookmark(!isBookmark);
       }
     } catch (err) {
-      //      console.log('Error saving bookmark data', err);
+      // console.log('Error saving bookmark data', err);
     }
   };
-  //   try {
-  //     // AsyncStorage.setItem(Bookmark,);
-  //     let asyncData = await AsyncStorage.getItem('BookmarkID');
 
-  //     asyncData =
-  //       asyncData == null ? await JSON.stringify({bookmark: [0]}) : asyncData;
-  //  //     console.log('asyncdata', JSON.parse(asyncData));
-  //     // if(asyncData.length){
-  //     //   AsyncStorage.setItem('BookmarkID', JSON.stringify({ bookmark: [id] })  );
-  //     //   setBookmark( JSON.stringify({ bookmark: [id] }));
-  //     // }
-
-  //  //     console.log('aaaaaaaaaaaaaaaaaaaaaaaa', asyncData);
-  //     let newArray = await JSON.parse(asyncData);
-  //  //     console.log('new', newArray);
-
-  //     let verifiednewArray = newArray.filter((item) => {
-  //       return item != id;
-  //     });
-  //     if (newArray.length == verifiednewArray.length) {
-  //       let length = verifiednewArray.length;
-  //       verifiednewArray[length] = id;
-  //     } else {
-  //       setisBookmark(!isBookmark);
-  //     }
-
-  //     let stringifieddata = await JSON.stringify({bookmark: verifiednewArray});
-  //     AsyncStorage.setItem('BookmarkID', stringifieddata);
-  //  //     console.log('STRIGIFIED', stringifieddata);
-  //     setBookmark(stringifieddata);
-  //   } catch (err) {
-  //  //     console.log('Error saving bookmark', err);
-  //   }
-  // };
   const getBookmarkDatas = async () => {
     let bookmarkData = await AsyncStorage.getItem('BookmarkID');
+    // console.log('What in Bookmark', bookmarkData);
     bookmarkData = bookmarkData
       ? bookmarkData
-      : await JSON.stringify({bookmark: [0]});
+      : await JSON.stringify({ bookmark: [0] });
     let parsedBookmarkData = await JSON.parse(bookmarkData).bookmark;
     parsedBookmarkData =
       typeof parsedBookmarkData === 'undefined' ? [0] : parsedBookmarkData;
     if (parsedBookmarkData.length > 1) {
       parsedBookmarkData.map((item) => {
-        if (item == data.id) {
+        if (item.id == id && item.titleId == titleId) {
           setisBookmark(true);
+          // console.log('What in bookmark State', Bookmark);
           return;
         }
       });
@@ -139,23 +135,6 @@ const ContentScreen = ({navigation, route}) => {
   };
   useEffect(() => {
     getBookmarkDatas();
-
-    // AsyncStorage.getItem('BookmarkID').then((value) => {
-    //    //   console.log('here' + value);
-    //   let asyncData = value == null ? JSON.stringify({bookmark: [0]}) : value;
-    //   setBookmark(asyncData);
-    //   let AsyncBookmarkData = JSON.parse(asyncData).bookmark;
-    //   if (!AsyncBookmarkData) return;
-    //   AsyncBookmarkData.map((item) => {
-    //     if (item == data.id) {
-    //    //       // console.log(item,data.id);
-    //       setisBookmark(true);
-    //       return;
-    //     }
-    //   });
-    // });
-    //    // console.log('Is bookmark', isBookmark);
-    //    console.log(Bookmark);
   }, [isBookmark, Bookmark]);
 
   React.useLayoutEffect(() => {
@@ -175,30 +154,31 @@ const ContentScreen = ({navigation, route}) => {
             }}>
             Epithelial Tissue
           </Text>
-          <View style={{flexDirection: 'row'}}>
+          <View style={{ flexDirection: 'row' }}>
             <Icon
-              style={{marginHorizontal: 0}}
+              style={{ marginHorizontal: 0 }}
               name="edit"
               size={25}
               color="#fff"
             />
 
-            <TouchableOpacity onPress={() => saveBookmarkData({id: data.id})}>
+            <TouchableOpacity
+              onPress={() => saveBookmarkData({ id: id, titleId: titleId })}>
               {isBookmark ? (
                 <Icon
-                  style={{marginHorizontal: 20}}
+                  style={{ marginHorizontal: 20 }}
                   name="bookmark"
                   size={24}
                   color="#fff"
                 />
               ) : (
-                <Icon
-                  style={{marginHorizontal: 20}}
-                  name="bookmark-empty"
-                  size={24}
-                  color="#fff"
-                />
-              )}
+                  <Icon
+                    style={{ marginHorizontal: 20 }}
+                    name="bookmark-empty"
+                    size={24}
+                    color="#fff"
+                  />
+                )}
             </TouchableOpacity>
           </View>
         </View>
@@ -214,7 +194,7 @@ const ContentScreen = ({navigation, route}) => {
       style={{
         backgroundColor: themeforDarkMode.contentBackground,
       }}>
-      <Modal visible={modal} transparent={true} animationType="slide">
+      {/* <Modal visible={modal} transparent={true} animationType="slide">
         <View style={[styles.modalContainer]}>
           <View style={styles.modalWrapper}>
             <TextInput style={styles.modalTitle} onChangeText={text => setNoteTitle(text)} value={noteTitle}></TextInput>
@@ -234,61 +214,92 @@ const ContentScreen = ({navigation, route}) => {
             </View>
           </View>
         </View>
-      </Modal>
+      </Modal> */}
       <View style={styles.container}>
         <Slider />
 
         <View style={styles.contentContainer}>
           <View>
-            <Text style={styles.contentTitleText}>{data.title}</Text>
-            <Text
-              style={[
-                styles.contentBox,
-                styles.contentParagraphTypography,
-                {color: themeforDarkMode.primaryText},
-              ]}>
-              {data.introduction.content}
-            </Text>
+            {/* Tile is Here */}
+            <Text style={styles.contentTitleText}>{title}</Text>
 
-            <View>
+            {/* Introduction is Here  */}
+            {contents?.isIntroduction && (
               <Text
                 style={[
-                  styles.contentSubTitleText,
-                  {
-                    color: themeforDarkMode.primaryText,
-                    borderBottomColor: themeforDarkMode.primaryText,
-                  },
+                  styles.contentBox,
+                  styles.contentParagraphTypography,
+                  { color: themeforDarkMode.primaryText },
                 ]}>
-                {data.subtitle}
+                {'data.introduction.content'}
               </Text>
+            )}
+            {
+              contents?.content?.subTopic.map(data => {
+                return (
+                  <View>
+                    <Text>{data?.title}</Text>
+                    {
+                      data?.content?.map(item => {
+                        return (
+                          <View>
+                            {/* Here is Subtopics */}
+                            <Text > {item.title} </Text>
+                        
+                            {
+                     
+                              typeof item == 'string' ? <Text>{item}</Text>
+                                : <View>
+                                  {
+                                    typeof item.content == 'string' ? <Text>{item.content}</Text>
+                                      : <View>
+                                        {
+                                          item?.content?.map(data => {
+                                            return (
+                                              <View>
+                                                {
+                                                  typeof data == 'string' ? <Text>{data}</Text>
+                                                    : <View>
+                                                      {
+                                                        typeof data.content == 'string' ? <Text>{data.content}</Text>
+                                                          : <View>
+                                                            {
+                                                              data?.content?.map(data =>
+                                                                <Text>{data}</Text>
+                                                              )
+                                                            }
+                                                          </View>
 
-              <View style={styles.contentBox}>
-                <Unorderedlist
-                  bulletUnicode={0x2023}
-                  style={styles.unorderedlist}>
-                  <Text
-                    style={[
-                      styles.subTitle,
-                      {color: themeforDarkMode.primaryText},
-                    ]}>
-                    {data.subtitle}
-                  </Text>
-                </Unorderedlist>
-                <Text
-                  style={[
-                    styles.contentBox,
-                    styles.contentParagraphTypography,
-                    {color: themeforDarkMode.primaryText},
-                  ]}>
-                  {data.description.content[0].content}
-                </Text>
-              </View>
-            </View>
+                                                      }
+                                                    </View>
+                                                }
+                                              </View>
+                                            )
+                                          }
+                                          )
+                                        }
+                                      </View>
+
+                                  }
+                                </View>
+                            }
+                          </View>
+                        )
+                      }
+
+
+                      )
+                    }
+                  </View>
+                )
+
+              })
+            }
+
+
           </View>
-          {/* // Container for the introduction portion */}
         </View>
       </View>
-      {/* Container */}
     </ScrollView>
   );
 };

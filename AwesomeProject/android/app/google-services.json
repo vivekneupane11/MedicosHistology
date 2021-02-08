@@ -1,0 +1,91 @@
+{
+  "project_info": {
+    "project_number": "200806723835",
+    "firebase_url": "https://medicos-histology.firebaseio.com",
+    "project_id": "medicos-histology",
+    "storage_bucket": "medicos-histology.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:200806723835:android:9da564bcd6c224f3e8005e",
+        "android_client_info": {
+          "package_name": "com.awesomeproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "200806723835-ij8rlstcqtttrbf33d79os8k5k4lo3bm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmuDhTorSk_r5FerHgVaW5kLfJkXPbm1A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "200806723835-ij8rlstcqtttrbf33d79os8k5k4lo3bm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "200806723835-0sadlje39vg2d9ekdv5fo40dsishnh4d.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "rjl.medicos.histo"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:200806723835:android:bfc926f38ef3409ae8005e",
+        "android_client_info": {
+          "package_name": "rjl.medicos.histo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "200806723835-oarkvfm51g8pn9osjctf0a1lq53rrolj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "rjl.medicos.histo",
+            "certificate_hash": "5e6cc39b836cbd55853ed86f5d7e1b9bab843f92"
+          }
+        },
+        {
+          "client_id": "200806723835-ij8rlstcqtttrbf33d79os8k5k4lo3bm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmuDhTorSk_r5FerHgVaW5kLfJkXPbm1A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "200806723835-ij8rlstcqtttrbf33d79os8k5k4lo3bm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "200806723835-0sadlje39vg2d9ekdv5fo40dsishnh4d.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "rjl.medicos.histo"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

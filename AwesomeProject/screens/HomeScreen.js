@@ -19,16 +19,24 @@ import {
 import {Card, Badge, Button, Block, Text} from '../components';
 import {theme, mocks} from '../constants';
 import {colors} from '../constants/theme';
+import { heightPercentageToDP, widthPercentageToDP } from '../src/utils/responsive';
 
 const {width} = Dimensions.get('window');
 const HomeScreen = ({navigation}) => {
   const {mode, theme: themeforDarkMode, toggle} = useTheme();
-  // console.log('///////////////////////', mode, themeforDarkMode);
+  ////  // console.log('///////////////////////', mode, themeforDarkMode);
 
-  const SubTopicsCard = ({title, img}) => {
-    console.log('here');
+  const SubTopicsCard = ({title, titleId, img, id}) => {
+    //   console.log('*******************************************',title,"adasd",id);
     return (
       <TouchableOpacity
+        onPress={() => {
+          navigation.navigate('Content', {
+            id: id,
+            title: title,
+            titleId: titleId,
+          });
+        }}
         style={[
           styles.topHotelCard,
           {
@@ -56,6 +64,7 @@ const HomeScreen = ({navigation}) => {
         </View>
         <Image
           resizeMode="cover"
+          tintColor={mode == 'dark'?"#dde0eb":undefined}
           style={[styles.topHotelCardImage]}
           source={img}
         />
@@ -75,36 +84,6 @@ const HomeScreen = ({navigation}) => {
 
   return (
     <ScrollView style={{backgroundColor: themeforDarkMode.secondaryHeader}}>
-      {/* <BackgroundHeader navigation={navigation} /> */}
-
-      {/* <View>
-        <Text style={{ color: themeforDarkMode.secondaryText }}>
-           Current themeforDarkMode: {mode}
-        </Text>
-        <Text
-          style={{ color: themeforDarkMode.secondaryText,backgroundColor:themeforDarkMode.premiumContentBackgroundsecondaryText }}
-          onPress={() => toggle()}
-         >
-           Toggle Theme
-         </Text>
-      </View>
-
-
-      <View>
-        <Text  >
-           Current Theme: {mode}
-        </Text>
-        <Text
-          style={{ backgroundColor:"red" }}
-          onPress={() => toggle()}
-         >
-           Toggle Theme
-         </Text>
-      </View> */}
-
-      {/* 
-
-<BottomTab/> */}
       <ScrollView
         showsVerticalScrollIndicator={false}
         style={{paddingVertical: theme.sizes.base}}>
@@ -135,7 +114,7 @@ const HomeScreen = ({navigation}) => {
                 },
               ]}>
               <TouchableOpacity
-                style={{justifyContent: 'center', alignItems: 'center'}}
+                style={{justifyContent:'center', alignItems: 'center'}}
                 
                 onPress={() => navigation.navigate('Collections')}>
                 <Badge
@@ -147,8 +126,11 @@ const HomeScreen = ({navigation}) => {
                 <Text
                   height={20}
                   style={{
+                    paddingTop:heightPercentageToDP(1),
+                    fontSize:widthPercentageToDP(3.5),
                     fontWeight: '900',
                     color: themeforDarkMode.topCategoryText,
+                    textAlign:'center'
                   }}>
                   {category.name}
                 </Text>
@@ -161,6 +143,7 @@ const HomeScreen = ({navigation}) => {
         </Block>
 
         {topics.map((item, mainindex) => {
+          let titleId = item.id;
           return (
             <>
               <View key={mainindex} style={styles.contentflatListHeader}>
@@ -195,14 +178,17 @@ const HomeScreen = ({navigation}) => {
                   paddingBottom: 40,
                 }}
                 keyExtractor={(items, index) => {
-                  return items + index;
+                  return items + index +item.title;
                 }}
                 renderItem={({item}) => {
-                  console.log('vh', item);
+                  //                  console.log('XXXXXXXXXXXXXXXXXXXXXXXXXX',item);
+                  ////                  console.log('vh', item);
                   return (
                     <SubTopicsCard
                       key={item.id}
+                      id={item.id}
                       title={item.title}
+                      titleId={titleId}
                       img={item.imgPath}
                     />
                   );
