@@ -245,9 +245,7 @@ const ContentScreen = ({ navigation, route }) => {
                           <View>
                             {/* Here is Subtopics */}
                             <Text > {item.title} </Text>
-                        
                             {
-                     
                               typeof item == 'string' ? <Text>{item}</Text>
                                 : <View>
                                   {
