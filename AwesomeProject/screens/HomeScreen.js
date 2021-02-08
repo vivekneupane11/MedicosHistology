@@ -173,7 +173,7 @@ const HomeScreen = ({navigation}) => {
                   paddingBottom: 40,
                 }}
                 keyExtractor={(items, index) => {
-                  return items + index;
+                  return items + index +item.title;
                 }}
                 renderItem={({item}) => {
                   //                  console.log('XXXXXXXXXXXXXXXXXXXXXXXXXX',item);

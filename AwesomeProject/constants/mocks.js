@@ -1026,8 +1026,8 @@ let AllHistologyContent = [
                 {
                   title: 'COMPACT BONE:',
                   content: [
-                    {
-                      subTopic: [
+                    
+                      
                         {
                           title: 'LOCATION',
                           orderedList: true,
@@ -1129,8 +1129,8 @@ let AllHistologyContent = [
                           content:
                             'Compact bone (or cortical bone) forms the hard external layer of all bones and surrounds the medullary cavity, or bone marrow. It provides protection and strength to bones. Compact bone tissue consists of units called osteons or Haversian systems.',
                         },
-                      ],
-                    },
+                      
+                  
                   ],
                 },
               ],
