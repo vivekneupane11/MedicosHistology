@@ -63,7 +63,7 @@ const HomeScreen = ({navigation}) => {
         </View>
         <Image
           resizeMode="cover"
-          tintColor={mode == 'dark'?"#dde0eb":undefined}
+          tintColor={mode == 'dark' ? '#dde0eb' : undefined}
           style={[styles.topHotelCardImage]}
           source={img}
         />
@@ -173,14 +173,14 @@ const HomeScreen = ({navigation}) => {
                   paddingBottom: 40,
                 }}
                 keyExtractor={(items, index) => {
-                  return items + index;
+                  return items + index + item.subtopics.title;
                 }}
                 renderItem={({item}) => {
                   //                  console.log('XXXXXXXXXXXXXXXXXXXXXXXXXX',item);
                   ////                  console.log('vh', item);
                   return (
                     <SubTopicsCard
-                      key={item.id}
+                      key={item.id + item.title}
                       id={item.id}
                       title={item.title}
                       titleId={titleId}
