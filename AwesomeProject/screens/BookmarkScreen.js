@@ -83,7 +83,7 @@ const BookmarkScreen = ({navigation}) => {
       let bookmarkData = await AsyncStorage.getItem('BookmarkID');
 
       let checker = await JSON.parse(bookmarkData).bookmark.length;
-      //      // console.log("1",bookmarkData,checker);
+
       bookmarkData =
         checker >= 2 ? bookmarkData : await JSON.stringify({bookmark: [0]});
       //      // console.log("sss",bookmarkData);
@@ -145,8 +145,6 @@ const BookmarkScreen = ({navigation}) => {
   };
 
   useEffect(() => {
-    console.log(isBookmakEmpty);
-    console.log(BookmarkData);
     checkBookmarkStatus();
   }, [isBookmakEmpty, isFocused]);
   return (
