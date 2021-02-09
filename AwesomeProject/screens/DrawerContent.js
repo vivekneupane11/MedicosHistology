@@ -23,14 +23,15 @@ const DrawerContent = (props) => {
           styles.drawerTop,
           // { backgroundColor: themeforDarkMode.drawertopBackground },
         ]}>
-        <View style={{ flexDirection: 'row', flex: 1, alignItems: 'center', justifyContent:'space-evenly'}}>
-          <Image style={{ height: 80, width: 80 }} source={require("../assets/images/medicos.png")} />
-          <View style={{ justifyContent: 'center' }}>
-            <Text style={{ fontWeight: 'bold', fontSize: 21, color: 'white' }}>Vivek Neupane</Text>
+        <View style={{
+          flexDirection: 'row', flex: 0.9, alignItems: 'center', paddingLeft: 18}}>
+          <Image style={{ height: 55, width: 56 }} source={require("../assets/images/medicos.png")} />
+          <View style={{ paddingLeft: 14 }}>
+            <Text style={{ fontWeight: 'bold', fontSize: 18, color: 'white' }}>Vivek Neupane</Text>
             <Text style={{ color: 'white', fontSize: 10 }}>vivekneuapane11@gmail.com</Text>
           </View>
         </View>
-        <Text style={{ color: "#9DA3B4", fontSize: 21, fontWeight: 'bold',paddingLeft:35}}>Medicos Histology</Text>
+        <Text style={{ color: "#9DA3B4", fontSize: 18, paddingLeft: 19 }}>Medicos Histology</Text>
       </View>
       <ScrollView>
 
@@ -143,7 +144,7 @@ const styles = StyleSheet.create({
   },
   drawerTop: {
     paddingVertical: 10,
-    height: W / 2,
+    height: W /2.4,
     backgroundColor: colors.primary,
     borderBottomRightRadius: W / 7,
     justifyContent: 'center',

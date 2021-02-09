@@ -19,6 +19,10 @@ import {
 import {Card, Badge, Button, Block, Text} from '../components';
 import {theme, mocks} from '../constants';
 import {colors} from '../constants/theme';
+import {
+  heightPercentageToDP,
+  widthPercentageToDP,
+} from '../src/utils/responsive';
 
 const {width} = Dimensions.get('window');
 const HomeScreen = ({navigation}) => {
@@ -86,17 +90,13 @@ const HomeScreen = ({navigation}) => {
       <ScrollView
         showsVerticalScrollIndicator={false}
         style={{paddingVertical: theme.sizes.base}}>
-        <Block
-          flex={false}
-          row
-          space="between"
-          style={[styles.categories, {paddingVertical: 15}]}>
+        <Block flex={false} row space="between" style={[styles.categories]}>
           {mocks.categories.map((category) => (
             <Card
               center
               middle
               shadow
-              key={category.name}
+              key={category.id}
               style={[
                 styles.category,
                 {
@@ -112,20 +112,28 @@ const HomeScreen = ({navigation}) => {
                   elevation: 10,
                 },
               ]}>
+              {console.log(category.id, 'gvgvvvvvvvvvvvvvvvvvvv')}
               <TouchableOpacity
                 style={{justifyContent: 'center', alignItems: 'center'}}
-                onPress={() => navigation.navigate('ATips')}>
+                onPress={() => navigation.navigate('Collections')}>
                 <Badge
-                  margin={[0, 0, 15]}
-                  size={50}
-                  color="rgba(41,216,143,0.20)">
-                  <Image source={category.image} />
+                  // margin={[0, 0, 15]}
+                  size={50}>
+                  <Image
+                    style={{height: 60, width: 60}}
+                    resizeMode="contain"
+                    tintColor={mode == 'dark' ? '#dde0eb' : colors.primary}
+                    source={category.image}
+                  />
                 </Badge>
                 <Text
                   height={20}
                   style={{
+                    paddingTop: heightPercentageToDP(1),
+                    fontSize: widthPercentageToDP(3.5),
                     fontWeight: '900',
                     color: themeforDarkMode.topCategoryText,
+                    textAlign: 'center',
                   }}>
                   {category.name}
                 </Text>
@@ -139,9 +147,11 @@ const HomeScreen = ({navigation}) => {
 
         {topics.map((item, mainindex) => {
           let titleId = item.id;
+
           return (
-            <>
-              <View key={mainindex} style={styles.contentflatListHeader}>
+            <View key={mainindex.toString() + titleId}>
+              {console.log('sssssssss', mainindex.toString() + titleId)}
+              <View style={styles.contentflatListHeader}>
                 <Text
                   style={{
                     paddingHorizontal: 12,
@@ -173,14 +183,26 @@ const HomeScreen = ({navigation}) => {
                   paddingBottom: 40,
                 }}
                 keyExtractor={(items, index) => {
-                  return items + index + item.subtopics.title;
+                  // console.log(
+                  //   'AAAAAAAAAAAAAAAAAAAAAAAAAA',
+                  //   // items.title + items?.imgPath + index + titleId,
+                  //   // items.title + items.imgPath + item.id + index,
+                  //   items,
+                  //   'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+                  //   item,
+                  // );
+                  let key =
+                    items.title +
+                    items.imgPath +
+                    item.id +
+                    index +
+                    item.subtopics[index].title;
+                  return key.trim('').toLowerCase();
                 }}
                 renderItem={({item}) => {
-                  //                  console.log('XXXXXXXXXXXXXXXXXXXXXXXXXX',item);
-                  ////                  console.log('vh', item);
                   return (
                     <SubTopicsCard
-                      key={item.id + item.title}
+                      key={item.title + item.imgPath + item.id}
                       id={item.id}
                       title={item.title}
                       titleId={titleId}
@@ -189,7 +211,7 @@ const HomeScreen = ({navigation}) => {
                   );
                 }}
               />
-            </>
+            </View>
           );
         })}
 
@@ -454,8 +476,9 @@ const HomeScreen = ({navigation}) => {
               <View style={styles.premiumImage}>
                 <Image
                   resizeMode="cover"
-                  style={[styles.topHotelCardImage]}
-                  source={require('../assets/logos/test.png')}
+                  style={[styles.topHotelCardImagePremium]}
+                  tintColor={mode == 'dark' ? '#dde0eb' : '#ffffff'}
+                  source={require('../assets/logos/mcq.png')}
                 />
               </View>
               <View
@@ -500,8 +523,9 @@ const HomeScreen = ({navigation}) => {
               <View style={styles.premiumImage}>
                 <Image
                   resizeMode="cover"
-                  style={[styles.topHotelCardImage]}
-                  source={require('../assets/logos/test.png')}
+                  style={[styles.topHotelCardImagePremium]}
+                  tintColor={mode == 'dark' ? '#dde0eb' : '#ffffff'}
+                  source={require('../assets/logos/ospe.png')}
                 />
               </View>
               <View
@@ -572,6 +596,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  topHotelCardImagePremium: {
+    marginTop: 15,
+    height: 80,
+    width: '100%',
+    resizeMode: 'contain',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   tabs: {
     borderBottomColor: theme.colors.gray2,
     borderBottomWidth: StyleSheet.hairlineWidth,
@@ -587,6 +619,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 3,
   },
   categories: {
+    paddingVertical: 15,
     flexWrap: 'wrap',
     paddingHorizontal: theme.sizes.base * 2,
     marginBottom: theme.sizes.base,

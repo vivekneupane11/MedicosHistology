@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -12,27 +12,49 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import BackgroundHeader from '../components/BackgroundHeader';
-import {createIconSetFromFontello} from 'react-native-vector-icons';
+import { createIconSetFromFontello } from 'react-native-vector-icons';
 import fontelloConfig from '../src/config.json';
 const Icon = createIconSetFromFontello(fontelloConfig);
-import {colors} from '../constants/theme';
-import {useTheme} from '../src/utils/DarkTheme/ThemeManager';
-import {TextInput} from 'react-native-gesture-handler';
+import { colors } from '../constants/theme';
+import { useTheme } from '../src/utils/DarkTheme/ThemeManager';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { TextInput } from 'react-native-gesture-handler';
 import {
   heightPercentageToDP,
   widthPercentageToDP,
 } from '../src/utils/responsive';
 
 // import { TouchableOpacity } from 'react-native-gesture-handler';
-const notes = require('./notes.json');
-const {width} = Dimensions.get('window');
+// const notes = require('./notes.json');
+const { width } = Dimensions.get('window');
 
-const NoteScreen = ({navigation}) => {
-  const {mode, theme: themeforDarkMode, toggle} = useTheme();
+const NoteScreen = ({ navigation }) => {
+  const { mode, theme: themeforDarkMode, toggle } = useTheme();
   const [item, setItem] = useState(0);
   const [modal, setModal] = useState(false);
   const [noteTitle, setNoteTitle] = useState('Title');
   const [noteContent, setNoteContent] = useState('Notes');
+  const [data, setData] = useState([]);
+
+  const saveNote = async () => {
+  
+    //  console.log("Presssed");
+    try {
+      
+      notes.push({ id: id, title: noteTitle, notes: noteContent });
+      id++;
+      await AsyncStorage.setItem("Notes", JSON.stringify(notes));
+      var value = JSON.parse(await AsyncStorage.getItem("Notes"));
+      setData({ item: value });
+      // console.log("Notes",value); 
+      console.log("Data", data);
+      console.log("Array", notes);
+
+    }
+    catch (err) {
+      console.log('Error saving notes', err)
+    }
+  };
 
   const deleteNote = (index) => {
     console.log('hello');
@@ -40,7 +62,7 @@ const NoteScreen = ({navigation}) => {
     console.log(index);
   };
   return (
-    <ScrollView style={{backgroundColor: themeforDarkMode.secondaryHeader}}>
+    <ScrollView style={{ backgroundColor: themeforDarkMode.secondaryHeader }}>
       <Modal visible={modal} transparent={true} animationType="slide">
         <View style={[styles.modalContainer]}>
           <View style={styles.modalWrapper}>
@@ -69,7 +91,7 @@ const NoteScreen = ({navigation}) => {
 
                 <Text style={[styles.closeButtonText]}>Close</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={[styles.saveButton, styles.f_c_c_c]}>
+              <TouchableOpacity onPress={() => { saveNote() }} style={[styles.saveButton, styles.f_c_c_c]}>
                 <Icon
                   style={styles.modalSaveIcon}
                   name="ok-circled2"
@@ -81,71 +103,77 @@ const NoteScreen = ({navigation}) => {
           </View>
         </View>
       </Modal>
+      <TouchableOpacity
+        onPress={() => {
+          setModal(true);
+        }}>
+        <Icon name="sticky-note-o" size={21} color="#ABB4BD" />
+      </TouchableOpacity>
       <View style={styles.container}>
-        {notes.map((note, k) => {
+        <Text>Note Screen</Text>
+        {/* {data.map((note, k) => {
           var year = new Date().getFullYear();
           var month = new Date().getMonth() + 1;
           var date = new Date().getDate();
           return (
-            <View
-              key={k}
-              style={[
-                styles.cardContentBox,
-                styles.shadow,
-                {backgroundColor: themeforDarkMode.cardBox},
-              ]}>
-              <View style={styles.dateContainer}>
-                <Text
-                  style={{
-                    fontWeight: 'bold',
-                    color: themeforDarkMode.secondaryText,
-                  }}>
-                  {year}
-                </Text>
-                <Text
-                  style={{
-                    fontWeight: 'bold',
-                    color: themeforDarkMode.secondaryText,
-                  }}>
-                  {month}
-                </Text>
-                <Text
-                  style={{
-                    fontWeight: 'bold',
-                    color: themeforDarkMode.secondaryText,
-                  }}>
-                  {date}
-                </Text>
+            <TouchableOpacity
+              onPress={() => {
+                setModal(true);
+              }}>
+              <View
+                key={k}
+                style={[
+                  styles.cardContentBox,
+                  styles.shadow,
+                  { backgroundColor: themeforDarkMode.cardBox },
+                ]}>
+                <View style={styles.dateContainer}>
+                  <Text
+                    style={{
+                      fontWeight: 'bold',
+                      color: themeforDarkMode.secondaryText,
+                    }}>
+                    {year}
+                  </Text>
+                  <Text
+                    style={{
+                      fontWeight: 'bold',
+                      color: themeforDarkMode.secondaryText,
+                    }}>
+                    {month}
+                  </Text>
+                  <Text
+                    style={{
+                      fontWeight: 'bold',
+                      color: themeforDarkMode.secondaryText,
+                    }}>
+                    {date}
+                  </Text>
+                </View>
+                <View style={styles.cardContent}>
+                  <Text
+                    style={[
+                      styles.cardContentTitle,
+                      { color: themeforDarkMode.secondaryText },
+                    ]}>
+                    {note.title}
+                  </Text>
+                  <Text style={styles.cardContentText}>{note.note}</Text>
+                </View>
+                <View style={styles.note}>
+                  <TouchableOpacity>
+                    <Icon
+                      style={styles.closeIcon}
+                      name="cancel-circled2"
+                      size={21}
+                      color="#ABB4BD"
+                    />
+                  </TouchableOpacity>
+                </View>
               </View>
-              <View style={styles.cardContent}>
-                <Text
-                  style={[
-                    styles.cardContentTitle,
-                    {color: themeforDarkMode.secondaryText},
-                  ]}>
-                  {note.title}
-                </Text>
-                <Text style={styles.cardContentText}>{note.note}</Text>
-              </View>
-              <View style={styles.note}>
-                <TouchableOpacity
-                  onPress={() => {
-                    setModal(true);
-                  }}>
-                  <Icon name="sticky-note-o" size={21} color="#ABB4BD" />
-                </TouchableOpacity>
-                <TouchableOpacity>
-                  <Icon
-                    style={styles.closeIcon}
-                    name="cancel-circled2"
-                    size={21}
-                    color="#ABB4BD"
-                  />
-                </TouchableOpacity>
-              </View>
-            </View>
+            </TouchableOpacity>
           );
-        })}
+        })} */}
       </View>
     </ScrollView>
   );

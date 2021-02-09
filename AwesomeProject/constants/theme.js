@@ -30,7 +30,7 @@ const colors = {
     title: 18,
     header: 16,
     body: 14,
-    caption: 12
+    caption: 10
   };
   
   const fonts = {

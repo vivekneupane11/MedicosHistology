@@ -36,7 +36,12 @@ import {FontsizeManager} from './src/utils/FontSize/FontSizeManager';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import BackgroundHeader from './components/BackgroundHeader';
 import ATipsScreen from './screens/ATipsScreen';
-import SplashScreen from 'react-native-splash-screen';
+import SplashScreen from 'react-native-splash-screen'
+import CollectionScreen from './screens/CollectionScreen';
+import BasicHistologyScreen from './screens/BasicHistologyScreen';
+import StainingScreen from './screens/StainingScreen';
+import IntroductionScreen from './screens/IntroductionScreen';
+
 import {AuthContext} from './src/utils/Authentication/AuthProvider';
 import {AuthProvider} from './src/utils/Authentication/AuthProvider';
 enableScreens();
@@ -71,7 +76,21 @@ const AppStackScreen = () => {
   return (
     <AppStack.Navigator>
       {/* MyTabs is rendered here so that content and search screen doesnot show the tabs */}
-
+      {/* <AppStack.Screen
+        name="Onboarding"
+        component={OnboardingScreen}
+        options={{ headerShown: false }}
+      />
+       <AppStack.Screen
+        name="Login"
+        component={LoginScreen}
+        options={{ headerShown: false }}
+      />
+      <AppStack.Screen
+        name="Register"
+        component={RegistrationScreen}
+        options={{ headerShown: false }}
+      /> */}
       <AppStack.Screen
         options={{headerShown: false}}
         name="Home"
@@ -85,11 +104,144 @@ const AppStackScreen = () => {
         component={ContentScreen}
       />
       <AppStack.Screen
-        options={{
+         options={{
+          headerTitle: (props) => (
+            <View
+              style={{
+                justifyContent: 'space-between',
+                flexDirection: 'row',
+                alignItems: 'center',
+              }}>
+              <Text
+                {...props}
+                style={{
+                  color: 'white',
+                  fontSize: 18,
+                }}>
+                A+ Tips
+              </Text>
+            </View>
+          ),
           cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+          headerStyle: {
+            backgroundColor: themeforDarkMode.primaryHeader,
+          },
+          headerTintColor: '#fff',
         }}
         name="ATips"
         component={ATipsScreen}
+      />
+       <AppStack.Screen
+         options={{
+          headerTitle: (props) => (
+            <View
+              style={{
+                justifyContent: 'space-between',
+                flexDirection: 'row',
+                alignItems: 'center',
+              }}>
+              <Text
+                {...props}
+                style={{
+                  color: 'white',
+                  fontSize: 18,
+                }}>
+                Introduction
+              </Text>
+            </View>
+          ),
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+          headerStyle: {
+            backgroundColor: themeforDarkMode.primaryHeader,
+          },
+          headerTintColor: '#fff',
+        }}
+        name="Introduction"
+        component={IntroductionScreen}
+      />
+       <AppStack.Screen
+        options={{
+          headerTitle: (props) => (
+            <View
+              style={{
+                justifyContent: 'space-between',
+                flexDirection: 'row',
+                alignItems: 'center',
+              }}>
+              <Text
+                {...props}
+                style={{
+                  color: 'white',
+                  fontSize: 18,
+                }}>
+                Basic Histology 
+              </Text>
+            </View>
+          ),
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+          headerStyle: {
+            backgroundColor: themeforDarkMode.primaryHeader,
+          },
+          headerTintColor: '#fff',
+        }}
+        name="BasicHistology"
+        component={BasicHistologyScreen}
+      />
+      <AppStack.Screen
+        options={{
+          headerTitle: (props) => (
+            <View
+              style={{
+                justifyContent: 'space-between',
+                flexDirection: 'row',
+                alignItems: 'center',
+              }}>
+              <Text
+                {...props}
+                style={{
+                  color: 'white',
+                  fontSize: 18,
+                }}>
+                Staining
+              </Text>
+            </View>
+          ),
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+          headerStyle: {
+            backgroundColor: themeforDarkMode.primaryHeader,
+          },
+          headerTintColor: '#fff',
+        }}
+        name="Staining"
+        component={StainingScreen}
+      />
+       <AppStack.Screen
+        options={{
+          headerTitle: (props) => (
+            <View
+              style={{
+                justifyContent: 'space-between',
+                flexDirection: 'row',
+                alignItems: 'center',
+              }}>
+              <Text
+                {...props}
+                style={{
+                  color: 'white',
+                  fontSize: 18,
+                }}>
+                Collections
+              </Text>
+            </View>
+          ),
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+          headerStyle: {
+            backgroundColor: themeforDarkMode.primaryHeader,
+          },
+          headerTintColor: '#fff',
+        }}
+        name="Collections"
+        component={CollectionScreen}
       />
       <AppStack.Screen
         name="Search"
@@ -362,7 +514,8 @@ const AppRoutes = () => {
     return subscriber; //unsubscribe on onmount
   });
 
-  useEffect(() => SplashScreen.hide());
+const Drawer = createDrawerNavigator();
+
   const scheme = useColorScheme();
   // const [isFirstLaunch,setisFirstLaunch] = useState(null);
   // useEffect(()=>{
@@ -409,6 +562,7 @@ const AppRoutes = () => {
 const Drawer = createDrawerNavigator();
 
 const App = () => {
+  useEffect(() => SplashScreen.hide(),[]);
   return (
     <AuthProvider>
       <AppRoutes />

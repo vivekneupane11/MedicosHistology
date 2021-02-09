@@ -171,9 +171,9 @@ const styles = StyleSheet.create({
     // marginHorizontal: 80,
     // marginTop: 32,
     color: 'white',
-    paddingVertical: heightPercentageToDP(1.45),
-    marginHorizontal: widthPercentageToDP(19.5),
-    marginTop: heightPercentageToDP(3.8),
+    paddingVertical:heightPercentageToDP(2),
+    marginHorizontal:widthPercentageToDP(19.5),
+    marginTop:heightPercentageToDP(3.8)
   },
   f_c_c_c: {
     alignItems: 'center',
