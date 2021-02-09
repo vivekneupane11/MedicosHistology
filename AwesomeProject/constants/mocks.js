@@ -225,7 +225,7 @@ let topics = [
         imgPath: require('../assets/logos/topics/nervefibermylinated.png'),
       },
       {
-        id: 4,
+        id: 5,
         title: 'Spinal Cord',
         imgPath: require('../assets/logos/topics/spinalcord.png'),
       },
@@ -237,12 +237,12 @@ let topics = [
     title: 'Epithelial Tissue',
     subtopics: [
       {
-        id: 1,
+        id: 2,
         title: 'Simple Cuboidal',
         imgPath: require('../assets/logos/topics/simplecuboidal.png'),
       },
       {
-        id: 2,
+        id: 1,
         title: 'Simple Columnar',
         imgPath: require('../assets/logos/topics/simplecolumnar.png'),
       },
@@ -263,14 +263,15 @@ let topics = [
       },
       {
         id: 5,
-        title: 'Transitional Epithelium',
-        imgPath: require('../assets/logos/topics/transitionalepithelium.png'),
-      },
-      {
-        id: 6,
         title: 'Stratified Columnar',
         imgPath: require('../assets/logos/topics/stratifiedcolumnar.png'),
       },
+      {
+        id: 6,
+        title: 'Transitional Epithelium',
+        imgPath: require('../assets/logos/topics/transitionalepithelium.png'),
+      },
+      
     ],
   },
 
@@ -768,35 +769,30 @@ let AllHistologyContent = [
             },
             {
               title: 'Modifications',
-              isIntroduction: true,
-              introductionContent: [
+              content: [
                 'Simple columnar with cilia:',
                 'Simple columnar epithelial cells with cilia on their apical surfaces.',
-                'Found in the lining of the fallopian tubes, uterus,central canal of spinal cord and parts of the respiratory system, where the beating of the cilia helps remove particulate matter.',
+                'Found in the lining of the fallopian tubes, uterus,central canal of spinal cord and parts of the respiratory system, where the beating of the cilia helps remove particulate matter.'
+              ]
+            },
+            {
+              title: 'Simple columnar with brush /straited border:',
+              content: [
+                'Microvilli with glycocalyx -covered surface of simple columnar epithelium found in different parts of the body.',
+                'Straited border-When the microvilli are arranged regularly',
+                'Eg:Small intestine',
+                'Brush border-When the microvilli are arranged irregularly',
+                'Eg:Gall bladder',
+                'The fuzzy appearance gave rise to the term brush border, as early anatomists noted that this structure appeared very much like the bristles of a paintbrush, found mainly in intestine and small intestine.',
               ],
-              content: {
-                subTopic: [
-                  {
-                    title: 'Simple columnar with brush /straited border:',
-                    content: [
-                      'Microvilli with glycocalyx -covered surface of simple columnar epithelium found in different parts of the body.',
-                      'Straited border-When the microvilli are arranged regularly',
-                      'Eg:Small intestine',
-                      'Brush border-When the microvilli are arranged irregularly',
-                      'Eg:Gall bladder',
-                      'The fuzzy appearance gave rise to the term brush border, as early anatomists noted that this structure appeared very much like the bristles of a paintbrush, found mainly in intestine and small intestine.',
-                    ],
-                  },
-                  {
-                    title: 'Pseudostratified ciliated columnar',
-                    content: [
-                      'Ciliated pseudostratified columnar epithelia is the type of respiratory epithelium found in the linings of the trachea as well as the upper respiratory tract. Pseudostratified columnar epithelia are found forming the straight, tubular glands of the endometrium in females.',
-                      'These cells contain cilia on their apical surface. Cilia are motile, beating in a synchronous rhythm to move fluid in a constant direction.',
-                      'Pseudostratified ciliated columnar epithelial cells help trap and transport particles brought in through the nasal passages and lungs.',
-                    ],
-                  },
-                ],
-              },
+            },
+            {
+              title: 'Pseudostratified ciliated columnar',
+              content: [
+                'Ciliated pseudostratified columnar epithelia is the type of respiratory epithelium found in the linings of the trachea as well as the upper respiratory tract. Pseudostratified columnar epithelia are found forming the straight, tubular glands of the endometrium in females.',
+                'These cells contain cilia on their apical surface. Cilia are motile, beating in a synchronous rhythm to move fluid in a constant direction.',
+                'Pseudostratified ciliated columnar epithelial cells help trap and transport particles brought in through the nasal passages and lungs.',
+              ],
             },
           ],
         },
@@ -1161,6 +1157,8 @@ let AllHistologyContent = [
             {
               title: 'COMPACT BONE:',
               content: [
+
+
                 {
                   title: 'LOCATION',
                   orderedList: true,
@@ -1262,6 +1260,8 @@ let AllHistologyContent = [
                   content:
                     'Compact bone (or cortical bone) forms the hard external layer of all bones and surrounds the medullary cavity, or bone marrow. It provides protection and strength to bones. Compact bone tissue consists of units called osteons or Haversian systems.',
                 },
+
+
               ],
             },
           ],
@@ -1386,25 +1386,21 @@ let AllHistologyContent = [
               title: 'STRUCTURE AND FUNCTION',
               orderedList: false,
               unOrderedList: true,
-              introductionContent: [
+              content: [
                 'Cells which accumulate fat are often present in loose connective tissue, either singly or in small groups. When they are present in large numbers we call such tissue adipose (fatty) tissue. Adipose tissue in the adult human appears white or yellowish in colour.',
                 'Connective tissue specialized to store fat.',
                 'Cytoplasm of fat cells contains large amount of triglyceride deposits in the form of one or more lipid droplets with no limiting membrane.',
                 'Clusters of adipocytes are divided into lobes and lobules by septa of collagen tissue.',
+              ]
+            },
+            {
+              title: 'Fat cells:',
+              content: [
+                'Synthesize &amp; store fat.',
+                'Spherical in shape, nucleus flattened and displaced on one side',
+                'Lipid occupy almost whole of cell –SIGNET RING LIKE APPEARENCE',
+                'May occur singly (loose areolar tissue) or in groups (adipose tissue).',
               ],
-              content: {
-                subTopic: {
-                  orderedList: false,
-                  unOrderedList: true,
-                  title: 'Fat cells:',
-                  content: [
-                    'Synthesize &amp; store fat.',
-                    'Spherical in shape, nucleus flattened and displaced on one side',
-                    'Lipid occupy almost whole of cell –SIGNET RING LIKE APPEARENCE',
-                    'May occur singly (loose areolar tissue) or in groups (adipose tissue).',
-                  ],
-                },
-              },
             },
             {
               title: 'Locations',
@@ -1416,6 +1412,8 @@ let AllHistologyContent = [
           ],
         },
       },
+
+
 
       {
         id: 5,
@@ -1484,7 +1482,7 @@ let AllHistologyContent = [
     ],
   },
   {
-    id: 3,
+    id: 8,
     title: 'GI System',
     isIntroduction: true,
     introductionContent: [
@@ -2444,7 +2442,7 @@ let AllHistologyContent = [
     ],
   },
   {
-    id: 4,
+    id: 14,
     title: 'MALE REPRODUCTIVE SYSTEM',
     isIntroduction: true,
     introductionContent:
@@ -2899,7 +2897,7 @@ let AllHistologyContent = [
     ],
   },
   {
-    id: 5,
+    id: 15,
     title: 'FEMALE REPRODUCTIVE SYSTEM',
     isIntroduction: true,
     introductionContent:
@@ -3359,7 +3357,7 @@ let AllHistologyContent = [
     ],
   },
   {
-    id: 6,
+    id: 16,
     title: 'CENTRAL NERVOUS SYSTEM',
     isIntroduction: true,
     introductionContent: [
@@ -3406,7 +3404,7 @@ let AllHistologyContent = [
             unOrderedList: true,
             orderedList: false,
             content: [
-              'L: lingula',
+              'L: lingula', 
               'C: central lobule',
               'C: culmen',
               'D: declive',
@@ -3773,7 +3771,7 @@ let AllHistologyContent = [
     ],
   },
   {
-    id: 7,
+    id: 11,
     title: 'LYMPHATIC SYSTEM',
     isIntroduction: true,
     introductionContent:
@@ -3996,7 +3994,7 @@ let AllHistologyContent = [
     ],
   },
   {
-    id: 8,
+    id: 12,
     title: 'ENDOCRINE SYSTEM',
     isIntroduction: true,
     introductionContent:
@@ -4422,7 +4420,7 @@ let AllHistologyContent = [
     ],
   },
   {
-    id: 9,
+    id: 5,
     title: 'Integumentary System',
     isIntroduction: true,
     introductionContent: [
@@ -4601,13 +4599,4 @@ let AllHistologyContent = [
   },
 ];
 
-export {
-  categories,
-  explore,
-  products,
-  profile,
-  topics,
-  collections,
-  AllHistologyContent,
-  introductionImages,
-};
+export { categories, explore, products, profile, topics, collections, AllHistologyContent, introductionImages };
