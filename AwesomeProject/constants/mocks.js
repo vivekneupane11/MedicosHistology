@@ -56,7 +56,7 @@ const introductionImages = [
   {
     image: require('../assets/logos/introduction/19.jpg'),
   },
-]
+];
 
 const categoriesone = [
   {
@@ -93,7 +93,7 @@ const collections = [
     image: require('../assets/logos/ospe.png'),
   },
   {
-    id: 'flowers',
+    id: 'flowerse',
     name: 'A+ Tips',
     routeName: 'ATips',
     tags: ['products', 'inspirations'],
@@ -109,7 +109,7 @@ const collections = [
     image: require('../assets/logos/staining.png'),
   },
   {
-    id: 'sprayers',
+    id: 'sprayeres',
     routeName: 'BasicHistology',
     name: 'Basic Histology',
     tags: ['products', 'shop'],
@@ -141,14 +141,13 @@ const categories = [
     image: require('../assets/logos/collection.png'),
   },
   {
-    id: 'sprayers',
+    id: 'sprayeres',
     name: 'Coming Soon....',
     tags: ['products', 'shop'],
     count: 'Start Quiz',
     image: require('../assets/logos/coming-soon.png'),
   },
 ];
-
 
 const products = [
   {
@@ -196,7 +195,6 @@ let topicImages = {
   simplesquamous: require('../assets/logos/topics/simplesquamos.png'),
 };
 let topics = [
-
   {
     id: 16,
     title: 'Central Nervous System',
@@ -233,7 +231,6 @@ let topics = [
       },
     ],
   },
-
 
   {
     id: 1,
@@ -326,7 +323,6 @@ let topics = [
     title: 'Connective Tissue',
 
     subtopics: [
-
       {
         id: 0,
         title: 'Aerolar Tissue',
@@ -1271,7 +1267,6 @@ let AllHistologyContent = [
           ],
         },
       },
-
 
       {
         id: 2,
@@ -4438,6 +4433,7 @@ let AllHistologyContent = [
           {
             orderedList: true,
             unOrderedList: false,
+
             content: [
               'Skin',
               'Skin appendages',
