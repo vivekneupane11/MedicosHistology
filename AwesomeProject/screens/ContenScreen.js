@@ -222,17 +222,47 @@ const ContentScreen = ({ navigation, route }) => {
           <View>
             {/* Tile is Here */}
             <Text style={styles.contentTitleText}>{title}</Text>
-
             {/* Introduction is Here  */}
+            {console.log("7777777777777777", contents?.content)}
             {contents?.isIntroduction && (
-              <Text
-                style={[
-                  styles.contentBox,
-                  styles.contentParagraphTypography,
-                  { color: themeforDarkMode.primaryText },
-                ]}>
-                {contents.introductionContent}
-              </Text>
+              typeof contents?.introductionContent == 'string' ?
+                <Text
+                  style={[
+                    styles.contentBox,
+                    styles.contentParagraphTypography,
+                    { color: themeforDarkMode.primaryText },
+                  ]}>
+                  {contents?.introductionContent}
+                </Text> :
+                <View>
+                  {contents?.introductionContent?.map(introductionContent => {
+                    { console.log("88888888888888888888", introductionContent) }
+                    return typeof introductionContent == 'string' ?
+                      <Text
+                        style={[
+                          styles.contentBox,
+                          styles.contentParagraphTypography,
+                          { color: themeforDarkMode.primaryText },
+                        ]}>
+                        {introductionContent}
+                      </Text> :
+                      <View>
+                        <Text>{introductionContent.title}</Text>
+                        {introductionContent?.content.map(content => {
+                          return <Text
+                            style={[
+                              styles.contentBox,
+                              styles.contentParagraphTypography,
+                              { color: themeforDarkMode.primaryText },
+                            ]}>
+                            {content}
+                          </Text>
+                        })}
+                      </View>
+                  })
+                  }
+                </View>
+
             )}
             {
               contents?.content?.subTopic.map(data => {
@@ -307,11 +337,11 @@ const ContentScreen = ({ navigation, route }) => {
                                 <Text>{content.title}</Text>
                                 {typeof content.content == 'string' ? <Text>{content.content}</Text>
                                   : <View>
-                                      {content?.content.map(data=>{
-                                        // console.log("*******************",data);
-                                        return <Text>{data}</Text>
-                                      })}
-                                    </View>
+                                    {content?.content.map(data => {
+                                      // console.log("*******************",data);
+                                      return <Text>{data}</Text>
+                                    })}
+                                  </View>
                                 }
                               </View>
                             })
