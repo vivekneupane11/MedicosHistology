@@ -49,10 +49,6 @@ const ContentScreen = ({navigation, route}) => {
       specificContent = specificContent ? specificContent : [];
 
       setContent((item) => specificContent[0]?.subTopics[id]);
-      console.log('iddddddddddddddddddddddd', id);
-      console.log('xxxxxxx', specificContent[0]);
-      console.log('zzzz', specificContent[0]?.subTopics[id]);
-      console.log('yyyyy', contents);
       setisContent(true);
     }
 
@@ -77,11 +73,12 @@ const ContentScreen = ({navigation, route}) => {
 
       let parsedBookmarkData =
         typeof finalData === 'undefined' ? [0] : finalData;
-
+      console.log('yyyyyyyyyyyyyyyyyyyyyyyyy', parsedBookmarkData);
       if (parsedBookmarkData.length >= 1) {
         let parsedNewArray = parsedBookmarkData.filter((item) => {
-          return item != id && titleId != item.titleId;
+          return item.id != id && titleId != item.titleId;
         });
+
         // console.log('hello');
         if (parsedBookmarkData.length == parsedNewArray.length) {
           console.log('aa', parsedBookmarkData);
@@ -235,7 +232,7 @@ const ContentScreen = ({navigation, route}) => {
               </Text>
             )}
             {contents?.content?.subTopic.map((data) => {
-              console.log('***', data.content);
+              // console.log('***', data.content);
               return (
                 <View>
                   <Text>***{data?.title}</Text>
@@ -251,7 +248,7 @@ const ContentScreen = ({navigation, route}) => {
                         <View>
                           {console.log('CONTENT WITHOUT NESETD SUBTOPIC')}
                           {data?.content?.map((item) => {
-                            console.log('************', item);
+                            // console.log('************', item);
                             return (
                               <View>
                                 {/* Here is Subtopics */}
@@ -302,7 +299,7 @@ const ContentScreen = ({navigation, route}) => {
                       //CONTENT WITH NESETD SUBTOPIC
                       <View>
                         {data?.content?.subTopic.map((content) => {
-                          console.log('CONTENT WITH NESETD SUBTOPIC');
+                          // console.log('CONTENT WITH NESETD SUBTOPIC');
                           // console.log("************", content)
                           return (
                             <View>

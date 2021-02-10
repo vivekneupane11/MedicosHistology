@@ -20,7 +20,7 @@ const Icon = createIconSetFromFontello(fontelloConfig);
 const {width} = Dimensions.get('window');
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useIsFocused} from '@react-navigation/native';
-import data from './data';
+import {topics} from '../constants/mocks';
 const BookmarkScreen = ({navigation}) => {
   const isFocused = useIsFocused();
 
@@ -28,33 +28,46 @@ const BookmarkScreen = ({navigation}) => {
   const [isBookmakEmpty, setisBookmarkEmpty] = useState(false);
   const [changeBookmark, setBookmarkChange] = useState(false);
   const [BookmarkData, setBookmarkData] = useState([]);
-  const removeBookmarkData = async ({id}) => {
+  const removeBookmarkData = async ({id, titleId}) => {
     try {
       let bookmarkData = await AsyncStorage.getItem('BookmarkID');
       //      // console.log('kk', JSON.parse(bookmarkData).bookmark);
+
       if (JSON.parse(bookmarkData).bookmark.length < 2) {
+        console.log('here');
         setisBookmarkEmpty(true);
       } else {
         //        // console.log(typeof JSON.parse(bookmarkData).bookmark);
         //   // AsyncStorage.setItem(Bookmark,);
-        let newBookmarkData = JSON.parse(bookmarkData).bookmark.filter(
-          (item) => item != id,
+
+        let newBookmarkData = await JSON.parse(bookmarkData).bookmark.filter(
+          (item) => item.id != id && item.titleId != titleId,
         );
+
+        console.log('lllllllllllllll', newBookmarkData);
+
         await AsyncStorage.setItem(
           'BookmarkID',
           JSON.stringify({bookmark: newBookmarkData}),
         );
 
-        let dataBookmark = data.filter((item) => {
-          return newBookmarkData.some((data) => {
-            return item.id == data;
+        let dataBookmarks = [];
+        let dataBookmark = topics.map((item) => {
+          parsedBookmarkData.map((data) => {
+            if (item.id == data.titleId) {
+              item.subtopics.map((ele) => {
+                if (ele.id == data.id) {
+                  dataBookmarks.push(ele);
+                }
+              });
+            }
           });
         });
-        //        // console.log('shere', dataBookmark);
-        if (dataBookmark.length < 1) {
+        //        // console.log('shere', dataBookmarks);
+        if (dataBookmarks.length < 1) {
           setisBookmarkEmpty(true);
         }
-        setBookmarkData(dataBookmark);
+        setBookmarkData(dataBookmarks);
       }
 
       //   //   if(newB)
@@ -86,45 +99,53 @@ const BookmarkScreen = ({navigation}) => {
 
       bookmarkData =
         checker >= 2 ? bookmarkData : await JSON.stringify({bookmark: [0]});
-      //      // console.log("sss",bookmarkData);
+      console.log('sss', bookmarkData);
       let finalData = await JSON.parse(bookmarkData).bookmark;
-      //      // console.log('final', finalData);
+      console.log('final', finalData);
       let parsedBookmarkData =
         typeof finalData === 'undefined' ? [0] : finalData;
-      //      // console.log('l', parsedBookmarkData);
+      console.log('l', parsedBookmarkData);
       if (finalData.length < 2) {
         //        // console.log("is here");
         setisBookmarkEmpty(true);
         //        // console.log('here', finalData.length);
       }
-      let dataBookmark = data.filter((item) => {
-        return parsedBookmarkData.some((data) => {
-          return item.id == data;
+      let dataBookmarks = [];
+      console.log(parsedBookmarkData);
+      topics.map((item) => {
+        parsedBookmarkData.map((data) => {
+          if (item.id == data.titleId) {
+            item.subtopics.map((ele) => {
+              if (ele.id == data.id) {
+                dataBookmarks.push(ele);
+              }
+            });
+          }
         });
       });
+      console.log('nnnnnnnnnnn', dataBookmarks);
+      //      // console.log('shere', dataBookmarks);
+      setBookmarkData(dataBookmarks);
 
-      //      // console.log('shere', dataBookmark);
-      setBookmarkData(dataBookmark);
-
-      if (dataBookmark.length > 0) {
-        //        // console.log("finalss",dataBookmark.length);
+      if (dataBookmarks.length > 0) {
+        //        // console.log("finalss",dataBookmarks.length);
         setisBookmarkEmpty(false);
       }
 
-      //      // console.log('shere', dataBookmark);
-      setBookmarkData(dataBookmark);
+      //      // console.log('shere', dataBookmarks);
+      setBookmarkData(dataBookmarks);
 
-      //       if (dataBookmark.length > 0) {
-      // //        // console.log("finalss",dataBookmark.length);
+      //       if (dataBookmarks.length > 0) {
+      // //        // console.log("finalss",dataBookmarks.length);
       //         setisBookmarkEmpty(false);
       //       }
-      //     let dataBookmark = data.filter((item) => {
+      //     let dataBookmarks = data.filter((item) => {
       //       return JSON.parse(asyncData).bookmark.some((data) => {
       //         return item.id == data;
       //       });
       //     });
       //     setisBookmarkEmpty(false);
-      //     setBookmarkData(dataBookmark);
+      //     setBookmarkData(dataBookmarks);
       // let newArray = await JSON.parse(asyncData).bookmark;
       // let verifiednewArray = newArray.filter((item) => {
       //   return item != id;
@@ -174,7 +195,7 @@ const BookmarkScreen = ({navigation}) => {
           Toggle Theme
         </Text>
       </View> */}
-      {!isBookmakEmpty ? (
+      {isBookmakEmpty ? (
         <TouchableOpacity>
           <Text>No Bookmark Set Currently</Text>
         </TouchableOpacity>
@@ -185,37 +206,40 @@ const BookmarkScreen = ({navigation}) => {
               onPress={() => {
                 navigation.navigate('Content', {data: item});
               }}
-              key={item.id}
+              key={item.id + item.title}
               style={[
                 styles.searchContentBox,
                 styles.shadow,
                 {backgroundColor: themeforDarkMode.cardBox},
               ]}>
-              <Text style={{color: 'red'}}>hissssssssssssssssssssssssss</Text>
-              {/* <View style={styles.image}>
-                  <Image
-                    resizeMode="contain"
-                    source={require('../assets/images/cuboidal.png')}
-                    style={styles.imageStyle}
-                  />
-                </View>
-                <View style={styles.searchContent}>
-                  <Text
-                    style={[
-                      styles.searchContentTitle,
-                      {color: themeforDarkMode.secondaryText},
-                    ]}>
-                    {item.title}
-                  </Text>
-                  <Text style={styles.searchContentText} numberOfLines={2}>
-                    {item.introduction.content}{' '}
-                  </Text>
-                </View>
-                <TouchableOpacity
-                  onPress={() => removeBookmarkData({id: item.id})}
-                  style={styles.bookmark}>
-                  <Icon name="bookmark-empty" size={24} color="#ABB4BD" />
-                </TouchableOpacity> */}
+              {console.log(item)}
+              <View style={styles.image}>
+                <Image
+                  resizeMode="contain"
+                  source={item.imgPath}
+                  style={styles.imageStyle}
+                />
+              </View>
+              <View style={styles.searchContent}>
+                <Text
+                  style={[
+                    styles.searchContentTitle,
+                    {color: themeforDarkMode.secondaryText},
+                  ]}>
+                  {item.title}
+                </Text>
+                <Text style={styles.searchContentText} numberOfLines={2}>
+                  {/* //  {item.introduction.content}{' '} */}
+                  Thisisthesubtitles
+                </Text>
+              </View>
+              <TouchableOpacity
+                onPress={() =>
+                  removeBookmarkData({id: item.id, titleId: item.titleId})
+                }
+                style={styles.bookmark}>
+                <Icon name="bookmark-empty" size={24} color="#ABB4BD" />
+              </TouchableOpacity>
             </TouchableOpacity>
           ))}
         </View>
@@ -281,8 +305,8 @@ const styles = StyleSheet.create({
   },
   bookmark: {
     position: 'absolute',
-    top: 2,
-    right: 10,
+    top: 5,
+    right: 15,
   },
   shadow: {
     shadowColor: '#000',
