@@ -1,4 +1,4 @@
-const introductionImages = [
+const introductionScreenImages = [
   {
     image: require('../assets/logos/introduction/1.jpg'),
   },
@@ -57,6 +57,159 @@ const introductionImages = [
     image: require('../assets/logos/introduction/19.jpg'),
   },
 ];
+
+const sliderImages = [
+  {
+      title: "Epithelial Tissues",
+      sliderImages: ["epi1.webp", "epi3.webp", "epi4.webp"]
+  },
+  {
+      title: "Simple squamous",
+      sliderImages: ["epi1.webp", "epi3.webp", "epi4.webp"]
+
+  },
+  {
+      title: "Simple Cuboidal",
+      sliderImages: ["simple_sq2.webp", "simple_sq3.webp",]
+
+  },
+  {
+      title: "Simple Columnar",
+      sliderImages: ["Simple_col1.webp", "Simple_col2.webp", "Simple_col3.webp", "Simple_col4.webp", "Simple_col5.webp"]
+
+  },
+  {
+      title: "PseudoStratified Columnar Cilliate",
+      sliderImages: ["pesudo_col1.webp", "pesudo_col2.webp", "pesudo_col3.webp", "pesudo_col4.webp", "pesudo_col5.webp", "pesudo_col6.webp", "pesudo_col7.webp"]
+
+  },
+  {
+      title: "Stratified Squamos Epithelium",
+      sliderImages: ["stra_sq1.webp", "ststra_sq2.webp", "stra_sq3.webp", "stra_sq4.webp", "stra_sq5.webp", "stra_sq7.webp", "stra_sq8.webp"]
+
+  },
+  {
+      title: "Transitional Epithelium",
+      sliderImages: ["stra_tra1.webp", "stra_tra2.webp", "stra_tra3.webp", "stra_tra4.webp", "stra_sq5.webp", "transtionalepithelium.webp", "transtionalepithelium1.jpg"]
+
+  },
+  {
+      title: "Statified Cuboidal Epithellium",
+      sliderImages: ["strate_cub1.webp", "strate_cub2.webp", "strate_cub3.webp", "strate_cub4.webp"]
+
+  },
+  {
+      title: "Stratified Columnar",
+      sliderImages: ["stra_col.jpg", "stra_col1.jpg", "stra_col2.jpg", "stra_col2.webp", "stra_col3.webp"]
+
+  },
+  {
+      title: "Connective Tissues",
+      sliderImages: ["connective.webp", "connective1.webp", "connective2.webp", "connective3.webp", "connective4.webp", "connective5.webp", "connective6.webp", "connective7.webp", "connective8.webp"]
+  },
+  {
+      title: "Adipose Tissue",
+      sliderImages: ["adipose_tissue.jpg", "adipose1.jpg", "adipose2.jpg", "adipose4.jpg", "adipose5.jpg", "adipose6.jpg"]
+  },
+  {
+      title: "Areolar Tissue",
+      sliderImages: ["areolar2.jpg", "areolar3.jpg", "areolar4.jpg"]
+  },
+  {
+      title: "Compact Bone",
+      sliderImages: ["compact.jpg", "compactbone.jpg", "compact8.webp", "compact9.webp", "compactbone.webp"]
+  },
+  {
+      title: "Dense Connective Tissue",
+      sliderImages: ["dense1.webp", "dense6.webp", "dense7.webp", "dense8.webp", "dense9.webp", "dense10.webp", "dense11.webp"]
+  },
+  {
+      title: "Loose Connective Tissue",
+      sliderImages: ["loose1.webp", "loose2.webp", "loose3.webp", "loose4.webp", "loose5.webp"]
+  },
+  {
+      title: "Spongy Bone",
+      sliderImages: ["spongy1.webp", "spongy3.webp", "spongy4.webp", "spongy5.webp", "spongy6.webp", "spongybone.jpg"]
+  },
+  {
+      title: "Cartilage",
+      sliderImages: ["cartildge.jpg", "Three-different-types-of-cartilage-Hematoxylin-and-eosin-staining-of-cross-sections-of.jpg", "Types-of-Cartilage.jpg"]
+  },
+  {
+      title: "Elastic cartilage",
+      sliderImages: ["elasticcart.webp", "elasticcart0.jpg", "elasticcart1.webp", "elasticcart2.webp", "elasticcart3.webp", "elasticcart4.webp","elasticcart5.webp","elasticcart6.webp"]
+  },
+  {
+      title: "Fibro cartilage",
+      sliderImages: ["fibro0.webp", "fibro1.webp", "fibro2.webp", "fibro3.webp", "fibro4.webp", "fibro5.webp","fibro7.webp"]
+  },
+  {
+      title: "Hyline cartilage",
+      sliderImages: ["hyaline2.webp", "hyaline3.webp", "hyaline4.webp", "hyaline5.webp", "hyaline6.webp", "hyaline7.webp","hyaline8.webp"]
+  },
+  {
+      title: "Blood vessel",
+      sliderImages: []
+  },
+  {
+      title: "Elastic artery",
+      sliderImages: ["elastic1.webp", "elastic2.webp", "elastic3.webp", "elastic4.webp", "elastic5.webp", "elastic6.webp","elastic7.webp","elastic8.webp","elastic9.webp","elasticartery.webp"]
+  },
+  {
+      title: "Large Vein",
+      sliderImages: ["largevein.webp", "vein1.webp", "vein2.webp", "vein3.webp", "vein4.webp", "vein6.webp"]
+  },
+  {
+      title: "Muscular Artery",
+      sliderImages: ["muscularart1.webp", "muscularart3.webp", "muscularart4.webp", "muscularart5.webp", "muscularart6.webp", "muscularart7.webp","muscularart8.webp","muscularart9.webp","muscularartey.webp"]
+  },
+  {
+      title: "Muscular Tissue",
+      sliderImages: ["article-Muscle-Tissue-Af6.jpg", "muscular-tissue-678x381.jpg"]
+  },
+  {
+      title: "Cardic Muscle",
+      sliderImages: ["cardiac1.jpg","cardiac2.jpg","cardiac3.jpg","cardiac4.jpg","cardiac5.jpg","cardiac6.jpg","cardiac7.jpg","cardiac8.jpg","cardic9.jpg","cardiacmuscle"]
+  },
+  {
+      title: "Skeletal Muscle",
+      sliderImages: ["skeletal1.jpg","skeletal2.jpg","skeletal3.jpg","skeletal4.jpg","skeletal5.jpg","skeletal6.jpg","skeletal7.jpg","skeletal9.jpg","skeletalmuscle"]
+  },
+  {
+      title: "Smooth Muscle",
+      sliderImages: [,"smooth1.jpg","smooth2.jpg","smooth3.jpg","smooth4.jpg","smooth5.jpg"]
+  },
+  {
+      title: "Respiratory System",
+      sliderImages: [,"5bb381ff064cc4af0a1703a3d8412ab6.jpg","Respiratory-System-Diagram.jpg"]
+  },
+  {
+      title: "Epiglotis",
+      sliderImages: ["epi1.jpg","epi3.jpg","epi4.jpg","epiglottis.jpg","lungs6.jpg"]
+  },
+  {
+      title: "Lungs",
+      sliderImages: ["lungs.jpg","lungs2.jpg","lungs3.jpg","lungs4.jpg","lungs5.jpg","lungs6.jpg","lungs7.jpg"]
+  },
+  {
+      title: "Trachea",
+      sliderImages: ["trachea.jpg","trachea1.jpg","trachea3.jpg","trachea4.jpg","trachea5.jpg","trachea6.jpg","trachea7.jpg"]
+  },
+  {
+      title: "Trachea",
+      sliderImages: ["trachea.jpg","trachea1.jpg","trachea3.jpg","trachea4.jpg","trachea5.jpg","trachea6.jpg","trachea7.jpg"]
+  },
+  {
+      title: "Gastrolntestinal System",
+      sliderImages: ["gi.jpg","gi1.jpg","gi2.jpg"]
+  },
+  {
+      title: "Appendix",
+      sliderImages: ["appndix2.webp","appndix3.jpg","appndix4.webp","appndix5.webp","appndix6.webp","appndix8.webp","appndix9.webp","appndix10.webp","appndix11.webp"]
+  },
+]
+
+
 
 const categoriesone = [
   {
@@ -6418,4 +6571,4 @@ let AllHistologyContent = [
   }
 ];
 
-export { categories, explore, products, profile, topics, collections, AllHistologyContent, introductionImages };
+export { categories, explore, products, profile, topics, collections, AllHistologyContent, introductionScreenImages, sliderImages };

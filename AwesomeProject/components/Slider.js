@@ -1,17 +1,28 @@
-import React,{useState} from 'react';
+import React,{useEffect, useState} from 'react';
 import { ScrollView, Image, Text, View, Dimensions,StyleSheet} from 'react-native';
+import { sliderImages } from '../constants/mocks';
 
 const width = Dimensions.get('screen').width;
 const height = width / 1.61;
-const images = [
-    require('../assets/images/1.jpeg'),
-    require('../assets/images/2.jpeg'),
-    require('../assets/images/3.jpeg'),
-    require('../assets/images/4.jpeg'),
-    require('../assets/images/5.jpeg'),
-]
+let images = [];
+let image = '../assets/images/SimpleCuboidal/simple_sq2.webp';
+let hello = "hello world";
 
-const Slider = () => {
+
+const Slider = (props) => {
+    useEffect(()=>{
+        sliderImages.map(data=>{
+            return data.title == props.title ?
+            data.sliderImages.map(image=>{
+             
+             //    images.push(image)
+                images.push(require(`../assets/images/${(props.title).replace(' ','')}/${image}`));
+                // console.log("hello",hello.replace(' ',''))
+            }):
+            console.log("bye");
+         })
+    },[])
+   
     const [active, setActive] = useState(0);
     var change = ({ nativeEvent }) => {
         const slide = Math.floor(nativeEvent.contentOffset.x / nativeEvent.layoutMeasurement.width);
@@ -27,10 +38,13 @@ const Slider = () => {
         onScroll={change}
         showsHorizontalScrollIndicator={false}
     >
+        {/* <Image style={{height:100,width:100}} source={require('../assets/images/SimpleCuboidal/simple_sq2.webp')}></Image> */}
         {
             images.map((item, index) => {
+                console.log("555555555555555555555",item);
                 return <Image
                     key={index}
+
                     source={item}
                     style={{ height, width, resizeMode: 'cover' }}
                 />

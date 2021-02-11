@@ -216,14 +216,14 @@ const ContentScreen = ({ navigation, route }) => {
         </View>
       </Modal> */}
       <View style={styles.container}>
-        <Slider />
+        <Slider title={title} />
 
         <View style={styles.contentContainer}>
           <View>
             {/* Tile is Here */}
             <Text style={styles.contentTitleText}>{title}</Text>
             {/* Introduction is Here  */}
-            {console.log("7777777777777777", contents?.content)}
+            {/* {console.log("7777777777777777", contents?.content)} */}
             {contents?.isIntroduction && (
               typeof contents?.introductionContent == 'string' ?
                 <Text
@@ -236,7 +236,7 @@ const ContentScreen = ({ navigation, route }) => {
                 </Text> :
                 <View>
                   {contents?.introductionContent?.map(introductionContent => {
-                    { console.log("88888888888888888888", introductionContent) }
+                    // { console.log("88888888888888888888", introductionContent) }
                     return typeof introductionContent == 'string' ?
                       <Text
                         style={[
