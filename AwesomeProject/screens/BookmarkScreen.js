@@ -20,7 +20,7 @@ const Icon = createIconSetFromFontello(fontelloConfig);
 const {width} = Dimensions.get('window');
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useIsFocused} from '@react-navigation/native';
-import {topics, topicImages} from '../constants/mocks';
+import data from './data';
 const BookmarkScreen = ({navigation}) => {
   const isFocused = useIsFocused();
 
@@ -28,65 +28,33 @@ const BookmarkScreen = ({navigation}) => {
   const [isBookmakEmpty, setisBookmarkEmpty] = useState(false);
   const [changeBookmark, setBookmarkChange] = useState(false);
   const [BookmarkData, setBookmarkData] = useState([]);
-  const removeBookmarkData = async ({id, titleId}) => {
+  const removeBookmarkData = async ({id}) => {
     try {
       let bookmarkData = await AsyncStorage.getItem('BookmarkID');
-      console.log('kk', JSON.parse(bookmarkData));
-      //console.log('#################################', bookmarkData);
-      if (JSON.parse(bookmarkData)?.bookmark?.length < 1) {
+      //      // console.log('kk', JSON.parse(bookmarkData).bookmark);
+      if (JSON.parse(bookmarkData).bookmark.length < 2) {
         setisBookmarkEmpty(true);
       } else {
-        //        // //console.log(typeof JSON.parse(bookmarkData).bookmark);
+        //        // console.log(typeof JSON.parse(bookmarkData).bookmark);
         //   // AsyncStorage.setItem(Bookmark,);
         let newBookmarkData = JSON.parse(bookmarkData).bookmark.filter(
-          (item) => item.id != id && item.titleId != titleId,
+          (item) => item != id,
         );
-        newBookmarkData = newBookmarkData.length == 0 ? [0] : newBookmarkData;
         await AsyncStorage.setItem(
           'BookmarkID',
           JSON.stringify({bookmark: newBookmarkData}),
         );
-        setBookmarkChange((init) => !init);
-        setisBookmarkEmpty(false);
 
-        // let dataBookmark = topics.filter((item) => {
-        //   return parsedBookmarkData.some((data) => {
-        //     //console.log(item, data);
-        //     return item.id == data.titleId;
-        //   });
-        // });
-
-        // let finaldataBookmark = [];
-        // dataBookmark.map((ele) => {
-        //   ele.subtopics.map((data) => {
-        //     parsedBookmarkData.map((item) => {
-        //       if (data.id == item.id && ele.id == item.titleId) {
-        //         finaldataBookmark.push(data);
-        //       }
-        //     });
-        //   });
-        // });
-        // //console.log('777777777777777777777777777777', finaldataBookmark);
-        // // let finaldataBookmark = dataBookmark.map((item) => {
-        // //   item.subtopics.filter((ele) => {
-        // //     return parsedBookmarkData.some((data) => {
-        // //       //console.log('{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{', item, data);
-        // //       return ele.id == data.id;
-        // //     });
-        // //   });
-        // // });
-
-        // //console.log('shere', finaldataBookmark);
-        // setBookmarkData(finaldataBookmark);
-
-        // if (finaldataBookmark.length > 0) {
-        //   //        // //console.log("finalss",finaldataBookmark.length);
-        //   setisBookmarkEmpty(false);
-        // }
-
-        // //      // //console.log('shere', finaldataBookmark);
-        // setBookmarkData(finaldataBookmark);
-        //        // //console.log('shere', dataBookmark);
+        let dataBookmark = data.filter((item) => {
+          return newBookmarkData.some((data) => {
+            return item.id == data;
+          });
+        });
+        //        // console.log('shere', dataBookmark);
+        if (dataBookmark.length < 1) {
+          setisBookmarkEmpty(true);
+        }
+        setBookmarkData(dataBookmark);
       }
 
       //   //   if(newB)
@@ -98,7 +66,7 @@ const BookmarkScreen = ({navigation}) => {
       //     setBookmarkData(newBookmarkData);
       //   } else {
       //     let stringifieddata = JSON.stringify(newBookmarkData);
-      //      //console.log(stringifieddata);
+      //      console.log(stringifieddata);
       //     await AsyncStorage.setItem(
       //       'BookmarkID',
       //       JSON.stringify({bookmark: newBookmarkData}),
@@ -107,80 +75,47 @@ const BookmarkScreen = ({navigation}) => {
       //     setBookmarkData(stringifieddata);
       //   }
     } catch (err) {
-      console.log('Error Removing bookmark', err);
+      //      // console.log('Error Removing bookmark', err);
     }
   };
   const checkBookmarkStatus = async () => {
     try {
       let bookmarkData = await AsyncStorage.getItem('BookmarkID');
-      if (bookmarkData == null) {
-        setisBookmarkEmpty(true);
-      }
-      console.log('>>>>>>>>>>>>>>>>>>>>>>>>', bookmarkData);
+
       let checker = await JSON.parse(bookmarkData).bookmark.length;
-      //console.log('1', bookmarkData, checker);
+      //      // console.log("1",bookmarkData,checker);
       bookmarkData =
-        checker > 1 ? bookmarkData : await JSON.stringify({bookmark: [0]});
-      //console.log('sss', bookmarkData);
+        checker >= 2 ? bookmarkData : await JSON.stringify({bookmark: [0]});
+      //      // console.log("sss",bookmarkData);
       let finalData = await JSON.parse(bookmarkData).bookmark;
-      //      // //console.log('final', finalData);
+      //      // console.log('final', finalData);
       let parsedBookmarkData =
         typeof finalData === 'undefined' ? [0] : finalData;
-      //console.log(finalData, '<<<<<<<<<<<<<<<<<<<<<');
-      //console.log('l', parsedBookmarkData);
+      //      // console.log('l', parsedBookmarkData);
       if (finalData.length < 2) {
-        console.log('here', finalData.length);
+        //        // console.log("is here");
         setisBookmarkEmpty(true);
-      } else {
-        //console.log('else++++++++++++');
-        let dataBookmark = topics.filter((item) => {
-          return finalData.some((data) => {
-            //console.log(item, data);
-            return item.id == data.titleId;
-          });
+        //        // console.log('here', finalData.length);
+      }
+      let dataBookmark = data.filter((item) => {
+        return parsedBookmarkData.some((data) => {
+          return item.id == data;
         });
-        console.log('&&&&&&&&&&&&&&&&', dataBookmark);
-        let finaldataBookmark = [];
-        dataBookmark.map((ele) => {
-          ele.subtopics.map((data) => {
-            parsedBookmarkData.map((item) => {
-              if (data.id == item.id && ele.id == item.titleId) {
-                data.titleId = item.titleId;
-                //console.log('pppp', data);
-                finaldataBookmark.push(data);
-              }
-            });
-          });
-        });
-        console.log('##################', finaldataBookmark);
+      });
 
-        //console.log('777777777777777777777777777777', finaldataBookmark);
-        // let finaldataBookmark = dataBookmark.map((item) => {
-        //   item.subtopics.filter((ele) => {
-        //     return parsedBookmarkData.some((data) => {
-        //       //console.log('{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{', item, data);
-        //       return ele.id == data.id;
-        //     });
-        //   });
-        // });
+      //      // console.log('shere', dataBookmark);
+      setBookmarkData(dataBookmark);
 
-        //console.log('shere', finaldataBookmark);
-        setBookmarkData(finaldataBookmark);
+      if (dataBookmark.length > 0) {
+        //        // console.log("finalss",dataBookmark.length);
         setisBookmarkEmpty(false);
-        setBookmarkChange(true);
       }
 
-      // }
-      // if (finaldataBookmark.length > 1) {
-      //   //        // //console.log("finalss",finaldataBookmark.length);
-      //   setisBookmarkEmpty(false);
-      // }
-
-      //      // //console.log('shere', finaldataBookmark);
-      // setBookmarkData(finaldataBookmark);
+      //      // console.log('shere', dataBookmark);
+      setBookmarkData(dataBookmark);
 
       //       if (dataBookmark.length > 0) {
-      // //        // //console.log("finalss",dataBookmark.length);
+      // //        // console.log("finalss",dataBookmark.length);
       //         setisBookmarkEmpty(false);
       //       }
       //     let dataBookmark = data.filter((item) => {
@@ -203,18 +138,17 @@ const BookmarkScreen = ({navigation}) => {
       // let stringifieddata = await JSON.stringify({ bookmark: verifiednewArray });
       // AsyncStorage.setItem('BookmarkID', stringifieddata);
       // setBookmark(stringifieddata);
-      //      // //console.log('BookmarkStatus', err);
+      //      // console.log('BookmarkStatus', err);
     } catch (err) {
-      //console.log('Error checking bookmark status', err);
+      console.log('Error checking bookmark status', err);
     }
   };
 
   useEffect(() => {
-    //console.log('hereee', isBookmakEmpty);
-    //console.log(
-
+    console.log(isBookmakEmpty);
+    console.log(BookmarkData);
     checkBookmarkStatus();
-  }, [isBookmakEmpty, isFocused, changeBookmark]);
+  }, [isBookmakEmpty, isFocused]);
   return (
     <ScrollView
       style={{
@@ -242,7 +176,7 @@ const BookmarkScreen = ({navigation}) => {
           Toggle Theme
         </Text>
       </View> */}
-      {isBookmakEmpty ? (
+      {!isBookmakEmpty ? (
         <TouchableOpacity>
           <Text>No Bookmark Set Currently</Text>
         </TouchableOpacity>
@@ -253,38 +187,37 @@ const BookmarkScreen = ({navigation}) => {
               onPress={() => {
                 navigation.navigate('Content', {data: item});
               }}
-              key={item.id + item.title}
+              key={item.id}
               style={[
                 styles.searchContentBox,
                 styles.shadow,
                 {backgroundColor: themeforDarkMode.cardBox},
               ]}>
-              <View style={styles.image}>
-                <Image
-                  resizeMode="contain"
-                  source={item.imgPath}
-                  style={styles.imageStyle}
-                />
-              </View>
-              <View style={styles.searchContent}>
-                <Text
-                  style={[
-                    styles.searchContentTitle,
-                    {color: themeforDarkMode.secondaryText},
-                  ]}>
-                  {item.title}
-                </Text>
-                <Text style={styles.searchContentText} numberOfLines={2}>
-                  dskjbfkjdsbfdskjfbkjdsfdskj
-                </Text>
-              </View>
-              <TouchableOpacity
-                onPress={() =>
-                  removeBookmarkData({id: item.id, titleId: item.titleId})
-                }
-                style={styles.bookmark}>
-                <Icon name="bookmark-empty" size={24} color="#ABB4BD" />
-              </TouchableOpacity>
+              <Text style={{color: 'red'}}>hissssssssssssssssssssssssss</Text>
+              {/* <View style={styles.image}>
+                  <Image
+                    resizeMode="contain"
+                    source={require('../assets/images/cuboidal.png')}
+                    style={styles.imageStyle}
+                  />
+                </View>
+                <View style={styles.searchContent}>
+                  <Text
+                    style={[
+                      styles.searchContentTitle,
+                      {color: themeforDarkMode.secondaryText},
+                    ]}>
+                    {item.title}
+                  </Text>
+                  <Text style={styles.searchContentText} numberOfLines={2}>
+                    {item.introduction.content}{' '}
+                  </Text>
+                </View>
+                <TouchableOpacity
+                  onPress={() => removeBookmarkData({id: item.id})}
+                  style={styles.bookmark}>
+                  <Icon name="bookmark-empty" size={24} color="#ABB4BD" />
+                </TouchableOpacity> */}
             </TouchableOpacity>
           ))}
         </View>
@@ -326,7 +259,6 @@ const styles = StyleSheet.create({
   },
   searchContent: {
     flex: 1,
-
     // backgroundColor:'yellow',
     // marginLeft: 15,
     marginLeft: widthPercentageToDP(3.5),
@@ -343,7 +275,6 @@ const styles = StyleSheet.create({
     color: 'gray',
     // lineHeight: 17,
     textAlign: 'justify',
-    paddingTop: 5,
     // fontSize: 15,
     fontFamily: 'LiberationSerif-Regular',
     marginRight: widthPercentageToDP(6.5),
@@ -352,8 +283,8 @@ const styles = StyleSheet.create({
   },
   bookmark: {
     position: 'absolute',
-    top: 10,
-    right: 15,
+    top: 2,
+    right: 10,
   },
   shadow: {
     shadowColor: '#000',

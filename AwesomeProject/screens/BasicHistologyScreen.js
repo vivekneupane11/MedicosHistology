@@ -89,13 +89,16 @@ const BasicHistologyScreen = ({navigation}) => {
               under the field of histology. In medicine, histopathology is the
               branch of histology that includes the microscopic identification
               and study of diseased tissue. In the field of paleontology, the
-              term paleohistology refers to the histology of fossil organisms.{' '}
+              term paleohistology refers to the histology of fossil organisms.
             </Text>
 
             <View>
               <Text
                 style={[
                   styles.contentSubTitleText,
+                  fontsizeMode == 'S' && styles.typographySmall,
+                  fontsizeMode == 'M' && styles.typographyMedium,
+                  fontsizeMode == 'L' && styles.typographyLarge,
                   {
                     color: themeforDarkMode.primaryText,
                     borderBottomColor: themeforDarkMode.primaryText,
@@ -153,6 +156,9 @@ const BasicHistologyScreen = ({navigation}) => {
                   style={[
                     styles.contentBox,
                     styles.contentParagraphTypography,
+                    fontsizeMode == 'S' && styles.typographySmall,
+                    fontsizeMode == 'M' && styles.typographyMedium,
+                    fontsizeMode == 'L' && styles.typographyLarge,
                     {color: themeforDarkMode.primaryText},
                   ]}>
                   All animal tissues are considered to be subtypes of these four
@@ -303,13 +309,13 @@ const styles = StyleSheet.create({
     lineHeight: heightPercentageToDP(2.9),
   },
   typographySmall: {
-    fontSize: widthPercentageToDP(2),
+    fontSize: widthPercentageToDP(3),
   },
   typographyMedium: {
     fontSize: widthPercentageToDP(4),
   },
   typographyLarge: {
-    fontSize: widthPercentageToDP(6),
+    fontSize: widthPercentageToDP(5),
   },
   contentBox: {
     // paddingHorizontal: 25,

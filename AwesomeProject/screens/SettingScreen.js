@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -9,26 +9,26 @@ import {
   Alert,
 } from 'react-native';
 import BackgroundHeader from '../components/BackgroundHeader';
-import {createIconSetFromFontello} from 'react-native-vector-icons';
-import {useTheme} from '../src/utils/DarkTheme/ThemeManager';
+import { createIconSetFromFontello } from 'react-native-vector-icons';
+import { useTheme } from '../src/utils/DarkTheme/ThemeManager';
 import fontelloConfig from '../src/config.json';
 const Icon = createIconSetFromFontello(fontelloConfig);
-import {colors} from '../constants/theme';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import { colors } from '../constants/theme';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import {
   heightPercentageToDP,
   widthPercentageToDP,
 } from '../src/utils/responsive';
-import {useLanguage} from '../src/utils/Language/LanguageManager';
-import {usefontsize} from '../src/utils/FontSize/FontSizeManager';
-const {width} = Dimensions.get('window');
-import {Picker} from '@react-native-picker/picker';
-const SettingScreen = ({navigation}) => {
+import { useLanguage } from '../src/utils/Language/LanguageManager';
+import { usefontsize } from '../src/utils/FontSize/FontSizeManager';
+const { width } = Dimensions.get('window');
+import { Picker } from '@react-native-picker/picker';
+const SettingScreen = ({ navigation }) => {
   //  My Custom Hooks
 
-  const {languageMode, languageData, toogleLanguage} = useLanguage();
-  const {fontsizeMode, fontsizeData, tooglefontsize} = usefontsize();
-  const {mode, theme: themeforDarkMode, toggle} = useTheme();
+  const { languageMode, languageData, toogleLanguage } = useLanguage();
+  const { fontsizeMode, fontsizeData, tooglefontsize } = usefontsize();
+  const { mode, theme: themeforDarkMode, toggle } = useTheme();
 
   console.log(
     '******************************************************',
@@ -77,29 +77,29 @@ const SettingScreen = ({navigation}) => {
       <View
         style={[
           styles.settingsContainer,
-          {backgroundColor: themeforDarkMode.secondaryHeader},
+          { backgroundColor: themeforDarkMode.secondaryHeader },
         ]}>
         <View
           style={[
             styles.settingsSection,
             styles.shadow,
-            {backgroundColor: themeforDarkMode.secondaryHeader},
+            { backgroundColor: themeforDarkMode.secondaryHeader },
           ]}>
           <TouchableOpacity style={[styles.list, styles.f_r_sb_c]}>
-            <Icon style={{flex: 1.5}} name="user" size={18} color="#ABB4BD" />
-            <Text style={{flex: 9, color: themeforDarkMode.secondaryText}}>
+            <Icon style={{ flex: 1.5 }} name="user" size={18} color="#ABB4BD" />
+            <Text style={{ flex: 9, color: themeforDarkMode.secondaryText }}>
               {languageData.accounts}
             </Text>
             {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
           </TouchableOpacity>
           <View style={[styles.list, styles.f_r_sb_c]}>
-            <Icon style={{flex: 1.5}} name="bell" size={18} color="#ABB4BD" />
-            <Text style={{flex: 7, color: themeforDarkMode.secondaryText}}>
+            <Icon style={{ flex: 1.5 }} name="bell" size={18} color="#ABB4BD" />
+            <Text style={{ flex: 7, color: themeforDarkMode.secondaryText }}>
               {languageData.pushnotification}
             </Text>
             {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
             <Switch
-              trackColor={{false: '#767577', true: colors.primary}}
+              trackColor={{ false: '#767577', true: colors.primary }}
               thumbColor={isPushNotification ? colors.white : '#f4f3f4'}
               ios_backgroundColor="#3e3e3e"
               onValueChange={tooglePushNotification}
@@ -107,13 +107,13 @@ const SettingScreen = ({navigation}) => {
             />
           </View>
           <View style={[styles.list, styles.f_r_sb_c]}>
-            <Icon style={{flex: 1.5}} name="font" size={18} color="#ABB4BD" />
-            <Text style={{flex: 6, color: themeforDarkMode.secondaryText}}>
+            <Icon style={{ flex: 1.5 }} name="font" size={18} color="#ABB4BD" />
+            <Text style={{ flex: 6, color: themeforDarkMode.secondaryText }}>
               {languageData.fontsize}
             </Text>
 
             <Picker
-              style={{flex: 6}}
+              style={{ flex: 6 }}
               selectedValue={fontsize.fontsize}
               style={{
                 height: 23,
@@ -124,7 +124,7 @@ const SettingScreen = ({navigation}) => {
               onValueChange={(itemValue, itemIndex) => {
                 console.log('ssss', itemValue);
                 tooglefontsize(itemValue);
-                setfontsize({fontsize: itemValue});
+                setfontsize({ fontsize: itemValue });
               }}>
               <Picker.Item label="12" value="S" />
               <Picker.Item label="14" value="M" />
@@ -134,29 +134,29 @@ const SettingScreen = ({navigation}) => {
           </View>
           <TouchableOpacity style={[styles.list, styles.f_r_sb_c]}>
             <Icon
-              style={{flex: 1.5}}
+              style={{ flex: 1.5 }}
               name="sticky-note-o"
               size={18}
               color="#ABB4BD"
             />
-            <Text style={{flex: 9, color: themeforDarkMode.secondaryText}}>
+            <Text style={{ flex: 9, color: themeforDarkMode.secondaryText }}>
               {languageData.notes}
             </Text>
             {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
           </TouchableOpacity>
           <View style={[styles.endlist, styles.f_r_sb_c]}>
             <Icon
-              style={{flex: 1.5}}
+              style={{ flex: 1.5 }}
               name="language"
               size={18}
               color="#ABB4BD"
             />
-            <Text style={{flex: 5, color: themeforDarkMode.secondaryText}}>
+            <Text style={{ flex: 5, color: themeforDarkMode.secondaryText }}>
               {languageData.language}
             </Text>
 
             <Picker
-              style={{flex: 6}}
+              style={{ flex: 6 }}
               selectedValue={language.language}
               style={{
                 height: 23,
@@ -168,7 +168,7 @@ const SettingScreen = ({navigation}) => {
               onValueChange={(itemValue, itemIndex) => {
                 console.log('ssss', itemValue);
                 toogleLanguage(itemValue);
-                setlanguage({language: itemValue});
+                setlanguage({ language: itemValue });
               }}>
               <Picker.Item label="English" value="eng" />
               <Picker.Item label="हिन्दी" value="ind" />
@@ -180,16 +180,16 @@ const SettingScreen = ({navigation}) => {
           </View>
           <View style={[styles.endlist, styles.f_r_sb_c]}>
             <Icon
-              style={{flex: 1.5}}
+              style={{ flex: 1.5 }}
               name="fog-sun"
               size={18}
               color="#ABB4BD"
             />
-            <Text style={{flex: 9, color: themeforDarkMode.secondaryText}}>
+            <Text style={{ flex: 9, color: themeforDarkMode.secondaryText }}>
               {languageData.darkmode}
             </Text>
             <Switch
-              trackColor={{false: '#767577', true: colors.primary}}
+              trackColor={{ false: '#767577', true: colors.primary }}
               thumbColor={isDarkMode ? colors.white : '#f4f3f4'}
               ios_backgroundColor="#3e3e3e"
               onValueChange={toogleDarkMode}
@@ -203,62 +203,64 @@ const SettingScreen = ({navigation}) => {
           style={[
             styles.settingsSection,
             styles.shadow,
-            {backgroundColor: themeforDarkMode.secondaryHeader},
+            { backgroundColor: themeforDarkMode.secondaryHeader },
           ]}>
-          <TouchableOpacity style={[styles.list, styles.f_r_sb_c]}>
-            <Icon style={{flex: 1.5}} name="globe" size={20} color="#ABB4BD" />
-            <Text style={{flex: 9, color: themeforDarkMode.secondaryText}}>
+          <TouchableOpacity onPress={() => navigation.navigate()} style={[styles.list, styles.f_r_sb_c]}>
+            <Icon style={{ flex: 1.5 }} name="globe" size={20} color="#ABB4BD" />
+            <Text style={{ flex: 9, color: themeforDarkMode.secondaryText }}>
               {languageData.joinourcommunity}
             </Text>
             {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.list, styles.f_r_sb_c]}>
-            <Icon style={{flex: 1.5}} name="docs" size={18} color="#ABB4BD" />
-            <Text style={{flex: 9, color: themeforDarkMode.secondaryText}}>
+          <TouchableOpacity onPress={() => navigation.navigate('PrivacyPolicy')}
+            style={[styles.list, styles.f_r_sb_c]}>
+            <Icon style={{ flex: 1.5 }} name="docs" size={18} color="#ABB4BD" />
+            <Text style={{ flex: 9, color: themeforDarkMode.secondaryText }}>
               {languageData.privacypolicy}
             </Text>
             {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.list, styles.f_r_sb_c]}>
+          <TouchableOpacity onPress={() => navigation.navigate('TermsAndConditions')}
+            style={[styles.list, styles.f_r_sb_c]}>
             <Icon
-              onPress={() => navigation.navigate('TermsAndConditions')}
-              style={{flex: 1.5}}
+              style={{ flex: 1.5 }}
               name="book-open"
               size={18}
               color="#ABB4BD"
             />
-            <Text style={{flex: 9, color: themeforDarkMode.secondaryText}}>
+            <Text style={{ flex: 9, color: themeforDarkMode.secondaryText }}>
               {languageData.termsofservices}
             </Text>
             {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
           </TouchableOpacity>
           <TouchableOpacity style={[styles.list, styles.f_r_sb_c]}>
-            <Icon style={{flex: 1.5}} name="export" size={18} color="#ABB4BD" />
-            <Text style={{flex: 9, color: themeforDarkMode.secondaryText}}>
+            <Icon style={{ flex: 1.5 }} name="export" size={18} color="#ABB4BD" />
+            <Text style={{ flex: 9, color: themeforDarkMode.secondaryText }}>
               {languageData.invitemorefriends}
             </Text>
             {/* <Icon name="sticky-note-o" size={18} color="#ABB4BD" /> */}
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.list, styles.f_r_sb_c]}>
+          <TouchableOpacity onPress={() => navigation.navigate('AboutUs')} 
+          style={[styles.list, styles.f_r_sb_c]}>
             <Icon
-              style={{flex: 1.5}}
+              style={{ flex: 1.5 }}
               name="info-circled-alt"
               size={18}
               color="#ABB4BD"
             />
-            <Text style={{flex: 9, color: themeforDarkMode.secondaryText}}>
+            <Text style={{ flex: 9, color: themeforDarkMode.secondaryText }}>
               {languageData.aboutus}
             </Text>
             <Icon name="right-open-big" size={18} color="#ABB4BD" />
           </TouchableOpacity>
           <TouchableOpacity style={[styles.endlist, styles.f_r_sb_c]}>
             <Icon
-              style={{flex: 1.5}}
+              style={{ flex: 1.5 }}
               name="star-empty"
               size={18}
               color="#ABB4BD"
             />
-            <Text style={{flex: 9, color: themeforDarkMode.secondaryText}}>
+            <Text style={{ flex: 9, color: themeforDarkMode.secondaryText }}>
               {languageData.rateus}
             </Text>
             <Icon name="right-open-big" size={18} color="#ABB4BD" />
@@ -269,11 +271,11 @@ const SettingScreen = ({navigation}) => {
           style={[
             styles.settingsSection,
             styles.shadow,
-            {backgroundColor: themeforDarkMode.secondaryHeader},
+            { backgroundColor: themeforDarkMode.secondaryHeader },
           ]}>
           <TouchableOpacity style={[styles.endlist, styles.f_r_sb_c]}>
-            <Icon style={{flex: 1.5}} name="logout" size={20} color="#ABB4BD" />
-            <Text style={{flex: 9, color: themeforDarkMode.secondaryText}}>
+            <Icon style={{ flex: 1.5 }} name="logout" size={20} color="#ABB4BD" />
+            <Text style={{ flex: 9, color: themeforDarkMode.secondaryText }}>
               {languageData.logout}
             </Text>
             {/* <Icon name="cog" size={18} color="#ABB4BD" /> */}

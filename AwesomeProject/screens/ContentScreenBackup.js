@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useLayoutEffect } from 'react';
+import React, {useState, useEffect, useLayoutEffect} from 'react';
 import {
   View,
   Text,
@@ -12,32 +12,32 @@ import {
   Modal,
   TextInput,
 } from 'react-native';
-import { color } from 'react-native-reanimated';
+import {color} from 'react-native-reanimated';
 import Unorderedlist from 'react-native-unordered-list';
 import Slider from '../components/Slider';
-import { colors } from '../constants/theme';
+import {colors} from '../constants/theme';
 import fontelloConfig from '../src/config.json';
-import { useIsFocused } from '@react-navigation/native';
-import { createIconSetFromFontello } from 'react-native-vector-icons';
+import {useIsFocused} from '@react-navigation/native';
+import {createIconSetFromFontello} from 'react-native-vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useTheme } from '../src/utils/DarkTheme/ThemeManager';
+import {useTheme} from '../src/utils/DarkTheme/ThemeManager';
 const Icon = createIconSetFromFontello(fontelloConfig);
 import {
   heightPercentageToDP,
   widthPercentageToDP,
 } from '../src/utils/responsive';
 
-import { AllHistologyContent } from '../constants/mocks';
+import {AllHistologyContent} from '../constants/mocks';
 
 const width = Dimensions.get('screen').width;
 const height = width / 1.61;
 
-const ContentScreen = ({ navigation, route }) => {
+const ContentScreen = ({navigation, route}) => {
   const isFocused = useIsFocused();
-  const [Bookmark, setBookmark] = useState(JSON.stringify({ bookmark: [0] }));
+  const [Bookmark, setBookmark] = useState(JSON.stringify({bookmark: [0]}));
   const [isBookmark, setisBookmark] = useState(false);
-  const { id, title, titleId } = route.params;
-  const { mode, theme: themeforDarkMode, toggle } = useTheme();
+  const {id, title, titleId} = route.params;
+  const {mode, theme: themeforDarkMode, toggle} = useTheme();
   const [contents, setContent] = useState({});
   const [isContent, setisContent] = useState(false);
 
@@ -48,8 +48,8 @@ const ContentScreen = ({ navigation, route }) => {
     if (specificContent) {
       specificContent = specificContent ? specificContent : [];
 
-      setContent(item => specificContent[0]?.subTopics[id]);
-      console.log("iddddddddddddddddddddddd", id);
+      setContent((item) => specificContent[0]?.subTopics[id]);
+      console.log('iddddddddddddddddddddddd', id);
       console.log('xxxxxxx', specificContent[0]);
       console.log('zzzz', specificContent[0]?.subTopics[id]);
       console.log('yyyyy', contents);
@@ -66,13 +66,13 @@ const ContentScreen = ({ navigation, route }) => {
     extractContent();
   }, [isContent]);
 
-  const saveBookmarkData = async ({ id, titleId }) => {
+  const saveBookmarkData = async ({id, titleId}) => {
     try {
       let bookmarkData = await AsyncStorage.getItem('BookmarkID');
 
       bookmarkData = bookmarkData
         ? bookmarkData
-        : await JSON.stringify({ bookmark: [0] });
+        : await JSON.stringify({bookmark: [0]});
       let finalData = await JSON.parse(bookmarkData).bookmark;
 
       let parsedBookmarkData =
@@ -86,10 +86,10 @@ const ContentScreen = ({ navigation, route }) => {
         if (parsedBookmarkData.length == parsedNewArray.length) {
           console.log('aa', parsedBookmarkData);
           let length = parsedNewArray.length;
-          parsedNewArray[length] = { id: id, titleId: titleId };
+          parsedNewArray[length] = {id: id, titleId: titleId};
           await AsyncStorage.setItem(
             'BookmarkID',
-            JSON.stringify({ bookmark: parsedNewArray }),
+            JSON.stringify({bookmark: parsedNewArray}),
           );
           setisBookmark(true);
           console.log(Bookmark);
@@ -97,7 +97,7 @@ const ContentScreen = ({ navigation, route }) => {
           // console.log('***********************', parsedBookmarkData);
           await AsyncStorage.setItem(
             'BookmarkID',
-            JSON.stringify({ bookmark: parsedNewArray }),
+            JSON.stringify({bookmark: parsedNewArray}),
           );
           setisBookmark(!isBookmark);
         }
@@ -105,7 +105,7 @@ const ContentScreen = ({ navigation, route }) => {
         // console.log('***********************', parsedBookmarkData);
         await AsyncStorage.setItem(
           'BookmarkID',
-          JSON.stringify({ bookmark: [0, { id: id, titleId: titleId }] }),
+          JSON.stringify({bookmark: [0, {id: id, titleId: titleId}]}),
         );
         setisBookmark(!isBookmark);
       }
@@ -119,7 +119,7 @@ const ContentScreen = ({ navigation, route }) => {
     // console.log('What in Bookmark', bookmarkData);
     bookmarkData = bookmarkData
       ? bookmarkData
-      : await JSON.stringify({ bookmark: [0] });
+      : await JSON.stringify({bookmark: [0]});
     let parsedBookmarkData = await JSON.parse(bookmarkData).bookmark;
     parsedBookmarkData =
       typeof parsedBookmarkData === 'undefined' ? [0] : parsedBookmarkData;
@@ -154,31 +154,31 @@ const ContentScreen = ({ navigation, route }) => {
             }}>
             Epithelial Tissue
           </Text>
-          <View style={{ flexDirection: 'row' }}>
+          <View style={{flexDirection: 'row'}}>
             <Icon
-              style={{ marginHorizontal: 0 }}
+              style={{marginHorizontal: 0}}
               name="edit"
               size={25}
               color="#fff"
             />
 
             <TouchableOpacity
-              onPress={() => saveBookmarkData({ id: id, titleId: titleId })}>
+              onPress={() => saveBookmarkData({id: id, titleId: titleId})}>
               {isBookmark ? (
                 <Icon
-                  style={{ marginHorizontal: 20 }}
+                  style={{marginHorizontal: 20}}
                   name="bookmark"
                   size={24}
                   color="#fff"
                 />
               ) : (
-                  <Icon
-                    style={{ marginHorizontal: 20 }}
-                    name="bookmark-empty"
-                    size={24}
-                    color="#fff"
-                  />
-                )}
+                <Icon
+                  style={{marginHorizontal: 20}}
+                  name="bookmark-empty"
+                  size={24}
+                  color="#fff"
+                />
+              )}
             </TouchableOpacity>
           </View>
         </View>
@@ -204,7 +204,6 @@ const ContentScreen = ({ navigation, route }) => {
             <View style={styles.modalFooter}>
               <TouchableOpacity onPress={() => { setModal(false) }} style={[styles.closeButton, styles.f_c_c_c]} >
                 <Icon style={styles.modalCloseIcon} name="cancel-circled2" size={18} />
-
                 <Text style={[styles.closeButtonText]}>Close</Text>
               </TouchableOpacity>
               <TouchableOpacity style={[styles.saveButton, styles.f_c_c_c]}>
@@ -216,84 +215,150 @@ const ContentScreen = ({ navigation, route }) => {
         </View>
       </Modal> */}
       <View style={styles.container}>
-        <Slider />
+        <Slider title={title} />
 
         <View style={styles.contentContainer}>
           <View>
             {/* Tile is Here */}
             <Text style={styles.contentTitleText}>{title}</Text>
-
             {/* Introduction is Here  */}
-            {contents?.isIntroduction && (
-              <Text
-                style={[
-                  styles.contentBox,
-                  styles.contentParagraphTypography,
-                  { color: themeforDarkMode.primaryText },
-                ]}>
-                {'data.introduction.content'}
-              </Text>
-            )}
-            {
-              contents?.content?.subTopic.map(data => {
-                console.log("***", data.content);
-                return (
-                  <View>
-                    <Text>{data?.title}</Text>
-                    {
-                      typeof data.content == 'string' ? <Text>{data.content}</Text>
-                        : <View>
-                          {data?.content?.map(item => {
-                            console.log("************", item);
+            {/* {console.log("7777777777777777", contents?.content)} */}
+            {contents?.isIntroduction &&
+              (typeof contents?.introductionContent == 'string' ? (
+                <Text
+                  style={[
+                    styles.contentBox,
+                    styles.contentParagraphTypography,
+                    {color: themeforDarkMode.primaryText},
+                  ]}>
+                  {contents?.introductionContent}
+                </Text>
+              ) : (
+                <View>
+                  {contents?.introductionContent?.map((introductionContent) => {
+                    // { console.log("88888888888888888888", introductionContent) }
+                    return typeof introductionContent == 'string' ? (
+                      <Text
+                        style={[
+                          styles.contentBox,
+                          styles.contentParagraphTypography,
+                          {color: themeforDarkMode.primaryText},
+                        ]}>
+                        {introductionContent}
+                      </Text>
+                    ) : (
+                      <View>
+                        <Text>{introductionContent.title}</Text>
+                        {introductionContent?.content.map((content) => {
+                          return (
+                            <Text
+                              style={[
+                                styles.contentBox,
+                                styles.contentParagraphTypography,
+                                {color: themeforDarkMode.primaryText},
+                              ]}>
+                              {content}
+                            </Text>
+                          );
+                        })}
+                      </View>
+                    );
+                  })}
+                </View>
+              ))}
+            {contents?.content?.subTopic.map((data) => {
+              console.log('***', data.content);
+              return (
+                <View>
+                  <Text>***{data?.title}</Text>
+                  {
+                    //START
+                    //content subtopic content
+                    //SUBTOPIC CEHCKER
+                    data?.content?.subTopic == null ? (
+                      //CONTENT WITHOUT NESETD SUBTOPIC
+                      typeof data.content == 'string' ? (
+                        <Text>{data.content}</Text>
+                      ) : (
+                        <View>
+                          {console.log('CONTENT WITHOUT NESETD SUBTOPIC')}
+                          {data?.content?.map((item) => {
+                            console.log('************', item);
                             return (
                               <View>
                                 {/* Here is Subtopics */}
-                                <Text >{item?.title} </Text>
+                                <Text>{item?.title} </Text>
                                 {/* Should have to check the title  */}
-                                {
-                                  typeof item == 'string' ? <Text>{item}</Text>
-                                    : <View>
-                                      {
-                                        typeof item?.content == 'string' ? <Text>{item?.content}</Text>
-                                          : <View>
-                                            {
-                                              item?.content?.map(data => {
-                                                return (
-                                                  <View>
-                                                    {
-                                                      typeof data == 'string' ? <Text>{data}</Text>
-                                                        : <View>
-                                                          {
-                                                            typeof data?.content == 'string' ? <Text>{data?.content}</Text>
-                                                              : <View>
-                                                                {
-                                                                  data?.content?.map(data =>
-                                                                    <Text>{data}</Text>
-                                                                  )
-                                                                }
-                                                              </View>
-                                                          }
-                                                        </View>
-                                                    }
-                                                  </View>
-                                                )
-                                              }
-                                              )
-                                            }
-                                          </View>
-                                      }
-                                    </View>
-                                }
+                                {typeof item == 'string' ? (
+                                  <Text>{item}</Text>
+                                ) : (
+                                  <View>
+                                    {typeof item?.content == 'string' ? (
+                                      <Text>{item?.content}</Text>
+                                    ) : (
+                                      <View>
+                                        {item?.content?.map((data) => {
+                                          return (
+                                            <View>
+                                              {typeof data == 'string' ? (
+                                                <Text>{data}</Text>
+                                              ) : (
+                                                <View>
+                                                  {typeof data?.content ==
+                                                  'string' ? (
+                                                    <Text>{data?.content}</Text>
+                                                  ) : (
+                                                    <View>
+                                                      {data?.content?.map(
+                                                        (data) => (
+                                                          <Text>{data}</Text>
+                                                        ),
+                                                      )}
+                                                    </View>
+                                                  )}
+                                                </View>
+                                              )}
+                                            </View>
+                                          );
+                                        })}
+                                      </View>
+                                    )}
+                                  </View>
+                                )}
                               </View>
-                            )
-                          }
-                          )}
+                            );
+                          })}
                         </View>
-                    }
-                  </View>
-                )
-              })
-            }
+                      )
+                    ) : (
+                      //CONTENT WITH NESETD SUBTOPIC
+                      <View>
+                        {data?.content?.subTopic.map((content) => {
+                          console.log('CONTENT WITH NESETD SUBTOPIC');
+                          // console.log("************", content)
+                          return (
+                            <View>
+                              <Text>{content.title}</Text>
+                              {typeof content.content == 'string' ? (
+                                <Text>{content.content}</Text>
+                              ) : (
+                                <View>
+                                  {content?.content.map((data) => {
+                                    // console.log("*******************",data);
+                                    return <Text>{data}</Text>;
+                                  })}
+                                </View>
+                              )}
+                            </View>
+                          );
+                        })}
+                      </View>
+                    )
+                    //END
+                  }
+                </View>
+              );
+            })}
           </View>
         </View>
       </View>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Image,
   StyleSheet,
@@ -7,10 +7,12 @@ import {
   ScrollView,
   Dimensions,
 } from 'react-native';
-import {createIconSetFromFontello} from 'react-native-vector-icons';
+import { createIconSetFromFontello } from 'react-native-vector-icons';
 import fontelloConfig from '../src/config.json';
+import { usefontsize } from '../src/utils/FontSize/FontSizeManager';
 const Icon = createIconSetFromFontello(fontelloConfig);
-import {colors} from '../constants/theme';
+import { mocks} from '../constants';
+import { colors } from '../constants/theme';
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 import {
@@ -18,8 +20,8 @@ import {
   heightPercentageToDP,
 } from '../src/utils/responsive';
 import InputTextField from '../components/InputTextField';
-import {useTheme} from '../src/utils/DarkTheme/ThemeManager';
-const SearchScreen = ({navigation}) => {
+import { useTheme } from '../src/utils/DarkTheme/ThemeManager';
+const SearchScreen = ({ navigation }) => {
   // React.useLayoutEffect(() => {
   //     navigation.setOptions({
   //       headerTitle: (props) => (
@@ -47,55 +49,73 @@ const SearchScreen = ({navigation}) => {
   //       headerTintColor: '#fff',
   //     });
   //   }, [navigation]);
-  const {mode, theme: themeforDarkMode, toggle} = useTheme();
+  const { mode, theme: themeforDarkMode, toggle } = useTheme();
+  const [ searchText,setSearchText] = useState('Search');
+
+  const { fontsizeMode } = usefontsize();
+  let filteredContent = mocks.categories.filter(
+    (content)=>{
+          return content.name.toLowerCase().indexOf(searchText.toLowerCase()) !==-1;
+    }
+  )
   return (
+    
     <ScrollView
       style={[
         styles.wrapper,
-        {backgroundColor: themeforDarkMode.secondaryHeader},
+        { backgroundColor: themeforDarkMode.secondaryHeader },
       ]}
-      contentContainerStyle={{flexGrow: 1}}>
+      contentContainerStyle={{ flexGrow: 1 }}>
       <View
         style={[
           styles.header,
-          {backgroundColor: themeforDarkMode.primaryHeader},
+          { backgroundColor: themeforDarkMode.primaryHeader },
         ]}>
         <View style={styles.search}>
           {/* <Icon style={{padding:4}} name="search" size={24} color={colors.gray} /> */}
           <InputTextField
             iconname="search"
-            style={[styles.inputTitle, {height: 40}]}
+            style={[styles.inputTitle, { height: 40 }]}
             placeholderText="Search Histology"
+            onChangeText={text=>setSearchText(text)}
           />
         </View>
         {/* Search bar end */}
-        <View
-          style={[
-            styles.searchContentBox,
-            styles.shadow,
-            styles.f_r_sa_c,
-            {backgroundColor: themeforDarkMode.cardBox},
-          ]}>
-          <Image
-            source={require('../assets/images/heart.png')}
-            style={styles.imageStyle}
-          />
-          <View style={styles.searchContent}>
-            <Text
-              style={[
-                styles.searchContentTitle,
-                {
-                  color: themeforDarkMode.secondaryText,
-                },
+        {
+          filteredContent.map(data=>{
+            return <View
+            style={[
+              styles.searchContentBox,
+              styles.shadow,
+              styles.f_r_sa_c,
+              { backgroundColor: themeforDarkMode.cardBox },
+            ]}>
+            <Image
+              source={require('../assets/images/heart.png')}
+              style={styles.imageStyle}
+            />
+            <View style={styles.searchContent}>
+              <Text
+                style={[
+                  styles.searchContentTitle,
+                  {
+                    color: themeforDarkMode.secondaryText,
+                  },
+                ]}>
+                {data.name}
+              </Text>
+              <Text style={[
+                styles.searchContentText,
+                fontsizeMode == 'S' && styles.typographySmall,
+                fontsizeMode == 'M' && styles.typographyMedium,
+                fontsizeMode == 'L' && styles.typographyLarge,
               ]}>
-              Epiglottis
-            </Text>
-            <Text style={styles.searchContentText}>
-              The epiglottis is a leaf-shaped flap of cartilage located behind
-              the tongue, at the top of the{' '}
-            </Text>
+                {data.count}
+              </Text>
+            </View>
           </View>
-        </View>
+          })
+        }
         {/* Searched box end */}
       </View>
       {/* Header end  */}
@@ -106,7 +126,7 @@ const SearchScreen = ({navigation}) => {
             styles.similarContentBox,
             styles.shadow,
             styles.f_r_sa_c,
-            {backgroundColor: themeforDarkMode.cardBox},
+            { backgroundColor: themeforDarkMode.cardBox },
           ]}>
           <Image
             source={require('../assets/images/heart.png')}
@@ -116,11 +136,16 @@ const SearchScreen = ({navigation}) => {
             <Text
               style={[
                 styles.similarContentTitle,
-                {color: themeforDarkMode.secondaryText},
+                { color: themeforDarkMode.secondaryText },
               ]}>
               Epiglottis
             </Text>
-            <Text style={styles.similarContentText}>
+            <Text style={[
+              styles.similarContentText,
+              fontsizeMode == 'S' && styles.typographySmall,
+              fontsizeMode == 'M' && styles.typographyMedium,
+              fontsizeMode == 'L' && styles.typographyLarge,
+            ]}>
               The epiglottis is a leaf-shaped flap of cartilage located behind
               the tongue, at the top of the{' '}
             </Text>
@@ -133,7 +158,7 @@ const SearchScreen = ({navigation}) => {
             styles.similarContentBox,
             styles.shadow,
             styles.f_r_sa_c,
-            {backgroundColor: themeforDarkMode.cardBox},
+            { backgroundColor: themeforDarkMode.cardBox },
           ]}>
           <Image
             source={require('../assets/images/heart.png')}
@@ -143,11 +168,16 @@ const SearchScreen = ({navigation}) => {
             <Text
               style={[
                 styles.similarContentTitle,
-                {color: themeforDarkMode.secondaryText},
+                { color: themeforDarkMode.secondaryText },
               ]}>
               Epiglottis
             </Text>
-            <Text style={styles.similarContentText}>
+            <Text style={[
+              styles.similarContentText,
+              fontsizeMode == 'S' && styles.typographySmall,
+              fontsizeMode == 'M' && styles.typographyMedium,
+              fontsizeMode == 'L' && styles.typographyLarge,
+            ]}>
               The epiglottis is a leaf-shaped flap of cartilage located behind
               the tongue, at the top of the{' '}
             </Text>
@@ -160,7 +190,7 @@ const SearchScreen = ({navigation}) => {
             styles.similarContentBox,
             styles.shadow,
             styles.f_r_sa_c,
-            {backgroundColor: themeforDarkMode.cardBox},
+            { backgroundColor: themeforDarkMode.cardBox },
           ]}>
           <Image
             source={require('../assets/images/heart.png')}
@@ -170,11 +200,16 @@ const SearchScreen = ({navigation}) => {
             <Text
               style={[
                 styles.similarContentTitle,
-                {color: themeforDarkMode.secondaryText},
+                { color: themeforDarkMode.secondaryText },
               ]}>
               Epiglottis
             </Text>
-            <Text style={styles.similarContentText}>
+            <Text style={[
+              styles.similarContentText,
+              fontsizeMode == 'S' && styles.typographySmall,
+              fontsizeMode == 'M' && styles.typographyMedium,
+              fontsizeMode == 'L' && styles.typographyLarge,
+            ]}>
               The epiglottis is a leaf-shaped flap of cartilage located behind
               the tongue, at the top of the{' '}
             </Text>
@@ -187,7 +222,7 @@ const SearchScreen = ({navigation}) => {
             styles.similarContentBox,
             styles.shadow,
             styles.f_r_sa_c,
-            {backgroundColor: themeforDarkMode.cardBox},
+            { backgroundColor: themeforDarkMode.cardBox },
           ]}>
           <Image
             source={require('../assets/images/heart.png')}
@@ -197,11 +232,16 @@ const SearchScreen = ({navigation}) => {
             <Text
               style={[
                 styles.similarContentTitle,
-                {color: themeforDarkMode.secondaryText},
+                { color: themeforDarkMode.secondaryText },
               ]}>
               Epiglottis
             </Text>
-            <Text style={styles.similarContentText}>
+            <Text style={[
+              styles.similarContentText,
+              fontsizeMode == 'S' && styles.typographySmall,
+              fontsizeMode == 'M' && styles.typographyMedium,
+              fontsizeMode == 'L' && styles.typographyLarge,
+            ]}>
               The epiglottis is a leaf-shaped flap of cartilage located behind
               the tongue, at the top of the{' '}
             </Text>
@@ -214,7 +254,7 @@ const SearchScreen = ({navigation}) => {
             styles.similarContentBox,
             styles.shadow,
             styles.f_r_sa_c,
-            {backgroundColor: themeforDarkMode.cardBox},
+            { backgroundColor: themeforDarkMode.cardBox },
           ]}>
           <Image
             source={require('../assets/images/heart.png')}
@@ -224,11 +264,16 @@ const SearchScreen = ({navigation}) => {
             <Text
               style={[
                 styles.similarContentTitle,
-                {color: themeforDarkMode.secondaryText},
+                { color: themeforDarkMode.secondaryText },
               ]}>
               Epiglottis
             </Text>
-            <Text style={styles.similarContentText}>
+            <Text style={[
+              styles.similarContentText,
+              fontsizeMode == 'S' && styles.typographySmall,
+              fontsizeMode == 'M' && styles.typographyMedium,
+              fontsizeMode == 'L' && styles.typographyLarge,
+            ]}>
               The epiglottis is a leaf-shaped flap of cartilage located behind
               the tongue, at the top of the{' '}
             </Text>
@@ -372,6 +417,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
+  },
+  typographySmall: {
+    fontSize: widthPercentageToDP(3),
+  },
+  typographyMedium: {
+    fontSize: widthPercentageToDP(4),
+  },
+  typographyLarge: {
+    fontSize: widthPercentageToDP(6),
   },
 });
 
