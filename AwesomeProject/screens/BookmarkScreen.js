@@ -20,7 +20,7 @@ const Icon = createIconSetFromFontello(fontelloConfig);
 const {width} = Dimensions.get('window');
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useIsFocused} from '@react-navigation/native';
-import {topics} from '../constants/mocks';
+import {topics, topicImages} from '../constants/mocks';
 const BookmarkScreen = ({navigation}) => {
   const isFocused = useIsFocused();
 
@@ -31,43 +31,62 @@ const BookmarkScreen = ({navigation}) => {
   const removeBookmarkData = async ({id, titleId}) => {
     try {
       let bookmarkData = await AsyncStorage.getItem('BookmarkID');
-      //      // console.log('kk', JSON.parse(bookmarkData).bookmark);
-
-      if (JSON.parse(bookmarkData).bookmark.length < 2) {
-        console.log('here');
+      console.log('kk', JSON.parse(bookmarkData));
+      //console.log('#################################', bookmarkData);
+      if (JSON.parse(bookmarkData)?.bookmark?.length < 1) {
         setisBookmarkEmpty(true);
       } else {
-        //        // console.log(typeof JSON.parse(bookmarkData).bookmark);
+        //        // //console.log(typeof JSON.parse(bookmarkData).bookmark);
         //   // AsyncStorage.setItem(Bookmark,);
-
-        let newBookmarkData = await JSON.parse(bookmarkData).bookmark.filter(
+        let newBookmarkData = JSON.parse(bookmarkData).bookmark.filter(
           (item) => item.id != id && item.titleId != titleId,
         );
-
-        console.log('lllllllllllllll', newBookmarkData);
-
+        newBookmarkData = newBookmarkData.length == 0 ? [0] : newBookmarkData;
         await AsyncStorage.setItem(
           'BookmarkID',
           JSON.stringify({bookmark: newBookmarkData}),
         );
+        setBookmarkChange((init) => !init);
+        setisBookmarkEmpty(false);
 
-        let dataBookmarks = [];
-        let dataBookmark = topics.map((item) => {
-          parsedBookmarkData.map((data) => {
-            if (item.id == data.titleId) {
-              item.subtopics.map((ele) => {
-                if (ele.id == data.id) {
-                  dataBookmarks.push(ele);
-                }
-              });
-            }
-          });
-        });
-        //        // console.log('shere', dataBookmarks);
-        if (dataBookmarks.length < 1) {
-          setisBookmarkEmpty(true);
-        }
-        setBookmarkData(dataBookmarks);
+        // let dataBookmark = topics.filter((item) => {
+        //   return parsedBookmarkData.some((data) => {
+        //     //console.log(item, data);
+        //     return item.id == data.titleId;
+        //   });
+        // });
+
+        // let finaldataBookmark = [];
+        // dataBookmark.map((ele) => {
+        //   ele.subtopics.map((data) => {
+        //     parsedBookmarkData.map((item) => {
+        //       if (data.id == item.id && ele.id == item.titleId) {
+        //         finaldataBookmark.push(data);
+        //       }
+        //     });
+        //   });
+        // });
+        // //console.log('777777777777777777777777777777', finaldataBookmark);
+        // // let finaldataBookmark = dataBookmark.map((item) => {
+        // //   item.subtopics.filter((ele) => {
+        // //     return parsedBookmarkData.some((data) => {
+        // //       //console.log('{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{', item, data);
+        // //       return ele.id == data.id;
+        // //     });
+        // //   });
+        // // });
+
+        // //console.log('shere', finaldataBookmark);
+        // setBookmarkData(finaldataBookmark);
+
+        // if (finaldataBookmark.length > 0) {
+        //   //        // //console.log("finalss",finaldataBookmark.length);
+        //   setisBookmarkEmpty(false);
+        // }
+
+        // //      // //console.log('shere', finaldataBookmark);
+        // setBookmarkData(finaldataBookmark);
+        //        // //console.log('shere', dataBookmark);
       }
 
       //   //   if(newB)
@@ -79,7 +98,7 @@ const BookmarkScreen = ({navigation}) => {
       //     setBookmarkData(newBookmarkData);
       //   } else {
       //     let stringifieddata = JSON.stringify(newBookmarkData);
-      //      console.log(stringifieddata);
+      //      //console.log(stringifieddata);
       //     await AsyncStorage.setItem(
       //       'BookmarkID',
       //       JSON.stringify({bookmark: newBookmarkData}),
@@ -88,64 +107,89 @@ const BookmarkScreen = ({navigation}) => {
       //     setBookmarkData(stringifieddata);
       //   }
     } catch (err) {
-      //      // console.log('Error Removing bookmark', err);
+      console.log('Error Removing bookmark', err);
     }
   };
   const checkBookmarkStatus = async () => {
     try {
       let bookmarkData = await AsyncStorage.getItem('BookmarkID');
-
+      if (bookmarkData == null) {
+        setisBookmarkEmpty(true);
+      }
+      console.log('>>>>>>>>>>>>>>>>>>>>>>>>', bookmarkData);
       let checker = await JSON.parse(bookmarkData).bookmark.length;
-
+      //console.log('1', bookmarkData, checker);
       bookmarkData =
-        checker >= 2 ? bookmarkData : await JSON.stringify({bookmark: [0]});
-      console.log('sss', bookmarkData);
+        checker > 1 ? bookmarkData : await JSON.stringify({bookmark: [0]});
+      //console.log('sss', bookmarkData);
       let finalData = await JSON.parse(bookmarkData).bookmark;
-      console.log('final', finalData);
+      //      // //console.log('final', finalData);
       let parsedBookmarkData =
         typeof finalData === 'undefined' ? [0] : finalData;
-      console.log('l', parsedBookmarkData);
+      //console.log(finalData, '<<<<<<<<<<<<<<<<<<<<<');
+      //console.log('l', parsedBookmarkData);
       if (finalData.length < 2) {
-        //        // console.log("is here");
+        console.log('here', finalData.length);
         setisBookmarkEmpty(true);
-        //        // console.log('here', finalData.length);
-      }
-      let dataBookmarks = [];
-      console.log(parsedBookmarkData);
-      topics.map((item) => {
-        parsedBookmarkData.map((data) => {
-          if (item.id == data.titleId) {
-            item.subtopics.map((ele) => {
-              if (ele.id == data.id) {
-                dataBookmarks.push(ele);
+      } else {
+        //console.log('else++++++++++++');
+        let dataBookmark = topics.filter((item) => {
+          return finalData.some((data) => {
+            //console.log(item, data);
+            return item.id == data.titleId;
+          });
+        });
+        console.log('&&&&&&&&&&&&&&&&', dataBookmark);
+        let finaldataBookmark = [];
+        dataBookmark.map((ele) => {
+          ele.subtopics.map((data) => {
+            parsedBookmarkData.map((item) => {
+              if (data.id == item.id && ele.id == item.titleId) {
+                data.titleId = item.titleId;
+                //console.log('pppp', data);
+                finaldataBookmark.push(data);
               }
             });
-          }
+          });
         });
-      });
-      console.log('nnnnnnnnnnn', dataBookmarks);
-      //      // console.log('shere', dataBookmarks);
-      setBookmarkData(dataBookmarks);
+        console.log('##################', finaldataBookmark);
 
-      if (dataBookmarks.length > 0) {
-        //        // console.log("finalss",dataBookmarks.length);
+        //console.log('777777777777777777777777777777', finaldataBookmark);
+        // let finaldataBookmark = dataBookmark.map((item) => {
+        //   item.subtopics.filter((ele) => {
+        //     return parsedBookmarkData.some((data) => {
+        //       //console.log('{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{', item, data);
+        //       return ele.id == data.id;
+        //     });
+        //   });
+        // });
+
+        //console.log('shere', finaldataBookmark);
+        setBookmarkData(finaldataBookmark);
         setisBookmarkEmpty(false);
+        setBookmarkChange(true);
       }
 
-      //      // console.log('shere', dataBookmarks);
-      setBookmarkData(dataBookmarks);
+      // }
+      // if (finaldataBookmark.length > 1) {
+      //   //        // //console.log("finalss",finaldataBookmark.length);
+      //   setisBookmarkEmpty(false);
+      // }
 
-      //       if (dataBookmarks.length > 0) {
-      // //        // console.log("finalss",dataBookmarks.length);
+      //      // //console.log('shere', finaldataBookmark);
+      // setBookmarkData(finaldataBookmark);
+
+      //       if (dataBookmark.length > 0) {
+      // //        // //console.log("finalss",dataBookmark.length);
       //         setisBookmarkEmpty(false);
       //       }
-      //     let dataBookmarks = data.filter((item) => {
+      //     let dataBookmark = data.filter((item) => {
       //       return JSON.parse(asyncData).bookmark.some((data) => {
       //         return item.id == data;
       //       });
       //     });
       //     setisBookmarkEmpty(false);
-      //     setBookmarkData(dataBookmarks);
+      //     setBookmarkData(dataBookmark);
       // let newArray = await JSON.parse(asyncData).bookmark;
       // let verifiednewArray = newArray.filter((item) => {
       //   return item != id;
@@ -159,15 +203,18 @@ const BookmarkScreen = ({navigation}) => {
       // let stringifieddata = await JSON.stringify({ bookmark: verifiednewArray });
       // AsyncStorage.setItem('BookmarkID', stringifieddata);
       // setBookmark(stringifieddata);
-      //      // console.log('BookmarkStatus', err);
+      //      // //console.log('BookmarkStatus', err);
     } catch (err) {
-      console.log('Error checking bookmark status', err);
+      //console.log('Error checking bookmark status', err);
     }
   };
 
   useEffect(() => {
+    //console.log('hereee', isBookmakEmpty);
+    //console.log(
+
     checkBookmarkStatus();
-  }, [isBookmakEmpty, isFocused]);
+  }, [isBookmakEmpty, isFocused, changeBookmark]);
   return (
     <ScrollView
       style={{
@@ -212,7 +259,6 @@ const BookmarkScreen = ({navigation}) => {
                 styles.shadow,
                 {backgroundColor: themeforDarkMode.cardBox},
               ]}>
-              {console.log(item)}
               <View style={styles.image}>
                 <Image
                   resizeMode="contain"
@@ -229,8 +275,7 @@ const BookmarkScreen = ({navigation}) => {
                   {item.title}
                 </Text>
                 <Text style={styles.searchContentText} numberOfLines={2}>
-                  {/* //  {item.introduction.content}{' '} */}
-                  Thisisthesubtitles
+                  dskjbfkjdsbfdskjfbkjdsfdskj
                 </Text>
               </View>
               <TouchableOpacity
@@ -281,6 +326,7 @@ const styles = StyleSheet.create({
   },
   searchContent: {
     flex: 1,
+
     // backgroundColor:'yellow',
     // marginLeft: 15,
     marginLeft: widthPercentageToDP(3.5),
@@ -297,6 +343,7 @@ const styles = StyleSheet.create({
     color: 'gray',
     // lineHeight: 17,
     textAlign: 'justify',
+    paddingTop: 5,
     // fontSize: 15,
     fontFamily: 'LiberationSerif-Regular',
     marginRight: widthPercentageToDP(6.5),
@@ -305,7 +352,7 @@ const styles = StyleSheet.create({
   },
   bookmark: {
     position: 'absolute',
-    top: 5,
+    top: 10,
     right: 15,
   },
   shadow: {

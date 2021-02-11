@@ -49,10 +49,14 @@ const ContentScreen = ({navigation, route}) => {
       specificContent = specificContent ? specificContent : [];
 
       setContent((item) => specificContent[0]?.subTopics[id]);
+      //      console.log('iddddddddddddddddddddddd', id);
+      //      console.log('xxxxxxx', specificContent[0]);
+      //      console.log('zzzz', specificContent[0]?.subTopics[id]);
+      //      console.log('yyyyy', contents);
       setisContent(true);
     }
 
-    // console.log(
+    //    // console.log(
     //   'YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY',
     //   contents.content,
     // );
@@ -64,67 +68,73 @@ const ContentScreen = ({navigation, route}) => {
 
   const saveBookmarkData = async ({id, titleId}) => {
     try {
+      //      console.log(id, titleId);
       let bookmarkData = await AsyncStorage.getItem('BookmarkID');
 
       bookmarkData = bookmarkData
         ? bookmarkData
         : await JSON.stringify({bookmark: [0]});
-      let finalData = await JSON.parse(bookmarkData).bookmark;
 
+      let finalData = await JSON.parse(bookmarkData).bookmark;
       let parsedBookmarkData =
-        typeof finalData === 'undefined' ? [0] : finalData;
-      console.log('yyyyyyyyyyyyyyyyyyyyyyyyy', parsedBookmarkData);
+        typeof finalData == 'undefined' ? [0] : finalData;
       if (parsedBookmarkData.length >= 1) {
         let parsedNewArray = parsedBookmarkData.filter((item) => {
+          console.log(item.id, item.titleId, id, titleId, ';;;;;;;;;;;;;;;;;;');
           return item.id != id && titleId != item.titleId;
         });
-
-        // console.log('hello');
+        console.log(
+          '------------------------',
+          parsedBookmarkData,
+          parsedNewArray,
+        );
         if (parsedBookmarkData.length == parsedNewArray.length) {
-          console.log('aa', parsedBookmarkData);
+          console.log('aa', parsedBookmarkData, parsedNewArray.length);
           let length = parsedNewArray.length;
           parsedNewArray[length] = {id: id, titleId: titleId};
+          console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@', parsedNewArray);
           await AsyncStorage.setItem(
             'BookmarkID',
             JSON.stringify({bookmark: parsedNewArray}),
           );
           setisBookmark(true);
-          console.log(Bookmark);
+          //   console.log(Bookmark);
         } else {
-          // console.log('***********************', parsedBookmarkData);
+          console.log('here');
           await AsyncStorage.setItem(
             'BookmarkID',
-            JSON.stringify({bookmark: parsedNewArray}),
+            JSON.stringify({bookmark: parsedBookmarkData}),
           );
           setisBookmark(!isBookmark);
         }
       } else {
-        // console.log('***********************', parsedBookmarkData);
+        console.log('here');
         await AsyncStorage.setItem(
           'BookmarkID',
-          JSON.stringify({bookmark: [0, {id: id, titleId: titleId}]}),
+          JSON.stringify({bookmark: parsedBookmarkData}),
         );
         setisBookmark(!isBookmark);
       }
     } catch (err) {
-      // console.log('Error saving bookmark data', err);
+      console.log('Error saving bookmark data', err);
     }
   };
 
   const getBookmarkDatas = async () => {
     let bookmarkData = await AsyncStorage.getItem('BookmarkID');
-    // console.log('What in Bookmark', bookmarkData);
+
     bookmarkData = bookmarkData
       ? bookmarkData
       : await JSON.stringify({bookmark: [0]});
     let parsedBookmarkData = await JSON.parse(bookmarkData).bookmark;
     parsedBookmarkData =
-      typeof parsedBookmarkData === 'undefined' ? [0] : parsedBookmarkData;
+      typeof parsedBookmarkData == 'undefined' ? null : parsedBookmarkData;
+
     if (parsedBookmarkData.length > 1) {
+      //      console.log('<<<<<<<<<<<<<<<<<<<<<<<<<<', parsedBookmarkData.length);
       parsedBookmarkData.map((item) => {
         if (item.id == id && item.titleId == titleId) {
           setisBookmark(true);
-          // console.log('What in bookmark State', Bookmark);
           return;
         }
       });
@@ -201,7 +211,6 @@ const ContentScreen = ({navigation, route}) => {
             <View style={styles.modalFooter}>
               <TouchableOpacity onPress={() => { setModal(false) }} style={[styles.closeButton, styles.f_c_c_c]} >
                 <Icon style={styles.modalCloseIcon} name="cancel-circled2" size={18} />
-
                 <Text style={[styles.closeButtonText]}>Close</Text>
               </TouchableOpacity>
               <TouchableOpacity style={[styles.saveButton, styles.f_c_c_c]}>
@@ -232,7 +241,7 @@ const ContentScreen = ({navigation, route}) => {
               </Text>
             )}
             {contents?.content?.subTopic.map((data) => {
-              // console.log('***', data.content);
+              //              console.log('***', data.content);
               return (
                 <View>
                   <Text>***{data?.title}</Text>
@@ -246,9 +255,8 @@ const ContentScreen = ({navigation, route}) => {
                         <Text>{data.content}</Text>
                       ) : (
                         <View>
-                          {console.log('CONTENT WITHOUT NESETD SUBTOPIC')}
                           {data?.content?.map((item) => {
-                            // console.log('************', item);
+                            //                            console.log('************', item);
                             return (
                               <View>
                                 {/* Here is Subtopics */}
@@ -299,8 +307,8 @@ const ContentScreen = ({navigation, route}) => {
                       //CONTENT WITH NESETD SUBTOPIC
                       <View>
                         {data?.content?.subTopic.map((content) => {
-                          // console.log('CONTENT WITH NESETD SUBTOPIC');
-                          // console.log("************", content)
+                          //                          console.log('CONTENT WITH NESETD SUBTOPIC');
+                          //                          // console.log("************", content)
                           return (
                             <View>
                               <Text>{content.title}</Text>
@@ -309,7 +317,7 @@ const ContentScreen = ({navigation, route}) => {
                               ) : (
                                 <View>
                                   {content?.content.map((data) => {
-                                    // console.log("*******************",data);
+                                    //                                    // console.log("*******************",data);
                                     return <Text>{data}</Text>;
                                   })}
                                 </View>
