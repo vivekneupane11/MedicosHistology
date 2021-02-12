@@ -60,152 +60,359 @@ const introductionScreenImages = [
 
 const sliderImages = [
   {
-      title: "Epithelial Tissues",
-      sliderImages: ["epi1.webp", "epi3.webp", "epi4.webp"]
-  },
-  {
-      title: "Simple squamous",
-      sliderImages: ["epi1.webp", "epi3.webp", "epi4.webp"]
+    title: "Epithelial Tissues",
+    sliderImages: [
+      require('../assets/images/EpithelialTissue/Introduction/epi1.webp'),
+      require('../assets/images/EpithelialTissue/Introduction/epi3.webp'),
+      require('../assets/images/EpithelialTissue/Introduction/epi4.webp')]
 
   },
   {
-      title: "Simple Cuboidal",
-      sliderImages: ["simple_sq2.webp", "simple_sq3.webp",]
+    title: "Simple squamous",
+    sliderImages: [
+      require('../assets/images/EpithelialTissue/SimpleSquamous/epi1.webp'),
+      require('../assets/images/EpithelialTissue/SimpleSquamous/epi3.webp'),
+      require('../assets/images/EpithelialTissue/SimpleSquamous/epi4.webp')]
+
 
   },
   {
-      title: "Simple Columnar",
-      sliderImages: ["Simple_col1.webp", "Simple_col2.webp", "Simple_col3.webp", "Simple_col4.webp", "Simple_col5.webp"]
+    title: "Simple Cuboidal",
+    sliderImages: [
+      require('../assets/images/EpithelialTissue/SimpleCuboidal/simple_sq2.webp'),
+      require('../assets/images/EpithelialTissue/SimpleCuboidal/simple_sq3.webp'),
+    ]
 
   },
   {
-      title: "PseudoStratified Columnar Cilliate",
-      sliderImages: ["pesudo_col1.webp", "pesudo_col2.webp", "pesudo_col3.webp", "pesudo_col4.webp", "pesudo_col5.webp", "pesudo_col6.webp", "pesudo_col7.webp"]
+    title: "Simple Columnar",
+    sliderImages: [
+      require('../assets/images/EpithelialTissue/SimpleColumnar/Simple_col1.webp'),
+      require('../assets/images/EpithelialTissue/SimpleColumnar/Simple_col2.webp'),
+      require('../assets/images/EpithelialTissue/SimpleColumnar/Simple_col3.webp'),
+      require('../assets/images/EpithelialTissue/SimpleColumnar/Simple_col4.webp'),
+      require('../assets/images/EpithelialTissue/SimpleColumnar/Simple_col5.webp')
+    ]
 
   },
   {
-      title: "Stratified Squamos Epithelium",
-      sliderImages: ["stra_sq1.webp", "ststra_sq2.webp", "stra_sq3.webp", "stra_sq4.webp", "stra_sq5.webp", "stra_sq7.webp", "stra_sq8.webp"]
+    title: "PseudoStratified Columnar Cilliate",
+    sliderImages: [
+      require('../assets/images/EpithelialTissue/PseudoStratifiedColumnarCilliate/pesudo_col1.webp'),
+      require('../assets/images/EpithelialTissue/PseudoStratifiedColumnarCilliate/pesudo_col2.webp'),
+      require('../assets/images/EpithelialTissue/PseudoStratifiedColumnarCilliate/pesudo_col3.webp'),
+      require('../assets/images/EpithelialTissue/PseudoStratifiedColumnarCilliate/pesudo_col4.webp'),
+      require('../assets/images/EpithelialTissue/PseudoStratifiedColumnarCilliate/pesudo_col5.webp'),
+      // require('../assets/images/EpithelialTissue/PseudoStratifiedColumnarCilliate/pseudo_col6.webp'),
+      require('../assets/images/EpithelialTissue/PseudoStratifiedColumnarCilliate/pseudo_col7.webp')
+    ]
 
   },
   {
-      title: "Transitional Epithelium",
-      sliderImages: ["stra_tra1.webp", "stra_tra2.webp", "stra_tra3.webp", "stra_tra4.webp", "stra_sq5.webp", "transtionalepithelium.webp", "transtionalepithelium1.jpg"]
+    title: "Stratified Squamos Epithelium",
+    sliderImages: [
+      require('../assets/images/EpithelialTissue/StratifiedSquamosEpithelium/stra_sq1.webp'),
+      require('../assets/images/EpithelialTissue/StratifiedSquamosEpithelium/stra_sq2.webp'),
+      require('../assets/images/EpithelialTissue/StratifiedSquamosEpithelium/stra_sq3.webp'),
+      require('../assets/images/EpithelialTissue/StratifiedSquamosEpithelium/stra_sq4.webp'),
+      require('../assets/images/EpithelialTissue/StratifiedSquamosEpithelium/stra_sq5.webp'),
+      require('../assets/images/EpithelialTissue/StratifiedSquamosEpithelium/stra_sq7.webp'),
+      require('../assets/images/EpithelialTissue/StratifiedSquamosEpithelium/stra_sq8.webp')
+    ]
 
   },
   {
-      title: "Statified Cuboidal Epithellium",
-      sliderImages: ["strate_cub1.webp", "strate_cub2.webp", "strate_cub3.webp", "strate_cub4.webp"]
+    title: "Transitional Epithelium",
+    sliderImages: [
+      require('../assets/images/EpithelialTissue/TransitionalEpithelium/stra_tra1.webp'),
+      require('../assets/images/EpithelialTissue/TransitionalEpithelium/stra_tra2.webp'),
+      require('../assets/images/EpithelialTissue/TransitionalEpithelium/stra_tra3.webp'),
+      require('../assets/images/EpithelialTissue/TransitionalEpithelium/stra_tra4.webp'),
+      // require('../assets/images/EpithelialTissue/TransitionalEpithelium/stra_tra5.webp'),
+      require('../assets/images/EpithelialTissue/TransitionalEpithelium/transtionalepithelium.webp'),
+      // require('../assets/images/EpithelialTissue/TransitionalEpithelium/transtionalepithelium1.jpg')
+    ]
 
   },
   {
-      title: "Stratified Columnar",
-      sliderImages: ["stra_col.jpg", "stra_col1.jpg", "stra_col2.jpg", "stra_col2.webp", "stra_col3.webp"]
+    title: "Statified Cuboidal Epithellium",
+    sliderImages: [
+      require('../assets/images/EpithelialTissue/StratifiedCuboidalEpithellium/strate_cub1.webp'),
+      require('../assets/images/EpithelialTissue/StratifiedCuboidalEpithellium/strate_cub2.webp'),
+      require('../assets/images/EpithelialTissue/StratifiedCuboidalEpithellium/strate_cub3.webp'),
+      require('../assets/images/EpithelialTissue/StratifiedCuboidalEpithellium/strate_cub4.webp')]
+
 
   },
   {
-      title: "Connective Tissues",
-      sliderImages: ["connective.webp", "connective1.webp", "connective2.webp", "connective3.webp", "connective4.webp", "connective5.webp", "connective6.webp", "connective7.webp", "connective8.webp"]
+    title: "Stratified Columnar",
+    sliderImages: [
+      require('../assets/images/EpithelialTissue/StratifiedColumnar/stra_col0.jpg'),
+      require('../assets/images/EpithelialTissue/StratifiedColumnar/stra_col1.jpg'),
+      require('../assets/images/EpithelialTissue/StratifiedColumnar/stra_col2.jpg'),
+      require('../assets/images/EpithelialTissue/StratifiedColumnar/stra_col2.webp'),
+      require('../assets/images/EpithelialTissue/StratifiedColumnar/stra_col3.webp')
+    ]
+
+
   },
   {
-      title: "Adipose Tissue",
-      sliderImages: ["adipose_tissue.jpg", "adipose1.jpg", "adipose2.jpg", "adipose4.jpg", "adipose5.jpg", "adipose6.jpg"]
+    title: "Connective Tissues",
+    sliderImages: [
+      require('../assets/images/ConnectiveTissue/Introduction/connective0.webp'),
+      require('../assets/images/ConnectiveTissue/Introduction/connective1.webp'),
+      require('../assets/images/ConnectiveTissue/Introduction/connective2.webp'),
+      require('../assets/images/ConnectiveTissue/Introduction/connective3.webp'),
+      require('../assets/images/ConnectiveTissue/Introduction/connective4.webp'),
+      require('../assets/images/ConnectiveTissue/Introduction/connective5.webp'),
+      require('../assets/images/ConnectiveTissue/Introduction/connective6.webp'),
+      require('../assets/images/ConnectiveTissue/Introduction/connective7.webp'),
+      require('../assets/images/ConnectiveTissue/Introduction/connective8.webp')]
+
   },
   {
-      title: "Areolar Tissue",
-      sliderImages: ["areolar2.jpg", "areolar3.jpg", "areolar4.jpg"]
+    title: "Adipose Tissue",
+    sliderImages: [
+      require('../assets/images/ConnectiveTissue/AdiposeTissue/adipose0.jpg'),
+      require('../assets/images/ConnectiveTissue/AdiposeTissue/adipose1.jpg'),
+      require('../assets/images/ConnectiveTissue/AdiposeTissue/adipose2.jpg'),
+      require('../assets/images/ConnectiveTissue/AdiposeTissue/adipose4.jpg'),
+      require('../assets/images/ConnectiveTissue/AdiposeTissue/adipose5.jpg'),
+      require('../assets/images/ConnectiveTissue/AdiposeTissue/adipose6.jpg')
+    ]
+
   },
   {
-      title: "Compact Bone",
-      sliderImages: ["compact.jpg", "compactbone.jpg", "compact8.webp", "compact9.webp", "compactbone.webp"]
+    title: "Areolar Tissue",
+    sliderImages: [
+      require('../assets/images/ConnectiveTissue/AreolarTissue/areolar2.jpg'),
+      require('../assets/images/ConnectiveTissue/AreolarTissue/areolar3.jpg'),
+      require('../assets/images/ConnectiveTissue/AreolarTissue/areolar4.jpg')]
+
   },
   {
-      title: "Dense Connective Tissue",
-      sliderImages: ["dense1.webp", "dense6.webp", "dense7.webp", "dense8.webp", "dense9.webp", "dense10.webp", "dense11.webp"]
+    title: "Compact Bone",
+    sliderImages: [
+      require('../assets/images/ConnectiveTissue/CompactBone/compact.jpg'),
+      require('../assets/images/ConnectiveTissue/CompactBone/compactbone.jpeg'),
+      require('../assets/images/ConnectiveTissue/CompactBone/compact8.webp'),
+      require('../assets/images/ConnectiveTissue/CompactBone/compact9.webp'),
+      require('../assets/images/ConnectiveTissue/CompactBone/compactbone.webp')
+    ]
   },
   {
-      title: "Loose Connective Tissue",
-      sliderImages: ["loose1.webp", "loose2.webp", "loose3.webp", "loose4.webp", "loose5.webp"]
+    title: "Dense Connective Tissue",
+    sliderImages: [require('../assets/images/ConnectiveTissue/DenseConnectiveTissue/dense1.webp'),
+    require('../assets/images/ConnectiveTissue/DenseConnectiveTissue/dense6.webp'),
+    require('../assets/images/ConnectiveTissue/DenseConnectiveTissue/dense7.webp'),
+    require('../assets/images/ConnectiveTissue/DenseConnectiveTissue/dense8.webp'),
+    require('../assets/images/ConnectiveTissue/DenseConnectiveTissue/dense9.webp'),
+    require('../assets/images/ConnectiveTissue/DenseConnectiveTissue/dense10.webp'),
+    require('../assets/images/ConnectiveTissue/DenseConnectiveTissue/dense11.webp')]
+
   },
   {
-      title: "Spongy Bone",
-      sliderImages: ["spongy1.webp", "spongy3.webp", "spongy4.webp", "spongy5.webp", "spongy6.webp", "spongybone.jpg"]
+    title: "Loose Connective Tissue",
+    sliderImages: [
+      require('../assets/images/ConnectiveTissue/LooseConnectiveTissue/loose1.webp'),
+      require('../assets/images/ConnectiveTissue/LooseConnectiveTissue/loose2.webp'),
+      require('../assets/images/ConnectiveTissue/LooseConnectiveTissue/loose3.webp'),
+      require('../assets/images/ConnectiveTissue/LooseConnectiveTissue/loose4.webp'),
+      require('../assets/images/ConnectiveTissue/LooseConnectiveTissue/loose5.webp')]
   },
   {
-      title: "Cartilage",
-      sliderImages: ["cartildge.jpg", "Three-different-types-of-cartilage-Hematoxylin-and-eosin-staining-of-cross-sections-of.jpg", "Types-of-Cartilage.jpg"]
+    title: "Spongy Bone",
+    sliderImages: [
+      require('../assets/images/ConnectiveTissue/SpongyBone/spongy1.webp'),
+      require('../assets/images/ConnectiveTissue/SpongyBone/spongy3.webp'),
+      require('../assets/images/ConnectiveTissue/SpongyBone/spongy4.webp'),
+      require('../assets/images/ConnectiveTissue/SpongyBone/spongy5.webp'),
+      require('../assets/images/ConnectiveTissue/SpongyBone/spongy6.webp'),
+      require('../assets/images/ConnectiveTissue/SpongyBone/spongybone.jpg')]
   },
   {
-      title: "Elastic cartilage",
-      sliderImages: ["elasticcart.webp", "elasticcart0.jpg", "elasticcart1.webp", "elasticcart2.webp", "elasticcart3.webp", "elasticcart4.webp","elasticcart5.webp","elasticcart6.webp"]
+    title: "Cartilage",
+    sliderImages: [
+      require('../assets/images/Cartilage/Introduction/cartilage.jpg'),
+      require('../assets/images/Cartilage/Introduction/cartilage1.png'),
+      require('../assets/images/Cartilage/Introduction/cartilage2.jpg')]
   },
   {
-      title: "Fibro cartilage",
-      sliderImages: ["fibro0.webp", "fibro1.webp", "fibro2.webp", "fibro3.webp", "fibro4.webp", "fibro5.webp","fibro7.webp"]
+    title: "Elastic cartilage",
+    sliderImages: [
+      // require('../assets/images/Cartilage/ElasticCartilage/elasticcart.webp'),
+      require('../assets/images/Cartilage/ElasticCartilage/elasticcart0.jpg'),
+      require('../assets/images/Cartilage/ElasticCartilage/elasticcart1.webp'),
+      require('../assets/images/Cartilage/ElasticCartilage/elasticcart2.webp'),
+      require('../assets/images/Cartilage/ElasticCartilage/elasticcart3.webp'),
+      require('../assets/images/Cartilage/ElasticCartilage/elasticcart4.webp'),
+      require('../assets/images/Cartilage/ElasticCartilage/elasticcart5.webp'),
+      require('../assets/images/Cartilage/ElasticCartilage/elasticcart6.webp')]
   },
   {
-      title: "Hyline cartilage",
-      sliderImages: ["hyaline2.webp", "hyaline3.webp", "hyaline4.webp", "hyaline5.webp", "hyaline6.webp", "hyaline7.webp","hyaline8.webp"]
+    title: "Fibro cartilage",
+    sliderImages: [
+      require('../assets/images/Cartilage/FibroCartilage/fibro0.webp'),
+      require('../assets/images/Cartilage/FibroCartilage/fibro1.webp'),
+      require('../assets/images/Cartilage/FibroCartilage/fibro2.webp'),
+      require('../assets/images/Cartilage/FibroCartilage/fibro3.webp'),
+      require('../assets/images/Cartilage/FibroCartilage/fibro4.webp'),
+      require('../assets/images/Cartilage/FibroCartilage/fibro5.webp'),
+      require('../assets/images/Cartilage/FibroCartilage/fibro7.webp')]
   },
   {
-      title: "Blood vessel",
-      sliderImages: []
+    title: "Hyline cartilage",
+    sliderImages: [
+      require('../assets/images/Cartilage/HyalineCartilage/hyaline2.webp'),
+      require('../assets/images/Cartilage/HyalineCartilage/hyaline3.webp'),
+      require('../assets/images/Cartilage/HyalineCartilage/hyaline4.webp'),
+      require('../assets/images/Cartilage/HyalineCartilage/hyaline5.webp'),
+      require('../assets/images/Cartilage/HyalineCartilage/hyaline6.webp'),
+      require('../assets/images/Cartilage/HyalineCartilage/hyaline7.webp'),
+      require('../assets/images/Cartilage/HyalineCartilage/hyaline8.webp')]
   },
   {
-      title: "Elastic artery",
-      sliderImages: ["elastic1.webp", "elastic2.webp", "elastic3.webp", "elastic4.webp", "elastic5.webp", "elastic6.webp","elastic7.webp","elastic8.webp","elastic9.webp","elasticartery.webp"]
+    title: "Blood vessel",
+    sliderImages: []
   },
   {
-      title: "Large Vein",
-      sliderImages: ["largevein.webp", "vein1.webp", "vein2.webp", "vein3.webp", "vein4.webp", "vein6.webp"]
+    title: "Elastic artery",
+    sliderImages: [
+      require('../assets/images//BloodVessel/ElasticArtery/elastic1.webp'),
+      require('../assets/images//BloodVessel/ElasticArtery/elastic2.webp'),
+      require('../assets/images//BloodVessel/ElasticArtery/elastic3.webp'),
+      require('../assets/images//BloodVessel/ElasticArtery/elastic4.webp'),
+      require('../assets/images//BloodVessel/ElasticArtery/elastic5.webp'),
+      require('../assets/images//BloodVessel/ElasticArtery/elastic6.webp'),
+      require('../assets/images//BloodVessel/ElasticArtery/elastic7.webp'),
+      require('../assets/images//BloodVessel/ElasticArtery/elastic8.webp'),
+      require('../assets/images//BloodVessel/ElasticArtery/elastic9.webp'),
+      require('../assets/images//BloodVessel/ElasticArtery/elasticartery.webp')
+    ]
   },
   {
-      title: "Muscular Artery",
-      sliderImages: ["muscularart1.webp", "muscularart3.webp", "muscularart4.webp", "muscularart5.webp", "muscularart6.webp", "muscularart7.webp","muscularart8.webp","muscularart9.webp","muscularartey.webp"]
+    title: "Large Vein",
+    sliderImages: [
+      require('../assets/images/BloodVessel/LargeVein/largevein.webp'),
+      require('../assets/images/BloodVessel/LargeVein/vein1.webp'),
+      require('../assets/images/BloodVessel/LargeVein/vein2.webp'),
+      require('../assets/images/BloodVessel/LargeVein/vein3.webp'),
+      require('../assets/images/BloodVessel/LargeVein/vein4.webp'),
+      require('../assets/images/BloodVessel/LargeVein/vein6.webp')]
   },
   {
-      title: "Muscular Tissue",
-      sliderImages: ["article-Muscle-Tissue-Af6.jpg", "muscular-tissue-678x381.jpg"]
+    title: "Muscular Artery",
+    sliderImages: [
+      require('../assets/images/BloodVessel/MuscularArtery/muscularart1.webp'),
+      require('../assets/images/BloodVessel/MuscularArtery/muscularart3.webp'),
+      require('../assets/images/BloodVessel/MuscularArtery/muscularart4.webp'),
+      require('../assets/images/BloodVessel/MuscularArtery/muscularart5.webp'),
+      require('../assets/images/BloodVessel/MuscularArtery/muscularart6.webp'),
+      require('../assets/images/BloodVessel/MuscularArtery/muscularart7.webp'),
+      require('../assets/images/BloodVessel/MuscularArtery/muscularart8.webp'),
+      require('../assets/images/BloodVessel/MuscularArtery/muscularart9.webp'),
+      require('../assets/images/BloodVessel/MuscularArtery/muscularartey.webp')
+    ]
   },
   {
-      title: "Cardic Muscle",
-      sliderImages: ["cardiac1.jpg","cardiac2.jpg","cardiac3.jpg","cardiac4.jpg","cardiac5.jpg","cardiac6.jpg","cardiac7.jpg","cardiac8.jpg","cardic9.jpg","cardiacmuscle"]
+    title: "Muscular Tissue",
+    sliderImages: [
+      require('../assets/images/MuscularTissue/Introduction/article-Muscle-Tissue-Af6.png'),
+      require('../assets/images/MuscularTissue/Introduction/muscular-tissue-678x381.jpg')
+    ]
   },
   {
-      title: "Skeletal Muscle",
-      sliderImages: ["skeletal1.jpg","skeletal2.jpg","skeletal3.jpg","skeletal4.jpg","skeletal5.jpg","skeletal6.jpg","skeletal7.jpg","skeletal9.jpg","skeletalmuscle"]
+    title: "Cardiac Muscle",
+    sliderImages: [
+      require('../assets/images/MuscularTissue/CardiacMuscle/cardiac1.jpg'),
+      require('../assets/images/MuscularTissue/CardiacMuscle/cardiac2.jpg'),
+      require('../assets/images/MuscularTissue/CardiacMuscle/cardiac3.jpg'),
+      require('../assets/images/MuscularTissue/CardiacMuscle/cardiac4.jpg'),
+      require('../assets/images/MuscularTissue/CardiacMuscle/cardiac5.jpg'),
+      require('../assets/images/MuscularTissue/CardiacMuscle/cardiac6.jpg'),
+      require('../assets/images/MuscularTissue/CardiacMuscle/cardiac7.jpg'),
+      require('../assets/images/MuscularTissue/CardiacMuscle/cardiac8.jpg'),
+      require('../assets/images/MuscularTissue/CardiacMuscle/cardiac9.jpg')]
   },
   {
-      title: "Smooth Muscle",
-      sliderImages: [,"smooth1.jpg","smooth2.jpg","smooth3.jpg","smooth4.jpg","smooth5.jpg"]
+    title: "Skeletal Muscle",
+    sliderImages: [
+      require('../assets/images/MuscularTissue/SkeletalMuscle/skeletal1.jpg'),
+      require('../assets/images/MuscularTissue/SkeletalMuscle/skeletal2.jpg'),
+      require('../assets/images/MuscularTissue/SkeletalMuscle/skeletal3.jpg'),
+      require('../assets/images/MuscularTissue/SkeletalMuscle/skeletal4.jpg'),
+      require('../assets/images/MuscularTissue/SkeletalMuscle/skeletal5.jpg'),
+      require('../assets/images/MuscularTissue/SkeletalMuscle/skeletal6.jpg'),
+      require('../assets/images/MuscularTissue/SkeletalMuscle/skeletal7.jpg'),
+      require('../assets/images/MuscularTissue/SkeletalMuscle/skeletal9.jpg'),
+    ]
   },
   {
-      title: "Respiratory System",
-      sliderImages: [,"5bb381ff064cc4af0a1703a3d8412ab6.jpg","Respiratory-System-Diagram.jpg"]
+    title: "Smooth Muscle",
+    sliderImages: [
+      require('../assets/images/MuscularTissue/SmoothMuscle/smooth1.jpg'),
+      require('../assets/images/MuscularTissue/SmoothMuscle/smooth2.jpg'),
+      require('../assets/images/MuscularTissue/SmoothMuscle/smooth3.jpg'),
+      require('../assets/images/MuscularTissue/SmoothMuscle/smooth4.jpg'),
+      require('../assets/images/MuscularTissue/SmoothMuscle/smooth5.jpg')]
   },
   {
-      title: "Epiglotis",
-      sliderImages: ["epi1.jpg","epi3.jpg","epi4.jpg","epiglottis.jpg","lungs6.jpg"]
+    title: "Respiratory System",
+    sliderImages: [
+      require('../assets/images/RespiratorySystem/Introduction/5bb381ff064cc4af0a1703a3d8412ab6.jpg'),
+      require('../assets/images/RespiratorySystem/Introduction/Respiratory-System-Diagram.jpg')
+    ]
   },
   {
-      title: "Lungs",
-      sliderImages: ["lungs.jpg","lungs2.jpg","lungs3.jpg","lungs4.jpg","lungs5.jpg","lungs6.jpg","lungs7.jpg"]
+    title: "Epiglotis",
+    sliderImages: [
+      require('../assets/images/RespiratorySystem/Epiglotis/epi1.jpg'),
+      require('../assets/images/RespiratorySystem/Epiglotis/epi3.jpg'),
+      require('../assets/images/RespiratorySystem/Epiglotis/epi4.jpg'),
+      require('../assets/images/RespiratorySystem/Epiglotis/epiglottis.jpg'),
+      require('../assets/images/RespiratorySystem/Epiglotis/lungs6.jpg')
+    ]
   },
   {
-      title: "Trachea",
-      sliderImages: ["trachea.jpg","trachea1.jpg","trachea3.jpg","trachea4.jpg","trachea5.jpg","trachea6.jpg","trachea7.jpg"]
+    title: "Lungs",
+    sliderImages: [
+      require('../assets/images/RespiratorySystem/Lungs/lungs.jpg'),
+      require('../assets/images/RespiratorySystem/Lungs/lungs6.jpg'),
+      require('../assets/images/RespiratorySystem/Lungs/lungs6.jpg'),
+      require('../assets/images/RespiratorySystem/Lungs/lungs6.jpg'),
+      require('../assets/images/RespiratorySystem/Lungs/lungs6.jpg'),
+      require('../assets/images/RespiratorySystem/Lungs/lungs6.jpg'),
+      require('../assets/images/RespiratorySystem/Lungs/lungs6.jpg')]
   },
   {
-      title: "Trachea",
-      sliderImages: ["trachea.jpg","trachea1.jpg","trachea3.jpg","trachea4.jpg","trachea5.jpg","trachea6.jpg","trachea7.jpg"]
+    title: "Trachea",
+    sliderImages: [
+      require('../assets/images/RespiratorySystem/Trachea/trachea.jpg'),
+      require('../assets/images/RespiratorySystem/Trachea/trachea1.jpg'),
+      require('../assets/images/RespiratorySystem/Trachea/trachea3.jpg'),
+      require('../assets/images/RespiratorySystem/Trachea/trachea4.jpg'),
+      require('../assets/images/RespiratorySystem/Trachea/trachea5.jpg'),
+      require('../assets/images/RespiratorySystem/Trachea/trachea6.jpg'),
+      require('../assets/images/RespiratorySystem/Trachea/trachea7.jpg')]
   },
   {
-      title: "Gastrolntestinal System",
-      sliderImages: ["gi.jpg","gi1.jpg","gi2.jpg"]
+    title: "Gastrolntestinal System",
+    sliderImages: ["gi.jpg",
+      require('../assets/images/GastrolntestinalSystem/Introduction/gi1.jpg'),
+      require('../assets/images/GastrolntestinalSystem/Introduction/gi2.jpg')]
   },
   {
-      title: "Appendix",
-      sliderImages: ["appndix2.webp","appndix3.jpg","appndix4.webp","appndix5.webp","appndix6.webp","appndix8.webp","appndix9.webp","appndix10.webp","appndix11.webp"]
+    title: "Appendix",
+    sliderImages: [
+      require('../assets/images/GastrolntestinalSystem/Appendix/appendix2.webp'),
+      require('../assets/images/GastrolntestinalSystem/Appendix/appendix3.jpg'),
+      require('../assets/images/GastrolntestinalSystem/Appendix/appendix4.webp'),
+      require('../assets/images/GastrolntestinalSystem/Appendix/appendix5.webp'),
+      require('../assets/images/GastrolntestinalSystem/Appendix/appendix6.webp'),
+      require('../assets/images/GastrolntestinalSystem/Appendix/appendix8.webp'),
+      require('../assets/images/GastrolntestinalSystem/Appendix/appendix9.webp'),
+      require('../assets/images/GastrolntestinalSystem/Appendix/appendix10.webp'),
+      require('../assets/images/GastrolntestinalSystem/Appendix/appendix11.webp')]
   },
 ]
 
@@ -478,7 +685,7 @@ let topics = [
     subtopics: [
       {
         id: 0,
-        title: 'Aerolar Tissue',
+        title: 'Areolar Tissue',
         imgPath: require('../assets/logos/topics/areolartissue.png'),
       },
       {
@@ -5233,7 +5440,7 @@ let AllHistologyContent = [
             ]
           },
         ],
-        content:{
+        content: {
           subTopic: [
             {
               title: "MICROSCOPIC STRUCTURE",
@@ -5320,49 +5527,49 @@ let AllHistologyContent = [
         introductionContent: [
           "The normal epiglottis has a firm but movable shape based upon the presence of elastic cartilage below the submucosa. Elastic cartilage (also found in the nose and the external ear) has prominent pink-staining elastic fibers between the cartilagenous nuclei. On one side is respiratory epithelium."
         ],
-        content:  
-          {
-            subTopic: [
-              {
-                title: "STRUCTURE",
-                unOrderedList: true,
-                orderedList: false,
-                content: [
-                  {
-                    title: "Anterior surface",
-                    content: "Covered by non-keratinized stratified squamous epithelium which also covers apex and more than half of posterior surface."
-                  },
-                  {
-                    title: "Lamina propria",
-                    content: [
-                      "Merges with underlying perichondrium of epiglottic cartilage",
-                      "Serous, mucous or mixed glands are present."
-                    ]
-                  },
-                  {
-                    title: "Cartilage",
-                    content: [
-                      "Elastic cartilage also called as epiglottic cartilage which is present in the center.",
-                      "This cartilage forms the framework of epiglottis and is covered by perichondrium."
-                    ]
-                  },
-                  {
-                    title: "Posterior surface:",
-                    content: "More than upper half is covered by nonkeratinised stratified squamous epithelium and remaining lower half is lined by pseudostratified ciliated columnar epithelium (Respiratory epithelium). Occasionally taste buds are also present in the epithelium."
-                  }
-                ]
-              },
-              {
-                title: "LOCATION",
-                content: "The epiglottis is a leaf-shaped flap of cartilage located behind the tongue, at the top of the larynx, or voice box."
-              },
-              {
-                title: "FUNCTION",
-                content: "The main function of the epiglottis is to seal off the windpipe during eating, so that food is not accidentally inhaled."
-              }
-            ]
-          }
-        
+        content:
+        {
+          subTopic: [
+            {
+              title: "STRUCTURE",
+              unOrderedList: true,
+              orderedList: false,
+              content: [
+                {
+                  title: "Anterior surface",
+                  content: "Covered by non-keratinized stratified squamous epithelium which also covers apex and more than half of posterior surface."
+                },
+                {
+                  title: "Lamina propria",
+                  content: [
+                    "Merges with underlying perichondrium of epiglottic cartilage",
+                    "Serous, mucous or mixed glands are present."
+                  ]
+                },
+                {
+                  title: "Cartilage",
+                  content: [
+                    "Elastic cartilage also called as epiglottic cartilage which is present in the center.",
+                    "This cartilage forms the framework of epiglottis and is covered by perichondrium."
+                  ]
+                },
+                {
+                  title: "Posterior surface:",
+                  content: "More than upper half is covered by nonkeratinised stratified squamous epithelium and remaining lower half is lined by pseudostratified ciliated columnar epithelium (Respiratory epithelium). Occasionally taste buds are also present in the epithelium."
+                }
+              ]
+            },
+            {
+              title: "LOCATION",
+              content: "The epiglottis is a leaf-shaped flap of cartilage located behind the tongue, at the top of the larynx, or voice box."
+            },
+            {
+              title: "FUNCTION",
+              content: "The main function of the epiglottis is to seal off the windpipe during eating, so that food is not accidentally inhaled."
+            }
+          ]
+        }
+
       },
       {
         id: 1,
@@ -5371,76 +5578,76 @@ let AllHistologyContent = [
         introductionContent: [
           "The trachea is lined with a layer of pseudostratified ciliated columnar epithelium. The epithelium contains goblet cells, which are glandular, modified simple columnar epithelial cells that produce mucins, the main component of mucus."
         ],
-        content: 
-          {
-            subTopic: [
-              {
-                title: "STRUCTURE:",
-                content: [
-                  {
-                    title: "MUCOUS MEMBRANE",
-                    content: [
-                      {
-                        unOrderedList: true,
-                        orderedList: false,
-                        content: [
-                          "Lined by pseudostratified ciliated columnar epithelium with goblet cells resting on thick basal lamina.",
-                          "Three types of cells:"
-                        ]
-                      },
-                      {
-                        unOrderedList: false,
-                        orderedList: true,
-                        content: [
-                          "1.Ciliated cells",
-                          "2.Goblet cells",
-                          "3.Basal cells"
-                        ]
-                      },
-                      {
-                        unOrderedList: true,
-                        orderedList: false,
-                        content: [
-                          "Ciliated cells propel the mucous upwards.",
-                          "Their percentage increases from above downwards in trachea.",
-                          "The Goblet cells secrete mucous.",
-                          "The Basal cells are small and pyramidal in shape which are situated near basal lamina which act as stem cells to replace other cell types.",
-                          "Other less common cells:",
-                          "GRANULE CELLS: (KULCHITSKY CELLS) Situated at the base of the epithelium containing dense secretary granules.",
-                          "BRUSH CELLS: with large micro-villi having an actin filament. They lack secretary granules and probably have sensory function."
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    title: "LAMINA PROPRIA",
-                    content: "Contains loose connective tissue."
-                  },
-                  {
-                    title: "SUBMUCOSA",
-                    content: "Contains sero-mucus glands with their ducts open on the surface of epithelium."
-                  },
-                  {
-                    title: "CARTILAGE AND MUSCLE LAYER",
-                    content: "Consists of C-shaped hyaline cartilaginous ring which is incomplete posteriorly. The gap is filled by smooth muscle-Trachealis and by fibroelastic ligament."
-                  },
-                  {
-                    title: "ADVENTITIA",
-                    content: "Made up of connective tissue and elastic fibers."
-                  }
-                ]
-              },
-              {
-                title: "LOCATION",
-                content: "The trachea begins just under the larynx (voice box) and runs down behind the breastbone (sternum). The trachea then divides into two smaller tubes called bronchi: one bronchus for each lung."
-              },
-              {
-                title: "FUNCTION",
-                content: "The trachea (or windpipe) is a wide, hollow tube that connects the larynx (or voice box) to the bronchi of the lungs. It is an integral part of the body&#39;s airway and has the vital function of providing air flow to and from the lungs for respiration."
-              }
-            ]
-          }
-        
+        content:
+        {
+          subTopic: [
+            {
+              title: "STRUCTURE:",
+              content: [
+                {
+                  title: "MUCOUS MEMBRANE",
+                  content: [
+                    {
+                      unOrderedList: true,
+                      orderedList: false,
+                      content: [
+                        "Lined by pseudostratified ciliated columnar epithelium with goblet cells resting on thick basal lamina.",
+                        "Three types of cells:"
+                      ]
+                    },
+                    {
+                      unOrderedList: false,
+                      orderedList: true,
+                      content: [
+                        "1.Ciliated cells",
+                        "2.Goblet cells",
+                        "3.Basal cells"
+                      ]
+                    },
+                    {
+                      unOrderedList: true,
+                      orderedList: false,
+                      content: [
+                        "Ciliated cells propel the mucous upwards.",
+                        "Their percentage increases from above downwards in trachea.",
+                        "The Goblet cells secrete mucous.",
+                        "The Basal cells are small and pyramidal in shape which are situated near basal lamina which act as stem cells to replace other cell types.",
+                        "Other less common cells:",
+                        "GRANULE CELLS: (KULCHITSKY CELLS) Situated at the base of the epithelium containing dense secretary granules.",
+                        "BRUSH CELLS: with large micro-villi having an actin filament. They lack secretary granules and probably have sensory function."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  title: "LAMINA PROPRIA",
+                  content: "Contains loose connective tissue."
+                },
+                {
+                  title: "SUBMUCOSA",
+                  content: "Contains sero-mucus glands with their ducts open on the surface of epithelium."
+                },
+                {
+                  title: "CARTILAGE AND MUSCLE LAYER",
+                  content: "Consists of C-shaped hyaline cartilaginous ring which is incomplete posteriorly. The gap is filled by smooth muscle-Trachealis and by fibroelastic ligament."
+                },
+                {
+                  title: "ADVENTITIA",
+                  content: "Made up of connective tissue and elastic fibers."
+                }
+              ]
+            },
+            {
+              title: "LOCATION",
+              content: "The trachea begins just under the larynx (voice box) and runs down behind the breastbone (sternum). The trachea then divides into two smaller tubes called bronchi: one bronchus for each lung."
+            },
+            {
+              title: "FUNCTION",
+              content: "The trachea (or windpipe) is a wide, hollow tube that connects the larynx (or voice box) to the bronchi of the lungs. It is an integral part of the body&#39;s airway and has the vital function of providing air flow to and from the lungs for respiration."
+            }
+          ]
+        }
+
       },
       {
         id: 2,
@@ -5449,166 +5656,166 @@ let AllHistologyContent = [
         introductionContent: [
           "The lungs are covered by the serous membrane, the pleural membrane, which has two layers - the parietal and the visceral layer. The visceral pleura of the lung is lined by a mesothelial layer with underlying connective tissue and elastic fibers. An elastin stain may be used to identify the elastic layer."
         ],
-        content: 
-          {
-            subTopic: [
-              {
-                title: "INTRAPULMONARY BRONCHI",
-                content: [
-                  "Once the primary bronchi enters into the lung through hilum it undergoes several divisions to form smaller and smaller sized bronchi which keeps on penetrating the lung tissue. Following layers are found:",
-                  {
-                    title: "Mucosa",
-                    unOrderedList: true,
-                    orderedList: false,
-                    content: [
-                      "Psuedostartified ciliated columnar epithelium with goblet cells.",
-                      "Lamina propria: Contains seromucous glands,elastic fibers and smooth muscles arranged in bundles."
-                    ]
-                  },
-                  {
-                    title: "Submucosa",
-                    content: "Made up of loose connective tissue."
-                  },
-                  {
-                    title: "Cartilage layer",
-                    content: [
-                      "Irregular plates of hyaline cartilage instead of &quot;C&quot; shaped cartilage found in trachea.",
-                      "The plates surround the bronchi to make its shape rounded and keep its lumen open."
-                    ]
-                  },
-                  {
-                    title: "Adventitia",
-                    content: "Made up of connective tissue."
-                  }
-                ]
-              },
-              {
-                title: "BRONCHIOLES",
-                content: [
-                  "Branches of smallest bronchi with less than 1 mm diameter.Lacking cartilage and glands.",
-                  {
-                    title: "MUCOSA",
-                    unOrderedList: true,
-                    orderedList: false,
-                    content: [
-                      "Large bronchioles: simple ciliated columnar epithelium with very few goblet cells.",
-                      "Terminal bronchioles: simple cuboidal ciliated epithelium with no goblet cells.",
-                      "Clara cells replace the goblet",
-                      "CLARA CELLS:Non-ciliated cells with many micro-villi along apical surface.Their number greatly increases in terminal bronchioles. Secrete a glycoprotein which forms a protective layer of surfactant throughout the lower respiratory tract to reduce the surface tension of alveolar fluid which in turn helps to avoid the alveoli to collapse."
-                    ]
-                  },
-                  {
-                    title: "SMOOTH MUSCLE LAYER",
-                    unOrderedList: true,
-                    orderedList: false,
-                    content: [
-                      "Prominent layer",
-                      "Forms a major components of the wall."
-                    ]
-                  },
-                  {
-                    title: "CONNECTIVE TISSUE LAYER",
-                    content: "Rich in elastic network."
-                  }
-                ]
-              },
-              {
-                title: "RESPIRATORY BRONCHIOLES",
-                unOrderedList: true,
-                orderedList: false,
-                content: [
-                  "Its a transition from conducting to respiratory part. Partly respiratory in function.",
-                  "Less than 0.5 mm in diameter.",
-                  "Lined by simple cuboidal cells with cilia which get gradually replaced by non- ciliated cuboidal cells.",
-                  "Clara cells are present which are found between these cuboidal cells.",
-                  "Outside the epithelium is a smooth muscle layer.",
-                  "The outer most is a fine layer of connective tissue."
-                ]
-              },
-              {
-                title: "ALVEOLAR DUCT",
-                unOrderedList: true,
-                orderedList: false,
-                content: [
-                  "Walls consist of alveoli and lined by simple squamous epithelium.",
-                  "Smooth muscles are absent in the terminal parts of alveolar ducts.",
-                  "Many alveolar sacs and alveoli open at the end of an alveolar duct."
-                ]
-              },
-              {
-                title: "ALVEOLAR SACS",
-                content: "A cluster of alveoli seen at the end of alveolar duct is called alveolar sac."
-              },
-              {
-                title: "ALVEOLI",
-                unOrderedList: true,
-                orderedList: false,
-                content: [
-                  "Thin walled sacs.",
-                  "Round or polygonal in shape. Around 200 micro-meters in diameter.",
-                  "Forms site of gaseous exchange. Closely packed so the alveolar wall forms a partition between the adjacent alveoli.",
-                  "Inter alveolar septa contain capillaries, reticular fibers, elastic fibers, fibroblasts and macrophages. Openings in septa are called as pores which help in circulation of air from one alveolus to another."
-                ]
-              },
-              {
-                title: "ALVEOLAR CELL TYPES",
-                unOrderedList: true,
-                orderedList: false,
-                content: [
-                  {
-                    title: "TYPE-I ALVEOLAR CELLS",
-                    unOrderedList: true,
-                    orderedList: false,
-                    content: [
-                      "Very thin squamous cells.",
-                      "Cover 95% of the alveolar surface."
-                    ]
-                  },
-                  {
-                    title: "TYPE-II ALVEOLAR CELLS",
-                    unOrderedList: true,
-                    orderedList: false,
-                    content: [
-                      "Cover remaining 3 to 5% of alveolar surface.",
-                      "Interposed among the type-l cells.",
-                      "Roughly cuboidal in shape having microvilli along apical surface.",
-                      "Mainly characterized by membrane bound lamellar bodies.",
-                      "Secretary product, pulmonary surfactant is assembled and stored in the lamellar bodies."
-                    ]
-                  },
-                  {
-                    title: "TYPE-III ALVEOLAR CELLS",
-                    unOrderedList: true,
-                    orderedList: false,
-                    content: [
-                      "Very few and occasionally found.",
-                      "Functioning as receptors to monitor quality of air related to lung and alveoli."
-                    ]
-                  },
-                  {
-                    title: "ALVEOLAR MACROPHAGES (DUST CELLS)",
-                    unOrderedList: true,
-                    orderedList: false,
-                    content: [
-                      "Large monocytes derived from representative of mono-nuclear phagocyte system.",
-                      "Lie on the surface of alveolar septa and in the interstitium.",
-                      "Phagocytose any debris and dust particles hence named as DUST CELLS.",
-                      "They also phagocytose blood cells entering the alveoli as a result of heart failure known as HEART FAILURE CELLS."
-                    ]
-                  }
-                ]
-              },
-              {
-                title: "LOCATION",
-                content: "located on either side of the chest (thorax)."
-              },
-              {
-                title: "FUNCTION",
-                content: "The main function of the lungs is the process of gas exchange called respiration (or breathing). In respiration, oxygen from incoming air enters the blood, and carbon dioxide, a waste gas from the metabolism, leaves the blood. A reduced lung function means that the ability of lungs to exchange gases is reduced."
-              }
-            ]
-          }
-        
+        content:
+        {
+          subTopic: [
+            {
+              title: "INTRAPULMONARY BRONCHI",
+              content: [
+                "Once the primary bronchi enters into the lung through hilum it undergoes several divisions to form smaller and smaller sized bronchi which keeps on penetrating the lung tissue. Following layers are found:",
+                {
+                  title: "Mucosa",
+                  unOrderedList: true,
+                  orderedList: false,
+                  content: [
+                    "Psuedostartified ciliated columnar epithelium with goblet cells.",
+                    "Lamina propria: Contains seromucous glands,elastic fibers and smooth muscles arranged in bundles."
+                  ]
+                },
+                {
+                  title: "Submucosa",
+                  content: "Made up of loose connective tissue."
+                },
+                {
+                  title: "Cartilage layer",
+                  content: [
+                    "Irregular plates of hyaline cartilage instead of &quot;C&quot; shaped cartilage found in trachea.",
+                    "The plates surround the bronchi to make its shape rounded and keep its lumen open."
+                  ]
+                },
+                {
+                  title: "Adventitia",
+                  content: "Made up of connective tissue."
+                }
+              ]
+            },
+            {
+              title: "BRONCHIOLES",
+              content: [
+                "Branches of smallest bronchi with less than 1 mm diameter.Lacking cartilage and glands.",
+                {
+                  title: "MUCOSA",
+                  unOrderedList: true,
+                  orderedList: false,
+                  content: [
+                    "Large bronchioles: simple ciliated columnar epithelium with very few goblet cells.",
+                    "Terminal bronchioles: simple cuboidal ciliated epithelium with no goblet cells.",
+                    "Clara cells replace the goblet",
+                    "CLARA CELLS:Non-ciliated cells with many micro-villi along apical surface.Their number greatly increases in terminal bronchioles. Secrete a glycoprotein which forms a protective layer of surfactant throughout the lower respiratory tract to reduce the surface tension of alveolar fluid which in turn helps to avoid the alveoli to collapse."
+                  ]
+                },
+                {
+                  title: "SMOOTH MUSCLE LAYER",
+                  unOrderedList: true,
+                  orderedList: false,
+                  content: [
+                    "Prominent layer",
+                    "Forms a major components of the wall."
+                  ]
+                },
+                {
+                  title: "CONNECTIVE TISSUE LAYER",
+                  content: "Rich in elastic network."
+                }
+              ]
+            },
+            {
+              title: "RESPIRATORY BRONCHIOLES",
+              unOrderedList: true,
+              orderedList: false,
+              content: [
+                "Its a transition from conducting to respiratory part. Partly respiratory in function.",
+                "Less than 0.5 mm in diameter.",
+                "Lined by simple cuboidal cells with cilia which get gradually replaced by non- ciliated cuboidal cells.",
+                "Clara cells are present which are found between these cuboidal cells.",
+                "Outside the epithelium is a smooth muscle layer.",
+                "The outer most is a fine layer of connective tissue."
+              ]
+            },
+            {
+              title: "ALVEOLAR DUCT",
+              unOrderedList: true,
+              orderedList: false,
+              content: [
+                "Walls consist of alveoli and lined by simple squamous epithelium.",
+                "Smooth muscles are absent in the terminal parts of alveolar ducts.",
+                "Many alveolar sacs and alveoli open at the end of an alveolar duct."
+              ]
+            },
+            {
+              title: "ALVEOLAR SACS",
+              content: "A cluster of alveoli seen at the end of alveolar duct is called alveolar sac."
+            },
+            {
+              title: "ALVEOLI",
+              unOrderedList: true,
+              orderedList: false,
+              content: [
+                "Thin walled sacs.",
+                "Round or polygonal in shape. Around 200 micro-meters in diameter.",
+                "Forms site of gaseous exchange. Closely packed so the alveolar wall forms a partition between the adjacent alveoli.",
+                "Inter alveolar septa contain capillaries, reticular fibers, elastic fibers, fibroblasts and macrophages. Openings in septa are called as pores which help in circulation of air from one alveolus to another."
+              ]
+            },
+            {
+              title: "ALVEOLAR CELL TYPES",
+              unOrderedList: true,
+              orderedList: false,
+              content: [
+                {
+                  title: "TYPE-I ALVEOLAR CELLS",
+                  unOrderedList: true,
+                  orderedList: false,
+                  content: [
+                    "Very thin squamous cells.",
+                    "Cover 95% of the alveolar surface."
+                  ]
+                },
+                {
+                  title: "TYPE-II ALVEOLAR CELLS",
+                  unOrderedList: true,
+                  orderedList: false,
+                  content: [
+                    "Cover remaining 3 to 5% of alveolar surface.",
+                    "Interposed among the type-l cells.",
+                    "Roughly cuboidal in shape having microvilli along apical surface.",
+                    "Mainly characterized by membrane bound lamellar bodies.",
+                    "Secretary product, pulmonary surfactant is assembled and stored in the lamellar bodies."
+                  ]
+                },
+                {
+                  title: "TYPE-III ALVEOLAR CELLS",
+                  unOrderedList: true,
+                  orderedList: false,
+                  content: [
+                    "Very few and occasionally found.",
+                    "Functioning as receptors to monitor quality of air related to lung and alveoli."
+                  ]
+                },
+                {
+                  title: "ALVEOLAR MACROPHAGES (DUST CELLS)",
+                  unOrderedList: true,
+                  orderedList: false,
+                  content: [
+                    "Large monocytes derived from representative of mono-nuclear phagocyte system.",
+                    "Lie on the surface of alveolar septa and in the interstitium.",
+                    "Phagocytose any debris and dust particles hence named as DUST CELLS.",
+                    "They also phagocytose blood cells entering the alveoli as a result of heart failure known as HEART FAILURE CELLS."
+                  ]
+                }
+              ]
+            },
+            {
+              title: "LOCATION",
+              content: "located on either side of the chest (thorax)."
+            },
+            {
+              title: "FUNCTION",
+              content: "The main function of the lungs is the process of gas exchange called respiration (or breathing). In respiration, oxygen from incoming air enters the blood, and carbon dioxide, a waste gas from the metabolism, leaves the blood. A reduced lung function means that the ability of lungs to exchange gases is reduced."
+            }
+          ]
+        }
+
       }
     ]
   },
@@ -5645,8 +5852,8 @@ let AllHistologyContent = [
       {
         id: 0,
         title: "PAROTID GLAND",
-        content:{
-          subTopic:[
+        content: {
+          subTopic: [
             {
               title: "STRUCTURE",
               unOrderedList: false,
@@ -5675,7 +5882,7 @@ let AllHistologyContent = [
       {
         id: 1,
         title: "SUBLINGUAL GLAND",
-        content:{
+        content: {
           subTopic: [
             {
               title: "STRUCTURE",
@@ -5703,7 +5910,7 @@ let AllHistologyContent = [
         id: 2,
         title: "SUBMANDIBULAR GLAND",
         content: {
-          subTopic:[
+          subTopic: [
             {
               title: "STRUCTURE",
               unOrderedList: false,
@@ -5765,313 +5972,313 @@ let AllHistologyContent = [
       {
         id: 0,
         title: "Gall Bladder",
-        content: 
-          {
-            subTopic: [
-              {
-                title: "Identification points",
-                unOrderedList: true,
-                orderedList: false,
-                content: [
-                  "Absence of submucosa and muscularis interna.",
-                  "Presence of fibro muscular coat.",
-                  "Absence of glands and goblet cells."
-                ]
-              },
-              {
-                title: "Introduction",
-                unOrderedList: true,
-                orderedList: false,
-                content: [
-                  "Gall bladder is a muscular sac like structure situated in fossa of gall bladder(visceral surface of liver ).",
-                  "Different parts of gall bladder are fundus, body and neck.",
-                  "Develops in 4th week of intrauterine life from ‘pars cystica’ which is a part of hepatic bud."
-                ]
-              },
-              {
-                title: "STRUCTURE",
-                content: [
-                  {
-                    title: "Mucosa",
-                    content: "Lined by simple columnar epithelium with fine microvilli. It is highly folded into many rugae. Submucosa and muscularis mucosa are absent."
-                  },
-                  {
-                    title: "Laminapropria",
-                    content: "Loose connective tissue layer beneath the epithelium."
-                  },
-                  {
-                    title: "Fibromuscular coat",
-                    content: "Circularly arranged smooth muscle cells with few elastic fibres in it."
-                  },
-                  {
-                    title: "Serosa",
-                    content: "Made up dense irregular connective tissue with few blood vessels in it."
-                  }
-                ]
-              },
-              {
-                title: "Functions",
-                unOrderedList: true,
-                orderedList: false,
-                content: [
-                  "stores bile.",
-                  "concentrates the bile.",
-                  "decreases the ph of bile.",
-                  "concentration of gall bladder maintains the pressure in the billiary system which is essential for the release of bile into small intestine."
-                ]
-              },
-              {
-                title: "Clinical",
-                unOrderedList: true,
-                orderedList: false,
-                content: [
-                  "inflammation of gall bladder is called cholecystitis.",
-                  "surgical removal of gall bladder is called cholecystectomy.",
-                  "formation of gall stones in gall bladder results in cholelithiasis."
-                ]
-              }
-            ]
-          }
-        
+        content:
+        {
+          subTopic: [
+            {
+              title: "Identification points",
+              unOrderedList: true,
+              orderedList: false,
+              content: [
+                "Absence of submucosa and muscularis interna.",
+                "Presence of fibro muscular coat.",
+                "Absence of glands and goblet cells."
+              ]
+            },
+            {
+              title: "Introduction",
+              unOrderedList: true,
+              orderedList: false,
+              content: [
+                "Gall bladder is a muscular sac like structure situated in fossa of gall bladder(visceral surface of liver ).",
+                "Different parts of gall bladder are fundus, body and neck.",
+                "Develops in 4th week of intrauterine life from ‘pars cystica’ which is a part of hepatic bud."
+              ]
+            },
+            {
+              title: "STRUCTURE",
+              content: [
+                {
+                  title: "Mucosa",
+                  content: "Lined by simple columnar epithelium with fine microvilli. It is highly folded into many rugae. Submucosa and muscularis mucosa are absent."
+                },
+                {
+                  title: "Laminapropria",
+                  content: "Loose connective tissue layer beneath the epithelium."
+                },
+                {
+                  title: "Fibromuscular coat",
+                  content: "Circularly arranged smooth muscle cells with few elastic fibres in it."
+                },
+                {
+                  title: "Serosa",
+                  content: "Made up dense irregular connective tissue with few blood vessels in it."
+                }
+              ]
+            },
+            {
+              title: "Functions",
+              unOrderedList: true,
+              orderedList: false,
+              content: [
+                "stores bile.",
+                "concentrates the bile.",
+                "decreases the ph of bile.",
+                "concentration of gall bladder maintains the pressure in the billiary system which is essential for the release of bile into small intestine."
+              ]
+            },
+            {
+              title: "Clinical",
+              unOrderedList: true,
+              orderedList: false,
+              content: [
+                "inflammation of gall bladder is called cholecystitis.",
+                "surgical removal of gall bladder is called cholecystectomy.",
+                "formation of gall stones in gall bladder results in cholelithiasis."
+              ]
+            }
+          ]
+        }
+
       },
       {
         id: 1,
         title: "Liver",
         isIntroduction: false,
-        content: 
-          {
-            subTopic: [
-              {
-                title: "Identification points",
-                unOrderedList: true,
-                orderedList: false,
-                content: [
-                  "Hepatic lobules with central vein.",
-                  "Radiating hepatic cord cells.",
-                  "Portal triads."
-                ]
-              },
-              {
-                title: "Introduction",
-                unOrderedList: true,
-                orderedList: false,
-                content: [
-                  "liver is the largest exocrine gland situated in the right hypochondrium and a part of left hypochondrium in abdomen.",
-                  "it has two lobes. Right lobe is bigger than left lobe and both are connected by ‘falciform ligament’.",
-                  "development of liver starts in 3rd week of intrauterine life. It arises from caudal end of foregut as a hepatic bud and later grows as ‘pars- hepatica’ to form liver."
-                ]
-              },
-              {
-                title: "Structure",
-                content: {
-                  subTopic:[
-                    {
-                      title: "Capsule",
-                      content: "Thin layer of connective tissue covering the liver called ‘glisson’s capsule’. It also covers the blood vessels thus enter the liver through ‘porta hepatis’ and divides the liver into numerous lobules."
-                    },
-                    {
-                      title: "Stroma",
-                      content: "Consists of thin layer of reticular fibres surrounding the hepatic cord cells and sinusoids."
-                    },
-                    {
-                      title: "Parenchyma",
-                      content: [
-                        "Repeated units of hepatic lobules form whole of the liver parenchyma. It is explained as follows:-",
-                      ]
-                    },
-                    {
-                      title: "1. Hepatic lobule:",
-                      orderedList: false,
-                      unOrderedList: true,
-                      content: [
-                        "Hexagonal microscopic area of liver, covered by thin connective tissue septum called ‘interlobar septum’.",
-                        "there is a central vein at the centre of hepatic lobule and hepatic cords are radiating from the central vein.",
-                        "hepatocytes are hexagonal in shape present in hepatic cords.",
-                        "85-90% of liver parenchyma is made up of hepatocytes and 10-15% is made up of sinusoidal epithelium.",
-                        "‘von-kupffer cells’ act as macrophages of liver and are present in the sinusoids."
-                      ]
-                    },
-                    {
-                      title: "2. Bile canaliculi",
-                      content: "these structures connect one hepatocyte with another hepatocyte."
-                    },
-                    {
-                      title: "3. Perisinusoidal space of dissi",
-                      content: [
-                        "it is a minute potential space found in between endothelium of sinusoids and hepatic cord cells. It contains:-",
-                        "reticular fibres",
-                        "microvilli of hepatic cord cells and",
-                        "perisunusoidal lipocytes or lto cells or stellate cells."
-                      ]
-                    },
-                    {
-                      title: "4. Space of mall",
-                      content: "blood vessels and hepatic ducts are covered by a narrow interval space in the portal canals called ‘space of mall’."
-                    },
-                    {
-                      title: "5. Portal canal:",
-                      unOrderedList: true,
-                      orderedList: false,
-                      content: [
-                        "space between hepatic lobules filled with connective tissue. It contains the portal triad.",
-                        "portal triad constitutes proper hepatic artery,bile duct and portal vein."
-                      ]
-                    },
-                    {
-                      title: "6. Portal lobule",
-                      content: "it is a true functional unit of liver where a single branch of portal vein supplies the three adjoining hepatic lobules."
-                    },
-                    {
-                      title: "7. Portal acinus",
-                      unOrderedList: true,
-                      orderedList: false,
-                      content: [
-                        "diamond shaped area found between two central veins of hepatic lobule, where the coeners of diamond is formed by hepatic triad.",
-                        "based on blood supply it is divided into three zones",
-                        
-                      ]
-                    },
-                    {
-                      title: "zone 1:",
-                      content: "close to arterial and portal blood vessels with rich blodd supply."
-                    },
-                    {
-                      title: "Zone 2:",
-                      content: "intermediate area found between zone 1 and zone 3, with moderate blood supply."
-                    },
-                    {
-                      title: "Zone 3:",
-                      content: "area of hepatic cord cells surrounding the central vein forms zone 3. It has poor blood supply."
-                    }
-                  ]
-                }
-              },
-              {
-                title: "Functions",
-                unOrderedList: true,
-                orderedList: false,
-                content: [
-                  "stroma acts like framework of liver by supporting the hepatocytes and sinusoids.",
-                  "liver is the active site for metabolism of carbohydrates,proteins,lipids,vitamins,drugs and hormones.",
-                  "secretes bile juice and excretes bile pigments.",
-                  "chief organ of heat production.",
-                  "heamopoitic organ in foetal life.",
-                  "forms a part of reticulo-endothelial system.",
-                  "detoxification centre."
-                ]
-              },
-              {
-                title: "Clinical",
-                unOrderedList: true,
-                orderedList: false,
-                content: [
-                  "enlargement of liver (hepatomegaly), seen in fatty liver disease.",
-                  "jaundice due to increased billirubin level in blood.",
-                  "viral infection causing inflammation of liver called hepatitis.",
-                  "cirrhosis of liver where necrosis and fibrosis of hepatic lobule is seen.",
-                  "chronic venous congestion whrer , zone 3 liver cells are affected."
+        content:
+        {
+          subTopic: [
+            {
+              title: "Identification points",
+              unOrderedList: true,
+              orderedList: false,
+              content: [
+                "Hepatic lobules with central vein.",
+                "Radiating hepatic cord cells.",
+                "Portal triads."
+              ]
+            },
+            {
+              title: "Introduction",
+              unOrderedList: true,
+              orderedList: false,
+              content: [
+                "liver is the largest exocrine gland situated in the right hypochondrium and a part of left hypochondrium in abdomen.",
+                "it has two lobes. Right lobe is bigger than left lobe and both are connected by ‘falciform ligament’.",
+                "development of liver starts in 3rd week of intrauterine life. It arises from caudal end of foregut as a hepatic bud and later grows as ‘pars- hepatica’ to form liver."
+              ]
+            },
+            {
+              title: "Structure",
+              content: {
+                subTopic: [
+                  {
+                    title: "Capsule",
+                    content: "Thin layer of connective tissue covering the liver called ‘glisson’s capsule’. It also covers the blood vessels thus enter the liver through ‘porta hepatis’ and divides the liver into numerous lobules."
+                  },
+                  {
+                    title: "Stroma",
+                    content: "Consists of thin layer of reticular fibres surrounding the hepatic cord cells and sinusoids."
+                  },
+                  {
+                    title: "Parenchyma",
+                    content: [
+                      "Repeated units of hepatic lobules form whole of the liver parenchyma. It is explained as follows:-",
+                    ]
+                  },
+                  {
+                    title: "1. Hepatic lobule:",
+                    orderedList: false,
+                    unOrderedList: true,
+                    content: [
+                      "Hexagonal microscopic area of liver, covered by thin connective tissue septum called ‘interlobar septum’.",
+                      "there is a central vein at the centre of hepatic lobule and hepatic cords are radiating from the central vein.",
+                      "hepatocytes are hexagonal in shape present in hepatic cords.",
+                      "85-90% of liver parenchyma is made up of hepatocytes and 10-15% is made up of sinusoidal epithelium.",
+                      "‘von-kupffer cells’ act as macrophages of liver and are present in the sinusoids."
+                    ]
+                  },
+                  {
+                    title: "2. Bile canaliculi",
+                    content: "these structures connect one hepatocyte with another hepatocyte."
+                  },
+                  {
+                    title: "3. Perisinusoidal space of dissi",
+                    content: [
+                      "it is a minute potential space found in between endothelium of sinusoids and hepatic cord cells. It contains:-",
+                      "reticular fibres",
+                      "microvilli of hepatic cord cells and",
+                      "perisunusoidal lipocytes or lto cells or stellate cells."
+                    ]
+                  },
+                  {
+                    title: "4. Space of mall",
+                    content: "blood vessels and hepatic ducts are covered by a narrow interval space in the portal canals called ‘space of mall’."
+                  },
+                  {
+                    title: "5. Portal canal:",
+                    unOrderedList: true,
+                    orderedList: false,
+                    content: [
+                      "space between hepatic lobules filled with connective tissue. It contains the portal triad.",
+                      "portal triad constitutes proper hepatic artery,bile duct and portal vein."
+                    ]
+                  },
+                  {
+                    title: "6. Portal lobule",
+                    content: "it is a true functional unit of liver where a single branch of portal vein supplies the three adjoining hepatic lobules."
+                  },
+                  {
+                    title: "7. Portal acinus",
+                    unOrderedList: true,
+                    orderedList: false,
+                    content: [
+                      "diamond shaped area found between two central veins of hepatic lobule, where the coeners of diamond is formed by hepatic triad.",
+                      "based on blood supply it is divided into three zones",
+
+                    ]
+                  },
+                  {
+                    title: "zone 1:",
+                    content: "close to arterial and portal blood vessels with rich blodd supply."
+                  },
+                  {
+                    title: "Zone 2:",
+                    content: "intermediate area found between zone 1 and zone 3, with moderate blood supply."
+                  },
+                  {
+                    title: "Zone 3:",
+                    content: "area of hepatic cord cells surrounding the central vein forms zone 3. It has poor blood supply."
+                  }
                 ]
               }
-            ]
-          }
-        
+            },
+            {
+              title: "Functions",
+              unOrderedList: true,
+              orderedList: false,
+              content: [
+                "stroma acts like framework of liver by supporting the hepatocytes and sinusoids.",
+                "liver is the active site for metabolism of carbohydrates,proteins,lipids,vitamins,drugs and hormones.",
+                "secretes bile juice and excretes bile pigments.",
+                "chief organ of heat production.",
+                "heamopoitic organ in foetal life.",
+                "forms a part of reticulo-endothelial system.",
+                "detoxification centre."
+              ]
+            },
+            {
+              title: "Clinical",
+              unOrderedList: true,
+              orderedList: false,
+              content: [
+                "enlargement of liver (hepatomegaly), seen in fatty liver disease.",
+                "jaundice due to increased billirubin level in blood.",
+                "viral infection causing inflammation of liver called hepatitis.",
+                "cirrhosis of liver where necrosis and fibrosis of hepatic lobule is seen.",
+                "chronic venous congestion whrer , zone 3 liver cells are affected."
+              ]
+            }
+          ]
+        }
+
       },
       {
         id: 2,
         title: "Pancreas",
         isIntroduction: false,
-        content: 
-          {
-            subTopic: [
-              {
-                title: "IDENTIFICATION POINTS",
-                unOrderedList: true,
-                orderedList: false,
-                content: [
-                  "Numerous serous acini.",
-                  "Islets of langerhans are present.",
-                  "Interlobar ducts are seen"
-                ]
-              },
-              {
-                title: "Introduction",
-                unOrderedList: true,
-                orderedList: false,
-                content: [
-                  "Pancreas is a j-shaped organ situated in posterior abdominal wall.",
-                  "It is divided into head,neck,body and tail. Curved projection of head is called uncinate process.Where head is fitted in the curve of duodenum and tail is pointed towards the gastric surface of spleen."
-                ]
-              },
-              {
-                title: "STRUCTURE",
-                content:{
-                  subTopic: [
-                    {
-                      title: "CAPSULE",
-                      content: [
-                        "Capsule of the pancreas is thin , made up of dense irregular connecive tissue. Connective tissue septae of the capsule enters the parenchyma of the gland and divides the whole parenchyma into numerous lobules."
-                      ]
-                    },
-                    {
-                      title: "PARENCHYMA",
-                      content: [
-                        "It is distinct from other glands as it contains both exocrine and endocrine glandular cells in it. Therefore pancreas is said to be a ‘heteroclite gland’."
-                      ]
-                    },
-                    {
-                      title: "EXOCRINE PART",
-                      content: "Comprises about 70-80% of the total parenchyma of the gland. Made up of numerous serous acini with a smaller lumen."
-                    },
-                    {
-                      title: "ENDOCRINE PART",
-                      content: [
-                        "Comprises about 20-30% of the total parenchyma of the gland. Predominantly well developed in the tail region and it consists of aggregations of numerous cells forming many clusters which are referred to as ‘islets of Langerhans’.Islets of Langerhans contain 3 types of cells. They are:-",
-                        
-                      ]
-                    },
-                    {
-                      title: "1. ALPHA-CELLS:",
-                      content: [
-                        "Constitute about 25% of endocrine pancreas. Peripherally situated in islets of Langerhans and can be identified by small size and pink cytoplasm."
-                      ]
-                    },
-                    {
-                      title: "2. BETA-CELLS",
-                      content: [
-                        "Constitute about 70% of endocrine pancreas. Centrally situated. Large cells with blue cytoplasm."
-                      ]
-                    },
-                    {
-                      title: "3. DELTA-CELLS:",
-                      content: [
-                        "Hardly about 5% of endocrine pancreas. Highly variable in size and can occur anywhere in islets of Langerhans."
-                      ]
-                    }                  ]
-                }
-              },
-              {
-                title: "FUNCTIONS",
-                orderedList: false,
-                unOrderedList: true,
-                content: [
-                  "Serous acini of exocrine pancreas secretes pancreatic juice and many digetive enzymes.",
-                  "Alpha-cells secrete a hormone called glucagon and helps in increasing blood glucose level.",
-                  "Beta-cells secrete insulin and helps in decreasing the blood glucose level to normal.",
-                  "Delta-cells produce few local hormones like gastrin,somatostatin and vip(vaso-active intestinal polypeptive) which produce local effects on gi-tract."
-                ]
-              },
-              {
-                title: "CLINICAL",
-                orderedList: false,
-                unOrderedList: true,
-                content: [
-                  "Inflammation of exocrine pancreas is termed as pancreatitis.",
-                  "Diabetes mellitus is a endocrine disorder of pancreas characterised by increased blood glucose level  due to hyposecretion of insulin by beta-cells ordue to destruction of receptors for insulin hormone."
-                ]
+        content:
+        {
+          subTopic: [
+            {
+              title: "IDENTIFICATION POINTS",
+              unOrderedList: true,
+              orderedList: false,
+              content: [
+                "Numerous serous acini.",
+                "Islets of langerhans are present.",
+                "Interlobar ducts are seen"
+              ]
+            },
+            {
+              title: "Introduction",
+              unOrderedList: true,
+              orderedList: false,
+              content: [
+                "Pancreas is a j-shaped organ situated in posterior abdominal wall.",
+                "It is divided into head,neck,body and tail. Curved projection of head is called uncinate process.Where head is fitted in the curve of duodenum and tail is pointed towards the gastric surface of spleen."
+              ]
+            },
+            {
+              title: "STRUCTURE",
+              content: {
+                subTopic: [
+                  {
+                    title: "CAPSULE",
+                    content: [
+                      "Capsule of the pancreas is thin , made up of dense irregular connecive tissue. Connective tissue septae of the capsule enters the parenchyma of the gland and divides the whole parenchyma into numerous lobules."
+                    ]
+                  },
+                  {
+                    title: "PARENCHYMA",
+                    content: [
+                      "It is distinct from other glands as it contains both exocrine and endocrine glandular cells in it. Therefore pancreas is said to be a ‘heteroclite gland’."
+                    ]
+                  },
+                  {
+                    title: "EXOCRINE PART",
+                    content: "Comprises about 70-80% of the total parenchyma of the gland. Made up of numerous serous acini with a smaller lumen."
+                  },
+                  {
+                    title: "ENDOCRINE PART",
+                    content: [
+                      "Comprises about 20-30% of the total parenchyma of the gland. Predominantly well developed in the tail region and it consists of aggregations of numerous cells forming many clusters which are referred to as ‘islets of Langerhans’.Islets of Langerhans contain 3 types of cells. They are:-",
+
+                    ]
+                  },
+                  {
+                    title: "1. ALPHA-CELLS:",
+                    content: [
+                      "Constitute about 25% of endocrine pancreas. Peripherally situated in islets of Langerhans and can be identified by small size and pink cytoplasm."
+                    ]
+                  },
+                  {
+                    title: "2. BETA-CELLS",
+                    content: [
+                      "Constitute about 70% of endocrine pancreas. Centrally situated. Large cells with blue cytoplasm."
+                    ]
+                  },
+                  {
+                    title: "3. DELTA-CELLS:",
+                    content: [
+                      "Hardly about 5% of endocrine pancreas. Highly variable in size and can occur anywhere in islets of Langerhans."
+                    ]
+                  }]
               }
-            ]
-          }
-        
+            },
+            {
+              title: "FUNCTIONS",
+              orderedList: false,
+              unOrderedList: true,
+              content: [
+                "Serous acini of exocrine pancreas secretes pancreatic juice and many digetive enzymes.",
+                "Alpha-cells secrete a hormone called glucagon and helps in increasing blood glucose level.",
+                "Beta-cells secrete insulin and helps in decreasing the blood glucose level to normal.",
+                "Delta-cells produce few local hormones like gastrin,somatostatin and vip(vaso-active intestinal polypeptive) which produce local effects on gi-tract."
+              ]
+            },
+            {
+              title: "CLINICAL",
+              orderedList: false,
+              unOrderedList: true,
+              content: [
+                "Inflammation of exocrine pancreas is termed as pancreatitis.",
+                "Diabetes mellitus is a endocrine disorder of pancreas characterised by increased blood glucose level  due to hyposecretion of insulin by beta-cells ordue to destruction of receptors for insulin hormone."
+              ]
+            }
+          ]
+        }
+
       }
     ]
   },
@@ -6087,115 +6294,115 @@ let AllHistologyContent = [
         id: 0,
         title: "Kidney",
         isIntroduction: false,
-        content: 
-          {
-            subTopic: [
-              {
-                title: "Identification points",
-                unOrderedList: true,
-                orderedList: false,
-                content: [
-                  "outer cortex and inner medulla.",
-                  "cortex containing renal corpuscles,proximal and distal convoluted tubules.",
-                  "medulla containing loop of henle and collecting ducts."
-                ]
-              },
-              {
-                title: "Introduction",
-                content: "kidney is a pair of excretory organ located in the posterior abdominal wall behind the peritoneum"
-              },
-              {
-                title: "Structure",
-                content:{
-                  subTopic: [
-                    {
-                      title: "Capsule",
-                      content: [
-                        "Outer most protective covering made up of dense irregular connective tissue. External to it there is a condensation of peripheral fat as perinephric pad of fat , which in turn is surrounded by sheath called renal fascia"
-                      ]
-                    },
-                    {
-                      title: "Cortex",
-                      content: [
-                        "Outer part of kidney found below the capsule. It mainly contains glomerulus,bowman’s capsule,dct and pct."
-                      ]
-                    },
-                    {
-                      title: "Medulla",
-                      content: "Inner part of kidney found below the cortex. Medulla is rich in loop of henle,collecting ducts and papillary ducts(ducts of bellini)"
-                    }
-                  ]
-                }
-              },
-              {
-                title: "Clinical",
-                content: [
-                  "Nephrotic syndrome is a disease of kidney characterised by massive proteinuria,hypoalbuminemia and edema",
-                  "Inflammation of glomerulus- glomerulonephritis",
-                  "Inability of the kidney to maintain the homeostasis of blood and body fluids is known as renal failure."
+        content:
+        {
+          subTopic: [
+            {
+              title: "Identification points",
+              unOrderedList: true,
+              orderedList: false,
+              content: [
+                "outer cortex and inner medulla.",
+                "cortex containing renal corpuscles,proximal and distal convoluted tubules.",
+                "medulla containing loop of henle and collecting ducts."
+              ]
+            },
+            {
+              title: "Introduction",
+              content: "kidney is a pair of excretory organ located in the posterior abdominal wall behind the peritoneum"
+            },
+            {
+              title: "Structure",
+              content: {
+                subTopic: [
+                  {
+                    title: "Capsule",
+                    content: [
+                      "Outer most protective covering made up of dense irregular connective tissue. External to it there is a condensation of peripheral fat as perinephric pad of fat , which in turn is surrounded by sheath called renal fascia"
+                    ]
+                  },
+                  {
+                    title: "Cortex",
+                    content: [
+                      "Outer part of kidney found below the capsule. It mainly contains glomerulus,bowman’s capsule,dct and pct."
+                    ]
+                  },
+                  {
+                    title: "Medulla",
+                    content: "Inner part of kidney found below the cortex. Medulla is rich in loop of henle,collecting ducts and papillary ducts(ducts of bellini)"
+                  }
                 ]
               }
-            ]
-          }
-        
+            },
+            {
+              title: "Clinical",
+              content: [
+                "Nephrotic syndrome is a disease of kidney characterised by massive proteinuria,hypoalbuminemia and edema",
+                "Inflammation of glomerulus- glomerulonephritis",
+                "Inability of the kidney to maintain the homeostasis of blood and body fluids is known as renal failure."
+              ]
+            }
+          ]
+        }
+
       },
       {
         id: 1,
         title: "Ureter",
         isIntroduction: false,
-        content: 
-          {
-            subTopic: [
-              {
-                title: "Identification points",
-                unOrderedList: true,
-                orderedList: false,
-                content: [
-                  "Star shaped lumen",
-                  "Mucosa lined by transitional epithelium.",
-                  "Inner longitudinal,middle circular and outer longitudinal muscular coat."
-                ]
-              },
-              {
-                title: "Introduction",
-                content: "ureter is a muscular coat like structure which connects the kidney to urinary bladder"
-              },
-              {
-                title: "Structure",
-                content: [
-                  {
-                    title: "Mucosa",
-                    content: "Inner most layer of ureter lined by transitional epithelium with lamina propria beneath it. Mucosa is thrown into many folds which gives a star shaped lumen appearance to the lumen."
-                  },
-                  {
-                    title: "Muscular layer",
-                    content: [
-                      "It is found below the lamina propria. Consists of inner longitudinal,middle circular and outer longitudinal muscle layers"
-                    ]
-                  },
-                  {
-                    title: "Adventitia",
-                    content: "Outermost protective covering layer made up of dense irregular connective tissue"
-                  }
-                ]
-              },
-              {
-                title: "Functions",
-                orderedList: false,
-                unOrderedList: true,
-                content: [
-                  "Transitional epithelium prevents the entry of urine and its toxic substances into the ureter by diffusion.",
-                  "Muscular layer is responsible for peristalsis in ureter which pushes the urine from kidney to urinary bladder.",
-                  "Adventitia is protective and supportive in function."
-                ]
-              },
-              {
-                title: "Clinical",
-                content: "Formation of stones in the kidney is called renal caliculi and is more common in ureter. It is characterised by intense colic pain in the loin."
-              }
-            ]
-          }
-        
+        content:
+        {
+          subTopic: [
+            {
+              title: "Identification points",
+              unOrderedList: true,
+              orderedList: false,
+              content: [
+                "Star shaped lumen",
+                "Mucosa lined by transitional epithelium.",
+                "Inner longitudinal,middle circular and outer longitudinal muscular coat."
+              ]
+            },
+            {
+              title: "Introduction",
+              content: "ureter is a muscular coat like structure which connects the kidney to urinary bladder"
+            },
+            {
+              title: "Structure",
+              content: [
+                {
+                  title: "Mucosa",
+                  content: "Inner most layer of ureter lined by transitional epithelium with lamina propria beneath it. Mucosa is thrown into many folds which gives a star shaped lumen appearance to the lumen."
+                },
+                {
+                  title: "Muscular layer",
+                  content: [
+                    "It is found below the lamina propria. Consists of inner longitudinal,middle circular and outer longitudinal muscle layers"
+                  ]
+                },
+                {
+                  title: "Adventitia",
+                  content: "Outermost protective covering layer made up of dense irregular connective tissue"
+                }
+              ]
+            },
+            {
+              title: "Functions",
+              orderedList: false,
+              unOrderedList: true,
+              content: [
+                "Transitional epithelium prevents the entry of urine and its toxic substances into the ureter by diffusion.",
+                "Muscular layer is responsible for peristalsis in ureter which pushes the urine from kidney to urinary bladder.",
+                "Adventitia is protective and supportive in function."
+              ]
+            },
+            {
+              title: "Clinical",
+              content: "Formation of stones in the kidney is called renal caliculi and is more common in ureter. It is characterised by intense colic pain in the loin."
+            }
+          ]
+        }
+
       },
       {
         id: 2,
@@ -6204,133 +6411,133 @@ let AllHistologyContent = [
         introductionContent: [
           "Urine leaves the bladder through a tube-like structure called the urethra. The lining of the urethra is epithelium. The wall of the urethra is smooth muscle. Urine flow is controlled by two uretheral sphincters: theinternal urethral sphincter and the external urethral sphincter."
         ],
-        content: 
-          {
-            subTopic: [
+        content:
+        {
+          subTopic: [
             {
-                title: "MALE URETHRA",
-                content: [
-                  {
-                    title: "Prostatic Urethra",
-                    unOrderedList: true,
-                    orderedList: false,
-                    content: [
-                      "Most proximal part surrounded by prostate gland.",
-                      "Lined by transitional epithelium."
-                    ]
-                  },
-                  {
-                    title: "Membranous Urethra",
-                    unOrderedList: true,
-                    orderedList: false,
-                    content: [
-                      "Shorter part encircled by the skeletal muscles of urogenital diaphragm",
-                      "Lined by pseudostratified columnar epithelium."
-                    ]
-                  },
-                  {
-                    title: "Cavernous Urethra",
-                    unOrderedList: true,
-                    orderedList: false,
-                    content: [
-                      "Passes through corpus spongiosum of the penis.",
-                      "Lined by pseudostratified columnar epithelium except under glans penis it is lined by stratified squamous."
-                    ]
-                  }
-                ]
-              },
-              {
-                title: "FEMALE URETHRA",
-                orderedList: false,
-                unOrderedList: true,
-                content: [
-                  "Near the bladder: lined by transitional epithelium.",
-                  "In middle part: lined by pseudostratified columnar epithelium.",
-                  "Near the external opening: lined by stratified squamous epithelium.",
-                  "Submucosa: loose connective tissue containing of many venous plexuses and elastic fibers.",
-                  "Muscle coat: inner longitudinal and outer circular coat of smooth muscle fibers."
-                ]
-              },
-              {
-                title: "DEVELOPMENT",
-                content: [
-                  "The urethra forms itself from the lower part of the urogenital sinus (UGS). In a man the prostate and membranous part of the urethra arise from the pelvic part of the UGS while the spongy urethra comes from the phallic part (urethral plate)."
-                ]
-              },
-              {
-                title: "FUNCTION",
-                content: [
-                  "The urethra is the tube that carries urine from the bladder to outside of the body. In males, it has the additional function of ejaculating semen when the man reaches orgasm. When the penis is erect during sex, the flow of urine is blocked from the urethra, allowing only semen to be ejaculated at orgasm."
-                ]
-              }
-            ]
-          }
-        
+              title: "MALE URETHRA",
+              content: [
+                {
+                  title: "Prostatic Urethra",
+                  unOrderedList: true,
+                  orderedList: false,
+                  content: [
+                    "Most proximal part surrounded by prostate gland.",
+                    "Lined by transitional epithelium."
+                  ]
+                },
+                {
+                  title: "Membranous Urethra",
+                  unOrderedList: true,
+                  orderedList: false,
+                  content: [
+                    "Shorter part encircled by the skeletal muscles of urogenital diaphragm",
+                    "Lined by pseudostratified columnar epithelium."
+                  ]
+                },
+                {
+                  title: "Cavernous Urethra",
+                  unOrderedList: true,
+                  orderedList: false,
+                  content: [
+                    "Passes through corpus spongiosum of the penis.",
+                    "Lined by pseudostratified columnar epithelium except under glans penis it is lined by stratified squamous."
+                  ]
+                }
+              ]
+            },
+            {
+              title: "FEMALE URETHRA",
+              orderedList: false,
+              unOrderedList: true,
+              content: [
+                "Near the bladder: lined by transitional epithelium.",
+                "In middle part: lined by pseudostratified columnar epithelium.",
+                "Near the external opening: lined by stratified squamous epithelium.",
+                "Submucosa: loose connective tissue containing of many venous plexuses and elastic fibers.",
+                "Muscle coat: inner longitudinal and outer circular coat of smooth muscle fibers."
+              ]
+            },
+            {
+              title: "DEVELOPMENT",
+              content: [
+                "The urethra forms itself from the lower part of the urogenital sinus (UGS). In a man the prostate and membranous part of the urethra arise from the pelvic part of the UGS while the spongy urethra comes from the phallic part (urethral plate)."
+              ]
+            },
+            {
+              title: "FUNCTION",
+              content: [
+                "The urethra is the tube that carries urine from the bladder to outside of the body. In males, it has the additional function of ejaculating semen when the man reaches orgasm. When the penis is erect during sex, the flow of urine is blocked from the urethra, allowing only semen to be ejaculated at orgasm."
+              ]
+            }
+          ]
+        }
+
       },
       {
         id: 3,
         title: "Urinary Bladder",
         isIntroduction: false,
-        content: 
-          {
-            subTopic: [
-             {
-                title: "Identification points",
-                orderedList: false,
-                unOrderedList: true,
-                content: [
-                  "Mucosa lined by transitional epithelium",
-                  "Submucosa is absent",
-                  "Muscular layer containing detrusor muscles."
+        content:
+        {
+          subTopic: [
+            {
+              title: "Identification points",
+              orderedList: false,
+              unOrderedList: true,
+              content: [
+                "Mucosa lined by transitional epithelium",
+                "Submucosa is absent",
+                "Muscular layer containing detrusor muscles."
+              ]
+            },
+            {
+              title: "Introduction",
+              orderedList: false,
+              unOrderedList: true,
+              content: [
+                "It is a muscular bag like structure which temporarily stores urine for voiding.",
+                "Normal storing capacity is 200-300ml."
+              ]
+            },
+            {
+              title: "Structure",
+              content: {
+                subTopic: [
+                  {
+                    title: "Mucosa",
+                    content: "Inner most layer of urinary bladder lined by transitional epithelium with lamina propria rich in blood vessels underneath it. Mucosa is thrown into many folds which expands to collect more quantity of urine within the bladder"
+                  },
+                  {
+                    title: "Muscular layer",
+                    content: "Irregular consisting of inner longitudinal,middle circular and outer longitudinal muscle layers. Few muscle fibers around the internal urethric orifice form an internal urethral sphincter which control the outflow of urine from the bladder."
+                  },
+                  {
+                    title: "Adventitia",
+                    content: [
+                      "Outermost protective covering layer made up of dense irregular connective tissue."
+                    ]
+                  }
                 ]
-              },
-              {
-                title: "Introduction",
-                orderedList: false,
-                unOrderedList: true,
-                content: [
-                  "It is a muscular bag like structure which temporarily stores urine for voiding.",
-                  "Normal storing capacity is 200-300ml."
-                ]
-              },
-              {
-                title: "Structure",
-                content:{
-                  subTopic: [
-                    {
-                      title: "Mucosa",
-                      content: "Inner most layer of urinary bladder lined by transitional epithelium with lamina propria rich in blood vessels underneath it. Mucosa is thrown into many folds which expands to collect more quantity of urine within the bladder"
-                    },
-                    {
-                      title: "Muscular layer",
-                      content: "Irregular consisting of inner longitudinal,middle circular and outer longitudinal muscle layers. Few muscle fibers around the internal urethric orifice form an internal urethral sphincter which control the outflow of urine from the bladder."
-                    },
-                    {
-                      title: "Adventitia",
-                      content: [
-                        "Outermost protective covering layer made up of dense irregular connective tissue."
-                      ]
-                    }
-                  ]
-                }
-              },
-              {
-                title: "Function",
-                orderedList: false,
-                unOrderedList: true,
-                content: [
-                  "Transitional epithelium prevents the entry of urine and its toxic substances into the urinary bladder. Here the cells also decrease in size and layers to accommodate large quantity of urine.",
-                  "Prominent muscular coat is responsible for micturition process by producing powerful contractions.",
-                  "Adventitia is protective and supportive in nature."
-                ]
-              },
-              {
-                title: "Clinical",
-                content: "Usually transitional epithelium lining the urinary bladder is 4-6 cell layer-thick. If it increases more than 6 cell-layer thick, then it is suggestive of carcinoma of urinary bladder."
               }
-            ]
-          }
-        
+            },
+            {
+              title: "Function",
+              orderedList: false,
+              unOrderedList: true,
+              content: [
+                "Transitional epithelium prevents the entry of urine and its toxic substances into the urinary bladder. Here the cells also decrease in size and layers to accommodate large quantity of urine.",
+                "Prominent muscular coat is responsible for micturition process by producing powerful contractions.",
+                "Adventitia is protective and supportive in nature."
+              ]
+            },
+            {
+              title: "Clinical",
+              content: "Usually transitional epithelium lining the urinary bladder is 4-6 cell layer-thick. If it increases more than 6 cell-layer thick, then it is suggestive of carcinoma of urinary bladder."
+            }
+          ]
+        }
+
       }
     ]
   },
@@ -6383,7 +6590,7 @@ let AllHistologyContent = [
             ]
           }
         ],
-        content:{
+        content: {
           subTopic: [
             {
               title: "STRUCTURE",
@@ -6416,7 +6623,7 @@ let AllHistologyContent = [
         introductionContent: [
           "The skin epithelium is keratinized stratified squamous epithelium. Melanocytes are spread in the basal layer of the epithelium. The posterior eyelid surface is lined by the palpebral conjunctiva that is composed of epithelium and subepithelial stroma – the substantia propria."
         ],
-        content:{
+        content: {
           subTopic: [
             {
               title: "Structure",
@@ -6452,7 +6659,7 @@ let AllHistologyContent = [
         id: 2,
         title: "OPTIC NERVE",
         isIntroduction: false,
-        content:{
+        content: {
           subTopic: [
             {
               title: "Structure",
@@ -6503,7 +6710,7 @@ let AllHistologyContent = [
           "Patient's (Photoreceptors-rods cons)",
           "Retina (Retinal Pigmented layer)"
         ],
-        content:{
+        content: {
           subTopic: [
             {
               title: "STRUCTURE",
@@ -6555,7 +6762,7 @@ let AllHistologyContent = [
               title: "Layer of nerve fibres",
               content: "Formed by the axons of ganglion cells, having reached the inner most part of retina, turn at right angle and then like parallel to the inner surface of the retina and converge towardsthe site of exit of optic nerve. There is neither myelin sheath, nor sheath of Schwann"
             },
-            
+
             {
               title: "DEVELOPMENT",
               content: "In vertebrate embryonic development, the retina and the optic nerve originate as outgrowths of the developing brain, specifically the embryonic diencephalon; thus, the retina is considered part of the central nervous system (CNS) and is actually brain tissue."

@@ -5,8 +5,8 @@ import { sliderImages } from '../constants/mocks';
 const width = Dimensions.get('screen').width;
 const height = width / 1.61;
 let images = [];
-let image = '../assets/images/SimpleCuboidal/simple_sq2.webp';
-let hello = "hello world";
+// let image = '../assets/images/SimpleCuboidal/simple_sq2.webp';
+// let hello = "hello world";
 
 
 const Slider = (props) => {
@@ -14,12 +14,14 @@ const Slider = (props) => {
         sliderImages.map(data=>{
             return data.title == props.title ?
             data.sliderImages.map(image=>{
-             
-             //    images.push(image)
-                images.push(require(`../assets/images/${(props.title).replace(' ','')}/${image}`));
+                images.push(image)
+                // images.push(require(`../assets/images/${(props.title).replace(' ','')}/${image}`));
                 // console.log("hello",hello.replace(' ',''))
             }):
             console.log("bye");
+         })
+         return(()=>{
+             images = [];
          })
     },[])
    
@@ -41,7 +43,6 @@ const Slider = (props) => {
         {/* <Image style={{height:100,width:100}} source={require('../assets/images/SimpleCuboidal/simple_sq2.webp')}></Image> */}
         {
             images.map((item, index) => {
-                console.log("555555555555555555555",item);
                 return <Image
                     key={index}
 
