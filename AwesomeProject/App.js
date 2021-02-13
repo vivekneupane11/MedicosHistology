@@ -36,7 +36,7 @@ import {FontsizeManager} from './src/utils/FontSize/FontSizeManager';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import BackgroundHeader from './components/BackgroundHeader';
 import ATipsScreen from './screens/ATipsScreen';
-import SplashScreen from 'react-native-splash-screen'
+import SplashScreen from 'react-native-splash-screen';
 import CollectionScreen from './screens/CollectionScreen';
 import BasicHistologyScreen from './screens/BasicHistologyScreen';
 import StainingScreen from './screens/StainingScreen';
@@ -104,7 +104,7 @@ const AppStackScreen = () => {
         component={ContentScreen}
       />
       <AppStack.Screen
-         options={{
+        options={{
           headerTitle: (props) => (
             <View
               style={{
@@ -131,8 +131,8 @@ const AppStackScreen = () => {
         name="ATips"
         component={ATipsScreen}
       />
-       <AppStack.Screen
-         options={{
+      <AppStack.Screen
+        options={{
           headerTitle: (props) => (
             <View
               style={{
@@ -159,7 +159,7 @@ const AppStackScreen = () => {
         name="Introduction"
         component={IntroductionScreen}
       />
-       <AppStack.Screen
+      <AppStack.Screen
         options={{
           headerTitle: (props) => (
             <View
@@ -174,7 +174,7 @@ const AppStackScreen = () => {
                   color: 'white',
                   fontSize: 18,
                 }}>
-                Basic Histology 
+                Basic Histology
               </Text>
             </View>
           ),
@@ -215,7 +215,7 @@ const AppStackScreen = () => {
         name="Staining"
         component={StainingScreen}
       />
-       <AppStack.Screen
+      <AppStack.Screen
         options={{
           headerTitle: (props) => (
             <View
@@ -514,7 +514,7 @@ const AppRoutes = () => {
     return subscriber; //unsubscribe on onmount
   });
 
-const Drawer = createDrawerNavigator();
+  const Drawer = createDrawerNavigator();
 
   const scheme = useColorScheme();
   // const [isFirstLaunch,setisFirstLaunch] = useState(null);
@@ -541,7 +541,7 @@ const Drawer = createDrawerNavigator();
         <LanguageManager>
           <FontsizeManager>
             <NavigationContainer>
-              {/* {user ? ( */}
+              {user ? (
                 <Drawer.Navigator
                   drawerContent={(props) => <DrawerContent {...props} />}>
                   <Drawer.Screen
@@ -549,9 +549,9 @@ const Drawer = createDrawerNavigator();
                     component={AppStackScreen}
                   />
                 </Drawer.Navigator>
-              {/* ) : ( */}
-                {/* <AuthStackScreen /> */}
-              {/* )} */}
+              ) : (
+                <AuthStackScreen />
+              )}
             </NavigationContainer>
           </FontsizeManager>
         </LanguageManager>
@@ -562,7 +562,7 @@ const Drawer = createDrawerNavigator();
 const Drawer = createDrawerNavigator();
 
 const App = () => {
-  useEffect(() => SplashScreen.hide(),[]);
+  useEffect(() => SplashScreen.hide(), []);
   return (
     <AuthProvider>
       <AppRoutes />

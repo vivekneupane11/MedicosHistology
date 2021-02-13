@@ -73,45 +73,56 @@ const ContentScreen = ({navigation, route}) => {
 
       bookmarkData = bookmarkData
         ? bookmarkData
-        : await JSON.stringify({bookmark: [0]});
-
+        : await JSON.stringify({bookmark: []});
+      console.log('Bookmark data', bookmarkData);
       let finalData = await JSON.parse(bookmarkData).bookmark;
-      let parsedBookmarkData =
-        typeof finalData == 'undefined' ? [0] : finalData;
-      if (parsedBookmarkData.length >= 1) {
-        let parsedNewArray = parsedBookmarkData.filter((item) => {
-          console.log(item.id, item.titleId, id, titleId, ';;;;;;;;;;;;;;;;;;');
-          return item.id != id && titleId != item.titleId;
-        });
-        console.log(
-          '------------------------',
-          parsedBookmarkData,
-          parsedNewArray,
+      console.log('Final data', finalData);
+
+      let parsedBookmarkData = typeof finalData == 'undefined' ? [] : finalData;
+      if (parsedBookmarkData.length > 0) {
+        let parsedNewArray = parsedBookmarkData.filter(
+          (item) =>
+            item.id.toString() + item.titleId != id.toString() + titleId,
         );
+
+        console.log(parsedNewArray, 'ccccccccccccccccccccccc');
+
         if (parsedBookmarkData.length == parsedNewArray.length) {
-          console.log('aa', parsedBookmarkData, parsedNewArray.length);
+          console.log(
+            '------------------------',
+            parsedBookmarkData,
+            parsedNewArray,
+          );
+
+          console.log('here');
           let length = parsedNewArray.length;
           parsedNewArray[length] = {id: id, titleId: titleId};
-          console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@', parsedNewArray);
           await AsyncStorage.setItem(
             'BookmarkID',
-            JSON.stringify({bookmark: parsedNewArray}),
+            JSON.stringify({
+              bookmark: parsedNewArray,
+            }),
           );
-          setisBookmark(true);
-          //   console.log(Bookmark);
+          setisBookmark(!isBookmark);
         } else {
-          console.log('here');
+          // console.log(
+          //   parsedNewArray.push({id: id, titleId: titleId}),
+          //   parsedBookmarkData,
+          //   'heresssssssssssssss',
+          // );
           await AsyncStorage.setItem(
             'BookmarkID',
-            JSON.stringify({bookmark: parsedBookmarkData}),
+            JSON.stringify({
+              bookmark: parsedNewArray,
+            }),
           );
           setisBookmark(!isBookmark);
         }
       } else {
-        console.log('here');
+        console.log('herssse', {id: id, titleId: titleId});
         await AsyncStorage.setItem(
           'BookmarkID',
-          JSON.stringify({bookmark: parsedBookmarkData}),
+          JSON.stringify({bookmark: [{id: id, titleId: titleId}]}),
         );
         setisBookmark(!isBookmark);
       }
@@ -125,12 +136,12 @@ const ContentScreen = ({navigation, route}) => {
 
     bookmarkData = bookmarkData
       ? bookmarkData
-      : await JSON.stringify({bookmark: [0]});
+      : await JSON.stringify({bookmark: []});
     let parsedBookmarkData = await JSON.parse(bookmarkData).bookmark;
     parsedBookmarkData =
-      typeof parsedBookmarkData == 'undefined' ? null : parsedBookmarkData;
+      typeof parsedBookmarkData == 'undefined' ? [] : parsedBookmarkData;
 
-    if (parsedBookmarkData.length > 1) {
+    if (parsedBookmarkData.length > 0) {
       //      console.log('<<<<<<<<<<<<<<<<<<<<<<<<<<', parsedBookmarkData.length);
       parsedBookmarkData.map((item) => {
         if (item.id == id && item.titleId == titleId) {
@@ -142,7 +153,7 @@ const ContentScreen = ({navigation, route}) => {
   };
   useEffect(() => {
     getBookmarkDatas();
-  }, [isBookmark, Bookmark]);
+  }, [isBookmark, Bookmark, isFocused, id, titleId]);
 
   React.useLayoutEffect(() => {
     navigation.setOptions({
@@ -202,7 +213,7 @@ const ContentScreen = ({navigation, route}) => {
         backgroundColor: themeforDarkMode.contentBackground,
       }}>
       {/* <Modal visible={modal} transparent={true} animationType="slide">
-        <View style={[styles.modalContainer]}>
+        <View style={[styles.modalContainer]}>cle
           <View style={styles.modalWrapper}>
             <TextInput style={styles.modalTitle} onChangeText={text => setNoteTitle(text)} value={noteTitle}></TextInput>
             <View style={styles.modalContentContainer}>
@@ -222,53 +233,23 @@ const ContentScreen = ({navigation, route}) => {
         </View>
       </Modal> */}
       <View style={styles.container}>
-        <Slider title={title} />
+        <Slider />
 
         <View style={styles.contentContainer}>
           <View>
             {/* Tile is Here */}
             <Text style={styles.contentTitleText}>{title}</Text>
-            {/* Introduction is Here  */}
-            {/* {console.log("7777777777777777", contents?.content)} */}
-            {contents?.isIntroduction && (
-              typeof contents?.introductionContent == 'string' ?
-                <Text
-                  style={[
-                    styles.contentBox,
-                    styles.contentParagraphTypography,
-                    { color: themeforDarkMode.primaryText },
-                  ]}>
-                  {contents?.introductionContent}
-                </Text> :
-                <View>
-                  {contents?.introductionContent?.map(introductionContent => {
-                    // { console.log("88888888888888888888", introductionContent) }
-                    return typeof introductionContent == 'string' ?
-                      <Text
-                        style={[
-                          styles.contentBox,
-                          styles.contentParagraphTypography,
-                          { color: themeforDarkMode.primaryText },
-                        ]}>
-                        {introductionContent}
-                      </Text> :
-                      <View>
-                        <Text>{introductionContent.title}</Text>
-                        {introductionContent?.content.map(content => {
-                          return <Text
-                            style={[
-                              styles.contentBox,
-                              styles.contentParagraphTypography,
-                              { color: themeforDarkMode.primaryText },
-                            ]}>
-                            {content}
-                          </Text>
-                        })}
-                      </View>
-                  })
-                  }
-                </View>
 
+            {/* Introduction is Here  */}
+            {contents?.isIntroduction && (
+              <Text
+                style={[
+                  styles.contentBox,
+                  styles.contentParagraphTypography,
+                  {color: themeforDarkMode.primaryText},
+                ]}>
+                {contents.introductionContent}
+              </Text>
             )}
             {contents?.content?.subTopic.map((data) => {
               //              console.log('***', data.content);
@@ -325,30 +306,9 @@ const ContentScreen = ({navigation, route}) => {
                                           );
                                         })}
                                       </View>
-                                  }
-                                </View>
-                              )
-                            }
-                            )}
-                          </View>
-
-                        :
-                        //CONTENT WITH NESETD SUBTOPIC
-                        <View>
-                          {
-                            data?.content?.subTopic.map(content => {
-                              console.log("CONTENT WITH NESETD SUBTOPIC");
-                              // console.log("************", content)
-                              return <View>
-                                <Text>{content.title}</Text>
-                                {typeof content.content == 'string' ? <Text>{content.content}</Text>
-                                  : <View>
-                                    {content?.content.map(data => {
-                                      // console.log("*******************",data);
-                                      return <Text>{data}</Text>
-                                    })}
+                                    )}
                                   </View>
-                                }
+                                )}
                               </View>
                             );
                           })}

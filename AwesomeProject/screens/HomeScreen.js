@@ -6,6 +6,7 @@ import fontelloConfig from '../src/config.json';
 const Icon = createIconSetFromFontello(fontelloConfig);
 import {topics, topicImages} from '../constants/mocks';
 import {useTheme} from '../src/utils/DarkTheme/ThemeManager';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
   Dimensions,
   View,
@@ -28,7 +29,9 @@ const {width} = Dimensions.get('window');
 const HomeScreen = ({navigation}) => {
   const {mode, theme: themeforDarkMode, toggle} = useTheme();
   ////  // console.log('///////////////////////', mode, themeforDarkMode);
-
+  AsyncStorage.getItem('userinfo').then((user) => {
+    console.log(user, 'USSERRRRRRRRRRRRRRRRRRRRRRRR');
+  });
   const SubTopicsCard = ({title, titleId, img, id}) => {
     //   console.log('*******************************************',title,"adasd",id);
     return (
