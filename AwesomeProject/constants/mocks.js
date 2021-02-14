@@ -233,9 +233,9 @@ const sliderImages = [
   {
     title: "Cartilage",
     sliderImages: [
-      require('../assets/images/Cartilage/Introduction/cartilage.jpg'),
-      require('../assets/images/Cartilage/Introduction/cartilage1.png'),
-      require('../assets/images/Cartilage/Introduction/cartilage2.jpg')]
+      require('../assets/images/Cartilage/Introduction/cartilage.webp'),
+      require('../assets/images/Cartilage/Introduction/cartilage1.webp'),
+      require('../assets/images/Cartilage/Introduction/cartilage2.webp')]
   },
   {
     title: "Elastic Cartilage",
@@ -333,10 +333,10 @@ const sliderImages = [
       require('../assets/images/MuscularTissue/CardiacMuscle/cardiac2.webp'),
       require('../assets/images/MuscularTissue/CardiacMuscle/cardiac3.webp'),
       require('../assets/images/MuscularTissue/CardiacMuscle/cardiac4.webp'),
-      require('../assets/images/MuscularTissue/CardiacMuscle/cardiac5.webp'),
+      // require('../assets/images/MuscularTissue/CardiacMuscle/cardiac5.webp'),
       require('../assets/images/MuscularTissue/CardiacMuscle/cardiac6.webp'),
       require('../assets/images/MuscularTissue/CardiacMuscle/cardiac8.webp'),
-      require('../assets/images/MuscularTissue/CardiacMuscle/cardiacmuscle.webp'),
+      // require('../assets/images/MuscularTissue/CardiacMuscle/cardiacmuscle.webp'),
       require('../assets/images/MuscularTissue/CardiacMuscle/cardiac9.webp')]
   },
   {
@@ -346,7 +346,7 @@ const sliderImages = [
       require('../assets/images/MuscularTissue/SkeletalMuscle/skeletal2.webp'),
       require('../assets/images/MuscularTissue/SkeletalMuscle/skeletal3.webp'),
       require('../assets/images/MuscularTissue/SkeletalMuscle/skeletal5.webp'),
-      require('../assets/images/MuscularTissue/SkeletalMuscle/skeletal6.webp'),
+      // require('../assets/images/MuscularTissue/SkeletalMuscle/skeletal6.webp'),
       require('../assets/images/MuscularTissue/SkeletalMuscle/skeletal7.webp'),
       require('../assets/images/MuscularTissue/SkeletalMuscle/skeletal9.webp'),
       require('../assets/images/MuscularTissue/SkeletalMuscle/skeletalmuscle.webp')
@@ -374,7 +374,7 @@ const sliderImages = [
       require('../assets/images/RespiratorySystem/Epiglotis/epi1.webp'),
       require('../assets/images/RespiratorySystem/Epiglotis/epi3.webp'),
       require('../assets/images/RespiratorySystem/Epiglotis/epi4.webp'),
-      require('../assets/images/RespiratorySystem/Epiglotis/epiglottis.webp'),
+      // require('../assets/images/RespiratorySystem/Epiglotis/epiglottis.webp'),
       require('../assets/images/RespiratorySystem/Epiglotis/lungs6.webp')
     ]
   },
@@ -398,7 +398,8 @@ const sliderImages = [
       require('../assets/images/RespiratorySystem/Trachea/trachea4.webp'),
       require('../assets/images/RespiratorySystem/Trachea/trachea5.webp'),
       require('../assets/images/RespiratorySystem/Trachea/trachea6.webp'),
-      require('../assets/images/RespiratorySystem/Trachea/trachea7.webp')]
+      // require('../assets/images/RespiratorySystem/Trachea/trachea7.webp')
+    ]
   },
   {
     title: "Gastrointestinal System",
@@ -462,7 +463,7 @@ const sliderImages = [
       require('../assets/images/GastrolntestinalSystem/Esophagous/oesophagous6.webp'),
       require('../assets/images/GastrolntestinalSystem/Esophagous/oesophagous7.webp'),
       require('../assets/images/GastrolntestinalSystem/Esophagous/oesophagous8.webp'),
-      require('../assets/images/GastrolntestinalSystem/Esophagous/esophagus.jpeg'),
+      require('../assets/images/GastrolntestinalSystem/Esophagous/esophagus.webp'),
     ]
   },
   {
@@ -540,56 +541,56 @@ const sliderImages = [
   {
     title: "HepatoBilliary Tissue",
     sliderImages: [
-      require('../assets/images/HepatoBilliaryTissue/Introduction/hepatobiilarysystem.jpg')
+      require('../assets/images/HepatoBilliaryTissue/Introduction/hepatobiilarysystem.webp')
     ]
   },
   {
     title: "Gallbladder",
     sliderImages: [
-      require('../assets/images/HepatoBilliaryTissue/Gallbladder/gall.jpg'),
-      require('../assets/images/HepatoBilliaryTissue/Gallbladder/gall1.jpg'),
-      require('../assets/images/HepatoBilliaryTissue/Gallbladder/gall2.jpg'),
-      require('../assets/images/HepatoBilliaryTissue/Gallbladder/gall3.jpg'),
-      require('../assets/images/HepatoBilliaryTissue/Gallbladder/gall4.jpg'),
-      require('../assets/images/HepatoBilliaryTissue/Gallbladder/gall5.jpg'),
-      require('../assets/images/HepatoBilliaryTissue/Gallbladder/gall6.jpg'),
-      require('../assets/images/HepatoBilliaryTissue/Gallbladder/gall9.jpg'),
+      require('../assets/images/HepatoBilliaryTissue/Gallbladder/gall.webp'),
+      require('../assets/images/HepatoBilliaryTissue/Gallbladder/gall1.webp'),
+      require('../assets/images/HepatoBilliaryTissue/Gallbladder/gall2.webp'),
+      require('../assets/images/HepatoBilliaryTissue/Gallbladder/gall3.webp'),
+      require('../assets/images/HepatoBilliaryTissue/Gallbladder/gall4.webp'),
+      require('../assets/images/HepatoBilliaryTissue/Gallbladder/gall5.webp'),
+      require('../assets/images/HepatoBilliaryTissue/Gallbladder/gall6.webp'),
+      require('../assets/images/HepatoBilliaryTissue/Gallbladder/gall9.webp'),
     ]
   },
   {
     title: "Liver",
     sliderImages: [
-      require('../assets/images/HepatoBilliaryTissue/Liver/liver1.jpg'),
-      require('../assets/images/HepatoBilliaryTissue/Liver/liver2.jpg'),
-      require('../assets/images/HepatoBilliaryTissue/Liver/liver3.jpg'),
-      require('../assets/images/HepatoBilliaryTissue/Liver/liver4.jpg'),
-      require('../assets/images/HepatoBilliaryTissue/Liver/liver5.jpg'),
-      require('../assets/images/HepatoBilliaryTissue/Liver/liver7.jpg'),
-      require('../assets/images/HepatoBilliaryTissue/Liver/liver8.jpg'),
-      require('../assets/images/HepatoBilliaryTissue/Liver/liver9.jpg'),
-      require('../assets/images/HepatoBilliaryTissue/Liver/liver10.jpg'),
-      require('../assets/images/HepatoBilliaryTissue/Liver/liver11.jpg'),
-      require('../assets/images/HepatoBilliaryTissue/Liver/liver12.jpg'),
-      require('../assets/images/HepatoBilliaryTissue/Liver/liver13.jpg'),
-      require('../assets/images/HepatoBilliaryTissue/Liver/liver14.jpg'),
-      require('../assets/images/HepatoBilliaryTissue/Liver/liver15.jpg'),
+      require('../assets/images/HepatoBilliaryTissue/Liver/liver1.webp'),
+      require('../assets/images/HepatoBilliaryTissue/Liver/liver2.webp'),
+      require('../assets/images/HepatoBilliaryTissue/Liver/liver3.webp'),
+      require('../assets/images/HepatoBilliaryTissue/Liver/liver4.webp'),
+      require('../assets/images/HepatoBilliaryTissue/Liver/liver5.webp'),
+      require('../assets/images/HepatoBilliaryTissue/Liver/liver7.webp'),
+      require('../assets/images/HepatoBilliaryTissue/Liver/liver8.webp'),
+      require('../assets/images/HepatoBilliaryTissue/Liver/liver9.webp'),
+      require('../assets/images/HepatoBilliaryTissue/Liver/liver10.webp'),
+      require('../assets/images/HepatoBilliaryTissue/Liver/liver11.webp'),
+      require('../assets/images/HepatoBilliaryTissue/Liver/liver12.webp'),
+      require('../assets/images/HepatoBilliaryTissue/Liver/liver13.webp'),
+      require('../assets/images/HepatoBilliaryTissue/Liver/liver14.webp'),
+      require('../assets/images/HepatoBilliaryTissue/Liver/liver15.webp'),
     ]
   },
   {
     title: "Pancreas",
     sliderImages: [
-      require('../assets/images/HepatoBilliaryTissue/Pancreas/pancreas1.jpg'),
-      require('../assets/images/HepatoBilliaryTissue/Pancreas/pancreas2.jpg'),
-      require('../assets/images/HepatoBilliaryTissue/Pancreas/pancreas3.jpg'),
-      require('../assets/images/HepatoBilliaryTissue/Pancreas/pancreas5.jpg'),
-      require('../assets/images/HepatoBilliaryTissue/Pancreas/pancreas7.jpg'),
-      require('../assets/images/HepatoBilliaryTissue/Pancreas/pancreas8.jpg')
+      require('../assets/images/HepatoBilliaryTissue/Pancreas/pancreas1.webp'),
+      require('../assets/images/HepatoBilliaryTissue/Pancreas/pancreas2.webp'),
+      require('../assets/images/HepatoBilliaryTissue/Pancreas/pancreas3.webp'),
+      require('../assets/images/HepatoBilliaryTissue/Pancreas/pancreas5.webp'),
+      require('../assets/images/HepatoBilliaryTissue/Pancreas/pancreas7.webp'),
+      require('../assets/images/HepatoBilliaryTissue/Pancreas/pancreas8.webp')
     ]
   },
   {
     title: "Integumentary System",
     sliderImages: [
-      require('../assets/images/IntegumentarySystem/Introduction/integumentarysystem.jpg'),
+      require('../assets/images/IntegumentarySystem/Introduction/integumentarysystem.webp'),
     ]
   },
   {
@@ -646,7 +647,6 @@ const sliderImages = [
       require('../assets/images/LymphaticSystem/Spleen/spleen5.webp'),
       require('../assets/images/LymphaticSystem/Spleen/spleen6.webp'),
       require('../assets/images/LymphaticSystem/Spleen/spleen7.webp'),
-      require('../assets/images/LymphaticSystem/Spleen/spleen8.webp')
     ]
   },
   {
@@ -658,14 +658,13 @@ const sliderImages = [
       require('../assets/images/LymphaticSystem/Thymus/thymus4.webp'),
       require('../assets/images/LymphaticSystem/Thymus/thymus5.webp'),
       require('../assets/images/LymphaticSystem/Thymus/thymus6.webp'),
-      require('../assets/images/LymphaticSystem/Thymus/thymus7.webp'),
       require('../assets/images/LymphaticSystem/Thymus/thymus8.webp')
     ]
   },
   {
     title: "Male Reproductive System",
     sliderImages: [
-      require('../assets/images/MaleReproductiveSystem/Introduction/malereproductive.webp'),
+      // require('../assets/images/MaleReproductiveSystem/Introduction/malereproductive.webp'),
     ]
   },
   {
@@ -678,8 +677,7 @@ const sliderImages = [
       require('../assets/images/MaleReproductiveSystem/DuctusDeferens/vasdef6.webp'),
       require('../assets/images/MaleReproductiveSystem/DuctusDeferens/vasdef7.webp'),
       require('../assets/images/MaleReproductiveSystem/DuctusDeferens/vasdef8.webp'),
-      require('../assets/images/MaleReproductiveSystem/DuctusDeferens/vasdef9.webp'),
-      require('../assets/images/MaleReproductiveSystem/DuctusDeferens/vasdeference.webp')
+      // require('../assets/images/MaleReproductiveSystem/DuctusDeferens/vasdeference.webp')
     ]
   },
   {
@@ -690,8 +688,7 @@ const sliderImages = [
       require('../assets/images/MaleReproductiveSystem/Epididymis/epidi3.webp'),
       require('../assets/images/MaleReproductiveSystem/Epididymis/epidi4.webp'),
       require('../assets/images/MaleReproductiveSystem/Epididymis/epidi8.webp'),
-      require('../assets/images/MaleReproductiveSystem/Epididymis/epidi9.webp'),
-      require('../assets/images/MaleReproductiveSystem/Epididymis/epidi10.webp'),
+      // require('../assets/images/MaleReproductiveSystem/Epididymis/epidi9.webp'),
       require('../assets/images/MaleReproductiveSystem/Epididymis/epidi11.webp'),
       require('../assets/images/MaleReproductiveSystem/Epididymis/epidi12.webp')
     ]
@@ -723,7 +720,6 @@ const sliderImages = [
       require('../assets/images/MaleReproductiveSystem/SeminalVesicle/semives2.webp'),
       require('../assets/images/MaleReproductiveSystem/SeminalVesicle/semives3.webp'),
       require('../assets/images/MaleReproductiveSystem/SeminalVesicle/semives4.webp'),
-      require('../assets/images/MaleReproductiveSystem/SeminalVesicle/semives5.webp'),
       require('../assets/images/MaleReproductiveSystem/SeminalVesicle/semives6.webp'),
       require('../assets/images/MaleReproductiveSystem/SeminalVesicle/semives7.webp'),
       require('../assets/images/MaleReproductiveSystem/SeminalVesicle/semives8.webp')
@@ -738,10 +734,6 @@ const sliderImages = [
       require('../assets/images/MaleReproductiveSystem/Testis/testis3.webp'),
       require('../assets/images/MaleReproductiveSystem/Testis/testis4.webp'),
       require('../assets/images/MaleReproductiveSystem/Testis/testis5.webp'),
-      require('../assets/images/MaleReproductiveSystem/Testis/testis8.webp'),
-      require('../assets/images/MaleReproductiveSystem/Testis/testis9.webp'),
-      require('../assets/images/MaleReproductiveSystem/Testis/testis9.webp'),
-      require('../assets/images/MaleReproductiveSystem/Testis/testis10.webp'),
       require('../assets/images/MaleReproductiveSystem/Testis/testis11.webp')
 
     ]
@@ -761,9 +753,6 @@ const sliderImages = [
       require('../assets/images/RenalSystem/Kidney/kidney2.webp'),
       require('../assets/images/RenalSystem/Kidney/kidney3.webp'),
       require('../assets/images/RenalSystem/Kidney/kidney4.webp'),
-      require('../assets/images/RenalSystem/Kidney/kidney5.webp'),
-      require('../assets/images/RenalSystem/Kidney/kidney6.webp'),
-      require('../assets/images/RenalSystem/Kidney/kidney8.webp'),
       require('../assets/images/RenalSystem/Kidney/kidney9.webp')
     ]
   },
@@ -771,11 +760,10 @@ const sliderImages = [
     title: "Ureter",
     sliderImages: [
       require('../assets/images/RenalSystem/Ureter/ureter1.webp'),
-      require('../assets/images/RenalSystem/Ureter/ureter2.webp'),
+      // require('../assets/images/RenalSystem/Ureter/ureter2.webp'),
       require('../assets/images/RenalSystem/Ureter/ureter3.webp'),
       require('../assets/images/RenalSystem/Ureter/ureter4.webp'),
       require('../assets/images/RenalSystem/Ureter/ureter6.webp'),
-      require('../assets/images/RenalSystem/Ureter/ureter7.webp'),
     ]
   },
   {
@@ -796,9 +784,7 @@ const sliderImages = [
       require('../assets/images/RenalSystem/UrinaryBladder/bladder7.webp'),
       require('../assets/images/RenalSystem/UrinaryBladder/bladder8.webp'),
       require('../assets/images/RenalSystem/UrinaryBladder/bladder9.webp'),
-      require('../assets/images/RenalSystem/UrinaryBladder/bladder10.webp'),
       require('../assets/images/RenalSystem/UrinaryBladder/bladder11.webp'),
-      require('../assets/images/RenalSystem/UrinaryBladder/bladder12.webp'),
       require('../assets/images/RenalSystem/UrinaryBladder/urinarybladder.webp')
 
     ]
@@ -816,12 +802,12 @@ const sliderImages = [
       require('../assets/images/SalivaryGland/ParotidGland/parotid1.webp'),
       require('../assets/images/SalivaryGland/ParotidGland/parotid2.webp'),
       require('../assets/images/SalivaryGland/ParotidGland/parotid3.webp'),
-      require('../assets/images/SalivaryGland/ParotidGland/parotid4.webp'),
+      // require('../assets/images/SalivaryGland/ParotidGland/parotid4.webp'),
       require('../assets/images/SalivaryGland/ParotidGland/parotid5.webp'),
       require('../assets/images/SalivaryGland/ParotidGland/parotid6.webp'),
       require('../assets/images/SalivaryGland/ParotidGland/parotid7.webp'),
       require('../assets/images/SalivaryGland/ParotidGland/parotid8.webp'),
-      require('../assets/images/SalivaryGland/ParotidGland/serousparotidgland.webp')
+      // require('../assets/images/SalivaryGland/ParotidGland/serousparotidgland.webp')
 
     ]
   },
@@ -841,8 +827,8 @@ const sliderImages = [
       require('../assets/images/SalivaryGland/SubmandibularGland/submandibular3.webp'),
       require('../assets/images/SalivaryGland/SubmandibularGland/submandibular4.webp'),
       require('../assets/images/SalivaryGland/SubmandibularGland/submandibular5.webp'),
-      require('../assets/images/SalivaryGland/SubmandibularGland/submandibular6.webp'),
-      require('../assets/images/SalivaryGland/SubmandibularGland/submandibular7.webp'),]
+      // require('../assets/images/SalivaryGland/SubmandibularGland/submandibular6.webp'),
+    ]
   },
   {
     title: "Special Senses-Eye",
@@ -884,20 +870,20 @@ const sliderImages = [
   {
     title: "Retina",
     sliderImages: [
-      require('../assets/images/SpecialSensesEye/Retina/retina.webp'),
+      // require('../assets/images/SpecialSensesEye/Retina/retina.webp'),
       require('../assets/images/SpecialSensesEye/Retina/retina1.webp'),
       require('../assets/images/SpecialSensesEye/Retina/retina2.webp'),
       require('../assets/images/SpecialSensesEye/Retina/retina3.webp'),
       require('../assets/images/SpecialSensesEye/Retina/retina4.webp'),
       require('../assets/images/SpecialSensesEye/Retina/retina5.webp'),
-      require('../assets/images/SpecialSensesEye/Retina/retina6.webp'),
+      // require('../assets/images/SpecialSensesEye/Retina/retina6.webp'),
       require('../assets/images/SpecialSensesEye/Retina/retina7.webp')
     ]
   },
   {
     title: "Central Nervous System",
     sliderImages: [
-      require('../assets/images/CentralNervousSystem/Introduction/centralnervoussystem.webp'),
+      require('../assets/images/CentralNervousSystem/Introduction/central-nervous-system.webp'),
     ]
   },
   {
@@ -1125,7 +1111,7 @@ const categoriesone = [
     name: 'Introduction',
     tags: ['products', 'inspirations'],
     count: 'Start Quiz',
-    image: require('../assets/logos/google.webp'),
+    image: require('../assets/logos/google.png'),
   },
 
   {
@@ -1133,14 +1119,14 @@ const categoriesone = [
     name: 'Expert Tips',
     tags: ['products', 'inspirations'],
     count: 'Start Quiz',
-    image: require('../assets/logos/google.webp'),
+    image: require('../assets/logos/google.png'),
   },
   {
     id: 'sprayers',
     name: 'Todays Speciaal',
     tags: ['products', 'shop'],
     count: 'Start Quiz',
-    image: require('../assets/logos/google.webp'),
+    image: require('../assets/logos/google.png'),
   },
 ];
 
@@ -1151,7 +1137,7 @@ const collections = [
     routeName: 'Introduction',
     tags: ['products', 'shop'],
     count: 'Start Quiz',
-    image: require('../assets/logos/ospe.webp'),
+    image: require('../assets/logos/ospe.png'),
   },
   {
     id: 'flowerse',
@@ -1159,7 +1145,7 @@ const collections = [
     routeName: 'ATips',
     tags: ['products', 'inspirations'],
     count: 'Start Quiz',
-    image: require('../assets/logos/atips.webp'),
+    image: require('../assets/logos/atips.png'),
   },
   {
     id: 'sprayers',
@@ -1167,7 +1153,7 @@ const collections = [
     routeName: 'Staining',
     tags: ['products', 'shop'],
     count: 'Start Quiz',
-    image: require('../assets/logos/staining.webp'),
+    image: require('../assets/logos/staining.png'),
   },
   {
     id: 'sprayeres',
@@ -1175,7 +1161,7 @@ const collections = [
     name: 'Basic Histology',
     tags: ['products', 'shop'],
     count: 'Start Quiz',
-    image: require('../assets/logos/basic_histology.webp'),
+    image: require('../assets/logos/basic_histology.png'),
   },
 ];
 
@@ -1185,28 +1171,28 @@ const categories = [
     name: 'Histology OSPE',
     tags: ['products', 'shop'],
     count: 'Start Quiz',
-    image: require('../assets/logos/ospe.webp'),
+    image: require('../assets/logos/ospe.png'),
   },
   {
     id: 'flowers',
     name: 'Histology MCQ',
     tags: ['products', 'inspirations'],
     count: 'Start Quiz',
-    image: require('../assets/logos/mcq.webp'),
+    image: require('../assets/logos/mcq.png'),
   },
   {
     id: 'sprayers',
     name: 'Collections',
     tags: ['products', 'shop'],
     count: 'Start Quiz',
-    image: require('../assets/logos/collection.webp'),
+    image: require('../assets/logos/collection.png'),
   },
   {
     id: 'sprayeres',
     name: 'Coming Soon....',
     tags: ['products', 'shop'],
     count: 'Start Quiz',
-    image: require('../assets/logos/coming-soon.webp'),
+    image: require('../assets/logos/coming-soon.png'),
   },
 ];
 
@@ -1218,42 +1204,42 @@ const products = [
       'Bedrooms deserve to be decorated with lush greenery just like every other room in the house – but it can be tricky to find a plant that thrives here. Low light, high humidity and warm temperatures mean only certain houseplants will flourish.',
     tags: ['Interior', '27 m²', 'Ideas'],
     images: [
-      require('../assets/logos/google.webp'),
-      require('../assets/logos/google.webp'),
-      require('../assets/logos/google.webp'),
+      require('../assets/logos/google.png'),
+      require('../assets/logos/google.png'),
+      require('../assets/logos/google.png'),
       // showing only 3 images, show +6 for the rest
-      require('../assets/logos/google.webp'),
-      require('../assets/logos/google.webp'),
-      require('../assets/logos/google.webp'),
-      require('../assets/logos/google.webp'),
-      require('../assets/logos/google.webp'),
-      require('../assets/logos/google.webp'),
+      require('../assets/logos/google.png'),
+      require('../assets/logos/google.png'),
+      require('../assets/logos/google.png'),
+      require('../assets/logos/google.png'),
+      require('../assets/logos/google.png'),
+      require('../assets/logos/google.png'),
     ],
   },
 ];
 
 const explore = [
   // images
-  require('../assets/logos/google.webp'),
-  require('../assets/logos/google.webp'),
-  require('../assets/logos/google.webp'),
-  require('../assets/logos/google.webp'),
-  require('../assets/logos/google.webp'),
-  require('../assets/logos/google.webp'),
+  require('../assets/logos/google.png'),
+  require('../assets/logos/google.png'),
+  require('../assets/logos/google.png'),
+  require('../assets/logos/google.png'),
+  require('../assets/logos/google.png'),
+  require('../assets/logos/google.png'),
 ];
 
 const profile = {
   username: 'react-ui-kit',
   location: 'Europe',
   email: 'contact@react-ui-kit.com',
-  avatar: require('../assets/logos/google.webp'),
+  avatar: require('../assets/logos/google.png'),
   budget: 1000,
   monthly_cap: 5000,
   notifications: true,
   newsletter: false,
 };
 let topicImages = {
-  simplesquamous: require('../assets/logos/topics/simplesquamos.webp'),
+  // simplesquamous: require('../assets/logos/topics/simplesquamos.webp'),
 };
 let topics = [
   {
@@ -1268,32 +1254,32 @@ let topics = [
       {
         id: 1,
         title: 'Cerebrum',
-        imgPath: require('../assets/logos/topics/cerebrum.webp'),
+        imgPath: require('../assets/logos/topics/cerebrum.png'),
       },
       {
         id: 2,
         title: 'Ganglia',
-        imgPath: require('../assets/logos/topics/ganglia.webp'),
+        imgPath: require('../assets/logos/topics/ganglia.png'),
       },
       {
         id: 3,
         title: 'Sympathetic Ganglion',
-        imgPath: require('../assets/logos/topics/sympatheticganglion.webp'),
+        imgPath: require('../assets/logos/topics/sympatheticganglion.png'),
       },
       {
         id: 4,
         title: 'Cerebellum',
-        imgPath: require('../assets/logos/topics/cerebellum.webp'),
+        imgPath: require('../assets/logos/topics/cerebellum.png'),
       },
       {
         id: 5,
         title: 'Nerve Fiber(Myelinated)',
-        imgPath: require('../assets/logos/topics/nervefibermylinated.webp'),
+        imgPath: require('../assets/logos/topics/nervefibermylinated.png'),
       },
       {
         id: 6,
         title: 'Spinal Cord',
-        imgPath: require('../assets/logos/topics/spinalcord.webp'),
+        imgPath: require('../assets/logos/topics/spinalcord.png'),
       },
     ],
   },
@@ -1310,42 +1296,42 @@ let topics = [
       {
         id: 1,
         title: 'Simple Cuboidal',
-        imgPath: require('../assets/logos/topics/simplecuboidal.webp'),
+        imgPath: require('../assets/logos/topics/simplecuboidal.png'),
       },
       {
         id: 2,
         title: 'Simple Columnar',
-        imgPath: require('../assets/logos/topics/simplecolumnar.webp'),
+        imgPath: require('../assets/logos/topics/simplecolumnar.png'),
       },
       {
         id: 3,
         title: 'Simple Squamous',
-        imgPath: require('../assets/logos/topics/simplesquamos.webp'),
+        imgPath: require('../assets/logos/topics/simplesquamos.png'),
       },
       {
         id: 4,
         title: 'PseudoStratified Columnar Cilliated',
-        imgPath: require('../assets/logos/topics/pseudodtratifiedcolumnarcilliate.webp'),
+        imgPath: require('../assets/logos/topics/pseudodtratifiedcolumnarcilliate.png'),
       },
       {
         id: 5,
         title: 'Stratified Cuboidal Epithellium',
-        imgPath: require('../assets/logos/topics/stratifiedcuboidalepithellium.webp'),
+        imgPath: require('../assets/logos/topics/stratifiedcuboidalepithellium.png'),
       },
       {
         id: 6,
         title: 'Stratified Columnar',
-        imgPath: require('../assets/logos/topics/stratifiedcolumnar.webp'),
+        imgPath: require('../assets/logos/topics/stratifiedcolumnar.png'),
       },
       {
         id: 7,
         title: 'Transitional Epithelium',
-        imgPath: require('../assets/logos/topics/transitionalepithelium.webp'),
+        imgPath: require('../assets/logos/topics/transitionalepithelium.png'),
       },
       {
         id: 8,
         title: 'Stratified Squamous Epithelial',
-        imgPath: require('../assets/logos/topics/stratifiedsquamousepithellium.webp'),
+        imgPath: require('../assets/logos/topics/stratifiedsquamousepithellium.png'),
       },
 
     ],
@@ -1363,17 +1349,17 @@ let topics = [
       {
         id: 1,
         title: 'Elastic Cartilage',
-        imgPath: require('../assets/logos/topics/elasticcartilage.webp'),
+        imgPath: require('../assets/logos/topics/elasticcartilage.png'),
       },
       {
         id: 2,
         title: 'Hyaline Cartilage',
-        imgPath: require('../assets/logos/topics/hylinecartilage.webp'),
+        imgPath: require('../assets/logos/topics/hylinecartilage.png'),
       },
       {
         id: 3,
         title: 'Fibro Cartilage',
-        //***************** */ imgPath: require('../assets/logos/topics/fibrocartilage.webp'),
+        //***************** */ imgPath: require('../assets/logos/topics/fibrocartilage.png'),
       },
     ],
   },
@@ -1390,17 +1376,17 @@ let topics = [
       {
         id: 1,
         title: 'Elastic Artery',
-        imgPath: require('../assets/logos/topics/elasticcartilage.webp'),
+        imgPath: require('../assets/logos/topics/elasticcartilage.png'),
       },
       {
         id: 2,
         title: 'Large Vein',
-        imgPath: require('../assets/logos/topics/largevein.webp'),
+        imgPath: require('../assets/logos/topics/largevein.png'),
       },
       {
         id: 3,
         title: 'Muscular Artery',
-        imgPath: require('../assets/logos/topics/muscularartery.webp'),
+        imgPath: require('../assets/logos/topics/muscularartery.png'),
       },
     ],
   },
@@ -1416,34 +1402,34 @@ let topics = [
       {
         id: 1,
         title: 'Areolar Tissue',
-        imgPath: require('../assets/logos/topics/areolartissue.webp'),
+        imgPath: require('../assets/logos/topics/areolartissue.png'),
       },
       {
         id: 2,
         title: 'Compact Bone',
-        imgPath: require('../assets/logos/topics/compactbone.webp'),
+        imgPath: require('../assets/logos/topics/compactbone.png'),
       },
       {
         id: 3,
         title: 'Loose Connective Tissue',
-        imgPath: require('../assets/logos/topics/looseconnectivetissue.webp'),
+        imgPath: require('../assets/logos/topics/looseconnectivetissue.png'),
       },
 
       {
         id: 4,
         title: 'Dense Connective Tissue',
-        imgPath: require('../assets/logos/topics/denseconnectivetissue.webp'),
+        imgPath: require('../assets/logos/topics/denseconnectivetissue.png'),
       },
 
       {
         id: 5,
         title: 'Adipose Tissue',
-        imgPath: require('../assets/logos/topics/adiposetissue.webp'),
+        imgPath: require('../assets/logos/topics/adiposetissue.png'),
       },
       {
         id: 6,
         title: 'Spongy Bone',
-        imgPath: require('../assets/logos/topics/spongybone.webp'),
+        imgPath: require('../assets/logos/topics/spongybone.png'),
       },
     ],
   },
@@ -1459,7 +1445,7 @@ let topics = [
       {
         id: 1,
         title: 'Skin',
-        imgPath: require('../assets/logos/topics/skin.webp'),
+        imgPath: require('../assets/logos/topics/skin.png'),
       },
     ],
   },
@@ -1476,17 +1462,17 @@ let topics = [
       {
         id: 1,
         title: 'Cardiac Muscle',
-        imgPath: require('../assets/logos/topics/cardicmuscle.webp'),
+        imgPath: require('../assets/logos/topics/cardicmuscle.png'),
       },
       {
         id: 2,
         title: 'Skeletal Muscle',
-        imgPath: require('../assets/logos/topics/skeletalmuscle.webp'),
+        imgPath: require('../assets/logos/topics/skeletalmuscle.png'),
       },
       {
         id: 3,
         title: 'Smooth Muscle',
-        // imgPath: require('../assets/logos/topics/smoothmuscle.webp'),
+        // imgPath: require('../assets/logos/topics/smoothmuscle.png'),
       },
     ],
   },
@@ -1502,17 +1488,17 @@ let topics = [
       {
         id: 1,
         title: 'Epiglottis',
-        imgPath: require('../assets/logos/topics/epiglottis.webp'),
+        imgPath: require('../assets/logos/topics/epiglottis.png'),
       },
       {
         id: 2,
         title: 'Trachea',
-        imgPath: require('../assets/logos/topics/trachea.webp'),
+        imgPath: require('../assets/logos/topics/trachea.png'),
       },
       {
         id: 3,
         title: 'Lungs',
-        imgPath: require('../assets/logos/topics/lungs.webp'),
+        imgPath: require('../assets/logos/topics/lungs.png'),
       },
     ],
   },
@@ -1528,52 +1514,52 @@ let topics = [
       {
         id: 1,
         title: 'Tongue',
-        imgPath: require('../assets/logos/topics/tongue.webp'),
+        imgPath: require('../assets/logos/topics/tongue.png'),
       },
       {
         id: 2,
         title: 'Esophagous',
-        imgPath: require('../assets/logos/topics/esophagous.webp'),
+        imgPath: require('../assets/logos/topics/esophagous.png'),
       },
       {
         id: 3,
         title: 'Stomach Fundus & Body',
-        imgPath: require('../assets/logos/topics/stomachfundus_body.webp'),
+        imgPath: require('../assets/logos/topics/stomachfundus_body.png'),
       },
       {
         id: 4,
         title: 'Stomach Pylorus',
-        imgPath: require('../assets/logos/topics/stomachpylorus.webp'),
+        imgPath: require('../assets/logos/topics/stomachpylorus.png'),
       },
       {
         id: 5,
         title: 'Duodenum',
-        imgPath: require('../assets/logos/topics/duodenum.webp'),
+        imgPath: require('../assets/logos/topics/duodenum.png'),
       },
       {
         id: 6,
         title: 'Appendix',
-        imgPath: require('../assets/logos/topics/appendix.webp'),
+        imgPath: require('../assets/logos/topics/appendix.png'),
       },
       {
         id: 7,
         title: 'Ileum',
-        imgPath: require('../assets/logos/topics/ileum.webp'),
+        imgPath: require('../assets/logos/topics/ileum.png'),
       },
       {
         id: 8,
         title: 'Jejunum',
-        imgPath: require('../assets/logos/topics/jejunum.webp'),
+        imgPath: require('../assets/logos/topics/jejunum.png'),
       },
       {
         id: 9,
         title: 'Colon & Large Intestine',
-        imgPath: require('../assets/logos/topics/colon_largeintestine.webp'),
+        imgPath: require('../assets/logos/topics/colon_largeintestine.png'),
       },
       {
         id: 10,
         title: 'Rectum & Ano-rectal Junction',
-        imgPath: require('../assets/logos/topics/rectum_ano-rectaljunction.webp'),
+        imgPath: require('../assets/logos/topics/rectum_ano-rectaljunction.png'),
       },
     ],
   },
@@ -1590,17 +1576,17 @@ let topics = [
       {
         id: 1,
         title: 'Sublingual Gland',
-        imgPath: require('../assets/logos/topics/sublingualgland.webp'),
+        imgPath: require('../assets/logos/topics/sublingualgland.png'),
       },
       {
         id: 2,
         title: 'Submandibular Gland',
-        imgPath: require('../assets/logos/topics/submandibulgland.webp'),
+        imgPath: require('../assets/logos/topics/submandibulgland.png'),
       },
       {
         id: 3,
         title: 'Parotid Gland',
-        imgPath: require('../assets/logos/topics/parotidgland.webp'),
+        imgPath: require('../assets/logos/topics/parotidgland.png'),
       },
     ],
   },
@@ -1616,17 +1602,17 @@ let topics = [
       {
         id: 1,
         title: 'Gallbladder',
-        imgPath: require('../assets/logos/topics/gallbladder.webp'),
+        imgPath: require('../assets/logos/topics/gallbladder.png'),
       },
       {
         id: 2,
         title: 'Liver',
-        imgPath: require('../assets/logos/topics/liver.webp'),
+        imgPath: require('../assets/logos/topics/liver.png'),
       },
       {
         id: 3,
         title: 'Pancreas',
-        imgPath: require('../assets/logos/topics/pancreas.webp'),
+        imgPath: require('../assets/logos/topics/pancreas.png'),
       },
     ],
   },
@@ -1642,22 +1628,22 @@ let topics = [
       {
         id: 1,
         title: 'Palatine Tonsil',
-        imgPath: require('../assets/logos/topics/palatinetonsil.webp'),
+        imgPath: require('../assets/logos/topics/palatinetonsil.png'),
       },
       {
         id: 2,
         title: 'Lymph Node',
-        imgPath: require('../assets/logos/topics/lymphnode.webp'),
+        imgPath: require('../assets/logos/topics/lymphnode.png'),
       },
       {
         id: 3,
         title: 'Spleen',
-        imgPath: require('../assets/logos/topics/spleen.webp'),
+        imgPath: require('../assets/logos/topics/spleen.png'),
       },
       {
         id: 4,
         title: 'Thymus',
-        imgPath: require('../assets/logos/topics/thymus.webp'),
+        imgPath: require('../assets/logos/topics/thymus.png'),
       },
     ],
   },
@@ -1673,22 +1659,22 @@ let topics = [
       {
         id: 1,
         title: 'Parathyroid Gland',
-        imgPath: require('../assets/logos/topics/parathyroidgland.webp'),
+        imgPath: require('../assets/logos/topics/parathyroidgland.png'),
       },
       {
         id: 2,
         title: 'Thyroid Gland',
-        imgPath: require('../assets/logos/topics/thyroidgland.webp'),
+        imgPath: require('../assets/logos/topics/thyroidgland.png'),
       },
       {
         id: 3,
         title: 'Pituitary Gland',
-        imgPath: require('../assets/logos/topics/pituitarygland.webp'),
+        imgPath: require('../assets/logos/topics/pituitarygland.png'),
       },
       {
         id: 4,
         title: 'Adrenal Gland',
-        imgPath: require('../assets/logos/topics/adrenalgland.webp'),
+        imgPath: require('../assets/logos/topics/adrenalgland.png'),
       },
     ],
   },
@@ -1705,22 +1691,22 @@ let topics = [
       {
         id: 1,
         title: 'Kidney',
-        imgPath: require('../assets/logos/topics/kidney.webp'),
+        imgPath: require('../assets/logos/topics/kidney.png'),
       },
       {
         id: 2,
         title: 'Ureter',
-        imgPath: require('../assets/logos/topics/ureter.webp'),
+        imgPath: require('../assets/logos/topics/ureter.png'),
       },
       {
         id: 3,
         title: 'Urethra',
-        imgPath: require('../assets/logos/topics/urethra.webp'),
+        imgPath: require('../assets/logos/topics/urethra.png'),
       },
       {
         id: 4,
         title: 'Urinary Bladder',
-        imgPath: require('../assets/logos/topics/urinarybladder.webp'),
+        imgPath: require('../assets/logos/topics/urinarybladder.png'),
       },
     ],
   },
@@ -1736,32 +1722,32 @@ let topics = [
       {
         id: 1,
         title: 'Seminal Vesicle',
-        imgPath: require('../assets/logos/topics/seminalvescile.webp'),
+        imgPath: require('../assets/logos/topics/seminalvescile.png'),
       },
       {
         id: 2,
         title: 'Testis',
-        imgPath: require('../assets/logos/topics/testis.webp'),
+        imgPath: require('../assets/logos/topics/testis.png'),
       },
       {
         id: 3,
         title: 'Ductus Deferens',
-        imgPath: require('../assets/logos/topics/ductusdeferens.webp'),
+        imgPath: require('../assets/logos/topics/ductusdeferens.png'),
       },
       {
         id: 4,
         title: 'Epididymis',
-        imgPath: require('../assets/logos/topics/pseudodtratifiedcolumnarcilliate.webp'),
+        imgPath: require('../assets/logos/topics/pseudodtratifiedcolumnarcilliate.png'),
       },
       {
         id: 5,
         title: 'Penis',
-        imgPath: require('../assets/logos/topics/penis.webp'),
+        imgPath: require('../assets/logos/topics/penis.png'),
       },
       {
         id: 6,
         title: 'Prostate Gland',
-        imgPath: require('../assets/logos/topics/prostategland.webp'),
+        imgPath: require('../assets/logos/topics/prostategland.png'),
       },
     ],
   },
@@ -1777,27 +1763,27 @@ let topics = [
       {
         id: 1,
         title: 'Mammary Gland',
-        imgPath: require('../assets/logos/topics/seminalvescile.webp'),
+        imgPath: require('../assets/logos/topics/seminalvescile.png'),
       },
       {
         id: 2,
         title: 'Cervix',
-        imgPath: require('../assets/logos/topics/cervix.webp'),
+        imgPath: require('../assets/logos/topics/cervix.png'),
       },
       {
         id: 3,
         title: 'Ovary',
-        imgPath: require('../assets/logos/topics/ovary.webp'),
+        imgPath: require('../assets/logos/topics/ovary.png'),
       },
       {
         id: 4,
         title: 'Uterine Tube',
-        imgPath: require('../assets/logos/topics/uterinetube.webp'),
+        imgPath: require('../assets/logos/topics/uterinetube.png'),
       },
       {
         id: 5,
         title: 'Uterus',
-        imgPath: require('../assets/logos/topics/ureter.webp'),
+        imgPath: require('../assets/logos/topics/ureter.png'),
       },
     ],
   },
@@ -1814,22 +1800,22 @@ let topics = [
       {
         id: 1,
         title: 'Cornea',
-        imgPath: require('../assets/logos/topics/Corena.webp'),
+        imgPath: require('../assets/logos/topics/Corena.png'),
       },
       {
         id: 2,
         title: 'Eyelid',
-        // imgPath: require('../assets/logos/topics/eyelid.webp'),
+        // imgPath: require('../assets/logos/topics/eyelid.png'),
       },
       {
         id: 3,
         title: 'Optic Nerve',
-        imgPath: require('../assets/logos/topics/opticnerve.webp'),
+        imgPath: require('../assets/logos/topics/opticnerve.png'),
       },
       {
         id: 4,
         title: 'Retina',
-        imgPath: require('../assets/logos/topics/retina.webp'),
+        imgPath: require('../assets/logos/topics/retina.png'),
       },
     ],
   },

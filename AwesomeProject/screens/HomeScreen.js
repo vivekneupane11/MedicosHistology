@@ -144,10 +144,8 @@ const HomeScreen = ({navigation}) => {
             </Card>
           ))}
         </Block>
-
         {topics.map((item, mainindex) => {
           let titleId = item.id;
-
           return (
             <View key={mainindex.toString() + titleId}>
               {console.log('sssssssss', mainindex.toString() + titleId)}
@@ -478,7 +476,7 @@ const HomeScreen = ({navigation}) => {
                   resizeMode="cover"
                   style={[styles.topHotelCardImagePremium]}
                   tintColor={mode == 'dark' ? '#dde0eb' : '#ffffff'}
-                  source={require('../assets/logos/mcq.webp')}
+                  source={require('../assets/logos/mcq.png')}
                 />
               </View>
               <View
