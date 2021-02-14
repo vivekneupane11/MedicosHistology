@@ -54,11 +54,11 @@ const ContentScreen = ({navigation, route}) => {
     if (specificContent) {
       specificContent = specificContent ? specificContent : [];
 
-      setContent((item) => specificContent[0]?.subTopics[id]);
-      //      console.log('iddddddddddddddddddddddd', id);
-      //      console.log('xxxxxxx', specificContent[0]);
-      //      console.log('zzzz', specificContent[0]?.subTopics[id]);
-      //      console.log('yyyyy', contents);
+      setContent(item => specificContent[0]?.subTopics[id]);
+        console.log("iddddddddddddddddddddddd", id);
+        console.log('xxxxxxx', specificContent[0]);
+        console.log('zzzz', specificContent[0]?.subTopics[id]);
+        console.log('yyyyy', contents);
       setisContent(true);
     }
 
@@ -243,47 +243,37 @@ const ContentScreen = ({navigation, route}) => {
                 {contents.introductionContent}
               </Text>
             )}
-            {contents?.content?.subTopic.map((data) => {
-              //              console.log('***', data.content);
-              return (
-                <View>
-                  <Text>***{data?.title}</Text>
-                  {
-                    //START
-                    //content subtopic content
-                    //SUBTOPIC CEHCKER
-                    data?.content?.subTopic == null ? (
-                      //CONTENT WITHOUT NESETD SUBTOPIC
-                      typeof data.content == 'string' ? (
-                        <Text>{data.content}</Text>
-                      ) : (
-                        <View>
-                          {data?.content?.map((item) => {
-                            //                            console.log('************', item);
-                            return (
-                              <View>
-                                {/* Here is Subtopics */}
-                                <Text>{item?.title} </Text>
-                                {/* Should have to check the title  */}
-                                {typeof item == 'string' ? (
-                                  <Text>{item}</Text>
-                                ) : (
-                                  <View>
-                                    {typeof item?.content == 'string' ? (
-                                      <Text>{item?.content}</Text>
-                                    ) : (
-                                      <View>
-                                        {item?.content?.map((data) => {
-                                          return (
-                                            <View>
-                                              {typeof data == 'string' ? (
-                                                <Text>{data}</Text>
-                                              ) : (
-                                                <View>
-                                                  {typeof data?.content ==
-                                                  'string' ? (
-                                                    <Text>{data?.content}</Text>
-                                                  ) : (
+            {
+              contents?.content?.subTopic.map(data => {
+                // console.log("***", data.content);
+                return (
+                  <View>
+                    <Text>***{data?.title}</Text>
+                    {//START
+                      //content subtopic content
+                      //SUBTOPIC CEHCKER
+                      data?.content?.subTopic == null ?
+                        //CONTENT WITHOUT NESETD SUBTOPIC
+                        typeof data.content == 'string' ? <Text>{data.content}</Text>
+                          :
+                          <View>
+                            {/* {console.log("CONTENT WITHOUT NESETD SUBTOPIC")} */}
+                            {data?.content?.map(item => {
+                              // console.log("************", item);
+                              return (
+                                <View>
+                                  {/* Here is Subtopics */}
+                                  <Text >{item?.title} </Text>
+                                  {/* Should have to check the title  */}
+                                  {
+                                    typeof item == 'string' ? <Text>{item}</Text>
+                                      : <View>
+                                        {
+                                          typeof item?.content == 'string' ? <Text>{item?.content}</Text>
+                                            : <View>
+                                              {
+                                                item?.content?.map(data => {
+                                                  return (
                                                     <View>
                                                       {data?.content?.map(
                                                         (data) => (
@@ -298,7 +288,28 @@ const ContentScreen = ({navigation, route}) => {
                                           );
                                         })}
                                       </View>
-                                    )}
+                                  }
+                                </View>
+                              )
+                            }
+                            )}
+                          </View>
+
+                        :
+                        //CONTENT WITH NESETD SUBTOPIC
+                        <View>
+                          {
+                            data?.content?.subTopic.map(content => {
+                              // console.log("CONTENT WITH NESETD SUBTOPIC");
+                              // console.log("************", content)
+                              return <View>
+                                <Text>{content.title}</Text>
+                                {typeof content.content == 'string' ? <Text>{content.content}</Text>
+                                  : <View>
+                                    {content?.content.map(data => {
+                                      // console.log("*******************",data);
+                                      return <Text>{data}</Text>
+                                    })}
                                   </View>
                                 )}
                               </View>

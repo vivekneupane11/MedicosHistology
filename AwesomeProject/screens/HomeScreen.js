@@ -139,10 +139,8 @@ const HomeScreen = ({navigation}) => {
             </Card>
           ))}
         </Block>
-
         {topics.map((item, mainindex) => {
           let titleId = item.id;
-
           return (
             <View key={mainindex.toString() + titleId}>
               {console.log(
@@ -346,9 +344,9 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   topHotelCardImage: {
-    marginTop: 5,
-    height: 70,
-    width: '100%',
+    marginTop: 7,
+    height: 60,
+    width: '95%',
     resizeMode: 'contain',
     justifyContent: 'center',
     alignItems: 'center',
@@ -391,6 +389,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: 10,
+    marginTop:14,
   },
   premiumContainer: {
     paddingHorizontal: 5,
