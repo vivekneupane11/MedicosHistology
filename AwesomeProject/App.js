@@ -505,15 +505,22 @@ function MyTabs() {
 const AppRoutes = () => {
   const {user, setUser} = useContext(AuthContext);
   const [initializing, setInitializing] = useState(true);
+  const [isuser, setisUser] = useState('');
   const onAuthStateChanged = (user) => {
     setUser(user);
     if (initializing) setInitializing(false);
   };
   useEffect(() => {
     const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
+
     return subscriber; //unsubscribe on onmount
   });
-
+  useEffect(() => {
+    AsyncStorage.getItem('userinfo').then((user) => {
+      setisUser(JSON.parse(user));
+      console.log(isuser, '//////////////////////');
+    });
+  }, [user]);
   const Drawer = createDrawerNavigator();
 
   const scheme = useColorScheme();
@@ -541,17 +548,14 @@ const AppRoutes = () => {
         <LanguageManager>
           <FontsizeManager>
             <NavigationContainer>
-              {user ? (
-                <Drawer.Navigator
-                  drawerContent={(props) => <DrawerContent {...props} />}>
-                  <Drawer.Screen
-                    name="HomeDrawerH"
-                    component={AppStackScreen}
-                  />
-                </Drawer.Navigator>
-              ) : (
+              {/* {user || isuser == 1 ? ( */}
+              <Drawer.Navigator
+                drawerContent={(props) => <DrawerContent {...props} />}>
+                <Drawer.Screen name="HomeDrawerH" component={AppStackScreen} />
+              </Drawer.Navigator>
+              {/* ) : (
                 <AuthStackScreen />
-              )}
+              )} */}
             </NavigationContainer>
           </FontsizeManager>
         </LanguageManager>
@@ -562,7 +566,9 @@ const AppRoutes = () => {
 const Drawer = createDrawerNavigator();
 
 const App = () => {
-  useEffect(() => SplashScreen.hide(), []);
+  useEffect(() => {
+    setTimeout(() => SplashScreen.hide(), 500);
+  }, []);
   return (
     <AuthProvider>
       <AppRoutes />

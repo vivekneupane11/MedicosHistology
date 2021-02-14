@@ -245,8 +245,33 @@ const BookmarkScreen = ({navigation}) => {
         </Text>
       </View> */}
       {isBookmakEmpty ? (
-        <TouchableOpacity>
-          <Text>No Bookmark Set Currently</Text>
+        <TouchableOpacity
+          style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            paddingVertical: '50%',
+          }}>
+          <Icon name="paper-plane-empty" size={48} color="#ABB4BD" />
+          <Text
+            style={[
+              {
+                color: themeforDarkMode.secondaryText,
+                fontSize: 12,
+                paddingTop: 12,
+              },
+            ]}>
+            No bookmark set.
+          </Text>
+          <Text
+            style={[
+              {
+                color: themeforDarkMode.secondaryText,
+                fontSize: 12,
+              },
+            ]}>
+            Please set Bookmark to view it later.
+          </Text>
         </TouchableOpacity>
       ) : (
         <View style={styles.container}>
@@ -285,7 +310,7 @@ const BookmarkScreen = ({navigation}) => {
                   removeBookmarkData({id: item.id, titleId: item.titleId})
                 }
                 style={styles.bookmark}>
-                <Icon name="bookmark-empty" size={24} color="#ABB4BD" />
+                <Icon name="cancel-circled-outline" size={24} color="#ABB4BD" />
               </TouchableOpacity>
             </TouchableOpacity>
           ))}

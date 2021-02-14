@@ -165,6 +165,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.primary,
     borderBottomRightRadius: W / 7,
     justifyContent: 'center',
+    marginBottom: 15,
     // alignItems:'center'
   },
   drawerLinks: {

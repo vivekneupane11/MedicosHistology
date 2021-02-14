@@ -21,6 +21,7 @@ import {useIsFocused} from '@react-navigation/native';
 import {createIconSetFromFontello} from 'react-native-vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useTheme} from '../src/utils/DarkTheme/ThemeManager';
+import {NotesModal} from '../components/NotesModal';
 const Icon = createIconSetFromFontello(fontelloConfig);
 import {
   heightPercentageToDP,
@@ -36,11 +37,16 @@ const ContentScreen = ({navigation, route}) => {
   const isFocused = useIsFocused();
   const [Bookmark, setBookmark] = useState(JSON.stringify({bookmark: [0]}));
   const [isBookmark, setisBookmark] = useState(false);
+  const [modal, setModal] = useState(false);
   const {id, title, titleId} = route.params;
   const {mode, theme: themeforDarkMode, toggle} = useTheme();
   const [contents, setContent] = useState({});
   const [isContent, setisContent] = useState(false);
 
+  const [data, setData] = useState([]);
+  const changeModal = () => {
+    setModal((initialstate) => !initialstate);
+  };
   const extractContent = () => {
     let specificContent = AllHistologyContent.filter((item) => {
       return item.id == titleId;
@@ -173,13 +179,15 @@ const ContentScreen = ({navigation, route}) => {
             Epithelial Tissue
           </Text>
           <View style={{flexDirection: 'row'}}>
-            <Icon
-              style={{marginHorizontal: 0}}
-              name="edit"
-              size={25}
-              color="#fff"
-            />
-
+            <TouchableOpacity
+              onPress={() => setModal((initialstate) => !initialstate)}>
+              <Icon
+                style={{marginHorizontal: 0}}
+                name="edit"
+                size={25}
+                color="#fff"
+              />
+            </TouchableOpacity>
             <TouchableOpacity
               onPress={() => saveBookmarkData({id: id, titleId: titleId})}>
               {isBookmark ? (
@@ -212,29 +220,13 @@ const ContentScreen = ({navigation, route}) => {
       style={{
         backgroundColor: themeforDarkMode.contentBackground,
       }}>
-      {/* <Modal visible={modal} transparent={true} animationType="slide">
-        <View style={[styles.modalContainer]}>cle
-          <View style={styles.modalWrapper}>
-            <TextInput style={styles.modalTitle} onChangeText={text => setNoteTitle(text)} value={noteTitle}></TextInput>
-            <View style={styles.modalContentContainer}>
-              <TextInput multiline onChangeText={text => setNoteContent(text)} value={noteContent}></TextInput>
-            </View>
-            <View style={styles.modalFooter}>
-              <TouchableOpacity onPress={() => { setModal(false) }} style={[styles.closeButton, styles.f_c_c_c]} >
-                <Icon style={styles.modalCloseIcon} name="cancel-circled2" size={18} />
-                <Text style={[styles.closeButtonText]}>Close</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={[styles.saveButton, styles.f_c_c_c]}>
-                <Icon style={styles.modalSaveIcon} name="ok-circled2" size={18} />
-                <Text style={[styles.saveButtonText]}>Save</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-        </View>
-      </Modal> */}
       <View style={styles.container}>
         <Slider />
-
+        <NotesModal
+          modal={modal}
+          changeModal={changeModal}
+          datas={{id: id, title: title, titleId: titleId}}
+        />
         <View style={styles.contentContainer}>
           <View>
             {/* Tile is Here */}
@@ -392,89 +384,6 @@ const styles = StyleSheet.create({
     fontSize: widthPercentageToDP(4.3),
   },
 
-  modalContentContainer: {
-    paddingHorizontal: 15,
-    paddingVertical: 25,
-    flex: 1,
-    width: '100%',
-    // backgroundColor: 'yellow',
-    // paddingHorizontal:widthPercentageToDP(1.5),
-    // paddingVertical:heightPercentageToDP(2.5)
-  },
-  modalFooter: {
-    width: '100%',
-    flexDirection: 'row',
-    backgroundColor: colors.lightWhite,
-  },
-  modalContainer: {
-    // paddingVertical: 100,
-    backgroundColor: '#000000aa',
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingVertical: heightPercentageToDP(12),
-  },
-  modalWrapper: {
-    flex: 1,
-    // width: '85%',
-    backgroundColor: 'white',
-    borderRadius: 10,
-    overflow: 'hidden',
-    width: widthPercentageToDP(85),
-  },
-  closeButtonText: {
-    // flex:0.2,
-    color: 'red',
-    // fontSize: 16,
-    fontSize: widthPercentageToDP(4),
-  },
-  saveButtonText: {
-    // flex:0.5,
-    color: colors.secondary,
-    // fontSize: 16,
-    fontSize: widthPercentageToDP(4),
-  },
-  modalCloseIcon: {
-    flex: 0.2,
-    color: 'red',
-  },
-  modalSaveIcon: {
-    flex: 0.2,
-    color: colors.secondary,
-  },
-  closeButton: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flex: 1,
-    borderColor: 'green',
-    borderRightWidth: StyleSheet.hairlineWidth,
-    borderTopWidth: StyleSheet.hairlineWidth,
-  },
-  saveButton: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    // paddingVertical: 15,
-    flex: 1,
-    // backgroundColor: colors.primary,
-    borderColor: 'green',
-    borderTopWidth: StyleSheet.hairlineWidth,
-    paddingVertical: heightPercentageToDP(1.8),
-  },
-  modalTitle: {
-    // marginHorizontal: 25,
-    // paddingVertical: 12,
-    textAlign: 'center',
-    color: colors.secondary,
-    // fontSize: 25,
-    fontWeight: 'bold',
-    fontFamily: 'Roboto-Bold',
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    marginHorizontal: widthPercentageToDP(6.5),
-    paddingVertical: heightPercentageToDP(1.4),
-    fontSize: widthPercentageToDP(6),
-  },
   contentParagraphTypography: {
     // lineHeight: 22,
     textAlign: 'justify',
