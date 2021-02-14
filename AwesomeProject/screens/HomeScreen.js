@@ -478,7 +478,7 @@ const HomeScreen = ({navigation}) => {
                   resizeMode="cover"
                   style={[styles.topHotelCardImagePremium]}
                   tintColor={mode == 'dark' ? '#dde0eb' : '#ffffff'}
-                  source={require('../assets/logos/mcq.png')}
+                  source={require('../assets/logos/mcq.webp')}
                 />
               </View>
               <View
@@ -589,9 +589,9 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   topHotelCardImage: {
-    marginTop: 5,
-    height: 70,
-    width: '100%',
+    marginTop: 7,
+    height: 60,
+    width: '95%',
     resizeMode: 'contain',
     justifyContent: 'center',
     alignItems: 'center',
@@ -635,6 +635,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: 10,
+    marginTop:14,
   },
   premiumContainer: {
     paddingHorizontal: 5,

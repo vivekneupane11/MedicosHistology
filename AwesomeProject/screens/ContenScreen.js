@@ -49,10 +49,10 @@ const ContentScreen = ({ navigation, route }) => {
       specificContent = specificContent ? specificContent : [];
 
       setContent(item => specificContent[0]?.subTopics[id]);
-      console.log("iddddddddddddddddddddddd", id);
-      console.log('xxxxxxx', specificContent[0]);
-      console.log('zzzz', specificContent[0]?.subTopics[id]);
-      console.log('yyyyy', contents);
+        console.log("iddddddddddddddddddddddd", id);
+        console.log('xxxxxxx', specificContent[0]);
+        console.log('zzzz', specificContent[0]?.subTopics[id]);
+        console.log('yyyyy', contents);
       setisContent(true);
     }
 
@@ -266,7 +266,7 @@ const ContentScreen = ({ navigation, route }) => {
             )}
             {
               contents?.content?.subTopic.map(data => {
-                console.log("***", data.content);
+                // console.log("***", data.content);
                 return (
                   <View>
                     <Text>***{data?.title}</Text>
@@ -278,9 +278,9 @@ const ContentScreen = ({ navigation, route }) => {
                         typeof data.content == 'string' ? <Text>{data.content}</Text>
                           :
                           <View>
-                            {console.log("CONTENT WITHOUT NESETD SUBTOPIC")}
+                            {/* {console.log("CONTENT WITHOUT NESETD SUBTOPIC")} */}
                             {data?.content?.map(item => {
-                              console.log("************", item);
+                              // console.log("************", item);
                               return (
                                 <View>
                                   {/* Here is Subtopics */}
@@ -331,7 +331,7 @@ const ContentScreen = ({ navigation, route }) => {
                         <View>
                           {
                             data?.content?.subTopic.map(content => {
-                              console.log("CONTENT WITH NESETD SUBTOPIC");
+                              // console.log("CONTENT WITH NESETD SUBTOPIC");
                               // console.log("************", content)
                               return <View>
                                 <Text>{content.title}</Text>

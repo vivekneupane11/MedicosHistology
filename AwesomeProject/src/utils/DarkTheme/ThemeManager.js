@@ -5,7 +5,7 @@ import {getTheme} from './theme';
 // set default colour scheme from OS
 const osTheme = Appearance.getColorScheme();
 //console.log('lets check os theme',typeof osTheme);
-let ostheme = (osTheme == "no-preference") ? "light" : osTheme;
+let ostheme = (osTheme == "no-preference") ? "dark" : osTheme;
  
 // initiate context
 export const ManageThemeContext = React.createContext({

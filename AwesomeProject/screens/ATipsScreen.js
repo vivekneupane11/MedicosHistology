@@ -1,12 +1,12 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet, Image } from 'react-native';
 import Onboarding from 'react-native-onboarding-swiper';
-import onboardingimage1 from '../assets/aTips1.png';
-import onboardingimage2 from '../assets/aTips2.png';
-import onboardingimage3 from '../assets/aTips3.png';
-import onboardingimage4 from '../assets/aTips4.png';
-import onboardingimage5 from '../assets/aTips5.png';
-import onboardingimage6 from '../assets/aTips6.png';
+import onboardingimage1 from '../assets/aTips1.webp';
+import onboardingimage2 from '../assets/aTips2.webp';
+import onboardingimage3 from '../assets/aTips3.webp';
+import onboardingimage4 from '../assets/aTips4.webp';
+import onboardingimage5 from '../assets/aTips5.webp';
+import onboardingimage6 from '../assets/aTips6.webp';
 import { heightPercentageToDP, widthPercentageToDP } from '../src/utils/responsive';
 import { usefontsize } from '../src/utils/FontSize/FontSizeManager';
 
@@ -19,8 +19,8 @@ const ATipsScreen = ({ navigation }) => {
 
             // bottomBarColor={'red'}
             showNext={true}
-            onSkip={() => navigation.replace('Login')}
-            onDone={() => navigation.navigate('Login')}
+            onSkip={() => navigation.replace('Home')}
+            onDone={() => navigation.navigate('Home')}
             imageContainerStyles={{
                 paddingBottom: 10,
                 paddingTop: 21,

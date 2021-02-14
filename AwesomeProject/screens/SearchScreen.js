@@ -90,10 +90,10 @@ const SearchScreen = ({ navigation }) => {
               styles.f_r_sa_c,
               { backgroundColor: themeforDarkMode.cardBox },
             ]}>
-            <Image
+            {/* <Image
               source={require('../assets/images/heart.png')}
               style={styles.imageStyle}
-            />
+            /> */}
             <View style={styles.searchContent}>
               <Text
                 style={[
@@ -128,10 +128,10 @@ const SearchScreen = ({ navigation }) => {
             styles.f_r_sa_c,
             { backgroundColor: themeforDarkMode.cardBox },
           ]}>
-          <Image
+          {/* <Image
             source={require('../assets/images/heart.png')}
             style={styles.imageStyle}
-          />
+          /> */}
           <View style={styles.similarContent}>
             <Text
               style={[
@@ -160,10 +160,10 @@ const SearchScreen = ({ navigation }) => {
             styles.f_r_sa_c,
             { backgroundColor: themeforDarkMode.cardBox },
           ]}>
-          <Image
+          {/* <Image
             source={require('../assets/images/heart.png')}
             style={styles.imageStyle}
-          />
+          /> */}
           <View style={styles.similarContent}>
             <Text
               style={[
@@ -192,10 +192,10 @@ const SearchScreen = ({ navigation }) => {
             styles.f_r_sa_c,
             { backgroundColor: themeforDarkMode.cardBox },
           ]}>
-          <Image
+          {/* <Image
             source={require('../assets/images/heart.png')}
             style={styles.imageStyle}
-          />
+          /> */}
           <View style={styles.similarContent}>
             <Text
               style={[
@@ -224,10 +224,10 @@ const SearchScreen = ({ navigation }) => {
             styles.f_r_sa_c,
             { backgroundColor: themeforDarkMode.cardBox },
           ]}>
-          <Image
+          {/* <Image
             source={require('../assets/images/heart.png')}
             style={styles.imageStyle}
-          />
+          /> */}
           <View style={styles.similarContent}>
             <Text
               style={[
@@ -256,10 +256,10 @@ const SearchScreen = ({ navigation }) => {
             styles.f_r_sa_c,
             { backgroundColor: themeforDarkMode.cardBox },
           ]}>
-          <Image
+          {/* <Image
             source={require('../assets/images/heart.png')}
             style={styles.imageStyle}
-          />
+          /> */}
           <View style={styles.similarContent}>
             <Text
               style={[

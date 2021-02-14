@@ -12,8 +12,10 @@ let images = [];
 const Slider = (props) => {
     useEffect(()=>{
         sliderImages.map(data=>{
+            console.log("77777777777777777", data.title,props.title);
             return data.title == props.title ?
             data.sliderImages.map(image=>{
+                console.log("8888888888888888888", data.title ,props.title);
                 images.push(image)
                 // images.push(require(`../assets/images/${(props.title).replace(' ','')}/${image}`));
                 // console.log("hello",hello.replace(' ',''))
@@ -47,7 +49,7 @@ const Slider = (props) => {
                     key={index}
 
                     source={item}
-                    style={{ height, width, resizeMode: 'cover' }}
+                    style={{ height, width, resizeMode: 'stretch' }}
                 />
             }
             )
