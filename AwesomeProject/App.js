@@ -548,14 +548,17 @@ const AppRoutes = () => {
         <LanguageManager>
           <FontsizeManager>
             <NavigationContainer>
-              {/* {user || isuser == 1 ? ( */}
-              <Drawer.Navigator
-                drawerContent={(props) => <DrawerContent {...props} />}>
-                <Drawer.Screen name="HomeDrawerH" component={AppStackScreen} />
-              </Drawer.Navigator>
-              {/* ) : (
+              {user || isuser == 1 ? (
+                <Drawer.Navigator
+                  drawerContent={(props) => <DrawerContent {...props} />}>
+                  <Drawer.Screen
+                    name="HomeDrawerH"
+                    component={AppStackScreen}
+                  />
+                </Drawer.Navigator>
+              ) : (
                 <AuthStackScreen />
-              )} */}
+              )}
             </NavigationContainer>
           </FontsizeManager>
         </LanguageManager>
