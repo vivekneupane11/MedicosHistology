@@ -9,10 +9,13 @@ import onboardingimage5 from '../assets/aTips5.webp';
 import onboardingimage6 from '../assets/aTips6.webp';
 import { heightPercentageToDP, widthPercentageToDP } from '../src/utils/responsive';
 import { usefontsize } from '../src/utils/FontSize/FontSizeManager';
+import { useTheme } from '../src/utils/DarkTheme/ThemeManager';
+
 
 
 const ATipsScreen = ({ navigation }) => {
     const { fontsizeMode } = usefontsize();
+    const { mode, theme: themeforDarkMode, toggle } = useTheme();
 
     return (
         <Onboarding
@@ -37,10 +40,12 @@ const ATipsScreen = ({ navigation }) => {
             pages={[
 
                 {
-                    backgroundColor: '#EFF8F9',
+                    backgroundColor: mode == 'dark' ? '#516377' : '#EFF8F9',
                     image: <Image style={styles.mediumsizeimage} source={onboardingimage1} resizeMode='contain' />,
                     title: '1. Attend Your Histology Class Daily',
                     subtitle: <Text style={[
+                        { color: themeforDarkMode.primaryText },
+                        { color: themeforDarkMode.primaryText },
                         styles.text,
                         fontsizeMode == 'S' && styles.typographySmall,
                         fontsizeMode == 'M' && styles.typographyMedium,
@@ -50,10 +55,11 @@ const ATipsScreen = ({ navigation }) => {
 
                 {
 
-                    backgroundColor: '#EEFFD8',
+                    backgroundColor: mode == 'dark' ? '#7290aa' : '#EEFFD8',
                     image: <Image style={styles.mediumsizeimage} source={onboardingimage2} resizeMode='contain' />,
                     title: '2. Learn Histology Actively',
                     subtitle: <Text style={[
+                        { color: themeforDarkMode.primaryText },
                         styles.text,
                         fontsizeMode == 'S' && styles.typographySmall,
                         fontsizeMode == 'M' && styles.typographyMedium,
@@ -63,10 +69,11 @@ const ATipsScreen = ({ navigation }) => {
 
                 {
 
-                    backgroundColor: '#EFF8F9',
+                    backgroundColor: mode == 'dark' ? '#516377' : '#EFF8F9',
                     image: <Image style={styles.mediumsizeimage} source={onboardingimage3} resizeMode='contain' />,
                     title: '3. Study Histology Regularly',
                     subtitle: <Text style={[
+                        { color: themeforDarkMode.primaryText },
                         styles.text,
                         fontsizeMode == 'S' && styles.typographySmall,
                         fontsizeMode == 'M' && styles.typographyMedium,
@@ -75,10 +82,11 @@ const ATipsScreen = ({ navigation }) => {
                 },
                 {
 
-                    backgroundColor: '#EFF8F9',
+                    backgroundColor: mode == 'dark' ? '#7290aa' : '#EFF8F9',
                     image: <Image style={styles.mediumsizeimage} source={onboardingimage4} resizeMode='contain' />,
                     title: '4. Form a Histology Study Group',
                     subtitle: <Text style={[
+                        { color: themeforDarkMode.primaryText },
                         styles.text,
                         fontsizeMode == 'S' && styles.typographySmall,
                         fontsizeMode == 'M' && styles.typographyMedium,
@@ -88,10 +96,11 @@ const ATipsScreen = ({ navigation }) => {
 
                 {
 
-                    backgroundColor: '#EEFFD8',
+                    backgroundColor: mode == 'dark' ? '#516377' : '#EEFFD8',
                     image: <Image style={styles.mediumsizeimage} source={onboardingimage5} resizeMode='contain' />,
                     title: '5. Maintain a Suport System Outside of Histology',
                     subtitle: <Text style={[
+                        { color: themeforDarkMode.primaryText },
                         styles.text,
                         fontsizeMode == 'S' && styles.typographySmall,
                         fontsizeMode == 'M' && styles.typographyMedium,
@@ -101,10 +110,11 @@ const ATipsScreen = ({ navigation }) => {
 
                 {
 
-                    backgroundColor: '#EFF8F9',
+                    backgroundColor: mode == 'dark' ? '#7290aa' : '#EFF8F9',
                     image: <Image style={styles.mediumsizeimage} source={onboardingimage6} resizeMode='contain' />,
                     title: '6. Keep a Balance',
                     subtitle: <Text style={[
+                        { color: themeforDarkMode.primaryText },
                         styles.text,
                         fontsizeMode == 'S' && styles.typographySmall,
                         fontsizeMode == 'M' && styles.typographyMedium,
