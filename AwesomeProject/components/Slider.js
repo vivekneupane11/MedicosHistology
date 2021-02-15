@@ -70,7 +70,9 @@ const Slider = (props) => {
       <View style={styles.indicator}>
         {images.map((i, k) => {
           return (
-            <Text key={k} style={{color: themeforDarkMode.subTitle}}>
+            <Text
+              key={k}
+              style={{color: k == active ? themeforDarkMode.subTitle : 'gray'}}>
               ⬤
             </Text>
           );

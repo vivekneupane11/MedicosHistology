@@ -89,7 +89,10 @@ const ContentScreen = ({navigation, route}) => {
     }
   };
   useEffect(() => {
-    firestoreData();
+    if (isPremiumUser == false) {
+      firestoreData();
+    }
+
     return () => {
       setIspremiumUser(false);
     };
