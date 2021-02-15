@@ -10,6 +10,8 @@ target 'AwesomeProject' do
 
   pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
 
+  pod 'ReactNativeExceptionHandler', :path => '../node_modules/react-native-exception-handler'
+
   target 'AwesomeProjectTests' do
     inherit! :complete
     # Pods for testing

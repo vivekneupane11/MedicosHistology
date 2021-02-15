@@ -60,43 +60,40 @@ const introductionScreenImages = [
 
 const sliderImages = [
   {
-    title: "Epithelial Tissue",
+    title: 'Epithelial Tissue',
     sliderImages: [
       require('../assets/images/EpithelialTissue/Introduction/epi1.webp'),
       require('../assets/images/EpithelialTissue/Introduction/epi3.webp'),
-      require('../assets/images/EpithelialTissue/Introduction/epi4.webp')]
-
+      require('../assets/images/EpithelialTissue/Introduction/epi4.webp'),
+    ],
   },
   {
-    title: "Simple Squamous",
+    title: 'Simple Squamous',
     sliderImages: [
       require('../assets/images/EpithelialTissue/SimpleSquamous/epi1.webp'),
       require('../assets/images/EpithelialTissue/SimpleSquamous/epi3.webp'),
-      require('../assets/images/EpithelialTissue/SimpleSquamous/epi4.webp')]
-
-
+      require('../assets/images/EpithelialTissue/SimpleSquamous/epi4.webp'),
+    ],
   },
   {
-    title: "Simple Cuboidal",
+    title: 'Simple Cuboidal',
     sliderImages: [
       require('../assets/images/EpithelialTissue/SimpleCuboidal/simple_sq2.webp'),
       require('../assets/images/EpithelialTissue/SimpleCuboidal/simple_sq3.webp'),
-    ]
-
+    ],
   },
   {
-    title: "Simple Columnar",
+    title: 'Simple Columnar',
     sliderImages: [
       require('../assets/images/EpithelialTissue/SimpleColumnar/Simple_col1.webp'),
       require('../assets/images/EpithelialTissue/SimpleColumnar/Simple_col2.webp'),
       require('../assets/images/EpithelialTissue/SimpleColumnar/Simple_col3.webp'),
       require('../assets/images/EpithelialTissue/SimpleColumnar/Simple_col4.webp'),
-      require('../assets/images/EpithelialTissue/SimpleColumnar/Simple_col5.webp')
-    ]
-
+      require('../assets/images/EpithelialTissue/SimpleColumnar/Simple_col5.webp'),
+    ],
   },
   {
-    title: "PseudoStratified Columnar Cilliated",
+    title: 'PseudoStratified Columnar Cilliated',
     sliderImages: [
       require('../assets/images/EpithelialTissue/PseudoStratifiedColumnarCilliate/pesudo_col1.webp'),
       require('../assets/images/EpithelialTissue/PseudoStratifiedColumnarCilliate/pesudo_col2.webp'),
@@ -104,12 +101,11 @@ const sliderImages = [
       require('../assets/images/EpithelialTissue/PseudoStratifiedColumnarCilliate/pesudo_col4.webp'),
       require('../assets/images/EpithelialTissue/PseudoStratifiedColumnarCilliate/pesudo_col5.webp'),
       // require('../assets/images/EpithelialTissue/PseudoStratifiedColumnarCilliate/pseudo_col6.webp'),
-      require('../assets/images/EpithelialTissue/PseudoStratifiedColumnarCilliate/pseudo_col7.webp')
-    ]
-
+      require('../assets/images/EpithelialTissue/PseudoStratifiedColumnarCilliate/pseudo_col7.webp'),
+    ],
   },
   {
-    title: "Stratified Squamous Epithelial",
+    title: 'Stratified Squamous Epithelial',
     sliderImages: [
       require('../assets/images/EpithelialTissue/StratifiedSquamosEpithelium/stra_sq1.webp'),
       require('../assets/images/EpithelialTissue/StratifiedSquamosEpithelium/stra_sq2.webp'),
@@ -117,12 +113,11 @@ const sliderImages = [
       require('../assets/images/EpithelialTissue/StratifiedSquamosEpithelium/stra_sq4.webp'),
       require('../assets/images/EpithelialTissue/StratifiedSquamosEpithelium/stra_sq5.webp'),
       require('../assets/images/EpithelialTissue/StratifiedSquamosEpithelium/stra_sq7.webp'),
-      require('../assets/images/EpithelialTissue/StratifiedSquamosEpithelium/stra_sq8.webp')
-    ]
-
+      require('../assets/images/EpithelialTissue/StratifiedSquamosEpithelium/stra_sq8.webp'),
+    ],
   },
   {
-    title: "Transitional Epithelium",
+    title: 'Transitional Epithelium',
     sliderImages: [
       require('../assets/images/EpithelialTissue/TransitionalEpithelium/stra_tra1.webp'),
       require('../assets/images/EpithelialTissue/TransitionalEpithelium/stra_tra2.webp'),
@@ -130,10 +125,10 @@ const sliderImages = [
       require('../assets/images/EpithelialTissue/TransitionalEpithelium/stra_tra4.webp'),
       require('../assets/images/EpithelialTissue/TransitionalEpithelium/transtionalepithelium.webp'),
       // require('../assets/images/EpithelialTissue/TransitionalEpithelium/transtionalepithelium1.webp')
-    ]
+    ],
   },
   {
-    title: "Stratified Cuboidal Epithellium",
+    title: 'Stratified Cuboidal Epithellium',
     sliderImages: [
       require('../assets/images/EpithelialTissue/StratifiedCuboidalEpithellium/epi1.webp'),
       require('../assets/images/EpithelialTissue/StratifiedCuboidalEpithellium/epi3.webp'),
@@ -141,22 +136,21 @@ const sliderImages = [
       require('../assets/images/EpithelialTissue/StratifiedCuboidalEpithellium/strate_cub1.webp'),
       require('../assets/images/EpithelialTissue/StratifiedCuboidalEpithellium/strate_cub2.webp'),
       require('../assets/images/EpithelialTissue/StratifiedCuboidalEpithellium/strate_cub3.webp'),
-      require('../assets/images/EpithelialTissue/StratifiedCuboidalEpithellium/strate_cub4.webp')]
+      require('../assets/images/EpithelialTissue/StratifiedCuboidalEpithellium/strate_cub4.webp'),
+    ],
   },
   {
-    title: "Stratified Columnar",
+    title: 'Stratified Columnar',
     sliderImages: [
       require('../assets/images/EpithelialTissue/StratifiedColumnar/stra_col0.webp'),
       require('../assets/images/EpithelialTissue/StratifiedColumnar/stra_col1.webp'),
       require('../assets/images/EpithelialTissue/StratifiedColumnar/stra_col2.webp'),
       require('../assets/images/EpithelialTissue/StratifiedColumnar/stra_col2.webp'),
-      require('../assets/images/EpithelialTissue/StratifiedColumnar/stra_col3.webp')
-    ]
-
-
+      require('../assets/images/EpithelialTissue/StratifiedColumnar/stra_col3.webp'),
+    ],
   },
   {
-    title: "Connective Tissue",
+    title: 'Connective Tissue',
     sliderImages: [
       require('../assets/images/ConnectiveTissue/Introduction/connective0.webp'),
       require('../assets/images/ConnectiveTissue/Introduction/connective1.webp'),
@@ -166,41 +160,40 @@ const sliderImages = [
       require('../assets/images/ConnectiveTissue/Introduction/connective5.webp'),
       require('../assets/images/ConnectiveTissue/Introduction/connective6.webp'),
       require('../assets/images/ConnectiveTissue/Introduction/connective7.webp'),
-      require('../assets/images/ConnectiveTissue/Introduction/connective8.webp')]
-
+      require('../assets/images/ConnectiveTissue/Introduction/connective8.webp'),
+    ],
   },
   {
-    title: "Adipose Tissue",
+    title: 'Adipose Tissue',
     sliderImages: [
       require('../assets/images/ConnectiveTissue/AdiposeTissue/adipose0.webp'),
       require('../assets/images/ConnectiveTissue/AdiposeTissue/adipose1.webp'),
       require('../assets/images/ConnectiveTissue/AdiposeTissue/adipose2.webp'),
       require('../assets/images/ConnectiveTissue/AdiposeTissue/adipose4.webp'),
       require('../assets/images/ConnectiveTissue/AdiposeTissue/adipose5.webp'),
-      require('../assets/images/ConnectiveTissue/AdiposeTissue/adipose6.webp')
-    ]
-
+      require('../assets/images/ConnectiveTissue/AdiposeTissue/adipose6.webp'),
+    ],
   },
   {
-    title: "Areolar Tissue",
+    title: 'Areolar Tissue',
     sliderImages: [
       require('../assets/images/ConnectiveTissue/AreolarTissue/areolar2.webp'),
       require('../assets/images/ConnectiveTissue/AreolarTissue/areolar3.webp'),
-      require('../assets/images/ConnectiveTissue/AreolarTissue/areolar4.webp')]
-
+      require('../assets/images/ConnectiveTissue/AreolarTissue/areolar4.webp'),
+    ],
   },
   {
-    title: "Compact Bone",
+    title: 'Compact Bone',
     sliderImages: [
       require('../assets/images/ConnectiveTissue/CompactBone/compact.webp'),
       require('../assets/images/ConnectiveTissue/CompactBone/compactbone.webp'),
       require('../assets/images/ConnectiveTissue/CompactBone/compact8.webp'),
       require('../assets/images/ConnectiveTissue/CompactBone/compact9.webp'),
-      require('../assets/images/ConnectiveTissue/CompactBone/compactbone.webp')
-    ]
+      require('../assets/images/ConnectiveTissue/CompactBone/compactbone.webp'),
+    ],
   },
   {
-    title: "Dense Connective Tissue",
+    title: 'Dense Connective Tissue',
     sliderImages: [
       require('../assets/images/ConnectiveTissue/DenseConnectiveTissue/dense1.webp'),
       require('../assets/images/ConnectiveTissue/DenseConnectiveTissue/dense6.webp'),
@@ -208,37 +201,40 @@ const sliderImages = [
       require('../assets/images/ConnectiveTissue/DenseConnectiveTissue/dense8.webp'),
       require('../assets/images/ConnectiveTissue/DenseConnectiveTissue/dense9.webp'),
       require('../assets/images/ConnectiveTissue/DenseConnectiveTissue/dense10.webp'),
-      require('../assets/images/ConnectiveTissue/DenseConnectiveTissue/dense11.webp')]
-
+      require('../assets/images/ConnectiveTissue/DenseConnectiveTissue/dense11.webp'),
+    ],
   },
   {
-    title: "Loose Connective Tissue",
+    title: 'Loose Connective Tissue',
     sliderImages: [
       require('../assets/images/ConnectiveTissue/LooseConnectiveTissue/loose1.webp'),
       require('../assets/images/ConnectiveTissue/LooseConnectiveTissue/loose2.webp'),
       require('../assets/images/ConnectiveTissue/LooseConnectiveTissue/loose3.webp'),
       require('../assets/images/ConnectiveTissue/LooseConnectiveTissue/loose4.webp'),
-      require('../assets/images/ConnectiveTissue/LooseConnectiveTissue/loose5.webp')]
+      require('../assets/images/ConnectiveTissue/LooseConnectiveTissue/loose5.webp'),
+    ],
   },
   {
-    title: "Spongy Bone",
+    title: 'Spongy Bone',
     sliderImages: [
       require('../assets/images/ConnectiveTissue/SpongyBone/spongy1.webp'),
       require('../assets/images/ConnectiveTissue/SpongyBone/spongy3.webp'),
       require('../assets/images/ConnectiveTissue/SpongyBone/spongy4.webp'),
       require('../assets/images/ConnectiveTissue/SpongyBone/spongy5.webp'),
       require('../assets/images/ConnectiveTissue/SpongyBone/spongy6.webp'),
-      require('../assets/images/ConnectiveTissue/SpongyBone/spongybone.webp')]
+      require('../assets/images/ConnectiveTissue/SpongyBone/spongybone.webp'),
+    ],
   },
   {
-    title: "Cartilage",
+    title: 'Cartilage',
     sliderImages: [
       require('../assets/images/Cartilage/Introduction/cartilage.webp'),
       require('../assets/images/Cartilage/Introduction/cartilage1.webp'),
-      require('../assets/images/Cartilage/Introduction/cartilage2.webp')]
+      require('../assets/images/Cartilage/Introduction/cartilage2.webp'),
+    ],
   },
   {
-    title: "Elastic Cartilage",
+    title: 'Elastic Cartilage',
     sliderImages: [
       // require('../assets/images/Cartilage/ElasticCartilage/elasticcart.webp'),
       require('../assets/images/Cartilage/ElasticCartilage/elasticcart0.webp'),
@@ -247,10 +243,11 @@ const sliderImages = [
       require('../assets/images/Cartilage/ElasticCartilage/elasticcart3.webp'),
       require('../assets/images/Cartilage/ElasticCartilage/elasticcart4.webp'),
       require('../assets/images/Cartilage/ElasticCartilage/elasticcart5.webp'),
-      require('../assets/images/Cartilage/ElasticCartilage/elasticcart6.webp')]
+      require('../assets/images/Cartilage/ElasticCartilage/elasticcart6.webp'),
+    ],
   },
   {
-    title: "Fibro Cartilage",
+    title: 'Fibro Cartilage',
     sliderImages: [
       require('../assets/images/Cartilage/FibroCartilage/fibro0.webp'),
       require('../assets/images/Cartilage/FibroCartilage/fibro1.webp'),
@@ -258,10 +255,11 @@ const sliderImages = [
       require('../assets/images/Cartilage/FibroCartilage/fibro3.webp'),
       require('../assets/images/Cartilage/FibroCartilage/fibro4.webp'),
       require('../assets/images/Cartilage/FibroCartilage/fibro5.webp'),
-      require('../assets/images/Cartilage/FibroCartilage/fibro7.webp')]
+      require('../assets/images/Cartilage/FibroCartilage/fibro7.webp'),
+    ],
   },
   {
-    title: "Hyaline Cartilage",
+    title: 'Hyaline Cartilage',
     sliderImages: [
       require('../assets/images/Cartilage/HyalineCartilage/hyaline2.webp'),
       require('../assets/images/Cartilage/HyalineCartilage/hyaline3.webp'),
@@ -269,19 +267,19 @@ const sliderImages = [
       require('../assets/images/Cartilage/HyalineCartilage/hyaline5.webp'),
       require('../assets/images/Cartilage/HyalineCartilage/hyaline6.webp'),
       require('../assets/images/Cartilage/HyalineCartilage/hyaline7.webp'),
-      require('../assets/images/Cartilage/HyalineCartilage/hyaline8.webp')]
+      require('../assets/images/Cartilage/HyalineCartilage/hyaline8.webp'),
+    ],
   },
   {
-    title: "Blood Vessels",
+    title: 'Blood Vessels',
     sliderImages: [
       require('../assets/images/BloodVessel/Introduction/01B-Blood-Vessels.webp'),
       require('../assets/images/BloodVessel/Introduction/Blood-heart-capillaries-arteries-veins.webp'),
-      require('../assets/images/BloodVessel/Introduction/bloodvessel.webp')
-
-    ]
+      require('../assets/images/BloodVessel/Introduction/bloodvessel.webp'),
+    ],
   },
   {
-    title: "Elastic Artery",
+    title: 'Elastic Artery',
     sliderImages: [
       require('../assets/images//BloodVessel/ElasticArtery/elastic1.webp'),
       require('../assets/images//BloodVessel/ElasticArtery/elastic2.webp'),
@@ -292,21 +290,22 @@ const sliderImages = [
       require('../assets/images//BloodVessel/ElasticArtery/elastic7.webp'),
       require('../assets/images//BloodVessel/ElasticArtery/elastic8.webp'),
       require('../assets/images//BloodVessel/ElasticArtery/elastic9.webp'),
-      require('../assets/images//BloodVessel/ElasticArtery/elasticartery.webp')
-    ]
+      require('../assets/images//BloodVessel/ElasticArtery/elasticartery.webp'),
+    ],
   },
   {
-    title: "Large Vein",
+    title: 'Large Vein',
     sliderImages: [
       require('../assets/images/BloodVessel/LargeVein/largevein.webp'),
       require('../assets/images/BloodVessel/LargeVein/vein1.webp'),
       require('../assets/images/BloodVessel/LargeVein/vein2.webp'),
       require('../assets/images/BloodVessel/LargeVein/vein3.webp'),
       require('../assets/images/BloodVessel/LargeVein/vein4.webp'),
-      require('../assets/images/BloodVessel/LargeVein/vein6.webp')]
+      require('../assets/images/BloodVessel/LargeVein/vein6.webp'),
+    ],
   },
   {
-    title: "Muscular Artery",
+    title: 'Muscular Artery',
     sliderImages: [
       require('../assets/images/BloodVessel/MuscularArtery/muscularart1.webp'),
       require('../assets/images/BloodVessel/MuscularArtery/muscularart3.webp'),
@@ -316,18 +315,18 @@ const sliderImages = [
       require('../assets/images/BloodVessel/MuscularArtery/muscularart7.webp'),
       require('../assets/images/BloodVessel/MuscularArtery/muscularart8.webp'),
       require('../assets/images/BloodVessel/MuscularArtery/muscularart9.webp'),
-      require('../assets/images/BloodVessel/MuscularArtery/muscularartey.webp')
-    ]
+      require('../assets/images/BloodVessel/MuscularArtery/muscularartey.webp'),
+    ],
   },
   {
-    title: "Muscular Tissue",
+    title: 'Muscular Tissue',
     sliderImages: [
       require('../assets/images/MuscularTissue/Introduction/article-Muscle-Tissue-Af6.webp'),
-      require('../assets/images/MuscularTissue/Introduction/muscular-tissue-678x381.webp')
-    ]
+      require('../assets/images/MuscularTissue/Introduction/muscular-tissue-678x381.webp'),
+    ],
   },
   {
-    title: "Cardiac Muscle",
+    title: 'Cardiac Muscle',
     sliderImages: [
       require('../assets/images/MuscularTissue/CardiacMuscle/cardiac1.webp'),
       require('../assets/images/MuscularTissue/CardiacMuscle/cardiac2.webp'),
@@ -337,10 +336,11 @@ const sliderImages = [
       require('../assets/images/MuscularTissue/CardiacMuscle/cardiac6.webp'),
       require('../assets/images/MuscularTissue/CardiacMuscle/cardiac8.webp'),
       // require('../assets/images/MuscularTissue/CardiacMuscle/cardiacmuscle.webp'),
-      require('../assets/images/MuscularTissue/CardiacMuscle/cardiac9.webp')]
+      require('../assets/images/MuscularTissue/CardiacMuscle/cardiac9.webp'),
+    ],
   },
   {
-    title: "Skeletal Muscle",
+    title: 'Skeletal Muscle',
     sliderImages: [
       require('../assets/images/MuscularTissue/SkeletalMuscle/skeletal1.webp'),
       require('../assets/images/MuscularTissue/SkeletalMuscle/skeletal2.webp'),
@@ -349,37 +349,38 @@ const sliderImages = [
       // require('../assets/images/MuscularTissue/SkeletalMuscle/skeletal6.webp'),
       require('../assets/images/MuscularTissue/SkeletalMuscle/skeletal7.webp'),
       require('../assets/images/MuscularTissue/SkeletalMuscle/skeletal9.webp'),
-      require('../assets/images/MuscularTissue/SkeletalMuscle/skeletalmuscle.webp')
-    ]
+      require('../assets/images/MuscularTissue/SkeletalMuscle/skeletalmuscle.webp'),
+    ],
   },
   {
-    title: "Smooth Muscle",
+    title: 'Smooth Muscle',
     sliderImages: [
       require('../assets/images/MuscularTissue/SmoothMuscle/smooth1.webp'),
       require('../assets/images/MuscularTissue/SmoothMuscle/smooth2.webp'),
       require('../assets/images/MuscularTissue/SmoothMuscle/smooth3.webp'),
       require('../assets/images/MuscularTissue/SmoothMuscle/smooth4.webp'),
-      require('../assets/images/MuscularTissue/SmoothMuscle/smooth5.webp')]
+      require('../assets/images/MuscularTissue/SmoothMuscle/smooth5.webp'),
+    ],
   },
   {
-    title: "Respiratory System",
+    title: 'Respiratory System',
     sliderImages: [
       require('../assets/images/RespiratorySystem/Introduction/5bb381ff064cc4af0a1703a3d8412ab6.webp'),
-      require('../assets/images/RespiratorySystem/Introduction/Respiratory-System-Diagram.webp')
-    ]
+      require('../assets/images/RespiratorySystem/Introduction/Respiratory-System-Diagram.webp'),
+    ],
   },
   {
-    title: "Epiglottis",
+    title: 'Epiglottis',
     sliderImages: [
       require('../assets/images/RespiratorySystem/Epiglotis/epi1.webp'),
       require('../assets/images/RespiratorySystem/Epiglotis/epi3.webp'),
       require('../assets/images/RespiratorySystem/Epiglotis/epi4.webp'),
       // require('../assets/images/RespiratorySystem/Epiglotis/epiglottis.webp'),
-      require('../assets/images/RespiratorySystem/Epiglotis/lungs6.webp')
-    ]
+      require('../assets/images/RespiratorySystem/Epiglotis/lungs6.webp'),
+    ],
   },
   {
-    title: "Lungs",
+    title: 'Lungs',
     sliderImages: [
       require('../assets/images/RespiratorySystem/Lungs/lungs.webp'),
       require('../assets/images/RespiratorySystem/Lungs/lungs2.webp'),
@@ -387,10 +388,10 @@ const sliderImages = [
       require('../assets/images/RespiratorySystem/Lungs/lungs4.webp'),
       // require('../assets/images/RespiratorySystem/Lungs/lungs5.webp'),
       require('../assets/images/RespiratorySystem/Lungs/lungs6.webp'),
-    ]
+    ],
   },
   {
-    title: "Trachea",
+    title: 'Trachea',
     sliderImages: [
       require('../assets/images/RespiratorySystem/Trachea/trachea.webp'),
       require('../assets/images/RespiratorySystem/Trachea/trachea1.webp'),
@@ -399,17 +400,18 @@ const sliderImages = [
       require('../assets/images/RespiratorySystem/Trachea/trachea5.webp'),
       require('../assets/images/RespiratorySystem/Trachea/trachea6.webp'),
       // require('../assets/images/RespiratorySystem/Trachea/trachea7.webp')
-    ]
+    ],
   },
   {
-    title: "Gastrointestinal System",
+    title: 'Gastrointestinal System',
     sliderImages: [
       require('../assets/images/GastrolntestinalSystem/Introduction/gi.webp'),
       require('../assets/images/GastrolntestinalSystem/Introduction/gi1.webp'),
-      require('../assets/images/GastrolntestinalSystem/Introduction/gi2.webp')]
+      require('../assets/images/GastrolntestinalSystem/Introduction/gi2.webp'),
+    ],
   },
   {
-    title: "Appendix",
+    title: 'Appendix',
     sliderImages: [
       require('../assets/images/GastrolntestinalSystem/Appendix/appendix2.webp'),
       require('../assets/images/GastrolntestinalSystem/Appendix/appendix3.webp'),
@@ -419,10 +421,11 @@ const sliderImages = [
       require('../assets/images/GastrolntestinalSystem/Appendix/appendix8.webp'),
       require('../assets/images/GastrolntestinalSystem/Appendix/appendix9.webp'),
       require('../assets/images/GastrolntestinalSystem/Appendix/appendix10.webp'),
-      require('../assets/images/GastrolntestinalSystem/Appendix/appendix11.webp')]
+      require('../assets/images/GastrolntestinalSystem/Appendix/appendix11.webp'),
+    ],
   },
   {
-    title: "Colon & Large Intestine",
+    title: 'Colon & Large Intestine',
     sliderImages: [
       require('../assets/images/GastrolntestinalSystem/Colon&LargeInstestine/colon.webp'),
       require('../assets/images/GastrolntestinalSystem/Colon&LargeInstestine/colon1.webp'),
@@ -433,12 +436,11 @@ const sliderImages = [
       require('../assets/images/GastrolntestinalSystem/Colon&LargeInstestine/colon7.webp'),
       require('../assets/images/GastrolntestinalSystem/Colon&LargeInstestine/colon8.webp'),
       require('../assets/images/GastrolntestinalSystem/Colon&LargeInstestine/colon9.webp'),
-      require('../assets/images/GastrolntestinalSystem/Colon&LargeInstestine/colon10.webp')
-
-    ]
+      require('../assets/images/GastrolntestinalSystem/Colon&LargeInstestine/colon10.webp'),
+    ],
   },
   {
-    title: "Duodenum",
+    title: 'Duodenum',
     sliderImages: [
       require('../assets/images/GastrolntestinalSystem/Duodenom/duodenum1.webp'),
       require('../assets/images/GastrolntestinalSystem/Duodenom/duodenum2.webp'),
@@ -450,11 +452,11 @@ const sliderImages = [
       require('../assets/images/GastrolntestinalSystem/Duodenom/duodenum8.webp'),
       // require('../assets/images/GastrolntestinalSystem/Duodenom/duodenum9.webp'),
       require('../assets/images/GastrolntestinalSystem/Duodenom/duodenum11.webp'),
-      require('../assets/images/GastrolntestinalSystem/Duodenom/duodenum12.webp')
-    ]
+      require('../assets/images/GastrolntestinalSystem/Duodenom/duodenum12.webp'),
+    ],
   },
   {
-    title: "Esophagous",
+    title: 'Esophagous',
     sliderImages: [
       // require('../assets/images/GastrolntestinalSystem/Esophagous/oesophagous.webp'),
       require('../assets/images/GastrolntestinalSystem/Esophagous/oesophagous1.webp'),
@@ -464,10 +466,10 @@ const sliderImages = [
       require('../assets/images/GastrolntestinalSystem/Esophagous/oesophagous7.webp'),
       require('../assets/images/GastrolntestinalSystem/Esophagous/oesophagous8.webp'),
       require('../assets/images/GastrolntestinalSystem/Esophagous/esophagus.webp'),
-    ]
+    ],
   },
   {
-    title: "Ileum",
+    title: 'Ileum',
     sliderImages: [
       require('../assets/images/GastrolntestinalSystem/Ileum/ileum1.webp'),
       require('../assets/images/GastrolntestinalSystem/Ileum/ileum2.webp'),
@@ -477,10 +479,10 @@ const sliderImages = [
       require('../assets/images/GastrolntestinalSystem/Ileum/ileum9.webp'),
       require('../assets/images/GastrolntestinalSystem/Ileum/ileum10.webp'),
       require('../assets/images/GastrolntestinalSystem/Ileum/ileum11.webp'),
-    ]
+    ],
   },
   {
-    title: "Jejunum",
+    title: 'Jejunum',
     sliderImages: [
       require('../assets/images/GastrolntestinalSystem/Jejunum/jejunum1.webp'),
       require('../assets/images/GastrolntestinalSystem/Jejunum/jejunum3.webp'),
@@ -488,20 +490,19 @@ const sliderImages = [
       require('../assets/images/GastrolntestinalSystem/Jejunum/jejunum6.webp'),
       require('../assets/images/GastrolntestinalSystem/Jejunum/jejunum9.webp'),
       require('../assets/images/GastrolntestinalSystem/Jejunum/jejunum8.webp'),
-    ]
+    ],
   },
   {
-    title: "Rectum & Ano-rectal Junction",
+    title: 'Rectum & Ano-rectal Junction',
     sliderImages: [
       require('../assets/images/GastrolntestinalSystem/Rectum&Ano-rectalJunction/rect1.webp'),
       require('../assets/images/GastrolntestinalSystem/Rectum&Ano-rectalJunction/rect2.webp'),
       require('../assets/images/GastrolntestinalSystem/Rectum&Ano-rectalJunction/rect3.webp'),
       require('../assets/images/GastrolntestinalSystem/Rectum&Ano-rectalJunction/rectum.webp'),
-
-    ]
+    ],
   },
   {
-    title: "Stomach Fundus & Body",
+    title: 'Stomach Fundus & Body',
     sliderImages: [
       require('../assets/images/GastrolntestinalSystem/StomachFundus&Body/stomach_body1.webp'),
       require('../assets/images/GastrolntestinalSystem/StomachFundus&Body/stomach_body2.webp'),
@@ -511,10 +512,10 @@ const sliderImages = [
       require('../assets/images/GastrolntestinalSystem/StomachFundus&Body/stomach_body6.webp'),
       require('../assets/images/GastrolntestinalSystem/StomachFundus&Body/stomach.webp'),
       require('../assets/images/GastrolntestinalSystem/StomachFundus&Body/stomach(bodyfundus).webp'),
-    ]
+    ],
   },
   {
-    title: "Stomach Pylorus",
+    title: 'Stomach Pylorus',
     sliderImages: [
       require('../assets/images/GastrolntestinalSystem/StomachPylorus/stomach_pylo1.webp'),
       require('../assets/images/GastrolntestinalSystem/StomachPylorus/stomach_pylo2.webp'),
@@ -523,10 +524,10 @@ const sliderImages = [
       require('../assets/images/GastrolntestinalSystem/StomachPylorus/stomach_pylo5.webp'),
       require('../assets/images/GastrolntestinalSystem/StomachPylorus/stomach_pylo6.webp'),
       require('../assets/images/GastrolntestinalSystem/StomachPylorus/stomach(pylorus).webp'),
-    ]
+    ],
   },
   {
-    title: "Tongue",
+    title: 'Tongue',
     sliderImages: [
       require('../assets/images/GastrolntestinalSystem/Tongue/tongue1.webp'),
       require('../assets/images/GastrolntestinalSystem/Tongue/tongue2.webp'),
@@ -536,16 +537,16 @@ const sliderImages = [
       require('../assets/images/GastrolntestinalSystem/Tongue/tongue7.webp'),
       require('../assets/images/GastrolntestinalSystem/Tongue/tongue8.webp'),
       require('../assets/images/GastrolntestinalSystem/Tongue/tongue9.webp'),
-    ]
+    ],
   },
   {
-    title: "HepatoBilliary Tissue",
+    title: 'HepatoBilliary Tissue',
     sliderImages: [
-      require('../assets/images/HepatoBilliaryTissue/Introduction/hepatobiilarysystem.webp')
-    ]
+      require('../assets/images/HepatoBilliaryTissue/Introduction/hepatobiilarysystem.webp'),
+    ],
   },
   {
-    title: "Gallbladder",
+    title: 'Gallbladder',
     sliderImages: [
       require('../assets/images/HepatoBilliaryTissue/Gallbladder/gall.webp'),
       require('../assets/images/HepatoBilliaryTissue/Gallbladder/gall1.webp'),
@@ -555,10 +556,10 @@ const sliderImages = [
       require('../assets/images/HepatoBilliaryTissue/Gallbladder/gall5.webp'),
       require('../assets/images/HepatoBilliaryTissue/Gallbladder/gall6.webp'),
       require('../assets/images/HepatoBilliaryTissue/Gallbladder/gall9.webp'),
-    ]
+    ],
   },
   {
-    title: "Liver",
+    title: 'Liver',
     sliderImages: [
       require('../assets/images/HepatoBilliaryTissue/Liver/liver1.webp'),
       require('../assets/images/HepatoBilliaryTissue/Liver/liver2.webp'),
@@ -574,27 +575,27 @@ const sliderImages = [
       require('../assets/images/HepatoBilliaryTissue/Liver/liver13.webp'),
       require('../assets/images/HepatoBilliaryTissue/Liver/liver14.webp'),
       require('../assets/images/HepatoBilliaryTissue/Liver/liver15.webp'),
-    ]
+    ],
   },
   {
-    title: "Pancreas",
+    title: 'Pancreas',
     sliderImages: [
       require('../assets/images/HepatoBilliaryTissue/Pancreas/pancreas1.webp'),
       require('../assets/images/HepatoBilliaryTissue/Pancreas/pancreas2.webp'),
       require('../assets/images/HepatoBilliaryTissue/Pancreas/pancreas3.webp'),
       require('../assets/images/HepatoBilliaryTissue/Pancreas/pancreas5.webp'),
       require('../assets/images/HepatoBilliaryTissue/Pancreas/pancreas7.webp'),
-      require('../assets/images/HepatoBilliaryTissue/Pancreas/pancreas8.webp')
-    ]
+      require('../assets/images/HepatoBilliaryTissue/Pancreas/pancreas8.webp'),
+    ],
   },
   {
-    title: "Integumentary System",
+    title: 'Integumentary System',
     sliderImages: [
       require('../assets/images/IntegumentarySystem/Introduction/integumentarysystem.webp'),
-    ]
+    ],
   },
   {
-    title: "Skin",
+    title: 'Skin',
     sliderImages: [
       require('../assets/images/IntegumentarySystem/Skin/skin1.webp'),
       require('../assets/images/IntegumentarySystem/Skin/skin2.webp'),
@@ -603,29 +604,28 @@ const sliderImages = [
       require('../assets/images/IntegumentarySystem/Skin/skin8.webp'),
       require('../assets/images/IntegumentarySystem/Skin/skin9.webp'),
       // require('../assets/images/IntegumentarySystem/Skin/skin10.webp'),
-      require('../assets/images/IntegumentarySystem/Skin/skin11.webp')
-    ]
+      require('../assets/images/IntegumentarySystem/Skin/skin11.webp'),
+    ],
   },
   {
-    title: "Lymphatic System",
+    title: 'Lymphatic System',
     sliderImages: [
       require('../assets/images/LymphaticSystem/Introduction/Lymphatic-System.webp'),
-
-    ]
+    ],
   },
   {
-    title: "Lymph Node",
+    title: 'Lymph Node',
     sliderImages: [
       require('../assets/images/LymphaticSystem/LymphNode/node1.webp'),
       require('../assets/images/LymphaticSystem/LymphNode/node2.webp'),
       require('../assets/images/LymphaticSystem/LymphNode/node3.webp'),
       require('../assets/images/LymphaticSystem/LymphNode/node5.webp'),
       require('../assets/images/LymphaticSystem/LymphNode/node6.webp'),
-      require('../assets/images/LymphaticSystem/LymphNode/node8.webp')
-    ]
+      require('../assets/images/LymphaticSystem/LymphNode/node8.webp'),
+    ],
   },
   {
-    title: "Palatine Tonsil",
+    title: 'Palatine Tonsil',
     sliderImages: [
       require('../assets/images/LymphaticSystem/PalantineTonsil/tonsil1.webp'),
       require('../assets/images/LymphaticSystem/PalantineTonsil/tonsil2.webp'),
@@ -633,12 +633,11 @@ const sliderImages = [
       require('../assets/images/LymphaticSystem/PalantineTonsil/tonsil4.webp'),
       require('../assets/images/LymphaticSystem/PalantineTonsil/tonsil5.webp'),
       require('../assets/images/LymphaticSystem/PalantineTonsil/tonsil6.webp'),
-      require('../assets/images/LymphaticSystem/PalantineTonsil/tonsil7.webp')
-
-    ]
+      require('../assets/images/LymphaticSystem/PalantineTonsil/tonsil7.webp'),
+    ],
   },
   {
-    title: "Spleen",
+    title: 'Spleen',
     sliderImages: [
       require('../assets/images/LymphaticSystem/Spleen/spleen1.webp'),
       require('../assets/images/LymphaticSystem/Spleen/spleen2.webp'),
@@ -647,10 +646,10 @@ const sliderImages = [
       require('../assets/images/LymphaticSystem/Spleen/spleen5.webp'),
       require('../assets/images/LymphaticSystem/Spleen/spleen6.webp'),
       require('../assets/images/LymphaticSystem/Spleen/spleen7.webp'),
-    ]
+    ],
   },
   {
-    title: "Thymus",
+    title: 'Thymus',
     sliderImages: [
       require('../assets/images/LymphaticSystem/Thymus/thymus1.webp'),
       require('../assets/images/LymphaticSystem/Thymus/thymus2.webp'),
@@ -658,17 +657,17 @@ const sliderImages = [
       require('../assets/images/LymphaticSystem/Thymus/thymus4.webp'),
       require('../assets/images/LymphaticSystem/Thymus/thymus5.webp'),
       require('../assets/images/LymphaticSystem/Thymus/thymus6.webp'),
-      require('../assets/images/LymphaticSystem/Thymus/thymus8.webp')
-    ]
+      require('../assets/images/LymphaticSystem/Thymus/thymus8.webp'),
+    ],
   },
   {
-    title: "Male Reproductive System",
+    title: 'Male Reproductive System',
     sliderImages: [
       // require('../assets/images/MaleReproductiveSystem/Introduction/malereproductive.webp'),
-    ]
+    ],
   },
   {
-    title: "Ductus Deferens",
+    title: 'Ductus Deferens',
     sliderImages: [
       require('../assets/images/MaleReproductiveSystem/DuctusDeferens/vasdef1.webp'),
       require('../assets/images/MaleReproductiveSystem/DuctusDeferens/vasdef2.webp'),
@@ -678,10 +677,10 @@ const sliderImages = [
       require('../assets/images/MaleReproductiveSystem/DuctusDeferens/vasdef7.webp'),
       require('../assets/images/MaleReproductiveSystem/DuctusDeferens/vasdef8.webp'),
       // require('../assets/images/MaleReproductiveSystem/DuctusDeferens/vasdeference.webp')
-    ]
+    ],
   },
   {
-    title: "Epididymis",
+    title: 'Epididymis',
     sliderImages: [
       require('../assets/images/MaleReproductiveSystem/Epididymis/epidi1.webp'),
       require('../assets/images/MaleReproductiveSystem/Epididymis/epidi2.webp'),
@@ -690,31 +689,31 @@ const sliderImages = [
       require('../assets/images/MaleReproductiveSystem/Epididymis/epidi8.webp'),
       // require('../assets/images/MaleReproductiveSystem/Epididymis/epidi9.webp'),
       require('../assets/images/MaleReproductiveSystem/Epididymis/epidi11.webp'),
-      require('../assets/images/MaleReproductiveSystem/Epididymis/epidi12.webp')
-    ]
+      require('../assets/images/MaleReproductiveSystem/Epididymis/epidi12.webp'),
+    ],
   },
   {
-    title: "Penis",
+    title: 'Penis',
     sliderImages: [
       require('../assets/images/MaleReproductiveSystem/Penis/penis1.webp'),
       require('../assets/images/MaleReproductiveSystem/Penis/penis2.webp'),
       require('../assets/images/MaleReproductiveSystem/Penis/penis5.webp'),
       require('../assets/images/MaleReproductiveSystem/Penis/penis6.webp'),
       require('../assets/images/MaleReproductiveSystem/Penis/penis7.webp'),
-    ]
+    ],
   },
   {
-    title: "Prostate Gland",
+    title: 'Prostate Gland',
     sliderImages: [
       require('../assets/images/MaleReproductiveSystem/ProstateGland/prostate1.webp'),
       require('../assets/images/MaleReproductiveSystem/ProstateGland/prostate2.webp'),
       require('../assets/images/MaleReproductiveSystem/ProstateGland/prostate3.webp'),
       require('../assets/images/MaleReproductiveSystem/ProstateGland/prostate6.webp'),
       require('../assets/images/MaleReproductiveSystem/ProstateGland/prostate7.webp'),
-    ]
+    ],
   },
   {
-    title: "Seminal Vesicle",
+    title: 'Seminal Vesicle',
     sliderImages: [
       require('../assets/images/MaleReproductiveSystem/SeminalVesicle/semives1.webp'),
       require('../assets/images/MaleReproductiveSystem/SeminalVesicle/semives2.webp'),
@@ -722,11 +721,11 @@ const sliderImages = [
       require('../assets/images/MaleReproductiveSystem/SeminalVesicle/semives4.webp'),
       require('../assets/images/MaleReproductiveSystem/SeminalVesicle/semives6.webp'),
       require('../assets/images/MaleReproductiveSystem/SeminalVesicle/semives7.webp'),
-      require('../assets/images/MaleReproductiveSystem/SeminalVesicle/semives8.webp')
-    ]
+      require('../assets/images/MaleReproductiveSystem/SeminalVesicle/semives8.webp'),
+    ],
   },
   {
-    title: "Testis",
+    title: 'Testis',
     sliderImages: [
       require('../assets/images/MaleReproductiveSystem/Testis/testis.webp'),
       require('../assets/images/MaleReproductiveSystem/Testis/testis1.webp'),
@@ -734,18 +733,17 @@ const sliderImages = [
       require('../assets/images/MaleReproductiveSystem/Testis/testis3.webp'),
       require('../assets/images/MaleReproductiveSystem/Testis/testis4.webp'),
       require('../assets/images/MaleReproductiveSystem/Testis/testis5.webp'),
-      require('../assets/images/MaleReproductiveSystem/Testis/testis11.webp')
-
-    ]
+      require('../assets/images/MaleReproductiveSystem/Testis/testis11.webp'),
+    ],
   },
   {
-    title: "Renal System",
+    title: 'Renal System',
     sliderImages: [
       require('../assets/images/RenalSystem/Introduction/renalsystem.webp'),
-    ]
+    ],
   },
   {
-    title: "Kidney",
+    title: 'Kidney',
     sliderImages: [
       require('../assets/images/RenalSystem/Kidney/kidney.webp'),
       require('../assets/images/RenalSystem/Kidney/kidney0.webp'),
@@ -753,29 +751,28 @@ const sliderImages = [
       require('../assets/images/RenalSystem/Kidney/kidney2.webp'),
       require('../assets/images/RenalSystem/Kidney/kidney3.webp'),
       require('../assets/images/RenalSystem/Kidney/kidney4.webp'),
-      require('../assets/images/RenalSystem/Kidney/kidney9.webp')
-    ]
+      require('../assets/images/RenalSystem/Kidney/kidney9.webp'),
+    ],
   },
   {
-    title: "Ureter",
+    title: 'Ureter',
     sliderImages: [
       require('../assets/images/RenalSystem/Ureter/ureter1.webp'),
       // require('../assets/images/RenalSystem/Ureter/ureter2.webp'),
       require('../assets/images/RenalSystem/Ureter/ureter3.webp'),
       require('../assets/images/RenalSystem/Ureter/ureter4.webp'),
       require('../assets/images/RenalSystem/Ureter/ureter6.webp'),
-    ]
+    ],
   },
   {
-    title: "Urethra",
+    title: 'Urethra',
     sliderImages: [
       require('../assets/images/RenalSystem/Urethra/urethra1.webp'),
       require('../assets/images/RenalSystem/Urethra/urethra2.webp'),
-
-    ]
+    ],
   },
   {
-    title: "Urinary Bladder",
+    title: 'Urinary Bladder',
     sliderImages: [
       require('../assets/images/RenalSystem/UrinaryBladder/bladder1.webp'),
       require('../assets/images/RenalSystem/UrinaryBladder/bladder2.webp'),
@@ -785,19 +782,18 @@ const sliderImages = [
       require('../assets/images/RenalSystem/UrinaryBladder/bladder8.webp'),
       require('../assets/images/RenalSystem/UrinaryBladder/bladder9.webp'),
       require('../assets/images/RenalSystem/UrinaryBladder/bladder11.webp'),
-      require('../assets/images/RenalSystem/UrinaryBladder/urinarybladder.webp')
-
-    ]
+      require('../assets/images/RenalSystem/UrinaryBladder/urinarybladder.webp'),
+    ],
   },
   {
-    title: "Salivary Gland",
+    title: 'Salivary Gland',
     sliderImages: [
       require('../assets/images/SalivaryGland/Introduction/sal.webp'),
       require('../assets/images/SalivaryGland/Introduction/sal1.webp'),
-    ]
+    ],
   },
   {
-    title: "Parotid Gland",
+    title: 'Parotid Gland',
     sliderImages: [
       require('../assets/images/SalivaryGland/ParotidGland/parotid1.webp'),
       require('../assets/images/SalivaryGland/ParotidGland/parotid2.webp'),
@@ -808,36 +804,35 @@ const sliderImages = [
       require('../assets/images/SalivaryGland/ParotidGland/parotid7.webp'),
       require('../assets/images/SalivaryGland/ParotidGland/parotid8.webp'),
       // require('../assets/images/SalivaryGland/ParotidGland/serousparotidgland.webp')
-
-    ]
+    ],
   },
   {
-    title: "Sublingual Gland",
+    title: 'Sublingual Gland',
     sliderImages: [
       require('../assets/images/SalivaryGland/SublingualGland/sublingual2.webp'),
       require('../assets/images/SalivaryGland/SublingualGland/sublingual3.webp'),
       require('../assets/images/SalivaryGland/SublingualGland/sublingual5.webp'),
       require('../assets/images/SalivaryGland/SublingualGland/sublingual6.webp'),
       require('../assets/images/SalivaryGland/SublingualGland/muscuslingualgland.webp'),
-    ]
+    ],
   },
   {
-    title: "Submandibular Gland",
+    title: 'Submandibular Gland',
     sliderImages: [
       require('../assets/images/SalivaryGland/SubmandibularGland/submandibular3.webp'),
       require('../assets/images/SalivaryGland/SubmandibularGland/submandibular4.webp'),
       require('../assets/images/SalivaryGland/SubmandibularGland/submandibular5.webp'),
       // require('../assets/images/SalivaryGland/SubmandibularGland/submandibular6.webp'),
-    ]
+    ],
   },
   {
-    title: "Special Senses-Eye",
+    title: 'Special Senses-Eye',
     sliderImages: [
       require('../assets/images/SpecialSensesEye/Introduction/specialsense.webp'),
-    ]
+    ],
   },
   {
-    title: "Cornea",
+    title: 'Cornea',
     sliderImages: [
       require('../assets/images/SpecialSensesEye/Cornea/cornea.webp'),
       require('../assets/images/SpecialSensesEye/Cornea/cornea1.webp'),
@@ -846,29 +841,29 @@ const sliderImages = [
       require('../assets/images/SpecialSensesEye/Cornea/cornea5.webp'),
       require('../assets/images/SpecialSensesEye/Cornea/cornea6.webp'),
       require('../assets/images/SpecialSensesEye/Cornea/cornea7.webp'),
-      require('../assets/images/SpecialSensesEye/Cornea/cornea8.webp')
-    ]
+      require('../assets/images/SpecialSensesEye/Cornea/cornea8.webp'),
+    ],
   },
   {
-    title: "Eyelid",
+    title: 'Eyelid',
     sliderImages: [
       require('../assets/images/SpecialSensesEye/Eyelid/eyelid3.webp'),
       require('../assets/images/SpecialSensesEye/Eyelid/eyelid4.webp'),
       require('../assets/images/SpecialSensesEye/Eyelid/eyelid5.webp'),
       require('../assets/images/SpecialSensesEye/Eyelid/eyelid6.webp'),
-    ]
+    ],
   },
   {
-    title: "Optic Nerve",
+    title: 'Optic Nerve',
     sliderImages: [
       require('../assets/images/SpecialSensesEye/OpticNerve/opticnerve1.webp'),
       require('../assets/images/SpecialSensesEye/OpticNerve/opticnerve2.webp'),
       require('../assets/images/SpecialSensesEye/OpticNerve/opticnerve3.webp'),
       require('../assets/images/SpecialSensesEye/OpticNerve/opticnerve4.webp'),
-    ]
+    ],
   },
   {
-    title: "Retina",
+    title: 'Retina',
     sliderImages: [
       // require('../assets/images/SpecialSensesEye/Retina/retina.webp'),
       require('../assets/images/SpecialSensesEye/Retina/retina1.webp'),
@@ -877,17 +872,17 @@ const sliderImages = [
       require('../assets/images/SpecialSensesEye/Retina/retina4.webp'),
       require('../assets/images/SpecialSensesEye/Retina/retina5.webp'),
       // require('../assets/images/SpecialSensesEye/Retina/retina6.webp'),
-      require('../assets/images/SpecialSensesEye/Retina/retina7.webp')
-    ]
+      require('../assets/images/SpecialSensesEye/Retina/retina7.webp'),
+    ],
   },
   {
-    title: "Central Nervous System",
+    title: 'Central Nervous System',
     sliderImages: [
       require('../assets/images/CentralNervousSystem/Introduction/central-nervous-system.webp'),
-    ]
+    ],
   },
   {
-    title: "Cerebellum",
+    title: 'Cerebellum',
     sliderImages: [
       require('../assets/images/CentralNervousSystem/Cerebellum/cerebellum1.webp'),
       require('../assets/images/CentralNervousSystem/Cerebellum/cerebellum2.webp'),
@@ -898,11 +893,11 @@ const sliderImages = [
       require('../assets/images/CentralNervousSystem/Cerebellum/cerebellum7.webp'),
       require('../assets/images/CentralNervousSystem/Cerebellum/cerebellum1.webp'),
       require('../assets/images/CentralNervousSystem/Cerebellum/cerebellum.webp'),
-      require('../assets/images/CentralNervousSystem/Cerebellum/cerebellum.webp')
-    ]
+      require('../assets/images/CentralNervousSystem/Cerebellum/cerebellum.webp'),
+    ],
   },
   {
-    title: "Cerebrum",
+    title: 'Cerebrum',
     sliderImages: [
       require('../assets/images/CentralNervousSystem/Cerebrum/cortex1.webp'),
       require('../assets/images/CentralNervousSystem/Cerebrum/cortex2.webp'),
@@ -911,11 +906,11 @@ const sliderImages = [
       require('../assets/images/CentralNervousSystem/Cerebrum/cortex5.webp'),
       require('../assets/images/CentralNervousSystem/Cerebrum/cerebralcortex.webp'),
       require('../assets/images/CentralNervousSystem/Cerebrum/cortex7.webp'),
-      require('../assets/images/CentralNervousSystem/Cerebrum/cortex9.webp')
-    ]
+      require('../assets/images/CentralNervousSystem/Cerebrum/cortex9.webp'),
+    ],
   },
   {
-    title: "Ganglia",
+    title: 'Ganglia',
     sliderImages: [
       require('../assets/images/CentralNervousSystem/Ganglia/dorsal1.webp'),
       require('../assets/images/CentralNervousSystem/Ganglia/dorsal2.webp'),
@@ -925,12 +920,11 @@ const sliderImages = [
       require('../assets/images/CentralNervousSystem/Ganglia/dorsal6.webp'),
       require('../assets/images/CentralNervousSystem/Ganglia/dorsal6.webp'),
       require('../assets/images/CentralNervousSystem/Ganglia/dorsal7.webp'),
-      require('../assets/images/CentralNervousSystem/Ganglia/dorsalrootganglion.webp')
-
-    ]
+      require('../assets/images/CentralNervousSystem/Ganglia/dorsalrootganglion.webp'),
+    ],
   },
   {
-    title: "Nerve Fiber(Myelinated)",
+    title: 'Nerve Fiber(Myelinated)',
     sliderImages: [
       require('../assets/images/CentralNervousSystem/NerveFiber/myelinated1.webp'),
       require('../assets/images/CentralNervousSystem/NerveFiber/myelinated3.webp'),
@@ -938,10 +932,10 @@ const sliderImages = [
       require('../assets/images/CentralNervousSystem/NerveFiber/myelinated6.webp'),
       require('../assets/images/CentralNervousSystem/NerveFiber/singlenervefiber.webp'),
       require('../assets/images/CentralNervousSystem/NerveFiber/multipolarneuron.webp'),
-    ]
+    ],
   },
   {
-    title: "Spinal Cord",
+    title: 'Spinal Cord',
     sliderImages: [
       require('../assets/images/CentralNervousSystem/SpinalCord/spinalcord1.webp'),
       require('../assets/images/CentralNervousSystem/SpinalCord/spinalcord2.webp'),
@@ -950,10 +944,10 @@ const sliderImages = [
       require('../assets/images/CentralNervousSystem/SpinalCord/spinalcord5.webp'),
       require('../assets/images/CentralNervousSystem/SpinalCord/spinalcord6.webp'),
       require('../assets/images/CentralNervousSystem/SpinalCord/spinalcord.webp'),
-    ]
+    ],
   },
   {
-    title: "Sympathetic Ganglion",
+    title: 'Sympathetic Ganglion',
     sliderImages: [
       require('../assets/images/CentralNervousSystem/SympatheticGanglion/sympathaticganglion.webp'),
       require('../assets/images/CentralNervousSystem/SympatheticGanglion/sympathetic1.webp'),
@@ -963,17 +957,17 @@ const sliderImages = [
       require('../assets/images/CentralNervousSystem/SympatheticGanglion/sympathetic6.webp'),
       require('../assets/images/CentralNervousSystem/SympatheticGanglion/sympathetic7.webp'),
       require('../assets/images/CentralNervousSystem/SympatheticGanglion/sympathetic9.webp'),
-      require('../assets/images/CentralNervousSystem/SympatheticGanglion/sympathetic10.webp')
-    ]
+      require('../assets/images/CentralNervousSystem/SympatheticGanglion/sympathetic10.webp'),
+    ],
   },
   {
-    title: "Endocrine System",
+    title: 'Endocrine System',
     sliderImages: [
       require('../assets/images/EndocrineSystem/Introduction/endocrinesystem.webp'),
-    ]
+    ],
   },
   {
-    title: "Adrenal Gland",
+    title: 'Adrenal Gland',
     sliderImages: [
       require('../assets/images/EndocrineSystem/AdrenalGland/adren.webp'),
       require('../assets/images/EndocrineSystem/AdrenalGland/adren1.webp'),
@@ -984,10 +978,10 @@ const sliderImages = [
       require('../assets/images/EndocrineSystem/AdrenalGland/adren8.webp'),
       require('../assets/images/EndocrineSystem/AdrenalGland/adren7.webp'),
       require('../assets/images/EndocrineSystem/AdrenalGland/adren9.webp'),
-    ]
+    ],
   },
   {
-    title: "Parathyroid Gland",
+    title: 'Parathyroid Gland',
     sliderImages: [
       require('../assets/images/EndocrineSystem/ParathyroidGland/parathyroid1.webp'),
       require('../assets/images/EndocrineSystem/ParathyroidGland/parathyroid2.webp'),
@@ -998,10 +992,10 @@ const sliderImages = [
       require('../assets/images/EndocrineSystem/ParathyroidGland/parathyroid7.webp'),
       require('../assets/images/EndocrineSystem/ParathyroidGland/parathyroid8.webp'),
       require('../assets/images/EndocrineSystem/ParathyroidGland/parathyroid9.webp'),
-    ]
+    ],
   },
   {
-    title: "Pituitary Gland",
+    title: 'Pituitary Gland',
     sliderImages: [
       require('../assets/images/EndocrineSystem/PituitaryGland/pitutary1.webp'),
       require('../assets/images/EndocrineSystem/PituitaryGland/pitutary2.webp'),
@@ -1012,11 +1006,11 @@ const sliderImages = [
       require('../assets/images/EndocrineSystem/PituitaryGland/pitutary7.webp'),
       require('../assets/images/EndocrineSystem/PituitaryGland/pitutary8.webp'),
       require('../assets/images/EndocrineSystem/PituitaryGland/pitutary9.webp'),
-      require('../assets/images/EndocrineSystem/PituitaryGland/pitutary10.webp')
-    ]
+      require('../assets/images/EndocrineSystem/PituitaryGland/pitutary10.webp'),
+    ],
   },
   {
-    title: "Thyroid Gland",
+    title: 'Thyroid Gland',
     sliderImages: [
       require('../assets/images/EndocrineSystem/ThyroidGland/thyroid1.webp'),
       require('../assets/images/EndocrineSystem/ThyroidGland/thyroid2.webp'),
@@ -1026,18 +1020,18 @@ const sliderImages = [
       require('../assets/images/EndocrineSystem/ThyroidGland/thyroid6.webp'),
       require('../assets/images/EndocrineSystem/ThyroidGland/thyroid7.webp'),
       require('../assets/images/EndocrineSystem/ThyroidGland/thyroid8.webp'),
-      require('../assets/images/EndocrineSystem/ThyroidGland/thyroid9.webp')
-    ]
+      require('../assets/images/EndocrineSystem/ThyroidGland/thyroid9.webp'),
+    ],
   },
   {
-    title: "Female Reproductive System",
+    title: 'Female Reproductive System',
     sliderImages: [
       require('../assets/images/FemaleReproductiveSystem/Introduction/female_repro.webp'),
       require('../assets/images/FemaleReproductiveSystem/Introduction/vagina_new.webp'),
-    ]
+    ],
   },
   {
-    title: "Cervix",
+    title: 'Cervix',
     sliderImages: [
       require('../assets/images/FemaleReproductiveSystem/Cervix/cervix.webp'),
       require('../assets/images/FemaleReproductiveSystem/Cervix/cervix1.webp'),
@@ -1046,10 +1040,10 @@ const sliderImages = [
       require('../assets/images/FemaleReproductiveSystem/Cervix/cervix4.webp'),
       require('../assets/images/FemaleReproductiveSystem/Cervix/cervix5.webp'),
       require('../assets/images/FemaleReproductiveSystem/Cervix/cervix6.webp'),
-    ]
+    ],
   },
   {
-    title: "Mammary Gland",
+    title: 'Mammary Gland',
     sliderImages: [
       require('../assets/images/FemaleReproductiveSystem/MammaryGland/breast.webp'),
       require('../assets/images/FemaleReproductiveSystem/MammaryGland/breast1.webp'),
@@ -1058,10 +1052,10 @@ const sliderImages = [
       require('../assets/images/FemaleReproductiveSystem/MammaryGland/breast4.webp'),
       require('../assets/images/FemaleReproductiveSystem/MammaryGland/breast5.webp'),
       require('../assets/images/FemaleReproductiveSystem/MammaryGland/breast7.webp'),
-    ]
+    ],
   },
   {
-    title: "Ovary",
+    title: 'Ovary',
     sliderImages: [
       require('../assets/images/FemaleReproductiveSystem/Ovary/ovary.webp'),
       require('../assets/images/FemaleReproductiveSystem/Ovary/ovary1.webp'),
@@ -1071,22 +1065,22 @@ const sliderImages = [
       require('../assets/images/FemaleReproductiveSystem/Ovary/ovary5.webp'),
       require('../assets/images/FemaleReproductiveSystem/Ovary/ovary7.webp'),
       require('../assets/images/FemaleReproductiveSystem/Ovary/ovary8.webp'),
-      require('../assets/images/FemaleReproductiveSystem/Ovary/ovary9.webp')
-    ]
+      require('../assets/images/FemaleReproductiveSystem/Ovary/ovary9.webp'),
+    ],
   },
   {
-    title: "Uterine Tube",
+    title: 'Uterine Tube',
     sliderImages: [
       require('../assets/images/FemaleReproductiveSystem/UterineTube/uterinetube2.webp'),
       require('../assets/images/FemaleReproductiveSystem/UterineTube/uterinetube3.webp'),
       require('../assets/images/FemaleReproductiveSystem/UterineTube/uterinetube4.webp'),
       require('../assets/images/FemaleReproductiveSystem/UterineTube/uterinetube6.webp'),
       require('../assets/images/FemaleReproductiveSystem/UterineTube/uterinetube7.webp'),
-      require('../assets/images/FemaleReproductiveSystem/UterineTube/uterinetue.webp')
-    ]
+      require('../assets/images/FemaleReproductiveSystem/UterineTube/uterinetue.webp'),
+    ],
   },
   {
-    title: "Uterus",
+    title: 'Uterus',
     sliderImages: [
       require('../assets/images/FemaleReproductiveSystem/Uterus/uterus1.webp'),
       require('../assets/images/FemaleReproductiveSystem/Uterus/uterus2.webp'),
@@ -1098,12 +1092,10 @@ const sliderImages = [
       require('../assets/images/FemaleReproductiveSystem/Uterus/uterus8.webp'),
       require('../assets/images/FemaleReproductiveSystem/Uterus/uterus9.webp'),
       require('../assets/images/FemaleReproductiveSystem/Uterus/uterus10.webp'),
-      require('../assets/images/FemaleReproductiveSystem/Uterus/uterus.webp')
-    ]
+      require('../assets/images/FemaleReproductiveSystem/Uterus/uterus.webp'),
+    ],
   },
-]
-
-
+];
 
 const categoriesone = [
   {
@@ -1333,7 +1325,6 @@ let topics = [
         title: 'Stratified Squamous Epithelial',
         imgPath: require('../assets/logos/topics/stratifiedsquamousepithellium.png'),
       },
-
     ],
   },
 
@@ -1912,8 +1903,8 @@ let AllHistologyContent = [
               content: [
                 'Simple columnar with cilia:',
                 'Simple columnar epithelial cells with cilia on their apical surfaces.',
-                'Found in the lining of the fallopian tubes, uterus,central canal of spinal cord and parts of the respiratory system, where the beating of the cilia helps remove particulate matter.'
-              ]
+                'Found in the lining of the fallopian tubes, uterus,central canal of spinal cord and parts of the respiratory system, where the beating of the cilia helps remove particulate matter.',
+              ],
             },
             {
               title: 'Simple columnar with brush /straited border:',
@@ -2166,8 +2157,6 @@ let AllHistologyContent = [
           ],
         },
       },
-
-
     ],
   },
   {
@@ -2300,8 +2289,6 @@ let AllHistologyContent = [
             {
               title: 'COMPACT BONE:',
               content: [
-
-
                 {
                   title: 'LOCATION',
                   orderedList: true,
@@ -2403,8 +2390,6 @@ let AllHistologyContent = [
                   content:
                     'Compact bone (or cortical bone) forms the hard external layer of all bones and surrounds the medullary cavity, or bone marrow. It provides protection and strength to bones. Compact bone tissue consists of units called osteons or Haversian systems.',
                 },
-
-
               ],
             },
           ],
@@ -2532,7 +2517,7 @@ let AllHistologyContent = [
                 'Connective tissue specialized to store fat.',
                 'Cytoplasm of fat cells contains large amount of triglyceride deposits in the form of one or more lipid droplets with no limiting membrane.',
                 'Clusters of adipocytes are divided into lobes and lobules by septa of collagen tissue.',
-              ]
+              ],
             },
             {
               title: 'Fat cells:',
@@ -2633,7 +2618,7 @@ let AllHistologyContent = [
           'Mucosa',
           'Submucosa',
           'Muscular externa',
-          'Serosa or adventitia'
+          'Serosa or adventitia',
         ],
         content: {
           subTopic: [
@@ -2845,8 +2830,7 @@ let AllHistologyContent = [
         id: 3,
         title: 'STOMACH FUNDUS & BODY',
         isIntroduction: false,
-        content:
-        {
+        content: {
           subTopic: [
             {
               title: 'IDENTIFICATION POINTS',
@@ -2938,7 +2922,7 @@ let AllHistologyContent = [
               ],
             },
           ],
-        }
+        },
       },
       {
         id: 4,
@@ -3027,8 +3011,7 @@ let AllHistologyContent = [
         id: 5,
         title: 'DUODENUM:',
         isIntroduction: false,
-        content:
-        {
+        content: {
           subTopic: [
             {
               title: 'STRUCTURE',
@@ -3086,15 +3069,13 @@ let AllHistologyContent = [
                 'It receives partially digested food (known as chyme) from the stomach and plays a vital role in the chemical digestion of chyme in preparation for absorption in the small intestine',
             },
           ],
-        }
-
+        },
       },
       {
         id: 6,
         title: 'APPENDIX',
         isIntroduction: false,
-        content:
-        {
+        content: {
           subTopic: [
             {
               title: 'Identification points',
@@ -3117,8 +3098,7 @@ let AllHistologyContent = [
             },
             {
               title: 'Structure',
-              content:
-              {
+              content: {
                 subTopic: [
                   {
                     title: 'Mucosa:',
@@ -3153,7 +3133,7 @@ let AllHistologyContent = [
                     ],
                   },
                 ],
-              }
+              },
             },
             {
               title: 'Clinical:',
@@ -3165,15 +3145,13 @@ let AllHistologyContent = [
               ],
             },
           ],
-        }
-
+        },
       },
       {
         id: 7,
         title: 'ILEUM',
         isIntroduction: false,
-        content:
-        {
+        content: {
           subTopic: [
             {
               title: 'Identification points',
@@ -3194,8 +3172,7 @@ let AllHistologyContent = [
             },
             {
               title: 'Structure',
-              content:
-              {
+              content: {
                 subTopic: [
                   {
                     title: 'Mucosa:',
@@ -3207,7 +3184,6 @@ let AllHistologyContent = [
                     content: [
                       'Contain tubular intestinal glands or crypts of liberkunn and numerous aggregations of lymphatic nodules called ‘payer’s patches’.',
                       'Crypts of liberkunn consists of following cells,',
-
                     ],
                   },
                   {
@@ -3248,7 +3224,7 @@ let AllHistologyContent = [
                       'Outer most layer made up of few connective tissue cells and fibres, covered by mesothelium of visceral peritoneum.',
                   },
                 ],
-              }
+              },
             },
             {
               title: 'Functions:',
@@ -3263,14 +3239,13 @@ let AllHistologyContent = [
               ],
             },
           ],
-        }
+        },
       },
       {
         id: 8,
         title: 'JEJUNUM',
         isIntroduction: false,
-        content:
-        {
+        content: {
           subTopic: [
             {
               title: 'Identification points',
@@ -3290,8 +3265,7 @@ let AllHistologyContent = [
             },
             {
               title: 'Structure',
-              content:
-              {
+              content: {
                 subTopic: [
                   {
                     title: 'Mucosa:',
@@ -3303,7 +3277,6 @@ let AllHistologyContent = [
                     content: [
                       'Contain tubular intestinal glands or crypts of liberkunn.',
                       'Crypts of liberkunn consists of following cells,',
-
                     ],
                   },
                   {
@@ -3345,7 +3318,7 @@ let AllHistologyContent = [
                       'Outer most layer made up of few connective tissue cells and fibres, covered by mesothelium of visceral peritoneum.',
                   },
                 ],
-              }
+              },
             },
             {
               title: 'Functions:',
@@ -3360,14 +3333,13 @@ let AllHistologyContent = [
               ],
             },
           ],
-        }
+        },
       },
       {
         id: 9,
         title: 'COLON & LARGE INTESTINE',
         isIntroduction: false,
-        content:
-        {
+        content: {
           subTopic: [
             {
               title: 'Identification points',
@@ -3391,8 +3363,7 @@ let AllHistologyContent = [
             },
             {
               title: 'Structure',
-              content:
-              {
+              content: {
                 subTopic: [
                   {
                     title: 'Mucosa:',
@@ -3404,7 +3375,6 @@ let AllHistologyContent = [
                     content: [
                       'Contain tubular intestinal glands or crypts of liberkunn. But here crypts of liberkunn are devoid of paneth cells.',
                       'Crypts of liberkunn consists of following cells,',
-
                     ],
                   },
                   {
@@ -3441,7 +3411,7 @@ let AllHistologyContent = [
                       'It is said to be incomplete in posterior aspect of ascending and descending colon. Here it shows many peritoneal pockets filled with adipose tissue and is termed as ‘appendices epiploicae’.',
                   },
                 ],
-              }
+              },
             },
             {
               title: 'Functions:',
@@ -3451,14 +3421,13 @@ let AllHistologyContent = [
                 'Function is to reabsorb fluids and process waste products from the body and prepare for its elimination. The colon consists of four parts: descending colon, ascending colon, transverse colon, and sigmoid colon.',
             },
           ],
-        }
+        },
       },
       {
         id: 10,
         title: 'Rectum & Ano-rectal junction',
         isIntroduction: false,
-        content:
-        {
+        content: {
           subTopic: [
             {
               title: 'Rectum',
@@ -3466,13 +3435,12 @@ let AllHistologyContent = [
               unOrderedList: true,
               content: [
                 'This specimen is from the rectum as it narrows approaching the anal canal. Vertical folds project from the mucosa into the lumen to form the anal columns. (Transverse folds also occur in the rectum but are not present in this specimen.)',
-                'The rectum is composed of the four layers characteristic of the gastrointestinal tract.'
+                'The rectum is composed of the four layers characteristic of the gastrointestinal tract.',
               ],
             },
             {
               title: 'Mucosa (or mucous membrane)',
-              content:
-              {
+              content: {
                 subTopic: [
                   {
                     title: 'Villi - ',
@@ -3480,12 +3448,11 @@ let AllHistologyContent = [
                       'cover the surface of the mucosa.',
                       'Absorptive Cells (or Enterocytes) - simple columnar cells with microvilli (or brush border).',
                       'Goblet Cells - secrete mucus for lubrication.',
-
                     ],
                   },
                   {
                     title: 'Crypts',
-                    content: []
+                    content: [],
                   },
                   {
                     title: 'Lamina Propria',
@@ -3515,7 +3482,7 @@ let AllHistologyContent = [
                     content: 'absent in this specimen.',
                   },
                 ],
-              }
+              },
             },
             {
               title: 'Ano-Rectal Junction',
@@ -3559,7 +3526,7 @@ let AllHistologyContent = [
               ],
             },
           ],
-        }
+        },
       },
     ],
   },
@@ -3572,7 +3539,6 @@ let AllHistologyContent = [
         isIntroduction: true,
         introductionContent:
           'The male reproductive system consists of the testes, conducting tubules and ducts (epididymis, vas deferens, ejaculatory ducts), accessory sex glands (seminal vesicles, prostate, and bulbourethral glands), and the penis. These organs work to together to produce male gametes(sperm) and the other components of semen.',
-
       },
       {
         id: 1,
@@ -3592,13 +3558,11 @@ let AllHistologyContent = [
             ],
           },
         ],
-        content:
-        {
+        content: {
           subTopic: [
             {
               title: 'STRUCTURE',
-              content:
-              {
+              content: {
                 subTopic: [
                   {
                     title: 'MUCOSA:',
@@ -3626,7 +3590,7 @@ let AllHistologyContent = [
                     content: 'A thin layer of loose connective tissue.',
                   },
                 ],
-              }
+              },
             },
             {
               title: 'LOCATION',
@@ -3645,7 +3609,7 @@ let AllHistologyContent = [
                 'store and produce the majority of the fluid that makes up semen. During ejaculation, the fluid from the seminal vesicles is expelled into the ejaculatory duct where it can then move on to mix with sperm and other reproductive fluids.',
             },
           ],
-        }
+        },
       },
       {
         id: 2,
@@ -3668,8 +3632,7 @@ let AllHistologyContent = [
             ],
           },
         ],
-        content:
-        {
+        content: {
           subTopic: [
             {
               title: '1. EXTERNAL COVERINGS:',
@@ -3790,7 +3753,7 @@ let AllHistologyContent = [
                 'The development of the gonads is part of the prenatal development of the reproductive system and ultimately forms the testes in males and the ovaries in females. The gonads initially develop from the  mesothelial layer of the peritoneum.',
             },
           ],
-        }
+        },
       },
       {
         id: 3,
@@ -3800,13 +3763,11 @@ let AllHistologyContent = [
           'Also known as Vas deferens.',
           'The vas (ductus) deferens consists of an inner epithelial lining with supportive lamina propria. The epithelium lining the vas (ductus) deferens is pseudostratified columnar epithelium and is very similar to the epithelium seen in the epididymis.',
         ],
-        content:
-        {
+        content: {
           subTopic: [
             {
               title: 'MICROSCOPIC STRUCTURE:',
-              content:
-              {
+              content: {
                 subTopic: [
                   {
                     title: 'MUCOSA:',
@@ -3836,7 +3797,7 @@ let AllHistologyContent = [
                       'Contains loose areolar tissue with blood vessels and nerves.',
                   },
                 ],
-              }
+              },
             },
             {
               title: 'LOCATION',
@@ -3853,7 +3814,7 @@ let AllHistologyContent = [
                 'The vas deferens is a long, muscular tube that travels from the epididymis into the pelvic cavity, to just behind the bladder. The vas deferens transports mature sperm to the urethra, the tube that carries urine or sperm to outside of the body, in preparation for ejaculation.',
             },
           ],
-        }
+        },
       },
       {
         id: 4,
@@ -3909,8 +3870,7 @@ let AllHistologyContent = [
             ],
           },
         ],
-        content:
-        {
+        content: {
           subTopic: [
             {
               title: 'A. ERECTILE TISSUE:',
@@ -3966,14 +3926,13 @@ let AllHistologyContent = [
                 'In addition to its sexual function, the penis acts as a conduit for urine to leave the body.',
             },
           ],
-        }
+        },
       },
       {
         id: 6,
         title: 'PROSTATE GLAND',
         isIntroduction: false,
-        content:
-        {
+        content: {
           subTopic: [
             {
               title: 'STRUCTURE',
@@ -4011,10 +3970,8 @@ let AllHistologyContent = [
                 'main function is to secrete prostate fluid, one of the components of semen. The muscles of the prostate gland also help propel this seminal fluid into the urethra during ejaculation .',
             },
           ],
-        }
+        },
       },
-
-
     ],
   },
   {
@@ -4026,7 +3983,6 @@ let AllHistologyContent = [
         isIntroduction: true,
         introductionContent:
           'The organs of the female reproductive system are the ovaries, oviducts, uterus, vagina, placenta, and mammary glands. They work together for the production of female gametes (oocytes), fertilization, support of the developing fetus, delivering it to the outside world, and nutrition of the newborn.',
-
       },
       {
         id: 1,
@@ -4085,8 +4041,7 @@ let AllHistologyContent = [
         id: 2,
         title: 'CERVIX',
         isIntroduction: false,
-        content:
-        {
+        content: {
           subTopic: [
             {
               title: 'STRUCTURE',
@@ -4125,7 +4080,7 @@ let AllHistologyContent = [
               ],
             },
           ],
-        }
+        },
       },
       {
         id: 3,
@@ -4135,8 +4090,7 @@ let AllHistologyContent = [
           'The ovaries are small almond shaped structures, covered by a thick connective tissue capsule - the tunica albuginea. This is covered by a simple squamous mesothelium called the germinal epithelium.',
           'The ovary contains many primordial follicles, which are mostly found around the edges of the cortex.',
         ],
-        content:
-        {
+        content: {
           subTopic: [
             {
               title: 'GENERAL ORGNISATION:',
@@ -4150,7 +4104,6 @@ let AllHistologyContent = [
                   title: 'TUNICA ALBUGINEA :',
                   content: [
                     'A connective tissue layer lying beneath the germinal epithelium.',
-
                   ],
                 },
                 {
@@ -4256,8 +4209,7 @@ let AllHistologyContent = [
               ],
             },
           ],
-        }
-
+        },
       },
       {
         id: 4,
@@ -4265,14 +4217,11 @@ let AllHistologyContent = [
         isIntroduction: true,
         introductionContent:
           'Light micrographs of uterine tubes. The lamina epithelialis of the tunica mucosa of the uterine tubes is an intermittently ciliated columnar epithelium that contains two types of cells: a ciliated cell and a non- ciliated, secretory cell. This secretion probably also protects and nourishes the ovum.',
-        content:
-        {
+        content: {
           subTopic: [
             {
               title: 'STRUCTURE',
-              content: [
-                'Consists of following Layers:',
-              ],
+              content: ['Consists of following Layers:'],
             },
             {
               title: '1. MUCOSA:',
@@ -4320,7 +4269,7 @@ let AllHistologyContent = [
               ],
             },
           ],
-        }
+        },
       },
       {
         id: 5,
@@ -4328,8 +4277,7 @@ let AllHistologyContent = [
         isIntroduction: true,
         introductionContent:
           'The uterus has three layers: mucosa (endometrium), muscularis (myometrium) and serosa/adventitia (perimetrium). The endometrium (uterine mucous membrane) is lined with simple columnar epithelium (lamina epithelialis) and contains numerous tubular glands.',
-        content:
-        {
+        content: {
           subTopic: [
             {
               title: 'STRUCTURE',
@@ -4343,7 +4291,7 @@ let AllHistologyContent = [
                   orderedList: false,
                   content: [
                     'Uterine mucosa consists of simple columnar epithelium supported by a lamina propria.',
-                    'Endometrium is divisible into two regions :'
+                    'Endometrium is divisible into two regions :',
                   ],
                 },
                 {
@@ -4406,9 +4354,8 @@ let AllHistologyContent = [
               ],
             },
           ],
-        }
+        },
       },
-
     ],
   },
   {
@@ -4449,11 +4396,11 @@ let AllHistologyContent = [
               title: 'Protective Structures',
               content: [
                 'Since the CNS is so important, it is protected by a number of structures. First, the entire CNS is enclosed in bone. The brain is protected by the skull, while the spinal cord is protected by the vertebra of the spinal column. The brain and spinal cord are both covered with a protective tissueknown as meninges.',
-                'The entire CNS is also immersed in a substance known as cerebrospinal fluid, which forms a chemical environment to allow nerve fibers to transmit information effectively as well as offeringyet another layer of protection from potential damage.'
-              ]
+                'The entire CNS is also immersed in a substance known as cerebrospinal fluid, which forms a chemical environment to allow nerve fibers to transmit information effectively as well as offeringyet another layer of protection from potential damage.',
+              ],
             },
-          ]
-        }
+          ],
+        },
       },
       {
         id: 1,
@@ -4547,7 +4494,7 @@ let AllHistologyContent = [
           'They are aggregation of nerve cells.',
           'Found on some cranial nerves and on spinal nerves (dorsal root) and with autonomic nervous system.',
           'Each is covered by a smooth and firm membranous layer consisting of fibro- areolar tissue.',
-          'This covering is continuous with the epineurium of nerves..'
+          'This covering is continuous with the epineurium of nerves..',
         ],
         content: {
           subTopic: [
@@ -4661,7 +4608,7 @@ let AllHistologyContent = [
           'T: tuber',
           'P: pyramid',
           'U: uvula',
-          'N: nodulus'
+          'N: nodulus',
         ],
         content: {
           subTopic: [
@@ -4828,7 +4775,7 @@ let AllHistologyContent = [
         id: 0,
         isIntroduction: true,
         introductionContent:
-          'The lymphatic system is a network of tissues and organs that help rid the body of toxins, waste and other unwanted materials. The primary function of the lymphatic system is to transport lymph, a fluid containing infection-fighting white blood cells, throughout the body.'
+          'The lymphatic system is a network of tissues and organs that help rid the body of toxins, waste and other unwanted materials. The primary function of the lymphatic system is to transport lymph, a fluid containing infection-fighting white blood cells, throughout the body.',
       },
       {
         id: 1,
@@ -5051,7 +4998,6 @@ let AllHistologyContent = [
         isIntroduction: true,
         introductionContent:
           'The endocrine system is composed of glands that synthesize and secrete products, called hormones, directly into the blood rather than through a duct. Hormones are transported throughout the body where they influence only those cells that have receptors for that hormone.',
-
       },
       {
         id: 1,
@@ -5265,8 +5211,8 @@ let AllHistologyContent = [
                       'Funnel shaped superior extension of the pars distalis which surrounds the infundibular stem.',
                     ],
                   },
-                ]
-              }
+                ],
+              },
             },
             {
               title: 'B. NEUROHYPOPHYSIS:',
@@ -5427,15 +5373,16 @@ let AllHistologyContent = [
               'The integumentary system is composed of the following parts:',
               'Skin',
               'Skin appendages',
-              'Hairs', 'Nails', 'Sweat glands', 'Sebaceous glands',
+              'Hairs',
+              'Nails',
+              'Sweat glands',
+              'Sebaceous glands',
               'Subcutaneous tissue and deep fascia',
               'Mucocutaneous junctions',
               'Breasts',
-
             ],
           },
         ],
-
       },
       {
         id: 1,
@@ -5585,1714 +5532,1754 @@ let AllHistologyContent = [
   },
   {
     id: 3,
-    title: "Cartilage",
+    title: 'Cartilage',
 
     subTopics: [
       {
         id: 0,
         isIntroduction: true,
         introductionContent: [
-          "Cartilage is a resilient and smooth elastic tissue, a rubber-like padding that covers and protects the ends of long bones at the joints, and is a structural component of the rib cage, the ear, the nose, the bronchial tubes, the intervertebral discs, and many other body components.",
-          "Its main function is to connect bones together."
+          'Cartilage is a resilient and smooth elastic tissue, a rubber-like padding that covers and protects the ends of long bones at the joints, and is a structural component of the rib cage, the ear, the nose, the bronchial tubes, the intervertebral discs, and many other body components.',
+          'Its main function is to connect bones together.',
         ],
         content: {
           subTopic: [
             {
-              title: "There are three types of cartilage:",
+              title: 'There are three types of cartilage:',
               unOrderedList: true,
               orderedList: false,
               content: [
-                "Hyaline - most common, found in the ribs, nose, larynx, trachea. Is a precursor of bone.",
-                "Fibro- is found in invertebral discs, joint capsules, ligaments.",
-                "Elastic - is found in the external ear, epiglottis and larynx."
-              ]
-            }
-          ]
-        },
-      },
-      {
-        id: 1,
-        title: "Ealstic Cartilage",
-        isIntroduction: true,
-        introductionContent: [
-          "Elastic cartilage or yellow cartilage is a type of cartilage present in the outer ear, Eustachian tube and epiglottis. It contains elastic fiber networks and collagen type II fibers. The principal proteinis elastin.",
-          "Consists of ground substance, fibers, cells and perichondrium."
-        ],
-        content: {
-          subTopic: [
-            {
-              title: "COMPOSITION",
-              isIntroduction: false,
-              content: {
-                subTopic: [
-                  {
-                    title: "Fibers",
-                    unOrderedList: true,
-                    orderedList: false,
-                    content: [
-                      "Contains meshwork of branched and anastomotic elastic fibers and fewer amounts of type II collagen fibers.",
-                      "Elastic fibers are mainly concentrated in the center of cartilage."
-                    ]
-                  },
-                  {
-                    title: "Ground Substance:",
-                    unOrderedList: true,
-                    orderedList: false,
-                    content: [
-                      "Contains proteoglycans."
-                    ]
-                  },
-                  {
-                    title: "Cells",
-                    content: [
-                      "Contains proteoglycans.",
-                      "The cells are bigger than those found in hyaline cartilage.",
-                      "Intracellular substance is much less than hyaline cartilage.",
-                      "Cells are closely situated."
-                    ]
-                  },
-                  {
-                    title: "Perichondrium:",
-                    content: [
-                      "Of similar structure found in hyaline cartilage."
-                    ]
-                  }
-                ]
-              }
+                'Hyaline - most common, found in the ribs, nose, larynx, trachea. Is a precursor of bone.',
+                'Fibro- is found in invertebral discs, joint capsules, ligaments.',
+                'Elastic - is found in the external ear, epiglottis and larynx.',
+              ],
             },
-            {
-              title: "Location",
-              unOrderedList: true,
-              orderedList: false,
-              content: [
-                "External ear, walls of external auditory tube and canals, epiglottis, corniculate and cuneiform cartilage of larynx."
-              ]
-            },
-            {
-              title: "Function",
-              unOrderedList: true,
-              orderedList: false,
-              content: [
-                "Elastic cartilage function is two-fold: to change cartilage shape in response to tension, compression, and bending before returning to an at-rest state, and to provide a strong but flexible  structure."
-              ]
-            }
-          ]
-        }
-      },
-
-      {
-        id: 2,
-        title: "Hyaline Cartilage",
-        isIntroduction: false,
-        content: {
-          subTopic: [
-            {
-              title: "COMPOSITION",
-              content: {
-                subTopic: [
-                  {
-                    title: "Fibers",
-                    unOrderedList: true,
-                    orderedList: false,
-                    content: [
-                      "Thin fibrils of type II collagen.",
-                      "No cross striations.",
-                      "Small size and their refractive index (close to that of the substance) make the difficult to distinguish with the light microscope.",
-                      "Provides stability and strength to the cartilage.",
-                      "Constitutes above 40% of dry weight of cartilage.",
-                      "Type IX, X and XI collagen fibers are also present in small amount."
-                    ]
-                  },
-                  {
-                    title: "Ground Subtance",
-                    unOrderedList: true,
-                    orderedList: false,
-                    content: [
-                      "Featureless, homogeneous gel like substance.",
-                      "Stains blue with basic dye, hematoxylin.",
-                      "Main constitution is sulphated proteoglycans.",
-                      "Basophilic matrix is due to chondroitin and keratan sulphate, highest concentration is around lacuna which is called as capsule or territorial matrix."
-                    ]
-                  },
-                  {
-                    title: "Cells",
-                    unOrderedList: true,
-                    orderedList: false,
-                    content: [
-                      "Once surrounded by cartilage matrix, chondroblast is termed chondrocyte.",
-                      "Chondrocytes in the lacunae are usually in group which is called as cell nests or isogenous group,synthesize ground substance and collagen fibers.",
-                      "Chondrocytes show mitotic activity and give rise to daughter cells. Newly formed chondrocytes produce fibers and ground substance.",
-                      "The groups of daughter cells from one chondrocyte are found in close relationship and together they form cell nests."
-                    ]
-                  },
-                  {
-                    title: "Perichondrium",
-                    unOrderedList: true,
-                    orderedList: false,
-                    content: [
-                      "On its free surface hyaline cartilage is always covered with a fibro-vascular membrane called perichondrium.",
-                      "It is absent over articular surface as in joint cavity (i.e. articular cartilage) and at the sites where the cartilage makes direct contact with bone (i.e. costal cartilage)",
-                      "Perichondrium consists of two layers.",
-                      "Outer fibrous layer (contains fibroblasts that secrete the materials for the collagen fibers.)",
-                      "Inner cellular layer contains cells that are thought by some to be fibroblasts and by others to be undifferentiated mesenchyme cells. In either case, these cells can differentiate to form chondroblasts).",
-                      "In adult cartilage, only fibrous layer is present.",
-                      "Fibrous layers have blood capillaries which provide nutrition by diffusion through matrix."
-                    ]
-                  }
-                ]
-              }
-            },
-            {
-              title: "Location",
-              orderedList: false,
-              unOrderedList: true,
-              content: [
-                "Found in the ribs, nose, larynx, trachea. Is a precursor of bone."
-              ]
-            },
-            {
-              title: "Function",
-              unOrderedList: false,
-              orderedList: true,
-              content: [
-                "Hyaline cartilage is high in collagen, a protein that is found not only in connective tissue but also in skin and bones, and helps hold the body together. Hyaline cartilage provides support and flexibility to different parts of the body."
-              ]
-            }
-          ]
-        }
-      },
-      {
-        id: 3,
-        title: "Fibro Cartilage",
-        isIntroduction: false,
-        content: {
-          subTopic: [
-            {
-              title: "STRUCTURE",
-              unOrderedList: true,
-              orderedList: false,
-              content: [
-                "Fibrocartilage is the tough, very strong tissue found predominantly in the intervertebral disks and at the insertions of ligaments and tendons; it is similar to other fibrous tissues but contains cartilage ground substance and chondrocytes.",
-                "As it contains bundles of thick collagen fibers it is also known as white fibro cartilage.",
-                "Structure resembles dense regular connective tissue.",
-                "Intermediate in character between hyaline cartilage and dense connective tissue."
-              ]
-            },
-            {
-              title: "Fibers",
-              unOrderedList: true,
-              orderedList: false,
-              content: [
-                "All the fibers are of collagen type I variety."
-              ]
-            },
-            {
-              title: "Ground Subtance",
-              orderedList: false,
-              unOrderedList: true,
-              content: [
-                "The ground substance is scanty in amount.",
-                "Contains equal amount of dermatan sulphate and chondroitin sulphate.",
-                "Chondrocytes are distributed between densely packed type I collagen bundles.",
-                "Small chondrocytes in lacunae are usually distributed in rows within the fibrous cartilage matrix.",
-                "there is no distinguishable perichondrium (absent)."
-              ]
-            },
-            {
-              title: "Location",
-              unOrderedList: false,
-              orderedList: false,
-              content: [
-                "Found in intervertebral disc (annulus fibrosus), pubic symphysis, manubriosternal joint ,menisci of kneejoint, articular disc of temporo-mandibular and sternoclavicular joints, glenoid and acetabular labrum."
-              ]
-            },
-            {
-              title: "Function",
-              unOrderedList: true,
-              orderedList: false,
-              content: [
-                "Fibrocartilage is a tough, dense, and fibrous material that helps fill in the torn part of the cartilage; however, it is not an ideal replacement for the smooth, glassy articular cartilage that normally covers the surface of joints.",
-                "It also acts as a shock absorber for the ulnocarpal articulation as well."
-              ]
-            }
-          ]
-        }
-      },
-    ]
-  },
-  {
-    id: 4,
-    title: "BLOOD VESSELS",
-    subTopics: [
-      {
-        id: 0,
-        isIntroduction: true,
-        introductionContent: [
-          "The blood vessels are the components of the circulatory system that transport blood throughout the human body. These vessels transport blood cells, nutrients, and oxygen to the tissues of the body. They also take waste and carbon dioxide away from the tissues.",
-          "Blood vessels, namely arteries and veins, are composed of endothelial cells, smooth muscle cells and extracellular matrix (including collagen and elastin). These are arranged into three concentric layers (or tunicae): intima, media and adventitia."
-        ],
-      },
-      {
-        id: 1,
-        title: "ELASTIC ARTERY",
-        isIntroduction: true,
-        introductionContent: [
-          {
-            unOrderedList: true,
-            orderedList: false,
-            content: [
-              "An elastic artery (conducting artery or conduit artery) is an artery with many collagen and elastin filaments in the tunica media, which gives it the ability to stretch in response to each pulse.",
-              "Elastic arteries are those adapted to receive blood at moderate to high pressure near to the outflow tracts of the heart.",
-              "Also called conducting vessel.",
-              "Conduct blood from heart to muscular",
-              "Tunica media is predominantly made up of elastic fibers."
-            ]
-          }
-        ],
-        content:
-        {
-          subTopic: [
-            {
-              title: "STRUCTURE",
-              content: [
-                {
-                  title: "Tunica Intima",
-                  unOrderedList: true,
-                  orderedList: false,
-                  content: [
-                    "Endothelium:Simple squamous epithelium that lines lumen and comes in contact with blood.",
-                    "Sub endothelial layer: Consists of connective tissue containing collagen and elastic fibers; smooth muscle cells, fibroblasts and macrophages.",
-                    "Internal elastic lamina: Not clearly visible as it is difficult to differentiate it from the elastic layers found in tunica media."
-                  ]
-                },
-                {
-                  title: "Tunica Media",
-                  unOrderedList: true,
-                  orderedList: false,
-                  content: [
-                    "Thickest of three layers.",
-                    "Elastic fibers are abundant in the form of lamellae.",
-                    "Between elastic lamellae there are smooth muscle cells, collagenous fibers and ground substance.",
-                    "Smooth muscle layers are thin and oriented circularly.",
-                    "Internal and external elastic laminae cannot be differentiated from other elastic lamellae of media."
-                  ]
-                },
-                {
-                  title: "Tunica Adventitia",
-                  unOrderedList: true,
-                  orderedList: false,
-                  content: [
-                    "Comparatively thin having longitudinally running collagen fibers and loose network of elastic fibers.",
-                    "Contains fibroblasts, macrophages and mast cells, contains blood vessels, nerve fibers and lymph vessels.",
-                    "Vasa vasora provide blood supply to adventitia and outer part of media, whereas tunica intima and inner part of media are supplied by blood from the",
-                    "Internal and external elastic laminae cannot be differentiated from other elastic lamellae of media."
-                  ]
-                }
-              ]
-            },
-            {
-              title: "LOCATION",
-              content: "Example: large size arteries like aorta, pulmonary trunk, brachioce common carotid artery, subclavian artery, etc."
-            },
-            {
-              title: "FUNCTION",
-              content: "Elastic arteries contain larger numbers of collagen and elastin filaments in their tunica media than muscular arteries do, giving them the ability to stretch in response to each pulse. Elastic arteries include the largest arteries in the body, those closest to the heart, and give rise to the smaller muscular arteries."
-            }
-          ]
-        }
-
-      },
-
-      {
-        id: 2,
-        title: "LARGE VEIN",
-        isIntroduction: true,
-        introductionContent: [
-          "The veins still have the three basic layers (tunica adventitia, tunica media and tunica intima), but the elastic and muscular components are less prominent. The smooth muscle layers are used to contract or dilate the veins, to accommodate changes in blood volume."
-        ],
-        content:
-        {
-          subTopic: [
-            {
-              title: "STRUCTURE",
-              unOrderedList: true,
-              orderedList: false,
-              content: {
-                subTopic: [
-                  {
-                    title: "Tunica Intima",
-                    unOrderedList: true,
-                    orderedList: false,
-                    content: [
-                      "Endothelial cells resting in basal lamina which is supported by sub-endothelial connective tissue."
-                    ]
-                  },
-                  {
-                    title: "Tunica Media",
-                    unOrderedList: true,
-                    orderedList: false,
-                    content: [
-                      "Made up of smooth muscle fibers, collagen fibers and fibroblasts.",
-                      "Muscle fibers are oriented longitudinally and circularly.",
-                      "This layer is thin compared to artery."
-                    ]
-                  },
-                  {
-                    title: "Tunica Adventitia:",
-                    unOrderedList: true,
-                    orderedList: false,
-                    content: [
-                      "This layer is thicker than media.",
-                      "Consists of longitudinally arranged smooth muscle fibers, bundles of collagen fibers and elastic fibers."
-                    ]
-                  }
-                ]
-              }
-            },
-            {
-              title: "EXAMPLE",
-              content: "Deep veins, located in the center of the leg near the leg bones, are enclosed by muscle. The iliac,femoral, popliteal and tibial (calf) veins are the deep veins in the legs."
-            },
-            {
-              title: "FUNCTION",
-              content: "conducts blood from the periphery to the heart. All veins carry deoxygenated blood–except for the pulmonary vein. The largest veins are the superior and inferior vena cava, and both drain directly into the right atrium of the heart."
-            }
-          ]
-        }
-
-      },
-      {
-        id: 3,
-        title: "MUSCULAR ARTERY",
-        isIntroduction: false,
-        content:
-        {
-          subTopic: [
-            {
-              title: "STRUCTURE",
-              unOrderedList: true,
-              orderedList: false,
-              content: [
-                "A muscular artery (or distributing artery) is a medium-sized artery that draws blood from an elastic artery and branches into &quot;resistance vessels&quot; including small arteries and arterioles. Their walls contain larger number of smooth muscles, allowing them to contract and expand depending on peripheral blood demand.",
-                "These arteries distribute blood to various parts of the body. ... Comparing these arteries to the elastic arteries, the sheet of elastin is now much reduced, and found at the border between the tunica intima and tunica media in a layer called the internal elastic layer (IEL) which can be seen very clearly.",
-                "Medium sized artery or distributing artery.",
-                "Elastic material decreases and smooth muscle component becomes the main constituent of tunica media in transition from elastic to muscular artery.",
-                "Smaller in diameter as compare to elastic",
-                "Internal elastic lamina is distinct.",
-                {
-                  title: "TUNICA INTIMA",
-                  "unOrderdList": true,
-                  orderedList: false,
-                  content: [
-                    "Innermost layer.",
-                    "Consists of endothelium (simple squamous epithelium) that border the lumen and is under laid by the thin basal lamina and sub-endothelial layer of connective tissue.",
-                    "Intima is separated from the tunica media by a fenestrated layer of internal elastic lamina."
-                  ]
-                },
-                {
-                  title: "TUNICA MEDIA",
-                  unOrderedList: true,
-                  orderedList: false,
-                  content: [
-                    "Middle layer. Approximately 75% of it is made up of circumferentially oriented vascular smooth muscle fibers.",
-                    "Also contains collagen fibers and little amount of elastic fibers."
-                  ]
-                },
-                {
-                  title: "TUNICA ADVENTITIA",
-                  "unOrderdList": true,
-                  orderedList: false,
-                  content: [
-                    "Outer most layer.",
-                    "Consists chiefly of collagen and elastic fibers that anchor the vessel in the surrounding tissues."
-                  ]
-                }
-              ]
-            },
-            {
-              title: "LOCATION",
-              content: "Muscular arteries can be identified by the well-defined elastic lamina that lies between the tunicae intima and media. The splenic artery (lienal artery), the blood vessel that supplies oxygenated blood to the spleen, is an example of a muscular artery."
-            },
-            {
-              title: "FUNCTION",
-              content: "A muscular artery (or distributing artery) is a medium-sized artery that draws blood from an elastic artery and branches into &quot;resistance vessels&quot; including small arteries and arterioles. Their walls contain larger number of smooth muscles, allowing them to contract and expand depending on peripheral blood demand."
-            }
-          ]
-        }
-
-      },
-    ]
-  },
-  {
-    id: 6,
-    title: "Muscular Tissue",
-    subTopics: [
-      {
-        id: 0,
-        isIntroduction: false,
-        content: {
-          subTopic: [
-            {
-              title: "STUDY OF MUSCLE",
-              content: [
-                "Muscle cells contain protein filaments of actin and myosin that slide past one another, producing a contraction that changes both the length and the shape of the cell. Muscles function to produce force and motion.",
-                "Muscle tissue is composed of cells specialized for contraction. Muscle is classified into three types according to their structure and function:",
-                "Skeletal muscle cells - striated, voluntary control.",
-                "Cardiac muscle cells - striated, involuntary control.",
-                "Smooth muscle cells - nonstriated, involuntary control."
-              ]
-            }
           ],
         },
       },
       {
         id: 1,
-        title: "CARDIAC MUSCLE",
+        title: 'Ealstic Cartilage',
         isIntroduction: true,
         introductionContent: [
-          {
-            unOrderedList: true,
-            "orderdList": false,
-            content: [
-              "Striated and involuntary.",
-              "Contraction is rhythmic and inherent. Supplied by autonomic nervous system."
-            ]
-          }
+          'Elastic cartilage or yellow cartilage is a type of cartilage present in the outer ear, Eustachian tube and epiglottis. It contains elastic fiber networks and collagen type II fibers. The principal proteinis elastin.',
+          'Consists of ground substance, fibers, cells and perichondrium.',
         ],
         content: {
           subTopic: [
             {
-              title: "MICROSCOPIC STRUCTURE",
+              title: 'COMPOSITION',
+              isIntroduction: false,
+              content: {
+                subTopic: [
+                  {
+                    title: 'Fibers',
+                    unOrderedList: true,
+                    orderedList: false,
+                    content: [
+                      'Contains meshwork of branched and anastomotic elastic fibers and fewer amounts of type II collagen fibers.',
+                      'Elastic fibers are mainly concentrated in the center of cartilage.',
+                    ],
+                  },
+                  {
+                    title: 'Ground Substance:',
+                    unOrderedList: true,
+                    orderedList: false,
+                    content: ['Contains proteoglycans.'],
+                  },
+                  {
+                    title: 'Cells',
+                    content: [
+                      'Contains proteoglycans.',
+                      'The cells are bigger than those found in hyaline cartilage.',
+                      'Intracellular substance is much less than hyaline cartilage.',
+                      'Cells are closely situated.',
+                    ],
+                  },
+                  {
+                    title: 'Perichondrium:',
+                    content: [
+                      'Of similar structure found in hyaline cartilage.',
+                    ],
+                  },
+                ],
+              },
+            },
+            {
+              title: 'Location',
               unOrderedList: true,
               orderedList: false,
               content: [
-                "Consists of long and thick muscle fibers.",
-                "Fibers are branching.",
-                "The cardiac myocytes joined end to end at intercalated disc.",
-                "Each fiber shows a single and centrally placed nucleus.",
-                "The muscle fibers have cross striations but here the striations less prominent than seen in skeletal muscle.",
-                {
-                  title: "Intercalated Disc",
-                  content: [
-                    "Irregular transverse thickening of sarcolemma between adjacent myocytes.",
-                    "Adjacent sarcolemmas interdigitate with each other showing transverse and longitudinal portions.",
-                    {
-                      unOrderedList: true,
-                      orderedList: false,
-                      content: [
-                        "The transverse portion is thick. It is the site of attachment of myofilaments to the sarcolemma.",
-                        "The longitudinal portion is thin and has Gap junctions.",
-                        "This junctional complex is specialized.",
-                        "It provides cell to cell adhesion and helps in transmission of elective impulses.",
-                        "It is made up of the following :"
-                      ]
-                    },
-                    {
-                      unOrderedList: false,
-                      orderedList: true,
-                      content: [
-                        "1. Fascia adherens.",
-                        "2. Desmosomes.",
-                        "3. Gap junctions."
-                      ]
-                    }
-                  ]
-                }
-              ]
+                'External ear, walls of external auditory tube and canals, epiglottis, corniculate and cuneiform cartilage of larynx.',
+              ],
             },
             {
-              title: "FUNCTION",
-              content: "Cardiac muscle tissue works to keep your heart pumping through involuntary movements. This is one feature that differentiates it from skeletal muscle tissue, which you can control. It does this through specialized cells called pacemaker cells. These control the contractions of your heart."
-            }
-          ]
-        }
+              title: 'Function',
+              unOrderedList: true,
+              orderedList: false,
+              content: [
+                'Elastic cartilage function is two-fold: to change cartilage shape in response to tension, compression, and bending before returning to an at-rest state, and to provide a strong but flexible  structure.',
+              ],
+            },
+          ],
+        },
       },
+
       {
         id: 2,
-        title: "SKELETAL MUSCLE",
+        title: 'Hyaline Cartilage',
+        isIntroduction: false,
+        content: {
+          subTopic: [
+            {
+              title: 'COMPOSITION',
+              content: {
+                subTopic: [
+                  {
+                    title: 'Fibers',
+                    unOrderedList: true,
+                    orderedList: false,
+                    content: [
+                      'Thin fibrils of type II collagen.',
+                      'No cross striations.',
+                      'Small size and their refractive index (close to that of the substance) make the difficult to distinguish with the light microscope.',
+                      'Provides stability and strength to the cartilage.',
+                      'Constitutes above 40% of dry weight of cartilage.',
+                      'Type IX, X and XI collagen fibers are also present in small amount.',
+                    ],
+                  },
+                  {
+                    title: 'Ground Subtance',
+                    unOrderedList: true,
+                    orderedList: false,
+                    content: [
+                      'Featureless, homogeneous gel like substance.',
+                      'Stains blue with basic dye, hematoxylin.',
+                      'Main constitution is sulphated proteoglycans.',
+                      'Basophilic matrix is due to chondroitin and keratan sulphate, highest concentration is around lacuna which is called as capsule or territorial matrix.',
+                    ],
+                  },
+                  {
+                    title: 'Cells',
+                    unOrderedList: true,
+                    orderedList: false,
+                    content: [
+                      'Once surrounded by cartilage matrix, chondroblast is termed chondrocyte.',
+                      'Chondrocytes in the lacunae are usually in group which is called as cell nests or isogenous group,synthesize ground substance and collagen fibers.',
+                      'Chondrocytes show mitotic activity and give rise to daughter cells. Newly formed chondrocytes produce fibers and ground substance.',
+                      'The groups of daughter cells from one chondrocyte are found in close relationship and together they form cell nests.',
+                    ],
+                  },
+                  {
+                    title: 'Perichondrium',
+                    unOrderedList: true,
+                    orderedList: false,
+                    content: [
+                      'On its free surface hyaline cartilage is always covered with a fibro-vascular membrane called perichondrium.',
+                      'It is absent over articular surface as in joint cavity (i.e. articular cartilage) and at the sites where the cartilage makes direct contact with bone (i.e. costal cartilage)',
+                      'Perichondrium consists of two layers.',
+                      'Outer fibrous layer (contains fibroblasts that secrete the materials for the collagen fibers.)',
+                      'Inner cellular layer contains cells that are thought by some to be fibroblasts and by others to be undifferentiated mesenchyme cells. In either case, these cells can differentiate to form chondroblasts).',
+                      'In adult cartilage, only fibrous layer is present.',
+                      'Fibrous layers have blood capillaries which provide nutrition by diffusion through matrix.',
+                    ],
+                  },
+                ],
+              },
+            },
+            {
+              title: 'Location',
+              orderedList: false,
+              unOrderedList: true,
+              content: [
+                'Found in the ribs, nose, larynx, trachea. Is a precursor of bone.',
+              ],
+            },
+            {
+              title: 'Function',
+              unOrderedList: false,
+              orderedList: true,
+              content: [
+                'Hyaline cartilage is high in collagen, a protein that is found not only in connective tissue but also in skin and bones, and helps hold the body together. Hyaline cartilage provides support and flexibility to different parts of the body.',
+              ],
+            },
+          ],
+        },
+      },
+      {
+        id: 3,
+        title: 'Fibro Cartilage',
+        isIntroduction: false,
+        content: {
+          subTopic: [
+            {
+              title: 'STRUCTURE',
+              unOrderedList: true,
+              orderedList: false,
+              content: [
+                'Fibrocartilage is the tough, very strong tissue found predominantly in the intervertebral disks and at the insertions of ligaments and tendons; it is similar to other fibrous tissues but contains cartilage ground substance and chondrocytes.',
+                'As it contains bundles of thick collagen fibers it is also known as white fibro cartilage.',
+                'Structure resembles dense regular connective tissue.',
+                'Intermediate in character between hyaline cartilage and dense connective tissue.',
+              ],
+            },
+            {
+              title: 'Fibers',
+              unOrderedList: true,
+              orderedList: false,
+              content: ['All the fibers are of collagen type I variety.'],
+            },
+            {
+              title: 'Ground Subtance',
+              orderedList: false,
+              unOrderedList: true,
+              content: [
+                'The ground substance is scanty in amount.',
+                'Contains equal amount of dermatan sulphate and chondroitin sulphate.',
+                'Chondrocytes are distributed between densely packed type I collagen bundles.',
+                'Small chondrocytes in lacunae are usually distributed in rows within the fibrous cartilage matrix.',
+                'there is no distinguishable perichondrium (absent).',
+              ],
+            },
+            {
+              title: 'Location',
+              unOrderedList: false,
+              orderedList: false,
+              content: [
+                'Found in intervertebral disc (annulus fibrosus), pubic symphysis, manubriosternal joint ,menisci of kneejoint, articular disc of temporo-mandibular and sternoclavicular joints, glenoid and acetabular labrum.',
+              ],
+            },
+            {
+              title: 'Function',
+              unOrderedList: true,
+              orderedList: false,
+              content: [
+                'Fibrocartilage is a tough, dense, and fibrous material that helps fill in the torn part of the cartilage; however, it is not an ideal replacement for the smooth, glassy articular cartilage that normally covers the surface of joints.',
+                'It also acts as a shock absorber for the ulnocarpal articulation as well.',
+              ],
+            },
+          ],
+        },
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: 'BLOOD VESSELS',
+    subTopics: [
+      {
+        id: 0,
+        isIntroduction: true,
+        introductionContent: [
+          'The blood vessels are the components of the circulatory system that transport blood throughout the human body. These vessels transport blood cells, nutrients, and oxygen to the tissues of the body. They also take waste and carbon dioxide away from the tissues.',
+          'Blood vessels, namely arteries and veins, are composed of endothelial cells, smooth muscle cells and extracellular matrix (including collagen and elastin). These are arranged into three concentric layers (or tunicae): intima, media and adventitia.',
+        ],
+      },
+      {
+        id: 1,
+        title: 'ELASTIC ARTERY',
         isIntroduction: true,
         introductionContent: [
           {
             unOrderedList: true,
             orderedList: false,
             content: [
-              "Striated and voluntary, Supplied by somatic nervous system.",
-              "As they are attached to skeleton the name given is skeletal muscles.",
-              "The fibers of skeletal muscle are held together by various connective tissues:"
-            ]
+              'An elastic artery (conducting artery or conduit artery) is an artery with many collagen and elastin filaments in the tunica media, which gives it the ability to stretch in response to each pulse.',
+              'Elastic arteries are those adapted to receive blood at moderate to high pressure near to the outflow tracts of the heart.',
+              'Also called conducting vessel.',
+              'Conduct blood from heart to muscular',
+              'Tunica media is predominantly made up of elastic fibers.',
+            ],
+          },
+        ],
+        content: {
+          subTopic: [
+            {
+              title: 'STRUCTURE',
+              content: [
+                {
+                  title: 'Tunica Intima',
+                  unOrderedList: true,
+                  orderedList: false,
+                  content: [
+                    'Endothelium:Simple squamous epithelium that lines lumen and comes in contact with blood.',
+                    'Sub endothelial layer: Consists of connective tissue containing collagen and elastic fibers; smooth muscle cells, fibroblasts and macrophages.',
+                    'Internal elastic lamina: Not clearly visible as it is difficult to differentiate it from the elastic layers found in tunica media.',
+                  ],
+                },
+                {
+                  title: 'Tunica Media',
+                  unOrderedList: true,
+                  orderedList: false,
+                  content: [
+                    'Thickest of three layers.',
+                    'Elastic fibers are abundant in the form of lamellae.',
+                    'Between elastic lamellae there are smooth muscle cells, collagenous fibers and ground substance.',
+                    'Smooth muscle layers are thin and oriented circularly.',
+                    'Internal and external elastic laminae cannot be differentiated from other elastic lamellae of media.',
+                  ],
+                },
+                {
+                  title: 'Tunica Adventitia',
+                  unOrderedList: true,
+                  orderedList: false,
+                  content: [
+                    'Comparatively thin having longitudinally running collagen fibers and loose network of elastic fibers.',
+                    'Contains fibroblasts, macrophages and mast cells, contains blood vessels, nerve fibers and lymph vessels.',
+                    'Vasa vasora provide blood supply to adventitia and outer part of media, whereas tunica intima and inner part of media are supplied by blood from the',
+                    'Internal and external elastic laminae cannot be differentiated from other elastic lamellae of media.',
+                  ],
+                },
+              ],
+            },
+            {
+              title: 'LOCATION',
+              content:
+                'Example: large size arteries like aorta, pulmonary trunk, brachioce common carotid artery, subclavian artery, etc.',
+            },
+            {
+              title: 'FUNCTION',
+              content:
+                'Elastic arteries contain larger numbers of collagen and elastin filaments in their tunica media than muscular arteries do, giving them the ability to stretch in response to each pulse. Elastic arteries include the largest arteries in the body, those closest to the heart, and give rise to the smaller muscular arteries.',
+            },
+          ],
+        },
+      },
+      {
+        id: 2,
+        title: 'LARGE VEIN',
+        isIntroduction: true,
+        introductionContent: [
+          'The veins still have the three basic layers (tunica adventitia, tunica media and tunica intima), but the elastic and muscular components are less prominent. The smooth muscle layers are used to contract or dilate the veins, to accommodate changes in blood volume.',
+        ],
+        content: {
+          subTopic: [
+            {
+              title: 'STRUCTURE',
+              unOrderedList: true,
+              orderedList: false,
+              content: {
+                subTopic: [
+                  {
+                    title: 'Tunica Intima',
+                    unOrderedList: true,
+                    orderedList: false,
+                    content: [
+                      'Endothelial cells resting in basal lamina which is supported by sub-endothelial connective tissue.',
+                    ],
+                  },
+                  {
+                    title: 'Tunica Media',
+                    unOrderedList: true,
+                    orderedList: false,
+                    content: [
+                      'Made up of smooth muscle fibers, collagen fibers and fibroblasts.',
+                      'Muscle fibers are oriented longitudinally and circularly.',
+                      'This layer is thin compared to artery.',
+                    ],
+                  },
+                  {
+                    title: 'Tunica Adventitia:',
+                    unOrderedList: true,
+                    orderedList: false,
+                    content: [
+                      'This layer is thicker than media.',
+                      'Consists of longitudinally arranged smooth muscle fibers, bundles of collagen fibers and elastic fibers.',
+                    ],
+                  },
+                ],
+              },
+            },
+            {
+              title: 'EXAMPLE',
+              content:
+                'Deep veins, located in the center of the leg near the leg bones, are enclosed by muscle. The iliac,femoral, popliteal and tibial (calf) veins are the deep veins in the legs.',
+            },
+            {
+              title: 'FUNCTION',
+              content:
+                'conducts blood from the periphery to the heart. All veins carry deoxygenated blood–except for the pulmonary vein. The largest veins are the superior and inferior vena cava, and both drain directly into the right atrium of the heart.',
+            },
+          ],
+        },
+      },
+      {
+        id: 3,
+        title: 'MUSCULAR ARTERY',
+        isIntroduction: false,
+        content: {
+          subTopic: [
+            {
+              title: 'STRUCTURE',
+              unOrderedList: true,
+              orderedList: false,
+              content: [
+                'A muscular artery (or distributing artery) is a medium-sized artery that draws blood from an elastic artery and branches into &quot;resistance vessels&quot; including small arteries and arterioles. Their walls contain larger number of smooth muscles, allowing them to contract and expand depending on peripheral blood demand.',
+                'These arteries distribute blood to various parts of the body. ... Comparing these arteries to the elastic arteries, the sheet of elastin is now much reduced, and found at the border between the tunica intima and tunica media in a layer called the internal elastic layer (IEL) which can be seen very clearly.',
+                'Medium sized artery or distributing artery.',
+                'Elastic material decreases and smooth muscle component becomes the main constituent of tunica media in transition from elastic to muscular artery.',
+                'Smaller in diameter as compare to elastic',
+                'Internal elastic lamina is distinct.',
+                {
+                  title: 'TUNICA INTIMA',
+                  unOrderdList: true,
+                  orderedList: false,
+                  content: [
+                    'Innermost layer.',
+                    'Consists of endothelium (simple squamous epithelium) that border the lumen and is under laid by the thin basal lamina and sub-endothelial layer of connective tissue.',
+                    'Intima is separated from the tunica media by a fenestrated layer of internal elastic lamina.',
+                  ],
+                },
+                {
+                  title: 'TUNICA MEDIA',
+                  unOrderedList: true,
+                  orderedList: false,
+                  content: [
+                    'Middle layer. Approximately 75% of it is made up of circumferentially oriented vascular smooth muscle fibers.',
+                    'Also contains collagen fibers and little amount of elastic fibers.',
+                  ],
+                },
+                {
+                  title: 'TUNICA ADVENTITIA',
+                  unOrderdList: true,
+                  orderedList: false,
+                  content: [
+                    'Outer most layer.',
+                    'Consists chiefly of collagen and elastic fibers that anchor the vessel in the surrounding tissues.',
+                  ],
+                },
+              ],
+            },
+            {
+              title: 'LOCATION',
+              content:
+                'Muscular arteries can be identified by the well-defined elastic lamina that lies between the tunicae intima and media. The splenic artery (lienal artery), the blood vessel that supplies oxygenated blood to the spleen, is an example of a muscular artery.',
+            },
+            {
+              title: 'FUNCTION',
+              content:
+                'A muscular artery (or distributing artery) is a medium-sized artery that draws blood from an elastic artery and branches into &quot;resistance vessels&quot; including small arteries and arterioles. Their walls contain larger number of smooth muscles, allowing them to contract and expand depending on peripheral blood demand.',
+            },
+          ],
+        },
+      },
+    ],
+  },
+  {
+    id: 6,
+    title: 'Muscular Tissue',
+    subTopics: [
+      {
+        id: 0,
+        isIntroduction: false,
+        content: {
+          subTopic: [
+            {
+              title: 'STUDY OF MUSCLE',
+              content: [
+                'Muscle cells contain protein filaments of actin and myosin that slide past one another, producing a contraction that changes both the length and the shape of the cell. Muscles function to produce force and motion.',
+                'Muscle tissue is composed of cells specialized for contraction. Muscle is classified into three types according to their structure and function:',
+                'Skeletal muscle cells - striated, voluntary control.',
+                'Cardiac muscle cells - striated, involuntary control.',
+                'Smooth muscle cells - nonstriated, involuntary control.',
+              ],
+            },
+          ],
+        },
+      },
+      {
+        id: 1,
+        title: 'CARDIAC MUSCLE',
+        isIntroduction: true,
+        introductionContent: [
+          {
+            unOrderedList: true,
+            orderdList: false,
+            content: [
+              'Striated and involuntary.',
+              'Contraction is rhythmic and inherent. Supplied by autonomic nervous system.',
+            ],
+          },
+        ],
+        content: {
+          subTopic: [
+            {
+              title: 'MICROSCOPIC STRUCTURE',
+              unOrderedList: true,
+              orderedList: false,
+              content: [
+                'Consists of long and thick muscle fibers.',
+                'Fibers are branching.',
+                'The cardiac myocytes joined end to end at intercalated disc.',
+                'Each fiber shows a single and centrally placed nucleus.',
+                'The muscle fibers have cross striations but here the striations less prominent than seen in skeletal muscle.',
+                {
+                  title: 'Intercalated Disc',
+                  content: [
+                    'Irregular transverse thickening of sarcolemma between adjacent myocytes.',
+                    'Adjacent sarcolemmas interdigitate with each other showing transverse and longitudinal portions.',
+                    {
+                      unOrderedList: true,
+                      orderedList: false,
+                      content: [
+                        'The transverse portion is thick. It is the site of attachment of myofilaments to the sarcolemma.',
+                        'The longitudinal portion is thin and has Gap junctions.',
+                        'This junctional complex is specialized.',
+                        'It provides cell to cell adhesion and helps in transmission of elective impulses.',
+                        'It is made up of the following :',
+                      ],
+                    },
+                    {
+                      unOrderedList: false,
+                      orderedList: true,
+                      content: [
+                        '1. Fascia adherens.',
+                        '2. Desmosomes.',
+                        '3. Gap junctions.',
+                      ],
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              title: 'FUNCTION',
+              content:
+                'Cardiac muscle tissue works to keep your heart pumping through involuntary movements. This is one feature that differentiates it from skeletal muscle tissue, which you can control. It does this through specialized cells called pacemaker cells. These control the contractions of your heart.',
+            },
+          ],
+        },
+      },
+      {
+        id: 2,
+        title: 'SKELETAL MUSCLE',
+        isIntroduction: true,
+        introductionContent: [
+          {
+            unOrderedList: true,
+            orderedList: false,
+            content: [
+              'Striated and voluntary, Supplied by somatic nervous system.',
+              'As they are attached to skeleton the name given is skeletal muscles.',
+              'The fibers of skeletal muscle are held together by various connective tissues:',
+            ],
           },
           {
             unOrderedList: false,
             orderedList: true,
             content: [
-              "1. Endomysium : is the covering of connective tissue around individual muscle fiber.",
-              "2. Perimysium : is the covering of connective tissue around fasciculus formed by aggregation of many muscle fibers.",
-              "3. Epimysium : is the layer of connective tissue around a complete muscle."
-            ]
-          }
+              '1. Endomysium : is the covering of connective tissue around individual muscle fiber.',
+              '2. Perimysium : is the covering of connective tissue around fasciculus formed by aggregation of many muscle fibers.',
+              '3. Epimysium : is the layer of connective tissue around a complete muscle.',
+            ],
+          },
         ],
         content: {
           subTopic: [
             {
-              title: "MICROSCOPIC STRUCTURE",
+              title: 'MICROSCOPIC STRUCTURE',
               unOrderedList: true,
               orderedList: false,
               content: [
-                "Long and cylindrical shaped cell also called as muscle fiber.",
-                "The Fibers are formed by fusion of multiple myoblasts which makes individual muscle fiber multinucleated.",
-                "Length of each fiber ranges from 1 to 4 cms which is visible through naked eye.",
-                "Nuclei are oriented underneath the plasma membrane (sarcolemma) which are lying parallel to the long axis of muscle fiber.",
-                "Highly developed smooth endoplasmic (sarcoplasmic ) reticulum for calcium storage and metabolism.",
-                "In the core there are thousands of contractile structures called myofibrils.",
-                "Arrangement of these myofibrils imparts alternate light and dark bands under light"
-              ]
+                'Long and cylindrical shaped cell also called as muscle fiber.',
+                'The Fibers are formed by fusion of multiple myoblasts which makes individual muscle fiber multinucleated.',
+                'Length of each fiber ranges from 1 to 4 cms which is visible through naked eye.',
+                'Nuclei are oriented underneath the plasma membrane (sarcolemma) which are lying parallel to the long axis of muscle fiber.',
+                'Highly developed smooth endoplasmic (sarcoplasmic ) reticulum for calcium storage and metabolism.',
+                'In the core there are thousands of contractile structures called myofibrils.',
+                'Arrangement of these myofibrils imparts alternate light and dark bands under light',
+              ],
             },
             {
-              title: "LOCATION",
-              content: "Skeletal muscle is found between bones, and uses tendons to connect the epimysium to the periosteum, or outer covering, of bone. Skeletal muscle is adapted and shaped in many different ways, which give rise to complex movements. Skeletons are not always internal as they are in humans."
+              title: 'LOCATION',
+              content:
+                'Skeletal muscle is found between bones, and uses tendons to connect the epimysium to the periosteum, or outer covering, of bone. Skeletal muscle is adapted and shaped in many different ways, which give rise to complex movements. Skeletons are not always internal as they are in humans.',
             },
             {
-              title: "FUNCTION",
-              content: "Skeletal muscles serve a variety of functions including support and movement and homeostasis. Skeletal muscle contraction can result in muscle shortening and thus movement of the bone to which it is attached."
-            }
-          ]
-        }
+              title: 'FUNCTION',
+              content:
+                'Skeletal muscles serve a variety of functions including support and movement and homeostasis. Skeletal muscle contraction can result in muscle shortening and thus movement of the bone to which it is attached.',
+            },
+          ],
+        },
       },
       {
         id: 3,
-        title: "SMOOTH MUSCLE",
+        title: 'SMOOTH MUSCLE',
         isIntroduction: true,
         introductionContent: [
           {
             unOrderedList: true,
             orderedList: false,
             content: [
-              "Non-striated and involuntary, Supplied by autonomic nervous system."
-            ]
+              'Non-striated and involuntary, Supplied by autonomic nervous system.',
+            ],
           },
         ],
         content: {
           subTopic: [
             {
-              title: "MICROSCOPIC STRUCTURE",
+              title: 'MICROSCOPIC STRUCTURE',
               unOrderedList: true,
               orderedList: false,
               content: [
-                "Fibers are elongated and spindle shaped (fusiform).",
-                "Cell has single and centrally placed nucleus.",
-                "Cytoplasm is acidophilic. Arrangement of fibers:",
-                "The central wide portion of a cell and thin tapering ends of neighbouring cell are placed adjacently.",
-                "The Cells are either in contact with each other by gap junctions as in single unit type or they remain separated without connections as in multi-unit type."
-              ]
+                'Fibers are elongated and spindle shaped (fusiform).',
+                'Cell has single and centrally placed nucleus.',
+                'Cytoplasm is acidophilic. Arrangement of fibers:',
+                'The central wide portion of a cell and thin tapering ends of neighbouring cell are placed adjacently.',
+                'The Cells are either in contact with each other by gap junctions as in single unit type or they remain separated without connections as in multi-unit type.',
+              ],
             },
             {
-              title: "TYPE ACCORDING TO LOCATION",
+              title: 'TYPE ACCORDING TO LOCATION',
               unOrderedList: true,
               orderedList: false,
               content: [
-                "Visceral smooth muscle.",
-                "Vascular smooth muscle.",
-                "Smooth muscle of iris."
-              ]
+                'Visceral smooth muscle.',
+                'Vascular smooth muscle.',
+                'Smooth muscle of iris.',
+              ],
             },
             {
-              title: "FUNCTION.",
+              title: 'FUNCTION.',
               unOrderedList: true,
               orderedList: false,
               content: [
-                "Smooth muscles move food through the digestive tract.",
+                'Smooth muscles move food through the digestive tract.',
                 "In one's eye the pupillary sphincter muscles is responsible for shrinking the size of the pupil.",
-                "In arteries, smooth muscle movements maintain the arteries diameter.",
-                "Smooth muscle regulates air flow in lungs."
-              ]
-            }
-          ]
-        }
-      }
-    ]
+                'In arteries, smooth muscle movements maintain the arteries diameter.',
+                'Smooth muscle regulates air flow in lungs.',
+              ],
+            },
+          ],
+        },
+      },
+    ],
   },
   {
     id: 7,
-    title: "RespiratorySystem",
+    title: 'RespiratorySystem',
     subTopics: [
       {
         id: 0,
         isIntroduction: true,
         introductionContent: [
-          "The conducting portion of the airway is where air is moved, warmed and moistened. The nasal cavities, pharynx, larynx, trachea and bronchi are all part of the conducting portion of the airway.",
-          "The respiratory portion of the airway is where gas exchange occurs. The respiratory bronchioles, alveolar ducts, alveolar sacs and alveoli are all part of the respiratory portion."
+          'The conducting portion of the airway is where air is moved, warmed and moistened. The nasal cavities, pharynx, larynx, trachea and bronchi are all part of the conducting portion of the airway.',
+          'The respiratory portion of the airway is where gas exchange occurs. The respiratory bronchioles, alveolar ducts, alveolar sacs and alveoli are all part of the respiratory portion.',
         ],
         content: {
           subTopic: [
             {
-              title: "Histology of the Pharynx",
+              title: 'Histology of the Pharynx',
               content: [
-                "The pharynx is lined by both stratified squamous epithelium and ciliated pseudostratified epithelium with goblet cells. Different regions are lined by a different type of epithelium. Regions of the pharynx that are likely to be roughened up by food are lined by stratified squamous epithelium. Other regions of the pharynx are lined by ciliated pseudostratified epithelium with goblet cells.",
-                "The vestibule is lined by stratified squamous epithelium."
-              ]
+                'The pharynx is lined by both stratified squamous epithelium and ciliated pseudostratified epithelium with goblet cells. Different regions are lined by a different type of epithelium. Regions of the pharynx that are likely to be roughened up by food are lined by stratified squamous epithelium. Other regions of the pharynx are lined by ciliated pseudostratified epithelium with goblet cells.',
+                'The vestibule is lined by stratified squamous epithelium.',
+              ],
             },
             {
-              title: "Histology of the Nasal Cavity",
+              title: 'Histology of the Nasal Cavity',
               content: [
-                "Olfactory mucosa lines the roof and portions of the walls of the nasal cavity. It contains several cell types: basal cells, brush cells, olfactory cells and sustentacular cells.",
-                "Basal cells are located in the basal lamina. Brush cells are involved with general sensation of the olfactory mucosa. Olfactory cells are bipolar neurons that are the receptors for smell. Sustentacular cells are supporting cells. Sustentacular cells are most numerous cell type in the olfactory epithelium."
-              ]
+                'Olfactory mucosa lines the roof and portions of the walls of the nasal cavity. It contains several cell types: basal cells, brush cells, olfactory cells and sustentacular cells.',
+                'Basal cells are located in the basal lamina. Brush cells are involved with general sensation of the olfactory mucosa. Olfactory cells are bipolar neurons that are the receptors for smell. Sustentacular cells are supporting cells. Sustentacular cells are most numerous cell type in the olfactory epithelium.',
+              ],
             },
             {
-              title: "Histology of the Paranasal Sinuses",
+              title: 'Histology of the Paranasal Sinuses',
               content: [
-                "The paranasal sinuses are lined by ciliated pseudostratified epithelium with goblet cells.",
-                "In man, respiratory mucosa is composed of ciliated pseudostratified columnar epithelium with goblet cells. Respiratory mucosa contains several cell types: ciliated cells, goblet cells, basal cells, and brush cells. Respiratory mucosa is located lining the respiratory segment of the nasal cavity. It lines the conchae and the paranasal sinuses."
-              ]
+                'The paranasal sinuses are lined by ciliated pseudostratified epithelium with goblet cells.',
+                'In man, respiratory mucosa is composed of ciliated pseudostratified columnar epithelium with goblet cells. Respiratory mucosa contains several cell types: ciliated cells, goblet cells, basal cells, and brush cells. Respiratory mucosa is located lining the respiratory segment of the nasal cavity. It lines the conchae and the paranasal sinuses.',
+              ],
             },
             {
-              title: "Histology of the Paranasal Sinuses",
+              title: 'Histology of the Paranasal Sinuses',
               content: [
-                "The epiglottis is part of the larynx. It is composed of elastic cartilage.",
+                'The epiglottis is part of the larynx. It is composed of elastic cartilage.',
                 "The Adam's apple&quot; is a nickname for part of the larynx formed by the thyroid cartilage. The thyroid cartilage is composed of hyaline cartilage.",
-                "The larynx is composed of several cartilages. The thyroid cartilage, cricoid cartilage, arytenoid cartilages, corniculate cartilages and cuneiform cartilages are all composed of hyaline cartilage. The epiglottis is elastic cartilage. There is no fibrocartilage in the larynx."
-              ]
-            }
+                'The larynx is composed of several cartilages. The thyroid cartilage, cricoid cartilage, arytenoid cartilages, corniculate cartilages and cuneiform cartilages are all composed of hyaline cartilage. The epiglottis is elastic cartilage. There is no fibrocartilage in the larynx.',
+              ],
+            },
           ],
         },
-
       },
       {
         id: 1,
-        title: "EPIGLOTTIS",
+        title: 'EPIGLOTTIS',
         isIntroduction: true,
         introductionContent: [
-          "The normal epiglottis has a firm but movable shape based upon the presence of elastic cartilage below the submucosa. Elastic cartilage (also found in the nose and the external ear) has prominent pink-staining elastic fibers between the cartilagenous nuclei. On one side is respiratory epithelium."
+          'The normal epiglottis has a firm but movable shape based upon the presence of elastic cartilage below the submucosa. Elastic cartilage (also found in the nose and the external ear) has prominent pink-staining elastic fibers between the cartilagenous nuclei. On one side is respiratory epithelium.',
         ],
-        content:
-        {
+        content: {
           subTopic: [
             {
-              title: "STRUCTURE",
+              title: 'STRUCTURE',
               unOrderedList: true,
               orderedList: false,
               content: [
                 {
-                  title: "Anterior surface",
-                  content: "Covered by non-keratinized stratified squamous epithelium which also covers apex and more than half of posterior surface."
+                  title: 'Anterior surface',
+                  content:
+                    'Covered by non-keratinized stratified squamous epithelium which also covers apex and more than half of posterior surface.',
                 },
                 {
-                  title: "Lamina propria",
+                  title: 'Lamina propria',
                   content: [
-                    "Merges with underlying perichondrium of epiglottic cartilage",
-                    "Serous, mucous or mixed glands are present."
-                  ]
+                    'Merges with underlying perichondrium of epiglottic cartilage',
+                    'Serous, mucous or mixed glands are present.',
+                  ],
                 },
                 {
-                  title: "Cartilage",
+                  title: 'Cartilage',
                   content: [
-                    "Elastic cartilage also called as epiglottic cartilage which is present in the center.",
-                    "This cartilage forms the framework of epiglottis and is covered by perichondrium."
-                  ]
+                    'Elastic cartilage also called as epiglottic cartilage which is present in the center.',
+                    'This cartilage forms the framework of epiglottis and is covered by perichondrium.',
+                  ],
                 },
                 {
-                  title: "Posterior surface:",
-                  content: "More than upper half is covered by nonkeratinised stratified squamous epithelium and remaining lower half is lined by pseudostratified ciliated columnar epithelium (Respiratory epithelium). Occasionally taste buds are also present in the epithelium."
-                }
-              ]
+                  title: 'Posterior surface:',
+                  content:
+                    'More than upper half is covered by nonkeratinised stratified squamous epithelium and remaining lower half is lined by pseudostratified ciliated columnar epithelium (Respiratory epithelium). Occasionally taste buds are also present in the epithelium.',
+                },
+              ],
             },
             {
-              title: "LOCATION",
-              content: "The epiglottis is a leaf-shaped flap of cartilage located behind the tongue, at the top of the larynx, or voice box."
+              title: 'LOCATION',
+              content:
+                'The epiglottis is a leaf-shaped flap of cartilage located behind the tongue, at the top of the larynx, or voice box.',
             },
             {
-              title: "FUNCTION",
-              content: "The main function of the epiglottis is to seal off the windpipe during eating, so that food is not accidentally inhaled."
-            }
-          ]
-        }
-
+              title: 'FUNCTION',
+              content:
+                'The main function of the epiglottis is to seal off the windpipe during eating, so that food is not accidentally inhaled.',
+            },
+          ],
+        },
       },
       {
         id: 2,
-        title: "TRACHEA",
+        title: 'TRACHEA',
         isIntroduction: true,
         introductionContent: [
-          "The trachea is lined with a layer of pseudostratified ciliated columnar epithelium. The epithelium contains goblet cells, which are glandular, modified simple columnar epithelial cells that produce mucins, the main component of mucus."
+          'The trachea is lined with a layer of pseudostratified ciliated columnar epithelium. The epithelium contains goblet cells, which are glandular, modified simple columnar epithelial cells that produce mucins, the main component of mucus.',
         ],
-        content:
-        {
+        content: {
           subTopic: [
             {
-              title: "STRUCTURE:",
+              title: 'STRUCTURE:',
               content: [
                 {
-                  title: "MUCOUS MEMBRANE",
+                  title: 'MUCOUS MEMBRANE',
                   content: [
                     {
                       unOrderedList: true,
                       orderedList: false,
                       content: [
-                        "Lined by pseudostratified ciliated columnar epithelium with goblet cells resting on thick basal lamina.",
-                        "Three types of cells:"
-                      ]
+                        'Lined by pseudostratified ciliated columnar epithelium with goblet cells resting on thick basal lamina.',
+                        'Three types of cells:',
+                      ],
                     },
                     {
                       unOrderedList: false,
                       orderedList: true,
                       content: [
-                        "1.Ciliated cells",
-                        "2.Goblet cells",
-                        "3.Basal cells"
-                      ]
+                        '1.Ciliated cells',
+                        '2.Goblet cells',
+                        '3.Basal cells',
+                      ],
                     },
                     {
                       unOrderedList: true,
                       orderedList: false,
                       content: [
-                        "Ciliated cells propel the mucous upwards.",
-                        "Their percentage increases from above downwards in trachea.",
-                        "The Goblet cells secrete mucous.",
-                        "The Basal cells are small and pyramidal in shape which are situated near basal lamina which act as stem cells to replace other cell types.",
-                        "Other less common cells:",
-                        "GRANULE CELLS: (KULCHITSKY CELLS) Situated at the base of the epithelium containing dense secretary granules.",
-                        "BRUSH CELLS: with large micro-villi having an actin filament. They lack secretary granules and probably have sensory function."
-                      ]
-                    }
-                  ]
+                        'Ciliated cells propel the mucous upwards.',
+                        'Their percentage increases from above downwards in trachea.',
+                        'The Goblet cells secrete mucous.',
+                        'The Basal cells are small and pyramidal in shape which are situated near basal lamina which act as stem cells to replace other cell types.',
+                        'Other less common cells:',
+                        'GRANULE CELLS: (KULCHITSKY CELLS) Situated at the base of the epithelium containing dense secretary granules.',
+                        'BRUSH CELLS: with large micro-villi having an actin filament. They lack secretary granules and probably have sensory function.',
+                      ],
+                    },
+                  ],
                 },
                 {
-                  title: "LAMINA PROPRIA",
-                  content: "Contains loose connective tissue."
+                  title: 'LAMINA PROPRIA',
+                  content: 'Contains loose connective tissue.',
                 },
                 {
-                  title: "SUBMUCOSA",
-                  content: "Contains sero-mucus glands with their ducts open on the surface of epithelium."
+                  title: 'SUBMUCOSA',
+                  content:
+                    'Contains sero-mucus glands with their ducts open on the surface of epithelium.',
                 },
                 {
-                  title: "CARTILAGE AND MUSCLE LAYER",
-                  content: "Consists of C-shaped hyaline cartilaginous ring which is incomplete posteriorly. The gap is filled by smooth muscle-Trachealis and by fibroelastic ligament."
+                  title: 'CARTILAGE AND MUSCLE LAYER',
+                  content:
+                    'Consists of C-shaped hyaline cartilaginous ring which is incomplete posteriorly. The gap is filled by smooth muscle-Trachealis and by fibroelastic ligament.',
                 },
                 {
-                  title: "ADVENTITIA",
-                  content: "Made up of connective tissue and elastic fibers."
-                }
-              ]
+                  title: 'ADVENTITIA',
+                  content: 'Made up of connective tissue and elastic fibers.',
+                },
+              ],
             },
             {
-              title: "LOCATION",
-              content: "The trachea begins just under the larynx (voice box) and runs down behind the breastbone (sternum). The trachea then divides into two smaller tubes called bronchi: one bronchus for each lung."
+              title: 'LOCATION',
+              content:
+                'The trachea begins just under the larynx (voice box) and runs down behind the breastbone (sternum). The trachea then divides into two smaller tubes called bronchi: one bronchus for each lung.',
             },
             {
-              title: "FUNCTION",
-              content: "The trachea (or windpipe) is a wide, hollow tube that connects the larynx (or voice box) to the bronchi of the lungs. It is an integral part of the body&#39;s airway and has the vital function of providing air flow to and from the lungs for respiration."
-            }
-          ]
-        }
-
+              title: 'FUNCTION',
+              content:
+                'The trachea (or windpipe) is a wide, hollow tube that connects the larynx (or voice box) to the bronchi of the lungs. It is an integral part of the body&#39;s airway and has the vital function of providing air flow to and from the lungs for respiration.',
+            },
+          ],
+        },
       },
       {
         id: 3,
-        title: "Lungs",
+        title: 'Lungs',
         isIntroduction: true,
         introductionContent: [
-          "The lungs are covered by the serous membrane, the pleural membrane, which has two layers - the parietal and the visceral layer. The visceral pleura of the lung is lined by a mesothelial layer with underlying connective tissue and elastic fibers. An elastin stain may be used to identify the elastic layer."
+          'The lungs are covered by the serous membrane, the pleural membrane, which has two layers - the parietal and the visceral layer. The visceral pleura of the lung is lined by a mesothelial layer with underlying connective tissue and elastic fibers. An elastin stain may be used to identify the elastic layer.',
         ],
-        content:
-        {
+        content: {
           subTopic: [
             {
-              title: "INTRAPULMONARY BRONCHI",
+              title: 'INTRAPULMONARY BRONCHI',
               content: [
-                "Once the primary bronchi enters into the lung through hilum it undergoes several divisions to form smaller and smaller sized bronchi which keeps on penetrating the lung tissue. Following layers are found:",
+                'Once the primary bronchi enters into the lung through hilum it undergoes several divisions to form smaller and smaller sized bronchi which keeps on penetrating the lung tissue. Following layers are found:',
                 {
-                  title: "Mucosa",
+                  title: 'Mucosa',
                   unOrderedList: true,
                   orderedList: false,
                   content: [
-                    "Psuedostartified ciliated columnar epithelium with goblet cells.",
-                    "Lamina propria: Contains seromucous glands,elastic fibers and smooth muscles arranged in bundles."
-                  ]
+                    'Psuedostartified ciliated columnar epithelium with goblet cells.',
+                    'Lamina propria: Contains seromucous glands,elastic fibers and smooth muscles arranged in bundles.',
+                  ],
                 },
                 {
-                  title: "Submucosa",
-                  content: "Made up of loose connective tissue."
+                  title: 'Submucosa',
+                  content: 'Made up of loose connective tissue.',
                 },
                 {
-                  title: "Cartilage layer",
+                  title: 'Cartilage layer',
                   content: [
-                    "Irregular plates of hyaline cartilage instead of &quot;C&quot; shaped cartilage found in trachea.",
-                    "The plates surround the bronchi to make its shape rounded and keep its lumen open."
-                  ]
+                    'Irregular plates of hyaline cartilage instead of &quot;C&quot; shaped cartilage found in trachea.',
+                    'The plates surround the bronchi to make its shape rounded and keep its lumen open.',
+                  ],
                 },
                 {
-                  title: "Adventitia",
-                  content: "Made up of connective tissue."
-                }
-              ]
+                  title: 'Adventitia',
+                  content: 'Made up of connective tissue.',
+                },
+              ],
             },
             {
-              title: "BRONCHIOLES",
+              title: 'BRONCHIOLES',
               content: [
-                "Branches of smallest bronchi with less than 1 mm diameter.Lacking cartilage and glands.",
+                'Branches of smallest bronchi with less than 1 mm diameter.Lacking cartilage and glands.',
                 {
-                  title: "MUCOSA",
+                  title: 'MUCOSA',
                   unOrderedList: true,
                   orderedList: false,
                   content: [
-                    "Large bronchioles: simple ciliated columnar epithelium with very few goblet cells.",
-                    "Terminal bronchioles: simple cuboidal ciliated epithelium with no goblet cells.",
-                    "Clara cells replace the goblet",
-                    "CLARA CELLS:Non-ciliated cells with many micro-villi along apical surface.Their number greatly increases in terminal bronchioles. Secrete a glycoprotein which forms a protective layer of surfactant throughout the lower respiratory tract to reduce the surface tension of alveolar fluid which in turn helps to avoid the alveoli to collapse."
-                  ]
+                    'Large bronchioles: simple ciliated columnar epithelium with very few goblet cells.',
+                    'Terminal bronchioles: simple cuboidal ciliated epithelium with no goblet cells.',
+                    'Clara cells replace the goblet',
+                    'CLARA CELLS:Non-ciliated cells with many micro-villi along apical surface.Their number greatly increases in terminal bronchioles. Secrete a glycoprotein which forms a protective layer of surfactant throughout the lower respiratory tract to reduce the surface tension of alveolar fluid which in turn helps to avoid the alveoli to collapse.',
+                  ],
                 },
                 {
-                  title: "SMOOTH MUSCLE LAYER",
+                  title: 'SMOOTH MUSCLE LAYER',
                   unOrderedList: true,
                   orderedList: false,
                   content: [
-                    "Prominent layer",
-                    "Forms a major components of the wall."
-                  ]
+                    'Prominent layer',
+                    'Forms a major components of the wall.',
+                  ],
                 },
                 {
-                  title: "CONNECTIVE TISSUE LAYER",
-                  content: "Rich in elastic network."
-                }
-              ]
+                  title: 'CONNECTIVE TISSUE LAYER',
+                  content: 'Rich in elastic network.',
+                },
+              ],
             },
             {
-              title: "RESPIRATORY BRONCHIOLES",
+              title: 'RESPIRATORY BRONCHIOLES',
               unOrderedList: true,
               orderedList: false,
               content: [
-                "Its a transition from conducting to respiratory part. Partly respiratory in function.",
-                "Less than 0.5 mm in diameter.",
-                "Lined by simple cuboidal cells with cilia which get gradually replaced by non- ciliated cuboidal cells.",
-                "Clara cells are present which are found between these cuboidal cells.",
-                "Outside the epithelium is a smooth muscle layer.",
-                "The outer most is a fine layer of connective tissue."
-              ]
+                'Its a transition from conducting to respiratory part. Partly respiratory in function.',
+                'Less than 0.5 mm in diameter.',
+                'Lined by simple cuboidal cells with cilia which get gradually replaced by non- ciliated cuboidal cells.',
+                'Clara cells are present which are found between these cuboidal cells.',
+                'Outside the epithelium is a smooth muscle layer.',
+                'The outer most is a fine layer of connective tissue.',
+              ],
             },
             {
-              title: "ALVEOLAR DUCT",
+              title: 'ALVEOLAR DUCT',
               unOrderedList: true,
               orderedList: false,
               content: [
-                "Walls consist of alveoli and lined by simple squamous epithelium.",
-                "Smooth muscles are absent in the terminal parts of alveolar ducts.",
-                "Many alveolar sacs and alveoli open at the end of an alveolar duct."
-              ]
+                'Walls consist of alveoli and lined by simple squamous epithelium.',
+                'Smooth muscles are absent in the terminal parts of alveolar ducts.',
+                'Many alveolar sacs and alveoli open at the end of an alveolar duct.',
+              ],
             },
             {
-              title: "ALVEOLAR SACS",
-              content: "A cluster of alveoli seen at the end of alveolar duct is called alveolar sac."
+              title: 'ALVEOLAR SACS',
+              content:
+                'A cluster of alveoli seen at the end of alveolar duct is called alveolar sac.',
             },
             {
-              title: "ALVEOLI",
+              title: 'ALVEOLI',
               unOrderedList: true,
               orderedList: false,
               content: [
-                "Thin walled sacs.",
-                "Round or polygonal in shape. Around 200 micro-meters in diameter.",
-                "Forms site of gaseous exchange. Closely packed so the alveolar wall forms a partition between the adjacent alveoli.",
-                "Inter alveolar septa contain capillaries, reticular fibers, elastic fibers, fibroblasts and macrophages. Openings in septa are called as pores which help in circulation of air from one alveolus to another."
-              ]
+                'Thin walled sacs.',
+                'Round or polygonal in shape. Around 200 micro-meters in diameter.',
+                'Forms site of gaseous exchange. Closely packed so the alveolar wall forms a partition between the adjacent alveoli.',
+                'Inter alveolar septa contain capillaries, reticular fibers, elastic fibers, fibroblasts and macrophages. Openings in septa are called as pores which help in circulation of air from one alveolus to another.',
+              ],
             },
             {
-              title: "ALVEOLAR CELL TYPES",
+              title: 'ALVEOLAR CELL TYPES',
               unOrderedList: true,
               orderedList: false,
               content: [
                 {
-                  title: "TYPE-I ALVEOLAR CELLS",
+                  title: 'TYPE-I ALVEOLAR CELLS',
                   unOrderedList: true,
                   orderedList: false,
                   content: [
-                    "Very thin squamous cells.",
-                    "Cover 95% of the alveolar surface."
-                  ]
+                    'Very thin squamous cells.',
+                    'Cover 95% of the alveolar surface.',
+                  ],
                 },
                 {
-                  title: "TYPE-II ALVEOLAR CELLS",
+                  title: 'TYPE-II ALVEOLAR CELLS',
                   unOrderedList: true,
                   orderedList: false,
                   content: [
-                    "Cover remaining 3 to 5% of alveolar surface.",
-                    "Interposed among the type-l cells.",
-                    "Roughly cuboidal in shape having microvilli along apical surface.",
-                    "Mainly characterized by membrane bound lamellar bodies.",
-                    "Secretary product, pulmonary surfactant is assembled and stored in the lamellar bodies."
-                  ]
+                    'Cover remaining 3 to 5% of alveolar surface.',
+                    'Interposed among the type-l cells.',
+                    'Roughly cuboidal in shape having microvilli along apical surface.',
+                    'Mainly characterized by membrane bound lamellar bodies.',
+                    'Secretary product, pulmonary surfactant is assembled and stored in the lamellar bodies.',
+                  ],
                 },
                 {
-                  title: "TYPE-III ALVEOLAR CELLS",
+                  title: 'TYPE-III ALVEOLAR CELLS',
                   unOrderedList: true,
                   orderedList: false,
                   content: [
-                    "Very few and occasionally found.",
-                    "Functioning as receptors to monitor quality of air related to lung and alveoli."
-                  ]
+                    'Very few and occasionally found.',
+                    'Functioning as receptors to monitor quality of air related to lung and alveoli.',
+                  ],
                 },
                 {
-                  title: "ALVEOLAR MACROPHAGES (DUST CELLS)",
+                  title: 'ALVEOLAR MACROPHAGES (DUST CELLS)',
                   unOrderedList: true,
                   orderedList: false,
                   content: [
-                    "Large monocytes derived from representative of mono-nuclear phagocyte system.",
-                    "Lie on the surface of alveolar septa and in the interstitium.",
-                    "Phagocytose any debris and dust particles hence named as DUST CELLS.",
-                    "They also phagocytose blood cells entering the alveoli as a result of heart failure known as HEART FAILURE CELLS."
-                  ]
-                }
-              ]
+                    'Large monocytes derived from representative of mono-nuclear phagocyte system.',
+                    'Lie on the surface of alveolar septa and in the interstitium.',
+                    'Phagocytose any debris and dust particles hence named as DUST CELLS.',
+                    'They also phagocytose blood cells entering the alveoli as a result of heart failure known as HEART FAILURE CELLS.',
+                  ],
+                },
+              ],
             },
             {
-              title: "LOCATION",
-              content: "located on either side of the chest (thorax)."
+              title: 'LOCATION',
+              content: 'located on either side of the chest (thorax).',
             },
             {
-              title: "FUNCTION",
-              content: "The main function of the lungs is the process of gas exchange called respiration (or breathing). In respiration, oxygen from incoming air enters the blood, and carbon dioxide, a waste gas from the metabolism, leaves the blood. A reduced lung function means that the ability of lungs to exchange gases is reduced."
-            }
-          ]
-        }
-
-      }
-    ]
+              title: 'FUNCTION',
+              content:
+                'The main function of the lungs is the process of gas exchange called respiration (or breathing). In respiration, oxygen from incoming air enters the blood, and carbon dioxide, a waste gas from the metabolism, leaves the blood. A reduced lung function means that the ability of lungs to exchange gases is reduced.',
+            },
+          ],
+        },
+      },
+    ],
   },
   {
     id: 9,
-    title: "Salivary Glands",
+    title: 'Salivary Glands',
 
     subTopics: [
       {
         id: 0,
         isIntroduction: true,
         introductionContent: [
-          "Saliva is produced by three pairs of major salivary glands ...",
-          "Parotid, Sublingual and Submandibular",
-          "... as well as minor accessory glands found throughout the mucosa.",
-          "Salivary glands are made up of secretory acini (acini - means a rounded secretory unit) and ducts. There are two types of secretions - serous and mucous. The acini can either be serous, mucous, or a mixture of serous and mucous.",
-          "A serous acinus secretes proteins in an isotonic watery fluid.",
-          "A mucous acinuss secretes secretes mucin - lubricant",
-          "In a mixed serous-mucous acinus, the serous acinus forms a serous demilune around mucous acinus, as shown in the diagram.",
-          "The secretory units merge into intercalated ducts, which are lined by simple low cuboidal epithelium, and surrounded by myoepithelial cells.",
-          "These ducts continue on as striated ducts. These have a folded basal membrane, to enable active transport of substances out of the duct. Water resorption, and ion secretion takes place in the striated ducts, to make saliva hypotonic (reduced Na,Cl ions and increased carbonate, and potassium ions).",
-          "The striated ducts lead into interlobular (excretory) ducts, lined with a tall columnar epithelium. The glands are divided into lobules by connective tissue septa. Each lobule contains numerous secretory units, or acini."
+          'Saliva is produced by three pairs of major salivary glands ...',
+          'Parotid, Sublingual and Submandibular',
+          '... as well as minor accessory glands found throughout the mucosa.',
+          'Salivary glands are made up of secretory acini (acini - means a rounded secretory unit) and ducts. There are two types of secretions - serous and mucous. The acini can either be serous, mucous, or a mixture of serous and mucous.',
+          'A serous acinus secretes proteins in an isotonic watery fluid.',
+          'A mucous acinuss secretes secretes mucin - lubricant',
+          'In a mixed serous-mucous acinus, the serous acinus forms a serous demilune around mucous acinus, as shown in the diagram.',
+          'The secretory units merge into intercalated ducts, which are lined by simple low cuboidal epithelium, and surrounded by myoepithelial cells.',
+          'These ducts continue on as striated ducts. These have a folded basal membrane, to enable active transport of substances out of the duct. Water resorption, and ion secretion takes place in the striated ducts, to make saliva hypotonic (reduced Na,Cl ions and increased carbonate, and potassium ions).',
+          'The striated ducts lead into interlobular (excretory) ducts, lined with a tall columnar epithelium. The glands are divided into lobules by connective tissue septa. Each lobule contains numerous secretory units, or acini.',
         ],
-        content:{
+        content: {
           subTopic: [
             {
-              title: "Hints",
+              title: 'Hints',
               unOrderedList: false,
               orderedList: true,
               content: [
-                "Sublingual glands have mainly mucous acini.",
-                "Parotid glands have mainly serous acini.",
-                "Submandibular glands have a mixture of mucous and serous acini.",
-                "Mucous acini stain more weakly than serous acini, because of the techniques used to produce the sections."
-              ]
-            }
+                'Sublingual glands have mainly mucous acini.',
+                'Parotid glands have mainly serous acini.',
+                'Submandibular glands have a mixture of mucous and serous acini.',
+                'Mucous acini stain more weakly than serous acini, because of the techniques used to produce the sections.',
+              ],
+            },
           ],
-        }
+        },
       },
       {
         id: 1,
-        title: "SUBLINGUAL GLAND",
+        title: 'SUBLINGUAL GLAND',
         content: {
           subTopic: [
             {
-              title: "STRUCTURE",
-              unOrderedList: false,
-              orderedList: true,
+              title: 'STRUCTURE',
+              unOrderedList: true,
+              orderedList: false,
               content: [
-                "No definite capsule.",
-                "Mixed gland but having predominantly of mucous acini.",
-                "Serous demilunes present. ",
-                "Striated ducts and intercalated ducts are rarely seen."
-              ]
+                {
+                  title: 'Anterior surface',
+                  content:
+                    'Covered by non-keratinized stratified squamous epithelium which also covers apex and more than half of posterior surface.',
+                },
+                {
+                  title: 'Lamina propria',
+                  content: [
+                    'Merges with underlying perichondrium of epiglottic cartilage',
+                    'Serous, mucous or mixed glands are present.',
+                  ],
+                },
+                {
+                  title: 'Cartilage',
+                  content: [
+                    'Elastic cartilage also called as epiglottic cartilage which is present in the center.',
+                    'This cartilage forms the framework of epiglottis and is covered by perichondrium.',
+                  ],
+                },
+                {
+                  title: 'Posterior surface:',
+                  content:
+                    'More than upper half is covered by nonkeratinised stratified squamous epithelium and remaining lower half is lined by pseudostratified ciliated columnar epithelium (Respiratory epithelium). Occasionally taste buds are also present in the epithelium.',
+                },
+              ],
             },
             {
-              title: "LOCATION",
-              content: "The sublingual glands are a pair of major salivary glands located inferior to the tongue, anterior to the submandibular glands. The secretion produced is mainly mucous in nature; however, it is categorized as a mixed gland."
+              title: 'LOCATION',
+              content:
+                'The epiglottis is a leaf-shaped flap of cartilage located behind the tongue, at the top of the larynx, or voice box.',
             },
             {
-              title: "FUNCTION",
-              content: "The main role the sublingual gland is to produce saliva, which has many functions like food moisturizing,carbohydrate digestion, protection against bacterial flora, etc."
-            }
-          ]
-        }
+              title: 'FUNCTION',
+              content:
+                'The main function of the epiglottis is to seal off the windpipe during eating, so that food is not accidentally inhaled.',
+            },
+          ],
+        },
       },
       {
-        id: 2,
-        title: "SUBMANDIBULAR GLAND",
+        id: 1,
+        title: 'TRACHEA',
+        isIntroduction: true,
+        introductionContent: [
+          'The trachea is lined with a layer of pseudostratified ciliated columnar epithelium. The epithelium contains goblet cells, which are glandular, modified simple columnar epithelial cells that produce mucins, the main component of mucus.',
+        ],
         content: {
           subTopic: [
             {
-              title: "STRUCTURE",
+              title: 'STRUCTURE',
               unOrderedList: false,
               orderedList: true,
               content: [
-                "Mixed gland -serous acini predominate.",
-                "Well defined capsule.",
-                "Serous demilunes present. Arrangement of ducts is similar to that found in parotid gland."
-              ]
+                'Mixed gland -serous acini predominate.',
+                'Well defined capsule.',
+                'Serous demilunes present. Arrangement of ducts is similar to that found in parotid gland.',
+              ],
             },
             {
-              title: "LOCATION",
+              title: 'LOCATION',
               content: [
-                "Submandibular gland. The paired submandibular glands (historically known as submaxillary glands) are major salivary glands located beneath the floor of the mouth."
-              ]
+                'Submandibular gland. The paired submandibular glands (historically known as submaxillary glands) are major salivary glands located beneath the floor of the mouth.',
+              ],
             },
             {
-              title: "FUNCTION",
+              title: 'STRUCTURE:',
               content: [
-                "The submandibular gland and the other salivary glands are essential for digestion and for maintaining a healthy mouth. Saliva contains enzymes that begin to break down food before it passes to your stomach, and it moistens food so that it slips easily down the esophagus."
-              ]
-            }
-          ]
-        }
+                'The submandibular gland and the other salivary glands are essential for digestion and for maintaining a healthy mouth. Saliva contains enzymes that begin to break down food before it passes to your stomach, and it moistens food so that it slips easily down the esophagus.',
+              ],
+            },
+          ],
+        },
       },
       {
         id: 3,
-        title: "PAROTID GLAND",
+        title: 'PAROTID GLAND',
         content: {
           subTopic: [
             {
-              title: "STRUCTURE",
+              title: 'STRUCTURE',
               unOrderedList: false,
               orderedList: true,
               content: [
-                "Well defined capsule.",
-                "Acini are purely serous.",
-                "Abundant myoepithelial cells that help to expel the secretory product.",
-                "Interlobular ducts are found in the connective tissue septa which are lined by simple columnar epithelium or pseudostratified columnar epithelium.",
-                "Other ducts like intralobular and intercalated ducts are also present."
-              ]
+                'Well defined capsule.',
+                'Acini are purely serous.',
+                'Abundant myoepithelial cells that help to expel the secretory product.',
+                'Interlobular ducts are found in the connective tissue septa which are lined by simple columnar epithelium or pseudostratified columnar epithelium.',
+                'Other ducts like intralobular and intercalated ducts are also present.',
+              ],
             },
             {
-              title: "LOCATION",
+              title: 'LOCATION',
               content: [
-                "The parotid glands are a pair of mainly serous salivary glands located below and in front of each ear canal, draining their secretions into the vestibule of the mouth through the parotid duct. Each gland lies behind the mandibular ramus and in front of the mastoid process of the temporal bone."
-              ]
+                'The parotid glands are a pair of mainly serous salivary glands located below and in front of each ear canal, draining their secretions into the vestibule of the mouth through the parotid duct. Each gland lies behind the mandibular ramus and in front of the mastoid process of the temporal bone.',
+              ],
             },
             {
-              title: "FUNCTION",
-              content: "As one of the three large paired salivary glands, the parotid is a serous gland that produces saliva to moisten the mouth, helping with chewing, swallowing, phonating, and digestion."
-            }
-          ]
-        }
+              title: 'FUNCTION',
+              content:
+                'As one of the three large paired salivary glands, the parotid is a serous gland that produces saliva to moisten the mouth, helping with chewing, swallowing, phonating, and digestion.',
+            },
+          ],
+        },
       },
-    ]
+    ],
   },
   {
     id: 10,
-    title: "HepatoBillary Tissue",
+    title: 'HepatoBillary Tissue',
 
     subTopics: [
       {
         id: 0,
         isIntroduction: false,
-        content:{
+        content: {
           subTopic: [
             {
-              title: "Anatomy and Physiology",
-              content: "The hepatobiliary system is composed of the liver, gallbladder, andbiliary tree (Fig. 6-1). The pancreas is closely related and shares aportion of the biliary ductal system, hence its inclusion here.The hepatobiliary system and the pancreas."
+              title: 'Anatomy and Physiology',
+              content:
+                'The hepatobiliary system is composed of the liver, gallbladder, andbiliary tree (Fig. 6-1). The pancreas is closely related and shares aportion of the biliary ductal system, hence its inclusion here.The hepatobiliary system and the pancreas.',
             },
             {
-              title: "Liver",
-              content: "The liver is the largest organ in the body and is sheltered by the ribs inthe right upper quadrant (RUQ) of the abdomen. It is kept in positionby peritoneal ligaments and intraabdominal pressure from the musclesof   the   abdominal   wall.   The   functions   of   the   liver   are   multiple:metabolism of substances delivered via its portal circulation; synthesisof substances, including those concerned with blood clotting, storageof vitamin B, and other materials; and detoxification and excretion ofvarious substances.The liver has a double supply of blood, coming from the hepaticartery and the portal vein. The hepatic artery usually originates fromthe celiac axis and takes oxygenated blood to the liver. The portal veinis formed by the union of the superior mesenteric and splenic veins. Itis located within the liver and serves to return venous blood from theabdominal viscera to the inferior vena cava (IVC). Any interferencewith   blood   flow,   which   may   occur   with   liver   disease,   results   inconsequences elsewhere in the abdominal viscera and spleen."
+              title: 'Liver',
+              content:
+                'The liver is the largest organ in the body and is sheltered by the ribs inthe right upper quadrant (RUQ) of the abdomen. It is kept in positionby peritoneal ligaments and intraabdominal pressure from the musclesof   the   abdominal   wall.   The   functions   of   the   liver   are   multiple:metabolism of substances delivered via its portal circulation; synthesisof substances, including those concerned with blood clotting, storageof vitamin B, and other materials; and detoxification and excretion ofvarious substances.The liver has a double supply of blood, coming from the hepaticartery and the portal vein. The hepatic artery usually originates fromthe celiac axis and takes oxygenated blood to the liver. The portal veinis formed by the union of the superior mesenteric and splenic veins. Itis located within the liver and serves to return venous blood from theabdominal viscera to the inferior vena cava (IVC). Any interferencewith   blood   flow,   which   may   occur   with   liver   disease,   results   inconsequences elsewhere in the abdominal viscera and spleen.',
             },
             {
-              title: "Biliary Tree",
-              content: "A system of ducts acts to drain bile produced in the liver into theduodenum (Fig. 6-2). Bile from the liver’s two main lobes is drained bythe rightand left hepatic ducts. These unite to form the commonhepatic duct, which is joined usually in its midportion by the cystic ductfrom   the   gallbladder.   Together,   the   cystic   duct   and   the   commonhepatic duct form the common bile duct.The biliary system.The   common   bile   duct   descends   posterior   to   the   descendingduodenum to enter at its posteromedial aspect. Before its entranceinto the duodenum, the common bile duct may be joined by thepancreatic duct from the head of the pancreas. The short part of thecommon bile duct, after joining the pancreatic duct, is known as thehepatopancreatic ampullaor,   more   commonly,   theampulla ofVater.The flow of both bile and pancreatic juice into the duodenum isregulated by the hepatopancreatic sphincter, more commonly knownas thesphincter of Oddi.The release of bile into the duodenum istriggered by cholecystokinin, a hormone released by the presence offatty foods in the stomach. The purpose of bile is to emulsify fats sothat they may be absorbed."
+              title: 'Biliary Tree',
+              content:
+                'A system of ducts acts to drain bile produced in the liver into theduodenum (Fig. 6-2). Bile from the liver’s two main lobes is drained bythe rightand left hepatic ducts. These unite to form the commonhepatic duct, which is joined usually in its midportion by the cystic ductfrom   the   gallbladder.   Together,   the   cystic   duct   and   the   commonhepatic duct form the common bile duct.The biliary system.The   common   bile   duct   descends   posterior   to   the   descendingduodenum to enter at its posteromedial aspect. Before its entranceinto the duodenum, the common bile duct may be joined by thepancreatic duct from the head of the pancreas. The short part of thecommon bile duct, after joining the pancreatic duct, is known as thehepatopancreatic ampullaor,   more   commonly,   theampulla ofVater.The flow of both bile and pancreatic juice into the duodenum isregulated by the hepatopancreatic sphincter, more commonly knownas thesphincter of Oddi.The release of bile into the duodenum istriggered by cholecystokinin, a hormone released by the presence offatty foods in the stomach. The purpose of bile is to emulsify fats sothat they may be absorbed.',
             },
             {
-              title: "Gallbladder",
-              content: "The gallbladder, a digestive organ, is a pear-shaped sac located on theundersurface on the right lobe of the liver. Normally, the walls arequite thin, but they often thicken in the presence of inflammation. Thesole function of the gallbladder is to store and concentrate bile thathas been produced in the liver. The gallbladder receives bile from theliver via the hepatic duct and empties bile into the duodenum to aidthe digestion and absorption of fats in the gastrointestinal (GI) system."
+              title: 'Gallbladder',
+              content:
+                'The gallbladder, a digestive organ, is a pear-shaped sac located on theundersurface on the right lobe of the liver. Normally, the walls arequite thin, but they often thicken in the presence of inflammation. Thesole function of the gallbladder is to store and concentrate bile thathas been produced in the liver. The gallbladder receives bile from theliver via the hepatic duct and empties bile into the duodenum to aidthe digestion and absorption of fats in the gastrointestinal (GI) system.',
             },
             {
-              title: "Pancreas",
-              content: "The pancreas is an elongated, flat organ that obliquely crosses the leftside of the abdomen behind the stomach; it is a powerful digestiveorgan. Its functions are both exocrine and endocrine. Exocrine functionis concerned with production of the three digestive enzymes trypsin,amylase,   and   lipase.   Trypsin   assists   in   the   digestion   of   proteins.Amylase helps to break down large molecules of starch into smallermolecules of maltose, which eventually are broken down into glucoseand stored in the liver. Lipase assists in breaking down lipids into fattyacids and glycerol. These are discharged through the pancreatic ductinto the duodenum. The endocrine portion of the pancreas consists ofmultiple clusters of specialized cells, which are termed theislets ofLangerhans. The specialized cells are classified as α-cells and β-cells.The   function   of   β-cells   is   to   produce   insulin,   and   α-cells   produceglucagon, both of which are discharged directly into the blood from thepancreas.  Insulin   and   glucagon  regulate  carbohydrate   metabolism.Insulin’s role in this function includes making and storing glucose in theliver and in muscle tissue throughout the body and enabling the bodyto burn the stored glucose. When the blood flowing from the pancreasto the liver through the portal vein is hyperglycemic, insulin is releasedinto the bloodstream via the portal vein. Glucagon acts in a similarmanner, but it functions to increase the glucose level in blood. If the blood   released   into   the   portal   vein   is   hypoglycemic,   glucagonstimulates   the   liver   to   break   down   glycogen   into   glucose,   thusincreasing the glucose level in the bloodstream."
-            }
-          ]
-        }
+              title: 'Pancreas',
+              content:
+                'The pancreas is an elongated, flat organ that obliquely crosses the leftside of the abdomen behind the stomach; it is a powerful digestiveorgan. Its functions are both exocrine and endocrine. Exocrine functionis concerned with production of the three digestive enzymes trypsin,amylase,   and   lipase.   Trypsin   assists   in   the   digestion   of   proteins.Amylase helps to break down large molecules of starch into smallermolecules of maltose, which eventually are broken down into glucoseand stored in the liver. Lipase assists in breaking down lipids into fattyacids and glycerol. These are discharged through the pancreatic ductinto the duodenum. The endocrine portion of the pancreas consists ofmultiple clusters of specialized cells, which are termed theislets ofLangerhans. The specialized cells are classified as α-cells and β-cells.The   function   of   β-cells   is   to   produce   insulin,   and   α-cells   produceglucagon, both of which are discharged directly into the blood from thepancreas.  Insulin   and   glucagon  regulate  carbohydrate   metabolism.Insulin’s role in this function includes making and storing glucose in theliver and in muscle tissue throughout the body and enabling the bodyto burn the stored glucose. When the blood flowing from the pancreasto the liver through the portal vein is hyperglycemic, insulin is releasedinto the bloodstream via the portal vein. Glucagon acts in a similarmanner, but it functions to increase the glucose level in blood. If the blood   released   into   the   portal   vein   is   hypoglycemic,   glucagonstimulates   the   liver   to   break   down   glycogen   into   glucose,   thusincreasing the glucose level in the bloodstream.',
+            },
+          ],
+        },
       },
       {
         id: 1,
-        title: "Gall Bladder",
-        content:
-        {
+        title: 'Gall Bladder',
+        content: {
           subTopic: [
             {
-              title: "Identification points",
+              title: 'Identification points',
               unOrderedList: true,
               orderedList: false,
               content: [
-                "Absence of submucosa and muscularis interna.",
-                "Presence of fibro muscular coat.",
-                "Absence of glands and goblet cells."
-              ]
+                'Absence of submucosa and muscularis interna.',
+                'Presence of fibro muscular coat.',
+                'Absence of glands and goblet cells.',
+              ],
             },
             {
-              title: "Introduction",
+              title: 'Introduction',
               unOrderedList: true,
               orderedList: false,
               content: [
-                "Gall bladder is a muscular sac like structure situated in fossa of gall bladder(visceral surface of liver ).",
-                "Different parts of gall bladder are fundus, body and neck.",
-                "Develops in 4th week of intrauterine life from ‘pars cystica’ which is a part of hepatic bud."
-              ]
+                'Gall bladder is a muscular sac like structure situated in fossa of gall bladder(visceral surface of liver ).',
+                'Different parts of gall bladder are fundus, body and neck.',
+                'Develops in 4th week of intrauterine life from ‘pars cystica’ which is a part of hepatic bud.',
+              ],
             },
             {
-              title: "STRUCTURE",
+              title: 'STRUCTURE',
               content: [
                 {
-                  title: "Mucosa",
-                  content: "Lined by simple columnar epithelium with fine microvilli. It is highly folded into many rugae. Submucosa and muscularis mucosa are absent."
+                  title: 'Mucosa',
+                  content:
+                    'Lined by simple columnar epithelium with fine microvilli. It is highly folded into many rugae. Submucosa and muscularis mucosa are absent.',
                 },
                 {
-                  title: "Laminapropria",
-                  content: "Loose connective tissue layer beneath the epithelium."
+                  title: 'Laminapropria',
+                  content:
+                    'Loose connective tissue layer beneath the epithelium.',
                 },
                 {
-                  title: "Fibromuscular coat",
-                  content: "Circularly arranged smooth muscle cells with few elastic fibres in it."
+                  title: 'Fibromuscular coat',
+                  content:
+                    'Circularly arranged smooth muscle cells with few elastic fibres in it.',
                 },
                 {
-                  title: "Serosa",
-                  content: "Made up dense irregular connective tissue with few blood vessels in it."
-                }
-              ]
+                  title: 'Serosa',
+                  content:
+                    'Made up dense irregular connective tissue with few blood vessels in it.',
+                },
+              ],
             },
             {
-              title: "Functions",
+              title: 'Functions',
               unOrderedList: true,
               orderedList: false,
               content: [
-                "stores bile.",
-                "concentrates the bile.",
-                "decreases the ph of bile.",
-                "concentration of gall bladder maintains the pressure in the billiary system which is essential for the release of bile into small intestine."
-              ]
+                'stores bile.',
+                'concentrates the bile.',
+                'decreases the ph of bile.',
+                'concentration of gall bladder maintains the pressure in the billiary system which is essential for the release of bile into small intestine.',
+              ],
             },
             {
-              title: "Clinical",
+              title: 'Clinical',
               unOrderedList: true,
               orderedList: false,
               content: [
-                "inflammation of gall bladder is called cholecystitis.",
-                "surgical removal of gall bladder is called cholecystectomy.",
-                "formation of gall stones in gall bladder results in cholelithiasis."
-              ]
-            }
-          ]
-        }
-
+                'inflammation of gall bladder is called cholecystitis.',
+                'surgical removal of gall bladder is called cholecystectomy.',
+                'formation of gall stones in gall bladder results in cholelithiasis.',
+              ],
+            },
+          ],
+        },
       },
       {
         id: 2,
-        title: "Liver",
+        title: 'Liver',
         isIntroduction: false,
-        content:
-        {
+        content: {
           subTopic: [
             {
-              title: "Identification points",
+              title: 'Identification points',
               unOrderedList: true,
               orderedList: false,
               content: [
-                "Hepatic lobules with central vein.",
-                "Radiating hepatic cord cells.",
-                "Portal triads."
-              ]
+                'Hepatic lobules with central vein.',
+                'Radiating hepatic cord cells.',
+                'Portal triads.',
+              ],
             },
             {
-              title: "Introduction",
+              title: 'Introduction',
               unOrderedList: true,
               orderedList: false,
               content: [
-                "liver is the largest exocrine gland situated in the right hypochondrium and a part of left hypochondrium in abdomen.",
-                "it has two lobes. Right lobe is bigger than left lobe and both are connected by ‘falciform ligament’.",
-                "development of liver starts in 3rd week of intrauterine life. It arises from caudal end of foregut as a hepatic bud and later grows as ‘pars- hepatica’ to form liver."
-              ]
+                'liver is the largest exocrine gland situated in the right hypochondrium and a part of left hypochondrium in abdomen.',
+                'it has two lobes. Right lobe is bigger than left lobe and both are connected by ‘falciform ligament’.',
+                'development of liver starts in 3rd week of intrauterine life. It arises from caudal end of foregut as a hepatic bud and later grows as ‘pars- hepatica’ to form liver.',
+              ],
             },
             {
-              title: "Structure",
+              title: 'Structure',
               content: {
                 subTopic: [
                   {
-                    title: "Capsule",
-                    content: "Thin layer of connective tissue covering the liver called ‘glisson’s capsule’. It also covers the blood vessels thus enter the liver through ‘porta hepatis’ and divides the liver into numerous lobules."
+                    title: 'Capsule',
+                    content:
+                      'Thin layer of connective tissue covering the liver called ‘glisson’s capsule’. It also covers the blood vessels thus enter the liver through ‘porta hepatis’ and divides the liver into numerous lobules.',
                   },
                   {
-                    title: "Stroma",
-                    content: "Consists of thin layer of reticular fibres surrounding the hepatic cord cells and sinusoids."
+                    title: 'Stroma',
+                    content:
+                      'Consists of thin layer of reticular fibres surrounding the hepatic cord cells and sinusoids.',
                   },
                   {
-                    title: "Parenchyma",
+                    title: 'Parenchyma',
                     content: [
-                      "Repeated units of hepatic lobules form whole of the liver parenchyma. It is explained as follows:-",
-                    ]
+                      'Repeated units of hepatic lobules form whole of the liver parenchyma. It is explained as follows:-',
+                    ],
                   },
                   {
-                    title: "1. Hepatic lobule:",
+                    title: '1. Hepatic lobule:',
                     orderedList: false,
                     unOrderedList: true,
                     content: [
-                      "Hexagonal microscopic area of liver, covered by thin connective tissue septum called ‘interlobar septum’.",
-                      "there is a central vein at the centre of hepatic lobule and hepatic cords are radiating from the central vein.",
-                      "hepatocytes are hexagonal in shape present in hepatic cords.",
-                      "85-90% of liver parenchyma is made up of hepatocytes and 10-15% is made up of sinusoidal epithelium.",
-                      "‘von-kupffer cells’ act as macrophages of liver and are present in the sinusoids."
-                    ]
+                      'Hexagonal microscopic area of liver, covered by thin connective tissue septum called ‘interlobar septum’.',
+                      'there is a central vein at the centre of hepatic lobule and hepatic cords are radiating from the central vein.',
+                      'hepatocytes are hexagonal in shape present in hepatic cords.',
+                      '85-90% of liver parenchyma is made up of hepatocytes and 10-15% is made up of sinusoidal epithelium.',
+                      '‘von-kupffer cells’ act as macrophages of liver and are present in the sinusoids.',
+                    ],
                   },
                   {
-                    title: "2. Bile canaliculi",
-                    content: "these structures connect one hepatocyte with another hepatocyte."
+                    title: '2. Bile canaliculi',
+                    content:
+                      'these structures connect one hepatocyte with another hepatocyte.',
                   },
                   {
-                    title: "3. Perisinusoidal space of dissi",
+                    title: '3. Perisinusoidal space of dissi',
                     content: [
-                      "it is a minute potential space found in between endothelium of sinusoids and hepatic cord cells. It contains:-",
-                      "reticular fibres",
-                      "microvilli of hepatic cord cells and",
-                      "perisunusoidal lipocytes or lto cells or stellate cells."
-                    ]
+                      'it is a minute potential space found in between endothelium of sinusoids and hepatic cord cells. It contains:-',
+                      'reticular fibres',
+                      'microvilli of hepatic cord cells and',
+                      'perisunusoidal lipocytes or lto cells or stellate cells.',
+                    ],
                   },
                   {
-                    title: "4. Space of mall",
-                    content: "blood vessels and hepatic ducts are covered by a narrow interval space in the portal canals called ‘space of mall’."
+                    title: '4. Space of mall',
+                    content:
+                      'blood vessels and hepatic ducts are covered by a narrow interval space in the portal canals called ‘space of mall’.',
                   },
                   {
-                    title: "5. Portal canal:",
+                    title: '5. Portal canal:',
                     unOrderedList: true,
                     orderedList: false,
                     content: [
-                      "space between hepatic lobules filled with connective tissue. It contains the portal triad.",
-                      "portal triad constitutes proper hepatic artery,bile duct and portal vein."
-                    ]
+                      'space between hepatic lobules filled with connective tissue. It contains the portal triad.',
+                      'portal triad constitutes proper hepatic artery,bile duct and portal vein.',
+                    ],
                   },
                   {
-                    title: "6. Portal lobule",
-                    content: "it is a true functional unit of liver where a single branch of portal vein supplies the three adjoining hepatic lobules."
+                    title: '6. Portal lobule',
+                    content:
+                      'it is a true functional unit of liver where a single branch of portal vein supplies the three adjoining hepatic lobules.',
                   },
                   {
-                    title: "7. Portal acinus",
+                    title: '7. Portal acinus',
                     unOrderedList: true,
                     orderedList: false,
                     content: [
-                      "diamond shaped area found between two central veins of hepatic lobule, where the coeners of diamond is formed by hepatic triad.",
-                      "based on blood supply it is divided into three zones",
-
-                    ]
+                      'diamond shaped area found between two central veins of hepatic lobule, where the coeners of diamond is formed by hepatic triad.',
+                      'based on blood supply it is divided into three zones',
+                    ],
                   },
                   {
-                    title: "zone 1:",
-                    content: "close to arterial and portal blood vessels with rich blodd supply."
+                    title: 'zone 1:',
+                    content:
+                      'close to arterial and portal blood vessels with rich blodd supply.',
                   },
                   {
-                    title: "Zone 2:",
-                    content: "intermediate area found between zone 1 and zone 3, with moderate blood supply."
+                    title: 'Zone 2:',
+                    content:
+                      'intermediate area found between zone 1 and zone 3, with moderate blood supply.',
                   },
                   {
-                    title: "Zone 3:",
-                    content: "area of hepatic cord cells surrounding the central vein forms zone 3. It has poor blood supply."
-                  }
-                ]
-              }
+                    title: 'Zone 3:',
+                    content:
+                      'area of hepatic cord cells surrounding the central vein forms zone 3. It has poor blood supply.',
+                  },
+                ],
+              },
             },
             {
-              title: "Functions",
+              title: 'Functions',
               unOrderedList: true,
               orderedList: false,
               content: [
-                "stroma acts like framework of liver by supporting the hepatocytes and sinusoids.",
-                "liver is the active site for metabolism of carbohydrates,proteins,lipids,vitamins,drugs and hormones.",
-                "secretes bile juice and excretes bile pigments.",
-                "chief organ of heat production.",
-                "heamopoitic organ in foetal life.",
-                "forms a part of reticulo-endothelial system.",
-                "detoxification centre."
-              ]
+                'stroma acts like framework of liver by supporting the hepatocytes and sinusoids.',
+                'liver is the active site for metabolism of carbohydrates,proteins,lipids,vitamins,drugs and hormones.',
+                'secretes bile juice and excretes bile pigments.',
+                'chief organ of heat production.',
+                'heamopoitic organ in foetal life.',
+                'forms a part of reticulo-endothelial system.',
+                'detoxification centre.',
+              ],
             },
             {
-              title: "Clinical",
+              title: 'Clinical',
               unOrderedList: true,
               orderedList: false,
               content: [
-                "enlargement of liver (hepatomegaly), seen in fatty liver disease.",
-                "jaundice due to increased billirubin level in blood.",
-                "viral infection causing inflammation of liver called hepatitis.",
-                "cirrhosis of liver where necrosis and fibrosis of hepatic lobule is seen.",
-                "chronic venous congestion whrer , zone 3 liver cells are affected."
-              ]
-            }
-          ]
-        }
-
+                'enlargement of liver (hepatomegaly), seen in fatty liver disease.',
+                'jaundice due to increased billirubin level in blood.',
+                'viral infection causing inflammation of liver called hepatitis.',
+                'cirrhosis of liver where necrosis and fibrosis of hepatic lobule is seen.',
+                'chronic venous congestion whrer , zone 3 liver cells are affected.',
+              ],
+            },
+          ],
+        },
       },
       {
         id: 3,
-        title: "Pancreas",
+        title: 'Pancreas',
         isIntroduction: false,
-        content:
-        {
+        content: {
           subTopic: [
             {
-              title: "IDENTIFICATION POINTS",
+              title: 'IDENTIFICATION POINTS',
               unOrderedList: true,
               orderedList: false,
               content: [
-                "Numerous serous acini.",
-                "Islets of langerhans are present.",
-                "Interlobar ducts are seen"
-              ]
+                'Numerous serous acini.',
+                'Islets of langerhans are present.',
+                'Interlobar ducts are seen',
+              ],
             },
             {
-              title: "Introduction",
+              title: 'Introduction',
               unOrderedList: true,
               orderedList: false,
               content: [
-                "Pancreas is a j-shaped organ situated in posterior abdominal wall.",
-                "It is divided into head,neck,body and tail. Curved projection of head is called uncinate process.Where head is fitted in the curve of duodenum and tail is pointed towards the gastric surface of spleen."
-              ]
+                'Pancreas is a j-shaped organ situated in posterior abdominal wall.',
+                'It is divided into head,neck,body and tail. Curved projection of head is called uncinate process.Where head is fitted in the curve of duodenum and tail is pointed towards the gastric surface of spleen.',
+              ],
             },
             {
-              title: "STRUCTURE",
+              title: 'STRUCTURE',
               content: {
                 subTopic: [
                   {
-                    title: "CAPSULE",
+                    title: 'CAPSULE',
                     content: [
-                      "Capsule of the pancreas is thin , made up of dense irregular connecive tissue. Connective tissue septae of the capsule enters the parenchyma of the gland and divides the whole parenchyma into numerous lobules."
-                    ]
+                      'Capsule of the pancreas is thin , made up of dense irregular connecive tissue. Connective tissue septae of the capsule enters the parenchyma of the gland and divides the whole parenchyma into numerous lobules.',
+                    ],
                   },
                   {
-                    title: "PARENCHYMA",
+                    title: 'PARENCHYMA',
                     content: [
-                      "It is distinct from other glands as it contains both exocrine and endocrine glandular cells in it. Therefore pancreas is said to be a ‘heteroclite gland’."
-                    ]
+                      'It is distinct from other glands as it contains both exocrine and endocrine glandular cells in it. Therefore pancreas is said to be a ‘heteroclite gland’.',
+                    ],
                   },
                   {
-                    title: "EXOCRINE PART",
-                    content: "Comprises about 70-80% of the total parenchyma of the gland. Made up of numerous serous acini with a smaller lumen."
+                    title: 'EXOCRINE PART',
+                    content:
+                      'Comprises about 70-80% of the total parenchyma of the gland. Made up of numerous serous acini with a smaller lumen.',
                   },
                   {
-                    title: "ENDOCRINE PART",
+                    title: 'ENDOCRINE PART',
                     content: [
-                      "Comprises about 20-30% of the total parenchyma of the gland. Predominantly well developed in the tail region and it consists of aggregations of numerous cells forming many clusters which are referred to as ‘islets of Langerhans’.Islets of Langerhans contain 3 types of cells. They are:-",
-
-                    ]
+                      'Comprises about 20-30% of the total parenchyma of the gland. Predominantly well developed in the tail region and it consists of aggregations of numerous cells forming many clusters which are referred to as ‘islets of Langerhans’.Islets of Langerhans contain 3 types of cells. They are:-',
+                    ],
                   },
                   {
-                    title: "1. ALPHA-CELLS:",
+                    title: '1. ALPHA-CELLS:',
                     content: [
-                      "Constitute about 25% of endocrine pancreas. Peripherally situated in islets of Langerhans and can be identified by small size and pink cytoplasm."
-                    ]
+                      'Constitute about 25% of endocrine pancreas. Peripherally situated in islets of Langerhans and can be identified by small size and pink cytoplasm.',
+                    ],
                   },
                   {
-                    title: "2. BETA-CELLS",
+                    title: '2. BETA-CELLS',
                     content: [
-                      "Constitute about 70% of endocrine pancreas. Centrally situated. Large cells with blue cytoplasm."
-                    ]
+                      'Constitute about 70% of endocrine pancreas. Centrally situated. Large cells with blue cytoplasm.',
+                    ],
                   },
                   {
-                    title: "3. DELTA-CELLS:",
+                    title: '3. DELTA-CELLS:',
                     content: [
-                      "Hardly about 5% of endocrine pancreas. Highly variable in size and can occur anywhere in islets of Langerhans."
-                    ]
-                  }]
-              }
+                      'Hardly about 5% of endocrine pancreas. Highly variable in size and can occur anywhere in islets of Langerhans.',
+                    ],
+                  },
+                ],
+              },
             },
             {
-              title: "FUNCTIONS",
+              title: 'FUNCTIONS',
               orderedList: false,
               unOrderedList: true,
               content: [
-                "Serous acini of exocrine pancreas secretes pancreatic juice and many digetive enzymes.",
-                "Alpha-cells secrete a hormone called glucagon and helps in increasing blood glucose level.",
-                "Beta-cells secrete insulin and helps in decreasing the blood glucose level to normal.",
-                "Delta-cells produce few local hormones like gastrin,somatostatin and vip(vaso-active intestinal polypeptive) which produce local effects on gi-tract."
-              ]
+                'Serous acini of exocrine pancreas secretes pancreatic juice and many digetive enzymes.',
+                'Alpha-cells secrete a hormone called glucagon and helps in increasing blood glucose level.',
+                'Beta-cells secrete insulin and helps in decreasing the blood glucose level to normal.',
+                'Delta-cells produce few local hormones like gastrin,somatostatin and vip(vaso-active intestinal polypeptive) which produce local effects on gi-tract.',
+              ],
             },
             {
-              title: "CLINICAL",
+              title: 'CLINICAL',
               orderedList: false,
               unOrderedList: true,
               content: [
-                "Inflammation of exocrine pancreas is termed as pancreatitis.",
-                "Diabetes mellitus is a endocrine disorder of pancreas characterised by increased blood glucose level  due to hyposecretion of insulin by beta-cells ordue to destruction of receptors for insulin hormone."
-              ]
-            }
-          ]
-        }
-
-      }
-    ]
+                'Inflammation of exocrine pancreas is termed as pancreatitis.',
+                'Diabetes mellitus is a endocrine disorder of pancreas characterised by increased blood glucose level  due to hyposecretion of insulin by beta-cells ordue to destruction of receptors for insulin hormone.',
+              ],
+            },
+          ],
+        },
+      },
+    ],
   },
   {
     id: 13,
-    title: "RENAL SYSTEM",
+    title: 'RENAL SYSTEM',
 
     subTopics: [
       {
         id: 0,
         isIntroduction: true,
         introductionContent: [
-          "The urinary system, also known as the renal system or urinary tract, consists of the kidneys, ureters, bladder, and the urethra. The purpose of the urinary system is to eliminate waste from the body, regulate blood volume and blood pressure, control levels of electrolytes and metabolites, and regulate blood pH."
+          'The urinary system, also known as the renal system or urinary tract, consists of the kidneys, ureters, bladder, and the urethra. The purpose of the urinary system is to eliminate waste from the body, regulate blood volume and blood pressure, control levels of electrolytes and metabolites, and regulate blood pH.',
         ],
       },
       {
         id: 1,
-        title: "Kidney",
+        title: 'Kidney',
         isIntroduction: false,
-        content:
-        {
+        content: {
           subTopic: [
             {
-              title: "Identification points",
+              title: 'Identification points',
               unOrderedList: true,
               orderedList: false,
               content: [
-                "outer cortex and inner medulla.",
-                "cortex containing renal corpuscles,proximal and distal convoluted tubules.",
-                "medulla containing loop of henle and collecting ducts."
-              ]
+                'outer cortex and inner medulla.',
+                'cortex containing renal corpuscles,proximal and distal convoluted tubules.',
+                'medulla containing loop of henle and collecting ducts.',
+              ],
             },
             {
-              title: "Introduction",
-              content: "kidney is a pair of excretory organ located in the posterior abdominal wall behind the peritoneum"
+              title: 'Introduction',
+              content:
+                'kidney is a pair of excretory organ located in the posterior abdominal wall behind the peritoneum',
             },
             {
-              title: "Structure",
+              title: 'Structure',
               content: {
                 subTopic: [
                   {
-                    title: "Capsule",
+                    title: 'Capsule',
                     content: [
-                      "Outer most protective covering made up of dense irregular connective tissue. External to it there is a condensation of peripheral fat as perinephric pad of fat , which in turn is surrounded by sheath called renal fascia"
-                    ]
+                      'Outer most protective covering made up of dense irregular connective tissue. External to it there is a condensation of peripheral fat as perinephric pad of fat , which in turn is surrounded by sheath called renal fascia',
+                    ],
                   },
                   {
-                    title: "Cortex",
+                    title: 'Cortex',
                     content: [
-                      "Outer part of kidney found below the capsule. It mainly contains glomerulus,bowman’s capsule,dct and pct."
-                    ]
+                      'Outer part of kidney found below the capsule. It mainly contains glomerulus,bowman’s capsule,dct and pct.',
+                    ],
                   },
                   {
-                    title: "Medulla",
-                    content: "Inner part of kidney found below the cortex. Medulla is rich in loop of henle,collecting ducts and papillary ducts(ducts of bellini)"
-                  }
-                ]
-              }
+                    title: 'Medulla',
+                    content:
+                      'Inner part of kidney found below the cortex. Medulla is rich in loop of henle,collecting ducts and papillary ducts(ducts of bellini)',
+                  },
+                ],
+              },
             },
             {
-              title: "Clinical",
+              title: 'Clinical',
               content: [
-                "Nephrotic syndrome is a disease of kidney characterised by massive proteinuria,hypoalbuminemia and edema",
-                "Inflammation of glomerulus- glomerulonephritis",
-                "Inability of the kidney to maintain the homeostasis of blood and body fluids is known as renal failure."
-              ]
-            }
-          ]
-        }
-
+                'Nephrotic syndrome is a disease of kidney characterised by massive proteinuria,hypoalbuminemia and edema',
+                'Inflammation of glomerulus- glomerulonephritis',
+                'Inability of the kidney to maintain the homeostasis of blood and body fluids is known as renal failure.',
+              ],
+            },
+          ],
+        },
       },
       {
         id: 2,
-        title: "Ureter",
+        title: 'Ureter',
         isIntroduction: false,
-        content:
-        {
+        content: {
           subTopic: [
             {
-              title: "Identification points",
+              title: 'Identification points',
               unOrderedList: true,
               orderedList: false,
               content: [
-                "Star shaped lumen",
-                "Mucosa lined by transitional epithelium.",
-                "Inner longitudinal,middle circular and outer longitudinal muscular coat."
-              ]
+                'Star shaped lumen',
+                'Mucosa lined by transitional epithelium.',
+                'Inner longitudinal,middle circular and outer longitudinal muscular coat.',
+              ],
             },
             {
-              title: "Introduction",
-              content: "ureter is a muscular coat like structure which connects the kidney to urinary bladder"
+              title: 'Introduction',
+              content:
+                'ureter is a muscular coat like structure which connects the kidney to urinary bladder',
             },
             {
-              title: "Structure",
+              title: 'Structure',
               content: [
                 {
-                  title: "Mucosa",
-                  content: "Inner most layer of ureter lined by transitional epithelium with lamina propria beneath it. Mucosa is thrown into many folds which gives a star shaped lumen appearance to the lumen."
+                  title: 'Mucosa',
+                  content:
+                    'Inner most layer of ureter lined by transitional epithelium with lamina propria beneath it. Mucosa is thrown into many folds which gives a star shaped lumen appearance to the lumen.',
                 },
                 {
-                  title: "Muscular layer",
+                  title: 'Muscular layer',
                   content: [
-                    "It is found below the lamina propria. Consists of inner longitudinal,middle circular and outer longitudinal muscle layers"
-                  ]
+                    'It is found below the lamina propria. Consists of inner longitudinal,middle circular and outer longitudinal muscle layers',
+                  ],
                 },
                 {
-                  title: "Adventitia",
-                  content: "Outermost protective covering layer made up of dense irregular connective tissue"
-                }
-              ]
+                  title: 'Adventitia',
+                  content:
+                    'Outermost protective covering layer made up of dense irregular connective tissue',
+                },
+              ],
             },
             {
-              title: "Functions",
+              title: 'Functions',
               orderedList: false,
               unOrderedList: true,
               content: [
-                "Transitional epithelium prevents the entry of urine and its toxic substances into the ureter by diffusion.",
-                "Muscular layer is responsible for peristalsis in ureter which pushes the urine from kidney to urinary bladder.",
-                "Adventitia is protective and supportive in function."
-              ]
+                'Transitional epithelium prevents the entry of urine and its toxic substances into the ureter by diffusion.',
+                'Muscular layer is responsible for peristalsis in ureter which pushes the urine from kidney to urinary bladder.',
+                'Adventitia is protective and supportive in function.',
+              ],
             },
             {
-              title: "Clinical",
-              content: "Formation of stones in the kidney is called renal caliculi and is more common in ureter. It is characterised by intense colic pain in the loin."
-            }
-          ]
-        }
-
+              title: 'Clinical',
+              content:
+                'Formation of stones in the kidney is called renal caliculi and is more common in ureter. It is characterised by intense colic pain in the loin.',
+            },
+          ],
+        },
       },
       {
         id: 3,
-        title: "Urethra",
+        title: 'Urethra',
         isIntroduction: true,
         introductionContent: [
-          "Urine leaves the bladder through a tube-like structure called the urethra. The lining of the urethra is epithelium. The wall of the urethra is smooth muscle. Urine flow is controlled by two uretheral sphincters: theinternal urethral sphincter and the external urethral sphincter."
+          'Urine leaves the bladder through a tube-like structure called the urethra. The lining of the urethra is epithelium. The wall of the urethra is smooth muscle. Urine flow is controlled by two uretheral sphincters: theinternal urethral sphincter and the external urethral sphincter.',
         ],
-        content:
-        {
+        content: {
           subTopic: [
             {
-              title: "MALE URETHRA",
+              title: 'MALE URETHRA',
               content: [
                 {
-                  title: "Prostatic Urethra",
+                  title: 'Prostatic Urethra',
                   unOrderedList: true,
                   orderedList: false,
                   content: [
-                    "Most proximal part surrounded by prostate gland.",
-                    "Lined by transitional epithelium."
-                  ]
+                    'Most proximal part surrounded by prostate gland.',
+                    'Lined by transitional epithelium.',
+                  ],
                 },
                 {
-                  title: "Membranous Urethra",
+                  title: 'Membranous Urethra',
                   unOrderedList: true,
                   orderedList: false,
                   content: [
-                    "Shorter part encircled by the skeletal muscles of urogenital diaphragm",
-                    "Lined by pseudostratified columnar epithelium."
-                  ]
+                    'Shorter part encircled by the skeletal muscles of urogenital diaphragm',
+                    'Lined by pseudostratified columnar epithelium.',
+                  ],
                 },
                 {
-                  title: "Cavernous Urethra",
+                  title: 'Cavernous Urethra',
                   unOrderedList: true,
                   orderedList: false,
                   content: [
-                    "Passes through corpus spongiosum of the penis.",
-                    "Lined by pseudostratified columnar epithelium except under glans penis it is lined by stratified squamous."
-                  ]
-                }
-              ]
+                    'Passes through corpus spongiosum of the penis.',
+                    'Lined by pseudostratified columnar epithelium except under glans penis it is lined by stratified squamous.',
+                  ],
+                },
+              ],
             },
             {
-              title: "FEMALE URETHRA",
+              title: 'FEMALE URETHRA',
               orderedList: false,
               unOrderedList: true,
               content: [
-                "Near the bladder: lined by transitional epithelium.",
-                "In middle part: lined by pseudostratified columnar epithelium.",
-                "Near the external opening: lined by stratified squamous epithelium.",
-                "Submucosa: loose connective tissue containing of many venous plexuses and elastic fibers.",
-                "Muscle coat: inner longitudinal and outer circular coat of smooth muscle fibers."
-              ]
+                'Near the bladder: lined by transitional epithelium.',
+                'In middle part: lined by pseudostratified columnar epithelium.',
+                'Near the external opening: lined by stratified squamous epithelium.',
+                'Submucosa: loose connective tissue containing of many venous plexuses and elastic fibers.',
+                'Muscle coat: inner longitudinal and outer circular coat of smooth muscle fibers.',
+              ],
             },
             {
-              title: "DEVELOPMENT",
+              title: 'DEVELOPMENT',
               content: [
-                "The urethra forms itself from the lower part of the urogenital sinus (UGS). In a man the prostate and membranous part of the urethra arise from the pelvic part of the UGS while the spongy urethra comes from the phallic part (urethral plate)."
-              ]
+                'The urethra forms itself from the lower part of the urogenital sinus (UGS). In a man the prostate and membranous part of the urethra arise from the pelvic part of the UGS while the spongy urethra comes from the phallic part (urethral plate).',
+              ],
             },
             {
-              title: "FUNCTION",
+              title: 'FUNCTION',
               content: [
-                "The urethra is the tube that carries urine from the bladder to outside of the body. In males, it has the additional function of ejaculating semen when the man reaches orgasm. When the penis is erect during sex, the flow of urine is blocked from the urethra, allowing only semen to be ejaculated at orgasm."
-              ]
-            }
-          ]
-        }
-
+                'The urethra is the tube that carries urine from the bladder to outside of the body. In males, it has the additional function of ejaculating semen when the man reaches orgasm. When the penis is erect during sex, the flow of urine is blocked from the urethra, allowing only semen to be ejaculated at orgasm.',
+              ],
+            },
+          ],
+        },
       },
       {
         id: 4,
-        title: "Urinary Bladder",
+        title: 'Urinary Bladder',
         isIntroduction: false,
-        content:
-        {
+        content: {
           subTopic: [
             {
-              title: "Identification points",
+              title: 'Identification points',
               orderedList: false,
               unOrderedList: true,
               content: [
-                "Mucosa lined by transitional epithelium",
-                "Submucosa is absent",
-                "Muscular layer containing detrusor muscles."
-              ]
+                'Mucosa lined by transitional epithelium',
+                'Submucosa is absent',
+                'Muscular layer containing detrusor muscles.',
+              ],
             },
             {
-              title: "Introduction",
+              title: 'Introduction',
               orderedList: false,
               unOrderedList: true,
               content: [
-                "It is a muscular bag like structure which temporarily stores urine for voiding.",
-                "Normal storing capacity is 200-300ml."
-              ]
+                'It is a muscular bag like structure which temporarily stores urine for voiding.',
+                'Normal storing capacity is 200-300ml.',
+              ],
             },
             {
-              title: "Structure",
+              title: 'Structure',
               content: {
                 subTopic: [
                   {
-                    title: "Mucosa",
-                    content: "Inner most layer of urinary bladder lined by transitional epithelium with lamina propria rich in blood vessels underneath it. Mucosa is thrown into many folds which expands to collect more quantity of urine within the bladder"
+                    title: 'Mucosa',
+                    content:
+                      'Inner most layer of urinary bladder lined by transitional epithelium with lamina propria rich in blood vessels underneath it. Mucosa is thrown into many folds which expands to collect more quantity of urine within the bladder',
                   },
                   {
-                    title: "Muscular layer",
-                    content: "Irregular consisting of inner longitudinal,middle circular and outer longitudinal muscle layers. Few muscle fibers around the internal urethric orifice form an internal urethral sphincter which control the outflow of urine from the bladder."
+                    title: 'Muscular layer',
+                    content:
+                      'Irregular consisting of inner longitudinal,middle circular and outer longitudinal muscle layers. Few muscle fibers around the internal urethric orifice form an internal urethral sphincter which control the outflow of urine from the bladder.',
                   },
                   {
-                    title: "Adventitia",
+                    title: 'Adventitia',
                     content: [
-                      "Outermost protective covering layer made up of dense irregular connective tissue."
-                    ]
-                  }
-                ]
-              }
+                      'Outermost protective covering layer made up of dense irregular connective tissue.',
+                    ],
+                  },
+                ],
+              },
             },
             {
-              title: "Function",
+              title: 'Function',
               orderedList: false,
               unOrderedList: true,
               content: [
-                "Transitional epithelium prevents the entry of urine and its toxic substances into the urinary bladder. Here the cells also decrease in size and layers to accommodate large quantity of urine.",
-                "Prominent muscular coat is responsible for micturition process by producing powerful contractions.",
-                "Adventitia is protective and supportive in nature."
-              ]
+                'Transitional epithelium prevents the entry of urine and its toxic substances into the urinary bladder. Here the cells also decrease in size and layers to accommodate large quantity of urine.',
+                'Prominent muscular coat is responsible for micturition process by producing powerful contractions.',
+                'Adventitia is protective and supportive in nature.',
+              ],
             },
             {
-              title: "Clinical",
-              content: "Usually transitional epithelium lining the urinary bladder is 4-6 cell layer-thick. If it increases more than 6 cell-layer thick, then it is suggestive of carcinoma of urinary bladder."
-            }
-          ]
-        }
-
-      }
-    ]
+              title: 'Clinical',
+              content:
+                'Usually transitional epithelium lining the urinary bladder is 4-6 cell layer-thick. If it increases more than 6 cell-layer thick, then it is suggestive of carcinoma of urinary bladder.',
+            },
+          ],
+        },
+      },
+    ],
   },
   {
     id: 17,
-    title: "Special Senses Eye",
+    title: 'Special Senses Eye',
 
     subTopics: [
       {
@@ -7301,227 +7288,250 @@ let AllHistologyContent = [
         introductionContent: [
           "'Sense organs are the organs that respond to external stimuli by conveying impulses to the sensory nervous system.'",
           {
-            title: "Table of Contents",
+            title: 'Table of Contents',
             content: [
-              "vision(theeye)",
-                  "hearingandbalance(theear, which includes theauditory systemandvestibular system)",
-                  "smell(thenose)",
-                  "taste(thetongue)"
-            ]
-          }
+              'vision(theeye)',
+              'hearingandbalance(theear, which includes theauditory systemandvestibular system)',
+              'smell(thenose)',
+              'taste(thetongue)',
+            ],
+          },
         ],
       },
       {
         id: 1,
-        title: "CORNEA",
+        title: 'CORNEA',
         isIntroduction: true,
         introductionContent: [
-          "layers of cornea(ant to post)",
-          "@ABCDE",
-          "A: Anterior corneal epithlm",
-          "B : Bowmans membrne",
-          "C : Corneal stroma",
-          "D : Descemets membrne",
-          "E : Endothelium",
-          "Consists of five layers.",
+          'layers of cornea(ant to post)',
+          '@ABCDE',
+          'A: Anterior corneal epithlm',
+          'B : Bowmans membrne',
+          'C : Corneal stroma',
+          'D : Descemets membrne',
+          'E : Endothelium',
+          'Consists of five layers.',
           {
             unOrderedList: false,
             orderedList: true,
             content: [
-              "Corneal epithelium - continues with conjunctiva at the margin.",
+              'Corneal epithelium - continues with conjunctiva at the margin.',
               "Bowman's membrane.",
-              "Substantia propria",
+              'Substantia propria',
               "Descemet's membrane.",
-              "Endothelium."
-            ]
-          }
+              'Endothelium.',
+            ],
+          },
         ],
         content: {
           subTopic: [
             {
-              title: "STRUCTURE",
+              title: 'STRUCTURE',
               unOrderedList: true,
               orderedList: false,
               content: [
-                "Corneal epithelium is non-keratinising stratified squamous epithelium having no papillae of connective tissue.",
+                'Corneal epithelium is non-keratinising stratified squamous epithelium having no papillae of connective tissue.',
                 "Bowman's membrane is the condensation of connective tissue of lamina propria important protective layer - does not extend in the sclera. In the basal layer of corneal epithelium there are numerous mitotic figures which are responsible for the remarkable regenerating capacity of the cornea.",
-                "Substantia propria - constitutes 90% of corneal tissue. It is fibrous, tough,unyielding, perfectly transparent layer, composed of lamellae of connective tissue continuous with those of sclera. Fibres are bound together by amorphous cementing substance-hyaluronic acid sulfate",
+                'Substantia propria - constitutes 90% of corneal tissue. It is fibrous, tough,unyielding, perfectly transparent layer, composed of lamellae of connective tissue continuous with those of sclera. Fibres are bound together by amorphous cementing substance-hyaluronic acid sulfate',
                 "Descemet's membrane consists of special kind of elastic material – thin, transparent, homogeneous membrane. At corneal margin it breaks up into fibres which form the trabecular tissue on the inner wall of sinus venosus sclera.",
-                "Endothelium- consists of flat polygonal cells - single layer and is reflected on to the front of the Iris. Metabolic exchange between cornea and aqueous humor takes place through this layer.",
-                "The cornea has one of the richest nerve supply than any other eye tissue. Migrating lymphoid cells are also normally present in the cornea. The stroma normally is avascular"
-              ]
+                'Endothelium- consists of flat polygonal cells - single layer and is reflected on to the front of the Iris. Metabolic exchange between cornea and aqueous humor takes place through this layer.',
+                'The cornea has one of the richest nerve supply than any other eye tissue. Migrating lymphoid cells are also normally present in the cornea. The stroma normally is avascular',
+              ],
             },
             {
-              title: "DEVELOPMENT",
-              content: "Corneal development begins with primitive formation of epithelium and lens, followed by waves of migration from cells of neural crest origin between these two structures to produce the stroma and endothelium. Descemet membrane is secreted by the latter and gradually thickens."
+              title: 'DEVELOPMENT',
+              content:
+                'Corneal development begins with primitive formation of epithelium and lens, followed by waves of migration from cells of neural crest origin between these two structures to produce the stroma and endothelium. Descemet membrane is secreted by the latter and gradually thickens.',
             },
             {
-              title: "FUNCTION",
-              content: "The cornea acts as the eye's outermost lens. It functions like a window that controls and focuses the entry oflight into the eye. The cornea contributes between 65- 75 percent of the eye's total focusing power. When light strikes the cornea, it bends--or refracts--the incoming light onto the lens."
-            }
-          ]
-        }
+              title: 'FUNCTION',
+              content:
+                "The cornea acts as the eye's outermost lens. It functions like a window that controls and focuses the entry oflight into the eye. The cornea contributes between 65- 75 percent of the eye's total focusing power. When light strikes the cornea, it bends--or refracts--the incoming light onto the lens.",
+            },
+          ],
+        },
       },
       {
         id: 2,
-        title: "EYE LIDS",
+        title: 'EYE LIDS',
         isIntroduction: true,
         introductionContent: [
-          "The skin epithelium is keratinized stratified squamous epithelium. Melanocytes are spread in the basal layer of the epithelium. The posterior eyelid surface is lined by the palpebral conjunctiva that is composed of epithelium and subepithelial stroma – the substantia propria."
+          'The skin epithelium is keratinized stratified squamous epithelium. Melanocytes are spread in the basal layer of the epithelium. The posterior eyelid surface is lined by the palpebral conjunctiva that is composed of epithelium and subepithelial stroma – the substantia propria.',
         ],
         content: {
           subTopic: [
             {
-              title: "Structure",
+              title: 'Structure',
               content: [
-                "From without inwards:",
+                'From without inwards:',
                 {
                   unOrderedList: true,
                   orderedList: false,
                   content: [
-                    "1. Skin lined by keratinizing stratified squamous epithelium continuous with conjunctiva at the free margin of the eyelid. Dermis contains sebaceous and sweat glands.",
-                    "2. Subcutaneous tissue composed of loose areolar tissue and is devoid of fat.",
-                    "3. Orbicularis oculi muscle - a striated muscle. In palpebral part fibers are paler in colour and are parallel with palpebral fissure.",
-                    "4. Loose areolar tissue in eyelid is continuous with subaponeurotic layer of scalp. Contains blood vessels and nerves.",
-                    "5. Tarsal plate elongated plate of dense fibrous tissue.",
-                    "6. Tarsal glands - Meibomian glands lie between tarsi and conjunctiva. Disposed vertically in tarsal plate. Ducts open on the free margins of the lids by minute foramina. They are modified sebaceous glands.",
-                    "7. Conjunctiva: transparent mucous membrane lines the inner surface of the eyelid and is reflected on the eye ball over sclera and cornea. It consists of lining epithelium, stratified columnar, 2-3 layers thick, having goblet cells also. Lamina propria is a delicate fibrous connective tissue."
-                  ]
-                }
-              ]
+                    '1. Skin lined by keratinizing stratified squamous epithelium continuous with conjunctiva at the free margin of the eyelid. Dermis contains sebaceous and sweat glands.',
+                    '2. Subcutaneous tissue composed of loose areolar tissue and is devoid of fat.',
+                    '3. Orbicularis oculi muscle - a striated muscle. In palpebral part fibers are paler in colour and are parallel with palpebral fissure.',
+                    '4. Loose areolar tissue in eyelid is continuous with subaponeurotic layer of scalp. Contains blood vessels and nerves.',
+                    '5. Tarsal plate elongated plate of dense fibrous tissue.',
+                    '6. Tarsal glands - Meibomian glands lie between tarsi and conjunctiva. Disposed vertically in tarsal plate. Ducts open on the free margins of the lids by minute foramina. They are modified sebaceous glands.',
+                    '7. Conjunctiva: transparent mucous membrane lines the inner surface of the eyelid and is reflected on the eye ball over sclera and cornea. It consists of lining epithelium, stratified columnar, 2-3 layers thick, having goblet cells also. Lamina propria is a delicate fibrous connective tissue.',
+                  ],
+                },
+              ],
             },
             {
-              title: "DEVELOPMENT",
-              content: "THE EYELID DURING THE EMBRYONIC STAGE. The first indication of the embryonic eyelid occurs around the beginning of week 6 (37–42 days, 8–11 mm stage) where small grooves or depressions develop in the surface ectoderm immediately above and below the developing eye, which rapidly deepen to form the eyelidfolds."
+              title: 'DEVELOPMENT',
+              content:
+                'THE EYELID DURING THE EMBRYONIC STAGE. The first indication of the embryonic eyelid occurs around the beginning of week 6 (37–42 days, 8–11 mm stage) where small grooves or depressions develop in the surface ectoderm immediately above and below the developing eye, which rapidly deepen to form the eyelidfolds.',
             },
             {
-              title: "FUNCTION",
-              content: "An eyelid is a thin layer of skin that covers and protects the eye. The eye contains a muscle that retracts the eyelid to 'open' the eye either voluntarily or involuntarily. Human eyelids contain a row of eyelashes that protect the eye from dust particles, foreign bodies, and perspiration."
-            }
-          ]
-        }
+              title: 'FUNCTION',
+              content:
+                "An eyelid is a thin layer of skin that covers and protects the eye. The eye contains a muscle that retracts the eyelid to 'open' the eye either voluntarily or involuntarily. Human eyelids contain a row of eyelashes that protect the eye from dust particles, foreign bodies, and perspiration.",
+            },
+          ],
+        },
       },
       {
         id: 3,
-        title: "OPTIC NERVE",
+        title: 'OPTIC NERVE',
         isIntroduction: false,
         content: {
           subTopic: [
             {
-              title: "Structure",
+              title: 'Structure',
               unOrderedList: true,
               orderedList: false,
               content: [
-                "Polygonal arrangements of myelinated nerve bundles, surrounded by connective",
-                "tissue extended from pia mater.",
-                "Nerve is surrounded by the layers of meninges with existance of the",
-                "subarachnoid space."
-              ]
+                'Polygonal arrangements of myelinated nerve bundles, surrounded by connective',
+                'tissue extended from pia mater.',
+                'Nerve is surrounded by the layers of meninges with existance of the',
+                'subarachnoid space.',
+              ],
             },
             {
-              title: "DEVELOPMENT",
+              title: 'DEVELOPMENT',
               content: [
-                "In humans, the optic nerve is derived from optic stalks during the seventh week of development and is composed of retinal ganglion cell axons and glial cells; it extends from the optic disc to the optic chiasma and continues as the optic tract to the lateral geniculate nucleus, pretectal nuclei, and superior colliculus"
-              ]
+                'In humans, the optic nerve is derived from optic stalks during the seventh week of development and is composed of retinal ganglion cell axons and glial cells; it extends from the optic disc to the optic chiasma and continues as the optic tract to the lateral geniculate nucleus, pretectal nuclei, and superior colliculus',
+              ],
             },
             {
-              title: "FUNCTION AND LOCATION",
+              title: 'FUNCTION AND LOCATION',
               unOrderedList: true,
               orderedList: false,
               content: [
-                "It is also called the second cranial nerve or cranial nerve II.",
-                "It is the second of several pairs of cranial nerves.",
-                "The job of the optic nerve is to transfer visual information from the retina to the vision centers of thebrain via electrical impulses.",
-                "The optic nerve is located in the back of the eye."
-              ]
-            }
-          ]
-        }
+                'It is also called the second cranial nerve or cranial nerve II.',
+                'It is the second of several pairs of cranial nerves.',
+                'The job of the optic nerve is to transfer visual information from the retina to the vision centers of thebrain via electrical impulses.',
+                'The optic nerve is located in the back of the eye.',
+              ],
+            },
+          ],
+        },
       },
       {
         id: 4,
-        title: "Retina",
+        title: 'Retina',
         isIntroduction: true,
         introductionContent: [
-          "layers of retina (within outwards):",
+          'layers of retina (within outwards):',
           "@'In New Generation It Is Only Opthalmologst Examine Patients Retina'",
-          "In (Inner Limiting Membrane)",
-          "New (Nerve fiber layer)",
-          "Generation (Ganglion cell layer)",
-          "It (Inner plexiform Layer)",
-          "Is (Inner nuclear Layer)",
-          "Only (Outer plexiform Layer)",
-          "Ophthalmologist ( Outer nuclear Layer)",
-          "Examines (the outer Limiting membr)",
+          'In (Inner Limiting Membrane)',
+          'New (Nerve fiber layer)',
+          'Generation (Ganglion cell layer)',
+          'It (Inner plexiform Layer)',
+          'Is (Inner nuclear Layer)',
+          'Only (Outer plexiform Layer)',
+          'Ophthalmologist ( Outer nuclear Layer)',
+          'Examines (the outer Limiting membr)',
           "Patient's (Photoreceptors-rods cons)",
-          "Retina (Retinal Pigmented layer)"
+          'Retina (Retinal Pigmented layer)',
         ],
         content: {
           subTopic: [
             {
-              title: "STRUCTURE",
+              title: 'STRUCTURE',
               content: [
-                "It is the photoreceptor organ consists of 10 layers:From outside to inside they are:",
-                "Serous, mucous or mixed glands are present.",
-              ]
+                'It is the photoreceptor organ consists of 10 layers:From outside to inside they are:',
+                'Serous, mucous or mixed glands are present.',
+              ],
             },
             {
-              title: "Pigment Layer",
+              title: 'Pigment Layer',
               unOrderedList: true,
               orderedList: false,
               content: [
-                "It is also called non-nervous layer.",
-                "The cells are flattened or cuboidal and hexagonal (on surface view) contain pigment known as fuscin. Apical parts project in between rods and cones. The processes are not anatomically joined to photoreceptor which explains why these regions can become separated in detachment of retina"
-              ]
+                'It is also called non-nervous layer.',
+                'The cells are flattened or cuboidal and hexagonal (on surface view) contain pigment known as fuscin. Apical parts project in between rods and cones. The processes are not anatomically joined to photoreceptor which explains why these regions can become separated in detachment of retina',
+              ],
             },
             {
-              title: "Layer of rods and cones",
-              content: "Dendrites of photoreceptor cells. Also extend into the pigmented layer. Rods are more numerous than cones except at Macula Lutea. Rods are cylindrical & arranged perpendicular to the surface. Inner parts of rods are constricted called Rod fibre."
+              title: 'Layer of rods and cones',
+              content:
+                'Dendrites of photoreceptor cells. Also extend into the pigmented layer. Rods are more numerous than cones except at Macula Lutea. Rods are cylindrical & arranged perpendicular to the surface. Inner parts of rods are constricted called Rod fibre.',
             },
             {
-              title: "External limiting membrane",
+              title: 'External limiting membrane',
               content: [
-                "Sieve like membrane composed of inward extension of Muller's fibers."
-              ]
+                "Sieve like membrane composed of inward extension of Muller's fibers.",
+              ],
             },
             {
-              title: "Outer Nuclear layer",
-              content: "Formed by closely packed nuclei of photoreceptor cells."
+              title: 'Outer Nuclear layer',
+              content:
+                'Formed by closely packed nuclei of photoreceptor cells.',
             },
             {
-              title: "Outer plexiform layer",
-              content: "Contains spherules of rods and foot plate of cones and dendrites of bipolar cells."
+              title: 'Outer plexiform layer',
+              content:
+                'Contains spherules of rods and foot plate of cones and dendrites of bipolar cells.',
             },
             {
-              title: " Inner Nuclear",
-              content: "Consists of nuclei of bipolar cells, nuclei of the cells of Muller's. These cells have more cytoplasm around the nucleus than that of bipolar cells. Muller's cells lie in the outer part of this layer."
+              title: ' Inner Nuclear',
+              content:
+                "Consists of nuclei of bipolar cells, nuclei of the cells of Muller's. These cells have more cytoplasm around the nucleus than that of bipolar cells. Muller's cells lie in the outer part of this layer.",
             },
             {
-              title: " Inner plexiform layer",
-              content: "Formed by the synapses between axons of bipolar and dendrites of Ganglionic cells."
+              title: ' Inner plexiform layer',
+              content:
+                'Formed by the synapses between axons of bipolar and dendrites of Ganglionic cells.',
             },
             {
-              title: "Ganglionic Layer is made up of large",
-              content: "Ganglionic cells and Neuroglia. Ganglion cells are arranged in a single row, in macula lutea there are several rows."
+              title: 'Ganglionic Layer is made up of large',
+              content:
+                'Ganglionic cells and Neuroglia. Ganglion cells are arranged in a single row, in macula lutea there are several rows.',
             },
             {
-              title: "Layer of nerve fibres",
-              content: "Formed by the axons of ganglion cells, having reached the inner most part of retina, turn at right angle and then like parallel to the inner surface of the retina and converge towardsthe site of exit of optic nerve. There is neither myelin sheath, nor sheath of Schwann"
+              title: 'Layer of nerve fibres',
+              content:
+                'Formed by the axons of ganglion cells, having reached the inner most part of retina, turn at right angle and then like parallel to the inner surface of the retina and converge towardsthe site of exit of optic nerve. There is neither myelin sheath, nor sheath of Schwann',
             },
 
             {
-              title: "DEVELOPMENT",
-              content: "In vertebrate embryonic development, the retina and the optic nerve originate as outgrowths of the developing brain, specifically the embryonic diencephalon; thus, the retina is considered part of the central nervous system (CNS) and is actually brain tissue."
+              title: 'DEVELOPMENT',
+              content:
+                'In vertebrate embryonic development, the retina and the optic nerve originate as outgrowths of the developing brain, specifically the embryonic diencephalon; thus, the retina is considered part of the central nervous system (CNS) and is actually brain tissue.',
             },
             {
-              title: "FUNCTION",
-              content: "The retina is a thin layer of tissue that lines the back of the eye on the inside. It is located near the optic nerve. The purpose of the retina is to receive light that the lens has focused, convert the light into neural signals, and send these signals on to the brain for visual recognition."
-            }
-          ]
-        }
-      }
-    ]
-  }
+              title: 'FUNCTION',
+              content:
+                'The retina is a thin layer of tissue that lines the back of the eye on the inside. It is located near the optic nerve. The purpose of the retina is to receive light that the lens has focused, convert the light into neural signals, and send these signals on to the brain for visual recognition.',
+            },
+          ],
+        },
+      },
+    ],
+  },
 ];
 
-export { categories, explore, products, profile, topics, collections, AllHistologyContent, introductionScreenImages, sliderImages };
+export {
+  categories,
+  explore,
+  products,
+  profile,
+  topics,
+  collections,
+  AllHistologyContent,
+  introductionScreenImages,
+  sliderImages,
+};

@@ -10,6 +10,7 @@ import {
   Alert,
   TouchableOpacity,
   Modal,
+  ActivityIndicator,
   TextInput,
 } from 'react-native';
 import { color } from 'react-native-reanimated';
@@ -21,6 +22,8 @@ import { useIsFocused } from '@react-navigation/native';
 import { createIconSetFromFontello } from 'react-native-vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useTheme } from '../src/utils/DarkTheme/ThemeManager';
+import { NotesModal } from '../components/NotesModal';
+import firestore from '@react-native-firebase/firestore';
 const Icon = createIconSetFromFontello(fontelloConfig);
 import {
   heightPercentageToDP,
@@ -36,98 +39,146 @@ const ContentScreen = ({ navigation, route }) => {
   const isFocused = useIsFocused();
   const [Bookmark, setBookmark] = useState(JSON.stringify({ bookmark: [0] }));
   const [isBookmark, setisBookmark] = useState(false);
-  const { id, title, titleId } = route.params;
+  const [modal, setModal] = useState(false);
+  const { id, title, titleId, Modal = false } = route.params;
   const { mode, theme: themeforDarkMode, toggle } = useTheme();
   const [contents, setContent] = useState({});
   const [isContent, setisContent] = useState(false);
-
+  const [isPremiumUser, setIspremiumUser] = useState(false);
+  const [data, setData] = useState([]);
+  const changeModal = () => {
+    setModal((initialstate) => !initialstate);
+  };
   const extractContent = () => {
-    let specificContent = AllHistologyContent.filter((item) => {
-      return item.id == titleId;
-    });
+    let specificContent;
+    if (isPremiumUser) {
+      specificContent = AllHistologyContent.filter((item) => {
+        return item.id == titleId;
+      });
+    }
+
     if (specificContent) {
       specificContent = specificContent ? specificContent : [];
 
-      setContent(item => specificContent[0]?.subTopics[id]);
-      console.log("iddddddddddddddddddddddd", id);
+      setContent((item) => specificContent[0]?.subTopics[id]);
+      console.log('iddddddddddddddddddddddd', id);
       console.log('xxxxxxx', specificContent[0]);
       console.log('zzzz', specificContent[0]?.subTopics[id]);
       console.log('yyyyy', contents);
       setisContent(true);
     }
 
-    // console.log(
+    //    // console.log(
     //   'YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY',
     //   contents.content,
     // );
   };
-
+  //get bool data from firebase
+  const firestoreData = async () => {
+    try {
+      const users = await firestore().collection('Allhistologydata').get();
+      const histoData = await firestore()
+        .collection('Allhistologydata')
+        .doc('Tcfx8PDKef1MJCtWR0ix')
+        .get();
+      if (histoData && histoData.data().data[0]) {
+        setIspremiumUser(true);
+      }
+    } catch (err) {
+      console.log('error fetching firestore data', err);
+    }
+  };
+  useEffect(() => {
+    firestoreData();
+    return () => { 
+      setIspremiumUser(false);
+    };
+  }, [isFocused, id, titleId]);
   useEffect(() => {
     extractContent();
-  }, [isContent]);
+    setModal(Modal);
+  }, [isContent, Modal, isPremiumUser]);
 
   const saveBookmarkData = async ({ id, titleId }) => {
     try {
+      //      console.log(id, titleId);
       let bookmarkData = await AsyncStorage.getItem('BookmarkID');
 
       bookmarkData = bookmarkData
         ? bookmarkData
-        : await JSON.stringify({ bookmark: [0] });
+        : await JSON.stringify({ bookmark: [] });
+      console.log('Bookmark data', bookmarkData);
       let finalData = await JSON.parse(bookmarkData).bookmark;
+      console.log('Final data', finalData);
 
-      let parsedBookmarkData =
-        typeof finalData === 'undefined' ? [0] : finalData;
+      let parsedBookmarkData = typeof finalData == 'undefined' ? [] : finalData;
+      if (parsedBookmarkData.length > 0) {
+        let parsedNewArray = parsedBookmarkData.filter(
+          (item) =>
+            item.id.toString() + item.titleId != id.toString() + titleId,
+        );
 
-      if (parsedBookmarkData.length >= 1) {
-        let parsedNewArray = parsedBookmarkData.filter((item) => {
-          return item != id && titleId != item.titleId;
-        });
-        // console.log('hello');
+        console.log(parsedNewArray, 'ccccccccccccccccccccccc');
+
         if (parsedBookmarkData.length == parsedNewArray.length) {
-          console.log('aa', parsedBookmarkData);
+          console.log(
+            '------------------------',
+            parsedBookmarkData,
+            parsedNewArray,
+          );
+
+          console.log('here');
           let length = parsedNewArray.length;
           parsedNewArray[length] = { id: id, titleId: titleId };
           await AsyncStorage.setItem(
             'BookmarkID',
-            JSON.stringify({ bookmark: parsedNewArray }),
+            JSON.stringify({
+              bookmark: parsedNewArray,
+            }),
           );
-          setisBookmark(true);
-          console.log(Bookmark);
+          setisBookmark(!isBookmark);
         } else {
-          // console.log('***********************', parsedBookmarkData);
+          // console.log(
+          //   parsedNewArray.push({id: id, titleId: titleId}),
+          //   parsedBookmarkData,
+          //   'heresssssssssssssss',
+          // );
           await AsyncStorage.setItem(
             'BookmarkID',
-            JSON.stringify({ bookmark: parsedNewArray }),
+            JSON.stringify({
+              bookmark: parsedNewArray,
+            }),
           );
           setisBookmark(!isBookmark);
         }
       } else {
-        // console.log('***********************', parsedBookmarkData);
+        console.log('herssse', { id: id, titleId: titleId });
         await AsyncStorage.setItem(
           'BookmarkID',
-          JSON.stringify({ bookmark: [0, { id: id, titleId: titleId }] }),
+          JSON.stringify({ bookmark: [{ id: id, titleId: titleId }] }),
         );
         setisBookmark(!isBookmark);
       }
     } catch (err) {
-      // console.log('Error saving bookmark data', err);
+      console.log('Error saving bookmark data', err);
     }
   };
 
   const getBookmarkDatas = async () => {
     let bookmarkData = await AsyncStorage.getItem('BookmarkID');
-    // console.log('What in Bookmark', bookmarkData);
+
     bookmarkData = bookmarkData
       ? bookmarkData
-      : await JSON.stringify({ bookmark: [0] });
+      : await JSON.stringify({ bookmark: [] });
     let parsedBookmarkData = await JSON.parse(bookmarkData).bookmark;
     parsedBookmarkData =
-      typeof parsedBookmarkData === 'undefined' ? [0] : parsedBookmarkData;
-    if (parsedBookmarkData.length > 1) {
+      typeof parsedBookmarkData == 'undefined' ? [] : parsedBookmarkData;
+
+    if (parsedBookmarkData.length > 0) {
+      //      console.log('<<<<<<<<<<<<<<<<<<<<<<<<<<', parsedBookmarkData.length);
       parsedBookmarkData.map((item) => {
         if (item.id == id && item.titleId == titleId) {
           setisBookmark(true);
-          // console.log('What in bookmark State', Bookmark);
           return;
         }
       });
@@ -135,7 +186,7 @@ const ContentScreen = ({ navigation, route }) => {
   };
   useEffect(() => {
     getBookmarkDatas();
-  }, [isBookmark, Bookmark]);
+  }, [isBookmark, Bookmark, isFocused, id, titleId]);
 
   React.useLayoutEffect(() => {
     navigation.setOptions({
@@ -155,13 +206,15 @@ const ContentScreen = ({ navigation, route }) => {
             Epithelial Tissue
           </Text>
           <View style={{ flexDirection: 'row' }}>
-            <Icon
-              style={{ marginHorizontal: 0 }}
-              name="edit"
-              size={25}
-              color="#fff"
-            />
-
+            <TouchableOpacity
+              onPress={() => setModal((initialstate) => !initialstate)}>
+              <Icon
+                style={{ marginHorizontal: 0 }}
+                name="edit"
+                size={25}
+                color="#fff"
+              />
+            </TouchableOpacity>
             <TouchableOpacity
               onPress={() => saveBookmarkData({ id: id, titleId: titleId })}>
               {isBookmark ? (
@@ -194,237 +247,258 @@ const ContentScreen = ({ navigation, route }) => {
       style={{
         backgroundColor: themeforDarkMode.contentBackground,
       }}>
-      {/* <Modal visible={modal} transparent={true} animationType="slide">
-        <View style={[styles.modalContainer]}>
-          <View style={styles.modalWrapper}>
-            <TextInput style={styles.modalTitle} onChangeText={text => setNoteTitle(text)} value={noteTitle}></TextInput>
-            <View style={styles.modalContentContainer}>
-              <TextInput multiline onChangeText={text => setNoteContent(text)} value={noteContent}></TextInput>
-            </View>
-            <View style={styles.modalFooter}>
-              <TouchableOpacity onPress={() => { setModal(false) }} style={[styles.closeButton, styles.f_c_c_c]} >
-                <Icon style={styles.modalCloseIcon} name="cancel-circled2" size={18} />
+      {isPremiumUser && (
+        <View style={styles.container}>
+          <Slider title={title} />
+          <NotesModal
+            modal={modal}
+            changeModal={changeModal}
+            datas={{ id: id, title: title, titleId: titleId }}
+          />
+          <View style={styles.container}>
+            <Slider title={title} />
 
-                <Text style={[styles.closeButtonText]}>Close</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={[styles.saveButton, styles.f_c_c_c]}>
-                <Icon style={styles.modalSaveIcon} name="ok-circled2" size={18} />
-                <Text style={[styles.saveButtonText]}>Save</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-        </View>
-      </Modal> */}
-      <View style={styles.container}>
-        <Slider title={title} />
-
-        <View style={styles.contentContainer}>
-          <View>
-            {/* Tile is Here */}
-            <Text style={[
-              { color: themeforDarkMode.title },
-              styles.contentTitleText
-            ]}>{title}</Text>
-            {/* Introduction is Here  */}
-            {/* {console.log("7777777777777777", contents?.content)} */}
-            {contents?.isIntroduction && (
-              typeof contents?.introductionContent == 'string' ?
-                <Text
-                  style={[
-                    styles.contentBox,
-                    styles.contentParagraphTypography,
-                    { color: themeforDarkMode.contentParagraphTypography },
-                  ]}>
-                  {contents?.introductionContent}
-                </Text> :
-                <View>
-                  {contents?.introductionContent?.map(introductionContent => {
-                    // { console.log("88888888888888888888", introductionContent) }
-                    return typeof introductionContent == 'string' ?
-                      <Text
-                        style={[
-                          styles.contentBox,
-                          styles.contentParagraphTypography,
-                          { color: themeforDarkMode.contentParagraphTypography },
-                        ]}>
-                        {introductionContent}
-                      </Text> :
-                      <View>
-                        <Text>{introductionContent.title}</Text>
-                        {introductionContent?.content.map(content => {
-                          return <Text
+            <View style={styles.contentContainer}>
+              <View>
+                {/* Tile is Here */}
+                <Text style={[
+                  { color: themeforDarkMode.title },
+                  styles.contentTitleText
+                ]}>{title}</Text>
+                {/* Introduction is Here  */}
+                {/* {console.log("7777777777777777", contents?.content)} */}
+                {contents?.isIntroduction && (
+                  typeof contents?.introductionContent == 'string' ?
+                    <Text
+                      style={[
+                        styles.contentBox,
+                        styles.contentParagraphTypography,
+                        { color: themeforDarkMode.contentParagraphTypography },
+                      ]}>
+                      {contents?.introductionContent}
+                    </Text> :
+                    <View>
+                      {contents?.introductionContent?.map(introductionContent => {
+                        // { console.log("88888888888888888888", introductionContent) }
+                        return typeof introductionContent == 'string' ?
+                          <Text
                             style={[
                               styles.contentBox,
                               styles.contentParagraphTypography,
                               { color: themeforDarkMode.contentParagraphTypography },
                             ]}>
-                            {content}
-                          </Text>
-                        })}
-                      </View>
-                  })
-                  }
-                </View>
+                            {introductionContent}
+                          </Text> :
+                          <View>
+                            <Text>{introductionContent.title}</Text>
+                            {introductionContent?.content.map(content => {
+                              return <Text
+                                style={[
+                                  styles.contentBox,
+                                  styles.contentParagraphTypography,
+                                  { color: themeforDarkMode.contentParagraphTypography },
+                                ]}>
+                                {content}
+                              </Text>
+                            })}
+                          </View>
+                      })
+                      }
+                    </View>
 
-            )}
-            {
-              contents?.content?.subTopic.map(data => {
-                // console.log("***", data.content);
-                return (
-                  <View>
-                    <Text
-                      style={[
-                        styles.contentBox,
-                        styles.subTitle,
-                        { color: themeforDarkMode.subTitle },
-                      ]}
-                    >{data?.title}</Text>
-                    {//START
-                      //content subtopic content
-                      //SUBTOPIC CEHCKER
-                      data?.content?.subTopic == null ?
-                        //CONTENT WITHOUT NESETD SUBTOPIC
-                        typeof data.content == 'string' ? <Text
+                )}
+                {
+                  contents?.content?.subTopic.map(data => {
+                    // console.log("***", data.content);
+                    return (
+                      <View>
+                        <Text
                           style={[
                             styles.contentBox,
-                            styles.contentParagraphTypography,
-                            { color: themeforDarkMode.contentParagraphTypography },
+                            styles.subTitle,
+                            { color: themeforDarkMode.subTitle },
                           ]}
-                        >{data.content}</Text>
-                          :
-                          <View>
-                            {/* {console.log("CONTENT WITHOUT NESETD SUBTOPIC")} */}
-                            {data?.content?.map(item => {
-                              // console.log("************", item);
-                              return (
-                                <View>
-                                  {/* Here is Subtopics */}
-                                  <Text 
-                                    style={[
-                                      styles.contentBox,
-                                      styles.subTitle,
-                                      { color: themeforDarkMode.subTitle },
-                                    ]}
-                                  >{item?.title} </Text>
-                                  {/* Should have to check the title  */}
-                                  {
-                                    typeof item == 'string' ? <Text
+                        >{data?.title}</Text>
+                        {//START
+                          //content subtopic content
+                          //SUBTOPIC CEHCKER
+                          data?.content?.subTopic == null ?
+                            //CONTENT WITHOUT NESETD SUBTOPIC
+                            typeof data.content == 'string' ? <Text
+                              style={[
+                                styles.contentBox,
+                                styles.contentParagraphTypography,
+                                { color: themeforDarkMode.contentParagraphTypography },
+                              ]}
+                            >{data.content}</Text>
+                              :
+                              <View>
+                                {/* {console.log("CONTENT WITHOUT NESETD SUBTOPIC")} */}
+                                {data?.content?.map(item => {
+                                  // console.log("************", item);
+                                  return (
+                                    <View>
+                                      {/* Here is Subtopics */}
+                                      <Text
+                                        style={[
+                                          styles.contentBox,
+                                          styles.subTitle,
+                                          { color: themeforDarkMode.subTitle },
+                                        ]}
+                                      >{item?.title} </Text>
+                                      {/* Should have to check the title  */}
+                                      {
+                                        typeof item == 'string' ? <Text
+                                          style={[
+                                            styles.contentBox,
+                                            styles.contentParagraphTypography,
+                                            { color: themeforDarkMode.contentParagraphTypography },
+                                          ]}
+                                        >{item}</Text>
+                                          : <View>
+                                            {
+                                              typeof item?.content == 'string' ? <Text
+                                                style={[
+                                                  styles.contentBox,
+                                                  styles.contentParagraphTypography,
+                                                  { color: themeforDarkMode.contentParagraphTypography },
+                                                ]}
+                                              >{item?.content}</Text>
+                                                : <View>
+                                                  {
+                                                    item?.content?.map(data => {
+                                                      return (
+                                                        <View>
+                                                          {
+                                                            typeof data == 'string' ? <Text
+                                                              style={[
+                                                                styles.contentBox,
+                                                                styles.contentParagraphTypography,
+                                                                { color: themeforDarkMode.contentParagraphTypography },
+                                                              ]}
+                                                            >{data}</Text>
+                                                              : <View>
+                                                                {
+                                                                  typeof data?.content == 'string' ? <Text
+                                                                    style={[
+                                                                      styles.contentBox,
+                                                                      styles.contentParagraphTypography,
+                                                                      { color: themeforDarkMode.contentParagraphTypography },
+                                                                    ]}
+                                                                  >{data?.content}</Text>
+                                                                    : <View>
+                                                                      {
+                                                                        data?.content?.map(data =>
+                                                                          <Text
+                                                                            style={[
+                                                                              styles.contentBox,
+                                                                              styles.contentParagraphTypography,
+                                                                              { color: themeforDarkMode.contentParagraphTypography },
+                                                                            ]}
+                                                                          >{data}</Text>
+                                                                        )
+                                                                      }
+                                                                    </View>
+                                                                }
+                                                              </View>
+                                                          }
+                                                        </View>
+                                                      )
+                                                    }
+                                                    )
+                                                  }
+                                                </View>
+                                            }
+                                          </View>
+                                      }
+                                    </View>
+                                  )
+                                }
+                                )}
+                              </View>
+
+                            :
+                            //CONTENT WITH NESETD SUBTOPIC
+                            <View>
+                              {
+                                data?.content?.subTopic.map(content => {
+                                  // console.log("CONTENT WITH NESETD SUBTOPIC");
+                                  // console.log("************", content)
+                                  return <View>
+                                    <Text
+                                      style={[
+                                        styles.contentBox,
+                                        styles.subTitle,
+                                        { color: themeforDarkMode.subTitle },
+                                      ]}
+                                    >{content.title}</Text>
+                                    {typeof content.content == 'string' ? <Text
                                       style={[
                                         styles.contentBox,
                                         styles.contentParagraphTypography,
                                         { color: themeforDarkMode.contentParagraphTypography },
                                       ]}
-                                    >{item}</Text>
+                                    >{content.content}</Text>
                                       : <View>
-                                        {
-                                          typeof item?.content == 'string' ? <Text
+                                        {content?.content.map(data => {
+                                          // console.log("*******************",data);
+                                          return <Text
                                             style={[
                                               styles.contentBox,
                                               styles.contentParagraphTypography,
                                               { color: themeforDarkMode.contentParagraphTypography },
                                             ]}
-                                          >{item?.content}</Text>
-                                            : <View>
-                                              {
-                                                item?.content?.map(data => {
-                                                  return (
-                                                    <View>
-                                                      {
-                                                        typeof data == 'string' ? <Text
-                                                          style={[
-                                                            styles.contentBox,
-                                                            styles.contentParagraphTypography,
-                                                            { color: themeforDarkMode.contentParagraphTypography },
-                                                          ]}
-                                                        >{data}</Text>
-                                                          : <View>
-                                                            {
-                                                              typeof data?.content == 'string' ? <Text
-                                                                style={[
-                                                                  styles.contentBox,
-                                                                  styles.contentParagraphTypography,
-                                                                  { color: themeforDarkMode.contentParagraphTypography },
-                                                                ]}
-                                                              >{data?.content}</Text>
-                                                                : <View>
-                                                                  {
-                                                                    data?.content?.map(data =>
-                                                                      <Text
-                                                                        style={[
-                                                                          styles.contentBox,
-                                                                          styles.contentParagraphTypography,
-                                                                          { color: themeforDarkMode.contentParagraphTypography },
-                                                                        ]}
-                                                                      >{data}</Text>
-                                                                    )
-                                                                  }
-                                                                </View>
-                                                            }
-                                                          </View>
-                                                      }
-                                                    </View>
-                                                  )
-                                                }
-                                                )
-                                              }
-                                            </View>
-                                        }
+                                          >{data}</Text>
+                                        })}
                                       </View>
-                                  }
-                                </View>
-                              )
-                            }
-                            )}
-                          </View>
-
-                        :
-                        //CONTENT WITH NESETD SUBTOPIC
-                        <View>
-                          {
-                            data?.content?.subTopic.map(content => {
-                              // console.log("CONTENT WITH NESETD SUBTOPIC");
-                              // console.log("************", content)
-                              return <View>
-                                <Text
-                                  style={[
-                                    styles.contentBox,
-                                    styles.subTitle,
-                                    { color: themeforDarkMode.subTitle },
-                                  ]}
-                                >{content.title}</Text>
-                                {typeof content.content == 'string' ? <Text
-                                style={[
-                                  styles.contentBox,
-                                  styles.contentParagraphTypography,
-                                  { color: themeforDarkMode.contentParagraphTypography },
-                                ]}
-                                >{content.content}</Text>
-                                  : <View>
-                                    {content?.content.map(data => {
-                                      // console.log("*******************",data);
-                                      return <Text
-                                      style={[
-                                        styles.contentBox,
-                                        styles.contentParagraphTypography,
-                                        { color: themeforDarkMode.contentParagraphTypography },
-                                      ]}
-                                      >{data}</Text>
-                                    })}
+                                    }
                                   </View>
-                                }
-                              </View>
-                            })
-                          }
-                        </View>
-                      //END
-                    }
-                  </View>
-                )
-              })
-            }
+                                })
+                              }
+                            </View>
+                          //END
+                        }
+                      </View>
+                    )
+                  })
+                }
+              </View>
+            </View>
           </View>
+
         </View>
-      </View>
+      )}
+      {!isPremiumUser && (
+        <TouchableOpacity
+          style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            paddingVertical: '50%',
+          }}>
+          <Icon name="globe" size={48} color="#ABB4BD" />
+          <Text
+            style={[
+              {
+                color: themeforDarkMode.secondaryText,
+                fontSize: 14,
+                paddingTop: 12,
+              },
+            ]}>
+            Share this app 5 times.
+          </Text>
+          <Text
+            style={[
+              {
+                color: themeforDarkMode.secondaryText,
+                fontSize: 14,
+              },
+            ]}>
+            To access content offline for lifetime.
+          </Text>
+        </TouchableOpacity>
+      )}
+
     </ScrollView>
   );
 };
@@ -473,89 +547,6 @@ const styles = StyleSheet.create({
     // marginHorizontal: widthPercentageToDP(2.5),
   },
 
-  modalContentContainer: {
-    paddingHorizontal: 15,
-    paddingVertical: 25,
-    flex: 1,
-    width: '100%',
-    // backgroundColor: 'yellow',
-    // paddingHorizontal:widthPercentageToDP(1.5),
-    // paddingVertical:heightPercentageToDP(2.5)
-  },
-  modalFooter: {
-    width: '100%',
-    flexDirection: 'row',
-    backgroundColor: colors.lightWhite,
-  },
-  modalContainer: {
-    // paddingVertical: 100,
-    backgroundColor: '#000000aa',
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingVertical: heightPercentageToDP(12),
-  },
-  modalWrapper: {
-    flex: 1,
-    // width: '85%',
-    backgroundColor: 'white',
-    borderRadius: 10,
-    overflow: 'hidden',
-    width: widthPercentageToDP(85),
-  },
-  closeButtonText: {
-    // flex:0.2,
-    color: 'red',
-    // fontSize: 16,
-    fontSize: widthPercentageToDP(4),
-  },
-  saveButtonText: {
-    // flex:0.5,
-    color: colors.secondary,
-    // fontSize: 16,
-    fontSize: widthPercentageToDP(4),
-  },
-  modalCloseIcon: {
-    flex: 0.2,
-    color: 'red',
-  },
-  modalSaveIcon: {
-    flex: 0.2,
-    color: colors.secondary,
-  },
-  closeButton: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flex: 1,
-    borderColor: 'green',
-    borderRightWidth: StyleSheet.hairlineWidth,
-    borderTopWidth: StyleSheet.hairlineWidth,
-  },
-  saveButton: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    // paddingVertical: 15,
-    flex: 1,
-    // backgroundColor: colors.primary,
-    borderColor: 'green',
-    borderTopWidth: StyleSheet.hairlineWidth,
-    paddingVertical: heightPercentageToDP(1.8),
-  },
-  modalTitle: {
-    // marginHorizontal: 25,
-    // paddingVertical: 12,
-    textAlign: 'center',
-    color: colors.secondary,
-    // fontSize: 25,
-    fontWeight: 'bold',
-    fontFamily: 'Roboto-Bold',
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    marginHorizontal: widthPercentageToDP(6.5),
-    paddingVertical: heightPercentageToDP(1.4),
-    fontSize: widthPercentageToDP(6),
-  },
   contentParagraphTypography: {
     // lineHeight: 22,
     textAlign: 'justify',

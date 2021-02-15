@@ -20,6 +20,7 @@ const {width} = Dimensions.get('window');
 const RegistartionScreen = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmpassword, setconfirmPassword] = useState('');
   const {register} = useContext(AuthContext);
   return (
     <ScrollView style={styles.container}>
@@ -35,31 +36,12 @@ const RegistartionScreen = ({navigation}) => {
         </View>
         <View style={styles.formContainer}>
           <InputTextField
-            iconname="user"
-            style={[styles.inputTitle, styles.formField]}
-            placeholderText="Full Name"
-          />
-          <InputTextField
-            iconname="user"
+            iconname="mail"
             style={[styles.inputTitle, styles.formField]}
             placeholderText="Email address"
             onChangeText={(email) => setEmail(email)}
           />
-          <InputTextField
-            iconname="user"
-            style={[styles.inputTitle, styles.formField]}
-            placeholderText="Gender"
-          />
-          <InputTextField
-            iconname="language"
-            style={[styles.inputTitle, styles.formField]}
-            placeholderText="Choose Language"
-          />
-          <InputTextField
-            iconname="user"
-            style={[styles.inputTitle, styles.formField]}
-            placeholderText="Email Address"
-          />
+
           <InputTextField
             style={styles.formField}
             placeholderText="Password"
@@ -72,9 +54,12 @@ const RegistartionScreen = ({navigation}) => {
             placeholderText="Confirm Password"
             isSecure={true}
             iconname="lock"
+            onChangeText={(confirmpassword) =>
+              setconfirmPassword(confirmpassword)
+            }
           />
           <TouchableOpacity
-            onPress={() => register(email, password)}
+            onPress={() => register(email, password, confirmpassword)}
             style={[styles.submitContainer, styles.f_c_c_c, styles.shadow]}>
             <Text style={[styles.text, styles.buttonText]}>Sign Up</Text>
           </TouchableOpacity>
@@ -101,7 +86,7 @@ const styles = StyleSheet.create({
     // marginTop: width / 12,
     // marginBottom: width / 30,
     marginTop: heightPercentageToDP(4.3),
-    marginBottom: heightPercentageToDP(1.6),
+    marginBottom: heightPercentageToDP(4.6),
   },
   imageContainer: {
     // marginVertical: 10,
@@ -123,12 +108,12 @@ const styles = StyleSheet.create({
   },
   formContainer: {
     // marginVertical: 25,
-    marginVertical: heightPercentageToDP(2.9),
+    marginVertical: heightPercentageToDP(3.2),
   },
   formField: {
     // marginTop: 6,
     // marginBottom: 6,
-    marginTop: heightPercentageToDP(0.7),
+    marginTop: heightPercentageToDP(1.3),
     marginBottom: heightPercentageToDP(0.7),
   },
   logoimage: {
@@ -171,9 +156,9 @@ const styles = StyleSheet.create({
     // marginHorizontal: 80,
     // marginTop: 32,
     color: 'white',
-    paddingVertical:heightPercentageToDP(2),
-    marginHorizontal:widthPercentageToDP(19.5),
-    marginTop:heightPercentageToDP(3.8)
+    paddingVertical: heightPercentageToDP(2),
+    marginHorizontal: widthPercentageToDP(19.5),
+    marginTop: heightPercentageToDP(3.8),
   },
   f_c_c_c: {
     alignItems: 'center',
