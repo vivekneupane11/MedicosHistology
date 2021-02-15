@@ -9,6 +9,18 @@ export const ThemeColors = {
     light: 'black',
     dark: 'lightgray',
   },
+  contentParagraphTypography:{
+    light:'black',
+    dark:'lightgray'
+  },
+  subTitle:{
+    light:'black',
+    dark:'#d4c69e'
+  },
+  title:{
+    light:'#156B9A',
+    dark:'white'
+  },
   primaryBackground: {
     light: '#F1F1F1',
     dark: '#1c1c1c',

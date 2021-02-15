@@ -34,7 +34,10 @@ const IntroductionScreen = ({ navigation, route }) => {
             <View style={styles.contentContainer}>
                 {
                     mocks.introductionScreenImages.map((images) => {
-                        return <Image style={styles.imageStyle} resizeMode="contain" source={images.image} />
+                        return <Image
+                         style={styles.imageStyle} 
+                         resizeMode="contain"
+                          source={images.image} />
                     })
                 }
             </View>

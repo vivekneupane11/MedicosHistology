@@ -12,7 +12,11 @@ const {width} = Dimensions.get('window');
 const CollectionScreen = ({ navigation }) => {
     const { mode, theme: themeforDarkMode, toggle } = useTheme();
     return (
-        <View style={{paddingVertical: theme.sizes.base}}>
+        <View style={{
+            flex:1,
+            paddingVertical: theme.sizes.base,
+            backgroundColor:themeforDarkMode.contentBackground
+            }}>
             <Block
                 flex={false}
                 row
@@ -47,7 +51,12 @@ const CollectionScreen = ({ navigation }) => {
                                 // margin={[0, 0, 15]}
                                 size={50}
                                 color="rgba(41,216,143,0.20)">
-                                <Image style={styles.image} resizeMode='contain' source={collection.image} />
+                                <Image 
+                                style={styles.image} 
+                                resizeMode='contain'
+                                 source={collection.image}
+                                 tintColor={mode == 'dark' ? '#dde0eb' : undefined}
+                                 />
                             </Badge>
                             <Text
                                 height={20}
