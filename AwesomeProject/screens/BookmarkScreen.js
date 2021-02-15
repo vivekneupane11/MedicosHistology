@@ -278,7 +278,11 @@ const BookmarkScreen = ({navigation}) => {
           {BookmarkData.map((item) => (
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate('Content', {data: item});
+                navigation.navigate('Content', {
+                  id: item.id,
+                  title: item.title,
+                  titleId: item.titleId,
+                });
               }}
               key={item.id + item.title}
               style={[

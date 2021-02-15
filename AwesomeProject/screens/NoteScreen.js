@@ -119,7 +119,12 @@ const NoteScreen = ({navigation}) => {
               <TouchableOpacity
                 key={note.id.toString() + note.titleId.toString()}
                 onPress={() => {
-                  setModal(true);
+                  navigation.navigate('Content', {
+                    id: note.id,
+                    title: note.noteTitle,
+                    titleId: note.titleId,
+                    Modal: true,
+                  });
                 }}>
                 <View
                   key={k}
@@ -250,8 +255,8 @@ const styles = StyleSheet.create({
   note: {
     flexDirection: 'row',
     position: 'absolute',
-    top: 5,
-    right: 15,
+    top: 0.5,
+    right: 10,
     justifyContent: 'center',
     alignItems: 'center',
   },

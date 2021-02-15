@@ -10,6 +10,7 @@ import {
   Alert,
   TouchableOpacity,
   Modal,
+  ActivityIndicator,
   TextInput,
 } from 'react-native';
 import {color} from 'react-native-reanimated';
@@ -22,6 +23,7 @@ import {createIconSetFromFontello} from 'react-native-vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useTheme} from '../src/utils/DarkTheme/ThemeManager';
 import {NotesModal} from '../components/NotesModal';
+import firestore from '@react-native-firebase/firestore';
 const Icon = createIconSetFromFontello(fontelloConfig);
 import {
   heightPercentageToDP,
@@ -38,27 +40,31 @@ const ContentScreen = ({navigation, route}) => {
   const [Bookmark, setBookmark] = useState(JSON.stringify({bookmark: [0]}));
   const [isBookmark, setisBookmark] = useState(false);
   const [modal, setModal] = useState(false);
-  const {id, title, titleId} = route.params;
+  const {id, title, titleId, Modal = false} = route.params;
   const {mode, theme: themeforDarkMode, toggle} = useTheme();
   const [contents, setContent] = useState({});
   const [isContent, setisContent] = useState(false);
-
+  const [isPremiumUser, setIspremiumUser] = useState(false);
   const [data, setData] = useState([]);
   const changeModal = () => {
     setModal((initialstate) => !initialstate);
   };
   const extractContent = () => {
-    let specificContent = AllHistologyContent.filter((item) => {
-      return item.id == titleId;
-    });
+    let specificContent;
+    if (isPremiumUser) {
+      specificContent = AllHistologyContent.filter((item) => {
+        return item.id == titleId;
+      });
+    }
+
     if (specificContent) {
       specificContent = specificContent ? specificContent : [];
 
-      setContent(item => specificContent[0]?.subTopics[id]);
-        console.log("iddddddddddddddddddddddd", id);
-        console.log('xxxxxxx', specificContent[0]);
-        console.log('zzzz', specificContent[0]?.subTopics[id]);
-        console.log('yyyyy', contents);
+      setContent((item) => specificContent[0]?.subTopics[id]);
+      console.log('iddddddddddddddddddddddd', id);
+      console.log('xxxxxxx', specificContent[0]);
+      console.log('zzzz', specificContent[0]?.subTopics[id]);
+      console.log('yyyyy', contents);
       setisContent(true);
     }
 
@@ -67,10 +73,29 @@ const ContentScreen = ({navigation, route}) => {
     //   contents.content,
     // );
   };
-
+  //get bool data from firebase
+  const firestoreData = async () => {
+    try {
+      const users = await firestore().collection('Allhistologydata').get();
+      const histoData = await firestore()
+        .collection('Allhistologydata')
+        .doc('Tcfx8PDKef1MJCtWR0ix')
+        .get();
+      if (histoData && histoData.data().data[0]) {
+        setIspremiumUser(true);
+      }
+    } catch (err) {
+      console.log('error fetching firestore data', err);
+    }
+  };
+  useEffect(() => {
+    firestoreData();
+    return () => {};
+  }, [isFocused, id, titleId]);
   useEffect(() => {
     extractContent();
-  }, [isContent]);
+    setModal(Modal);
+  }, [isContent, Modal, isPremiumUser]);
 
   const saveBookmarkData = async ({id, titleId}) => {
     try {
@@ -220,95 +245,147 @@ const ContentScreen = ({navigation, route}) => {
       style={{
         backgroundColor: themeforDarkMode.contentBackground,
       }}>
-      <View style={styles.container}>
-        <Slider />
-        <NotesModal
-          modal={modal}
-          changeModal={changeModal}
-          datas={{id: id, title: title, titleId: titleId}}
-        />
-        <View style={styles.contentContainer}>
-          <View>
-            {/* Tile is Here */}
-            <Text style={styles.contentTitleText}>{title}</Text>
-
-            {/* Introduction is Here  */}
-            {contents?.isIntroduction && (
-              <Text
-                style={[
-                  styles.contentBox,
-                  styles.contentParagraphTypography,
-                  {color: themeforDarkMode.primaryText},
-                ]}>
-                {contents.introductionContent}
-              </Text>
-            )}
-            {
-              contents?.content?.subTopic.map(data => {
+      {isPremiumUser && (
+        <View style={styles.container}>
+          <Slider title={title} />
+          <NotesModal
+            modal={modal}
+            changeModal={changeModal}
+            datas={{id: id, title: title, titleId: titleId}}
+          />
+          <View style={styles.contentContainer}>
+            <View>
+              {/* Tile is Here */}
+              <Text style={styles.contentTitleText}>{title}</Text>
+              {/* Introduction is Here  */}
+              {/* {console.log("7777777777777777", contents?.content)} */}
+              {contents?.isIntroduction &&
+                (typeof contents?.introductionContent == 'string' ? (
+                  <Text
+                    style={[
+                      styles.contentBox,
+                      styles.contentParagraphTypography,
+                      {color: themeforDarkMode.primaryText},
+                    ]}>
+                    {contents?.introductionContent}
+                  </Text>
+                ) : (
+                  <View>
+                    {contents?.introductionContent?.map(
+                      (introductionContent) => {
+                        // { console.log("88888888888888888888", introductionContent) }
+                        return typeof introductionContent == 'string' ? (
+                          <Text
+                            style={[
+                              styles.contentBox,
+                              styles.contentParagraphTypography,
+                              {color: themeforDarkMode.primaryText},
+                            ]}>
+                            {introductionContent}
+                          </Text>
+                        ) : (
+                          <View>
+                            <Text>{introductionContent.title}</Text>
+                            {introductionContent?.content.map((content) => {
+                              return (
+                                <Text
+                                  style={[
+                                    styles.contentBox,
+                                    styles.contentParagraphTypography,
+                                    {color: themeforDarkMode.primaryText},
+                                  ]}>
+                                  {content}
+                                </Text>
+                              );
+                            })}
+                          </View>
+                        );
+                      },
+                    )}
+                  </View>
+                ))}
+              {contents?.content?.subTopic.map((data) => {
                 // console.log("***", data.content);
                 return (
                   <View>
                     <Text>***{data?.title}</Text>
-                    {//START
+                    {
+                      //START
                       //content subtopic content
                       //SUBTOPIC CEHCKER
-                      data?.content?.subTopic == null ?
+                      data?.content?.subTopic == null ? (
                         //CONTENT WITHOUT NESETD SUBTOPIC
-                        typeof data.content == 'string' ? <Text>{data.content}</Text>
-                          :
+                        typeof data.content == 'string' ? (
+                          <Text>{data.content}</Text>
+                        ) : (
                           <View>
                             {/* {console.log("CONTENT WITHOUT NESETD SUBTOPIC")} */}
-                            {data?.content?.map(item => {
+                            {data?.content?.map((item) => {
                               // console.log("************", item);
                               return (
                                 <View>
                                   {/* Here is Subtopics */}
-                                  <Text >{item?.title} </Text>
+                                  <Text>{item?.title} </Text>
                                   {/* Should have to check the title  */}
-                                  {
-                                    typeof item == 'string' ? <Text>{item}</Text>
-                                      : <View>
-                                        {
-                                          typeof item?.content == 'string' ? <Text>{item?.content}</Text>
-                                            : <View>
-                                              {
-                                                item?.content?.map(data => {
-                                                  return (
-                                                    <View>
-                                                      {data?.content?.map(
-                                                        (data) => (
-                                                          <Text>{data}</Text>
-                                                        ),
-                                                      )}
-                                                    </View>
-                                                  )}
-                                                </View>
-                                              )}
-                                            </View>
-                                          );
-                                        })}
-                                      </View>
-                                  }
+                                  {typeof item == 'string' ? (
+                                    <Text>{item}</Text>
+                                  ) : (
+                                    <View>
+                                      {typeof item?.content == 'string' ? (
+                                        <Text>{item?.content}</Text>
+                                      ) : (
+                                        <View>
+                                          {item?.content?.map((data) => {
+                                            return (
+                                              <View>
+                                                {typeof data == 'string' ? (
+                                                  <Text>{data}</Text>
+                                                ) : (
+                                                  <View>
+                                                    {typeof data?.content ==
+                                                    'string' ? (
+                                                      <Text>
+                                                        {data?.content}
+                                                      </Text>
+                                                    ) : (
+                                                      <View>
+                                                        {data?.content?.map(
+                                                          (data) => (
+                                                            <Text>{data}</Text>
+                                                          ),
+                                                        )}
+                                                      </View>
+                                                    )}
+                                                  </View>
+                                                )}
+                                              </View>
+                                            );
+                                          })}
+                                        </View>
+                                      )}
+                                    </View>
+                                  )}
                                 </View>
-                              )
-                            }
-                            )}
+                              );
+                            })}
                           </View>
-
-                        :
+                        )
+                      ) : (
                         //CONTENT WITH NESETD SUBTOPIC
                         <View>
-                          {
-                            data?.content?.subTopic.map(content => {
-                              // console.log("CONTENT WITH NESETD SUBTOPIC");
-                              // console.log("************", content)
-                              return <View>
+                          {data?.content?.subTopic.map((content) => {
+                            // console.log("CONTENT WITH NESETD SUBTOPIC");
+                            // console.log("************", content)
+                            return (
+                              <View>
                                 <Text>{content.title}</Text>
-                                {typeof content.content == 'string' ? <Text>{content.content}</Text>
-                                  : <View>
-                                    {content?.content.map(data => {
+                                {typeof content.content == 'string' ? (
+                                  <Text>{content.content}</Text>
+                                ) : (
+                                  <View>
+                                    {content?.content.map((data) => {
                                       // console.log("*******************",data);
-                                      return <Text>{data}</Text>
+                                      return <Text>{data}</Text>;
                                     })}
                                   </View>
                                 )}
@@ -317,38 +394,65 @@ const ContentScreen = ({navigation, route}) => {
                           })}
                         </View>
                       )
-                    ) : (
-                      //CONTENT WITH NESETD SUBTOPIC
-                      <View>
-                        {data?.content?.subTopic.map((content) => {
-                          //                          console.log('CONTENT WITH NESETD SUBTOPIC');
-                          //                          // console.log("************", content)
-                          return (
-                            <View>
-                              <Text>{content.title}</Text>
-                              {typeof content.content == 'string' ? (
-                                <Text>{content.content}</Text>
-                              ) : (
-                                <View>
-                                  {content?.content.map((data) => {
-                                    //                                    // console.log("*******************",data);
-                                    return <Text>{data}</Text>;
-                                  })}
-                                </View>
-                              )}
-                            </View>
-                          );
-                        })}
-                      </View>
-                    )
-                    //END
-                  }
-                </View>
-              );
-            })}
+                      //END
+                    }
+                  </View>
+                );
+              })}
+            </View>
           </View>
         </View>
-      </View>
+      )}
+      {!isPremiumUser && (
+        <TouchableOpacity
+          style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            paddingVertical: '50%',
+          }}>
+          <Icon name="globe" size={48} color="#ABB4BD" />
+          <Text
+            style={[
+              {
+                color: themeforDarkMode.secondaryText,
+                fontSize: 14,
+                paddingTop: 12,
+              },
+            ]}>
+            Share this app 5 times.
+          </Text>
+          <Text
+            style={[
+              {
+                color: themeforDarkMode.secondaryText,
+                fontSize: 14,
+              },
+            ]}>
+            To access content offline for lifetime.
+          </Text>
+        </TouchableOpacity>
+      )}
+      {/* <Modal visible={modal} transparent={true} animationType="slide">
+        <View style={[styles.modalContainer]}>
+          <View style={styles.modalWrapper}>
+            <TextInput style={styles.modalTitle} onChangeText={text => setNoteTitle(text)} value={noteTitle}></TextInput>
+            <View style={styles.modalContentContainer}>
+              <TextInput multiline onChangeText={text => setNoteContent(text)} value={noteContent}></TextInput>
+            </View>
+            <View style={styles.modalFooter}>
+              <TouchableOpacity onPress={() => { setModal(false) }} style={[styles.closeButton, styles.f_c_c_c]} >
+                <Icon style={styles.modalCloseIcon} name="cancel-circled2" size={18} />
+                <Text style={[styles.closeButtonText]}>Close</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={[styles.saveButton, styles.f_c_c_c]}>
+                <Icon style={styles.modalSaveIcon} name="ok-circled2" size={18} />
+                <Text style={[styles.saveButtonText]}>Save</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal> */}
     </ScrollView>
   );
 };

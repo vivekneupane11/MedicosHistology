@@ -15,32 +15,34 @@ let images = [];
 // let image = '../assets/images/SimpleCuboidal/simple_sq2.webp';
 // let hello = "hello world";
 
-
 const Slider = (props) => {
-    useEffect(()=>{
-        sliderImages.map(data=>{
-            console.log("77777777777777777", data.title,props.title);
-            return data.title == props.title ?
-            data.sliderImages.map(image=>{
-                console.log("8888888888888888888", data.title ,props.title);
-                images.push(image)
-                // images.push(require(`../assets/images/${(props.title).replace(' ','')}/${image}`));
-                // console.log("hello",hello.replace(' ',''))
-            }):
-            console.log("bye");
-         })
-         return(()=>{
-             images = [];
-         })
-    },[])
-   
-    const [active, setActive] = useState(0);
-    var change = ({ nativeEvent }) => {
-        const slide = Math.floor(nativeEvent.contentOffset.x / nativeEvent.layoutMeasurement.width);
-        {console.log(slide)}
-        if (slide !== active) {
-            setActive(slide);
-        }
+  useEffect(() => {
+    sliderImages.map((data) => {
+      console.log('77777777777777777', data.title, props.title);
+      return data.title == props.title
+        ? data.sliderImages.map((image) => {
+            console.log('8888888888888888888', data.title, props.title);
+            images.push(image);
+            // images.push(require(`../assets/images/${(props.title).replace(' ','')}/${image}`));
+            // console.log("hello",hello.replace(' ',''))
+          })
+        : console.log('bye');
+    });
+    return () => {
+      images = [];
+    };
+  }, []);
+
+  const [active, setActive] = useState(0);
+  var change = ({nativeEvent}) => {
+    const slide = Math.floor(
+      nativeEvent.contentOffset.x / nativeEvent.layoutMeasurement.width,
+    );
+    {
+      console.log(slide);
+    }
+    if (slide !== active) {
+      setActive(slide);
     }
   };
   return (
@@ -52,18 +54,16 @@ const Slider = (props) => {
         onScroll={change}
         showsHorizontalScrollIndicator={false}>
         {/* <Image style={{height:100,width:100}} source={require('../assets/images/SimpleCuboidal/simple_sq2.webp')}></Image> */}
-        {
-            images.map((item, index) => {
-                return <Image
-                    key={index}
+        {images.map((item, index) => {
+          return (
+            <Image
+              key={index}
+              source={item}
+              style={{height, width, resizeMode: 'stretch'}}
+            />
+          );
+        })}
 
-                    source={item}
-                    style={{ height, width, resizeMode: 'stretch' }}
-                />
-            }
-            )
-        }
-  
         {/* Paging indicator */}
       </ScrollView>
       <View style={styles.indicator}>

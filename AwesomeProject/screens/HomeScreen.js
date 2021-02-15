@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import BackgroundHeader from '../components/BackgroundHeader';
 import BottomTab from '../components/BottomTab';
 import {createIconSetFromFontello} from 'react-native-vector-icons';
@@ -26,11 +26,13 @@ import {
 } from '../src/utils/responsive';
 
 const {width} = Dimensions.get('window');
+
 const HomeScreen = ({navigation}) => {
   const {mode, theme: themeforDarkMode, toggle} = useTheme();
   AsyncStorage.getItem('userinfo').then((user) => {
     console.log(user, 'USSERRRRRRRRRRRRRRRRRRRRRRRR');
   });
+
   const SubTopicsCard = ({title, titleId, img, id}) => {
     return (
       <TouchableOpacity
@@ -389,7 +391,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: 10,
-    marginTop:14,
+    marginTop: 14,
   },
   premiumContainer: {
     paddingHorizontal: 5,
