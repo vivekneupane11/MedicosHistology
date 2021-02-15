@@ -8,7 +8,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import {sliderImages} from '../constants/mocks';
-
+import {useTheme} from '../src/utils/DarkTheme/ThemeManager';
 const width = Dimensions.get('screen').width;
 const height = width / 1.61;
 let images = [];
@@ -31,9 +31,10 @@ const Slider = (props) => {
     return () => {
       images = [];
     };
-  }, []);
+  }, [props.title]);
 
   const [active, setActive] = useState(0);
+  const {mode, theme: themeforDarkMode, toggle} = useTheme();
   var change = ({nativeEvent}) => {
     const slide = Math.floor(
       nativeEvent.contentOffset.x / nativeEvent.layoutMeasurement.width,
@@ -69,9 +70,7 @@ const Slider = (props) => {
       <View style={styles.indicator}>
         {images.map((i, k) => {
           return (
-            <Text
-              key={k}
-              style={k == active ? styles.pagingActiveText : styles.pagingText}>
+            <Text key={k} style={{color: themeforDarkMode.subTitle}}>
               ⬤
             </Text>
           );
@@ -92,12 +91,6 @@ const styles = StyleSheet.create({
     position: 'relative',
     bottom: 0,
     alignSelf: 'center',
-  },
-  pagingActiveText: {
-    color: '#3F3D56',
-  },
-  pagingText: {
-    color: '#156B9A',
   },
 });
 
