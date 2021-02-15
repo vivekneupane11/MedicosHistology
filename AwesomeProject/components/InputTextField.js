@@ -22,11 +22,14 @@ const InputTextField = (props) => {
           placeholderTextColor={'#ABB4BD'}
           placeholder={props.placeholderText}
           secureTextEntry={props.isSecure}
-          style={styles.input}
+          style={[styles.input,props.style]}
           onChangeText={props.onChangeText}
         />
       </View>
-      <View style={{borderBottomColor: '#D8D8D8', borderBottomWidth: 1}} />
+
+      {
+        props.isBorder &&
+        <View style={{ borderBottomColor: '#D8D8D8', borderBottomWidth: 1}} />}
     </View>
   );
 };

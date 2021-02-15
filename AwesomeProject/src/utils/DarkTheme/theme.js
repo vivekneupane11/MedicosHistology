@@ -30,8 +30,8 @@ export const ThemeColors = {
     dark: '#1c1c1c',
   },
   drawertopBackground: {
-    dark: '#3F3D56',
-    light: '#1c1c1c',
+    dark: '#3c3c3c',
+    light: '#f9f9f9',
   },
   secondaryHeader: {
     light: '#F1F1F1',

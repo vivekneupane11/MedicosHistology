@@ -1350,7 +1350,7 @@ let topics = [
       {
         id: 3,
         title: 'Fibro Cartilage',
-        //***************** */ imgPath: require('../assets/logos/topics/fibrocartilage.png'),
+        imgPath: require('../assets/logos/topics/fibrocartilage.png'),
       },
     ],
   },
@@ -1463,7 +1463,7 @@ let topics = [
       {
         id: 3,
         title: 'Smooth Muscle',
-        // imgPath: require('../assets/logos/topics/smoothmuscle.png'),
+        imgPath: require('../assets/logos/topics/smooth_muscle.png'),
       },
     ],
   },
@@ -1796,7 +1796,7 @@ let topics = [
       {
         id: 2,
         title: 'Eyelid',
-        // imgPath: require('../assets/logos/topics/eyelid.png'),
+        imgPath: require('../assets/logos/topics/eyelid.png'),
       },
       {
         id: 3,
